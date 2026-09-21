@@ -1,0 +1,22 @@
+{
+  "atualizado": "2026-09-21",
+  "fonte": "Edital Unificado FGV 1o/2027, itens 9.9 e 14 - Projetos/Vestibular/editais/",
+  "prazos": [
+    {"data": "2026-09-26", "o_que": "Intensivo de Geografia no cursinho", "area": "cursinho", "critico": false},
+    {"data": "2026-10-11", "o_que": "PROVA DO INSPER", "area": "vestibular", "critico": true},
+    {"data": "2026-10-18", "o_que": "FGV 1a fase - dia 1 (Redacao, Ciencias Humanas, Matematica, Portugues, Ingles)", "area": "vestibular", "critico": true},
+    {"data": "2026-10-19", "o_que": "FGV 1a fase - dia 2 (Portugues discursiva, Artes e Questoes Contemporaneas)", "area": "vestibular", "critico": true},
+    {"data": "2026-10-21", "o_que": "FGV publica o gabarito das objetivas", "area": "vestibular", "critico": false},
+    {"data": "2026-10-22", "o_que": "Prazo final para contestar o gabarito da FGV", "area": "vestibular", "critico": false},
+    {"data": "2026-10-31", "o_que": "DECIDIR o caminho da certificacao do ensino medio", "area": "certificacao", "critico": true},
+    {"data": "2026-11-16", "o_que": "FGV: resultado da 1a fase e convocacao para o Exame Oral (apos 14h)", "area": "vestibular", "critico": true},
+    {"data": "2026-11-18", "o_que": "Inicio da janela do EXAME ORAL da FGV (ate 01/12) - sem remarcacao", "area": "vestibular", "critico": true},
+    {"data": "2026-11-28", "o_que": "Laura faz 18 anos - destrava certificacao por idade", "area": "certificacao", "critico": false},
+    {"data": "2026-11-30", "o_que": "Prazo final para solicitar bolsa de estudos na FGV", "area": "vestibular", "critico": false},
+    {"data": "2026-12-01", "o_que": "Fim da janela do Exame Oral da FGV", "area": "vestibular", "critico": true},
+    {"data": "2026-12-07", "o_que": "FGV divulga o RESULTADO FINAL", "area": "vestibular", "critico": true},
+    {"data": "2026-12-18", "o_que": "Prazo final da inscricao pela via Exames Internacionais / SAT (2 vagas)", "area": "vestibular", "critico": true},
+    {"data": "2027-01-08", "o_que": "Prazo final da inscricao pela via ENEM da FGV (8 vagas)", "area": "vestibular", "critico": true},
+    {"data": "2027-01-15", "o_que": "MATRICULA 1a chamada - exige certificado de conclusao do ensino medio", "area": "certificacao", "critico": true}
+  ]
+}

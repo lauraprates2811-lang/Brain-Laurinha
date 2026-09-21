@@ -1,0 +1,11 @@
+{
+  "atualizado": "2026-09-21",
+  "areas": [
+    {"id": "vestibular",  "nome": "Vestibular",   "ficha": "Areas/Vestibular.md",   "atualizado": "2026-09-21", "prioridade": 1},
+    {"id": "certificacao","nome": "Certificação", "ficha": "Areas/Certificacao.md", "atualizado": "2026-09-21", "prioridade": 1},
+    {"id": "cursinho",    "nome": "Cursinho",     "ficha": "Areas/Cursinho.md",     "atualizado": "2026-09-21", "prioridade": 2},
+    {"id": "escola",      "nome": "Escola",       "ficha": "Areas/Escola.md",       "atualizado": "2026-09-21", "prioridade": 3},
+    {"id": "pessoal",     "nome": "Pessoal",      "ficha": "Areas/Pessoal.md",      "atualizado": "2026-09-21", "prioridade": 3},
+    {"id": "brain",       "nome": "Brain",        "ficha": "Areas/Brain.md",        "atualizado": "2026-09-21", "prioridade": 4}
+  ]
+}

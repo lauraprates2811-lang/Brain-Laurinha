@@ -1,0 +1,12 @@
+{
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "Projetos",
+  "showUnsupportedFiles": false,
+  "userIgnoreFilters": [
+    ".claude/",
+    "Tarefas/dados/",
+    "Projetos/Vestibular/editais/edital-unificado-fgv-2027.txt"
+  ]
+}

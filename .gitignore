@@ -1,0 +1,14 @@
+# logs da automacao (ficam so no computador)
+.claude/logs/
+
+# lixo do macOS
+.DS_Store
+._*
+
+# estado da janela do Obsidian (muda toda hora, nao interessa versionar)
+.obsidian/workspace*
+.obsidian/cache
+
+# cache de Python
+__pycache__/
+*.pyc

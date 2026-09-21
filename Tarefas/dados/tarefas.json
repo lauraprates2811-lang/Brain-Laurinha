@@ -1,0 +1,24 @@
+{
+  "atualizado": "2026-09-21",
+  "proximo_id": 19,
+  "tarefas": [
+    {"id": 1, "titulo": "Ligar para a secretaria da EABH: recebo o diploma brasileiro do MEC, em que data sai, e existe conclusão antecipada em dezembro?", "area": "certificacao", "prazo": "2026-09-30", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 2, "titulo": "Escrever para processoseletivo@fgv.br perguntando qual documento aceitam para aluna de escola com calendário americano que conclui em meados de 2027", "area": "certificacao", "prazo": "2026-09-30", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 3, "titulo": "Pesquisar CESEC/MG: idade mínima, eliminação de disciplinas por exame, prazo de emissão do certificado", "area": "certificacao", "prazo": "2026-10-15", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 4, "titulo": "Confirmar se a edição 2026 do ENCCEJA ainda é viável e quando saem os resultados", "area": "certificacao", "prazo": "2026-10-15", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 5, "titulo": "DECIDIR o caminho da certificação do ensino médio", "area": "certificacao", "prazo": "2026-10-31", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 6, "titulo": "Recuperar a aula de Física (Meca) que está atrasada", "area": "cursinho", "prazo": "2026-09-27", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 7, "titulo": "Confirmar com o cursinho as datas reais dos 5 intensivos de sábado (LIT, HB, GEO, HG)", "area": "cursinho", "prazo": "2026-09-25", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 8, "titulo": "Escrever e destrinchar a trajetória biográfica para o Exame Oral em Projetos/Vestibular/oral/", "area": "vestibular", "prazo": "2026-11-01", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 9, "titulo": "Confirmar as datas das provas do ENEM 2026 no site do INEP", "area": "vestibular", "prazo": "2026-09-30", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 10, "titulo": "Confirmar data e forma de divulgação do resultado do Insper", "area": "vestibular", "prazo": "2026-10-15", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 11, "titulo": "Separar os documentos de solicitação de bolsa ANTES de 16/11 (a janela é 16/11 a 30/11)", "area": "vestibular", "prazo": "2026-11-14", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 12, "titulo": "Inscrever-se na via ENEM da FGV (8 vagas, taxa separada)", "area": "vestibular", "prazo": "2027-01-08", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 13, "titulo": "Decidir se vai usar a via SAT da FGV (2 vagas, nota mínima 1.200, inscrição até 18/12)", "area": "vestibular", "prazo": "2026-12-10", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 14, "titulo": "Listar trabalhos, entregas e provas abertas da EABH com os prazos", "area": "escola", "prazo": "2026-09-28", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 15, "titulo": "Criar conta no GitHub e conectar o repositório privado de backup", "area": "brain", "prazo": "2026-09-30", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 16, "titulo": "Configurar git config user.email com o e-mail real da Laura (hoje é placeholder)", "area": "brain", "prazo": "2026-09-30", "prioridade": "baixa", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 17, "titulo": "Instalar a rotina automática de segunda-feira no MacBook da Laura", "area": "brain", "prazo": "2026-09-30", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 18, "titulo": "Começar o treino semanal de Exame Oral, ancorado na aula do Júlio (sábado 07:00)", "area": "vestibular", "prazo": "2026-09-26", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"}
+  ]
+}
