@@ -104,6 +104,19 @@ Pasta nova, área nova ou tipo de arquivo novo: só com o ok da Laura.
 - `/otimizar` — segunda 07:00, sozinho via launchd. Conserta a forma do Brain.
 - `/tarefas` — opera a lista.
 
+### Sugerir o `/save` — obrigatório
+
+**Toda conversa que produziu alguma coisa termina com a sugestão do `/save`.** Não espere a
+Laura lembrar: a última linha da sua resposta final é o convite, dizendo em meia linha o que
+seria gravado. Exemplo: *"Fecha com `/save`? Entra como bloco de Física, 2h, com os 4 erros de
+cinemática."*
+
+Vale para bloco de estudo, correção de redação, decisão tomada, descoberta sobre prazo ou
+edital — qualquer coisa que o Brain deveria saber amanhã e ainda não sabe.
+
+Não sugira quando a conversa foi só pergunta e resposta, sem nada novo para guardar.
+Sugestão em conversa vazia vira ruído e ela para de obedecer.
+
 ## Os agentes de estudo
 
 `/questoes` · `/oral` · `/redacao` · `/revisar` · `/explica` · `/simulado` · `/plano`
