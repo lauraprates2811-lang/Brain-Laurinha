@@ -10,8 +10,8 @@ mkdir -p "$AGENTES" "$BRAIN/.claude/logs"
 echo "Brain encontrado em: $BRAIN"
 echo
 
-fazer_plist() {  # nome, argumento, hora, minuto, [dia-da-semana]
-  local NOME="$1" ARG="$2" HORA="$3" MIN="$4" DIA="${5:-}"
+fazer_plist() {  # nome, script, argumento, hora, minuto, [dia-da-semana]
+  local NOME="$1" SCRIPT="$2" ARG="$3" HORA="$4" MIN="$5" DIA="${6:-}"
   local PLIST="$AGENTES/$NOME.plist"
   local QUANDO="        <key>Hour</key><integer>$HORA</integer>
         <key>Minute</key><integer>$MIN</integer>"
@@ -27,7 +27,7 @@ $QUANDO"
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>$BRAIN/.claude/hooks/brain-rotina.sh</string>
+        <string>$BRAIN/.claude/hooks/$SCRIPT</string>
         <string>$ARG</string>
     </array>
     <key>StartCalendarInterval</key>
@@ -47,13 +47,15 @@ PLISTEOF
 }
 
 # Weekday 1 = segunda-feira
-fazer_plist "com.laura.brain.otimizar" otimizar 7 0 1
-fazer_plist "com.laura.brain.lint"     lint     9 0
+fazer_plist "com.laura.brain.otimizar" brain-rotina.sh otimizar  7  0 1
+fazer_plist "com.laura.brain.lint"     brain-rotina.sh lint      9  0
+fazer_plist "com.laura.brain.diario"   brain-diario.sh diario   23 50
 
 echo
 echo "Pronto. A partir de agora, sozinho:"
 echo "  - toda SEGUNDA as 07:00, o Brain se reorganiza (/otimizar)"
 echo "  - todo dia as 09:00, ele confere o formato e so avisa se houver erro"
+echo "  - todo dia as 23:50, ele salva e escreve o que mudou no dia"
 echo
 echo "Se o Mac estiver dormindo na hora, o launchd roda assim que ele acordar."
 echo "Para desligar:  launchctl unload ~/Library/LaunchAgents/com.laura.brain.*.plist"
