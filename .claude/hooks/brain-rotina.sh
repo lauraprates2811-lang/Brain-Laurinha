@@ -10,8 +10,11 @@ set -u
 BRAIN="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$BRAIN" || exit 1
 
-# o launchd roda com um PATH minimo: ensine onde mora o claude
+# o launchd roda com um ambiente minimo: ensine onde mora o claude
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+# sem USER o claude nao acha o login guardado no chaveiro
+export USER="${USER:-$(id -un)}"
+export LOGNAME="${LOGNAME:-$USER}"
 mkdir -p .claude/logs
 LOG=".claude/logs/rotina-$(date +%Y-%m).log"
 QUANDO="$(date '+%Y-%m-%d %H:%M')"

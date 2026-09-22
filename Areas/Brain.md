@@ -22,6 +22,7 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 | Agentes de estudo | `.claude/commands/` + doc em `Agentes/` |
 | Guardião de formato | `.claude/hooks/brain-lint.py` |
 | Rotina automática | `.claude/hooks/brain-rotina.sh` (launchd, segunda 07:00) |
+| Fechamento diário | `.claude/hooks/brain-diario.sh` |
 | Como usar | `Projetos/Brain/ComoUsar.md` |
 
 ## Pendências

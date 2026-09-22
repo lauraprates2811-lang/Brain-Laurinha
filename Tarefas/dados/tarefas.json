@@ -1,6 +1,6 @@
 {
-  "atualizado": "2026-09-21",
-  "proximo_id": 19,
+  "atualizado": "2026-09-22",
+  "proximo_id": 20,
   "tarefas": [
     {"id": 1, "titulo": "Ligar para a secretaria da EABH: recebo o diploma brasileiro do MEC, em que data sai, e existe conclusão antecipada em dezembro?", "area": "certificacao", "prazo": "2026-09-30", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
     {"id": 2, "titulo": "Escrever para processoseletivo@fgv.br perguntando qual documento aceitam para aluna de escola com calendário americano que conclui em meados de 2027", "area": "certificacao", "prazo": "2026-09-30", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
@@ -19,6 +19,7 @@
     {"id": 15, "titulo": "Criar conta no GitHub e conectar o repositório privado de backup", "area": "brain", "prazo": "2026-09-30", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
     {"id": 16, "titulo": "Configurar git config user.email com o e-mail real da Laura (hoje é placeholder)", "area": "brain", "prazo": "2026-09-30", "prioridade": "baixa", "status": "aberta", "criado": "2026-09-21"},
     {"id": 17, "titulo": "Instalar a rotina automática de segunda-feira no MacBook da Laura", "area": "brain", "prazo": "2026-09-30", "prioridade": "media", "status": "aberta", "criado": "2026-09-21"},
-    {"id": 18, "titulo": "Começar o treino semanal de Exame Oral, ancorado na aula do Júlio (sábado 07:00)", "area": "vestibular", "prazo": "2026-09-26", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"}
+    {"id": 18, "titulo": "Começar o treino semanal de Exame Oral, ancorado na aula do Júlio (sábado 07:00)", "area": "vestibular", "prazo": "2026-09-26", "prioridade": "alta", "status": "aberta", "criado": "2026-09-21"},
+    {"id": 19, "titulo": "Liberar em .claude/settings.json o brain-lint.py e a marca de otimização, para o /otimizar de segunda rodar sozinho", "area": "brain", "prazo": "2026-09-27", "prioridade": "media", "status": "aberta", "criado": "2026-09-22"}
   ]
 }
