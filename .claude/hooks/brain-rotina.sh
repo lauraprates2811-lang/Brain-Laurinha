@@ -42,7 +42,10 @@ case "${1:-}" in
       exit 1
     fi
 
-    claude -p "/otimizar" --permission-mode acceptEdits >> "$LOG" 2>&1
+    # acceptEdits libera editar arquivo, mas nao rodar comando.
+    # O /otimizar precisa do guardiao: liberado nominalmente, so ele.
+    claude -p "/otimizar" --permission-mode acceptEdits \
+      --allowedTools "Bash(python3 .claude/hooks/brain-lint.py:*)" >> "$LOG" 2>&1
     SAIDA="$(python3 .claude/hooks/brain-lint.py 2>&1)"
     echo "$SAIDA" >> "$LOG"
 

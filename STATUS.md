@@ -27,6 +27,7 @@
 
 ## Últimas atualizações
 
+- **2026-09-22** — Segundo `/otimizar`: lint rodou, 0 erros e 0 avisos; marca de otimização em dia. Falta commit do ajuste da rotina de segunda. → [[2026-09-22-brain]]
 - **2026-09-22** — Primeiro `/otimizar`: nenhum erro de formato; a rotina de segunda não tem permissão para rodar o lint. → [[2026-09-22-brain]]
 - **2026-09-21** — Brain criado do zero: estrutura, 6 áreas, 7 agentes de estudo, rituais e
   guardião. Datas oficiais da FGV extraídas do edital. → [[2026-09-21-brain]]
