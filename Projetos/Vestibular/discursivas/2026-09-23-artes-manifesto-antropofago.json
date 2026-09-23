@@ -1,0 +1,173 @@
+{
+  "titulo": "Artes — Manifesto Antropófago (Benedito Nunes)",
+  "data": "2026-09-23",
+  "materia": "Artes e Questões Contemporâneas",
+  "origem": "FGV 2022.1 · Artes e Questões Contemporâneas · pergunta 11",
+  "valor": "2,0",
+  "tipo_grade": "niveis",
+  "enunciado": "(Resumo) A partir de aforismos do Manifesto Antropófago de Oswald de Andrade (1928), a pergunta pede: segundo Benedito Nunes, quais elementos do Manifesto transcrito evidenciam que “no antropofagismo tudo é contraditório, e tudo é significativo por ser contraditório”?",
+  "gabarito": "(Resumo da resposta oficial) Mostrar o propósito geral da antropofagia: reler de forma alegórica, com paródia e humor, a história colonial do Brasil, contrapondo o primitivo e o natural à dependência diante do mundo técnico-científico, e assimilando o que vem de fora para reinventá-lo. E apontar no trecho os pares contraditórios, por exemplo: Revolução Caraíba × Revolução Francesa; tupi × europeu (o inglês de Shakespeare em “Tupi, or not tupi”); catequese × Carnaval; o índio nu × a roupa do colonizador (“vestido de senador do Império”).",
+  "grade": "100%: resposta integral (leitura adequada do Manifesto, contrastes identificados no trecho e propósito da antropofagia compreendido), corretamente redigida · 75%: integral, com problemas de redação · 50%: parcial (identifica só em parte os exemplos ou a proposta), corretamente redigida · 25%: parcial, com problemas de redação.",
+  "resposta_marcada": "{-Segundo ao-}{+Segundo o|1+} crítico literário Benedito Nunes \"{-o-}{+No|2+} antropofagismo tudo é contraditório, e tudo é significativo por ser contraditório\", essa afirmação é sustentada por diversos elementos {-extraido-}{+extraídos|3+} de diferentes aforismos. Desse modo, os aforismos {-apresentão-}{+apresentam|5+} elementos como: o uso da {-lingua-}{+língua|7+} {-extrangeira-}{+estrangeira|6+} mesclada com o {-portugues-}{+português|7+}{+, no aforismo \"Tupi, or not tupi\",|9+} {-ultilizando-}{+utilizando|8+} a ideia central do Manifesto {-Antropofago-}{+Antropófago|7+}, o antropofagismo \"comer\" o que é {-extrangeiro-}{+estrangeiro|6+} e [[misturar com ideias nacionais|4]]. [[Similarmente no trecho|10]] \"{-Ja-}{+Já|7+} {-tinhamos-}{+tínhamos|7+} o comunismo. {-Ja-}{+Já|7+} {-tinhamos-}{+tínhamos|7+} a {-lingua-}{+língua|7+} surrealista. A idade de ouro\" {-ultiliza-}{+utiliza|8+} do mesmo modo o elemento{-,|11-} do Manifesto {-Antropofago,-}{+Antropófago+} de \"comer\" algo {-extrangeiro,-}{+estrangeiro.|12+} {-nesse cenario-}{+Nesse cenário,|12+} {-ultiliza-}{+utiliza|8+} \"a idade do ouro\" para representar uma {-epoca-}{+época|7+} gloriosa no Brasil, porém de forma {-contraditoria-}{+contraditória|7+}, [[pois a idade do ouro ocorreu apenas na|13]] {-europa-}{+Europa|14+} ocidental, {-japão-}{+Japão|14+} e {-estados unidos-}{+Estados Unidos|14+}. Sob essa perspectiva, a contradição expressa no trecho se torna algo {-significativo pois-}{+significativo, pois|15+} de forma {-contraditoria-}{+contraditória|7+} se {-constroi-}{+constrói|7+} [[um sentido|16]].",
+  "comentarios": [
+    {
+      "n": 1,
+      "tipo": "gramatica",
+      "texto": "“Segundo” (= de acordo com) não pede “a”: segundo o crítico."
+    },
+    {
+      "n": 2,
+      "tipo": "gramatica",
+      "texto": "Citação entre aspas se copia igual ao original: “No antropofagismo…”. Sem o “No”, a frase fica sem sentido."
+    },
+    {
+      "n": 3,
+      "tipo": "gramatica",
+      "texto": "Concordância: elementos (plural) extraídos."
+    },
+    {
+      "n": 4,
+      "tipo": "elogio",
+      "texto": "Aqui está o centro da antropofagia: devorar o estrangeiro e transformá-lo em algo nacional. É a “proposta antropofágica” que a grade pede."
+    },
+    {
+      "n": 5,
+      "tipo": "gramatica",
+      "texto": "Presente, 3ª pessoa do plural, termina em -am: apresentam. (-ão é futuro: apresentarão.)"
+    },
+    {
+      "n": 6,
+      "tipo": "gramatica",
+      "texto": "Estrangeiro/estrangeira se escreve com s (errou 3 vezes)."
+    },
+    {
+      "n": 7,
+      "tipo": "gramatica",
+      "texto": "Acentos que faltaram: língua, português, Antropófago, Já, tínhamos, época, contraditória, constrói."
+    },
+    {
+      "n": 8,
+      "tipo": "gramatica",
+      "texto": "Utilizar não tem l depois do u (errou 3 vezes)."
+    },
+    {
+      "n": 9,
+      "tipo": "conteudo",
+      "texto": "Diga qual aforismo e qual é a contradição: em “Tupi, or not tupi that is the question”, Oswald afirma a identidade indígena na língua do colonizador, parodiando o “to be or not to be” de Shakespeare. Sem isso o elemento fica só apontado, não explicado."
+    },
+    {
+      "n": 10,
+      "tipo": "elogio",
+      "texto": "Boa escolha de trecho: é um dos elementos contraditórios que a grade aceita."
+    },
+    {
+      "n": 11,
+      "tipo": "gramatica",
+      "texto": "“O elemento do Manifesto Antropófago de comer algo estrangeiro” é um bloco só (nome + complemento): sem vírgulas no meio."
+    },
+    {
+      "n": 12,
+      "tipo": "gramatica",
+      "texto": "Duas orações completas não se juntam só com vírgula: ponto final. E “Nesse cenário” no início pede vírgula."
+    },
+    {
+      "n": 13,
+      "tipo": "conteudo",
+      "texto": "Foi o erro de conteúdo que mais pesou. A “idade de ouro” do Manifesto (1928) não é a Era de Ouro do capitalismo depois de 1945, que é outro assunto e veio depois. É o mito de uma época primitiva feliz, sem opressão, que o texto chama de “matriarcado de Pindorama”. A contradição: o indígena “primitivo” já teria o comunismo, a língua surrealista e a idade de ouro, justamente as utopias que a Europa “moderna” buscava. O Manifesto inverte quem é atrasado e quem é avançado."
+    },
+    {
+      "n": 14,
+      "tipo": "gramatica",
+      "texto": "Nome de lugar começa com maiúscula: Europa, Japão, Estados Unidos."
+    },
+    {
+      "n": 15,
+      "tipo": "gramatica",
+      "texto": "“Pois” explicativo vem depois de vírgula."
+    },
+    {
+      "n": 16,
+      "tipo": "conteudo",
+      "texto": "Conclusão circular: “se constrói um sentido” não diz qual. Diga: a contradição serve para reler com humor a história colonial e afirmar uma cultura brasileira que devora o estrangeiro e o reinventa. Faltaram também outros pares do trecho, como Revolução Caraíba × Revolução Francesa e catequese × Carnaval."
+    }
+  ],
+  "itens": [
+    {
+      "item": "Pergunta 11",
+      "esperado": "Contrastes do trecho identificados e explicados + propósito geral da antropofagia",
+      "voce": "Dois elementos: a língua estrangeira misturada ao português (apontada, sem explicar a contradição) e “Já tínhamos… a idade de ouro” (lido de forma anacrônica). Propósito: “comer o estrangeiro e misturar com o nacional”, correto, mas sem a releitura da história colonial. Vários desvios de redação.",
+      "nivel": "25%",
+      "pontos": "0,5 / 2,0"
+    }
+  ],
+  "nota": {
+    "obtida": "0,5",
+    "maxima": "2,0",
+    "percentual": "25%",
+    "criterio": "Resposta parcial (contrastes só em parte, um deles lido de forma anacrônica) e com desvios de redação."
+  },
+  "de_acordo": "Está de acordo com o pedido: a escolha do trecho “Já tínhamos o comunismo…” é válida, e “comer o estrangeiro e misturar com ideias nacionais” é exatamente o propósito da antropofagia. Não está: a leitura da “idade de ouro” como algo que ocorreu na Europa ocidental, no Japão e nos Estados Unidos está errada, porque confunde o mito primitivo do Manifesto com a Era de Ouro do pós-1945.",
+  "gramatica": [
+    {
+      "trecho": "Segundo ao crítico",
+      "correcao": "Segundo o crítico",
+      "regra": "“Segundo” (= de acordo com) não pede “a”."
+    },
+    {
+      "trecho": "\"o antropofagismo tudo é contraditório",
+      "correcao": "\"No antropofagismo tudo é contraditório",
+      "regra": "Citação entre aspas se copia igual ao original."
+    },
+    {
+      "trecho": "diversos elementos extraido",
+      "correcao": "diversos elementos extraídos",
+      "regra": "O adjetivo concorda com o substantivo: elementos extraídos."
+    },
+    {
+      "trecho": "apresentão",
+      "correcao": "apresentam",
+      "regra": "Presente, 3ª do plural, termina em -am; -ão é futuro."
+    },
+    {
+      "trecho": "extrangeira / extrangeiro (3 vezes)",
+      "correcao": "estrangeira / estrangeiro",
+      "regra": "Escreve-se com s."
+    },
+    {
+      "trecho": "ultilizando / ultiliza (3 vezes)",
+      "correcao": "utilizando / utiliza",
+      "regra": "Não tem l depois do u."
+    },
+    {
+      "trecho": "lingua, portugues, Antropofago, Ja tinhamos, epoca, contraditoria, constroi",
+      "correcao": "língua, português, Antropófago, Já tínhamos, época, contraditória, constrói",
+      "regra": "Proparoxítona sempre tem acento; paroxítona em ditongo (língua, contraditória) também; oxítona em -es (português); monossílabo tônico em -a (já); ditongo aberto ói (constrói)."
+    },
+    {
+      "trecho": "o elemento, do Manifesto Antropofago, de \"comer\"",
+      "correcao": "o elemento do Manifesto Antropófago de \"comer\"",
+      "regra": "Não se separa o nome do seu complemento com vírgula."
+    },
+    {
+      "trecho": "algo extrangeiro, nesse cenario ultiliza",
+      "correcao": "algo estrangeiro. Nesse cenário, utiliza",
+      "regra": "Duas orações completas não se juntam só com vírgula."
+    },
+    {
+      "trecho": "europa ocidental, japão e estados unidos",
+      "correcao": "Europa ocidental, Japão e Estados Unidos",
+      "regra": "Nome de lugar começa com maiúscula."
+    },
+    {
+      "trecho": "significativo pois",
+      "correcao": "significativo, pois",
+      "regra": "“Pois” explicativo vem depois de vírgula."
+    }
+  ],
+  "melhorar": [
+    "Para cada aforismo, nomeie-o e diga os dois lados da contradição em uma frase (ex.: “Em ‘Tupi, or not tupi’, Oswald afirma a identidade indígena na língua do colonizador, parodiando Shakespeare”). É isso que a grade chama de identificar os contrastes.",
+    "Leia a expressão com a data do texto: em 1928, “idade de ouro” é o mito de uma sociedade primitiva feliz, não a Era de Ouro do pós-guerra. Na dúvida, fique com o que o próprio Manifesto diz (felicidade antes dos portugueses, matriarcado de Pindorama).",
+    "Revisão de 1 minuto para os erros que se repetiram: utilizar (sem l), estrangeiro (com s), presente em -am (apresentam) e acento nas proparoxítonas (época, Antropófago, tínhamos)."
+  ],
+  "reescrita": "Segundo o crítico literário Benedito Nunes, \"No antropofagismo tudo é contraditório, e tudo é significativo por ser contraditório\". Essa afirmação é sustentada por diversos elementos extraídos de diferentes aforismos. O primeiro é o uso da língua estrangeira mesclada com o português em \"Tupi, or not tupi that is the question\": Oswald afirma a identidade indígena na língua do colonizador, parodiando Shakespeare. Isso aplica a ideia central do Manifesto Antropófago: \"comer\" o que é estrangeiro e misturá-lo com ideias nacionais. Da mesma forma, no trecho \"Já tínhamos o comunismo. Já tínhamos a língua surrealista. A idade de ouro\", o autor inverte a hierarquia entre colonizador e colonizado: o indígena \"primitivo\" já teria vivido as utopias que a Europa moderna ainda procurava. Outros pares seguem a mesma lógica, como a \"Revolução Caraíba\", maior que a Francesa, e o Carnaval no lugar da catequese. Sob essa perspectiva, a contradição se torna significativa, pois é por meio dela que Oswald relê com humor a história colonial e propõe uma cultura brasileira que devora o estrangeiro e o reinventa."
+}

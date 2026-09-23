@@ -11,7 +11,7 @@ Hub da pasta de material do vestibular. A ficha de estado da área é `Areas/Ves
 | `simulados/` | Resultado dos simulados de domingo, por matéria |
 | `discursivas/` | Dissertativas corrigidas pelo `/discursiva`: a ficha (`.json`) e o PDF corrigido de cada correção, mais o gerador `gerar_pdf.py` |
 | `redacoes/` | Redações escritas e corrigidas (cursinho, Tarsila e `/redacao`) |
-| `banco-erros/` | **Todo erro cometido**, com a causa. É o que alimenta o `/revisar` |
+| `banco-erros/` | **Todo erro cometido**, com a causa. É o que alimenta o `/revisar`. Já tem: [[artes-e-questoes-contemporaneas]] |
 | `oral/` | Trajetória biográfica, temas treinados e registro dos treinos de `/oral` |
 
 ## Como ler o edital sem estourar o contexto
