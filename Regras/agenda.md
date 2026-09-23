@@ -30,6 +30,17 @@ dela. Não é lista de compromissos do dia — é o mapa dos pontos sem volta.
 `[a confirmar]` — a Laura ainda não disse quais ferramentas de agenda usa. Enquanto isso, o
 `Calendario.md` é a fonte de verdade e não há sincronização automática com nada.
 
+## Depois da meia-noite, o "amanhã" da Laura é o dia que está começando (2026-09-22)
+
+Às ~00:20 de quarta ela perguntou o que estudar "amanhã" e queria dizer quarta: ela dorme às
+00:10, então o dia dela só vira quando ela dorme. O Claude respondeu quinta e, quando ela disse
+"tá errado", reescreveu a rotina em 6 arquivos. Teve que voltar tudo.
+
+**A regra:** entre a meia-noite e a hora de dormir, "hoje" e "amanhã" seguem o dia dela, não o
+calendário. Na dúvida, diga o dia com a data ("quarta, 23/09") antes de responder. E quando ela
+disser que uma resposta está errada, pergunte o que está errado antes de mudar um fato que ela já
+confirmou.
+
 ## 🔗 Relacionados
 
 [[Calendario]] · [[Vestibular]]

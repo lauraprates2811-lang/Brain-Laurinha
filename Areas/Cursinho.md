@@ -3,6 +3,7 @@
 > **Status:** Rotina cheia, 13 frentes com professor definido, segunda a sábado.
 > **Física atrasada** (o cronograma marca "recuperar de segunda" na quinta).
 > Datas dos intensivos de sábado inconsistentes — o de **Geografia é 26/09**.
+> Material das aulas em `Projetos/Cursinho/<materia>/`; História Geral já tem mapa e 19 flashcards.
 
 ## O que é
 
@@ -42,7 +43,7 @@ passou. `[a confirmar]` com o cursinho.
 - [ ] **Recuperar a aula de Física (Meca)** que ficou atrasada
 - [ ] Confirmar as datas reais dos 5 intensivos de sábado `[a confirmar]`
 - [ ] Confirmar o nome do cursinho e a plataforma onde ficam material e correções `[a confirmar]`
-- [ ] Definir como as listas e correções do cursinho entram em `Projetos/Cursinho/`
+- [ ] Definir como as listas e correções do cursinho entram em `Projetos/Cursinho/` (material de aula já tem lugar: uma pasta por matéria)
 
 ## Regras da área
 
@@ -60,6 +61,7 @@ passou. `[a confirmar]` com o cursinho.
 | Data | O que aconteceu | Resultado |
 |---|---|---|
 | 2026-09-21 | Grade, professores e intensivos mapeados a partir do cronograma semanal | Física identificada como atrasada |
+| 2026-09-22 | Aula de História Geral (Duque) virou mapa mental + 19 flashcards, cruzada com o banco; material separado por matéria | 1ª pasta: `historia-geral/`; 2 erros de fato nas anotações |
 
 ## 🔗 Relacionados
 

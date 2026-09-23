@@ -76,6 +76,17 @@ em CSV).
 
 ---
 
+## Material do cursinho fica numa pasta por matéria (2026-09-22)
+
+A Laura pediu, ao guardar o mapa e os flashcards da aula de História Geral, que o material do
+cursinho fique separado por matéria.
+
+**A regra:** `Projetos/Cursinho/<materia>/`, com o nome da grade em minúsculas e hífen
+(`historia-geral/`, `lingua-portuguesa/`, `matematica/`). Cada aula é um arquivo com o nome do
+assunto. A pasta só nasce quando chega o primeiro material da matéria.
+
+---
+
 ## 🔗 Relacionados
 
 [[Brain]]
