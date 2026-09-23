@@ -1,9 +1,8 @@
 # Cursinho
 
-> **Status:** Rotina cheia, 13 frentes com professor definido, segunda a sábado.
-> **Física atrasada** (o cronograma marca "recuperar de segunda" na quinta).
-> Datas dos intensivos de sábado inconsistentes — o de **Geografia é 26/09**.
-> Material das aulas em `Projetos/Cursinho/<materia>/`; História Geral já tem mapa e 19 flashcards.
+> **Status:** Rotina cheia, 13 frentes, seg a sáb. **Física atrasada**; intensivos com datas inconsistentes (o de **Geografia é 26/09**).
+> Material em `Projetos/Cursinho/<materia>/`: 13 pastas, abertas pelo atalho `~/Downloads/Materias`.
+> História Geral já tem mapa mental e 19 flashcards (`.md` + `.html`).
 
 ## O que é
 
@@ -62,6 +61,7 @@ passou. `[a confirmar]` com o cursinho.
 |---|---|---|
 | 2026-09-21 | Grade, professores e intensivos mapeados a partir do cronograma semanal | Física identificada como atrasada |
 | 2026-09-22 | Aula de História Geral (Duque) virou mapa mental + 19 flashcards, cruzada com o banco; material separado por matéria | 1ª pasta: `historia-geral/`; 2 erros de fato nas anotações |
+| 2026-09-23 | As 13 pastas por matéria criadas, com atalho em Downloads; flashcards passam a sair também em `.html` | Material de qualquer matéria tem lugar fixo |
 
 ## 🔗 Relacionados
 

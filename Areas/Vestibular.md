@@ -1,8 +1,8 @@
 # Vestibular
 
 > **Status:** Inscrita e confirmada no Insper (11/10), na FGV (18–19/10) e no ENEM 2026.
-> FGV é prioridade absoluta. Faltam **26 dias** para a 1ª fase. A 2ª fase é **Exame Oral** — peso 2,
-> elimina, e só pode ser feito uma vez. O banco das provas 2021.1–2026.1 (423 itens) já diz o que mais cai.
+> FGV é prioridade absoluta. Faltam **25 dias** para a 1ª fase. A 2ª fase é **Exame Oral** — peso 2,
+> elimina, e só pode ser feito uma vez. Banco 2021.1–2026.1 (423 itens) pronto; tempo por dissertativa definido.
 
 ## O que é
 
@@ -68,7 +68,8 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 ## Pendências
 
-- [ ] Montar o plano dos 26 dias até a FGV (`/plano`), usando os números do `/banca`
+- [ ] Montar o plano até a FGV (`/plano`), usando os números do `/banca`
+- [ ] Cronometrar as dissertativas nos simulados de 27/09 e 04/10 e ajustar o tempo-alvo
 - [ ] Começar o treino do Exame Oral **agora**, não em novembro (`/oral`)
 - [ ] Destrinchar a trajetória biográfica em `Projetos/Vestibular/oral/` — é avaliada literalmente
 - [ ] Confirmar datas do ENEM 2026 no site do INEP `[a confirmar]`
@@ -94,6 +95,7 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 |---|---|---|
 | 2026-09-21 | Datas, vagas e regras extraídas do edital oficial da FGV; descoberto que o Vestibular Regular também tem Exame Oral | Frente mapeada · oral virou prioridade |
 | 2026-09-22 | 6 provas antigas (2021.1–2026.1) viraram banco de 423 questões classificadas, com gabarito | `/banca` e `/discursiva` no ar |
+| 2026-09-23 | Tempo por dissertativa calculado pelo edital e pelo formato das 4 últimas provas | 12 min Humanas · 10 Português · 18 Artes · redação 1h40 |
 
 ## 🔗 Relacionados
 

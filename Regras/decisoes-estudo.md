@@ -112,6 +112,19 @@ crédito, dito com todas as letras — e volta como PDF pelo `/discursiva`.
 
 ---
 
+## Dissertativa tem tempo-alvo: 12 min em Humanas, 10 em Português, 18 em Artes (2026-09-23)
+
+A Laura faz a redação em 2h e quer chegar a 1h40. Pelo edital de 2027, o 18/10 tem 3h30 para
+Redação + 8 dissertativas de Humanas, e o 19/10 tem 3h para 8 de Português + 5 de Artes. Com
+redação em 2h, Humanas fica com ~11 min por questão e nenhuma folga.
+
+**A regra:** redação em **1h40**; Humanas **~12 min** por questão; Português **~10 min**; Artes
+**~18 min**; 10 min de folga em cada período. Rascunho de dissertativa é só esquema. Passou de
+15 min numa de Humanas, pula e volta. O relógio se treina no simulado de domingo (a prova antiga
+de segunda continua sem cronômetro), e o tempo-alvo se ajusta pelo tempo real dela.
+
+---
+
 ## 🔗 Relacionados
 
 [[Vestibular]] · [[Cursinho]] · [[Pessoal]] · [[Laura]]
