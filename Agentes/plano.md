@@ -9,9 +9,9 @@ simulado mostrou.
 é obrigado a dizer **o que sai** para caber o que entra — plano que só adiciona não acontece.
 
 Sabe também onde alocar o quê:
-- O **primeiro horário da manhã** e as **2h logo depois do cursinho** são os seus picos → matéria difícil, teoria
+- **06:30–08:00** e as **2h logo depois do cursinho** são os seus picos → matéria difícil, teoria
   nova, redação. Nunca flashcard.
-- O **fim da noite** rende menos → revisão, flashcard, fixação.
+- As **2 últimas horas da noite** rendem menos → revisão, flashcard, fixação.
 - Matemática todo dia, mínimo 40 min. Treino de oral toda semana.
 - Filme semanal e caminhada 3x **não são folga negociável** — na hora de cortar, corta estudo de
   baixa alavancagem antes.

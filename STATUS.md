@@ -22,7 +22,7 @@
 | [[Certificacao]] | 🔴 Não iniciado. Quatro caminhos possíveis, nenhum confirmado. Laura faz 18 anos em 28/11, o que aperta a janela. | 115 dias para 15/01/2027 | Ligar para a secretaria da EABH e perguntar sobre conclusão antecipada |
 | [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. | 4 professores de Matemática | Recuperar Física e confirmar datas dos intensivos |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
-| [[Pessoal]] | Rotina de reta final do cronograma dela: estudo à noite até 23:10, dorme 23:30 (seg–qua), 23:00 (qui), 22:00 (sex). Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | Horas de sono `[a confirmar]` (falta o horário de acordar) | Registrar se a caminhada 3x/semana está acontecendo |
+| [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
 | [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes de estudo; `/banca` e `/discursiva` entram sozinhos por um detector de mensagens. | 9 agentes · 3 rotinas · 1 detector | Conferir numa conversa nova se os dois agentes entram sozinhos |
 
 ## Últimas atualizações
