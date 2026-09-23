@@ -117,14 +117,14 @@ Você não precisa fazer nada disso à mão.
 
 | Hora | O que você faz | O que você digita |
 |---|---|---|
-| 06:30 | Estudo do pico da manhã | *"vou fazer 1h30 de Matemática"* → `/questoes matematica` |
-| 08:00 | Escola | — |
-| 09:26 | Free period, 50 min de Artes & QC | `/explica arte contemporânea brasileira` |
+| 08:15 | Escola | — |
+| 09:26 | Free period, 20 min de questões de Matemática | `/questoes matematica` |
+| 12:38 | Almoço, 50 min de questões de Língua Portuguesa | `/questoes portugues` |
 | 14:30 | Cursinho (Literatura, História Geral, Português) | — |
-| 20:00 | Bloco 1 — pico depois do cursinho | `/plano hoje`, depois `/questoes literatura` |
-| 22:00 | `/save` | `/save` |
-| 22:10 | Bloco 2 — rende menos, então revisão | `/revisar` |
-| 00:05 | Fecha o dia | `/sono` |
+| 20:40 | Literatura (teoria + questões) — pico depois do cursinho | `/plano hoje`, depois `/questoes literatura` |
+| fim do bloco | `/save` | `/save` |
+| depois | Português (teoria + questões) — rende menos | `/revisar` |
+| 23:30 | Fecha o dia | `/sono` |
 
 ---
 

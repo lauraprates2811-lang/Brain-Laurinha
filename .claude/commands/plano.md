@@ -26,13 +26,15 @@ explicitamente **o que sai** para caber o que entra.
 | Todo dia | Matemática, mínimo 40 min |
 | Semana | 1 filme · caminhada 3x |
 
-Os blocos livres que sobram: **06:30–08:00**, os vãos da escola, e **20:00–00:10**.
+A rotina de verdade é o cronograma em tabela dela (`Projetos/Cursinho/cronograma-semanal-original.docx`):
+os vãos da escola e **20:40–23:10** já têm matéria marcada. Dorme **23:30** (seg–qua), **23:00** (qui)
+e **22:00** (sex). Não existe bloco de estudo antes da escola.
 
 ## Onde alocar o quê
 
-- **06:30–08:00** e as **2h logo após o cursinho** são os picos dela. Aqui vai o que é difícil:
+- O **primeiro horário da manhã** e as **2h logo após o cursinho** são os picos dela. Aqui vai o que é difícil:
   Matemática, teoria nova, redação. Não gaste pico com flashcard.
-- As **2 últimas horas da noite** rendem menos — ela mesma sabe. Aqui vai revisão, flashcard,
+- O **fim da noite** rende menos — ela mesma sabe. Aqui vai revisão, flashcard,
   questão de fixação.
 - **Treino de oral toda semana**, ancorado no sábado 07:00. Não é opcional: peso 2, elimina,
   e a convocação só chega 2 dias antes.

@@ -34,8 +34,11 @@ Não está cursando nenhum AP atualmente.
 ## Como ela funciona
 
 **Picos de rendimento:**
-- Primeiro horário da manhã (06:30–08:00).
-- As 2 horas logo depois do cursinho — embora estude 4.
+- Primeiro horário da manhã.
+- As 2 horas logo depois do cursinho (a partir das 20:40).
+
+**Rotina de verdade:** o cronograma em tabela, `Projetos/Cursinho/cronograma-semanal-original.docx`
+(confirmado por ela em 23/09).
 
 **Método de estudo dela** (fechado, funciona, está em `Regras/decisoes-estudo.md`):
 1. 10 min — ler o resumo/mapa mental da matéria e fazer questões simples com IA
