@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-09-23",
-  "proximo_id": 27,
+  "proximo_id": 32,
   "tarefas": [
     {
       "id": 1,
@@ -238,6 +238,51 @@
       "area": "cursinho",
       "prazo": "2026-09-30",
       "prioridade": "baixa",
+      "status": "aberta",
+      "criado": "2026-09-23"
+    },
+    {
+      "id": 27,
+      "titulo": "Estudar tudo o que foi dado na aula de Matemática do Serra (23/09)",
+      "area": "cursinho",
+      "prazo": "2026-09-23",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-23"
+    },
+    {
+      "id": 28,
+      "titulo": "Estudar a aula de Língua Portuguesa de ontem (Vidal, 22/09)",
+      "area": "cursinho",
+      "prazo": "2026-09-23",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-23"
+    },
+    {
+      "id": 29,
+      "titulo": "Questões discursivas: mínimo 2, meta 3 — foco em gramática e estrutura",
+      "area": "vestibular",
+      "prazo": "2026-09-23",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-23"
+    },
+    {
+      "id": 30,
+      "titulo": "Revisar a teoria de Matemática do Éder (só teoria; as questões ficam para amanhã cedo)",
+      "area": "cursinho",
+      "prazo": "2026-09-23",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-23"
+    },
+    {
+      "id": 31,
+      "titulo": "Fazer 3 a 4 questões de Matemática do Éder sozinha, sem IA e sem calculadora (treino de prova) — 06h às 08h, antes da escola",
+      "area": "cursinho",
+      "prazo": "2026-09-24",
+      "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-23"
     }
