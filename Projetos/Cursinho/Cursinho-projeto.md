@@ -5,6 +5,7 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 ## O que tem aqui
 
 - `cronograma-semanal-original.docx` — o cronograma que a Laura montou, como veio dela
+- `historia-geral-crise-29-e-nazifascismo.md` — mapa mental e 19 flashcards da aula do Duque (22/09)
 - Listas, apostilas e correções do cursinho `[a confirmar]` como chegam e por qual plataforma
 
 ## Regra
