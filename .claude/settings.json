@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/banca-gatilho.py\"",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/agentes-gatilho.py\"",
             "timeout": 10
           }
         ]

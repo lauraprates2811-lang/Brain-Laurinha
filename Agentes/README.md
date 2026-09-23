@@ -14,6 +14,7 @@ fichas antes de agir, e grava o resultado no lugar certo sozinho.
 | [[simulado]] | Registra o simulado por matéria e mostra a tendência | domingo |
 | [[plano]] | Replaneja a semana dizendo o que entra **e o que sai** | quando desandar |
 | [[banca]] | Diz com números o que mais cai nas provas antigas e o que estudar | antes de montar o plano |
+| [[discursiva]] | Corrige sua dissertativa pela grade da FGV e devolve um PDF corrigido | os 40 min de questões |
 
 Todos terminam sugerindo a linha do `/save`.
 

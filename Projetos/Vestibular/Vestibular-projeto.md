@@ -9,6 +9,7 @@ Hub da pasta de material do vestibular. A ficha de estado da área é `Areas/Ves
 | `editais/` | Edital Unificado FGV 1º/2027 (PDF + texto extraído para `grep`) e toda resposta oficial |
 | `provas-antigas/` | As provas antigas da FGV (PDFs por edição, 2021.1–2026.1) e o `banco/` com todas as questões classificadas — consultado pelo `/banca` |
 | `simulados/` | Resultado dos simulados de domingo, por matéria |
+| `discursivas/` | Dissertativas corrigidas pelo `/discursiva`: a ficha (`.json`) e o PDF corrigido de cada correção, mais o gerador `gerar_pdf.py` |
 | `redacoes/` | Redações escritas e corrigidas (cursinho, Tarsila e `/redacao`) |
 | `banco-erros/` | **Todo erro cometido**, com a causa. É o que alimenta o `/revisar` |
 | `oral/` | Trajetória biográfica, temas treinados e registro dos treinos de `/oral` |
