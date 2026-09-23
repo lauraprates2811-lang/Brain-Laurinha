@@ -1,8 +1,8 @@
 # Brain
 
-> **Status:** Instalado no MacBook, com backup no GitHub e as três rotinas no ar. Ganhou o banco de
-> provas antigas e dois agentes que entram sozinhos (`/banca` e `/discursiva`). Falta conferir o
-> acionamento automático numa conversa nova.
+> **Status:** No MacBook, com backup no GitHub e as três rotinas no ar. `/banca` e `/discursiva` entram
+> sozinhos, mas o detector dispara em falso. Downloads limpo (o Brain e 2 atalhos); provas e apostilas
+> agora são cópia única, **fora do backup**.
 
 ## O que é
 
@@ -38,9 +38,10 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 - [x] Abrir a pasta no Obsidian como cofre e conferir o grafo
 - [ ] Preencher os blocos da entrevista que ficaram de fora (projetos pessoais, ferramentas)
 - [ ] Abrir a pasta no Obsidian por **Open folder as vault**, para ele não criar cofre dentro
-- [ ] Conferir numa conversa nova se o `/banca` e o `/discursiva` entram sozinhos
+- [ ] Conferir se o `/discursiva` entra sozinho com uma questão e a resposta (o `/banca` já entra)
+- [ ] Ajustar os detectores do `/banca` e do `/discursiva`, que disparam em mensagem fora do assunto
 - [ ] Dar ok (ou mudar) a pasta nova `Projetos/Vestibular/discursivas/`
-- [ ] Decidir se os PDFs das provas antigas (~130 MB) entram no backup — hoje ficam fora
+- [ ] **Decidir o backup** das provas (~130 MB) e das apostilas do cursinho: desde 23/09 são a única cópia
 
 ## Regras da área
 
@@ -58,6 +59,7 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 | 2026-09-21 | Brain criado do zero a partir da entrevista e do edital da FGV | Estrutura no ar |
 | 2026-09-22 | Instalação no MacBook da Laura: git, rotinas, CLI e backup no GitHub | Brain operando sozinho |
 | 2026-09-22 | Agentes `/banca` e `/discursiva`, detector de mensagens e gerador de PDF de correção | 9 agentes · 2 entram sozinhos |
+| 2026-09-23 | Faxina dos Downloads: 103 itens na Lixeira, provas e material organizados, atalhos `Materias` e `Provas-FGV` | Downloads com 3 itens · backup virou risco |
 
 ## 🔗 Relacionados
 

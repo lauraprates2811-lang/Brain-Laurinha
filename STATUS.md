@@ -18,15 +18,20 @@
 
 | Área | Status | Número que importa | Próximo passo |
 |---|---|---|---|
-| [[Vestibular]] | Inscrita em Insper, FGV e ENEM 2026. Insper em 11/10, FGV em 18–19/10, SAT aberto até 18/12. Banco com todas as questões de 2021.1–2026.1 pronto para guiar o estudo. Tempo por dissertativa definido. | 25 dias para a FGV · 105 vagas · 423 questões no banco | Montar o plano até a FGV com `/plano`, usando os números do `/banca` |
+| [[Vestibular]] | Inscrita em Insper, FGV e ENEM 2026. Insper em 11/10, FGV em 18–19/10, SAT aberto até 18/12. Banco com todas as questões de 2021.1–2026.1 pronto para guiar o estudo. Tempo por dissertativa definido. Provas numa pasta só (atalho `Provas-FGV`). | 25 dias para a FGV · 105 vagas · 423 questões no banco | Montar o plano até a FGV com `/plano`, usando os números do `/banca` |
 | [[Certificacao]] | 🔴 Não iniciado. Quatro caminhos possíveis, nenhum confirmado. Laura faz 18 anos em 28/11, o que aperta a janela. | 115 dias para 15/01/2027 | Ligar para a secretaria da EABH e perguntar sobre conclusão antecipada |
-| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. 13 pastas por matéria, abertas pelo atalho `Downloads/Materias`; História Geral já com mapa e flashcards. | 4 professores de Matemática · 19 flashcards de HG | Recuperar Física e confirmar datas dos intensivos |
+| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. 13 pastas por matéria, abertas pelo atalho `Downloads/Materias`, já com o material que estava solto em Downloads. | 4 professores de Matemática · 19 flashcards de HG | Recuperar Física e confirmar datas dos intensivos |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
-| [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes de estudo; `/banca` e `/discursiva` entram sozinhos por um detector de mensagens. | 9 agentes · 3 rotinas · 1 detector | Conferir numa conversa nova se os dois agentes entram sozinhos |
+| [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes; o detector aciona `/banca` e `/discursiva`, mas dispara em falso. Downloads limpo; provas e apostilas agora são cópia única, **fora do backup**. | 9 agentes · 3 rotinas · ~130 MB sem backup | Decidir o backup das provas e das apostilas |
 
 ## Últimas atualizações
 
+- **2026-09-23** — Faxina dos Downloads: 103 itens na Lixeira; ficaram o Brain e os atalhos `Materias` e
+  `Provas-FGV`. Provas e apostilas agora são cópia única, fora do backup. → [[2026-09-23-brain]]
+- **2026-09-23** — 28 arquivos de estudo soltos em Downloads foram para as pastas das matérias. → [[2026-09-23-cursinho]]
+- **2026-09-23** — Crise de 29 nunca caiu na FGV; modernismo cai pela prova de Artes. Duas dissertativas
+  reais separadas (Semana de 22 e Hobsbawm). → [[2026-09-23-vestibular]]
 - **2026-09-23** — Tempo por dissertativa definido: 12 min em Humanas, 10 em Português, 18 em Artes,
   com a redação em 1h40. → [[2026-09-23-vestibular]]
 - **2026-09-23** — 13 pastas por matéria no cursinho, abertas pelo atalho `Downloads/Materias`;

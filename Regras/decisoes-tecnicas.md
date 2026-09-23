@@ -92,6 +92,19 @@ cursinho ficam fora do git, como os das provas.
 
 ---
 
+## Faxina: nada sai sem conferir que existe cópia, e tudo vai para a Lixeira (2026-09-23)
+
+A Laura pediu para apagar tudo dos Downloads "menos o que o Claude criou". A maior parte dos 135
+itens era material dela (apostilas, edital, fotos), e os zips eram os únicos originais das provas
+fora do Brain.
+
+**A regra:** antes de apagar em massa, listar e perguntar por categoria. Cópia só sai depois de
+conferida pelo **conteúdo** (hash), não pelo nome. Nada é apagado direto: vai para a Lixeira, com
+o `trash` do macOS. Se a limpeza deixa um arquivo como cópia única, isso vira pendência de backup
+na hora.
+
+---
+
 ## 🔗 Relacionados
 
 [[Brain]]
