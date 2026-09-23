@@ -88,7 +88,8 @@ quando tiver flashcards, também em `.html` (abre no navegador, com os cards vir
 `~/Downloads/Materias` aponta para `Projetos/Cursinho/`: é por ali que ela abre no Finder. Nada de
 cópia fora do Brain. O mesmo vale para as provas antigas: pasta única em
 `Projetos/Vestibular/provas-antigas/`, com atalho `~/Downloads/Provas-FGV` (2026-09-23). PDFs do
-cursinho ficam fora do git, como os das provas.
+cursinho ficam fora do git, como os das provas. Cada matéria tem a subpasta `questoes-discursivas/`,
+com as páginas de prova e as correções do `/discursiva` (2026-09-23).
 
 ---
 

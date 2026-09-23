@@ -9,7 +9,7 @@ Hub da pasta de material do vestibular. A ficha de estado da área é `Areas/Ves
 | `editais/` | Edital Unificado FGV 1º/2027 (PDF + texto extraído para `grep`), o conteúdo programático das provas (`conteudo-programatico-fgv-2027.pdf`) e toda resposta oficial |
 | `provas-antigas/` | **A pasta única das provas antigas da FGV** (PDFs por edição, 2021.1–2026.1) e o `banco/` com todas as questões classificadas — consultado pelo `/banca`. A Laura abre pelo atalho `~/Downloads/Provas-FGV`. É a única cópia: os zips de Downloads foram para a Lixeira em 23/09. Em `2026.1/` há 3 arquivos de outro curso (Matemática discursiva e `RMH-T01`), fora do banco |
 | `simulados/` | Resultado dos simulados de domingo, por matéria |
-| `discursivas/` | Dissertativas corrigidas pelo `/discursiva`: a ficha (`.json`) e o PDF corrigido de cada correção, mais o gerador `gerar_pdf.py` |
+| `discursivas/` | As fichas (`.json`) das dissertativas corrigidas pelo `/discursiva` e o gerador `gerar_pdf.py`. O PDF corrigido vai para a matéria: `Projetos/Cursinho/<materia>/questoes-discursivas/` |
 | `redacoes/` | Redações escritas e corrigidas (cursinho, Tarsila e `/redacao`) |
 | `banco-erros/` | **Todo erro cometido**, com a causa. É o que alimenta o `/revisar`. Já tem: [[artes-e-questoes-contemporaneas]] |
 | `oral/` | Trajetória biográfica, temas treinados e registro dos treinos de `/oral` |

@@ -40,7 +40,7 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 - [ ] Abrir a pasta no Obsidian por **Open folder as vault**, para ele não criar cofre dentro
 - [ ] Conferir se o `/discursiva` entra sozinho com uma questão e a resposta (o `/banca` já entra)
 - [ ] Ajustar os detectores do `/banca` e do `/discursiva`, que disparam em mensagem fora do assunto
-- [ ] Dar ok (ou mudar) a pasta nova `Projetos/Vestibular/discursivas/`
+- [x] Dar ok (ou mudar) a pasta nova `Projetos/Vestibular/discursivas/` — fica só com as fichas; os PDFs vão para `questoes-discursivas/` de cada matéria (23/09)
 - [ ] **Decidir o backup** das provas (~130 MB) e das apostilas do cursinho: desde 23/09 são a única cópia
 
 ## Regras da área

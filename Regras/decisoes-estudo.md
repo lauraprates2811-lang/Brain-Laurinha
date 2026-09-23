@@ -108,7 +108,8 @@ com desvio · 50% parcial sem desvio · 25% parcial com desvio.
 
 **A regra:** toda correção de dissertativa usa essa grade, corrige a língua com rigor (um desvio
 derruba um nível), trata o gabarito como guia — resposta certa e diferente do gabarito ganha o
-crédito, dito com todas as letras — e volta como PDF pelo `/discursiva`.
+crédito, dito com todas as letras — e volta como PDF pelo `/discursiva`. Desde 2026-09-23 o PDF
+fica na pasta da matéria, em `questoes-discursivas/` (Downloads › Materias › <matéria>).
 
 ---
 

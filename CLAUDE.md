@@ -132,7 +132,8 @@ banco (`Projetos/Vestibular/provas-antigas/banco/`), nunca de memória.
 
 **O `/discursiva` também é acionado sozinho.** Questão dissertativa enviada com a resposta dela
 (e o gabarito) é corrigida pela grade da FGV Direito SP e **sempre** volta como PDF corrigido,
-gravado em `Projetos/Vestibular/discursivas/`. Redação continua no `/redacao`.
+gravado na pasta da matéria, em `Projetos/Cursinho/<materia>/questoes-discursivas/` (a ficha `.json`
+fica em `Projetos/Vestibular/discursivas/`). Redação continua no `/redacao`.
 
 Um hook (`.claude/hooks/agentes-gatilho.py`) lembra desses dois agentes a cada mensagem que casa
 com o assunto deles.

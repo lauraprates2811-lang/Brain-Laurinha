@@ -13,10 +13,9 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 - `historia-geral/`
   - [[crise-de-1929-e-nazifascismo]] — mapa mental e 19 flashcards da aula de 22/09 (também em
     `.html`, para abrir no navegador)
-  - `fgv-2023.1-dis-ch4-hobsbawm-barbarie.pdf` — discursiva real da FGV (barbárie anti-iluminista)
+  - `questoes-discursivas/fgv-2023.1-dis-ch4-hobsbawm-barbarie.pdf` — discursiva real da FGV (barbárie anti-iluminista)
   - `caderno-2-historia-fgv.pdf` · `aulas-01-02-grecia-e-roma.pdf` · `aula-02-colonizacao-inglesa-e-independencia-dos-eua.pdf`
 - `literatura/`
-  - `fgv-2022.1-dis-ar11-ar12-semana-de-22-antropofagia.pdf` — discursivas reais da FGV (Semana de 22 e Manifesto Antropófago)
   - `caderno-1-literatura-fgv.pdf` · `apostila-movimentos-literarios.pdf` · `exercicios-movimentos-literarios-fgv.pdf` · `apostila-bras-cubas-e-parnasianismo.pdf`
 - `historia-do-brasil/` — `aula-10-crise-da-republica-oligarquica-e-era-vargas-1.pdf`
 - `atualidades/` — resumos 06 (Oriente Médio), 07 (Bálcãs) e 08 (Venezuela e Cuba), do Alex
@@ -26,6 +25,8 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 - `redacao/` — `aula-05-como-usar-repertorio.pdf`
 - `artes-e-questoes-contemporaneas/` — 3 versões diferentes da apostila de Artes (32, 57 e 66 páginas),
   caderno de exercícios e o calendário de obras do curso de Artes 2027
+  - `questoes-discursivas/` — perguntas 11 e 12 de 2022.1 (Semana de 22 e Manifesto Antropófago) e a
+    correção da pergunta 11 (`2026-09-23-artes-manifesto-antropofago.pdf`)
 - Listas, apostilas e correções do cursinho `[a confirmar]` como chegam e por qual plataforma
 
 ## Regra
@@ -39,6 +40,10 @@ Material com flashcards sai em dois arquivos com o mesmo nome: `.md` (Obsidian) 
 navegador, cards que viram). A Laura chega aqui pelo atalho `~/Downloads/Materias`, que aponta
 para esta pasta. Nada de cópia fora do Brain. Os PDFs daqui ficam fora do git, como os das provas
 (backup ainda em aberto).
+
+Toda matéria tem a subpasta `questoes-discursivas/` (decisão da Laura, 2026-09-23): ali ficam as
+páginas de prova com dissertativas e os PDFs corrigidos pelo `/discursiva`. A ficha `.json` de cada
+correção fica em `Projetos/Vestibular/discursivas/`.
 
 Erro cometido em lista do cursinho **não fica aqui** —
 vai para `Projetos/Vestibular/banco-erros/`, junto com todos os outros.

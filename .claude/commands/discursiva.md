@@ -95,12 +95,27 @@ Faça a menor correção possível — `remuneradas{+,|1+} a jornada` — e não
 
 Várias questões → a ficha é uma **lista** de fichas, num arquivo só.
 
+**O PDF vai para a pasta da matéria**, na subpasta `questoes-discursivas/` (decisão da Laura,
+2026-09-23). A ficha `.json` continua em `Projetos/Vestibular/discursivas/`: ela entra no backup e
+refaz o PDF se ele se perder.
+
+| Matéria da questão | Pasta do PDF (`Projetos/Cursinho/…`) |
+|---|---|
+| Língua Portuguesa | `lingua-portuguesa/questoes-discursivas/` |
+| Artes e Questões Contemporâneas | `artes-e-questoes-contemporaneas/questoes-discursivas/` |
+| História | `historia-geral/…` ou `historia-do-brasil/…`, pelo assunto |
+| Geografia · Atualidades · Matemática | `geografia/…` · `atualidades/…` · `matematica/…` |
+
+Matéria sem pasta (ex.: Inglês): pergunte antes de criar. Se a página da prova já estiver separada
+em outra pasta, leve-a junto para a mesma `questoes-discursivas/`.
+
 Gere e confira:
 ```
-python3 Projetos/Vestibular/discursivas/gerar_pdf.py Projetos/Vestibular/discursivas/<ficha>.json
+python3 Projetos/Vestibular/discursivas/gerar_pdf.py Projetos/Vestibular/discursivas/<ficha>.json Projetos/Cursinho/<materia>/questoes-discursivas/<ficha>.pdf
 ```
 Se aparecer ❌ ou ⚠️, conserte a ficha e gere de novo. Depois **entregue o PDF para a Laura**
-(envie o arquivo na conversa).
+(envie o arquivo na conversa) e diga onde ele ficou: **Downloads › Materias › <matéria> ›
+questoes-discursivas**.
 
 ## 4. Registrar o erro
 

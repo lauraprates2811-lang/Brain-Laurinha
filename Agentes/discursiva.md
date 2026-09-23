@@ -17,7 +17,9 @@ Não precisa digitar o comando: mande o enunciado, a resposta indicada e a sua r
 foto da folha) e ele entra sozinho. Várias questões de uma vez viram um PDF só, com resumo das notas.
 
 ## Onde grava
-`Projetos/Vestibular/discursivas/AAAA-MM-DD-<materia>-<tema>.pdf` (e a ficha `.json` ao lado).
+O PDF corrigido vai para a pasta da matéria: **Downloads › Materias › <matéria> › questoes-discursivas**
+(`Projetos/Cursinho/<materia>/questoes-discursivas/`). A ficha `.json` fica em
+`Projetos/Vestibular/discursivas/`, com backup, e refaz o PDF se preciso.
 Os erros vão para `Projetos/Vestibular/banco-erros/<materia>.md`.
 
 ## 🔗 Relacionados
