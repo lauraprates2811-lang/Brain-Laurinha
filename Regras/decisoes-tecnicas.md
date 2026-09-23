@@ -76,14 +76,17 @@ em CSV).
 
 ---
 
-## Material do cursinho fica numa pasta por matéria (2026-09-22)
+## Material de matéria fica numa pasta por matéria, com atalho em Downloads (2026-09-22, ampliada em 2026-09-23)
 
 A Laura pediu, ao guardar o mapa e os flashcards da aula de História Geral, que o material do
-cursinho fique separado por matéria.
+cursinho fique separado por matéria. No dia seguinte pediu que **todo** material que o Claude criar
+(flashcards, apostila, mapa) vá para a pasta da matéria, e que ela ache essas pastas pelos Downloads.
 
-**A regra:** `Projetos/Cursinho/<materia>/`, com o nome da grade em minúsculas e hífen
-(`historia-geral/`, `lingua-portuguesa/`, `matematica/`). Cada aula é um arquivo com o nome do
-assunto. A pasta só nasce quando chega o primeiro material da matéria.
+**A regra:** `Projetos/Cursinho/<materia>/`, uma pasta para cada uma das 13 matérias da grade, em
+minúsculas e com hífen. Cada material é um arquivo com o nome do assunto, em `.md` (Obsidian) e,
+quando tiver flashcards, também em `.html` (abre no navegador, com os cards virando). O atalho
+`~/Downloads/Materias` aponta para `Projetos/Cursinho/`: é por ali que ela abre no Finder. Nada de
+cópia fora do Brain.
 
 ---
 

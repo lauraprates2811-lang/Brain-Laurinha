@@ -85,6 +85,9 @@ Para o wikilink não ficar ambíguo, o hub da pasta se chama `<Nome>-projeto.md`
 
 Nada solto na raiz além de: `CLAUDE.md`, `STATUS.md`, `STATUS-historico.md`, `Calendario.md`, `README.md`.
 Material de estudo, PDF, edital, prova antiga → `Projetos/<X>/`.
+Material que o Claude cria para uma matéria (flashcards, mapa mental, apostila, resumo) →
+`Projetos/Cursinho/<materia>/`, em `.md` e, se tiver flashcards, também em `.html`. A Laura abre
+essas pastas pelo atalho `~/Downloads/Materias`. Ver `Regras/decisoes-tecnicas.md`.
 
 ## Não inventar
 
