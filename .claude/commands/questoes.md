@@ -20,7 +20,9 @@ Ex.: `/questoes historia-do-brasil Era Vargas 10` · `/questoes matematica` · `
 ## Como gerar
 
 1. Pergunte a matéria e o tema, se não vierem no comando.
-2. Antes de inventar questão, **procure prova antiga** em `Projetos/Vestibular/provas-antigas/`.
+2. Antes de inventar questão, **procure prova antiga**: rode
+   `python3 Projetos/Vestibular/provas-antigas/banco/banca.py tema "<tema>"` (ou `busca`) para achar
+   as questões reais e abra o PDF da edição em `Projetos/Vestibular/provas-antigas/<edição>/`.
    Questão real da banca vale mais que questão criada.
 3. Gere no estilo da FGV: enunciado longo, com texto de apoio, exigindo interpretação —
    não pergunta seca de decoreba.

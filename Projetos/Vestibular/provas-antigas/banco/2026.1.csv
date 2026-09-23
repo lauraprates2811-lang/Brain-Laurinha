@@ -1,0 +1,84 @@
+# Vestibular FGV Unificado 2026.1 — provas de 01 e 02/11/2025. Caderno objetivo T2OBJ-T01 (tipo 1). Gabarito oficial PRELIMINAR.
+edicao;prova;numero;materia;tema;subtema;gabarito;valor;tags;resumo
+2026.1;Objetiva;1;Matemática;Aritmética e problemas;contagem de posições;C;;fila;Posição de uma pessoa contada do início e do fim da fila: total de pessoas
+2026.1;Objetiva;2;Matemática;Sequências (PA e PG);PA em tabela;B;;progressão aritmética;Tabela 3x3 com linhas e colunas em PA: achar o termo X
+2026.1;Objetiva;3;Matemática;Álgebra e equações;problema com equações;A;;razão;Duas amigas trocam dinheiro dobrando a quantia da outra: razão das quantias iniciais
+2026.1;Objetiva;4;Matemática;Geometria plana;razão de áreas de triângulos;D;;triângulo,ponto médio;Razão entre a área de um triângulo interno e a do triângulo ABC
+2026.1;Objetiva;5;Matemática;Geometria espacial;volume de cone e cilindro;D;;semelhança;Água de um cone cheio até 1/3 da altura despejada num cilindro: altura final
+2026.1;Objetiva;6;Matemática;Álgebra e equações;produtos notáveis e médias;C;;média;Médias de X, Y, Z e dos quadrados: média de XY, XZ, YZ
+2026.1;Objetiva;7;Matemática;Lógica e raciocínio;tabela de torneio;B;;raciocínio lógico;Torneio de tênis de mesa com tabela parcial de vitórias: deduzir resultados
+2026.1;Objetiva;8;Matemática;Probabilidade;eventos independentes;A;;playoff;Probabilidade de um time vencer um playoff melhor de 3 com mando de quadra
+2026.1;Objetiva;9;Matemática;Razão, proporção e porcentagem;variação percentual;B;;investimento;Carteira 80/20 com ativo que perde 50%: nova fração do ativo de risco
+2026.1;Objetiva;10;Matemática;Geometria espacial;poliedros e relação de Euler;B;;Euler;Poliedro com 4 arestas por vértice e 2 faces quadradas: número de faces triangulares
+2026.1;Objetiva;11;Matemática;Análise combinatória;arranjos com restrição;E;;senha;Senhas de 4 dígitos distintos que não formam sequência crescente
+2026.1;Objetiva;12;Matemática;Estatística;média ponderada;C;;média;Média geral de avaliações em três plataformas com números diferentes de votos
+2026.1;Objetiva;13;Matemática;Exponencial e logaritmo;logaritmo em decibéis;E;;logaritmo,aplicação;Comparar intensidades sonoras de 120 dB e 60 dB pela fórmula logarítmica
+2026.1;Objetiva;14;Matemática;Conjuntos;diagrama de Venn;D;;conjuntos;Alunos que se preparam para três olimpíadas: contagem com interseções
+2026.1;Objetiva;15;Matemática;Trigonometria;função cosseno (modelagem);A;;função trigonométrica;Preço sazonal modelado por A·cos(2πt/12)+B: preço em março
+2026.1;Objetiva;16;Língua Portuguesa;Semântica e vocabulário;vocabulário em tirinha;E;;tirinha,Frank & Ernest;Palavra que resume a situação da flor na tirinha
+2026.1;Objetiva;17;Língua Portuguesa;Argumentação e estratégias do texto;estratégia argumentativa;C;;texto de opinião,Paulo Silvestre;Estratégia do autor para mostrar que políticos manipulam desejo e medo
+2026.1;Objetiva;18;Língua Portuguesa;Interpretação de texto;posição do autor;A;;texto de opinião;Visão do autor sobre a realidade atual "um tanto distópica"
+2026.1;Objetiva;19;Língua Portuguesa;Variação linguística e registro;aspas marcando linguagem técnica;D;;aspas;Efeito das aspas em "gatilhos mentais"
+2026.1;Objetiva;20;Língua Portuguesa;Sintaxe;sujeito posposto;B;;sujeito;Identificar outro trecho com sujeito posposto ao verbo
+2026.1;Objetiva;21;Língua Portuguesa;Reescrita e voz verbal;voz passiva para ativa;D;;voz verbal;Reescrever "ela pode ser influenciada por emoções" na voz ativa
+2026.1;Objetiva;22;Língua Portuguesa;Literatura;Memórias de um sargento de milícias;A;;Manuel Antônio de Almeida,romance de costumes;Caráter cômico dado à cena de conflito na narrativa
+2026.1;Objetiva;23;Língua Portuguesa;Literatura;Memórias de um sargento de milícias;A;;Manuel Antônio de Almeida,ironia;Recurso do narrador ao se referir ao tempo passado (ironia)
+2026.1;Objetiva;24;Língua Portuguesa;Literatura;Memórias de um sargento de milícias;A;;homens livres pobres,sociedade escravista;Grupo social das personagens: homens livres pobres numa sociedade escravista
+2026.1;Objetiva;25;Língua Portuguesa;Literatura;Memórias de um sargento de milícias;A;;dialética da malandragem,ordem e desordem;Meio social que transita entre a ordem e a desordem
+2026.1;Objetiva;26;Língua Portuguesa;Orações e relações lógicas;oração adverbial temporal;E;;orações subordinadas;Valor semântico da oração "mal caiu" (tempo)
+2026.1;Objetiva;27;Língua Portuguesa;Morfologia e formação de palavras;parassíntese;B;;formação de palavras;Identificar verbo formado por parassíntese
+2026.1;Objetiva;28;Língua Portuguesa;Literatura;O cortiço;A;;Aluísio Azevedo,Naturalismo,zoomorfização;Marca naturalista: animalização dos seres humanos
+2026.1;Objetiva;29;Língua Portuguesa;Literatura;O cortiço;A;;Aluísio Azevedo,Naturalismo,determinismo;Doutrina da época internalizada no texto: determinismo geográfico
+2026.1;Objetiva;30;Língua Portuguesa;Literatura;O cortiço;E;;Aluísio Azevedo,Naturalismo,cientificismo;Efeito do cientificismo naturalista sobre o discurso do narrador
+2026.1;Objetiva;31;Inglês;Informação específica;episódio narrado;B;;Tolstói,literatura;O que aconteceu com Tolstói na estação de trem
+2026.1;Objetiva;32;Inglês;Inferência;ideia sustentada pelo texto;A;;Tolstói,fama;Ideia apoiada pelo texto sobre fama e anonimato
+2026.1;Objetiva;33;Inglês;Compreensão geral;função do parágrafo;D;;Etiópia,economia,The Economist;Função do primeiro parágrafo do artigo sobre a economia da Etiópia
+2026.1;Objetiva;34;Inglês;Informação específica;questão EXCEPT;C;;Etiópia,FMI;Afirmativa NÃO sustentada pelo artigo sobre reformas na Etiópia
+2026.1;Objetiva;35;Inglês;Referência e vocabulário em contexto;referência de frase;E;;Etiópia;A que se refere "But this rosy picture may not be the whole story"
+2026.1;Objetiva;36;Inglês;Inferência;afirmação sustentada;D;;Etiópia,corrupção;Afirmação sustentada pelo artigo sobre a Etiópia
+2026.1;Objetiva;37;Inglês;Compreensão geral;pergunta respondida pelo texto;A;;hipopótamos,natureza;Pergunta que o texto sobre hipopótamos em Katavi responde
+2026.1;Objetiva;38;Inglês;Inferência;sugestão do texto;D;;hipopótamos,crocodilos;O que o artigo sugere sobre hipopótamos e crocodilos na seca
+2026.1;Objetiva;39;Inglês;Inferência;conclusão sobre o fotógrafo;B;;fotografia,Art Wolfe;Conclusão sobre o fotógrafo Art Wolfe e sua foto
+2026.1;Objetiva;40;Inglês;Referência e vocabulário em contexto;referência pronominal;E;;Belarus,Foreign Affairs;A que se refere "This perception"
+2026.1;Objetiva;41;Inglês;Informação específica;questão EXCEPT;B;;Belarus,eleições;Fato NÃO relacionado à eleição presidencial de 2020 em Belarus
+2026.1;Objetiva;42;Inglês;Informação específica;consequência;E;;Belarus,Lukashenko,protestos;Resultado da reação de Lukashenko aos protestos
+2026.1;Objetiva;43;Inglês;Informação específica;questão EXCEPT;A;;café,EUA,tarifas;Afirmativa NÃO sustentada sobre produção e consumo de café nos EUA
+2026.1;Objetiva;44;Inglês;Informação específica;consequência;C;;café,Trump,tarifas;Efeito do pacote de tarifas de Trump sobre o café
+2026.1;Objetiva;45;Inglês;Referência e vocabulário em contexto;referência de frase;C;;café,tarifas;A que se refere "That exemption is now gone"
+2026.1;Objetiva;46;Atualidades;Economia global;desdolarização;E;;dólar,geopolítica;Implicações da desdolarização para os EUA e sua influência global
+2026.1;Objetiva;47;Atualidades;Geopolítica e conflitos;China e a ordem mundial;A;;China,Xi Jinping,Organização de Cooperação de Xangai,Rússia;Uso político das comemorações dos 80 anos do fim da 2ª Guerra por Xi Jinping
+2026.1;Objetiva;48;Atualidades;Cultura e artes;arte contemporânea e questão racial;B;;Maxwell Alexandre,arte negra,racismo;Série "Pardo é Papel" de Maxwell Alexandre e o ato político de pintar corpos negros
+2026.1;Objetiva;49;História;América colonial e independente;conquista e colonização do imaginário;E;;Conquista da América,evangelização,povos indígenas,Gruzinski;Destruição de patrimônios pré-hispânicos pela Conquista e evangelização
+2026.1;Objetiva;50;História;Brasil Colônia;irmandades negras e festas;D;;escravidão,cultura afro-brasileira,irmandades;Coroação de rainha negra: irmandades e cortejos no Rio colonial
+2026.1;Objetiva;51;História;Revoluções (séc. XVIII–XIX);Revolução Francesa;B;;festas cívicas,Michelet;Festa de 14 de julho e os emblemas dos ofícios na Revolução Francesa
+2026.1;Objetiva;52;História;Brasil Império;IHGB e construção da identidade nacional;E;;IHGB,nacionalismo,historiografia;Expedição do IHGB à Pedra da Gávea em busca de inscrições fenícias
+2026.1;Objetiva;53;História;Ditadura militar;sucessão presidencial e bipartidarismo;A;;Médici,ARENA,MDB,charge;Charge sobre a sucessão de Médici ignorando ARENA e MDB
+2026.1;Objetiva;54;História;Guerra Fria;política externa dos EUA no pós-guerra;E;;Truman,ajuda econômica;Texto de assessor de Truman (1949) ligando paz a problemas econômicos
+2026.1;Objetiva;55;Geografia;Urbanização;macrometrópole paulista;B;;São Paulo,metrópole,desconcentração industrial;Mudanças de São Paulo desde 1980: de metrópole industrial a macrometrópole
+2026.1;Objetiva;56;Geografia;Meio ambiente e sustentabilidade;consumo e crescimento;E;;globalização,consumo,economia circular;Modelo extrai/produz/descarta e seus limites ambientais
+2026.1;Objetiva;57;Geografia;Agropecuária e agronegócio;mecanização e emprego rural;C;;modernização agrícola,êxodo rural;"Agricultura sem agricultores": substituição do trabalho por máquinas
+2026.1;Objetiva;58;Geografia;Urbanização;urbanização brasileira;D;;cidades,fronteira agrícola;Característica que NÃO pertence ao processo de urbanização brasileiro
+2026.1;Objetiva;59;Geografia;Agropecuária e agronegócio;soja e Centro-Oeste;E;;soja,agronegócio,Centro-Oeste;Expansão da soja e o agronegócio brasileiro
+2026.1;Objetiva;60;Geografia;Geologia e relevo;estrutura geológica brasileira;D;;bacias sedimentares,escudos cristalinos,Jurandyr Ross;Estruturas geológicas antigas e o relevo brasileiro
+2026.1;Redação;R;Redação;Direitos e justiça;liberdade de expressão: absoluta ou com limites?;;;liberdade de expressão,humor,racismo recreativo,Leo Lins,discurso de ódio;Tema: "A liberdade de expressão é absoluta ou deve ter limites?", a partir da condenação de um humorista
+2026.1;Discursiva;CH1;História;Revoluções (séc. XVIII–XIX);Independência dos EUA;;;Revolução Americana,Iluminismo,Filhos da Liberdade;Políticas inglesas pós-1760 e ideias que embasaram a independência americana
+2026.1;Discursiva;CH2;História;Brasil Império;Período Regencial e população negra;;;O Homem de Côr,Paula Brito,Constituição de 1824,revoltas regenciais,cidadania;Jornal O Homem de Côr x Constituição de 1824 — revolta regencial com participação negra
+2026.1;Discursiva;CH3;História;Séc. XX: guerras e totalitarismos;nazismo e propaganda pelo esporte;;;nazismo,propaganda,esporte,Conferência de Munique,Era Vargas;Saudação nazista de jogadores ingleses (1938) e exemplo brasileiro de esporte como propaganda
+2026.1;Discursiva;CH4;História;Descolonização e Sul Global;independência da Índia;;;Gandhi,Marcha do Sal,não violência,imperialismo britânico;Razões da oposição indiana ao domínio britânico e o papel da resistência não violenta
+2026.1;Discursiva;CH5;Geografia;Globalização e economia mundial;tecnologia, transportes e comunicação;;;globalização,Singapura;Impacto dos transportes e comunicações na economia mundial — duas desvantagens da globalização
+2026.1;Discursiva;CH6;Geografia;Meio ambiente e sustentabilidade;desenvolvimento sustentável na indústria;;;capital natural,sustentabilidade,produção limpa;Exemplos de uso indiscriminado do capital natural e técnicas industriais sustentáveis
+2026.1;Discursiva;CH7;Geografia;Geopolítica;hegemonia dos EUA e soft power;;;EUA,soft power,Trump,Tio Sam,hegemonia;Soft power dos EUA desde 1945 e ações de Trump para manter a hegemonia
+2026.1;Discursiva;CH8;Geografia;População e migração;envelhecimento populacional;;;IBGE,pirâmide etária,políticas públicas,transição demográfica;Queda de jovens e aumento de idosos: implicações para educação e políticas públicas
+2026.1;Discursiva;AR1;Artes e Questões Contemporâneas;Música;Criolo e o racismo no Brasil;;;Criolo,Cálice,Sueli Carneiro,democracia racial,raça e classe;Letra de "Cálice" (Criolo) à luz das matrizes de Sueli Carneiro sobre racismo
+2026.1;Discursiva;AR2;Artes e Questões Contemporâneas;Literatura brasileira;Vidas Secas;;;Graciliano Ramos,Antonio Candido,Literatura e subdesenvolvimento,regionalismo de 30;Vidas Secas: consciência amena ou catastrófica do atraso (Candido)
+2026.1;Discursiva;AR3;Artes e Questões Contemporâneas;Cinema;Laranja Mecânica;;;Kubrick,internação involuntária,Lei 13.840/2019,drogas,direitos humanos;Posição sobre internação involuntária de dependentes usando o filme de Kubrick
+2026.1;Discursiva;AR4;Artes e Questões Contemporâneas;Teatro;Arte (Yasmina Reza);;;verdade,pós-verdade,democracia,fake news,regulação das redes,Vattimo;Verdade e democracia a partir da peça "Arte" — regulação das redes sociais no Brasil
+2026.1;Discursiva;AR5;Artes e Questões Contemporâneas;Teatro;Macbeth;;;Shakespeare,legalismo autocrático,Scheppele,legalidade x legitimidade;Legalidade formal e legitimidade política em Macbeth e no legalismo autocrático
+2026.1;Discursiva;LP1;Língua Portuguesa;Interpretação de texto;sátira em cartum;;;cartum,Caco Galhardo;Situação do cotidiano satirizada pelo cartum
+2026.1;Discursiva;LP2;Língua Portuguesa;Semântica e vocabulário;polissemia;;;cartum,batente;Relação de sentido entre "batente" e o cartum
+2026.1;Discursiva;LP3;Língua Portuguesa;Semântica e vocabulário;efeito do modo subjuntivo;;;modos verbais,subjuntivo;Efeito de sentido do subjuntivo nas perguntas do texto sobre ética
+2026.1;Discursiva;LP4;Língua Portuguesa;Figuras de linguagem e estilo;pergunta retórica/anáfora;;;figuras de linguagem;Figura de linguagem reiterada nas indagações argumentativas
+2026.1;Discursiva;LP5;Língua Portuguesa;Reescrita e voz verbal;ativa para passiva;;;voz passiva;Reescrever trecho passando verbos para a voz passiva
+2026.1;Discursiva;LP6;Língua Portuguesa;Interpretação de texto;compreensão de entrevista;;;Michèle Petit,leitura;Qual desafio da leitura visa a conscientização sociopolítica
+2026.1;Discursiva;LP7;Língua Portuguesa;Semântica e vocabulário;sentido literal x figurado;;;denotação,conotação;"Tesouros" e "nutrir" em sentido literal ou figurado
+2026.1;Discursiva;LP8;Língua Portuguesa;Coesão e referência;referentes pronominais;;;pronomes,coesão;Identificar os referentes de pronomes no 4º parágrafo

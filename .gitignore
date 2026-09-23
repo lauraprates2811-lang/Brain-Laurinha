@@ -12,3 +12,7 @@
 # cache de Python
 __pycache__/
 *.pyc
+
+# PDFs das provas antigas (~130 MB; os originais estao nos zips em ~/Downloads).
+# O banco de questoes (provas-antigas/banco/*.csv) continua versionado.
+Projetos/Vestibular/provas-antigas/20*/

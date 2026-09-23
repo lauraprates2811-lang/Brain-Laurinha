@@ -1,0 +1,84 @@
+# Vestibular FGV Unificado 2023.1 — provas de 14 e 15/11/2022 (redação digitada, 200–450 palavras). Dois cadernos objetivos: MH = Matemática+Humanas (1–30), IL = Inglês+Língua Portuguesa (1–30). Gabarito lido dos destaques do caderno-gabarito oficial (escaneado). Houve reaplicação da redação com o tema "No Brasil, ainda se sofre da referida 'moléstia de Nabuco'?" — fora da contagem.
+edicao;prova;numero;materia;tema;subtema;gabarito;valor;tags;resumo
+2023.1;Objetiva;MH1;Matemática;Razão, proporção e porcentagem;porcentagem (gorjeta);B;;divisão de conta;Conta dividida igualmente com 10% de gorjeta x despesa individual
+2023.1;Objetiva;MH2;Matemática;Geometria analítica;área de triângulo formado por retas;D;;retas,interseção;Área do triângulo delimitado por três retas
+2023.1;Objetiva;MH3;Matemática;Sequências (PA e PG);média dos termos de uma PA;A;;PA;Razão da PA com a1=1 e média dos 2021 primeiros termos igual a 102
+2023.1;Objetiva;MH4;Matemática;Geometria analítica;distância do taxista;D;;distância,plano cartesiano;Distância do taxista de A a B e de B a C
+2023.1;Objetiva;MH5;Matemática;Razão, proporção e porcentagem;porcentagem sobre porcentagem;B;;imposto,nota fiscal;Quanto de imposto foi acrescentado ao preço combinado
+2023.1;Objetiva;MH6;Matemática;Geometria plana;área entre círculo e triângulo;E;;círculo,triângulo isósceles,tangência;Área do triângulo fora do círculo
+2023.1;Objetiva;MH7;Matemática;Álgebra e equações;sistema de equações;C;;fichas,saquinhos;Fichas azuis e amarelas em saquinhos: quantos com duas amarelas
+2023.1;Objetiva;MH8;Matemática;Razão, proporção e porcentagem;aumento e desconto sucessivos;E;;porcentagem;Aumento e desconto do mesmo percentual levando de R$150 a R$126
+2023.1;Objetiva;MH9;Matemática;Análise combinatória;senhas com restrições;C;;senha,princípio multiplicativo;Senhas de 3 caracteres com ao menos um especial e um numérico
+2023.1;Objetiva;MH10;Matemática;Exponencial e logaritmo;função inversa da logística;B;;boato,logaritmo natural,função inversa;Inversa de p=1/(1+A·e^(−ct)): tempo em função do percentual
+2023.1;Objetiva;MH11;Matemática;Geometria espacial;área e volume de cubos;E;;cubo,contêiner;Economia de material ao dobrar a aresta do contêiner cúbico
+2023.1;Objetiva;MH12;Matemática;Probabilidade;pares não decrescentes;D;;urna,com reposição;Probabilidade de o par sorteado ser não decrescente
+2023.1;Objetiva;MH13;Matemática;Análise combinatória;anagramas com restrição;C;;anagramas,COMUM;Anagramas de COMUM sem as duas letras M juntas
+2023.1;Objetiva;MH14;Matemática;Aritmética e problemas;ciclos e MMC;B;;semáforos,periodicidade;Tempo em que dois semáforos ficam vermelhos ao mesmo tempo em 24h
+2023.1;Objetiva;MH15;Matemática;Funções;distância mínima (função quadrática);D;;movimento,mínimo,plano cartesiano;Instante em que duas partículas em movimento ficam mais próximas
+2023.1;Objetiva;MH16;Atualidades;Economia global;política monetária e juros em 2022;A;;juros,inflação,guerra na Ucrânia,mapa;Verdadeiro/falso sobre juros nominais no mundo no 1º semestre de 2022
+2023.1;Objetiva;MH17;Atualidades;Economia global;crise alimentar global;D;;fome,guerra na Ucrânia,commodities;Crise global de abastecimento alimentar como consequência estrutural
+2023.1;Objetiva;MH18;Atualidades;Meio ambiente e clima;violência contra ativistas na Amazônia;C;;Bruno Pereira,Dom Phillips,COP26,Código Florestal;Medidas para aumentar a proteção de ativistas ambientais
+2023.1;Objetiva;MH19;História;Idade Moderna;Inglaterra Tudor;A;;Maria I,Reforma,Espanha,Inglaterra;Turbulências do reinado de Maria I da Inglaterra
+2023.1;Objetiva;MH20;História;Brasil Império;dissolução da Constituinte de 1823;C;;José Bonifácio,D. Pedro I,Constituição de 1824;Dissolução da Constituinte por D. Pedro I e a oligarquia
+2023.1;Objetiva;MH21;História;Revoluções (séc. XVIII–XIX);hegemonia britânica no séc. XIX;E;;Império Britânico,Revolução Industrial,imperialismo;Razões da hegemonia britânica: industrialização e subordinação de territórios
+2023.1;Objetiva;MH22;História;Movimentos sociais e cidadania;1968;B;;maio de 68,contracultura,juventude,Cohn-Bendit;Os acontecimentos de 1968 como rebeldia juvenil e contracultura
+2023.1;Objetiva;MH23;História;Brasil pós-1985;PMDB na redemocratização;D;;PMDB,Diretas,Nova República;O PMDB e a restauração da democracia nos anos 1980
+2023.1;Objetiva;MH24;História;América colonial e independente;jesuítas na América;C;;Companhia de Jesus,reduções,colonos,povos indígenas;Jesuítas em disputa com colonos pelo controle dos povos indígenas
+2023.1;Objetiva;MH25;Geografia;Indústria e energia;crise do fordismo;E;;fordismo,acumulação flexível,reestruturação produtiva;Crise do modelo fordista e reestruturação produtiva
+2023.1;Objetiva;MH26;Geografia;Globalização e economia mundial;mundialização da economia;C;;globalização,Estado-nação,supranacional;Globalização como sistema integrado que enfraquece fronteiras nacionais
+2023.1;Objetiva;MH27;Geografia;Globalização e economia mundial;transportes e informação;C;;transportes,modais,just-in-time,GPS;V/F sobre sistemas de transporte, contêiner e logística
+2023.1;Objetiva;MH28;Geografia;Indústria e energia;energia e desenvolvimento;B;;energia renovável,matriz energética;Acesso a energia barata e renovável como vantagem competitiva
+2023.1;Objetiva;MH29;Geografia;Agropecuária e agronegócio;transportes e commodities agrícolas;D;;rodovias,commodities,cerrado,corredores de exportação;Afirmação INCORRETA sobre transportes e agronegócio no Brasil
+2023.1;Objetiva;MH30;Geografia;Meio ambiente e sustentabilidade;devastação da Mata Atlântica;E;;Mata Atlântica,café,Vale do Paraíba,biomas;Razão histórica da devastação da Mata Atlântica: expansão cafeeira
+2023.1;Objetiva;IL1;Inglês;Inferência;propósito de citação;C;;evolução,culinária,Natural History;Por que o texto cita James Boswell
+2023.1;Objetiva;IL2;Inglês;Referência e vocabulário em contexto;expressão em contexto;A;;chimpanzés,dieta;Sentido de "opportunistic behavior"
+2023.1;Objetiva;IL3;Inglês;Inferência;afirmação sustentada;A;;evolução,extinção;Afirmação mais sustentada sobre a distância entre humanos e animais
+2023.1;Objetiva;IL4;Inglês;Informação específica;fitólitos;E;;fitólitos,Lucy,Australopithecus;O que o texto diz sobre os fitólitos
+2023.1;Objetiva;IL5;Inglês;Inferência;sugestão de frase;B;;Australopithecus,dentes;O que sugere a comparação de dentes de A. afarensis e chimpanzés
+2023.1;Objetiva;IL6;Inglês;Informação específica;afirmação do artigo;D;;cérebro,energia,cozimento;Cozinhar liberou energia para o cérebro
+2023.1;Objetiva;IL7;Inglês;Compreensão geral;propósito do parágrafo;C;;evolução;Propósito principal do último parágrafo
+2023.1;Objetiva;IL8;Inglês;Informação específica;questão LEAST;A;;Pantanal,queimadas;Afirmação menos sustentada sobre o Pantanal
+2023.1;Objetiva;IL9;Inglês;Inferência;conclusão;D;;Pantanal,queimadas,ação humana;Conclusão: incêndios de 2020 resultaram mais de ação humana
+2023.1;Objetiva;IL10;Inglês;Inferência;afirmação sustentada;E;;iconoclastia,Talibã,Budas de Bamiyan;Afirmação sustentada sobre destruição de arte religiosa
+2023.1;Objetiva;IL11;Inglês;Informação específica;personagem histórico;C;;Leão III,Bizâncio,iconoclastia;O que se aplica ao imperador Leão III
+2023.1;Objetiva;IL12;Inglês;Informação específica;fato histórico;B;;Reforma Protestante,imagens;Reformadores protestantes e o uso de imagens no séc. XVI
+2023.1;Objetiva;IL13;Inglês;Informação específica;questão EXCEPT;A;;Rússia,memes,Putin,NZZ;Afirmação NÃO sustentada sobre o artigo e os memes
+2023.1;Objetiva;IL14;Inglês;Inferência;ideia promovida;B;;Rússia,desinformação;Ideia que a embaixada russa promove
+2023.1;Objetiva;IL15;Inglês;Compreensão geral;provérbio que explica o texto;D;;memes,imagem;Frase que explica o impacto dos memes
+2023.1;Objetiva;IL16;Língua Portuguesa;Interpretação de texto;humor em tirinha (contraste);D;;tirinha,Caco Galhardo,pandemia;Quebra de expectativa na tirinha: contraste
+2023.1;Objetiva;IL17;Língua Portuguesa;Interpretação de texto;perspectiva do texto;A;;dilema do bonde,psicologia moral;Perspectiva psicológica e filosófica do texto
+2023.1;Objetiva;IL18;Língua Portuguesa;Argumentação e estratégias do texto;antecipação de objeção;E;;argumentação;Trecho em que o autor se antecipa a um questionamento
+2023.1;Objetiva;IL19;Língua Portuguesa;Semântica e vocabulário;análise linguística de trechos;B;;vocativo,variação,interlocução;Único comentário linguístico correto sobre trechos do texto
+2023.1;Objetiva;IL20;Língua Portuguesa;Orações e relações lógicas;orações consecutivas;D;;consequência;Trechos com orações que expressam consequência
+2023.1;Objetiva;IL21;Língua Portuguesa;Literatura;Dom Casmurro;C;;Machado de Assis,Capitu,sociedade patriarcal;Capitu no ambiente social de agregados e dependentes
+2023.1;Objetiva;IL22;Língua Portuguesa;Literatura;Dom Casmurro;B;;Machado de Assis,narrador não confiável,Capitu;Caráter de Capitu segundo a tese do narrador: ambicioso
+2023.1;Objetiva;IL23;Língua Portuguesa;Literatura;Dom Casmurro;A;;Machado de Assis,Capitu;Atributos de Capitu vistos pelo esclarecimento ou pelo conservantismo
+2023.1;Objetiva;IL24;Língua Portuguesa;Literatura;Dom Casmurro;A;;Machado de Assis,narrador,persuasão;"Conceitos que se devem incutir... à força de repetição": advertência ao leitor
+2023.1;Objetiva;IL25;Língua Portuguesa;Figuras de linguagem e estilo;gradação, trocadilho e antítese;C;;Dom Casmurro,gradação,trocadilho,antítese;Figuras em trechos de Dom Casmurro
+2023.1;Objetiva;IL26;Língua Portuguesa;Semântica e vocabulário;sinônimo em contexto;A;;porventura,Dom Casmurro;"Porventura" pode ser substituído por "talvez"
+2023.1;Objetiva;IL27;Língua Portuguesa;Literatura;Descoberta da literatura (João Cabral);B;;João Cabral de Melo Neto,cordel,A educação pela pedra;"Romance de barbante" = folhetos de cordel nordestino
+2023.1;Objetiva;IL28;Língua Portuguesa;Literatura;Descoberta da literatura (João Cabral);B;;João Cabral de Melo Neto,recepção;Revelação do menino: recepção encantada da obra de arte verbal
+2023.1;Objetiva;IL29;Língua Portuguesa;Literatura;Descoberta da literatura (João Cabral);D;;João Cabral de Melo Neto,classes sociais;O menino leitor transgride limites entre classes sociais
+2023.1;Objetiva;IL30;Língua Portuguesa;Morfologia e formação de palavras;derivação imprópria;E;;o mirabolante,substantivação;Exemplo de derivação imprópria no poema
+2023.1;Redação;R;Redação;Direitos e justiça;laicidade do Estado;;;laicidade,religião e política,Estado laico;Tema: "A laicidade do Estado brasileiro contemporâneo"
+2023.1;Discursiva;CH1;História;América colonial e independente;cartografia e imaginário da conquista;;;Diogo Homem,mapa,imaginário europeu,conquista;Mapa de 1558: conquista colonial e imaginário europeu sobre a América
+2023.1;Discursiva;CH2;História;Brasil Império;escravidão no fim do Império;;;anúncio de escravo,1878,mão de obra,imigração;Anúncio de venda de escravo (1878) e a questão da mão de obra
+2023.1;Discursiva;CH3;História;Primeira República (1889–1930);tenentismo e eleição de 1945;;;18 do Forte,tenentismo,Eduardo Gomes,UDN,redemocratização;Tenentismo (1922) e a campanha de Eduardo Gomes em 1945
+2023.1;Discursiva;CH4;História;Séc. XX: guerras e totalitarismos;barbárie e anti-iluminismo;;;Hobsbawm,Iluminismo,nazismo,Holocausto;Exemplos europeus de barbárie anti-iluminista (Hobsbawm)
+2023.1;Discursiva;CH5;Geografia;Clima e recursos hídricos;efeito estufa;;;efeito estufa,mudanças climáticas;Representar e explicar o efeito estufa e suas consequências globais
+2023.1;Discursiva;CH6;Geografia;Urbanização;São Paulo como metrópole informacional;;;Milton Santos,metrópole,serviços,terciarização;Renovação das funções urbanas de São Paulo: capital relacional
+2023.1;Discursiva;CH7;Geografia;Agropecuária e agronegócio;agricultura produtivista dos EUA;;;agricultura sem agricultores,rizicultura,Ásia das Monções;Agricultura empresarial dos EUA x rizicultura asiática
+2023.1;Discursiva;CH8;Geografia;População e migração;política demográfica chinesa;;;China,política do filho único,envelhecimento;Política demográfica autoritária da China e seus problemas
+2023.1;Discursiva;LP9;Língua Portuguesa;Interpretação de texto;literalidade e humor em cartum;;;cartum,literalidade,ruído na comunicação;Literalidade como explicação do humor do cartum
+2023.1;Discursiva;LP10;Língua Portuguesa;Reescrita e voz verbal;discurso indireto e norma-padrão;;;discurso indireto;Reescrever fala do garçom em discurso indireto
+2023.1;Discursiva;LP11;Língua Portuguesa;Morfologia e formação de palavras;mais-que-perfeito (relação temporal);;;tempos verbais,decidira;Relação temporal de "decidira" com "Começou"
+2023.1;Discursiva;LP12;Língua Portuguesa;Coesão e referência;retomada lexical;;;coesão,retomada;Palavra anterior retomada por "a notícia foi forjada"
+2023.1;Discursiva;LP13;Língua Portuguesa;Pontuação;vírgula e oração adjetiva explicativa;;;vírgula,orações adjetivas;Qual oração com "que" deveria ter vírgula (explicativa)
+2023.1;Discursiva;LP14;Língua Portuguesa;Figuras de linguagem e estilo;sinestesia;;;sinestesia,Chico Buarque;Exemplo de sinestesia no texto sobre "Com açúcar, com afeto"
+2023.1;Discursiva;LP15;Língua Portuguesa;Variação linguística e registro;estrangeirismos e gêneros acadêmicos;;;estrangeirismos,Bechara,gênero textual;Gêneros acadêmicos em que aparecem estrangeirismos
+2023.1;Discursiva;LP16;Língua Portuguesa;Semântica e vocabulário;sentido figurado x próprio;;;denotação,conotação;Reescrever o título trocando palavras figuradas por sentido próprio
+2023.1;Discursiva;AR1;Artes e Questões Contemporâneas;Literatura brasileira;Memórias de um sargento de milícias;;;Manuel Antônio de Almeida,Antonio Candido,literatura e sociedade;Inter-relações entre vida literária e vida social nas Memórias
+2023.1;Discursiva;AR2;Artes e Questões Contemporâneas;Literatura brasileira;Dialética da malandragem;;;Antonio Candido,dialética,marxismo,luta de classes;Literatura como modo de evidenciar tensões sociais
+2023.1;Discursiva;AR3;Artes e Questões Contemporâneas;Cinema;Cabra marcado para morrer;;;Eduardo Coutinho,Ligas Camponesas,violência no campo,Bruno Pereira;Violência no campo: do documentário de Coutinho ao caso Bruno e Dom
+2023.1;Discursiva;AR4;Artes e Questões Contemporâneas;Música;O mundo é um moinho x Malandragem;;;Cartola,Cazuza,samba,rock;Comparar as letras de Cartola e Cazuza/Frejat
+2023.1;Discursiva;AR5;Artes e Questões Contemporâneas;Pensamento social e filosofia;Kant: o que é o Iluminismo;;;Kant,Iluminismo,menoridade,autonomia;Uma das canções lida pela passagem da "menoridade" à "maioridade" (Kant)

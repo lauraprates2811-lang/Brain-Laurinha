@@ -13,6 +13,7 @@ fichas antes de agir, e grava o resultado no lugar certo sozinho.
 | [[explica]] | Explica um conceito em 3 níveis, do simples ao de prova | a 1 hora de teoria |
 | [[simulado]] | Registra o simulado por matéria e mostra a tendência | domingo |
 | [[plano]] | Replaneja a semana dizendo o que entra **e o que sai** | quando desandar |
+| [[banca]] | Diz com números o que mais cai nas provas antigas e o que estudar | antes de montar o plano |
 
 Todos terminam sugerindo a linha do `/save`.
 

@@ -1,0 +1,51 @@
+# Vestibular FGV Unificado 2022.1 — provas de 14 e 15/11/2021, em 4 blocos (redação digitada, 200–450 palavras). Objetivas: só Matemática (10) e Inglês (15). Gabarito lido dos destaques dos cadernos-gabarito oficiais. Houve reaplicação em 26/11/2021 (Inglês com textos sobre China e tempestades solares) — fora da contagem.
+edicao;prova;numero;materia;tema;subtema;gabarito;valor;tags;resumo
+2022.1;Objetiva;M1;Matemática;Razão, proporção e porcentagem;divisão proporcional;E;;táxi,divisão de conta;Dividir a corrida de táxi proporcionalmente ao que cada um pagaria
+2022.1;Objetiva;M2;Matemática;Geometria plana;áreas sobrepostas;A;;círculo,quadrado,união de conjuntos;Perímetro do quadrado a partir das áreas do círculo e da sobreposição
+2022.1;Objetiva;M3;Matemática;Álgebra e equações;sistema do 1º grau;C;;números racionais;Soma dos números de Ana, Beatriz e Clara ligados por equações
+2022.1;Objetiva;M4;Matemática;Sequências (PA e PG);PG e distância no plano;E;;robô,PG,Pitágoras;Robô que dobra o passo e gira 90°: distância final ao ponto de partida
+2022.1;Objetiva;M5;Matemática;Sequências (PA e PG);soma de PA;E;;skate,PA;Distância percorrida pelo skate com acréscimo constante a cada segundo
+2022.1;Objetiva;M6;Matemática;Probabilidade;espaço amostral e resto da divisão;E;;jogo,resto;Probabilidade de Ana ganhar o jogo do resto por 3
+2022.1;Objetiva;M7;Matemática;Estatística;média ponderada;D;;média,turmas;Fração dos alunos da turma B a partir das médias
+2022.1;Objetiva;M8;Matemática;Aritmética e problemas;períodos e alinhamento (órbitas);B;;órbitas,velocidade angular,MMC;Tempo até o próximo eclipse com órbitas de 3 e 5 anos
+2022.1;Objetiva;M9;Matemática;Trigonometria;radianos e comprimento de arco;D;;arco,radiano;Ângulo em radianos em que o arco é igual a dois raios
+2022.1;Objetiva;M10;Matemática;Estatística;mediana;D;;mediana,números ímpares;Mediana da lista em que cada ímpar N aparece N vezes
+2022.1;Objetiva;I1;Inglês;Referência e vocabulário em contexto;sentido de frase;D;;covid-19,tato,The Economist;Sentido de "The loss of any one hardly seems worthy of note"
+2022.1;Objetiva;I2;Inglês;Inferência;opinião de especialista;E;;tato,Tiffany Field;O que Tiffany Field acredita sobre o tato
+2022.1;Objetiva;I3;Inglês;Inferência;propósito de exemplo;C;;leprosos,Dalits;Por que o artigo cita leprosos e Dalits
+2022.1;Objetiva;I4;Inglês;Informação específica;personagem;B;;Peter Collins,prisão,solitária;O que o texto sustenta sobre Peter Collins
+2022.1;Objetiva;I5;Inglês;Inferência;ironia;C;;covid-19,tato;Resultado irônico da pandemia em relação ao tato
+2022.1;Objetiva;I6;Inglês;Informação específica;estudo científico;A;;bebês,massagem;Item coberto por um estudo científico citado
+2022.1;Objetiva;I7;Inglês;Informação específica;questão NOT;B;;cortisol,imunidade;Afirmação NÃO sustentada sobre tato e saúde
+2022.1;Objetiva;I8;Inglês;Compreensão geral;propósito do parágrafo;D;;skin hunger;Propósito do último parágrafo
+2022.1;Objetiva;I9;Inglês;Informação específica;afirmação sustentada;B;;percepção do tempo,Natural History;Percepção do tempo ligada a coração e pulmões
+2022.1;Objetiva;I10;Inglês;Inferência;aplicação da teoria;A;;percepção do tempo,crianças;Situação em que o tempo passaria mais rápido para uma criança
+2022.1;Objetiva;I11;Inglês;Referência e vocabulário em contexto;referência pronominal;E;;this,queda livre;A que se refere "this" no fim do parágrafo 2
+2022.1;Objetiva;I12;Inglês;Inferência;propósito de exemplo;A;;rotina,envelhecimento;Por que o autor menciona "Our daily commutes"
+2022.1;Objetiva;I13;Inglês;Referência e vocabulário em contexto;sentido de frase;C;;crianças,experiência;Sentido de "It is different for children"
+2022.1;Objetiva;I14;Inglês;Inferência;teoria aplicada;D;;novidade,percepção do tempo;Afirmação apoiada por uma das teorias do texto
+2022.1;Objetiva;I15;Inglês;Informação específica;questão EXCEPT;E;;escala exponencial;Fenômeno ao qual NÃO se aplicaria escala exponencial
+2022.1;Redação;R;Redação;Direitos e justiça;linguagem inclusiva e linguagem neutra;;;linguagem neutra,linguagem inclusiva,gênero,língua;Tema: "O emprego tanto da 'linguagem inclusiva' quanto da 'linguagem neutra' se justifica?"
+2022.1;Discursiva;CH1;Geografia;Tecnologia, informação e trabalho;redes de telecomunicação;;;informação,globalização,tecnologia;Circulação rápida da informação e disputas pelas novas tecnologias
+2022.1;Discursiva;CH2;Geografia;Globalização e economia mundial;empresas transnacionais e finanças;;;transnacionais,capitalismo financeiro,paraísos fiscais;Estratégias das transnacionais e atividades ilícitas no sistema financeiro
+2022.1;Discursiva;CH3;Geografia;Clima e recursos hídricos;aquecimento global e matriz energética;;;IPCC,matriz energética,efeito estufa,políticas públicas;Matriz energética e aquecimento global — políticas para reduzir emissões
+2022.1;Discursiva;CH4;Geografia;Agropecuária e agronegócio;agricultura empresarial no Cerrado;;;Cerrado,Centro-Oeste,cidades médias,fronteira agrícola;Agricultura empresarial no Cerrado e funções das cidades médias
+2022.1;Discursiva;CH5;História;Brasil pós-1985;Constituinte de 1987–88;;;Ulysses Guimarães,Constituição de 1988,tripartição dos poderes,Montesquieu;Condições da Constituinte de 1987 e a divisão de poderes
+2022.1;Discursiva;CH6;História;Idade Moderna;império marítimo português;;;Índico,expansão marítima,Boxer;Economia portuguesa no Oriente x América e rivais europeus no séc. XVI
+2022.1;Discursiva;CH7;História;América colonial e independente;colonização inglesa na América;;;puritanos,Levellers,Treze Colônias;Religião e sociedade inglesas e os primeiros colonos — Norte x Sul
+2022.1;Discursiva;CH8;História;Revoluções (séc. XVIII–XIX);Adam Smith e o liberalismo;;;liberalismo econômico,divisão do trabalho,Revolução Industrial;Corrente econômica de Adam Smith e seu contexto histórico
+2022.1;Discursiva;LP16;Língua Portuguesa;Interpretação de texto;relação entre imagem e texto;;;campanha,fome;Com que palavra do texto, além de "fome", a imagem se relaciona
+2022.1;Discursiva;LP17;Língua Portuguesa;Reescrita e voz verbal;reescrita com "embora" e plural;;;concessão,concordância;Reescrever o texto numa frase iniciada por "embora"
+2022.1;Discursiva;LP18;Língua Portuguesa;Interpretação de texto;distinção de conceitos;;;teoria da mente,Calligaris;Teoria da mente emocional x cognitiva
+2022.1;Discursiva;LP19;Língua Portuguesa;Reescrita e voz verbal;passiva para ativa e norma-padrão;;;voz ativa;Reescrever frase trocando as passivas por ativas
+2022.1;Discursiva;LP20;Língua Portuguesa;Argumentação e estratégias do texto;oposição entre características;;;ficção popular,ficção literária,adjetivos;Adjetivos da ficção popular em oposição aos "melhores leitores"
+2022.1;Discursiva;LP21;Língua Portuguesa;Figuras de linguagem e estilo;linguagem figurada;;;conotação,verbo,adjetivo;Um verbo e um adjetivo em sentido figurado
+2022.1;Discursiva;LP22;Língua Portuguesa;Morfologia e formação de palavras;radical grego -patia;;;empatia,sociopatia,psicopatia;O radical "-patia" tem o mesmo sentido nas três palavras?
+2022.1;Discursiva;LP23;Língua Portuguesa;Coesão e referência;conectivo conclusivo "Em suma";;;conectivos,texto dissertativo;É correto o uso de "Em suma" no último parágrafo?
+2022.1;Discursiva;LP24;Língua Portuguesa;Interpretação de texto;compreensão;;;Harari,Sapiens,ordem social;Por que sociedades humanas precisam de advogados e colmeias não
+2022.1;Discursiva;LP25;Língua Portuguesa;Semântica e vocabulário;sinônimos em contexto;;;sinônimos;Sinônimos para quatro palavras do texto de Harari
+2022.1;Discursiva;AR11;Artes e Questões Contemporâneas;Literatura brasileira;Manifesto Antropófago;;;Oswald de Andrade,Semana de 22,Benedito Nunes,Modernismo;Elementos contraditórios do Manifesto Antropófago
+2022.1;Discursiva;AR12;Artes e Questões Contemporâneas;Questões contemporâneas;antropofagia e questão indígena hoje;;;antropofagia,povos indígenas,Oswald de Andrade;A metáfora antropofágica como desafio para o Brasil de hoje
+2022.1;Discursiva;AR13;Artes e Questões Contemporâneas;Artes visuais;Cézanne x Anita Malfatti;;;Cézanne,Anita Malfatti,vanguardas,pós-impressionismo;Comparar "Os jogadores de cartas" e "La rentrée"
+2022.1;Discursiva;AR14;Artes e Questões Contemporâneas;Pensamento social e filosofia;Castells x Kant;;;Castells,Ruptura,Kant,Iluminismo,crise da democracia;Crise da democracia liberal (Castells) e emancipação pela razão (Kant)
+2022.1;Discursiva;AR15;Artes e Questões Contemporâneas;Pensamento social e filosofia;Castells x Marx;;;Castells,Marx,Manifesto Comunista,movimentos sociais;Mudança histórica em Castells x visão marxista
