@@ -1,7 +1,7 @@
 # Cursinho
 
 > **Status:** Rotina cheia, 13 frentes, seg a sáb. **Física atrasada**; intensivos com datas inconsistentes (o de **Geografia é 26/09**).
-> Material em `Projetos/Cursinho/<materia>/`: 13 pastas, abertas pelo atalho `~/Downloads/Materias`, já com o que estava em Downloads.
+> Material em `Projetos/Cursinho/<materia>/`: 13 pastas (atalho `~/Downloads/Materias`), cada uma com `questoes-discursivas/`.
 > História Geral já tem mapa mental e 19 flashcards (`.md` + `.html`).
 
 ## O que é
@@ -64,6 +64,7 @@ passou. `[a confirmar]` com o cursinho.
 | 2026-09-22 | Aula de História Geral (Duque) virou mapa mental + 19 flashcards, cruzada com o banco; material separado por matéria | 1ª pasta: `historia-geral/`; 2 erros de fato nas anotações |
 | 2026-09-23 | As 13 pastas por matéria criadas, com atalho em Downloads; flashcards passam a sair também em `.html` | Material de qualquer matéria tem lugar fixo |
 | 2026-09-23 | 28 arquivos de estudo soltos em Downloads organizados nas matérias | Material num lugar só; PDFs fora do git |
+| 2026-09-23 | Subpasta `questoes-discursivas` em cada matéria, com as páginas de prova e as correções | Correção de Artes já está lá |
 
 ## 🔗 Relacionados
 
