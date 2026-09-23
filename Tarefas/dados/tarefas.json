@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-09-22",
-  "proximo_id": 20,
+  "proximo_id": 24,
   "tarefas": [
     {
       "id": 1,
@@ -176,6 +176,42 @@
       "status": "feita",
       "criado": "2026-09-22",
       "fechado": "2026-09-22"
+    },
+    {
+      "id": 20,
+      "titulo": "Conferir numa conversa nova se o /banca e o /discursiva entram sozinhos (pergunta de estatística e questão com resposta)",
+      "area": "brain",
+      "prazo": "2026-09-24",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-22"
+    },
+    {
+      "id": 21,
+      "titulo": "Dar ok ou mudar a pasta nova Projetos/Vestibular/discursivas/ (criada sem ok prévio)",
+      "area": "brain",
+      "prazo": "2026-09-24",
+      "prioridade": "baixa",
+      "status": "aberta",
+      "criado": "2026-09-22"
+    },
+    {
+      "id": 22,
+      "titulo": "Decidir se os PDFs das provas antigas (~130 MB) entram no backup do GitHub — hoje ficam fora",
+      "area": "brain",
+      "prazo": "2026-09-30",
+      "prioridade": "baixa",
+      "status": "aberta",
+      "criado": "2026-09-22"
+    },
+    {
+      "id": 23,
+      "titulo": "Conferir o gabarito definitivo do Vestibular FGV 2026.1 e atualizar o banco (hoje está o preliminar)",
+      "area": "vestibular",
+      "prazo": "2026-10-10",
+      "prioridade": "baixa",
+      "status": "aberta",
+      "criado": "2026-09-22"
     }
   ]
 }

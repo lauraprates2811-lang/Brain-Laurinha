@@ -90,6 +90,28 @@ Ela mesma reservou 1 filme por semana e caminhada 3x. Isso é parte do plano, n�
 
 ---
 
+## O que cai na prova se responde com o banco, não com impressão (2026-09-22)
+
+A Laura montou o banco com as 6 provas antigas (2021.1–2026.1) para decidir o que estudar com
+base em dados, e pediu que o `/banca` entre sozinho em toda pergunta desse tipo.
+
+**A regra:** "o que mais cai", "quantas vezes caiu", "o que priorizar" se responde rodando o
+`banca.py`, com o número e a base (quantas questões, quais edições). Nunca de memória.
+
+---
+
+## Dissertativa se corrige pela grade oficial da FGV e volta em PDF (2026-09-22)
+
+A Laura vai mandar com frequência questões dissertativas com o gabarito e a resposta dela. A grade
+real da FGV Direito SP (lida nas 6 provas) é: 100% completa e sem desvio de redação · 75% completa
+com desvio · 50% parcial sem desvio · 25% parcial com desvio.
+
+**A regra:** toda correção de dissertativa usa essa grade, corrige a língua com rigor (um desvio
+derruba um nível), trata o gabarito como guia — resposta certa e diferente do gabarito ganha o
+crédito, dito com todas as letras — e volta como PDF pelo `/discursiva`.
+
+---
+
 ## 🔗 Relacionados
 
 [[Vestibular]] · [[Cursinho]] · [[Pessoal]] · [[Laura]]

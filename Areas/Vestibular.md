@@ -1,8 +1,8 @@
 # Vestibular
 
 > **Status:** Inscrita e confirmada no Insper (11/10), na FGV (18–19/10) e no ENEM 2026.
-> FGV é prioridade absoluta. Faltam **27 dias** para a 1ª fase da FGV.
-> A 2ª fase é **Exame Oral** — peso 2, elimina, e só pode ser feito uma vez.
+> FGV é prioridade absoluta. Faltam **26 dias** para a 1ª fase. A 2ª fase é **Exame Oral** — peso 2,
+> elimina, e só pode ser feito uma vez. O banco das provas 2021.1–2026.1 (423 itens) já diz o que mais cai.
 
 ## O que é
 
@@ -35,6 +35,12 @@ matricular na que sair primeiro.
 **Elimina automaticamente** quem tirar nota bruta abaixo de 3,0 em: Redação, Língua Portuguesa
 discursiva, Língua Portuguesa objetiva ou Inglês. Nota zero em qualquer prova também elimina.
 
+**O que o banco de provas mostra (2023.1–2026.1, formato atual)** — conferir com `/banca`
+- Objetiva: 15 Matemática · 15 Português (7 delas de Literatura) · 15 Inglês · 15 Humanas
+  (3 Atualidades, 6 História, 6 Geografia).
+- Discursiva: 8 Humanas · 8 Português · 5 Artes · Redação. Grade: 100/75/50/25% (completa ou
+  parcial × com ou sem desvio de redação).
+
 **2ª fase — Exame Oral, 18/11 a 01/12/2026**
 
 - Presencial em São Paulo, em português, duração máxima de **2h30**, **peso 2**.
@@ -62,7 +68,7 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 ## Pendências
 
-- [ ] Montar o plano dos 27 dias até a FGV (`/plano`)
+- [ ] Montar o plano dos 26 dias até a FGV (`/plano`), usando os números do `/banca`
 - [ ] Começar o treino do Exame Oral **agora**, não em novembro (`/oral`)
 - [ ] Destrinchar a trajetória biográfica em `Projetos/Vestibular/oral/` — é avaliada literalmente
 - [ ] Confirmar datas do ENEM 2026 no site do INEP `[a confirmar]`
@@ -70,6 +76,7 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 - [ ] Decidir até 18/12 se vai usar a via SAT
 - [ ] Inscrever-se na via ENEM da FGV até 08/01/2027 (taxa separada)
 - [ ] Separar documentos de bolsa **antes** de 16/11, porque a janela é curta (16/11–30/11)
+- [ ] Conferir o gabarito definitivo de 2026.1 e atualizar o banco (hoje está o preliminar)
 
 ## Regras da área
 
@@ -86,6 +93,7 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 | Data | O que aconteceu | Resultado |
 |---|---|---|
 | 2026-09-21 | Datas, vagas e regras extraídas do edital oficial da FGV; descoberto que o Vestibular Regular também tem Exame Oral | Frente mapeada · oral virou prioridade |
+| 2026-09-22 | 6 provas antigas (2021.1–2026.1) viraram banco de 423 questões classificadas, com gabarito | `/banca` e `/discursiva` no ar |
 
 ## 🔗 Relacionados
 

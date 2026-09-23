@@ -34,9 +34,6 @@ git) fica isolado no instalador, que se roda uma vez por computador.
 
 ---
 
-## 🔗 Relacionados
-
-[[Brain]]
 
 ## Comando que escreve arquivo se confere contando, não lendo a tela (2026-09-22)
 
@@ -57,3 +54,28 @@ macOS, e sem `PATH` não encontra o próprio executável.
 **A regra:** todo script agendado no `launchd` começa exportando `PATH`, `USER` e `LOGNAME`. E se
 o script chama o `claude -p`, o que ele precisa rodar vai em `--allowedTools`, porque
 `acceptEdits` libera editar arquivo mas não rodar comando.
+
+## Prova escaneada vira texto pelo OCR do Mac, e o gabarito se confere na imagem (2026-09-22)
+
+Metade das provas antigas da FGV veio escaneada, e os gabaritos oficiais são a prova com a
+resposta grifada em amarelo. O OCR do macOS (Vision) leu o texto bem, e um detector de amarelo
+achou a maioria das respostas — mas não todas, e errou onde a alternativa não tinha letra.
+
+**A regra:** PDF sem texto passa pelo OCR do macOS. Gabarito tirado automaticamente só vale
+depois de conferido olhando a página; onde a detecção falha, lê-se na imagem. Número de gabarito
+nunca é preenchido de memória.
+
+## Arquivo pesado fica fora do git; o que vai para a nuvem é o dado extraído (2026-09-22)
+
+O salvamento automático faz `git add -A` ao fim de toda sessão. Os PDFs das provas antigas
+(~130 MB) teriam deixado o backup 50 vezes maior, e os originais já estão nos zips da Laura.
+
+**A regra:** antes de copiar arquivo pesado para dentro do Brain, decidir se ele vai para o
+backup. PDF de prova fica no `.gitignore`; o que se versiona é o que foi extraído dele (o banco
+em CSV).
+
+---
+
+## 🔗 Relacionados
+
+[[Brain]]
