@@ -5,6 +5,8 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 ## O que tem aqui
 
 - `cronograma-semanal-original.docx` — o cronograma que a Laura montou, como veio dela
+- `calendario-semi-fgv-insper-tarde.pdf` — calendário do semiextensivo do cursinho
+- `cronograma-fgv-direito.html` — cronograma de estudos que estava em Downloads (é de FGV Direito **Rio**)
 - **Uma pasta por matéria da grade (13):** `artes-e-questoes-contemporaneas/` · `atualidades/` ·
   `biologia/` · `expressao-oral/` · `fisica/` · `geografia/` · `historia-do-brasil/` ·
   `historia-geral/` · `lingua-portuguesa/` · `literatura/` · `matematica/` · `quimica/` · `redacao/`
@@ -12,8 +14,18 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
   - [[crise-de-1929-e-nazifascismo]] — mapa mental e 19 flashcards da aula de 22/09 (também em
     `.html`, para abrir no navegador)
   - `fgv-2023.1-dis-ch4-hobsbawm-barbarie.pdf` — discursiva real da FGV (barbárie anti-iluminista)
+  - `caderno-2-historia-fgv.pdf` · `aulas-01-02-grecia-e-roma.pdf` · `aula-02-colonizacao-inglesa-e-independencia-dos-eua.pdf`
 - `literatura/`
   - `fgv-2022.1-dis-ar11-ar12-semana-de-22-antropofagia.pdf` — discursivas reais da FGV (Semana de 22 e Manifesto Antropófago)
+  - `caderno-1-literatura-fgv.pdf` · `apostila-movimentos-literarios.pdf` · `exercicios-movimentos-literarios-fgv.pdf` · `apostila-bras-cubas-e-parnasianismo.pdf`
+- `historia-do-brasil/` — `aula-10-crise-da-republica-oligarquica-e-era-vargas-1.pdf`
+- `atualidades/` — resumos 06 (Oriente Médio), 07 (Bálcãs) e 08 (Venezuela e Cuba), do Alex
+- `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato
+- `lingua-portuguesa/` — análise sintática, sintaxe e regência, e duas atividades de verbos e complementos
+- `matematica/` — questões reais da FGV, tipos que sempre caem e plano de ação
+- `redacao/` — `aula-05-como-usar-repertorio.pdf`
+- `artes-e-questoes-contemporaneas/` — 3 versões diferentes da apostila de Artes (32, 57 e 66 páginas),
+  caderno de exercícios e o calendário de obras do curso de Artes 2027
 - Listas, apostilas e correções do cursinho `[a confirmar]` como chegam e por qual plataforma
 
 ## Regra
@@ -25,7 +37,8 @@ assunto (ex.: `crise-de-1929-e-nazifascismo.md`). As 13 pastas já existem.
 
 Material com flashcards sai em dois arquivos com o mesmo nome: `.md` (Obsidian) e `.html` (abre no
 navegador, cards que viram). A Laura chega aqui pelo atalho `~/Downloads/Materias`, que aponta
-para esta pasta. Nada de cópia fora do Brain.
+para esta pasta. Nada de cópia fora do Brain. Os PDFs daqui ficam fora do git, como os das provas
+(backup ainda em aberto).
 
 Erro cometido em lista do cursinho **não fica aqui** —
 vai para `Projetos/Vestibular/banco-erros/`, junto com todos os outros.

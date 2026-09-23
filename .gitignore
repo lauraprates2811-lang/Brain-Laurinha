@@ -13,6 +13,10 @@
 __pycache__/
 *.pyc
 
-# PDFs das provas antigas (~130 MB; os originais estao nos zips em ~/Downloads).
+# PDFs das provas antigas (~130 MB). Os zips originais foram para a Lixeira em 2026-09-23:
+# esta pasta e a UNICA copia. O backup delas ainda esta em aberto (ver Tarefas).
 # O banco de questoes (provas-antigas/banco/*.csv) continua versionado.
 Projetos/Vestibular/provas-antigas/20*/
+
+# PDFs do material do cursinho (apostilas e cadernos pesados). Backup decidido junto com o das provas.
+Projetos/Cursinho/**/*.pdf

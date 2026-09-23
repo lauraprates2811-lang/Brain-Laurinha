@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronograma de Estudos — FGV Direito Rio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#122A52;
+    --navy-2:#1C3D73;
+    --gold:#D8A22B;
+    --gold-soft:#F2E6C6;
+    --paper:#F6F7F9;
+    --card:#FFFFFF;
+    --ink:#1A2233;
+    --muted:#697386;
+    --line:#E3E7EE;
+    /* disciplinas */
+    --c-red:#C48A1B;   /* Redação — topo */
+    --c-port:#1E8FB0;  /* Português/Literatura */
+    --c-hum:#5AA13A;   /* Humanas */
+    --c-mat:#DD8629;   /* Matemática */
+    --c-ing:#7E9A2E;   /* Inglês */
+    --c-sim:#3B3F86;   /* Simulado/Revisão */
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 22px 60px;}
+
+  /* ---------- Cabeçalho ---------- */
+  header.top{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff;border-radius:16px;padding:30px 32px;position:relative;overflow:hidden;
+  }
+  header.top::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:200px;height:200px;
+    background:radial-gradient(circle,rgba(216,162,43,.25),transparent 70%);
+  }
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 6px;}
+  header.top h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.4vw,42px);
+    line-height:1.05;margin:0;}
+  header.top h1 .u{border-bottom:4px solid var(--gold);padding-bottom:2px;}
+  header.top p{margin:12px 0 0;color:#D6DEEC;font-size:15px;max-width:640px;}
+
+  /* ---------- Faixa de estratégia ---------- */
+  .strategy{margin:22px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;}
+  .strat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px;position:relative;}
+  .strat .n{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--gold);line-height:1;}
+  .strat h3{margin:8px 0 4px;font-size:14px;font-weight:700;color:var(--navy);}
+  .strat p{margin:0;font-size:13px;color:var(--muted);}
+
+  /* ---------- Alertas ---------- */
+  .flags{margin:16px 0 6px;display:grid;gap:10px;}
+  .flag{border-left:4px solid var(--gold);background:var(--gold-soft);border-radius:0 10px 10px 0;
+    padding:12px 16px;font-size:13.5px;}
+  .flag b{color:var(--navy);}
+
+  /* ---------- Legenda ---------- */
+  .legend{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:22px 0 6px;
+    padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;}
+  .legend .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:2px;}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#33405a;}
+  .dot{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  .d-red{background:var(--c-red);}.d-port{background:var(--c-port);}.d-hum{background:var(--c-hum);}
+  .d-mat{background:var(--c-mat);}.d-ing{background:var(--c-ing);}.d-sim{background:var(--c-sim);}
+
+  /* ---------- Grade de dias ---------- */
+  .days{margin-top:26px;display:grid;gap:16px;}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    display:grid;grid-template-columns:150px 1fr;}
+  .day .head{background:var(--navy);color:#fff;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;}
+  .day .head .wd{font-family:'Fraunces',serif;font-size:21px;font-weight:600;line-height:1.05;}
+  .day .head .en{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.1em;margin-top:3px;text-transform:uppercase;}
+  .day .head .tag{margin-top:10px;font-size:11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+    padding:3px 8px;border-radius:20px;align-self:flex-start;color:#EAF0FA;}
+  .day .body{padding:14px 18px;}
+
+  .block{padding:11px 0;border-bottom:1px dashed var(--line);}
+  .block:last-child{border-bottom:none;}
+  .block .when{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;
+    color:var(--navy);letter-spacing:.02em;display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+  .when .pill{background:var(--gold-soft);color:#8a6a10;font-weight:700;padding:2px 8px;border-radius:20px;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;}
+  .when .pill.night{background:#EAECF6;color:#3B3F86;}
+  .when .pill.sim{background:#E7E1F3;color:#4a3a86;}
+  .tasks{display:flex;flex-direction:column;gap:6px;}
+  .task{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;}
+  .task .bar{width:4px;border-radius:4px;flex:0 0 4px;align-self:stretch;min-height:20px;}
+  .b-red{background:var(--c-red);}.b-port{background:var(--c-port);}.b-hum{background:var(--c-hum);}
+  .b-mat{background:var(--c-mat);}.b-ing{background:var(--c-ing);}.b-sim{background:var(--c-sim);}
+  .task .txt b{color:var(--ink);}
+  .task .txt .s{font-weight:700;}
+  .task .txt small{color:var(--muted);font-size:12px;display:block;margin-top:1px;}
+  .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:8px;}
+
+  /* ---------- Âncoras semanais ---------- */
+  .anchors{margin-top:28px;background:var(--navy);border-radius:16px;padding:26px 28px;color:#fff;}
+  .anchors h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin:0 0 4px;}
+  .anchors .sub{color:#B9C6DD;font-size:13.5px;margin:0 0 18px;}
+  .anchors .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .anchor{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:15px 16px;}
+  .anchor .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .anchor h4{margin:6px 0 5px;font-size:15px;color:#fff;}
+  .anchor p{margin:0;font-size:12.5px;color:#C7D2E4;}
+
+  footer{margin-top:26px;text-align:center;font-size:12px;color:var(--muted);}
+
+  @media (max-width:640px){
+    .day{grid-template-columns:1fr;}
+    .day .head{flex-direction:row;align-items:center;gap:10px;padding:12px 16px;}
+    .day .head .tag{margin-top:0;margin-left:auto;}
+  }
+  @media print{
+    body{background:#fff;}
+    .wrap{max-width:100%;padding:0;}
+    .day,.strat,.anchor,.legend,.flag{break-inside:avoid;}
+    header.top,.anchors{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <p class="eyebrow">Vestibular · FGV Direito Rio</p>
+    <h1>Cronograma <span class="u">estratégico</span> de estudos</h1>
+    <p>Distribuição semanal das janelas livres na escola e do estudo pós-cursinho, priorizada pelos pesos do edital, com foco em retenção: revisão em 24h, prática ativa (questões), redação recorrente e simulados corrigidos.</p>
+  </header>
+
+  <!-- ESTRATÉGIA -->
+  <section class="strategy">
+    <div class="strat"><div class="n">1</div><h3>Prioridade por peso</h3><p>Redação (12) &gt; Humanas (7) &gt; Português (6) &gt; Matemática (3) &gt; Inglês (2). O tempo segue essa ordem.</p></div>
+    <div class="strat"><div class="n">2</div><h3>Revisão em 24h</h3><p>Toda noite você revisa a matéria do cursinho do mesmo dia — combate a curva do esquecimento.</p></div>
+    <div class="strat"><div class="n">3</div><h3>Prática ativa</h3><p>Janelas curtas = questões e flashcards, não releitura. Você lembra o que recupera de memória.</p></div>
+    <div class="strat"><div class="n">4</div><h3>Reforço nas dificuldades</h3><p>Matemática, Literatura e História ganham blocos extras — e caem em áreas de alto peso.</p></div>
+  </section>
+
+  <!-- ALERTAS -->
+  <section class="flags">
+    <div class="flag"><b>Redação é a maior nota.</b> Peso 12 no edital (≈40%). Trate-a como prioridade nº 1: 2 redações por semana + reescrita das corrigidas. É onde você mais ganha pontos.</div>
+    <div class="flag"><b>Química, Biologia e Física não caem em FGV Direito.</b> Se o cursinho permitir, realoque o tempo desses módulos "Fazer na EABH" para Redação, Português ou Humanas.</div>
+    <div class="flag"><b>Inglês é peso baixo (2) e você estuda em escola bilíngue.</b> Manutenção leve (1×/semana com questões FGV) já é suficiente — não desperdice horas nobres aqui.</div>
+  </section>
+
+  <!-- LEGENDA -->
+  <div class="legend">
+    <span class="lbl">Disciplinas</span>
+    <span class="chip"><span class="dot d-red"></span>Redação</span>
+    <span class="chip"><span class="dot d-port"></span>Português / Literatura</span>
+    <span class="chip"><span class="dot d-hum"></span>Humanas (Hist./Geo./Atual.)</span>
+    <span class="chip"><span class="dot d-mat"></span>Matemática</span>
+    <span class="chip"><span class="dot d-ing"></span>Inglês</span>
+    <span class="chip"><span class="dot d-sim"></span>Simulado / Revisão</span>
+  </div>
+
+  <!-- DIAS -->
+  <section class="days">
+
+    <!-- SEGUNDA -->
+    <article class="day">
+      <div class="head"><span class="wd">Segunda</span><span class="en">Monday</span><span class="tag">Cursinho: Mat · Atualidades</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">09:26–10:18 · janela na escola <span class="pill">livre</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-port"></span><span class="txt"><span class="s">Português</span> — interpretação de texto + gramática<small>~15 questões FGV/estilo banca. Português cai forte e não entra no cursinho de hoje.</small></span></div>
+          </div>
+          <div class="note">Advisory (10:22) e P.E (10:50) ficam para o módulo de Química (Fazer na EABH), se obrigatório.</div>
+        </div>
+        <div class="block">
+          <div class="when">20:40–23:10 · pós-cursinho <span class="pill night">noite · 2h30</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-mat"></span><span class="txt"><b class="s">Matemática (1h)</b> — refazer os exercícios da aula do Daniel + registrar erros<small>Dificuldade sua → revisar no mesmo dia fixa muito melhor.</small></span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b class="s">Atualidades (45min)</b> — revisar aula do Alex + 5 questões</span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b>Leitura 30min</b> — notícias/análise (repertório para redação)</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TERÇA -->
+    <article class="day">
+      <div class="head"><span class="wd">Terça</span><span class="en">Tuesday</span><span class="tag">Cursinho: Lit · Hist · Port</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">09:20–10:20 · aula de Redação (Paula)</div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-red"></span><span class="txt"><span class="s">Redação</span> — técnica e correção com a Paula<small>Traga sua redação do fim de semana para correção detalhada aqui.</small></span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">11:46–12:38 · janela na escola <span class="pill">livre</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-port"></span><span class="txt"><span class="s">Literatura</span> — módulo do Verbo (Fazer na EABH)<small>Dificuldade sua. Se já tiver feito, troque por questões de Humanas.</small></span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">20:40–23:10 · pós-cursinho <span class="pill night">noite · 2h30</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-port"></span><span class="txt"><b class="s">Literatura (50min)</b> — revisar aula do Verbo + esquematizar escola/obra</span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b class="s">História (50min)</b> — revisar aula do Duque (dificuldade) + linha do tempo</span></div>
+            <div class="task"><span class="bar b-port"></span><span class="txt"><b class="s">Português (40min)</b> — aula do Vidal + questões</span></div>
+            <div class="task"><span class="bar b-port"></span><span class="txt"><b>Leitura 30min</b> — obra literária cobrada</span></div>
+          </div>
+          <div class="note">Noite mais pesada de Humanas/Linguagens — tudo fresco do cursinho e reunindo 2 dificuldades.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- QUARTA -->
+    <article class="day">
+      <div class="head"><span class="wd">Quarta</span><span class="en">Wednesday</span><span class="tag">Cursinho: Matemática ×2</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">Late start + Advisory (manhã) · janelas <span class="pill">livre</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-mat"></span><span class="txt"><span class="s">Matemática</span> — revisão do caderno de erros (Advisory, ~24min)<small>Bloco maior do late start: módulo de Biologia (EABH) se obrigatório, senão repertório de redação.</small></span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">20:40–23:10 · pós-cursinho <span class="pill night">noite · 2h30</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-mat"></span><span class="txt"><b class="s">Matemática (1h15)</b> — lista de exercícios (aulas Éder + Serra)<small>Dia de matemática dupla → aproveite para atacar a dificuldade a fundo.</small></span></div>
+            <div class="task"><span class="bar b-red"></span><span class="txt"><b class="s">Redação (45min)</b> — planejar tese + juntar repertório do tema da semana</span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b>Leitura 30min</b> — notícias/atualidades</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- QUINTA -->
+    <article class="day">
+      <div class="head"><span class="wd">Quinta</span><span class="en">Thursday</span><span class="tag">★ Janelão livre</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">08:15–11:42 · bloco livre grande (~2h30) <span class="pill">livre</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-red"></span><span class="txt"><b class="s">REDAÇÃO cronometrada (90min)</b> — tema completo, no tempo da prova<small>Melhor janela da semana. Entregue na aula da Amanda (sexta) para correção.</small></span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b class="s">Humanas (45min)</b> — questões de História + Geografia</span></div>
+            <div class="task"><span class="bar b-ing"></span><span class="txt"><b>Inglês (leve)</b> — 1 texto + questões, se sobrar tempo</span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">20:40–23:00 · pós-cursinho <span class="pill night">noite · 2h20</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b class="s">Geografia (50min)</b> — revisar aula do Renato + mapas</span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b class="s">História (40min)</b> — revisão espaçada (retomar terça)</span></div>
+            <div class="task"><span class="bar b-red"></span><span class="txt"><b>Ajustar a redação</b> da manhã antes de entregar</span></div>
+            <div class="task"><span class="bar b-port"></span><span class="txt"><b>Leitura 30min</b> — obra literária</span></div>
+          </div>
+          <div class="note">Física (Meca) da quinta: se for assistir a gravação, use 1,5× num horário leve — baixa prioridade (não cai em Direito).</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEXTA -->
+    <article class="day">
+      <div class="head"><span class="wd">Sexta</span><span class="en">Friday</span><span class="tag">Cursinho: Hist · Geo · Redação</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">09:26–10:18 e 10:50–11:42 · janelas <span class="pill">livre</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-ing"></span><span class="txt"><span class="s">Inglês (52min)</span> — questões FGV (dose semanal única)</span></div>
+            <div class="task"><span class="bar b-red"></span><span class="txt"><span class="s">Português/Redação (52min)</span> — banco de repertório e conectivos<small>Advisory (10:22) = academia, como no seu plano.</small></span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">18:00–19:30 · aula de Redação (Amanda)</div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-red"></span><span class="txt"><span class="s">Redação</span> — entregar a redação de quinta para correção</span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">20:00–22:00 · pós-cursinho <span class="pill night">noite · 2h</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-red"></span><span class="txt"><b class="s">REESCREVER a redação corrigida</b><small>Reescrever o texto com o feedback é o que mais faz a nota subir.</small></span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b class="s">História do Brasil + Geografia</b> — revisar aulas de Jonas e Renato</span></div>
+            <div class="task"><span class="bar b-hum"></span><span class="txt"><b>Leitura 30min</b></span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SÁBADO -->
+    <article class="day">
+      <div class="head"><span class="wd">Sábado</span><span class="en">Saturday</span><span class="tag">Sem escola</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">07:00–13:00 · cursinho (manhã)</div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-sim"></span><span class="txt"><span class="s">Expressão Oral + Artes &amp; QC</span> — já agendado (componentes da seleção FGV)</span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">Tarde · estudos <span class="pill night">2h30</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-sim"></span><span class="txt"><b class="s">Consolidação da semana (1h)</b> — flashcards + caderno de erros (revisão espaçada de tudo)</span></div>
+            <div class="task"><span class="bar b-mat"></span><span class="txt"><b class="s">Dificuldades (1h)</b> — questões extras de Matemática, Literatura e História</span></div>
+            <div class="task"><span class="bar b-red"></span><span class="txt"><b class="s">Repertório de redação (30min)</b> — dados, citações e temas quentes</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- DOMINGO -->
+    <article class="day">
+      <div class="head"><span class="wd">Domingo</span><span class="en">Sunday</span><span class="tag">★ Dia de simulado</span></div>
+      <div class="body">
+        <div class="block">
+          <div class="when">08:00–11:30 · simulado <span class="pill sim">completo</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-sim"></span><span class="txt"><span class="s">Simulado completo, cronometrado, com redação</span><small>Condições de prova reais: sem celular, sem pausa extra. Esta é sua 2ª redação da semana.</small></span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">14:30–18:00 · simulado / questões <span class="pill sim">bloco 2</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-sim"></span><span class="txt"><span class="s">Segundo simulado</span> ou bateria de questões por área (foco em Humanas e Português)</span></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="when">19:00–21:30 · correção <span class="pill night">2h30</span></div>
+          <div class="tasks">
+            <div class="task"><span class="bar b-sim"></span><span class="txt"><b class="s">CORREÇÃO detalhada + caderno de erros</b><small>Onde você mais aprende: entenda cada erro, anote o padrão e marque o que revisar no sábado seguinte.</small></span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ÂNCORAS SEMANAIS -->
+  <section class="anchors">
+    <h2>Âncoras da semana</h2>
+    <p class="sub">Rotinas fixas que sustentam a retenção e a evolução, independentemente da matéria do dia.</p>
+    <div class="grid">
+      <div class="anchor"><div class="k">Redação · peso 12</div><h4>2 por semana + reescrita</h4><p>Nº 1 na quinta (corrigida pela Amanda). Nº 2 no simulado de domingo (correção c/ a Paula na terça). Sempre reescreva a corrigida.</p></div>
+      <div class="anchor"><div class="k">Simulados</div><h4>2 no domingo</h4><p>Manhã e tarde, cronometrados. A correção de domingo à noite vale tanto quanto fazer a prova.</p></div>
+      <div class="anchor"><div class="k">Caderno de erros</div><h4>Atualizar sempre</h4><p>Registre todo erro de questão/simulado. Revise a lista inteira no sábado — é seu mapa do que ainda falha.</p></div>
+      <div class="anchor"><div class="k">Revisão espaçada</div><h4>24h + 1 semana</h4><p>Cada conteúdo é revisto no mesmo dia (à noite) e de novo ~1 semana depois (sábado). Fixa a longo prazo.</p></div>
+      <div class="anchor"><div class="k">Leitura · 30min/dia</div><h4>Alternada</h4><p>Seg/Qua/Sex: atualidades e notícias (Humanas + repertório). Ter/Qui/Sáb: obra literária cobrada (Literatura).</p></div>
+      <div class="anchor"><div class="k">Foco em peso</div><h4>Onde investir a hora nobre</h4><p>Redação e Português puxam a maior parte do tempo livre; Humanas em segundo; Matemática mantém ritmo; Inglês em manutenção.</p></div>
+    </div>
+  </section>
+
+  <footer>Priorizado pela tabela oficial do edital · Redação (12) · Humanas (7) · Português (6) · Matemática (3) · Inglês (2)</footer>
+
+</div>
+</body>
+</html>

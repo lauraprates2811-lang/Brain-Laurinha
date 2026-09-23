@@ -87,7 +87,8 @@ Nada solto na raiz além de: `CLAUDE.md`, `STATUS.md`, `STATUS-historico.md`, `C
 Material de estudo, PDF, edital, prova antiga → `Projetos/<X>/`.
 Material que o Claude cria para uma matéria (flashcards, mapa mental, apostila, resumo) →
 `Projetos/Cursinho/<materia>/`, em `.md` e, se tiver flashcards, também em `.html`. A Laura abre
-essas pastas pelo atalho `~/Downloads/Materias`. Ver `Regras/decisoes-tecnicas.md`.
+essas pastas pelo atalho `~/Downloads/Materias`, e as provas antigas pelo `~/Downloads/Provas-FGV`.
+Ver `Regras/decisoes-tecnicas.md`.
 
 ## Não inventar
 

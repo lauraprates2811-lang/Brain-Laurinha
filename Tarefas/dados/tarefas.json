@@ -197,10 +197,10 @@
     },
     {
       "id": 22,
-      "titulo": "Decidir se os PDFs das provas antigas (~130 MB) entram no backup do GitHub — hoje ficam fora",
+      "titulo": "Decidir o backup dos PDFs das provas antigas (~130 MB) e das apostilas do cursinho — desde 23/09 são a ÚNICA cópia e ficam fora do GitHub",
       "area": "brain",
       "prazo": "2026-09-30",
-      "prioridade": "baixa",
+      "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-22"
     },

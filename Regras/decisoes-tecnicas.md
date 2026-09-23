@@ -86,7 +86,9 @@ cursinho fique separado por matéria. No dia seguinte pediu que **todo** materia
 minúsculas e com hífen. Cada material é um arquivo com o nome do assunto, em `.md` (Obsidian) e,
 quando tiver flashcards, também em `.html` (abre no navegador, com os cards virando). O atalho
 `~/Downloads/Materias` aponta para `Projetos/Cursinho/`: é por ali que ela abre no Finder. Nada de
-cópia fora do Brain.
+cópia fora do Brain. O mesmo vale para as provas antigas: pasta única em
+`Projetos/Vestibular/provas-antigas/`, com atalho `~/Downloads/Provas-FGV` (2026-09-23). PDFs do
+cursinho ficam fora do git, como os das provas.
 
 ---
 
