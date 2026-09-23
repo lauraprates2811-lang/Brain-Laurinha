@@ -1,0 +1,98 @@
+{
+  "titulo": "Português — derivação regressiva (vacina)",
+  "data": "2026-09-23",
+  "materia": "Língua Portuguesa",
+  "origem": "Questão enviada pela Laura (não é de prova da FGV do banco) · questão 03, item b",
+  "valor": "1,0 (só o item b)",
+  "tipo_grade": "niveis",
+  "enunciado": "(Texto-base: notícia sobre a campanha de vacinação contra a gripe para idosos em Arapongas/PR.)\na) Caracterize a linguagem utilizada na notícia.\nb) “Vacina” é palavra formada pelo processo de derivação regressiva. Você concorda com essa afirmação? Justifique sua resposta.",
+  "gabarito": "(Sem gabarito oficial: resposta esperada montada pela gramática.) Não. “Vacina” é palavra primitiva: nomeia uma substância, não uma ação. É o verbo “vacinar” que deriva dela (vacina + -ar, derivação sufixal). A derivação regressiva faz o caminho contrário: tira a terminação de um verbo para formar o substantivo que nomeia a ação (combater → o combate; pescar → a pesca). Critério das gramáticas: substantivo que indica ação vem do verbo; substantivo que indica objeto ou substância dá origem ao verbo (âncora → ancorar; vacina → vacinar).",
+  "grade": "Sem grade oficial. Usada a régua padrão da FGV para “concorda? justifique”: 100% posição e justificativa corretas, sem desvio de redação · 75% corretas, com desvio · 50% posição correta e justificativa parcial, sem desvio · 25% parcial, com desvio.",
+  "resposta_marcada": "{+Não concordo. |1+}O processo de derivação regressiva se constitui em uma redução de uma palavra original, [[um sufixo na maioria das vezes|3]]. Sob essa perspectiva{+,|4+} a palavra vacina não corresponde a uma derivação regressiva{+,|5+} pois [[é uma palavra primitiva|2]] que não {-consta com uma-}{+resulta da|6+} redução de uma palavra do {-vocabulario portugues-}{+vocabulário português.|7+}{+ É o verbo \"vacinar\" que deriva de \"vacina\", e não o contrário.|8+}",
+  "comentarios": [
+    {
+      "n": 1,
+      "tipo": "conteudo",
+      "texto": "Comece pela resposta. A pergunta é “você concorda?”, então a 1ª frase deveria ser “Não concordo.”. Na sua resposta, a posição só aparece no meio do texto."
+    },
+    {
+      "n": 2,
+      "tipo": "elogio",
+      "texto": "Certo: “vacina” é palavra primitiva. É metade da justificativa."
+    },
+    {
+      "n": 3,
+      "tipo": "conteudo",
+      "texto": "Na derivação regressiva o que cai é a terminação do verbo (-ar, -er, -ir): combater → o combate, pescar → a pesca. Do jeito que está escrito, parece que a “palavra original” é um sufixo."
+    },
+    {
+      "n": 4,
+      "tipo": "gramatica",
+      "texto": "Expressão no início da frase (“Sob essa perspectiva”) fica melhor separada por vírgula. Aqui é recomendação: sozinha, não derruba nota."
+    },
+    {
+      "n": 5,
+      "tipo": "gramatica",
+      "texto": "“Pois” explicativo vem depois de vírgula. É o mesmo erro da correção de Artes."
+    },
+    {
+      "n": 6,
+      "tipo": "gramatica",
+      "texto": "“Constar” é “estar registrado” (“consta no documento”). Para origem, use “resultar de” ou “vir de”."
+    },
+    {
+      "n": 7,
+      "tipo": "gramatica",
+      "texto": "Acento: vocabulário (paroxítona terminada em ditongo) e português (oxítona terminada em -es). E ponto final no fim da resposta."
+    },
+    {
+      "n": 8,
+      "tipo": "conteudo",
+      "texto": "Faltou a metade que desmonta a pegadinha: dizer de qual verbo “vacina” viria (vacinar) e por que não vem. “Vacina” nomeia uma substância, não uma ação; por isso é o verbo “vacinar” que deriva dela (vacina + -ar). A derivação regressiva faz o caminho contrário: combater → o combate."
+    }
+  ],
+  "itens": [
+    {
+      "item": "b)",
+      "esperado": "Discordar e justificar: “vacina” nomeia substância, é primitiva, e é o verbo “vacinar” que deriva dela",
+      "voce": "Discorda (só implícito) e diz que “vacina” é primitiva, sem citar o verbo “vacinar” nem o critério ação × substância. Com desvios de redação.",
+      "nivel": "25%",
+      "pontos": "0,25 / 1,0"
+    }
+  ],
+  "nota": {
+    "obtida": "0,25",
+    "maxima": "1,0",
+    "percentual": "25%",
+    "criterio": "Item b: posição certa, justificativa parcial e com desvio de redação. O item a não foi enviado."
+  },
+  "de_acordo": "Sua posição está certa (“vacina” não é derivação regressiva), e “palavra primitiva” é um argumento válido. Falta mostrar o caminho vacina → vacinar para a justificativa ficar completa. Sem gabarito oficial, esta nota é menos segura que a de uma questão da FGV.",
+  "gramatica": [
+    {
+      "trecho": "regressiva pois",
+      "correcao": "regressiva, pois",
+      "regra": "“Pois” explicativo vem depois de vírgula."
+    },
+    {
+      "trecho": "não consta com uma redução",
+      "correcao": "não resulta da redução",
+      "regra": "“Constar” é estar registrado; para origem, “resultar de”."
+    },
+    {
+      "trecho": "vocabulario portugues",
+      "correcao": "vocabulário português.",
+      "regra": "Paroxítona em ditongo e oxítona em -es levam acento; frase termina com ponto."
+    },
+    {
+      "trecho": "Sob essa perspectiva a palavra",
+      "correcao": "Sob essa perspectiva, a palavra",
+      "regra": "Recomendado: expressão no início da frase separada por vírgula."
+    }
+  ],
+  "melhorar": [
+    "Abra com a posição: “Não concordo.”. Pergunta de “você concorda?” pede sim ou não logo na 1ª frase.",
+    "Em formação de palavras, sempre mostre o par e o sentido da derivação (vacina → vacinar). Critério: substantivo de ação vem do verbo (combater → o combate); substantivo de coisa ou substância dá origem ao verbo (âncora → ancorar).",
+    "Vírgula antes de “pois” e acento em português e vocabulário: os dois erros já tinham aparecido na correção de Artes."
+  ],
+  "reescrita": "Não concordo. O processo de derivação regressiva consiste na redução de uma palavra, geralmente pela retirada da terminação de um verbo, como em combater → o combate. Sob essa perspectiva, a palavra vacina não corresponde a uma derivação regressiva, pois é uma palavra primitiva, que não resulta da redução de outra palavra do vocabulário português: ela nomeia uma substância, e não uma ação. É o verbo vacinar que deriva de vacina, e não o contrário."
+}
