@@ -119,7 +119,13 @@ Sugestão em conversa vazia vira ruído e ela para de obedecer.
 
 ## Os agentes de estudo
 
-`/questoes` · `/oral` · `/redacao` · `/revisar` · `/explica` · `/simulado` · `/plano`
+`/questoes` · `/oral` · `/redacao` · `/revisar` · `/explica` · `/simulado` · `/plano` · `/banca`
+
+**O `/banca` é acionado sozinho.** Toda pergunta sobre provas ou questões antigas, o que mais
+cai, quantas vezes um tema apareceu, estatística de matérias ou o que priorizar com base na
+prova passa pelo `/banca` — mesmo que a Laura não digite o comando. Número sobre a prova sai do
+banco (`Projetos/Vestibular/provas-antigas/banco/`), nunca de memória. Um hook
+(`.claude/hooks/banca-gatilho.py`) lembra disso a cada mensagem que casa com essas perguntas.
 
 Todo agente, antes de agir, lê `Regras/decisoes-estudo.md`. Todo agente grava o resultado
 no lugar certo e termina sugerindo a linha para o `/save`. Documentação em `Agentes/`.

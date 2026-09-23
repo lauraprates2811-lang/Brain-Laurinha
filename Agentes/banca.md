@@ -11,6 +11,8 @@ Matemática é todo dia, e Redação, Português e Inglês eliminam abaixo de 3,
 cabeça — roda o `banca.py` e mostra a base de cada número.
 
 ## Como usar
+Não precisa digitar o comando: toda pergunta sobre provas antigas, o que mais cai ou o que
+priorizar aciona o `/banca` sozinho. Se quiser forçar, digite:
 ```
 /banca o que mais cai em matemática
 /banca quantas vezes caiu literatura nos últimos 3 anos

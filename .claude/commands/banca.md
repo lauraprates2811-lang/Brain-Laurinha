@@ -1,5 +1,5 @@
 ---
-description: Responde com números o que mais cai na FGV, a partir do banco de provas antigas
+description: Responde com números o que mais cai na FGV, a partir do banco de provas antigas. Use SEMPRE, mesmo sem a Laura digitar /banca, quando ela perguntar sobre provas ou questões antigas, o que mais cai ou apareceu, quantas vezes um tema caiu, estatística ou frequência de matérias, ou o que estudar/priorizar com base na prova
 ---
 
 # /banca — o estatístico das provas antigas
