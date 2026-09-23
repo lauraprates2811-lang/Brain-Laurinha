@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Formação de Palavras e Efeitos de Sentido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E9EBE6; --surface:#F7F8F4; --surface-2:#EFF1EC; --ink:#1A1E23; --muted:#5A6068; --line:#CDD1CA;
+  --z1:#A3345A; --z2:#2B4C9B; --z3:#5B6776;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+    --z1:#EC8AAB; --z2:#8FA8F2; --z3:#A7B3C2;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+  --z1:#EC8AAB; --z2:#8FA8F2; --z3:#A7B3C2;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:70ch;margin:0}
+.lede b{font-weight:600}
+.fix{max-width:70ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+/* método */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.step{padding:14px 16px;display:grid;gap:4px;align-content:start;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .t{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.step strong{font:800 21px/1.05 var(--display);letter-spacing:.015em;text-transform:uppercase}
+.step p{margin:0;font-size:13.5px;color:var(--muted)}
+.step p b{color:var(--ink);font-weight:600}
+
+/* zonas */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.zone{--c:var(--ink);display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.zone .n{grid-row:1/3;font:800 44px/.9 var(--display);color:var(--c);font-variant-numeric:tabular-nums}
+.zone .zt{font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.zone .zd{font-size:13.5px}
+.zone .zd b{font-weight:600}
+.base{font-size:12.5px;color:var(--muted);margin:0}
+
+.tabs{display:flex;flex-wrap:wrap;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 14px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible,.opt:focus-visible{outline:2px solid var(--z2);outline-offset:2px}
+
+/* mapa */
+.zonehead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:6px 0 0}
+.zonehead h2{margin:0;font:800 26px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.zonehead span{font-size:13.5px;color:var(--muted)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;align-items:start}
+.rule{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:12px 14px 14px;display:grid;gap:6px}
+.rule h3{margin:0;font:700 19px/1.05 var(--display);letter-spacing:.02em;text-transform:uppercase}
+.rule p{margin:0;font-size:14px}
+.rule .test{font-size:13.5px;color:var(--muted)}
+.rule .test b{color:var(--ink);font-weight:600}
+.rule ul{margin:0;padding-left:18px;font-size:14px}
+.rule li{margin:2px 0}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;white-space:nowrap}
+.formula{background:var(--surface);border:1.5px solid var(--z1);border-radius:10px;padding:14px 16px;display:grid;gap:8px}
+.formula h3{margin:0;font:800 20px/1 var(--display);letter-spacing:.02em;text-transform:uppercase;color:var(--z1)}
+.formula p{margin:0;font-size:14px}
+.formula table{border-collapse:collapse;font-size:13.5px;width:100%}
+.formula td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top}
+.formula td:first-child{font-weight:600;white-space:nowrap;padding-left:0}
+.tablewrap{overflow-x:auto}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+/* treino */
+.quiz{display:grid;gap:14px;max-width:780px;width:100%;margin:0 auto}
+.qcard{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:16px 20px 18px;display:grid;gap:12px}
+.qmeta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.qmeta span:last-child{color:var(--muted)}
+.qsup{margin:0;font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding:2px 0 2px 10px}
+.qsup i{color:var(--ink)}
+.qtext{margin:0;font:600 17px/1.4 var(--sans)}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;text-align:left;font:400 15px/1.4 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer}
+.opt:hover:not([disabled]){border-color:var(--muted)}
+.opt .l{font:600 13px/1.6 var(--mono);color:var(--muted)}
+.opt[disabled]{cursor:default}
+.opt.right{border-color:var(--ok);box-shadow:inset 0 0 0 1px var(--ok)}
+.opt.right .l{color:var(--ok)}
+.opt.wrong{border-color:var(--rev);box-shadow:inset 0 0 0 1px var(--rev)}
+.opt.wrong .l{color:var(--rev)}
+.feedback{display:grid;gap:6px;font-size:14.5px;background:var(--surface-2);border-radius:8px;padding:12px 14px}
+.feedback p{margin:0}
+.feedback .verdict{font:700 18px/1 var(--display);letter-spacing:.03em;text-transform:uppercase}
+.feedback .verdict.ok{color:var(--ok)} .feedback .verdict.no{color:var(--rev)}
+.feedback .where{font-size:13px;color:var(--muted)}
+.qnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dot{width:22px;height:22px;border-radius:5px;border:1px solid var(--line);background:var(--surface);font:500 10.5px/20px var(--mono);text-align:center;color:var(--muted);cursor:pointer;padding:0}
+.dot.cur{border-color:var(--ink);color:var(--ink)}
+.dot.ok{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.dot.no{background:var(--rev);border-color:var(--rev);color:var(--surface)}
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:grid;gap:12px}
+.summary h3{margin:0;font:800 26px/1 var(--display);text-transform:uppercase;letter-spacing:.015em}
+.summary p{margin:0}
+.errs{display:grid;gap:10px}
+.err{border-left:3px solid var(--rev);padding:2px 0 2px 12px;display:grid;gap:6px;font-size:14px}
+.err b{font-weight:600}
+.causes{display:flex;flex-wrap:wrap;gap:6px}
+.copybox{width:100%;min-height:120px;font:500 12.5px/1.45 var(--mono);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px}
+
+/* flashcards */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:300px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;align-items:center}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn.small{padding:6px 10px;font-size:12px}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted);margin:0}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+/* prova real */
+.real{display:grid;gap:10px;max-width:880px}
+.rq{--c:var(--ink);display:grid;grid-template-columns:auto 1fr;gap:4px 12px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;padding:12px 14px}
+.rq input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--ok);grid-row:1/4}
+.rq .top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.rq .id{font:500 12.5px/1.3 var(--mono)}
+.rq .kind{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.rq .what{font-size:14.5px;font-weight:600;margin:0}
+.rq .how{font-size:13.5px;color:var(--muted);margin:0}
+.rq .how b{color:var(--ink);font-weight:600}
+.rq .file{font:500 12px/1.4 var(--mono);color:var(--muted);margin:0;overflow-wrap:anywhere}
+.rq.done{opacity:.55}
+.subhead{font:800 22px/1 var(--display);text-transform:uppercase;letter-spacing:.015em;margin:8px 0 0}
+.voice{display:grid;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.voice ol{margin:0;padding-left:20px;display:grid;gap:4px}
+
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2){border-right:0}
+  .step:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .zones{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .card{min-height:340px}
+  .keys{display:none}
+  .qcard{padding:14px 14px 16px}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Língua Portuguesa · apostila CPV, aula 12 · 23/09/2026</div>
+    <h1>Formação de palavras e efeitos de sentido</h1>
+    <p class="lede">São 13 páginas de teoria, mas a FGV cobra só uma parte delas. O método é <b>questão primeiro, teoria só onde você errar</b>: você lê as regras-gatilho (5 min), faz o treino, parte para as questões reais da FGV e só abre a apostila na seção que o erro apontar.</p>
+    <div class="fix"><b>Dois erros na apostila:</b> Gonçalves Dias viveu de 1823 a <b>1864</b> (a apostila diz 1964), e a palavra é <b>piscicultura</b> (a apostila diz "psicultura").</div>
+  </header>
+
+  <section class="steps" aria-label="O método, dentro do seu bloco de estudo">
+    <div class="step"><span class="t">Parte 1 · 10 min</span><strong>Regras + treino</strong><p>Leia só a aba <b>Mapa</b>. Depois faça o <b>Treino</b>: 20 questões curtas, com correção na hora.</p></div>
+    <div class="step"><span class="t">Parte 2 · 40 min</span><strong>FGV de verdade</strong><p>Aba <b>Prova real</b>, na ordem: <b>dissertativas primeiro</b>. Confira pela grade de correção.</p></div>
+    <div class="step"><span class="t">Parte 3 · só o necessário</span><strong>Teoria no erro</strong><p>Cada erro do treino diz <b>qual seção da apostila</b> abrir. Não leia o resto.</p></div>
+    <div class="step"><span class="t">Parte 4 · 10 min</span><strong>Em voz alta</strong><p>As 3 perguntas no fim da aba <b>Prova real</b>. É treino de Oral também.</p></div>
+  </section>
+
+  <section class="zones" aria-label="O que a FGV cobra deste material">
+    <div class="zone" style="--c:var(--z1)"><span class="n">12</span><span class="zt">Zona 1 · cai toda prova</span><span class="zd"><b>Efeitos de sentido</b>. 12 questões de Português com tirinha, charge ou cartum: 2 ou 3 por prova desde 2023.1.</span></div>
+    <div class="zone" style="--c:var(--z2)"><span class="n">4</span><span class="zt">Zona 2 · cai ~1 por prova</span><span class="zd"><b>Formação de palavras</b>. 4 questões em 4 das 6 provas; 2 delas foram dissertativas sobre <b>radical grego</b>.</span></div>
+    <div class="zone" style="--c:var(--z3)"><span class="n">0</span><span class="zt">Zona 3 · nunca caiu</span><span class="zd"><b>Morfemas, crônica × notícia, expressões latinas</b>, siglas e onomatopeias. Leia 5 min, só as pegadinhas.</span></div>
+  </section>
+  <p class="base">Base: 112 questões de Língua Portuguesa do banco de provas antigas da FGV Direito SP, edições 2021.1 a 2026.1, contadas pelo <code>/banca</code>.</p>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa</button>
+    <button id="tab-treino" role="tab" aria-selected="false" aria-controls="panel-treino">Treino · 20</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 33</button>
+    <button id="tab-real" role="tab" aria-selected="false" aria-controls="panel-real">Prova real · 14</button>
+  </div>
+
+  <!-- ================= MAPA ================= -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+
+    <div class="zonehead" style="--c:var(--z1)"><h2>Zona 1 · Efeitos de sentido</h2><span>A pergunta é sempre a mesma: que mecanismo produz o efeito?</span></div>
+    <div class="rules">
+      <article class="rule" style="--c:var(--z1)">
+        <h3>Humor = quebra de expectativa</h3>
+        <p>O leitor monta uma leitura e o último quadro troca por outra.</p>
+        <p class="test"><b>Pergunte:</b> o que eu esperava e o que apareceu? A resposta é o "contraste".</p>
+        <span class="fgv">★ 2023.1-OBJ-IL16 · 2024.1-OBJ-16 · 2025.1-OBJ-16</span>
+      </article>
+      <article class="rule" style="--c:var(--z1)">
+        <h3>Literalização</h3>
+        <p>A piada toma ao pé da letra uma expressão figurada, como pôr a mulher "num pedestal" no Hagar da apostila.</p>
+        <p class="test"><b>Resposta-modelo:</b> no texto, X é figurado (= …); a imagem ativa o sentido literal (= …).</p>
+        <span class="fgv">★ 2023.1-DIS-LP9 · 2021.1-DIS-LP8</span>
+      </article>
+      <article class="rule" style="--c:var(--z1)">
+        <h3>Sátira = humor com alvo</h3>
+        <p>Crítica direta, pouco sutil, a um alvo: governo, costume, ambiente de trabalho.</p>
+        <p class="test"><b>A FGV pergunta:</b> "o que o cartum satiriza?". Nomeie o alvo <b>e</b> prove com um objeto ou uma palavra do desenho. Só o alvo vale metade.</p>
+        <span class="fgv">★ 2026.1-DIS-LP1 · 2021.1-DIS-LP7</span>
+      </article>
+      <article class="rule" style="--c:var(--z1)">
+        <h3>Ironia = dizer o contrário</h3>
+        <p>O sentido real é o oposto do que as palavras dizem.</p>
+        <p class="test"><b>Marcas:</b> aspas ("ótima"), diminutivo ("jornalzinho"), elogio que o contexto desmente.</p>
+        <span class="fgv">★ 2024.1-DIS-LP1</span>
+      </article>
+      <article class="rule" style="--c:var(--z1)">
+        <h3>Duplo sentido × ambiguidade</h3>
+        <ul>
+          <li><b>Duplo sentido:</b> intencional, dois sentidos ao mesmo tempo (publicidade, poesia). Com uma palavra só é <b>polissemia</b>.</li>
+          <li><b>Ambiguidade:</b> desvio, leitura confusa ("quem tinha razão?"). Pode virar recurso quando é proposital.</li>
+        </ul>
+        <span class="fgv">★ 2026.1-DIS-LP2 · polissemia em cartum</span>
+      </article>
+      <article class="rule" style="--c:var(--z1)">
+        <h3>Paródia × paráfrase</h3>
+        <p><b>Paródia</b> imita a forma de um texto famoso e vira o sentido, para rir ou criticar. <b>Paráfrase</b> diz o mesmo com outras palavras.</p>
+        <p class="test">Também geram humor: erros de norma e trocadilhos (as placas da apostila).</p>
+      </article>
+    </div>
+
+    <div class="formula">
+      <h3>A fórmula da dissertativa de efeito de sentido</h3>
+      <p>A grade da FGV escreve com todas as letras: <b>"apenas o 'sim' não pontua"</b>. O ponto está na justificativa, e ela precisa apontar algo concreto do texto ou da imagem.</p>
+      <div class="tablewrap"><table>
+        <tr><td>Sátira</td><td>O cartum satiriza [alvo]. Isso se vê em [objeto do desenho] e em [palavra da fala].</td></tr>
+        <tr><td>Humor</td><td>O humor nasce de [contraste / literalização / duplo sentido de "X"]: esperava-se [A], mas aparece [B].</td></tr>
+        <tr><td>Ironia</td><td>Sim, é irônico: diz [X] querendo dizer o contrário, porque [o contexto mostra Y].</td></tr>
+        <tr><td>Literal × figurado</td><td>No texto, "X" é figurado (= …); na imagem, o sentido literal (= …) também aparece.</td></tr>
+        <tr><td>Radicais</td><td>Sim. Os radicais [a], [b] e [c] significam [..], [..] e [..], e é isso que sustenta [o sentido pedido].</td></tr>
+      </table></div>
+    </div>
+
+    <div class="zonehead" style="--c:var(--z2)"><h2>Zona 2 · Formação de palavras</h2><span>Cada processo tem um teste. Decore o teste, não a definição.</span></div>
+    <div class="rules">
+      <article class="rule" style="--c:var(--z2)">
+        <h3>Parassíntese × prefixal e sufixal</h3>
+        <p class="test"><b>Teste:</b> tire o prefixo e depois tire o sufixo. Se <b>nenhuma</b> das duas sobras existe, é parassíntese.</p>
+        <ul>
+          <li>anoitecer: "anoite"? "noitecer"? Nenhuma existe → <b>parassíntese</b></li>
+          <li>deslealdade: desleal ✓ lealdade ✓ → <b>prefixal e sufixal</b></li>
+        </ul>
+        <span class="fgv">★ 2026.1-OBJ-27</span>
+      </article>
+      <article class="rule" style="--c:var(--z2)">
+        <h3>Imprópria = muda a classe</h3>
+        <p>A palavra não muda, muda a classe gramatical: <i>o olhar</i>, <i>o porquê</i>, <i>produtos piratas</i>, <i>fale baixo</i>.</p>
+        <p class="test"><b>Dica:</b> artigo antes de verbo ou conjunção é o sinal mais comum.</p>
+        <span class="fgv">★ 2023.1-OBJ-IL30</span>
+      </article>
+      <article class="rule" style="--c:var(--z2)">
+        <h3>Regressiva = verbo encolhe</h3>
+        <p>O substantivo de <b>ação</b> nasce do verbo, que perde a terminação: combater → combate, pescar → pesca, chorar → choro.</p>
+        <p class="test"><b>Pegadinha:</b> se o substantivo é um <b>objeto</b> (planta, perfume, âncora), ele veio primeiro e o verbo é que foi derivado.</p>
+      </article>
+      <article class="rule" style="--c:var(--z2)">
+        <h3>Composição: perde ou não perde?</h3>
+        <ul>
+          <li><b>Justaposição:</b> nada se perde (girassol, passatempo, guarda-chuva)</li>
+          <li><b>Aglutinação:</b> algo se perde (plan(o)alto, embora, aguardente, fidalgo)</li>
+          <li><b>Erudita:</b> radicais da mesma língua (democracia: grego + grego)</li>
+          <li><b>Híbrida:</b> línguas diferentes (automóvel, sociologia, burocracia, televisão)</li>
+        </ul>
+      </article>
+      <article class="rule" style="--c:var(--z2)">
+        <h3>Radicais gregos: a dissertativa</h3>
+        <p>Duas dissertativas perguntaram só o <b>significado dos radicais</b>. Saber o significado já responde a questão. Estão nos flashcards.</p>
+        <p class="test"><b>Atenção:</b> um radical pode ter dois sentidos. <i>-patia</i> é "sentimento" em simpatia e "doença" em cardiopatia.</p>
+        <span class="fgv">★ 2025.1-DIS-LP3 · 2022.1-DIS-LP22</span>
+      </article>
+      <article class="rule" style="--c:var(--z2)">
+        <h3>Prefixos que confundem</h3>
+        <ul>
+          <li><b>ante-</b> (antes, latino) × <b>anti-</b> (contra, grego): antessala × antiácido</li>
+          <li><b>hipo-</b> (falta, abaixo) × <b>hiper-</b> (excesso)</li>
+          <li>O prefixo muda o sentido, mas não a classe nem o gênero</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="zonehead" style="--c:var(--z3)"><h2>Zona 3 · Nunca caiu</h2><span>Leia uma vez e pronto. Só as pegadinhas.</span></div>
+    <div class="rules">
+      <article class="rule" style="--c:var(--z3)">
+        <h3>Morfemas</h3>
+        <p>Radical + vogal temática + desinências (+ afixos).</p>
+        <p class="test"><b>Pegadinha:</b> em menin<b>o</b>/menin<b>a</b>, o/a são <b>desinências de gênero</b>. Em port<b>o</b>/port<b>a</b>, árvor<b>e</b> e carent<b>e</b> são <b>vogais temáticas</b>, porque uma não é o feminino da outra.</p>
+        <p class="test">estud-á-<b>va</b>-<b>mos</b>: -va- = modo e tempo (pretérito imperfeito do indicativo); -mos = pessoa e número.</p>
+      </article>
+      <article class="rule" style="--c:var(--z3)">
+        <h3>Crônica × notícia</h3>
+        <ul>
+          <li><b>Crônica:</b> olhar pessoal sobre o cotidiano, muitas vezes em 1ª pessoa, leve ou irônica. Fica entre o jornalismo e a literatura. Tipos: narrativa, humorística, jornalística.</li>
+          <li><b>Notícia:</b> fato, 3ª pessoa, responde "o quê, quem, quando, onde, por quê, como". Título + corpo.</li>
+        </ul>
+        <p class="test">Na FGV a crônica aparece como <b>texto-base</b>, e a pergunta é de interpretação.</p>
+      </article>
+      <article class="rule" style="--c:var(--z3)">
+        <h3>Os "outros processos"</h3>
+        <ul>
+          <li><b>Abreviação</b> vira palavra (foto, moto) × <b>abreviatura</b> só existe na escrita (Dr., p. ex.) × <b>sigla</b> (ONU; Embrapa, com mais de 4 letras e lida como palavra)</li>
+          <li><b>Estrangeirismo:</b> galicismo = do francês; anglicismo = do inglês</li>
+          <li><b>Onomatopeia:</b> imita som · <b>Neologismo:</b> palavra nova ou sentido novo</li>
+        </ul>
+      </article>
+      <article class="rule" style="--c:var(--z3)">
+        <h3>Expressões latinas</h3>
+        <p>Nunca caíram na prova, mas vão aparecer no Direito e servem na redação e no Oral. As 12 mais úteis estão nos flashcards.</p>
+      </article>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1).</p>
+  </section>
+
+  <!-- ================= TREINO ================= -->
+  <section id="panel-treino" role="tabpanel" aria-labelledby="tab-treino" hidden>
+    <div class="quiz">
+      <div id="quizStage"></div>
+      <div class="qnav">
+        <div class="dots" id="dots" aria-label="Questões do treino"></div>
+        <div class="controls"><div class="grp">
+          <button class="btn" id="qprev" type="button">← Anterior</button>
+          <button class="btn" id="qnext" type="button">Próxima →</button>
+        </div></div>
+      </div>
+      <div id="quizSummary"></div>
+      <p class="keys">Teclado: <kbd>A</kbd>–<kbd>E</kbd> responde · <kbd>←</kbd> <kbd>→</kbd> navega</p>
+    </div>
+  </section>
+
+  <!-- ================= FLASHCARDS ================= -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn small" id="shuffle" type="button">Embaralhar</button> <button class="btn small" id="reset" type="button">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+
+  <!-- ================= PROVA REAL ================= -->
+  <section id="panel-real" role="tabpanel" aria-labelledby="tab-real" hidden>
+    <div class="real">
+      <p class="note">Faça na ordem até acabar os 40 min; o que sobrar fica para o próximo bloco de Português. Os arquivos estão no atalho <b>Downloads › Provas-FGV</b>. Dissertativa feita? Mande a foto ou o texto da sua resposta que o <code>/discursiva</code> corrige pela grade da FGV.</p>
+      <div class="subhead">Dissertativas</div>
+      <div id="realDis" class="real"></div>
+      <div class="subhead">Objetivas</div>
+      <div id="realObj" class="real"></div>
+      <div class="subhead">Parte 4 · em voz alta</div>
+      <div class="voice">
+        <p class="note" style="margin:0">Explique como se estivesse ensinando alguém, sem olhar a tela. Se travar, é ali que está o buraco.</p>
+        <ol>
+          <li>Qual a diferença entre humor e sátira? Use uma das charges que você fez hoje como exemplo.</li>
+          <li>Como eu sei se uma palavra é parassintética? Faça o teste com "entardecer" e "deslealdade".</li>
+          <li>Por que "o jantar" é derivação imprópria e "a pesca" é derivação regressiva?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var P = "lpfp.";
+  var Z = {
+    z1:{n:"Efeitos de sentido", c:"var(--z1)"},
+    z2:{n:"Formação de palavras", c:"var(--z2)"},
+    z3:{n:"Nunca caiu", c:"var(--z3)"}
+  };
+
+  /* ---------------- TREINO ---------------- */
+  var QUIZ = [
+    {z:"z1", tema:"Humor por literalização",
+     sup:"Tirinha. Quadro 1: o chefe diz ao estagiário novo: <i>“Aqui, todo mundo veste a camisa da empresa.”</i> Quadro 2: o estagiário aparece suando, com dez camisas da empresa vestidas uma por cima da outra.",
+     q:"O humor da tirinha nasce principalmente de:",
+     o:["ironia do chefe, que diz o contrário do que pensa","leitura literal de uma expressão figurada","ambiguidade involuntária na fala do chefe","sátira direta a um político","emprego de um neologismo"], r:1,
+     e:"“Vestir a camisa” é figurado (= dedicar-se à empresa). O estagiário entende ao pé da letra. É o mecanismo do Hagar na apostila e da dissertativa 2023.1-DIS-LP9.",
+     ap:"Efeitos de sentido › Humor (tirinha do Hagar)"},
+    {z:"z1", tema:"Sátira",
+     sup:"Charge: um deputado dorme na poltrona do plenário. Na parede atrás dele, uma placa: <i>“Trabalhando sem parar pelo povo”</i>.",
+     q:"Qual alternativa descreve melhor a charge?",
+     o:["Humor sem alvo definido, baseado só em trocadilho.","Sátira: crítica direta a um alvo político, com ironia no contraste entre a placa e a imagem.","Paródia de um poema conhecido.","Ambiguidade involuntária na frase da placa.","Notícia, pois registra um fato."], r:1,
+     e:"Sátira é humor com alvo e crítica direta. Na FGV a pergunta vem como “que situação o cartum satiriza? Justifique”: nomeie o alvo e aponte o elemento do desenho (aqui, o deputado dormindo × a placa).",
+     ap:"Efeitos de sentido › Sátira (charge do Angeli)"},
+    {z:"z1", tema:"Ironia",
+     sup:"<i>“Que beleza de atendimento: três horas de espera para ouvir ‘volte amanhã’.”</i>",
+     q:"O recurso predominante na frase é:",
+     o:["eufemismo","ironia","pleonasmo","ambiguidade","onomatopeia"], r:1,
+     e:"“Que beleza” quer dizer o contrário: o atendimento foi péssimo. O contexto (três horas, “volte amanhã”) desmente o elogio.",
+     ap:"Efeitos de sentido › Ironia"},
+    {z:"z1", tema:"Ironia com aspas",
+     sup:"<i>A reunião foi “produtiva”: ninguém chegou a acordo algum.</i>",
+     q:"As aspas em “produtiva” indicam:",
+     o:["citação literal de uma autoridade","ironia: a palavra deve ser lida no sentido contrário","estrangeirismo","neologismo","título de obra"], r:1,
+     e:"Aspas, diminutivo e elogio desmentido pelo contexto são as três marcas clássicas de ironia.",
+     ap:"Efeitos de sentido › Ironia (aspas e diminutivo)"},
+    {z:"z1", tema:"Ambiguidade e reescrita",
+     sup:"<i>O policial abordou o suspeito em sua casa.</i> (Não se sabe de quem é a casa.)",
+     q:"Qual reescrita desfaz a ambiguidade, deixando claro que a casa é do suspeito?",
+     o:["O policial abordou, em sua casa, o suspeito.","Em sua casa, o policial abordou o suspeito.","O policial abordou o suspeito na casa deste.","O policial abordou o suspeito na casa dele.","O suspeito foi abordado pelo policial em sua casa."], r:2,
+     e:"“Deste” retoma o último nome citado, o suspeito. “Dele” e “sua” continuam servindo para os dois. A FGV adora reescrita: foram 10 questões no banco.",
+     ap:"Efeitos de sentido › Ambiguidade"},
+    {z:"z1", tema:"Duplo sentido",
+     sup:"Anúncio de uma ótica: <i>“Veja o mundo com outros olhos.”</i>",
+     q:"O efeito expressivo do anúncio vem de:",
+     o:["ambiguidade involuntária, um desvio de redação","duplo sentido intencional: “outros olhos” são as lentes novas e também um novo ponto de vista","ironia, pois diz o contrário do que pensa","pleonasmo","sátira contra a ótica"], r:1,
+     e:"Duplo sentido é proposital e mantém os dois sentidos vivos ao mesmo tempo, como o “prudente” da propaganda de creme dental na apostila.",
+     ap:"Efeitos de sentido › Duplo sentido"},
+    {z:"z1", tema:"Literal × figurado",
+     sup:"Texto: <i>“A cidade se afoga em promessas.”</i> Charge: o prefeito discursa num palanque enquanto o público está com água da enchente até os joelhos.",
+     q:"Sobre o verbo “afogar-se”, é correto afirmar:",
+     o:["é usado só em sentido literal, no texto e na charge","no texto é figurado; na charge, a imagem ativa também o sentido literal, e isso cria a crítica","é usado só em sentido figurado nos dois","é um neologismo","é um eufemismo"], r:1,
+     e:"É o raciocínio das dissertativas 2021.1-DIS-LP8 (“abismo”) e 2026.1-DIS-LP7: diga onde está o figurado, onde está o literal, e o que a mistura produz.",
+     ap:"Efeitos de sentido › Duplo sentido e ambiguidade"},
+    {z:"z1", tema:"Paródia",
+     sup:"<i>“Minha terra tem shoppings / onde canta o celular…”</i>",
+     q:"Em relação à “Canção do Exílio”, de Gonçalves Dias, esses versos são:",
+     o:["paráfrase: repetem o sentido com outras palavras","paródia: imitam a forma conhecida e desviam o sentido, com humor e crítica","plágio","citação direta","notícia"], r:1,
+     e:"Paródia imita e subverte, como faz Murilo Mendes na apostila. Paráfrase mantém o sentido.",
+     ap:"Efeitos de sentido › Paródias"},
+    {z:"z2", tema:"Parassíntese",
+     q:"Qual palavra é formada por parassíntese?",
+     o:["deslealdade","infelizmente","entardecer","desleal","florista"], r:2,
+     e:"Teste: “entarde” e “tardecer” não existem. Em deslealdade e infelizmente, as sobras existem (desleal, lealdade; infeliz, felizmente), então são prefixal e sufixal. Desleal é prefixação e florista é sufixação.",
+     ap:"Derivação › Parassintética × prefixal e sufixal"},
+    {z:"z2", tema:"Derivação imprópria",
+     q:"Em qual frase há derivação imprópria?",
+     o:["O jantar esfriou na mesa.","A pesca foi proibida no rio.","Ele desfez o nó.","O girassol murchou.","Anoiteceu cedo."], r:0,
+     e:"“Jantar” é verbo virando substantivo, sem mudar a forma. Pesca é regressiva, desfez é prefixação, girassol é justaposição e anoiteceu é parassíntese.",
+     ap:"Derivação imprópria (lista de 10 casos)"},
+    {z:"z2", tema:"Derivação regressiva",
+     q:"Em qual par o substantivo foi formado a partir do verbo (derivação regressiva)?",
+     o:["plantar / planta","perfumar / perfume","combater / combate","ancorar / âncora","telefonar / telefone"], r:2,
+     e:"Substantivo que nomeia uma <b>ação</b> vem do verbo (combate). Planta, perfume, âncora e telefone são objetos: eles vieram primeiro e o verbo foi formado por sufixação.",
+     ap:"Derivação regressiva"},
+    {z:"z2", tema:"Aglutinação",
+     q:"Qual palavra é formada por composição por aglutinação?",
+     o:["girassol","pontapé","planalto","passatempo","guarda-chuva"], r:2,
+     e:"Plano + alto: o “o” se perde. Nas outras, os dois elementos ficam inteiros (justaposição).",
+     ap:"Composição › Justaposição × aglutinação"},
+    {z:"z2", tema:"Hibridismo",
+     q:"Qual palavra NÃO é um hibridismo?",
+     o:["automóvel","sociologia","burocracia","democracia","televisão"], r:3,
+     e:"Demo + cracia são os dois gregos: composição erudita. Televisão = tele (grego) + visão (latim).",
+     ap:"Composição erudita × híbrida"},
+    {z:"z2", tema:"Radical com dois sentidos",
+     q:"Em “simpatia” e “cardiopatia”, o radical grego -patia:",
+     o:["tem o mesmo sentido, “doença”, nas duas","tem o mesmo sentido, “sentimento”, nas duas","significa “sentimento” em simpatia e “doença” em cardiopatia","significa “medo” nas duas","significa “estudo” em cardiopatia"], r:2,
+     e:"Do grego <i>páthos</i>, o que se sente ou se sofre: vira “sentimento” (simpatia, empatia, apatia) ou “doença” (cardiopatia, neuropatia). Leve isso para a 2022.1-DIS-LP22.",
+     ap:"Composição erudita (radicais gregos)"},
+    {z:"z2", tema:"Prefixos gregos",
+     q:"Os prefixos de “hipoglicemia” e “hipertenso” indicam, respectivamente:",
+     o:["excesso e falta","falta e excesso","oposição e excesso","negação e duplicidade","anterioridade e excesso"], r:1,
+     e:"hipo- = falta, posição inferior; hiper- = excesso. Estão na tabela de prefixos gregos.",
+     ap:"Tabela de prefixos gregos e latinos"},
+    {z:"z2", tema:"Radical crono-",
+     q:"Em “cronologia”, “crônica” e “sincronia”, o radical comum significa:",
+     o:["tempo","escrita","estudo","igual","narrativa"], r:0,
+     e:"<i>Khrónos</i> = tempo. Por isso a crônica é o texto preso ao tempo, ao dia a dia.",
+     ap:"Composição erudita (radicais gregos)"},
+    {z:"z3", tema:"Vogal temática × desinência",
+     q:"Em “menino/menina” e “porto/porta”, as vogais finais são:",
+     o:["desinências de gênero nos dois pares","vogais temáticas nos dois pares","desinências de gênero em menino/menina; vogais temáticas em porto/porta","vogais temáticas em menino/menina; desinências de gênero em porto/porta","vogais de ligação"], r:2,
+     e:"Porta não é o feminino de porto. Quando o par não é masculino × feminino do mesmo ser, a vogal é temática.",
+     ap:"Estrutura das palavras (vogal temática nominal)"},
+    {z:"z3", tema:"Crônica × notícia",
+     q:"Qual traço é da crônica e NÃO da notícia?",
+     o:["ter título","narrar um fato","trazer o olhar pessoal do autor, muitas vezes em 1ª pessoa, com humor ou ironia","ser publicada em jornal","tratar da atualidade"], r:2,
+     e:"As duas narram, têm título e saem no jornal. O que separa é a subjetividade: a notícia busca o fato objetivo (o quê, quem, quando, onde, por quê, como).",
+     ap:"A crônica e a notícia"},
+    {z:"z3", tema:"Expressão latina",
+     sup:"<i>“Ter o ensino médio concluído é condição ________ para a matrícula.”</i>",
+     q:"Qual expressão completa a frase corretamente?",
+     o:["status quo","sine qua non","ad hoc","in loco","a posteriori"], r:1,
+     e:"Sine qua non = indispensável, “sem a qual não”. E vale para você: é o alerta da Certificação no painel.",
+     ap:"Expressões latinas (tabela)"},
+    {z:"z3", tema:"Abreviação",
+     q:"“Foto”, “moto” e “metrô” são exemplos de:",
+     o:["abreviatura","sigla","abreviação (redução da palavra)","derivação regressiva","neologismo"], r:2,
+     e:"Abreviação vira palavra e se fala. Abreviatura (Dr., p. ex.) só existe na escrita. Sigla usa as iniciais (ONU).",
+     ap:"Abreviações"}
+  ];
+  var L = "ABCDE";
+  var answers = store.get(P+"answers", {});
+  var causes = store.get(P+"causes", {});
+  var qpos = Math.min(store.get(P+"qpos",0), QUIZ.length-1);
+  var quizStage = document.getElementById("quizStage");
+  var dotsEl = document.getElementById("dots");
+  var summaryEl = document.getElementById("quizSummary");
+
+  function renderDots(){
+    dotsEl.innerHTML="";
+    QUIZ.forEach(function(q,i){
+      var b=document.createElement("button"); b.type="button"; b.className="dot";
+      var a=answers[i];
+      if(a!==undefined) b.classList.add(a===q.r?"ok":"no");
+      if(i===qpos) b.classList.add("cur");
+      b.textContent=i+1; b.setAttribute("aria-label","Questão "+(i+1));
+      b.onclick=function(){qpos=i; store.set(P+"qpos",qpos); renderQuiz();};
+      dotsEl.appendChild(b);
+    });
+  }
+  function renderQuiz(){
+    var q=QUIZ[qpos], z=Z[q.z], a=answers[qpos], done=a!==undefined;
+    var html='<div class="qcard" style="--c:'+z.c+'"><div class="qmeta"><span>'+z.n+' · '+q.tema+'</span><span>'+(qpos+1)+' / '+QUIZ.length+'</span></div>';
+    if(q.sup) html+='<p class="qsup">'+q.sup+'</p>';
+    html+='<p class="qtext">'+q.q+'</p><div class="opts">';
+    q.o.forEach(function(t,i){
+      var cls="opt";
+      if(done && i===q.r) cls+=" right";
+      if(done && i===a && a!==q.r) cls+=" wrong";
+      html+='<button type="button" class="'+cls+'" data-i="'+i+'"'+(done?" disabled":"")+'><span class="l">'+L[i]+')</span><span>'+t+'</span></button>';
+    });
+    html+='</div>';
+    if(done){
+      var ok=a===q.r;
+      html+='<div class="feedback"><p class="verdict '+(ok?"ok":"no")+'">'+(ok?"Certo":"Errou · a certa é "+L[q.r])+'</p><p>'+q.e+'</p>'+
+        (ok?'':'<p class="where">Teoria para ler (parte 3): apostila › '+q.ap+'</p>')+'</div>';
+    }
+    html+='</div>';
+    quizStage.innerHTML=html;
+    Array.prototype.forEach.call(quizStage.querySelectorAll(".opt"),function(btn){
+      btn.onclick=function(){answer(+btn.getAttribute("data-i"));};
+    });
+    document.getElementById("qprev").disabled=qpos===0;
+    document.getElementById("qnext").disabled=qpos>=QUIZ.length-1;
+    renderDots(); renderSummary();
+  }
+  function answer(i){
+    if(answers[qpos]!==undefined) return;
+    answers[qpos]=i; store.set(P+"answers",answers); renderQuiz();
+  }
+  var CAUSES=["conceito","interpretação","desatenção","tempo"];
+  function renderSummary(){
+    var n=Object.keys(answers).length;
+    if(n<QUIZ.length){ summaryEl.innerHTML=""; return; }
+    var right=0, errs=[];
+    QUIZ.forEach(function(q,i){ if(answers[i]===q.r) right++; else errs.push(i); });
+    var byZ={z1:[0,0],z2:[0,0],z3:[0,0]};
+    QUIZ.forEach(function(q,i){ byZ[q.z][1]++; if(answers[i]===q.r) byZ[q.z][0]++; });
+    var html='<div class="summary"><h3>'+right+' de '+QUIZ.length+'</h3>'+
+      '<p>Efeitos de sentido '+byZ.z1[0]+'/'+byZ.z1[1]+' · Formação '+byZ.z2[0]+'/'+byZ.z2[1]+' · Nunca caiu '+byZ.z3[0]+'/'+byZ.z3[1]+'</p>';
+    if(errs.length){
+      html+='<p>Para cada erro, marque a causa. Depois copie o texto e cole na conversa: ele vai para o seu banco de erros.</p><div class="errs">';
+      errs.forEach(function(i){
+        var q=QUIZ[i];
+        html+='<div class="err"><span><b>'+(i+1)+'. '+q.tema+'</b> · marcou '+L[answers[i]]+', a certa é '+L[q.r]+'</span><span class="where note">Ler: apostila › '+q.ap+'</span><div class="causes">';
+        CAUSES.forEach(function(c){
+          html+='<button type="button" class="chip" aria-pressed="'+(causes[i]===c?"true":"false")+'" data-q="'+i+'" data-c="'+c+'">'+c+'</button>';
+        });
+        html+='</div></div>';
+      });
+      html+='</div><textarea class="copybox" id="copybox" readonly aria-label="Texto dos erros para copiar"></textarea>'+
+        '<div class="grp" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="copyErrs" type="button">Copiar erros</button><span class="note" id="copyMsg" aria-live="polite"></span></div>';
+    } else {
+      html+='<p>Nenhum erro. Vá direto para a aba Prova real.</p>';
+    }
+    html+='<div><button class="btn small" id="quizReset" type="button">Refazer o treino</button></div></div>';
+    summaryEl.innerHTML=html;
+    Array.prototype.forEach.call(summaryEl.querySelectorAll(".causes .chip"),function(b){
+      b.onclick=function(){ causes[b.getAttribute("data-q")]=b.getAttribute("data-c"); store.set(P+"causes",causes); renderSummary(); };
+    });
+    var box=document.getElementById("copybox");
+    if(box) box.value=errText(right,errs);
+    var cp=document.getElementById("copyErrs");
+    if(cp) cp.onclick=function(){
+      var msg=document.getElementById("copyMsg");
+      function fallback(){ box.focus(); box.select(); msg.textContent="Texto selecionado. Use Cmd+C."; }
+      try{
+        navigator.clipboard.writeText(box.value).then(function(){msg.textContent="Copiado. Cole na conversa com o Claude.";},fallback);
+      }catch(e){ fallback(); }
+    };
+    document.getElementById("quizReset").onclick=function(){
+      answers={}; causes={}; qpos=0; store.set(P+"answers",answers); store.set(P+"causes",causes); store.set(P+"qpos",0); renderQuiz();
+    };
+  }
+  function errText(right,errs){
+    var d=new Date(), ds=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+    var t="Treino LP · formação de palavras e efeitos de sentido · "+ds+" · "+right+"/"+QUIZ.length+"\n";
+    errs.forEach(function(i){
+      var q=QUIZ[i];
+      t+="\n"+(i+1)+". "+q.tema+" ("+Z[q.z].n+")\n   Questão: "+q.q.replace(/<[^>]+>/g,"")+
+        "\n   Marquei: "+L[answers[i]]+") "+q.o[answers[i]].replace(/<[^>]+>/g,"")+
+        "\n   Certo: "+L[q.r]+") "+q.o[q.r].replace(/<[^>]+>/g,"")+
+        "\n   Causa: "+(causes[i]||"[marcar]")+"\n";
+    });
+    return t;
+  }
+  document.getElementById("qprev").onclick=function(){ if(qpos>0){qpos--; store.set(P+"qpos",qpos); renderQuiz();} };
+  document.getElementById("qnext").onclick=function(){ if(qpos<QUIZ.length-1){qpos++; store.set(P+"qpos",qpos); renderQuiz();} };
+
+  /* ---------------- FLASHCARDS ---------------- */
+  var BR = {
+    rad:{n:"Radicais", c:"var(--z2)"},
+    pre:{n:"Prefixos", c:"var(--z2)"},
+    proc:{n:"Processos", c:"var(--z2)"},
+    ef:{n:"Efeitos de sentido", c:"var(--z1)"},
+    est:{n:"Estrutura e gêneros", c:"var(--z3)"},
+    lat:{n:"Latim", c:"var(--z3)"}
+  };
+  var CARDS = [
+    {b:"rad", q:"bio-, geo-, helio-", a:"<p><b>bio</b> = vida · <b>geo</b> = terra · <b>helio</b> = sol</p><p>biologia, geografia, heliocentrismo</p>", fgv:"2025.1-DIS-LP3 · biocentrismo, geocentrismo, heliocentrismo"},
+    {b:"rad", q:"-patia", a:"<p>Do grego <i>páthos</i>, o que se sente ou se sofre. Tem <b>dois sentidos</b>:</p><ul><li><b>sentimento:</b> simpatia, empatia, apatia, antipatia</li><li><b>doença:</b> cardiopatia, neuropatia, psicopatia</li></ul>", fgv:"2022.1-DIS-LP22 · o sentido de -patia"},
+    {b:"rad", q:"antropo-, demo-, -cracia", a:"<p><b>antropo</b> = homem · <b>demo</b> = povo · <b>cracia</b> = poder, governo</p><p>antropofagia, democracia, burocracia</p>"},
+    {b:"rad", q:"-logia, -grafia, -scopia", a:"<p><b>logia</b> = estudo · <b>grafia</b> = escrita · <b>scopia</b> = observação</p><p>sociologia, ortografia, endoscopia</p>"},
+    {b:"rad", q:"crono-, tele-, fono-", a:"<p><b>crono</b> = tempo · <b>tele</b> = longe · <b>fono</b> = som</p><p>cronologia (e crônica), telefone, fonética</p>"},
+    {b:"rad", q:"filo-, -fobia, -fagia", a:"<p><b>filo</b> = amigo, que gosta · <b>fobia</b> = medo, aversão · <b>fagia</b> = comer</p><p>filosofia, xenofobia, antropofagia</p>"},
+    {b:"rad", q:"poli-, mono-, pan-", a:"<p><b>poli</b> = muitos · <b>mono</b> = um · <b>pan</b> = tudo, todos</p><p>polissílabo, monólogo, pandemia</p>"},
+    {b:"rad", q:"psico-, neo-, pseudo-", a:"<p><b>psico</b> = mente, alma · <b>neo</b> = novo · <b>pseudo</b> = falso</p><p>psicologia, neologismo, pseudônimo</p>"},
+    {b:"rad", q:"Latinos: -cida, -cultura, -voro", a:"<p><b>cida</b> = que mata · <b>cultura</b> = cultivo · <b>voro</b> = que come</p><p>fratricida, piscicultura, carnívoro</p>"},
+    {b:"pre", q:"ante- × anti-", a:"<p><b>ante-</b> (latino) = antes: antessala, antebraço</p><p><b>anti-</b> (grego) = contra: antiácido, antítese</p>"},
+    {b:"pre", q:"hipo- × hiper-", a:"<p><b>hipo-</b> = falta, abaixo: hipoglicemia</p><p><b>hiper-</b> = excesso: hipertenso</p>"},
+    {b:"pre", q:"a-/an-, epi-, peri-, meta-", a:"<p><b>a-/an-</b> = negação (ateu, anarquia) · <b>epi-</b> = sobre (epiderme) · <b>peri-</b> = em volta (perímetro) · <b>meta-</b> = mudança (metamorfose)</p>"},
+    {b:"pre", q:"Latinos: in-/i-, des-, re-, sub-, ultra-", a:"<p><b>in-/i-</b> e <b>des-</b> = negação (ilegal, descrer) · <b>re-</b> = repetição (rever) · <b>retro-</b> = para trás (retrocesso) · <b>sub-</b> = abaixo (submarino) · <b>ultra-</b> = além (ultrapassar)</p>"},
+    {b:"proc", q:"Parassíntese × prefixal e sufixal: qual é o teste?", a:"<p>Tire o prefixo e depois tire o sufixo.</p><ul><li><b>Nenhuma sobra existe</b> → parassíntese (anoitecer, envelhecer, enriquecer, entardecer)</li><li><b>Alguma sobra existe</b> → prefixal e sufixal (deslealdade, infelizmente, reflorescer)</li></ul>", fgv:"2026.1-OBJ-27 · parassíntese"},
+    {b:"proc", q:"Justaposição × aglutinação", a:"<p><b>Justaposição:</b> os elementos ficam inteiros (girassol, passatempo, beija-flor).</p><p><b>Aglutinação:</b> algum som se perde (planalto, embora, aguardente, fidalgo).</p>"},
+    {b:"proc", q:"Como reconhecer a derivação regressiva?", a:"<p>O substantivo nomeia uma <b>ação</b> e é “menor” que o verbo: combate, pesca, choro, ataque.</p><p>Se o substantivo é um <b>objeto</b> (planta, perfume), ele veio antes: o verbo é que saiu dele por sufixação.</p>"},
+    {b:"proc", q:"Derivação imprópria: o que é, com 3 exemplos", a:"<p>Muda a <b>classe gramatical</b>, sem mudar a forma.</p><ul><li>o <b>olhar</b> (verbo → substantivo)</li><li>o <b>porquê</b> (conjunção → substantivo)</li><li>produtos <b>piratas</b> (substantivo → adjetivo)</li></ul>", fgv:"2023.1-OBJ-IL30 · derivação imprópria no poema"},
+    {b:"proc", q:"Composição erudita × híbrida", a:"<p><b>Erudita:</b> radicais da mesma língua (democracia, grego + grego).</p><p><b>Híbrida:</b> línguas diferentes (automóvel, sociologia, burocracia, televisão; e as populares bafômetro, olhômetro).</p>"},
+    {b:"ef", q:"Humor × sátira", a:"<p><b>Humor:</b> quebra de expectativa, sutil. Depende do repertório do leitor.</p><p><b>Sátira:</b> crítica direta a um <b>alvo</b> (político, social). Na resposta, nomeie o alvo e prove com um elemento da imagem.</p>", fgv:"2026.1-DIS-LP1 · o que o cartum satiriza"},
+    {b:"ef", q:"Ironia: definição e 3 marcas", a:"<p>Dizer o contrário do que se quer dizer.</p><ul><li>aspas: festa “ótima”</li><li>diminutivo: “jornalzinho”</li><li>elogio que o contexto desmente</li></ul>", fgv:"2024.1-DIS-LP1 · argumento irônico do pai de Calvin"},
+    {b:"ef", q:"Duplo sentido × ambiguidade", a:"<p><b>Duplo sentido:</b> proposital, os dois sentidos valem (publicidade, poesia). Numa palavra só = polissemia.</p><p><b>Ambiguidade:</b> desvio que confunde (“quem tinha razão?”). Pode virar recurso se for intencional.</p>", fgv:"2026.1-DIS-LP2 · polissemia em cartum"},
+    {b:"ef", q:"Literalização: como explicar numa dissertativa", a:"<p>“No texto, <i>X</i> tem sentido figurado (= …). A imagem ativa o sentido literal (= …). O humor ou a crítica nasce do choque entre os dois.”</p>", fgv:"2023.1-DIS-LP9 · literalidade e humor no cartum"},
+    {b:"ef", q:"Paródia × paráfrase", a:"<p><b>Paródia:</b> imita a forma de um texto conhecido e desvia o sentido, para rir ou criticar.</p><p><b>Paráfrase:</b> mantém o sentido, muda as palavras.</p>"},
+    {b:"ef", q:"Pergunta de “sim ou não + justifique”: onde está o ponto?", a:"<p>Na <b>justificativa</b>. A grade da FGV diz: “apenas o ‘sim’ não pontua”.</p><p>Resposta curta, mas com algo concreto do texto ou da imagem.</p>", fgv:"2025.1-DIS-LP3 e 2024.1-DIS-LP1 · regra da grade"},
+    {b:"est", q:"Vogal temática × desinência de gênero", a:"<p>menin<b>o</b>/menin<b>a</b>: desinência de gênero (é o masculino e o feminino do mesmo ser).</p><p>port<b>o</b>/port<b>a</b>, árvor<b>e</b>, carent<b>e</b>: vogal temática.</p>"},
+    {b:"est", q:"estud-á-va-mos: o que é cada parte?", a:"<p><b>estud</b> = radical · <b>á</b> = vogal temática (1ª conjugação) · <b>va</b> = modo e tempo (pretérito imperfeito do indicativo) · <b>mos</b> = pessoa e número (nós)</p>"},
+    {b:"est", q:"Crônica × notícia", a:"<p><b>Crônica:</b> olhar pessoal sobre o cotidiano, leve ou irônico, entre jornalismo e literatura.</p><p><b>Notícia:</b> fato objetivo, 3ª pessoa, “o quê, quem, quando, onde, por quê, como”.</p>"},
+    {b:"est", q:"Abreviação × abreviatura × sigla", a:"<p><b>Abreviação:</b> vira palavra (foto, moto, cine).</p><p><b>Abreviatura:</b> só na escrita (Dr., p. ex., V. Ex.ª).</p><p><b>Sigla:</b> iniciais (ONU); com mais de 4 letras e lida como palavra, só a 1ª maiúscula (Embrapa).</p>"},
+    {b:"lat", q:"sine qua non · status quo", a:"<p><b>sine qua non</b> = indispensável</p><p><b>status quo</b> = o estado atual das coisas</p>"},
+    {b:"lat", q:"a priori · a posteriori", a:"<p><b>a priori</b> = antes, de antemão</p><p><b>a posteriori</b> = depois, a partir da experiência</p>"},
+    {b:"lat", q:"ad hoc · in loco", a:"<p><b>ad hoc</b> = para este fim específico</p><p><b>in loco</b> = no próprio local</p>"},
+    {b:"lat", q:"habeas corpus · habeas data", a:"<p><b>habeas corpus</b> = garante a liberdade de locomoção (“que tenhas o corpo”)</p><p><b>habeas data</b> = garante acesso e correção dos seus dados (“que tenhas os dados”)</p>"},
+    {b:"lat", q:"lato sensu · stricto sensu · sic · apud", a:"<p><b>lato sensu</b> = sentido amplo · <b>stricto sensu</b> = sentido estrito</p><p><b>sic</b> = “assim mesmo”, o erro é do original · <b>apud</b> = citado por</p>"}
+  ];
+  CARDS.forEach(function(c,i){c.id=i;});
+  var marks = store.get(P+"marks", {});
+  var order = CARDS.map(function(c){return c.id;});
+  var filter="todos", pos=0, flipped=false;
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl=document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n=CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b=document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list=visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag=m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML=
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled=pos===0;
+    document.getElementById("next").disabled=pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(), np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set(P+"marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set(P+"marks",marks); renderChips(); render();};
+
+  /* ---------------- PROVA REAL ---------------- */
+  var REAL = [
+    {k:"dis", z:"z1", id:"2026.1-DIS-LP1 e LP2", what:"Cartum: que situação ele satiriza, e a relação da palavra “batente” com o desenho.",
+     how:"Sátira + polissemia. Nomeie o alvo e prove com o que aparece na imagem.", file:"2026.1/Discursiva-LP2_GC.pdf", gc:"a grade está no mesmo arquivo, logo abaixo de cada questão: tampe antes de responder"},
+    {k:"dis", z:"z1", id:"2023.1-DIS-LP9", what:"O conceito de literalidade explica o ruído de comunicação que gera o humor do cartum?",
+     how:"Literalização. Sim/não + qual expressão foi lida ao pé da letra.", file:"2023.1/13-UNIFICADO-2023_1-CIE-HUMANAS-LP-DISC.pdf (pergunta 9)", gc:"resposta: me mande que eu corrijo pela grade"},
+    {k:"dis", z:"z2", id:"2025.1-DIS-LP3", what:"Os radicais gregos de biocentrismo, geocentrismo e heliocentrismo ajudam a entender as teorias?",
+     how:"Radicais. Explique os três: a grade dá 100% só com os três.", file:"2025.1/LP-GC.pdf (questão 3)", gc:"grade no mesmo arquivo"},
+    {k:"dis", z:"z1", id:"2024.1-DIS-LP1", what:"Tirinha do Calvin: o comentário do pai é um argumento irônico?",
+     how:"Ironia. Só o “sim” não pontua: mostre o choque entre o que o pai diz e o que ele quer dizer.", file:"2024.1/unificado_lp_disc_16112023_.pdf", gc:"grade: 2024.1/LINGUA_PORTUGUESA-DISC-16-11-23-GC.pdf"},
+    {k:"dis", z:"z1", id:"2025.1-DIS-LP1", what:"Cartum: relação de sentido entre a legenda da faixa e a fala da apresentadora.",
+     how:"Relação de sentido. Dê nome à relação e mostre, no desenho, os dois lados dela.", file:"2025.1/LP-GC.pdf (questão 1)", gc:"grade no mesmo arquivo"},
+    {k:"dis", z:"z1", id:"2021.1-DIS-LP7 e LP8", what:"Charge: o alvo da sátira aparece no texto de Minois? E “abismo” é só figurado na charge?",
+     how:"Sátira + literal × figurado. Leia o texto do início da prova antes.", file:"2021.1/DIREITO-SP-bloco2.pdf", gc:"grade: 2021.1/DIREITO-SP-BLOCO-2-grade-de-correcao.pdf"},
+    {k:"dis", z:"z2", id:"2022.1-DIS-LP22", what:"O radical “-patia” tem o mesmo sentido nas três palavras do texto?",
+     how:"Radical com dois sentidos: sentimento × doença.", file:"2022.1/UNIFICADO-Bloco4-ingles-portugues-disc.pdf", gc:"grade: 2022.1/UNIFICADO-Bloco4-ingles-portugues-disc-GAB-E-GRADE.pdf"},
+    {k:"obj", z:"z1", id:"2023.1-OBJ-IL16", what:"Tirinha: quebra de expectativa por contraste.", how:"Humor.", file:"2023.1/9-UNIFICADO-2023_1-INGLES-LP.pdf", gc:"gabarito: 9-UNIFICADO-2023_1-INGLES-LP-G.pdf"},
+    {k:"obj", z:"z1", id:"2024.1-OBJ-16", what:"Tirinha: efeito de humor sobre o colega de Newton.", how:"Humor.", file:"2024.1/UNIFICADO-Objetivo-A-15-11-23.pdf", gc:"gabarito: UNIFICADO-Objetivo-A-15-11-23-G.pdf"},
+    {k:"obj", z:"z1", id:"2025.1-OBJ-16", what:"Tirinha: recurso que gera o humor.", how:"Humor por contraste.", file:"2025.1/A101.pdf", gc:"gabarito: A101-GABARITO.pdf"},
+    {k:"obj", z:"z1", id:"2026.1-OBJ-16", what:"Tirinha: palavra que resume a situação da flor.", how:"Vocabulário a serviço do efeito.", file:"2026.1/T2OBJ-T01.pdf", gc:"gabarito: Gabaritos-oficiais-2026.1.pdf (preliminar)"},
+    {k:"obj", z:"z2", id:"2023.1-OBJ-IL30", what:"Exemplo de derivação imprópria no poema.", how:"Procure a palavra que mudou de classe.", file:"2023.1/9-UNIFICADO-2023_1-INGLES-LP.pdf", gc:"gabarito: 9-UNIFICADO-2023_1-INGLES-LP-G.pdf"},
+    {k:"obj", z:"z2", id:"2026.1-OBJ-27", what:"Identificar o verbo formado por parassíntese.", how:"Faça o teste das duas sobras em cada alternativa.", file:"2026.1/T2OBJ-T01.pdf", gc:"gabarito: Gabaritos-oficiais-2026.1.pdf (preliminar)"},
+    {k:"obj", z:"z1", id:"2025.1-OBJ-17", what:"Tirinha: função das vírgulas nos quadrinhos.", how:"Bônus: é pontuação, mas usa a mesma tirinha da 16.", file:"2025.1/A101.pdf", gc:"gabarito: A101-GABARITO.pdf"}
+  ];
+  var done = store.get(P+"done", {});
+  function renderReal(){
+    var dis=document.getElementById("realDis"), obj=document.getElementById("realObj");
+    dis.innerHTML=""; obj.innerHTML="";
+    REAL.forEach(function(r,i){
+      var el=document.createElement("label");
+      el.className="rq"+(done[i]?" done":""); el.style.setProperty("--c", Z[r.z].c);
+      el.innerHTML='<input type="checkbox" id="rq'+i+'"'+(done[i]?" checked":"")+'>'+
+        '<div class="top"><span class="id">'+r.id+'</span><span class="kind">'+Z[r.z].n+'</span></div>'+
+        '<p class="what">'+r.what+'</p>'+
+        '<div style="display:grid;gap:2px"><p class="how"><b>Regra:</b> '+r.how+'</p><p class="file">Provas-FGV/'+r.file+' · '+r.gc+'</p></div>';
+      el.querySelector("input").onchange=function(e){ done[i]=e.target.checked; store.set(P+"done",done); el.classList.toggle("done",e.target.checked); };
+      (r.k==="dis"?dis:obj).appendChild(el);
+    });
+  }
+
+  /* ---------------- ABAS E TECLADO ---------------- */
+  var TABS=["mapa","treino","cards","real"];
+  function showTab(t){
+    TABS.forEach(function(k){
+      var on=k===t;
+      document.getElementById("tab-"+k).setAttribute("aria-selected",on?"true":"false");
+      document.getElementById("panel-"+k).hidden=!on;
+    });
+    store.set(P+"tab",t);
+  }
+  TABS.forEach(function(k){ document.getElementById("tab-"+k).onclick=function(){showTab(k);}; });
+  var saved=store.get(P+"tab","mapa");
+  showTab(TABS.indexOf(saved)>=0?saved:"mapa");
+
+  document.addEventListener("keydown",function(e){
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(!document.getElementById("panel-cards").hidden){
+      if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+      else if(e.key==="ArrowRight") go(1);
+      else if(e.key==="ArrowLeft") go(-1);
+      else if(e.key==="1"&&flipped) markCur("ok");
+      else if(e.key==="2"&&flipped) markCur("rev");
+    } else if(!document.getElementById("panel-treino").hidden){
+      var k=e.key.toUpperCase();
+      if(L.indexOf(k)>=0 && k.length===1 && !e.metaKey && !e.ctrlKey){ answer(L.indexOf(k)); }
+      else if(e.key==="ArrowRight") document.getElementById("qnext").click();
+      else if(e.key==="ArrowLeft") document.getElementById("qprev").click();
+    }
+  });
+
+  renderQuiz(); renderChips(); render(); renderReal();
+})();
+</script>
+</body>
+</html>
