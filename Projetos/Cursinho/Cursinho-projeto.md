@@ -11,6 +11,9 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 - `historia-geral/`
   - [[crise-de-1929-e-nazifascismo]] — mapa mental e 19 flashcards da aula de 22/09 (também em
     `.html`, para abrir no navegador)
+  - `fgv-2023.1-dis-ch4-hobsbawm-barbarie.pdf` — discursiva real da FGV (barbárie anti-iluminista)
+- `literatura/`
+  - `fgv-2022.1-dis-ar11-ar12-semana-de-22-antropofagia.pdf` — discursivas reais da FGV (Semana de 22 e Manifesto Antropófago)
 - Listas, apostilas e correções do cursinho `[a confirmar]` como chegam e por qual plataforma
 
 ## Regra
