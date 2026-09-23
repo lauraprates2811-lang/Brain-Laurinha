@@ -37,3 +37,23 @@ git) fica isolado no instalador, que se roda uma vez por computador.
 ## 🔗 Relacionados
 
 [[Brain]]
+
+## Comando que escreve arquivo se confere contando, não lendo a tela (2026-09-22)
+
+Na instalação do Brain no MacBook, a saída do `unzip` foi filtrada com `head`. O filtro matou o
+processo no meio por SIGPIPE e só 25 dos 258 arquivos foram extraídos — mas a tela parecia certa,
+e o Brain foi dado por instalado três mensagens antes de a falha aparecer.
+
+**A regra:** depois de todo comando que cria, copia ou extrai arquivo, conferir o resultado por
+contagem (`find | wc -l`, `git ls-files | wc -l`) e comparar com o esperado. Nunca filtrar a
+saída de um comando que ainda está escrevendo.
+
+## Rotina do launchd precisa do ambiente ensinado na mão (2026-09-22)
+
+A rotina automática respondeu "Not logged in" mesmo com o Claude Code logado. O `launchd` roda
+com um ambiente quase vazio: sem `USER`, o programa não encontra o login guardado no chaveiro do
+macOS, e sem `PATH` não encontra o próprio executável.
+
+**A regra:** todo script agendado no `launchd` começa exportando `PATH`, `USER` e `LOGNAME`. E se
+o script chama o `claude -p`, o que ele precisa rodar vai em `--allowedTools`, porque
+`acceptEdits` libera editar arquivo mas não rodar comando.

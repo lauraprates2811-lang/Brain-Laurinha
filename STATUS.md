@@ -23,10 +23,12 @@
 | [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. | 4 professores de Matemática | Recuperar Física e confirmar datas dos intensivos |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
-| [[Brain]] | Criado hoje. Estrutura, comandos, agentes e guardião no ar. Falta a Laura usar e o backup na nuvem. | 7 agentes de estudo | Rodar o primeiro `/save` de verdade |
+| [[Brain]] | Instalado no MacBook da Laura e com backup privado no GitHub. As 3 rotinas automáticas testadas e no ar. Grafo revisado, sem link quebrado. | 61 arquivos na nuvem · 3 rotinas | Usar no estudo e fechar cada bloco com `/save` |
 
 ## Últimas atualizações
 
+- **2026-09-22** — Brain instalado no MacBook: git com o e-mail real, 3 rotinas no ar, Claude Code
+  em linha, backup privado no GitHub e grafo revisado. → [[2026-09-22-brain]]
 - **2026-09-22** — Segundo `/otimizar`: lint rodou, 0 erros e 0 avisos; marca de otimização em dia. Falta commit do ajuste da rotina de segunda. → [[2026-09-22-brain]]
 - **2026-09-22** — Primeiro `/otimizar`: nenhum erro de formato; a rotina de segunda não tem permissão para rodar o lint. → [[2026-09-22-brain]]
 - **2026-09-21** — Brain criado do zero: estrutura, 6 áreas, 7 agentes de estudo, rituais e

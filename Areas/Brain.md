@@ -1,7 +1,7 @@
 # Brain
 
-> **Status:** Criado em 21/09/2026. Estrutura, 6 áreas, 7 agentes de estudo, 4 rituais e o
-> guardião `brain-lint` no ar. Falta a Laura usar de verdade e conectar o backup na nuvem.
+> **Status:** Instalado no MacBook da Laura em 22/09/2026, com backup privado no GitHub e as
+> três rotinas automáticas testadas. Falta só a Laura usar no estudo do dia a dia.
 
 ## O que é
 
@@ -21,17 +21,19 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 | Regras e decisões | `Regras/` |
 | Agentes de estudo | `.claude/commands/` + doc em `Agentes/` |
 | Guardião de formato | `.claude/hooks/brain-lint.py` |
-| Rotina automática | `.claude/hooks/brain-rotina.sh` (launchd, segunda 07:00) |
-| Fechamento diário | `.claude/hooks/brain-diario.sh` |
+| Rotina automática | `.claude/hooks/brain-rotina.sh` (launchd: segunda 07:00 e diário 09:00) |
+| Fechamento diário | `.claude/hooks/brain-diario.sh` (launchd, 23:50) |
+| Backup na nuvem | GitHub privado `Brain-Laurinha`, por chave SSH |
 | Como usar | `Projetos/Brain/ComoUsar.md` |
 
 ## Pendências
 
-- [ ] Criar conta no GitHub e conectar o repositório **privado** para backup na nuvem
-- [ ] Configurar `git config user.email` com o e-mail real da Laura (hoje é um placeholder)
-- [ ] Instalar a rotina automática de segunda-feira no MacBook dela (`instalar-rotina.sh`)
-- [ ] Abrir a pasta no Obsidian como cofre e conferir o grafo
+- [x] Criar conta no GitHub e conectar o repositório **privado** para backup na nuvem
+- [x] Configurar `git config user.email` com o e-mail real da Laura
+- [x] Instalar a rotina automática no MacBook dela (`instalar-rotina.sh`)
+- [x] Abrir a pasta no Obsidian como cofre e conferir o grafo
 - [ ] Preencher os blocos da entrevista que ficaram de fora (projetos pessoais, ferramentas)
+- [ ] Abrir a pasta no Obsidian por **Open folder as vault**, para ele não criar cofre dentro
 
 ## Regras da área
 
@@ -47,6 +49,7 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 | Data | O que aconteceu | Resultado |
 |---|---|---|
 | 2026-09-21 | Brain criado do zero a partir da entrevista e do edital da FGV | Estrutura no ar |
+| 2026-09-22 | Instalação no MacBook da Laura: git, rotinas, CLI e backup no GitHub | Brain operando sozinho |
 
 ## 🔗 Relacionados
 
