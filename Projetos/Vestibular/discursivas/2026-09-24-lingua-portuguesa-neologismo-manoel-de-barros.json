@@ -6,8 +6,8 @@
   "valor": "1,0 (a = 0,5 · b = 0,5)",
   "tipo_grade": "niveis",
   "enunciado": "\"De neologismos tenho gosto. Fui criado em fazenda. E o povo de fazenda inventa muito que é pra completar o seu vocabulário. Pessoas que vivem isoladas precisam de inventar. Completar o real pobre com imaginações. Por lá tem surpresas. Vi façume de barba e curtume de cabelo. É preciso dar nome às coisas – ou desnome.\" (Manoel de Barros)\n\na) Aponte a relação entre o tema do trecho apresentado e algumas das palavras utilizadas por seu autor.\nb) Identifique o processo de formação da palavra desnome.",
-  "gabarito": "Sem gabarito oficial enviado. Referência montada pela gramática: a) resposta aberta — o trecho fala de gente isolada que inventa palavras para suprir a falta de vocabulário, e o próprio autor pratica isso ao usar/criar palavras como \"neologismo\", \"inventar\", \"façume\" (invenção do autor) e \"desnome\" (também inventada) — tema e linguagem se espelham. b) \"desnome\" vem de derivação prefixal: prefixo \"des-\" (negação/reversão) + substantivo \"nome\", o mesmo mecanismo de \"desumano\" ou \"desconforto\".",
-  "grade": "Sem grade oficial. Usada a régua padrão da FGV: 100% completa e sem desvio de redação · 75% completa com desvio · 50% parcial sem desvio · 25% parcial com desvio · 0% não atende ao pedido. Item a) e item b) valem 50% cada, por não haver peso indicado.",
+  "gabarito": "Gabarito enviado pela Laura, item a): \"O tema do trecho é o neologismo. O autor relaciona a metalinguagem desse tema a palavras como façume e curtume, por exemplo.\" Item b) sem gabarito enviado — referência da gramática: \"desnome\" vem de derivação prefixal, prefixo \"des-\" + substantivo \"nome\" (mesmo mecanismo de \"desumano\", \"desconforto\").",
+  "grade": "Sem grade formal enviada. Aplicada a régua padrão da FGV sobre o gabarito da Laura (item a) e sobre a referência gramatical (item b): 100% completa e sem desvio de redação · 75% completa com desvio · 50% parcial sem desvio · 25% parcial com desvio · 0% não atende ao pedido. Item a) e item b) valem 50% cada, por não haver peso indicado.",
   "resposta_marcada": "a) De acordo com o trecho escrito por Manoel de Barros, a parcela da sociedade que {-vivem-}{+vive+|1} distante das cidades {-sofrem-}{+sofre+|1} com a escassez de vocabulário, o que os leva a elaborar palavras para que seu vasto [ilegível] cresça. Dessa forma, Manoel de Barros utiliza certas palavras, como \"neologismos\" e \"inventar\", para descrever essa estratégia do povo que habita distante da cidade. Assim, quando o autor utiliza \"neologismo\" em seu parágrafo, essa palavra se conecta diretamente com o tema central do trecho, pois \"neologismo\" representa a criação de uma nova palavra ou expressão que não existe no dicionário[[ e de uma forma genérica, Manoel Barros usa a palavra \"inventar\"|2]]. Portanto, ambas palavras expressam o tema central do trecho: a criação de palavras por povos que moram afastados das cidades.\n\nb) (não respondida)",
   "comentarios": [
     {
@@ -18,12 +18,12 @@
     {
       "n": 2,
       "tipo": "gramatica",
-      "texto": "Frase mal encadeada: \"de uma forma genérica\" fica solto e não fica claro se qualifica a definição de neologismo ou o uso da palavra \"inventar\". Separe em outra frase: \"De forma mais genérica, Manoel Barros usa a palavra 'inventar' com o mesmo sentido\"."
+      "texto": "Frase mal encadeada: \"de uma forma genérica\" fica solto e não fica claro se qualifica a definição de neologismo ou o uso da palavra \"inventar\". Separe em outra frase."
     },
     {
       "n": 3,
-      "tipo": "elogio",
-      "texto": "A relação central está certa: você liga o tema (escassez de vocabulário de quem vive longe da cidade) às palavras \"neologismo\" e \"inventar\", que de fato nomeiam esse fenômeno no texto."
+      "tipo": "conteudo",
+      "texto": "O gabarito pede a metalinguagem: o autor não só fala sobre gente que inventa palavras — ele mesmo inventa palavras (\"façume\", \"curtume\" usado fora do sentido comum) dentro do texto. Você fica no nível de \"o texto fala sobre inventar palavras\" e cita \"neologismo\"/\"inventar\" (que nomeiam o fenômeno), mas não percebe nem cita os exemplos concretos disso na própria linguagem do autor — que é o ponto central pedido."
     },
     {
       "n": 4,
@@ -34,10 +34,10 @@
   "itens": [
     {
       "item": "a)",
-      "esperado": "Relacionar o tema (gente isolada que inventa palavras para suprir a escassez de vocabulário) a palavras do trecho que mostram isso — vale citar \"neologismo\"/\"inventar\" ou, de forma mais direta, os próprios neologismos que o autor cria no texto (\"façume\", \"desnome\").",
-      "voce": "Explica corretamente a relação usando \"neologismo\" e \"inventar\", mas não cita os neologismos que o próprio autor inventa no trecho (\"façume\", \"desnome\") — que seriam a evidência mais direta de que o texto pratica o que descreve. Um desvio de concordância verbal.",
-      "nivel": "75%",
-      "pontos": "0,375 / 0,5"
+      "esperado": "Tema do trecho = o neologismo. O autor relaciona a metalinguagem desse tema a palavras que ele mesmo inventa no texto, como \"façume\" e \"curtume\" — o texto pratica o que descreve.",
+      "voce": "Identifica a relação em nível mais geral (escassez de vocabulário de quem vive isolado → necessidade de inventar palavras) e cita \"neologismo\"/\"inventar\" como palavras ligadas ao tema, mas não chega à metalinguagem: não percebe nem cita que o autor pratica o neologismo usando palavras inventadas como \"façume\" e \"curtume\". Um desvio de concordância verbal.",
+      "nivel": "25%",
+      "pontos": "0,125 / 0,5"
     },
     {
       "item": "b)",
@@ -48,12 +48,12 @@
     }
   ],
   "nota": {
-    "obtida": "0,375",
+    "obtida": "0,125",
     "maxima": "1,0",
-    "percentual": "37,5%",
-    "criterio": "Item a completo e com conteúdo correto, mas com desvio de concordância verbal (75%); item b não foi respondido (0%)."
+    "percentual": "12,5%",
+    "criterio": "Item a parcial — faltou a metalinguagem e os exemplos \"façume\"/\"curtume\" do gabarito — e com desvio de concordância verbal (25%); item b não foi respondido (0%)."
   },
-  "de_acordo": "O item a) está de acordo com o pedido: a relação que você traça entre a escassez de vocabulário de quem vive longe da cidade e as palavras \"neologismo\"/\"inventar\" é válida e correta, mesmo sendo diferente de citar \"façume\" e \"desnome\" (os neologismos que o próprio Manoel de Barros inventa no trecho, e que seriam o exemplo mais direto). O item b) ficou em branco — sem resposta não há como dar crédito, mesmo o item a) estando bom.",
+  "de_acordo": "Com o gabarito em mãos, o item a) fica parcial, não completo: você identifica certo que o trecho fala de gente que inventa palavras por escassez de vocabulário, e liga isso às palavras \"neologismo\"/\"inventar\" — isso não está errado, mas nomeia o fenômeno em vez de mostrar o fenômeno acontecendo. O gabarito pede o passo seguinte: perceber que o próprio autor pratica o neologismo ao inventar palavras como \"façume\" e usar \"curtume\" de um jeito que não é o comum — isso não apareceu na sua resposta.",
   "gramatica": [
     {
       "trecho": "a parcela da sociedade que vivem distante das cidades sofrem",
@@ -62,9 +62,9 @@
     }
   ],
   "melhorar": [
+    "A palavra-chave do item a) é metalinguagem: o autor não só fala sobre neologismos, ele os pratica, inventando palavras como \"façume\" e usando \"curtume\" fora do sentido comum dentro do próprio texto. Quando a pergunta pedir \"palavras usadas pelo autor\", procure primeiro as palavras estranhas ou inventadas do texto, não os termos técnicos que nomeiam o fenômeno.",
     "Item em branco custa metade da nota mesmo com o outro item bom: em formação de palavras, sempre dê o nome do processo e a peça que o compõe (aqui: derivação prefixal, \"des-\" + \"nome\").",
-    "Concordância verbal: o verbo concorda com o núcleo do sujeito, não com a palavra mais próxima (\"a parcela... vive\", não \"vivem\"). Fique atenta quando o sujeito tem um \"que\" no meio.",
-    "Em \"aponte palavras usadas pelo autor\", prefira citar as palavras que o próprio texto inventa (\"façume\", \"desnome\") — é a evidência mais direta e mais forte do que citar só o termo \"neologismo\"."
+    "Concordância verbal: o verbo concorda com o núcleo do sujeito, não com a palavra mais próxima (\"a parcela... vive\", não \"vivem\")."
   ],
-  "reescrita": "a) De acordo com o trecho escrito por Manoel de Barros, a parcela da sociedade que vive distante das cidades sofre com a escassez de vocabulário, o que a leva a elaborar palavras para que seu vocabulário cresça. Dessa forma, Manoel de Barros utiliza certas palavras, como \"neologismo\" e \"inventar\", para descrever essa estratégia do povo que habita longe da cidade: \"neologismo\" nomeia a criação de uma palavra nova, e \"inventar\" nomeia a ação de criá-la. Mais do que isso, o próprio autor pratica o que descreve: cria neologismos como \"façume\" e usa \"desnome\", palavras que não existem no dicionário. Portanto, tema e linguagem se conectam: o trecho fala de gente que inventa palavras, e é escrito com palavras inventadas.\n\nb) \"Desnome\" se forma por derivação prefixal: ao substantivo \"nome\" se junta o prefixo \"des-\", que indica negação ou reversão, criando um neologismo pelo mesmo processo de \"desumano\" ou \"desconforto\"."
+  "reescrita": "a) O tema do trecho é o neologismo. Manoel de Barros relaciona esse tema à própria linguagem que usa: pratica a metalinguagem ao inventar, ele mesmo, palavras como \"façume\" e ao usar \"curtume\" fora do sentido comum. Assim, o texto não só fala sobre gente isolada que inventa palavras para suprir a escassez de vocabulário — ele é escrito, em parte, com palavras inventadas, mostrando na prática o que descreve.\n\nb) \"Desnome\" se forma por derivação prefixal: ao substantivo \"nome\" se junta o prefixo \"des-\", que indica negação ou reversão, criando um neologismo pelo mesmo processo de \"desumano\" ou \"desconforto\"."
 }

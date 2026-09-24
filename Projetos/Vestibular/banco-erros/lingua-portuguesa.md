@@ -11,10 +11,10 @@ Todo erro de Português, com a causa. É daqui que o `/revisar` monta a revisão
 
 ### 2026-09-24 — Neologismo: trecho de Manoel de Barros (questão enviada pela Laura, item a)
 **Questão:** aponte a relação entre o tema do trecho e algumas das palavras usadas pelo autor.
-**Respondi:** "a parcela da sociedade que vivem... sofrem" (concordância no termo mais próximo, "sociedade", em vez do núcleo do sujeito, "a parcela")   **Correto:** "a parcela... que vive... sofre"
-**Causa:** desatenção (concordância verbal com o núcleo do sujeito — mesmo padrão já visto em 2026-09-23)
-**O que revisar:** verbo concorda com o núcleo do sujeito, não com a palavra mais próxima.
-**Nota:** 0,375 / 0,5 no item (75%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-09-24-lingua-portuguesa-neologismo-manoel-de-barros.pdf`
+**Respondi:** liguei o tema a "neologismo" e "inventar" (nomeia o fenômeno) + "a parcela da sociedade que vivem... sofrem" (concordância no termo mais próximo)   **Correto (gabarito da Laura):** "o tema do trecho é o neologismo. O autor relaciona a metalinguagem desse tema a palavras como façume e curtume" — ou seja, o autor pratica o neologismo que descreve, e é isso (não "neologismo"/"inventar") que a resposta precisava citar.
+**Causa:** conceito (não reconheceu a metalinguagem — que o autor pratica o que descreve — nem citou os exemplos "façume"/"curtume") + desatenção (concordância verbal com o núcleo do sujeito, mesmo padrão já visto em 2026-09-23)
+**O que revisar:** metalinguagem em textos literários (o autor "fazer" o que o texto "diz"); verbo concorda com o núcleo do sujeito, não com a palavra mais próxima.
+**Nota:** 0,125 / 0,5 no item (25%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-09-24-lingua-portuguesa-neologismo-manoel-de-barros.pdf`
 
 ### 2026-09-24 — Neologismo: formação de "desnome" (questão enviada pela Laura, item b)
 **Questão:** identifique o processo de formação da palavra "desnome".
