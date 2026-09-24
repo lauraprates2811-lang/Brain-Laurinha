@@ -44,6 +44,16 @@ calendário. Na dúvida, diga o dia com a data ("quarta, 23/09") antes de respon
 disser que uma resposta está errada, pergunte o que está errado antes de mudar um fato que ela já
 confirmou.
 
+## Metas do dia: gravar na hora, mostrar em lista quando ela pedir (2026-09-23)
+
+A Laura manda metas e tarefas do dia aos poucos e, no fim do dia, pergunta quais são. PDF e
+arquivo complicam a vida dela.
+
+**A regra:** cada meta entra em `Tarefas/dados/tarefas.json` **assim que ela manda**, com `prazo` =
+o dia e a `area` certa. Quando ela pedir a lista, mostrar direto no chat, com ✅ para feita e ⬜
+para aberta, sem PDF. "Fiz X" fecha a tarefa. O que ficou aberto no fim do dia: perguntar se vai
+para amanhã ou se cancela. Tarefa com hora marcada pode virar evento no Google Calendar dela.
+
 ## 🔗 Relacionados
 
 [[Calendario]] · [[Vestibular]]

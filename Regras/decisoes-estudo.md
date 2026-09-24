@@ -126,6 +126,28 @@ de segunda continua sem cronômetro), e o tempo-alvo se ajusta pelo tempo real d
 
 ---
 
+## Flashcards: revisão espaçada nos trajetos, e quem põe os cards é o Claude (2026-09-24)
+
+A Laura esquecia matéria que já tinha acertado. Ela estuda flashcards pela página **Cards do
+Trajeto** (https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX, fixada na barra lateral): na ida e na
+volta da escola (30 min cada) e 5–10 min antes de dormir, só com o que errou no dia. Caixas de 1, 3,
+7, 14 e 30 dias; no máximo 15 cards novos por dia. Começou em 25/09 com 86 cards.
+
+**A regra:** ela só abre o link e aperta o botão; **o Claude põe os cards novos até a prova, sem ela
+pedir.** Todo erro dela (questão, discursiva, simulado) e toda aula nova viram card no mesmo dia.
+Um card entra em dois lugares:
+1. O `flashcards-*.md` da pasta da matéria (`Projetos/Cursinho/<materia>/`), no formato callout
+   `> [!question]- N. pergunta`, com `⚠️` para erro dela e `⭐` para o que já caiu no banco.
+2. O banco da página (ArtifactData), coleção `cards`, documento `<slug-da-materia>`: ler o documento,
+   acrescentar em `cards` o item `{id: "<slug>-NN", tema, frente, verso, nota, erro}` com o próximo
+   número e gravar com `if_version`. Matéria nova = documento novo, com `materia` e `ordem`.
+
+O progresso dela fica na coleção `progresso`, um documento por card (caixa, próxima data, `errouEm`);
+o `/revisar` pode ler dali. Próximo lote sugerido: História do Brasil (Brasil Império, 5 de 39).
+Com ela, explicar sempre em poucas linhas: textão a deixa confusa.
+
+---
+
 ## 🔗 Relacionados
 
 [[Vestibular]] · [[Cursinho]] · [[Pessoal]] · [[Laura]]

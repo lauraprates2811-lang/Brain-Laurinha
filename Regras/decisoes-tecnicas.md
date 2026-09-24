@@ -117,6 +117,24 @@ da anterior — a série ia saindo da quinta aos poucos. A Laura percebeu e pedi
 `FREQ=DAILY;INTERVAL=X`. E apagar só uma ocorrência de uma série usa o `eventId` daquela
 instância (com sufixo de data); apagar a série inteira usa o `eventId` da recorrência (sem sufixo).
 
+---
+
+## O Brain também roda no celular, pela nuvem, e o GitHub é o ponto de encontro (2026-09-24)
+
+A Laura queria usar o Brain no iPhone sem depender do Mac ligado. O Claude do celular (app do
+Claude, aba Code, repositório `Brain-Laurinha`) roda numa máquina na nuvem, com uma cópia do
+GitHub. Ele lê este `CLAUDE.md` e os comandos de `.claude/commands/`, mas só consegue enviar para o
+ramo da própria sessão (`claude/...`), nunca direto para o `main`.
+
+**A regra:** o `auto-save.sh` faz a ponte sozinho. No celular, ao fim de cada resposta, ele envia o
+ramo e o junta ao `main` pela API do GitHub. No Mac, no começo de cada sessão (hook `SessionStart`),
+ele traz o `main` e junta qualquer ramo `claude/*` que tenha ficado para trás. Conflito nunca é
+resolvido no automático: o hook avisa e o Claude do Mac resolve à mão. Duas consequências:
+- **A memória do Mac não vai para o celular.** Toda regra que o Claude precisa seguir mora no Brain
+  (`Regras/`), nunca só na memória local.
+- **Na nuvem não existem os PDFs das provas antigas** (ficam fora do git). O `/banca` funciona pelos
+  CSVs do banco; abrir a prova original só no Mac.
+
 ## 🔗 Relacionados
 
 [[Brain]]

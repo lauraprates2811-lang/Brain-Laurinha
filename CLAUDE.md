@@ -101,6 +101,12 @@ Nunca preencha um número de nota, uma data de prova ou uma regra de edital de m
 Arquivo novo dentro do padrão existente: pode.
 Pasta nova, área nova ou tipo de arquivo novo: só com o ok da Laura.
 
+## Celular
+
+O Brain também roda no Claude do iPhone (aba Code, na nuvem), sem o Mac. O `auto-save.sh` sincroniza
+tudo pelo GitHub sozinho. A memória local do Mac não chega ao celular: regra que importa vai para
+`Regras/`, nunca só para a memória. Ver `Regras/decisoes-tecnicas.md`.
+
 ## Os rituais
 
 - `/save` — fim de cada bloco de estudo. 7 passos fixos.

@@ -51,7 +51,10 @@ case "${1:-}" in
 
     git add -A >> "$LOG" 2>&1
     git commit -q -m "otimizacao semanal: $QUANDO" >> "$LOG" 2>&1
-    git remote get-url origin > /dev/null 2>&1 && git push -q >> "$LOG" 2>&1
+    if git remote get-url origin > /dev/null 2>&1; then
+      git pull -q --rebase origin main >> "$LOG" 2>&1 || git rebase --abort > /dev/null 2>&1
+      git push -q >> "$LOG" 2>&1
+    fi
 
     if echo "$SAIDA" | grep -q "^  x "; then
       avisar "Brain" "Otimizacao rodou, mas sobraram erros. Abra o Claude."

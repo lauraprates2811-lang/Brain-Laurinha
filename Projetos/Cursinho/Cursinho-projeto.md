@@ -10,6 +10,10 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 - **Uma pasta por matéria da grade (13):** `artes-e-questoes-contemporaneas/` · `atualidades/` ·
   `biologia/` · `expressao-oral/` · `fisica/` · `geografia/` · `historia-do-brasil/` ·
   `historia-geral/` · `lingua-portuguesa/` · `literatura/` · `matematica/` · `quimica/` · `redacao/`
+- **Flashcards da revisão diária** (página Cards do Trajeto, no celular:
+  https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX): [[flashcards-lingua-portuguesa]] ·
+  [[flashcards-matematica]] · [[flashcards-literatura]] · [[flashcards-geografia]] · [[flashcards-artes]],
+  mais os 19 de [[crise-de-1929-e-nazifascismo]]. Cards novos entram no `.md` e na página ao mesmo tempo.
 - `historia-geral/`
   - [[crise-de-1929-e-nazifascismo]] — mapa mental e 19 flashcards da aula de 22/09 (também em
     `.html`, para abrir no navegador)
