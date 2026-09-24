@@ -27,8 +27,11 @@ dela. Não é lista de compromissos do dia — é o mapa dos pontos sem volta.
 
 ## Google Calendar
 
-`[a confirmar]` — a Laura ainda não disse quais ferramentas de agenda usa. Enquanto isso, o
-`Calendario.md` é a fonte de verdade e não há sincronização automática com nada.
+A Laura usa o Google Calendar do dia a dia (`lauraprates2811@gmail.com`, compartilhado com o
+Claude pelo conector) — aulas fixas, provas, terapia. Eventos entram e saem de lá direto, a
+pedido dela, sem confirmação extra (2026-09-24). O `Calendario.md` continua sendo a fonte de
+verdade para **prazos e datas sem volta**; o Google Calendar é o dia a dia, e a sincronização
+entre os dois é manual, feita quando a data também é desse tipo (ver "O que entra" acima).
 
 ## Depois da meia-noite, o "amanhã" da Laura é o dia que está começando (2026-09-22)
 

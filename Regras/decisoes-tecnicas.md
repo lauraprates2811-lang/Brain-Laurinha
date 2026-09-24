@@ -106,6 +106,17 @@ na hora.
 
 ---
 
+## Recorrência "de X em X dias" precisa de `WEEKLY`, não de `DAILY;INTERVAL` (2026-09-24)
+
+O evento de Terapia (quinzenal, sempre quinta) tinha sido criado no Google Calendar com
+`RRULE:FREQ=DAILY;INTERVAL=15`. Como 15 não é múltiplo de 7, cada ocorrência caía um dia depois
+da anterior — a série ia saindo da quinta aos poucos. A Laura percebeu e pediu para apagar tudo.
+
+**A regra:** compromisso "de X em X dias" que precisa manter o mesmo dia da semana usa
+`FREQ=WEEKLY;INTERVAL=<X/7>;BYDAY=<dia>` (quinzenal = `INTERVAL=2`), nunca
+`FREQ=DAILY;INTERVAL=X`. E apagar só uma ocorrência de uma série usa o `eventId` daquela
+instância (com sufixo de data); apagar a série inteira usa o `eventId` da recorrência (sem sufixo).
+
 ## 🔗 Relacionados
 
 [[Brain]]

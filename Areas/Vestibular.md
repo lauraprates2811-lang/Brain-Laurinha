@@ -70,6 +70,9 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 - [ ] Montar o plano até a FGV (`/plano`), usando os números do `/banca`
 - [ ] Cronometrar as dissertativas nos simulados de 27/09 e 04/10 e ajustar o tempo-alvo
+- [ ] Resolver o conflito de horário do sábado 26/09: o simulado completo da FGV (08h–11h30 e
+      14h30–18h) bate com o intensivo de Geografia, o cursinho de sábado (Oral, Artes & QC) e o
+      aniversário de 18 anos da Julia (17h–22h)
 - [ ] Responder as dissertativas 2022.1-AR12 (antropofagia hoje) e 2023.1-CH4 (Hobsbawm) e corrigir pelo `/discursiva` — a AR11 foi feita em 23/09 (25%)
 - [ ] Começar o treino do Exame Oral **agora**, não em novembro (`/oral`)
 - [ ] Destrinchar a trajetória biográfica em `Projetos/Vestibular/oral/` — é avaliada literalmente
@@ -99,6 +102,7 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 | 2026-09-23 | Tempo por dissertativa calculado pelo edital e pelo formato das 4 últimas provas | 12 min Humanas · 10 Português · 18 Artes · redação 1h40 |
 | 2026-09-23 | Dissertativas pedidas sobre Crise de 29 e Semana de 22; provas antigas reunidas com atalho | 1929 nunca caiu · modernismo cai em Artes · atalho `Provas-FGV` |
 | 2026-09-23 | 1ª dissertativa corrigida pela grade oficial: Artes 2022.1, pergunta 11 | 0,5 / 2,0 (25%) · leitura anacrônica + ortografia |
+| 2026-09-24 | Simulado no formato completo da FGV (26–27/09) agendado no Google Calendar, espelhando dias e matérias de 18–19/10; simulado padrão de domingo cancelado só em 27/09 | Agenda alinhada com a prova real · conflito de horário em 26/09 achado |
 
 ## 🔗 Relacionados
 

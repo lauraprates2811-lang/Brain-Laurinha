@@ -1,8 +1,10 @@
 {
-  "atualizado": "2026-09-21",
+  "atualizado": "2026-09-24",
   "fonte": "Edital Unificado FGV 1o/2027, itens 9.9 e 14 - Projetos/Vestibular/editais/",
   "prazos": [
     {"data": "2026-09-26", "o_que": "Intensivo de Geografia no cursinho", "area": "cursinho", "critico": false},
+    {"data": "2026-09-26", "o_que": "Simulado completo da FGV - dia 1 (discursiva 08h-11h30, objetiva 14h30-18h)", "area": "vestibular", "critico": false},
+    {"data": "2026-09-27", "o_que": "Simulado completo da FGV - dia 2, online (Portugues discursiva, Artes e QC)", "area": "vestibular", "critico": false},
     {"data": "2026-10-11", "o_que": "PROVA DO INSPER", "area": "vestibular", "critico": true},
     {"data": "2026-10-18", "o_que": "FGV 1a fase - dia 1 (Redacao, Ciencias Humanas, Matematica, Portugues, Ingles)", "area": "vestibular", "critico": true},
     {"data": "2026-10-19", "o_que": "FGV 1a fase - dia 2 (Portugues discursiva, Artes e Questoes Contemporaneas)", "area": "vestibular", "critico": true},

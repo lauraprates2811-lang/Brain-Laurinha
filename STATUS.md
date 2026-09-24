@@ -27,6 +27,11 @@
 
 ## Últimas atualizações
 
+- **2026-09-24** — Simulado no formato completo da FGV (26–27/09) foi para o Google Calendar,
+  espelhando dias e matérias da prova real de 18–19/10; conflito achado com o intensivo de
+  Geografia e o cursinho de sábado. → [[2026-09-24-vestibular]]
+- **2026-09-24** — Recorrência da Terapia corrigida na agenda (estava de 15 em 15 dias corridos,
+  perdendo o dia da semana); agora quinzenal, toda quinta, a partir de 15/10. → [[2026-09-24-pessoal]]
 - **2026-09-23** — 1ª dissertativa corrigida: Artes 2022.1-11, **25%** (leitura anacrônica da "idade de
   ouro" + ortografia). Pensadores: 11 de 152 dissertativas, Castells 4x. → [[2026-09-23-vestibular]]
 - **2026-09-23** — Cada matéria ganhou a subpasta `questoes-discursivas`; o `/discursiva` grava o PDF ali. → [[2026-09-23-cursinho]]
@@ -48,9 +53,6 @@
 - **2026-09-22** — Brain instalado no MacBook: git com o e-mail real, 3 rotinas no ar, Claude Code
   em linha, backup privado no GitHub e grafo revisado. → [[2026-09-22-brain]]
 - **2026-09-22** — Segundo `/otimizar`: lint rodou, 0 erros e 0 avisos; marca de otimização em dia. Falta commit do ajuste da rotina de segunda. → [[2026-09-22-brain]]
-- **2026-09-22** — Primeiro `/otimizar`: nenhum erro de formato; a rotina de segunda não tem permissão para rodar o lint. → [[2026-09-22-brain]]
-- **2026-09-21** — Brain criado do zero: estrutura, 6 áreas, 7 agentes de estudo, rituais e
-  guardião. Datas oficiais da FGV extraídas do edital. → [[2026-09-21-brain]]
 
 ## 🔗 Relacionados
 

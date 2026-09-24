@@ -9,6 +9,8 @@
 | Data | Dia | O que é | O que precisa estar pronto antes |
 |---|---|---|---|
 | **26/09/2026** | sáb | Intensivo de **Geografia** no cursinho | Revisar o que já foi dado de GEO |
+| **26/09/2026** | sáb | 🎯 **Simulado completo no formato FGV — dia 1** (mesmos horários e matérias de 18/10). Manhã 08h–11h30: discursiva (Redação + Ciências Humanas). Tarde 14h30–18h: objetiva (Matemática, Português, Inglês, Ciências Humanas) | Bate com o intensivo de Geografia e o cursinho de sábado — conflito ainda sem resolver, ver [[Vestibular]] |
+| **27/09/2026** | dom | 🎯 **Simulado completo no formato FGV — dia 2, online** (mesmos horários e matérias de 19/10). Manhã 08h–11h: Português + Artes e Questões Contemporâneas | Substitui o simulado padrão de domingo só nesse dia |
 | `[a confirmar]` | sáb | Intensivos de LIT, HB e HG — datas inconsistentes no cronograma | Confirmar com o cursinho |
 | **11/10/2026** | dom | 🎯 **PROVA DO INSPER** | Simulados em dia · material e documentos separados |
 | **18/10/2026** | dom | 🎯 **FGV 1ª FASE — dia 1**. Manhã 08h–11h30: Redação + Ciências Humanas (discursivas). Tarde 14h30–18h: Matemática, Língua Portuguesa, Inglês, Ciências Humanas (objetivas) | Provas antigas feitas · redação no formato da banca |

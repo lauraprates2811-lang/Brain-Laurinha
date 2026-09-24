@@ -27,6 +27,11 @@ do Brain aqui não é inventar disciplina, é **medir se está acontecendo**.
 **Picos de rendimento:** primeiro horário da manhã, e as 2 horas logo após o cursinho —
 embora ela estude 4. As duas últimas horas rendem menos e ela sabe disso.
 
+### Terapia
+
+Quinzenal, toda quinta, 10h40–11h40, a partir de 15/10/2026. Sessão avulsa marcada para 01/10,
+13h–14h (sem repetição).
+
 **Nota:** o cronograma em tabela registra uma rotina noturna diferente (estudo até 23:10, dormir
 23:30). A Laura confirmou em 21/09 que **a versão real é a de cima**, com 00:10.
 
@@ -63,6 +68,7 @@ embora ela estude 4. As duas últimas horas rendem menos e ela sabe disso.
 | Data | O que aconteceu | Resultado |
 |---|---|---|
 | 2026-09-21 | Rotina e regras de reta final registradas a partir do cronograma dela; versão real do horário noturno confirmada | Sono de 5h50 virou número a acompanhar |
+| 2026-09-24 | Recorrência da Terapia corrigida na agenda (estava de 15 em 15 dias corridos, sem manter o dia da semana) + sessão avulsa marcada | Quinzenal, toda quinta, 10h40–11h40, a partir de 15/10; avulsa em 01/10 |
 
 ## 🔗 Relacionados
 
