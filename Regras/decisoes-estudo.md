@@ -154,7 +154,7 @@ Um card entra em dois lugares:
    resumos do cursinho.
 
 Nunca deixar a fila de não vistos secar: se ficar abaixo de ~150 cards, pôr um lote novo pelo banco.
-O que já existe (25/09): 584 cards em 8 matérias, incluindo História do Brasil e Atualidades. Inglês
+O que já existe (25/09): 362 cards em 8 matérias, incluindo História do Brasil e Atualidades. Inglês
 ficou de fora porque ela é fluente.
 
 O progresso dela fica na coleção `progresso`, um documento por card (caixa, próxima data, `errouEm`);

@@ -14,7 +14,7 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
   https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX): [[flashcards-lingua-portuguesa]] ·
   [[flashcards-matematica]] · [[flashcards-literatura]] · [[flashcards-geografia]] · [[flashcards-artes]] ·
   [[flashcards-historia-geral]] · [[flashcards-historia-do-brasil]] · [[flashcards-atualidades]],
-  mais os 19 de [[crise-de-1929-e-nazifascismo]]. 584 cards em 25/09. Cards novos entram no `.md` e na
+  mais os 19 de [[crise-de-1929-e-nazifascismo]]. 362 cards em 25/09. Cards novos entram no `.md` e na
   página ao mesmo tempo.
 - `historia-geral/`
   - [[crise-de-1929-e-nazifascismo]] — mapa mental e 19 flashcards da aula de 22/09 (também em
