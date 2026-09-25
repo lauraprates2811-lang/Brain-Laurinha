@@ -13,6 +13,7 @@ Hub da pasta de material do vestibular. A ficha de estado da área é `Areas/Ves
 | `redacoes/` | Redações escritas e corrigidas (cursinho, Tarsila e `/redacao`) |
 | `banco-erros/` | **Todo erro cometido**, com a causa. É o que alimenta o `/revisar`. Já tem: [[artes-e-questoes-contemporaneas]] · [[lingua-portuguesa]] |
 | `oral/` | Trajetória biográfica, temas treinados e registro dos treinos de `/oral` |
+| `comparativo-fgv-sp-rio-enade-oab.pdf` | Pesquisa pedida pelo representante da FGV Direito Rio (set/2026): grades SP × Rio, ENADE 2018/2022 e OAB 2018–2026 de FGV SP, FGV Rio, USP, UFMG, PUC-SP e PUC-Rio, com fontes oficiais |
 
 ## Como ler o edital sem estourar o contexto
 
