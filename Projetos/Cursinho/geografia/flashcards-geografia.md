@@ -324,6 +324,182 @@
 > erosão.
 > ⭐ 2026.1-OBJ-60
 
+### Recursos hídricos (aula 12)
+
+> [!question]- 51. Afluente, subafluente e confluência: o que é cada um?
+> **Afluente:** rio que deságua no rio principal.
+> **Subafluente:** rio que deságua num afluente.
+> **Confluência:** o ponto onde um rio encontra o outro.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 52. Montante × jusante
+> **Montante:** na direção da nascente (rio acima).
+> **Jusante:** na direção da foz (rio abaixo).
+> Ex.: uma barragem retém os sedimentos, e as terras **a jusante** deixam de ser fertilizadas.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 53. Foz em estuário × delta × mista
+> **Estuário:** um canal único, o mais comum no Brasil.
+> **Delta:** vários canais (Parnaíba, no Nordeste).
+> **Mista:** o Amazonas, que se divide em braços, e cada braço é largo como um estuário.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 54. Rio perene × intermitente
+> **Perene:** nunca seca, nem na estiagem. É a maioria no Brasil, por causa dos climas úmidos.
+> **Intermitente (temporário):** seca na estiagem. Aparece no semiárido, no Sertão nordestino.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 55. Exorreico, endorreico e criptorreico
+> **Exorreico:** chega ao mar, direto ou por outro rio. Quase todos os rios brasileiros.
+> **Endorreico:** corre para lagos ou mares interiores.
+> **Criptorreico:** corre por baixo da terra, em cavernas de calcário.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 56. Regime pluvial × nival. E o Amazonas?
+> **Pluvial:** a água vem da chuva (a maioria dos rios brasileiros).
+> **Nival:** vem do derretimento da neve.
+> O **Amazonas é misto**: parte vem do degelo dos Andes, mas predomina a chuva do clima equatorial.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 57. Quais são as características da rede hidrográfica brasileira?
+> - Rica em rios e pobre em lagos
+> - Rios exorreicos e perenes (menos no Sertão)
+> - Predomínio de **rios de planalto**, com grande potencial hidrelétrico
+> - Foz em estuário, na maioria
+> - Regime pluvial
+> Os rios nascem em três divisores: Planalto Brasileiro, Planalto das Guianas e Andes.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 58. Por que o Brasil tem tanto potencial hidrelétrico?
+> Rios volumosos (clima úmido) que descem de planaltos para depressões. Quanto maior o desnível,
+> maior a queda d'água e mais energia. O potencial total é maior na Amazônica, depois na Paraná, na
+> Tocantins e na São Francisco.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 59. Por que a Bacia Amazônica tem o maior potencial e é a menos aproveitada?
+> Os rios correm em **planície**, com pouco desnível no médio e baixo curso. Os centros consumidores
+> ficam longe, e represar inunda floresta e terras de povos indígenas e ribeirinhos.
+> Exercício 7 da apostila (gabarito A). Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 60. Bacia Amazônica: o que é preciso saber
+> A maior bacia do mundo. O Amazonas é o maior rio em volume, com cerca de 15% da água doce que
+> chega aos oceanos. Nasce nos Andes do Peru, vira **Solimões** ao entrar no Brasil e **Amazonas**
+> depois de receber o rio Negro, perto de Manaus. Na foz há a **pororoca**. As hidrovias do Madeira
+> e do Tapajós escoam a soja de MT e RO.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 61. Hidrelétrica de Balbina: por que virou exemplo do que não fazer?
+> O lago cobriu um grande trecho de floresta, que apodreceu debaixo d'água: a decomposição consumiu
+> o oxigênio e matou os peixes. Os animais não foram resgatados. E a usina gera muito menos energia
+> do que o previsto, nem para Manaus é suficiente.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 62. Belo Monte, Jirau e Santo Antônio: por que são polêmicas?
+> Belo Monte fica no rio Xingu (PA); Jirau e Santo Antônio, no Madeira (RO). Removem ribeirinhos,
+> afetam povos indígenas e o ecossistema do rio. São usinas **fio d'água** (reservatório pequeno,
+> para inundar menos), então geram bem menos na seca. O Movimento dos Atingidos por Barragens (MAB)
+> critica.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 63. Bacia do Tocantins-Araguaia: o essencial
+> No Araguaia fica a **ilha do Bananal**, a maior ilha fluvial do mundo. No Tocantins está
+> **Tucuruí** (PA), construída para abastecer os grandes projetos de mineração. Os dois rios têm bom
+> potencial para hidrovias.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 64. Bacia Platina: quais rios, e o que tem de mais importante?
+> Paraná, Paraguai e Uruguai, que só se juntam fora do Brasil e formam o rio da Prata. O **Paraná**
+> nasce da junção do Grande com o Paranaíba e recebe Tietê, Paranapanema e Iguaçu (cataratas). É a
+> bacia com **mais hidrelétricas** (Itaipu, binacional com o Paraguai; Furnas; Ilha Solteira) e com
+> a hidrovia mais importante do país, a **Tietê-Paraná**. O Paraguai corre na planície do Pantanal.
+> Exercício 3 da apostila (gabarito A). Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 65. Rio São Francisco: por que é o "rio da unidade nacional"?
+> Nasce na Serra da Canastra (MG), liga o Sudeste ao Nordeste e, sendo **perene**, atravessa o
+> semiárido levando água. É navegável entre Pirapora (MG) e Sobradinho (BA). Irriga a fruticultura
+> (Petrolina e Juazeiro) e suas usinas (Paulo Afonso, Sobradinho, Xingó, Itaparica) abastecem boa
+> parte do Nordeste.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 66. Transposição do São Francisco: objetivos e problemas
+> Obra federal iniciada em 2007, com canais nos eixos Norte e Leste para PE, PB, RN e CE.
+> **Objetivos:** segurança hídrica (gente e animais), irrigação e perenizar rios intermitentes.
+> **Problemas:** atraso e custo muito acima do previsto, desmatamento da caatinga, remoção dos
+> vazanteiros, especulação com as terras perto dos canais e **salinização do solo pela evaporação**.
+> Exercício 6 da apostila (gabarito D). Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 67. Quais são os impactos socioambientais de uma hidrelétrica?
+> A energia é renovável e não polui o ar, mas o lago:
+> - inunda floresta, terras e até cidades, e acaba com a biodiversidade
+> - expulsa moradores, nem sempre bem indenizados
+> - muda o clima local (mais evaporação e umidade) e faz proliferar insetos
+> - retém os sedimentos: em **Assuã**, no Nilo, as terras a jusante deixaram de ser adubadas e a pesca caiu
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 68. O que é aquífero? Compare o SAGA e o Guarani.
+> **Aquífero:** rocha porosa e permeável que guarda água no subsolo.
+> **SAGA (Grande Amazônia, inclui Alter do Chão):** o maior do mundo em volume; a recarga depende da
+> floresta.
+> **Guarani:** sob a bacia do Paraná (Brasil, Argentina, Paraguai e Uruguai), em arenito coberto por
+> basalto. É vulnerável onde o arenito aflora, nas áreas de recarga: há agrotóxico perto de Ribeirão
+> Preto (SP).
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 69. A água do Brasil é bem distribuída?
+> Não. O Brasil tem uma das maiores reservas de água doce do mundo, mas cerca de **80% está na
+> Amazônia**, onde vive só uns 7% da população. O **Nordeste**, com mais de 1/4 da população, tem só
+> uns 3%. O Sudeste consome mais do que a sua fatia da população. A **agricultura** é a atividade
+> que mais consome água.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 70. Eutrofização × autodepuração de um rio
+> **Eutrofização:** esgoto sem tratamento traz matéria orgânica; as bactérias que a decompõem
+> consomem o oxigênio da água e os peixes morrem. O Tietê na Grande SP é um rio praticamente morto.
+> **Autodepuração:** longe da cidade, o rio vai se limpando sozinho, e o Tietê se recupera no
+> interior.
+> ⭐ Poluição e escassez de água: 2025.1-DIS-CH7. Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 71. Crise hídrica de São Paulo (2014): o que a causou?
+> Seca forte, mas também **má gestão**, investimento insuficiente e ocupação irregular dos
+> **mananciais** (Billings e Guarapiranga, poluídos e assoreados). O Sistema Cantareira quase secou,
+> e a ideia de tirar água do Paraíba do Sul abriu um conflito com o Rio de Janeiro.
+> ⭐ Escassez de água: 2025.1-DIS-CH7. Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 72. Como o Brasil gere a água? (Lei das Águas e poluidor-pagador)
+> A Lei de Recursos Hídricos (1997) organiza a gestão **por bacia hidrográfica**, com **comitês de
+> bacia** que reúnem usuários, sociedade civil e poder público. A ANA coordena. Na bacia do Paraíba
+> do Sul começou o **poluidor-pagador**: quem usa a água paga, e quem devolve poluída paga mais.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 73. Por que as enchentes urbanas acontecem, e o que ajuda a evitá-las?
+> **Causa principal:** o solo impermeabilizado (asfalto, concreto, poucas áreas verdes). A água não
+> infiltra e chega de uma vez aos rios canalizados, que transbordam. Pioram a situação o lixo nos
+> bueiros e a ocupação das várzeas, onde vivem os mais pobres. Depois, vem a leptospirose.
+> **Soluções:** áreas verdes, piscinões e desocupar as várzeas.
+> Exercícios 1 e 2 da apostila (gabaritos C e D). Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 74. Saneamento no Brasil: onde está o maior atraso?
+> No **esgoto**. A água chega a quase todos os municípios, mas grande parte não tem coleta de
+> esgoto, e rios e mar recebem esgoto *in natura*. Norte e Nordeste estão pior, e é lá que a
+> mortalidade infantil é maior.
+> Exercício 5 da apostila, que é da FGV (gabarito A). Da sua aula 12 de Geografia (Frente 1, Caderno
+> 4).
+
+> [!question]- 75. Como é o litoral brasileiro, de norte a sul?
+> Mais de 7 mil km, do Oiapoque (AP) ao Arroio Chuí (RS).
+> - **AP e PA:** plano, com grandes manguezais
+> - **MA ao RN:** praias, dunas e falésias (Jericoacoara)
+> - **PB ao norte do ES:** praias amplas, falésias e manguezais
+> - **Sul do ES ao norte do RS:** praias estreitas e morros costeiros
+> - **Extremo sul:** restingas e lagoas (dos Patos, Mirim)
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
+> [!question]- 76. Falésia, duna e restinga: como cada uma se forma?
+> **Falésia:** escarpa aberta pela **erosão** do mar.
+> **Duna e restinga:** **deposição** de areia pelo vento, pelos rios e pelo mar. A restinga é um
+> cordão arenoso que pode fechar uma lagoa costeira.
+> Da sua aula 12 de Geografia (Frente 1, Caderno 4).
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

@@ -14,7 +14,7 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
   https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX): [[flashcards-lingua-portuguesa]] ·
   [[flashcards-matematica]] · [[flashcards-literatura]] · [[flashcards-geografia]] · [[flashcards-artes]] ·
   [[flashcards-historia-geral]] · [[flashcards-historia-do-brasil]] · [[flashcards-atualidades]],
-  mais os 19 de [[crise-de-1929-e-nazifascismo]]. 362 cards em 25/09. Cards novos entram no `.md` e na
+  mais os 19 de [[crise-de-1929-e-nazifascismo]]. 388 cards em 25/09. Cards novos entram no `.md` e na
   página ao mesmo tempo.
 - `historia-geral/`
   - [[crise-de-1929-e-nazifascismo]] — mapa mental e 19 flashcards da aula de 22/09 (também em
@@ -25,7 +25,8 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
   - `caderno-1-literatura-fgv.pdf` · `apostila-movimentos-literarios.pdf` · `exercicios-movimentos-literarios-fgv.pdf` · `apostila-bras-cubas-e-parnasianismo.pdf`
 - `historia-do-brasil/` — `aula-10-crise-da-republica-oligarquica-e-era-vargas-1.pdf`
 - `atualidades/` — resumos 06 (Oriente Médio), 07 (Bálcãs) e 08 (Venezuela e Cuba), do Alex
-- `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato
+- `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato · `caderno-4-geografia-fgv.pdf`
+  (Frente 1, aulas 12 a 16, e Frente 2, aulas 12 a 16; a aula 12 da Frente 1, Recursos Hídricos, virou 26 cards)
 - `lingua-portuguesa/`
   - [[formacao-de-palavras-e-efeitos-de-sentido]] — método "questão primeiro", 20 questões de treino,
     33 flashcards e 14 questões reais da FGV, da apostila CPV aula 12 (também em `.html`)

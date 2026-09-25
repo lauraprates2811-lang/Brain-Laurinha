@@ -154,7 +154,10 @@ Um card entra em dois lugares:
    resumos do cursinho.
 
 Nunca deixar a fila de não vistos secar: se ficar abaixo de ~150 cards, pôr um lote novo pelo banco.
-O que já existe (25/09): 362 cards em 8 matérias, incluindo História do Brasil e Atualidades. Inglês
+Card de aula que ela mandou leva `estudado: "AAAA-MM-DD"`: a página põe esses cards logo na fila, um sim,
+um não com os do que mais cai (assim o que ela estudou entra no mesmo dia, sem tomar a cota toda).
+
+O que já existe (25/09): 388 cards em 8 matérias, incluindo História do Brasil e Atualidades. Inglês
 ficou de fora porque ela é fluente.
 
 O progresso dela fica na coleção `progresso`, um documento por card (caixa, próxima data, `errouEm`);
