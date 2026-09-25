@@ -95,6 +95,77 @@
 > engenharia. Temas do Nordeste e da própria escrita. *Morte e vida severina*.
 > ⭐ 2023.1-OBJ-IL27 a IL29 · 2024.1-OBJ-29 e 30
 
+### Obras que já caíram na FGV
+
+> [!question]- 17. *Estorvo* (Chico Buarque, 1991): como é o romance?
+> Narrador em 1ª pessoa, sem nome, que foge sem rumo pelo Rio depois de ver um homem pelo olho
+> mágico. Tempo e espaço confusos, ritmo de pesadelo. A percepção do narrador vai ficando
+> persecutória. Mostra a violência urbana e a decadência de uma família de elite: uma metáfora do
+> Brasil de 1991, um país sem rumo.
+> ⭐ 2024.1-OBJ-21 a 23
+
+> [!question]- 18. Machado de Assis: o que muda da 1ª para a 2ª fase?
+> **1ª fase, romântica:** *A mão e a luva*, *Helena*, *Iaiá Garcia*.
+> **2ª fase, realista** (a partir de *Memórias póstumas*, 1881): ironia, pessimismo, narrador não
+> confiável, digressões, conversa com o leitor e crítica à elite (*Quincas Borba*, *Dom Casmurro*).
+> ⭐ *Dom Casmurro*: 2023.1-OBJ-IL21 a IL25. *Memórias póstumas* viralizou em 2024 e caiu em
+> 2025.1-OBJ-48.
+
+### Escolas literárias
+
+> [!question]- 19. Quinhentismo: o que é?
+> A literatura do 1º século da colônia.
+> **De informação:** a Carta de Pero Vaz de Caminha (1500), com a terra vista como paraíso.
+> **Jesuítica:** José de Anchieta, poesia e teatro para catequizar.
+
+> [!question]- 20. Barroco: marcas e autores
+> Século XVII, Contrarreforma. Conflito entre fé e razão, carne e espírito; antíteses e paradoxos.
+> **Cultismo:** jogo de palavras. **Conceptismo:** jogo de ideias.
+> Gregório de Matos (o "Boca do Inferno", sátira da Bahia) e Padre Antônio Vieira (sermões).
+
+> [!question]- 21. Arcadismo: marcas e autores
+> Século XVIII, Iluminismo. Simplicidade, vida no campo, pastores. Lemas: *fugere urbem* (fugir da
+> cidade), *carpe diem*, *locus amoenus* (lugar ameno).
+> Tomás Antônio Gonzaga (*Marília de Dirceu*), Cláudio Manuel da Costa, Basílio da Gama (*O
+> Uraguai*). Ligados à Inconfidência.
+
+> [!question]- 22. As três gerações da poesia romântica
+> 1. **Indianista e nacionalista:** Gonçalves Dias ("Canção do exílio")
+> 2. **Ultrarromântica, mal do século:** Álvares de Azevedo (morte, tédio, amor idealizado)
+> 3. **Condoreira, social:** Castro Alves ("O navio negreiro", abolicionismo)
+
+> [!question]- 23. José de Alencar: quais são os tipos de romance?
+> - **Indianista:** *O guarani*, *Iracema*, *Ubirajara*
+> - **Urbano:** *Senhora*, *Lucíola*
+> - **Regionalista:** *O gaúcho*, *O sertanejo*
+> - **Histórico:** *As minas de prata*
+> Projeto: criar uma literatura nacional.
+
+> [!question]- 24. Manuel Bandeira e Drummond: o que marca cada um?
+> **Bandeira:** verso livre, cotidiano, humildade, humor ("Poética", "Vou-me embora pra Pasárgada").
+> **Drummond:** fases gauche e irônica (*Alguma poesia*), social (*A rosa do povo*, 1945) e
+> reflexiva, metafísica (*Claro enigma*, 1951).
+
+> [!question]- 25. Mário × Oswald de Andrade: as obras-chave
+> **Mário:** *Pauliceia desvairada* (1922), *Macunaíma* (1928), o "herói sem nenhum caráter".
+> **Oswald:** Manifesto da Poesia Pau-Brasil (1924), Manifesto Antropófago (1928), poema-piada,
+> *Serafim Ponte Grande*.
+
+> [!question]- 26. *Grande sertão: veredas* (Guimarães Rosa, 1956): o essencial
+> O ex-jagunço Riobaldo conta a vida a um interlocutor que não fala ("o senhor"): guerras de
+> jagunços, a dúvida sobre o pacto com o diabo e o amor por Diadorim. Linguagem reinventada, com
+> neologismos e oralidade. O sertão como o mundo.
+
+> [!question]- 27. Concretismo: o que é?
+> Movimento de 1956 (Augusto e Haroldo de Campos, Décio Pignatari). O poema vira objeto visual: fim
+> do verso tradicional, uso do espaço da página, palavra como forma.
+
+> [!question]- 28. Soneto e métrica: o que é preciso saber?
+> **Soneto:** 14 versos, 2 quartetos e 2 tercetos.
+> **Métrica:** conta-se até a última sílaba tônica, juntando vogais entre palavras. Redondilha menor
+> = 5 sílabas, maior = 7, decassílabo = 10.
+> ⭐ Métrica e tradução: 2024.1-DIS-LP7
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

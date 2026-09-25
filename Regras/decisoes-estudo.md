@@ -131,7 +131,11 @@ de segunda continua sem cronômetro), e o tempo-alvo se ajusta pelo tempo real d
 A Laura esquecia matéria que já tinha acertado. Ela estuda flashcards pela página **Cards do
 Trajeto** (https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX, fixada na barra lateral): na ida e na
 volta da escola (30 min cada) e 5–10 min antes de dormir, só com o que errou no dia. Caixas de 1, 3,
-7, 14 e 30 dias; no máximo 15 cards novos por dia. Começou em 25/09 com 86 cards.
+7, 14 e 30 dias. Começou em 25/09 com 86 cards.
+
+**Ajuste de 25/09:** no 1º dia ela fez 20 cards só na ida e bateu no teto de 15 novos. Agora são
+**30 novos por dia**, e o botão **Mais 10 novos** aparece quando a cota acaba e ainda há card não visto.
+E o baralho não pode ser só o que ela estudou comigo: ela estuda muito mais do que conta.
 
 **A regra:** ela só abre o link e aperta o botão; **o Claude põe os cards novos até a prova, sem ela
 pedir.** Todo erro dela (questão, discursiva, simulado) e toda aula nova viram card no mesmo dia.
@@ -142,8 +146,19 @@ Um card entra em dois lugares:
    acrescentar em `cards` o item `{id: "<slug>-NN", tema, frente, verso, nota, erro}` com o próximo
    número e gravar com `if_version`. Matéria nova = documento novo, com `materia` e `ordem`.
 
+**De onde vêm os cards (duas fontes, sempre as duas):**
+1. **O que ela estudou:** erros, conversas, e o que ela mandar do dia (ela vai mandar às vezes e
+   esquecer às vezes). Também as apostilas e resumos que aparecem nas pastas das matérias.
+2. **O que mais cai na FGV, com ou sem aviso dela:** tema tirado do `/banca`, nunca de memória, com o
+   id da questão na nota ⭐. Esta é a fonte principal. Em Atualidades, fato de 2025–26 só sai dos
+   resumos do cursinho.
+
+Nunca deixar a fila de não vistos secar: se ficar abaixo de ~150 cards, pôr um lote novo pelo banco.
+O que já existe (25/09): 584 cards em 8 matérias, incluindo História do Brasil e Atualidades. Inglês
+ficou de fora porque ela é fluente.
+
 O progresso dela fica na coleção `progresso`, um documento por card (caixa, próxima data, `errouEm`);
-o `/revisar` pode ler dali. Próximo lote sugerido: História do Brasil (Brasil Império, 5 de 39).
+o `/revisar` pode ler dali.
 Com ela, explicar sempre em poucas linhas: textão a deixa confusa.
 
 ---
