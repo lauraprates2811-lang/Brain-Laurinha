@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-09-24",
-  "proximo_id": 35,
+  "proximo_id": 36,
   "tarefas": [
     {
       "id": 1,
@@ -253,9 +253,9 @@
     },
     {
       "id": 28,
-      "titulo": "Terminar de estudar a aula de Língua Portuguesa de 22/09 (Vidal) — 70% feito em 24/09, faltam 30%",
+      "titulo": "Terminar de estudar a aula de Língua Portuguesa de 22/09 (Vidal) — 70% feito em 24/09, faltam 30% (fecha hoje)",
       "area": "cursinho",
-      "prazo": "2026-09-25",
+      "prazo": "2026-09-24",
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-23"
@@ -271,7 +271,7 @@
     },
     {
       "id": 30,
-      "titulo": "Revisar a teoria de Matemática do Éder — nos horários de aula da EABH (está em falta, passou de 24/09 para amanhã)",
+      "titulo": "Iniciar a matéria de Matemática do Éder (revisar a teoria) — nos horários de aula da EABH (está em falta, passou de 24/09 para 25/09)",
       "area": "cursinho",
       "prazo": "2026-09-25",
       "prioridade": "media",
@@ -307,10 +307,19 @@
     },
     {
       "id": 34,
-      "titulo": "PRIORIDADE: assistir e estudar a aula inteira de Geografia (antes do intensivo de Geografia de sábado, 26/09)",
+      "titulo": "PRIORIDADE: assistir e estudar a aula inteira de Geografia (antes do intensivo de Geografia de sábado, 26/09) — meta: finalizar hoje",
+      "area": "cursinho",
+      "prazo": "2026-09-24",
+      "prioridade": "alta",
+      "status": "aberta",
+      "criado": "2026-09-24"
+    },
+    {
+      "id": 35,
+      "titulo": "Fazer mais questões de Matemática do Serra (aula de 23/09)",
       "area": "cursinho",
       "prazo": "2026-09-25",
-      "prioridade": "alta",
+      "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-24"
     }
