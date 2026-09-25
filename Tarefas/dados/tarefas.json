@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-09-24",
-  "proximo_id": 33,
+  "proximo_id": 35,
   "tarefas": [
     {
       "id": 1,
@@ -253,9 +253,9 @@
     },
     {
       "id": 28,
-      "titulo": "Estudar a aula de Língua Portuguesa de 22/09 (Vidal) — 06h30, antes da escola",
+      "titulo": "Terminar de estudar a aula de Língua Portuguesa de 22/09 (Vidal) — 70% feito em 24/09, faltam 30%",
       "area": "cursinho",
-      "prazo": "2026-09-24",
+      "prazo": "2026-09-25",
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-23"
@@ -271,18 +271,18 @@
     },
     {
       "id": 30,
-      "titulo": "Revisar a teoria de Matemática do Éder — nos horários de aula da EABH",
+      "titulo": "Revisar a teoria de Matemática do Éder — nos horários de aula da EABH (está em falta, passou de 24/09 para amanhã)",
       "area": "cursinho",
-      "prazo": "2026-09-24",
+      "prazo": "2026-09-25",
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-23"
     },
     {
       "id": 31,
-      "titulo": "Fazer todas as questões de Matemática do Éder sozinha, sem IA e sem calculadora (treino de prova) — nos horários de aula da EABH",
+      "titulo": "Fazer todas as questões de Matemática do Éder sozinha, sem IA e sem calculadora (treino de prova) — nos horários de aula da EABH (está em falta, passou de 24/09 para amanhã)",
       "area": "cursinho",
-      "prazo": "2026-09-24",
+      "prazo": "2026-09-25",
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-23"
@@ -291,6 +291,24 @@
       "id": 32,
       "titulo": "Resolver o conflito de horário do sábado 26/09: simulado completo da FGV (08h–11h30 e 14h30–18h) bate com o intensivo de Geografia, o cursinho de sábado (Oral, Artes & QC) e o aniversário de 18 anos da Julia (17h–22h)",
       "area": "vestibular",
+      "prazo": "2026-09-25",
+      "prioridade": "alta",
+      "status": "aberta",
+      "criado": "2026-09-24"
+    },
+    {
+      "id": 33,
+      "titulo": "Continuar Trigonometria à noite — estudou um pouco de dia, fazer mais um pouco",
+      "area": "cursinho",
+      "prazo": "2026-09-24",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-24"
+    },
+    {
+      "id": 34,
+      "titulo": "PRIORIDADE: assistir e estudar a aula inteira de Geografia (antes do intensivo de Geografia de sábado, 26/09)",
+      "area": "cursinho",
       "prazo": "2026-09-25",
       "prioridade": "alta",
       "status": "aberta",
