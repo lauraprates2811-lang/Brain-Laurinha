@@ -154,6 +154,12 @@ Um card entra em dois lugares:
    resumos do cursinho.
 
 Nunca deixar a fila de não vistos secar: se ficar abaixo de ~150 cards, pôr um lote novo pelo banco.
+**Pedido de flashcards de uma aula ou matéria = baralho separado, só dela** (a Laura cobrou em 25/09).
+Segue o modelo de `crise-de-1929-e-nazifascismo`: na pasta da matéria, um `<assunto>.md` (mapa mental
++ cards + o que caiu na FGV) e um `<assunto>.html` com as abas Mapa e Flashcards (Sabia/Revisar),
+publicado também como página própria. Os mesmos cards **podem** entrar no Cards do Trajeto, mas isso
+é extra: nunca no lugar do baralho separado.
+
 Card de aula que ela mandou leva `estudado: "AAAA-MM-DD"`: a página põe esses cards logo na fila, um sim,
 um não com os do que mais cai (assim o que ela estudou entra no mesmo dia, sem tomar a cota toda).
 

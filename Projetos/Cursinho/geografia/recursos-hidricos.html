@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Recursos Hídricos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E6EBED; --surface:#F6F8F9; --surface-2:#ECF0F2; --ink:#16202A; --muted:#55616B; --line:#C8D1D6;
+  --h-rio:#1B6D8C; --h-bacia:#2B4C9B; --h-energia:#94600E; --h-uso:#2C6B4E; --h-costa:#9A4A2E;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#11171A; --surface:#192125; --surface-2:#20292E; --ink:#E4EAED; --muted:#98A3AA; --line:#2E3A40;
+    --h-rio:#6BC1DE; --h-bacia:#8FA8F2; --h-energia:#D9A441; --h-uso:#74C39A; --h-costa:#EE9A78;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#11171A; --surface:#192125; --surface-2:#20292E; --ink:#E4EAED; --muted:#98A3AA; --line:#2E3A40;
+  --h-rio:#6BC1DE; --h-bacia:#8FA8F2; --h-energia:#D9A441; --h-uso:#74C39A; --h-costa:#EE9A78;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-bacia);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1.3fr;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.node{border:1.5px solid var(--c,var(--ink));border-radius:8px;padding:10px 12px;background:var(--surface)}
+.node small{display:block;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--muted));margin-bottom:4px}
+.node strong{font:700 20px/1.05 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.node p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.arrow{font:700 22px/1 var(--display);color:var(--muted);text-align:center}
+.fork{display:grid;gap:8px}
+.common{grid-column:1/-1;font-size:13.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.common b{color:var(--ink);font-weight:600}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted)}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35)}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg)}
+  .card{min-height:360px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+.ex{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Geografia · Frente 1 · Aula 12 · Caderno 4</div>
+    <h1>Recursos Hídricos</h1>
+    <p class="lede">O Brasil tem uma <b>rede rica em rios de planalto</b>, quase todos perenes, e por isso um potencial enorme de <b>hidrelétricas e hidrovias</b>. O problema é o preço ambiental das usinas e uma água <b>mal distribuída e mal cuidada</b>: sobra na Amazônia, falta no Nordeste e chega poluída às cidades.</p>
+    <div class="fix"><b>Dois números da apostila para não decorar:</b> as hidrelétricas já não geram 90% da eletricidade do país (hoje é bem menos, perto de 60%), e a potência de Belo Monte é de <b>11.233 MW</b>, não GW.</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 26</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="flow" aria-label="Fio condutor da aula">
+      <div class="node" style="--c:var(--h-rio)"><small>O que o Brasil tem</small><strong>Rede rica em rios</strong><p>Rios perenes, de planalto, que chegam ao mar</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" style="--c:var(--h-bacia)"><small>O que isso dá</small><strong>Bacias e potencial</strong><p>Hidrelétricas, hidrovias e irrigação</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="fork">
+        <div class="node" style="--c:var(--h-energia)"><small>Problema 1 · energia</small><strong>O custo das usinas</strong><p>Floresta inundada, gente removida</p></div>
+        <div class="node" style="--c:var(--h-uso)"><small>Problema 2 · uso</small><strong>Água mal distribuída e poluída</strong><p>Esgoto, mananciais, crise hídrica, enchentes</p></div>
+      </div>
+      <div class="common"><b>A resposta da lei:</b> gerir a água por <b>bacia hidrográfica</b>, com comitês de bacia, cobrança pelo uso e o princípio do <b>poluidor-pagador</b> (Lei das Águas, 1997).</div>
+    </div>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-rio)">
+        <h2>Vocabulário dos rios</h2>
+        <ul class="tree">
+          <li><span>Partes do rio</span>
+            <ul><li>Afluente deságua no principal; subafluente, no afluente</li><li>Confluência: o encontro de dois rios</li><li><b>Montante</b> rumo à nascente · <b>jusante</b> rumo à foz</li></ul></li>
+          <li><span>Foz</span>
+            <ul><li><b>Estuário:</b> um canal (a maioria no Brasil)</li><li><b>Delta:</b> vários canais (Parnaíba)</li><li><b>Mista:</b> o Amazonas</li></ul></li>
+          <li><span>Fluxo</span>
+            <ul><li><b>Perene</b> × <b>intermitente</b> (Sertão)</li><li>Exorreico (mar) · endorreico (lago) · criptorreico (subterrâneo)</li></ul></li>
+          <li><span>Regime</span>
+            <ul><li>Pluvial (a maioria) · nival (degelo)</li><li>Amazonas: misto, com predomínio da chuva</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-bacia)">
+        <h2>Bacias</h2>
+        <ul class="tree">
+          <li><span>A rede brasileira</span>
+            <ul><li>Rica em rios, pobre em lagos</li><li>Rios de planalto · foz em estuário</li><li>Divisores: Planalto Brasileiro, Guianas e Andes</li></ul></li>
+          <li><span>Amazônica</span>
+            <ul><li>A maior do mundo · Solimões vira Amazonas depois do rio Negro</li><li>Pororoca · hidrovias do Madeira e do Tapajós (soja)</li></ul></li>
+          <li><span>Tocantins-Araguaia</span>
+            <ul><li>Ilha do Bananal · Tucuruí, para a mineração</li></ul></li>
+          <li><span>Platina</span>
+            <ul><li>Paraná, Paraguai e Uruguai formam o rio da Prata fora do Brasil</li><li>Hidrovia <b>Tietê-Paraná</b>, a mais importante</li></ul></li>
+          <li><span>São Francisco</span>
+            <ul><li>Nasce na Serra da Canastra, perene no semiárido</li><li>"Rio da unidade nacional" · transposição (eixos Norte e Leste)</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-energia)">
+        <h2>Hidrelétricas</h2>
+        <ul class="tree">
+          <li><span>Por que tanto potencial</span> <span class="fgv">★ 2023.1-OBJ-MH28</span>
+            <ul><li>Rios volumosos + desnível entre planalto e depressão</li></ul></li>
+          <li><span>Onde</span>
+            <ul><li>Amazônica: maior potencial, menor uso (planície, distância)</li><li>Paraná: mais usinas (Itaipu, Furnas)</li></ul></li>
+          <li><span>Impactos</span>
+            <ul><li>Inunda floresta e cidades, remove moradores</li><li>Muda o clima local e retém sedimentos (Assuã, no Nilo)</li></ul></li>
+          <li><span>Casos</span>
+            <ul><li><b>Balbina:</b> a floresta apodreceu, os peixes morreram, pouca energia</li><li><b>Belo Monte, Jirau, Santo Antônio:</b> fio d'água, ribeirinhos e indígenas afetados · MAB</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-uso)">
+        <h2>Água: reserva e uso</h2>
+        <ul class="tree">
+          <li><span>Aquíferos</span>
+            <ul><li>Rocha porosa e permeável que guarda água</li><li><b>SAGA:</b> o maior em volume · <b>Guarani:</b> arenito sob basalto</li></ul></li>
+          <li><span>Distribuição</span>
+            <ul><li>80% da água na Amazônia, com 7% da população</li><li>Nordeste com cerca de 3% · a agricultura é quem mais consome</li></ul></li>
+          <li><span>Poluição</span> <span class="fgv">★ 2025.1-DIS-CH7</span>
+            <ul><li>Eutrofização (Tietê) × autodepuração</li><li>Crise hídrica de SP (2014): seca, má gestão e mananciais ocupados</li></ul></li>
+          <li><span>Gestão</span>
+            <ul><li>Lei das Águas (1997): bacia, comitês, cobrança</li><li>Poluidor-pagador: começou no Paraíba do Sul</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-costa)">
+        <h2>Cidade e litoral</h2>
+        <ul class="tree">
+          <li><span>Enchentes urbanas</span>
+            <ul><li>Solo impermeabilizado, várzeas ocupadas, lixo</li><li>Soluções: áreas verdes e piscinões · risco de leptospirose</li></ul></li>
+          <li><span>Saneamento</span>
+            <ul><li>A água chega; o <b>esgoto</b> não</li><li>Norte e Nordeste em pior situação</li></ul></li>
+          <li><span>Litoral: do Oiapoque ao Chuí</span>
+            <ul><li>Manguezais no Norte · dunas e falésias no Nordeste</li><li>Morros costeiros no Sudeste · restingas e lagoas no Sul</li><li>Falésia = erosão · duna e restinga = deposição</li></ul></li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1). Água caiu nas discursivas de Ciências Humanas.</p>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    rio:{n:"Vocabulário dos rios", c:"var(--h-rio)"},
+    bacia:{n:"Bacias", c:"var(--h-bacia)"},
+    energia:{n:"Hidrelétricas", c:"var(--h-energia)"},
+    uso:{n:"Água: reserva e uso", c:"var(--h-uso)"},
+    costa:{n:"Cidade e litoral", c:"var(--h-costa)"}
+  };
+  var CARDS = [
+   {
+    "b": "rio",
+    "q": "Afluente, subafluente e confluência: o que é cada um?",
+    "a": "<p><b>Afluente:</b> rio que deságua no rio principal.</p><p><b>Subafluente:</b> rio que deságua num afluente.</p><p><b>Confluência:</b> o ponto onde um rio encontra o outro.</p>"
+   },
+   {
+    "b": "rio",
+    "q": "Montante × jusante",
+    "a": "<p><b>Montante:</b> na direção da nascente (rio acima).</p><p><b>Jusante:</b> na direção da foz (rio abaixo).</p><p>Ex.: uma barragem retém os sedimentos, e as terras <b>a jusante</b> deixam de ser fertilizadas.</p>"
+   },
+   {
+    "b": "rio",
+    "q": "Foz em estuário × delta × mista",
+    "a": "<p><b>Estuário:</b> um canal único, o mais comum no Brasil.</p><p><b>Delta:</b> vários canais (Parnaíba, no Nordeste).</p><p><b>Mista:</b> o Amazonas, que se divide em braços, e cada braço é largo como um estuário.</p>"
+   },
+   {
+    "b": "rio",
+    "q": "Rio perene × intermitente",
+    "a": "<p><b>Perene:</b> nunca seca, nem na estiagem. É a maioria no Brasil, por causa dos climas úmidos.</p><p><b>Intermitente (temporário):</b> seca na estiagem. Aparece no semiárido, no Sertão nordestino.</p>"
+   },
+   {
+    "b": "rio",
+    "q": "Exorreico, endorreico e criptorreico",
+    "a": "<p><b>Exorreico:</b> chega ao mar, direto ou por outro rio. Quase todos os rios brasileiros.</p><p><b>Endorreico:</b> corre para lagos ou mares interiores.</p><p><b>Criptorreico:</b> corre por baixo da terra, em cavernas de calcário.</p>"
+   },
+   {
+    "b": "rio",
+    "q": "Regime pluvial × nival. E o Amazonas?",
+    "a": "<p><b>Pluvial:</b> a água vem da chuva (a maioria dos rios brasileiros).</p><p><b>Nival:</b> vem do derretimento da neve.</p><p>O <b>Amazonas é misto</b>: parte vem do degelo dos Andes, mas predomina a chuva do clima equatorial.</p>"
+   },
+   {
+    "b": "bacia",
+    "q": "Quais são as características da rede hidrográfica brasileira?",
+    "a": "<ul><li>Rica em rios e pobre em lagos</li><li>Rios exorreicos e perenes (menos no Sertão)</li><li>Predomínio de <b>rios de planalto</b>, com grande potencial hidrelétrico</li><li>Foz em estuário, na maioria</li><li>Regime pluvial</li></ul><p>Os rios nascem em três divisores: Planalto Brasileiro, Planalto das Guianas e Andes.</p>"
+   },
+   {
+    "b": "bacia",
+    "q": "Bacia Amazônica: o que é preciso saber",
+    "a": "<p>A maior bacia do mundo. O Amazonas é o maior rio em volume, com cerca de 15% da água doce que chega aos oceanos. Nasce nos Andes do Peru, vira <b>Solimões</b> ao entrar no Brasil e <b>Amazonas</b> depois de receber o rio Negro, perto de Manaus. Na foz há a <b>pororoca</b>. As hidrovias do Madeira e do Tapajós escoam a soja de MT e RO.</p>"
+   },
+   {
+    "b": "bacia",
+    "q": "Bacia do Tocantins-Araguaia: o essencial",
+    "a": "<p>No Araguaia fica a <b>ilha do Bananal</b>, a maior ilha fluvial do mundo. No Tocantins está <b>Tucuruí</b> (PA), construída para abastecer os grandes projetos de mineração. Os dois rios têm bom potencial para hidrovias.</p>"
+   },
+   {
+    "b": "bacia",
+    "q": "Bacia Platina: quais rios, e o que tem de mais importante?",
+    "a": "<p>Paraná, Paraguai e Uruguai, que só se juntam fora do Brasil e formam o rio da Prata. O <b>Paraná</b> nasce da junção do Grande com o Paranaíba e recebe Tietê, Paranapanema e Iguaçu (cataratas). É a bacia com <b>mais hidrelétricas</b> (Itaipu, binacional com o Paraguai; Furnas; Ilha Solteira) e com a hidrovia mais importante do país, a <b>Tietê-Paraná</b>. O Paraguai corre na planície do Pantanal.</p><p class=\"ex\">Exercício 3 da apostila (gabarito A).</p>"
+   },
+   {
+    "b": "bacia",
+    "q": "Rio São Francisco: por que é o \"rio da unidade nacional\"?",
+    "a": "<p>Nasce na Serra da Canastra (MG), liga o Sudeste ao Nordeste e, sendo <b>perene</b>, atravessa o semiárido levando água. É navegável entre Pirapora (MG) e Sobradinho (BA). Irriga a fruticultura (Petrolina e Juazeiro) e suas usinas (Paulo Afonso, Sobradinho, Xingó, Itaparica) abastecem boa parte do Nordeste.</p>"
+   },
+   {
+    "b": "bacia",
+    "q": "Transposição do São Francisco: objetivos e problemas",
+    "a": "<p>Obra federal iniciada em 2007, com canais nos eixos Norte e Leste para PE, PB, RN e CE.</p><p><b>Objetivos:</b> segurança hídrica (gente e animais), irrigação e perenizar rios intermitentes.</p><p><b>Problemas:</b> atraso e custo muito acima do previsto, desmatamento da caatinga, remoção dos vazanteiros, especulação com as terras perto dos canais e <b>salinização do solo pela evaporação</b>.</p><p class=\"ex\">Exercício 6 da apostila (gabarito D).</p>"
+   },
+   {
+    "b": "energia",
+    "q": "Por que o Brasil tem tanto potencial hidrelétrico?",
+    "a": "<p>Rios volumosos (clima úmido) que descem de planaltos para depressões. Quanto maior o desnível, maior a queda d'água e mais energia. O potencial total é maior na Amazônica, depois na Paraná, na Tocantins e na São Francisco.</p>"
+   },
+   {
+    "b": "energia",
+    "q": "Por que a Bacia Amazônica tem o maior potencial e é a menos aproveitada?",
+    "a": "<p>Os rios correm em <b>planície</b>, com pouco desnível no médio e baixo curso. Os centros consumidores ficam longe, e represar inunda floresta e terras de povos indígenas e ribeirinhos.</p><p class=\"ex\">Exercício 7 da apostila (gabarito A).</p>"
+   },
+   {
+    "b": "energia",
+    "q": "Hidrelétrica de Balbina: por que virou exemplo do que não fazer?",
+    "a": "<p>O lago cobriu um grande trecho de floresta, que apodreceu debaixo d'água: a decomposição consumiu o oxigênio e matou os peixes. Os animais não foram resgatados. E a usina gera muito menos energia do que o previsto, nem para Manaus é suficiente.</p>"
+   },
+   {
+    "b": "energia",
+    "q": "Belo Monte, Jirau e Santo Antônio: por que são polêmicas?",
+    "a": "<p>Belo Monte fica no rio Xingu (PA); Jirau e Santo Antônio, no Madeira (RO). Removem ribeirinhos, afetam povos indígenas e o ecossistema do rio. São usinas <b>fio d'água</b> (reservatório pequeno, para inundar menos), então geram bem menos na seca. O Movimento dos Atingidos por Barragens (MAB) critica.</p>"
+   },
+   {
+    "b": "energia",
+    "q": "Quais são os impactos socioambientais de uma hidrelétrica?",
+    "a": "<p>A energia é renovável e não polui o ar, mas o lago:</p><ul><li>inunda floresta, terras e até cidades, e acaba com a biodiversidade</li><li>expulsa moradores, nem sempre bem indenizados</li><li>muda o clima local (mais evaporação e umidade) e faz proliferar insetos</li><li>retém os sedimentos: em <b>Assuã</b>, no Nilo, as terras a jusante deixaram de ser adubadas e a pesca caiu</li></ul>"
+   },
+   {
+    "b": "uso",
+    "q": "O que é aquífero? Compare o SAGA e o Guarani.",
+    "a": "<p><b>Aquífero:</b> rocha porosa e permeável que guarda água no subsolo.</p><p><b>SAGA (Grande Amazônia, inclui Alter do Chão):</b> o maior do mundo em volume; a recarga depende da floresta.</p><p><b>Guarani:</b> sob a bacia do Paraná (Brasil, Argentina, Paraguai e Uruguai), em arenito coberto por basalto. É vulnerável onde o arenito aflora, nas áreas de recarga: há agrotóxico perto de Ribeirão Preto (SP).</p>"
+   },
+   {
+    "b": "uso",
+    "q": "A água do Brasil é bem distribuída?",
+    "a": "<p>Não. O Brasil tem uma das maiores reservas de água doce do mundo, mas cerca de <b>80% está na Amazônia</b>, onde vive só uns 7% da população. O <b>Nordeste</b>, com mais de 1/4 da população, tem só uns 3%. O Sudeste consome mais do que a sua fatia da população. A <b>agricultura</b> é a atividade que mais consome água.</p>"
+   },
+   {
+    "b": "uso",
+    "q": "Eutrofização × autodepuração de um rio",
+    "a": "<p><b>Eutrofização:</b> esgoto sem tratamento traz matéria orgânica; as bactérias que a decompõem consomem o oxigênio da água e os peixes morrem. O Tietê na Grande SP é um rio praticamente morto.</p><p><b>Autodepuração:</b> longe da cidade, o rio vai se limpando sozinho, e o Tietê se recupera no interior.</p>",
+    "fgv": "2025.1-DIS-CH7 · poluição e escassez de água"
+   },
+   {
+    "b": "uso",
+    "q": "Crise hídrica de São Paulo (2014): o que a causou?",
+    "a": "<p>Seca forte, mas também <b>má gestão</b>, investimento insuficiente e ocupação irregular dos <b>mananciais</b> (Billings e Guarapiranga, poluídos e assoreados). O Sistema Cantareira quase secou, e a ideia de tirar água do Paraíba do Sul abriu um conflito com o Rio de Janeiro.</p>",
+    "fgv": "2025.1-DIS-CH7 · poluição e escassez de água"
+   },
+   {
+    "b": "uso",
+    "q": "Como o Brasil gere a água? (Lei das Águas e poluidor-pagador)",
+    "a": "<p>A Lei de Recursos Hídricos (1997) organiza a gestão <b>por bacia hidrográfica</b>, com <b>comitês de bacia</b> que reúnem usuários, sociedade civil e poder público. A ANA coordena. Na bacia do Paraíba do Sul começou o <b>poluidor-pagador</b>: quem usa a água paga, e quem devolve poluída paga mais.</p>"
+   },
+   {
+    "b": "costa",
+    "q": "Por que as enchentes urbanas acontecem, e o que ajuda a evitá-las?",
+    "a": "<p><b>Causa principal:</b> o solo impermeabilizado (asfalto, concreto, poucas áreas verdes). A água não infiltra e chega de uma vez aos rios canalizados, que transbordam. Pioram a situação o lixo nos bueiros e a ocupação das várzeas, onde vivem os mais pobres. Depois, vem a leptospirose.</p><p><b>Soluções:</b> áreas verdes, piscinões e desocupar as várzeas.</p><p class=\"ex\">Exercícios 1 e 2 da apostila (gabaritos C e D).</p>"
+   },
+   {
+    "b": "costa",
+    "q": "Saneamento no Brasil: onde está o maior atraso?",
+    "a": "<p>No <b>esgoto</b>. A água chega a quase todos os municípios, mas grande parte não tem coleta de esgoto, e rios e mar recebem esgoto <i>in natura</i>. Norte e Nordeste estão pior, e é lá que a mortalidade infantil é maior.</p><p class=\"ex\">Exercício 5 da apostila, que é da FGV (gabarito A).</p>"
+   },
+   {
+    "b": "costa",
+    "q": "Como é o litoral brasileiro, de norte a sul?",
+    "a": "<p>Mais de 7 mil km, do Oiapoque (AP) ao Arroio Chuí (RS).</p><ul><li><b>AP e PA:</b> plano, com grandes manguezais</li><li><b>MA ao RN:</b> praias, dunas e falésias (Jericoacoara)</li><li><b>PB ao norte do ES:</b> praias amplas, falésias e manguezais</li><li><b>Sul do ES ao norte do RS:</b> praias estreitas e morros costeiros</li><li><b>Extremo sul:</b> restingas e lagoas (dos Patos, Mirim)</li></ul>"
+   },
+   {
+    "b": "costa",
+    "q": "Falésia, duna e restinga: como cada uma se forma?",
+    "a": "<p><b>Falésia:</b> escarpa aberta pela <b>erosão</b> do mar.</p><p><b>Duna e restinga:</b> <b>deposição</b> de areia pelo vento, pelos rios e pelo mar. A restinga é um cordão arenoso que pode fechar uma lagoa costeira.</p>"
+   }
+  ];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("geo12.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("geo12.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("geo12.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("geo12.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("geo12.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+</body>
+</html>

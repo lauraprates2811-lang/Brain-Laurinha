@@ -26,7 +26,9 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 - `historia-do-brasil/` — `aula-10-crise-da-republica-oligarquica-e-era-vargas-1.pdf`
 - `atualidades/` — resumos 06 (Oriente Médio), 07 (Bálcãs) e 08 (Venezuela e Cuba), do Alex
 - `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato · `caderno-4-geografia-fgv.pdf`
-  (Frente 1, aulas 12 a 16, e Frente 2, aulas 12 a 16; a aula 12 da Frente 1, Recursos Hídricos, virou 26 cards)
+  (Frente 1, aulas 12 a 16, e Frente 2, aulas 12 a 16)
+  - [[recursos-hidricos]] — Frente 1, aula 12: mapa mental e 26 flashcards (também em `.html` e na
+    página https://claude.ai/artifact/HiwWwWvnB36aiHeWvvwgk6); os cards também estão no baralho do trajeto
 - `lingua-portuguesa/`
   - [[formacao-de-palavras-e-efeitos-de-sentido]] — método "questão primeiro", 20 questões de treino,
     33 flashcards e 14 questões reais da FGV, da apostila CPV aula 12 (também em `.html`)
