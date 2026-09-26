@@ -65,7 +65,7 @@
 
 > [!question]- 12. "A parcela da sociedade que vive na rua sofre" ou "sofrem"?
 > **Sofre.** O verbo concorda com o núcleo do sujeito ("parcela"), não com a palavra mais próxima.
-> ⚠️ Erro repetido: 23/09 e 24/09.
+> ⚠️ Erro repetido: 23/09, 24/09 e 26/09 (redação: "as ações… pode gerar" → podem).
 
 > [!question]- 13. Quando "pois" leva vírgula antes?
 > Quando explica ou justifica (= porque), **sempre**: "Não é derivação regressiva, pois é palavra
@@ -304,6 +304,31 @@
 > Texto que declara publicamente posições e convoca à ação: tom persuasivo, muitas vezes na 1ª
 > pessoa do plural, com propostas. Ex.: *Manifesto comunista*, *Manifesto antropófago*.
 > ⭐ 2025.1-DIS-LP4
+
+### Da redação de 26/09 (IA e apagão docente)
+
+> [!question]- 51. "Os dois ___ profunda preocupação": expressão ou expressam?
+> **Expressam** (verbo, 3ª pessoa do plural). "Expressão" é substantivo.
+> ⚠️ Sua redação de 26/09, linha 15. O erro mais caro do texto.
+
+> [!question]- 52. Regência: contribuir ___ · ocasionar ___ · acordo ___ que · impressão ___ que
+> contribuir **para** · ocasionar **sem preposição** ("ocasiona um apagão"; ou "resulta em") ·
+> acordo **de** que · impressão **de** que.
+> ⚠️ Sua redação de 26/09: "contribuindo ao salário", "ocasiona em", "acordo que", "impressão de alunos que".
+
+> [!question]- 53. Frase que começa com "Visto que" ou "Tal como" pode terminar sozinha?
+> **Não.** São conjunções subordinativas: pedem uma oração principal. "Visto que Musk… se
+> reuniram." fica incompleta. Troque por: "Prova disso é que…" · "Como defende Bourdieu, …".
+> ⚠️ Sua redação de 26/09: 3 frases sem verbo principal (linhas 9, 11 e 21).
+
+> [!question]- 54. "Por outro lado" serve para somar um 2º argumento?
+> **Não.** Indica contraste, um lado oposto. Para acrescentar: **além disso**, **soma-se a isso**,
+> **ademais**.
+> ⚠️ Sua redação de 26/09, linha 19. A FGV avalia o "uso correto de conectivos".
+
+> [!question]- 55. "A dúvida de como a próxima geração vai lidar com a educação, se torna um questionamento." A vírgula está certa?
+> **Não.** Vírgula entre sujeito e verbo. Sujeito longo não autoriza vírgula.
+> ⚠️ Sua redação de 26/09 (2 vezes). A professora já tinha marcado esse erro na redação da escala 6x1.
 
 ## 🔗 Relacionados
 

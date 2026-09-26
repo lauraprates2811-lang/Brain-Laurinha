@@ -23,6 +23,13 @@ Todo erro de Português, com a causa. É daqui que o `/revisar` monta a revisão
 **O que revisar:** processos de formação de palavras (derivação prefixal, sufixal, regressiva, parassintética) — já é o 2º erro em formação de palavras em 2 dias (ver "vacina" acima).
 **Nota:** 0 / 0,5 no item (0%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-09-24-lingua-portuguesa-neologismo-manoel-de-barros.pdf`
 
+### 2026-09-26 — Redação "A trajetória do fim das escolas" (IA e apagão docente)
+**Questão:** redação dissertativa-argumentativa no formato FGV (30 linhas), corrigida em `Projetos/Vestibular/redacoes/2026-09-26-ia-apagao-docente.md`
+**Respondi → Correto:** "os dois expressão" → expressam · "as ações… pode gerar" → podem · "apagão docente e a mudança…, também pode" → o apagão… e a mudança… também podem · "devido a rápida" → devido à · "contribuindo ao salário" → contribuindo para · "ocasiona em" → ocasiona · "acordo que" → acordo de que · "impressão de alunos que" → impressão, nos alunos, de que · "IA's" → IAs · "Artificias" → Artificiais · 3 frases sem oração principal ("a IA já obtendo…", "Visto que Elon Musk…", "Tal como, o sociólogo…") · vírgula entre sujeito e verbo (2x) · conectivo com função errada ("Por outro lado" para somar, "Dessa maneira" sem relação de consequência) · acentos (rápida, dúvida, próxima, Inteligência, também, pelo que dá pra ver na foto)
+**Causa:** desatenção + conceito. Concordância com o núcleo do sujeito é a **3ª vez** (23/09, 24/09, 26/09); vírgula entre sujeito e verbo e acentuação já foram marcadas pela professora na redação da escala 6x1; regência é a 2ª vez (23/09, "constar com")
+**O que revisar:** concordância com sujeito composto e sujeito longo; regência de contribuir/ocasionar/acordo/impressão; conjunção subordinativa pede oração principal; "por outro lado" é contraste, não adição
+**Nota:** redação estimada em 4,5 / 10 (passa do corte de 3,0) · cards 12 e 51–55 em `Projetos/Cursinho/lingua-portuguesa/flashcards-lingua-portuguesa.md`
+
 ## 🔗 Relacionados
 
 [[Vestibular-projeto]]
