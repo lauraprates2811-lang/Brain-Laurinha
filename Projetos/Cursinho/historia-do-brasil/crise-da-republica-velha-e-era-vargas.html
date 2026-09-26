@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>República Velha e Era Vargas</title>
+<script>document.documentElement.className+=" js";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E9E8E4; --surface:#F7F6F3; --surface-2:#EEEDE8; --ink:#1D1F22; --muted:#5A5E63; --line:#D0CEC6;
+  --h-20:#8A5A1C; --h-ten:#4D6A2B; --h-30:#9B2335; --h-v1:#2B4C9B; --h-en:#6B3F8C; --h-45:#1B6D8C; --h-dis:#3F4A55;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#141517; --surface:#1C1E21; --surface-2:#24272B; --ink:#E7E6E2; --muted:#A0A3A7; --line:#33363B;
+    --h-20:#D9A45F; --h-ten:#A3C27A; --h-30:#F0879A; --h-v1:#8FA8F2; --h-en:#C39BE6; --h-45:#6BC1DE; --h-dis:#B8C3CC;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#141517; --surface:#1C1E21; --surface-2:#24272B; --ink:#E7E6E2; --muted:#A0A3A7; --line:#33363B;
+  --h-20:#D9A45F; --h-ten:#A3C27A; --h-30:#F0879A; --h-v1:#8FA8F2; --h-en:#C39BE6; --h-45:#6BC1DE; --h-dis:#B8C3CC;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-v1);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1.3fr;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.node{border:1.5px solid var(--c,var(--ink));border-radius:8px;padding:10px 12px;background:var(--surface)}
+.node small{display:block;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--muted));margin-bottom:4px}
+.node strong{font:700 20px/1.05 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.node p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.arrow{font:700 22px/1 var(--display);color:var(--muted);text-align:center}
+.fork{display:grid;gap:8px}
+.common{grid-column:1/-1;font-size:13.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.common b{color:var(--ink);font-weight:600}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted)}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35)}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg)}
+  .card{min-height:360px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+.ex{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+html:not(.js) .tabs{display:none}
+html.js #cards-simples{display:none}
+.nj-title{margin:0;font:800 30px/1 var(--display);letter-spacing:.015em;text-transform:uppercase}
+.nj-sec{margin:14px 0 0;font:800 21px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.nj{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px}
+.nj summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:baseline;padding:14px 16px;font-weight:600;font-size:16px}
+.nj summary::-webkit-details-marker{display:none}
+.nj summary::after{content:"+";margin-left:auto;font:500 18px/1 var(--mono);color:var(--muted)}
+.nj[open] summary::after{content:"–"}
+.nj-n{font:500 12px/1 var(--mono);color:var(--c);min-width:1.6em}
+.nj .a{padding:0 16px 14px;border-top:1px dashed var(--line);padding-top:12px;display:grid;gap:8px}
+.warn{font-size:13.5px;margin:2px 0 0;padding:6px 10px;border-left:3px solid var(--rev);background:var(--surface-2);border-radius:0 6px 6px 0}
+.fix ul{margin:4px 0 0;padding-left:18px}
+.fgvline{max-width:68ch;margin:0;font-size:14px}
+.fgvline b{font-weight:600}
+.peg{--c:var(--rev)}
+.peg ol{margin:0;padding-left:22px;display:grid;gap:6px;font-size:14px}
+.peg ol b{font-weight:600}
+.peg li::marker{font:500 12px var(--mono);color:var(--rev)}
+.years{font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--muted);margin:-4px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">História do Brasil · Aulas 12 e 13 · Caderno 4 · 1914–1945</div>
+    <h1>Da República Velha à Era Vargas</h1>
+    <p class="lede">A República do café entra em crise nos anos 1920 (guerra, indústria, greves, tenentes, 1929). A <b>Revolução de 1930</b> põe Vargas no poder, e ele centraliza tudo até virar ditador no <b>Estado Novo</b>, com indústria de base, CLT e propaganda. Cai em 1945, mas o varguismo continua: PSD e PTB elegem Dutra.</p>
+    <p class="fgvline"><b>Esse período caiu em 5 das 6 provas da FGV</b> (2021.1–2026.1): 6 questões de História, 5 delas dissertativas.</p>
+    <div class="fix"><b>Dois erros da apostila para não levar para a prova:</b><ul><li>Os sobreviventes dos 18 do Forte foram Eduardo Gomes e <b>Siqueira Campos</b> (a página 102 diz "Silveira Martins").</li><li>O PCB foi fundado em <b>março</b> de 1922 (a página 111 diz janeiro).</li></ul></div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 38</button>
+  </div>
+
+  <!-- Sem JavaScript (pré-visualização do app do Claude): os cards abrem com um toque.
+       Com JavaScript, esta lista some e ficam as abas com os cards que viram. -->
+  <section class="deck" id="cards-simples" aria-label="Flashcards">
+    <h2 class="nj-title">Flashcards · 38</h2>
+    <p class="note">Tente responder antes de tocar. O toque na pergunta abre a resposta.</p>
+    <h3 class="nj-sec" style="--c:var(--h-20)">1914–1922: a República racha</h3>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">1</span>O Brasil na Primeira Guerra (1914–18): o que fez e o que mudou na economia?</summary><div class="a"><p>Neutro até 1917. Submarinos alemães afundaram os navios <b>Paraná</b> e <b>Macau</b>, e o Brasil declarou guerra à Alemanha. Participação tímida: aviadores, pilotos navais e 90 médicos, sem tropas.</p><p>Na economia, as importações caíram e surgiu a <b>indústria de substituição</b> de bens não duráveis (alimentos, tecidos), com o dinheiro acumulado pelo café.</p><p class="warn">Ainda não é o "processo de substituição de importações" da Cepal: esse vem com a crise de 1929 e a Segunda Guerra.</p></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">2</span>Greve Geral de 1917: causa, estopim e ideologia</summary><div class="a"><p><b>Causa:</b> o custo de vida subiu 189% na guerra e os salários ficaram parados. Jornadas de 14 a 16 horas, sem nenhuma lei trabalhista.</p><p><b>Estopim:</b> a Força Pública matou o operário espanhol José Martinez numa manifestação de tecelões no Brás (SP), em julho.</p><p>Começou no têxtil (Mariângela, Crespi) e chegou ao Rio e ao RS.</p><p><b>Ideologia: anarcossindicalismo</b> (COB), não comunismo. O PCB só nasce em 1922.</p><p class="ex">Exercício 1 da apostila (gabarito A): concentrada em SP, pedia jornada de 8 horas e o fim do trabalho noturno das mulheres.</p><div class="stampline">★ Caiu na FGV: 2021.1-DIS-CH9 · mulheres na primeira industrialização</div></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">3</span>Quem eram os novos atores sociais dos anos 1920?</summary><div class="a"><p>Todos fora do café com leite:</p><ul><li><b>Burguesia industrial</b> (quase 12 mil fábricas em 1918)</li><li><b>Operariado:</b> anarquistas e, depois, PCB (1922) e BOC (1927)</li><li><b>Camadas médias urbanas</b></li><li><b>Tenentes</b></li><li><b>Oligarquias dissidentes</b> (RS, Nordeste)</li></ul></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">4</span>Por que Epitácio Pessoa virou presidente (1919–22), e o que irritou os militares?</summary><div class="a"><p>Rodrigues Alves, eleito em 1918, morreu de <b>gripe espanhola</b> antes da posse. Delfim Moreira assumiu e convocou nova eleição. Epitácio, paraibano e fora do café, foi o nome de consenso.</p><p>Ele pôs <b>civis nos ministérios da Guerra e da Marinha</b>, o que irritou os militares. Também baixou a Lei de Repressão ao Anarquismo (1921) e comprou café para estocar.</p></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">5</span>Reação Republicana (1922): quem, e o que foram as "cartas falsas"?</summary><div class="a"><p><b>RJ, RS, BA e PE</b> lançaram Nilo Peçanha contra o mineiro <b>Arthur Bernardes</b>, com discurso contra fraude e coronelismo.</p><p>O <i>Correio da Manhã</i> publicou cartas atribuídas a Bernardes ofendendo o Exército e o marechal Hermes. Oposição civil e militar se juntaram. Mesmo assim, Bernardes venceu.</p><p class="warn">Reação Republicana (1922) = RJ, RS, BA, PE. Aliança Liberal (1930) = RS, MG, PB. Não troque.</p></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">6</span>Os 18 do Forte (5 de julho de 1922): o que foi?</summary><div class="a"><p>A <b>primeira revolta tenentista</b>. Depois da prisão de Hermes da Fonseca, os tenentes do Forte de Copacabana tentaram impedir a posse de Bernardes.</p><p>Cercados, 17 militares e 1 civil saíram pela praia contra as tropas do governo. Sobreviveram só <b>Eduardo Gomes e Siqueira Campos</b>.</p><p class="warn">A página 102 da apostila diz "Silveira Martins". Está errado: o exercício 5 confirma Siqueira Campos.</p><p class="ex">Exercício 8 da apostila (gabarito E).</p><div class="stampline">★ Caiu na FGV: 2023.1-DIS-CH3 · tenentismo de 1922 e Eduardo Gomes em 1945</div></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">7</span>Semana de Arte Moderna (fevereiro de 1922): o que propunha e que correntes saíram dela?</summary><div class="a"><p>No Teatro Municipal de SP: Mário e Oswald de Andrade, Anita Malfatti, Di Cavalcanti, Villa-Lobos, Brecheret.</p><p>Rompe com o academicismo e usa as vanguardas europeias <b>sem copiar</b>, para redescobrir o "Brasil real".</p><ul><li><b>Esquerda:</b> Pau-Brasil e Antropofagia (Oswald)</li><li><b>Direita:</b> Verde-Amarelismo e Anta (<b>Plínio Salgado</b>, futuro chefe integralista)</li></ul><p class="ex">Exercício 4 da apostila (gabarito C).</p><div class="stampline">★ Caiu na FGV: 2022.1-DIS-AR11 · Manifesto Antropófago (prova de Artes)</div></div></details>
+    <details class="nj" style="--c:var(--h-20)"><summary><span class="nj-n">8</span>1922: por que esse ano resume a crise da República?</summary><div class="a"><ul><li><b>Fevereiro:</b> Semana de Arte Moderna</li><li><b>Março:</b> fundação do PCB e eleição de Bernardes contra a Reação Republicana</li><li><b>Julho:</b> os 18 do Forte</li></ul><p>Cultura, operários, oligarquias dissidentes e militares contestando a ordem no mesmo ano, o do centenário da Independência.</p><p class="warn">O PCB foi fundado em março de 1922. A página 111 da apostila diz janeiro.</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-ten)">Tenentismo e anos 20</h3>
+    <details class="nj" style="--c:var(--h-ten)"><summary><span class="nj-n">9</span>Tenentismo: o que queriam e qual era o limite?</summary><div class="a"><p>Jovens oficiais contra fraude, oligarquias e descentralização.</p><p><b>Queriam:</b> voto secreto, moralização, Estado centralizado e forte, reforma do ensino, Judiciário independente.</p><p><b>Limite:</b> movimento militar e elitista, sem base popular nem plano claro de poder. Queriam salvar a nação "em nome de um povo inerme" (Boris Fausto). Autoritarismo em embrião.</p><p class="ex">Exercícios 2 (gabarito B) e 5 (gabarito B) da apostila.</p><div class="stampline">★ Caiu na FGV: 2023.1-DIS-CH3</div></div></details>
+    <details class="nj" style="--c:var(--h-ten)"><summary><span class="nj-n">10</span>Governo Arthur Bernardes (1922–26): marcas</summary><div class="a"><ul><li>Governou quase todo o tempo sob <b>estado de sítio</b></li><li>Interveio nos estados e no Congresso; economia a serviço do café</li><li><b>Guerra civil no RS (1923):</b> maragatos contra Borges de Medeiros, encerrada pelo Pacto de Pedras Altas, que proibiu a reeleição</li><li><b>Revolta de 1924</b> em SP e <b>Coluna Prestes</b></li></ul></div></details>
+    <details class="nj" style="--c:var(--h-ten)"><summary><span class="nj-n">11</span>Revolta de 5 de julho de 1924, em São Paulo</summary><div class="a"><p>Isidoro Dias Lopes, Miguel Costa, Juarez e Joaquim Távora, Eduardo Gomes. Ocuparam a cidade por <b>22 dias</b> exigindo a queda de Bernardes, uma Constituinte e o voto secreto.</p><p>Bombardeados, recuaram para o interior e depois se juntaram aos rebeldes gaúchos: nasce a Coluna.</p></div></details>
+    <details class="nj" style="--c:var(--h-ten)"><summary><span class="nj-n">12</span>Coluna Prestes (1925–27): o que foi e que resultado teve?</summary><div class="a"><p>Tenentes paulistas e gaúchos (Prestes, Miguel Costa, Siqueira Campos, Juarez Távora, João Alberto). Cerca de 2 mil homens e <b>25 mil km</b> pelo interior.</p><p>Não levantou o sertão, preso aos coronéis, e terminou na Bolívia. Mas <b>desgastou as oligarquias</b> e fez de Prestes o "Cavaleiro da Esperança".</p><p>Prestes vira comunista e <b>fica fora da Revolução de 1930</b>.</p></div></details>
+    <details class="nj" style="--c:var(--h-ten)"><summary><span class="nj-n">13</span>Governo Washington Luís (1926–30)</summary><div class="a"><p>Paulista, ligado aos cafeicultores. Acabou com o estado de sítio, mas aprovou a <b>Lei Celerada</b> (1927): censura à imprensa e punição por "delito ideológico".</p><p>O BOC e o PCB elegeram vereadores e um deputado, impedidos de tomar posse.</p><p>Lema: "Governar é abrir estradas" (Rio–SP e Rio–Petrópolis).</p></div></details>
+    <details class="nj" style="--c:var(--h-ten)"><summary><span class="nj-n">14</span>Presidentes da República Velha e um fato de cada (exercício 6)</summary><div class="a"><ul><li><b>Campos Sales:</b> Funding Loan</li><li><b>Rodrigues Alves:</b> Convênio de Taubaté</li><li><b>Hermes da Fonseca:</b> Revolta de Juazeiro</li><li><b>Wenceslau Brás:</b> Greve Geral de 1917</li><li><b>Arthur Bernardes:</b> Coluna Prestes</li><li><b>Washington Luís:</b> Lei Celerada e crise de 1929</li></ul><p class="ex">Exercício 6 da aula 12 (gabarito B).</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-30)">Revolução de 1930</h3>
+    <details class="nj" style="--c:var(--h-30)"><summary><span class="nj-n">15</span>Crise de 1929: como ela bateu no Brasil?</summary><div class="a"><p>Os EUA eram o maior comprador de café. Com a quebra da bolsa, o café <b>encalhou nos portos</b> e os preços despencaram.</p><p>O governo já não conseguia comprar os excedentes (a política do Convênio de Taubaté, com supersafras como a de 1928). A base econômica das oligarquias quebrou.</p></div></details>
+    <details class="nj" style="--c:var(--h-30)"><summary><span class="nj-n">16</span>Aliança Liberal: quem era e o que propunha?</summary><div class="a"><p><b>RS, MG e PB</b>, com Vargas para presidente e João Pessoa para vice. Nasceu quando Washington Luís indicou outro paulista, <b>Júlio Prestes</b>, e rompeu o café com leite.</p><p><b>Programa:</b></p><ul><li>Leis trabalhistas</li><li>Voto secreto e voto feminino</li><li>Anistia aos tenentes</li><li>Incentivo à produção nacional, não só ao café</li></ul></div></details>
+    <details class="nj" style="--c:var(--h-30)"><summary><span class="nj-n">17</span>Como a Revolução de 1930 aconteceu?</summary><div class="a"><ul><li><b>Março:</b> Júlio Prestes vence, com fraude dos dois lados</li><li><b>26 de julho:</b> João Pessoa é assassinado, e o país se inflama</li><li>"Façamos a revolução antes que o povo a faça" (Antônio Carlos, governador de MG)</li><li><b>3 de outubro:</b> levante em MG, RS e no Nordeste, com Góes Monteiro no comando militar; SP resiste</li><li>Uma junta militar depõe Washington Luís, e <b>Vargas assume em 3 de novembro de 1930</b></li></ul><p>Oswaldo Aranha foi o grande articulador.</p></div></details>
+    <details class="nj" style="--c:var(--h-30)"><summary><span class="nj-n">18</span>A Revolução de 1930 foi uma revolução de classe?</summary><div class="a"><p><b>Não.</b> Não mudou as relações de produção nem levou ao poder uma classe contrária aos cafeicultores. Foi um <b>racha das oligarquias</b> (dissidentes, tenentes, classe média) contra o café paulista.</p><p>O que mudou: o Estado passa a depender das oligarquias sem se subordinar a nenhuma delas.</p><p>Prestes recusou participar: para ele, era briga entre oligarquias.</p><p class="ex">Exercício 7 da apostila (gabarito A: divisão das oligarquias).</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-v1)">Vargas 1930–1937</h3>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">19</span>Governo Provisório (1930–34): primeiras medidas</summary><div class="a"><ul><li>Fecha o Congresso e os legislativos, suspende a Constituição de 1891</li><li><b>Interventores</b> nos estados, muitos deles tenentes</li><li>Cria o <b>Ministério do Trabalho</b> (Lindolfo Collor) e a Lei de Sindicalização (1931): sindicato sob controle do Ministério</li></ul><p>"Estado de compromisso": Vargas se equilibra entre oligarquias, tenentes, militares e industriais.</p><div class="stampline">★ Caiu na FGV: 2024.1-OBJ-51 · charge sobre a posse de Vargas</div></div></details>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">20</span>Revolução Constitucionalista (1932): por que SP se levantou e o que ganhou?</summary><div class="a"><p>SP perdeu o poder em 1930 e exigia <b>Constituinte</b> e um <b>interventor civil e paulista</b> (rejeitava o tenente João Alberto). PRP e PD se uniram na Frente Única Paulista.</p><p>A morte de quatro estudantes em 23 de maio deu nome ao <b>MMDC</b>. A guerra começou em <b>9 de julho</b>; MG e RS não aderiram, e SP se rendeu em cerca de três meses.</p><p>Perdeu nas armas, mas <b>ganhou a Constituinte</b> (eleita em 1933). Espírito conservador: queria frear as reformas e os tenentes (José Murilo de Carvalho).</p><p class="ex">Exercício 9 da apostila (gabarito B).</p></div></details>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">21</span>Código Eleitoral de 1932: o que mudou?</summary><div class="a"><ul><li><b>Voto secreto</b>: golpe no voto de cabresto</li><li><b>Voto feminino</b></li><li><b>Justiça Eleitoral</b></li><li><b>Representação classista</b>: deputados escolhidos por sindicatos e associações patronais</li></ul><p>Em 1933, Carlota Pereira de Queirós virou a primeira deputada federal.</p><p class="warn">Voto feminino e secreto são de 1932, não dos anos 1920. É a afirmação falsa do exercício 3 da aula 12 (gabarito E).</p><div class="stampline">★ Caiu na FGV: 2021.1-DIS-CH10 · voto feminino nos anos 1930</div></div></details>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">22</span>Constituição de 1934: características</summary><div class="a"><p><b>Promulgada</b> em 16 de julho de 1934 por uma Constituinte eleita. Liberal: federalismo, presidencialismo, três poderes. Incorporou o Código Eleitoral.</p><p><b>Direitos trabalhistas:</b> 8 horas, salário mínimo regional, descanso semanal, férias, regras para o trabalho de menores. Apresentados como concessão do Estado, com controle.</p><p>Vargas foi eleito <b>indiretamente</b>, com eleição direta prevista para 1938.</p></div></details>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">23</span>Ação Integralista (AIB) × Aliança Nacional Libertadora (ANL)</summary><div class="a"><p><b>AIB (1932, Plínio Salgado):</b> fascismo à brasileira. Camisas-verdes, "anauê", "Deus, Pátria e Família", anticomunista e antiliberal.</p><p><b>ANL (1935):</b> frente antifascista do PCB, com Prestes como presidente de honra. Contra o integralismo; nacionalizar bancos e empresas estrangeiras, suspender a dívida externa, reforma agrária.</p><p>A <b>Lei de Segurança Nacional</b> (1935) serviu para fechar a ANL.</p></div></details>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">24</span>Intentona Comunista (novembro de 1935)</summary><div class="a"><p>Levantes em quartéis de <b>Natal, Recife e Rio</b>, sem apoio de massa. Fracassaram em poucos dias.</p><p>A repressão foi feroz, e o "perigo vermelho" virou o pretexto para endurecer o regime até o golpe de 1937.</p></div></details>
+    <details class="nj" style="--c:var(--h-v1)"><summary><span class="nj-n">25</span>Plano Cohen e o golpe de 10 de novembro de 1937</summary><div class="a"><p>A eleição de 1938 estava dividida (Armando Salles, José Américo, Plínio Salgado).</p><p><b>Plano Cohen:</b> plano comunista <b>falso</b>, escrito pelo capitão integralista Olímpio Mourão Filho e divulgado como verdadeiro.</p><p>Com esse pretexto, Vargas <b>fechou o Congresso</b>, cancelou a eleição e outorgou a Constituição de 1937. O estrategista foi o general Góes Monteiro. Os integralistas apoiaram.</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-en)">Estado Novo (1937–45)</h3>
+    <details class="nj" style="--c:var(--h-en)"><summary><span class="nj-n">26</span>Constituição de 1937, a "Polaca"</summary><div class="a"><p><b>Outorgada</b>, escrita por Francisco Campos, inspirada na Constituição autoritária da Polônia.</p><ul><li>Executivo como "órgão supremo do Estado"; Vargas governa por decreto</li><li>Interventores e fim da autonomia dos estados (bandeiras estaduais queimadas em praça pública)</li><li><b>Decreto de dezembro:</b> todos os partidos extintos, <b>inclusive a AIB</b></li></ul><p>Traídos, os integralistas atacaram o Palácio Guanabara em maio de 1938 e fracassaram.</p><p class="ex">Exercício 4 da aula 13 (gabarito A: presidencialismo autocrático).</p></div></details>
+    <details class="nj" style="--c:var(--h-en)"><summary><span class="nj-n">27</span>Como o Estado Novo controlava e convencia?</summary><div class="a"><p><b>Controle:</b> polícia política, prisões, censura. <b>DASP</b>: a burocracia federal centralizada.</p><p><b>Convencimento:</b> o <b>DIP</b> (Departamento de Imprensa e Propaganda) censurava e fazia propaganda no rádio, na imprensa e em cartilhas escolares. Culto a Vargas, o "pai dos pobres".</p><p>Igrejas, escolas, sindicatos e esporte também serviram à propaganda.</p><div class="stampline">★ Caiu na FGV: 2026.1-DIS-CH3 · esporte como propaganda</div></div></details>
+    <details class="nj" style="--c:var(--h-en)"><summary><span class="nj-n">28</span>Economia do Estado Novo: o Estado empresário</summary><div class="a"><p>Nacionalismo e intervenção: o Estado monta a <b>indústria de base</b> que a burguesia não tinha como bancar.</p><ul><li><b>CSN</b> (Volta Redonda), com empréstimo dos EUA</li><li><b>Vale do Rio Doce</b></li><li>Fábrica Nacional de Motores e Conselho Nacional do Petróleo</li></ul><p>Nome de prova: <b>modernização conservadora</b> (ou revolução passiva): industrializa de cima para baixo sem mexer na estrutura agrária.</p><p class="warn">A Petrobras é de 1953, no governo Vargas eleito, não do Estado Novo (exercício 10, gabarito A).</p></div></details>
+    <details class="nj" style="--c:var(--h-en)"><summary><span class="nj-n">29</span>Trabalhismo: CLT, sindicato único e pelego</summary><div class="a"><p><b>CLT (1943):</b> reúne carteira de trabalho, salário mínimo, jornada de 8 horas, férias e Justiça do Trabalho. Inspirada na <b>Carta del Lavoro</b> de Mussolini.</p><p><b>Corporativismo:</b> sindicato único por categoria, atrelado ao Ministério do Trabalho. O Estado arbitra patrão × empregado e <b>nega a luta de classes</b>. Greve e lockout proibidos.</p><p><b>Pelego:</b> o líder sindical fiel ao governo.</p><p>Na rua: "pai dos pobres e mãe dos ricos".</p><p class="ex">Exercícios 3 (gabarito C), 5 (D) e 11 (A) da apostila.</p><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH2 · CLT e corporativismo</div></div></details>
+    <details class="nj" style="--c:var(--h-en)"><summary><span class="nj-n">30</span>Populismo: a definição que a prova cobra</summary><div class="a"><p>Líder carismático que fala direto com as massas urbanas. <b>Inclusão controlada</b>: os trabalhadores ganham direitos, mas sem autonomia, em troca de apoio. O Estado se confunde com a figura do presidente.</p><p class="ex">Exercício 1 da aula 13 (gabarito C).</p></div></details>
+    <details class="nj" style="--c:var(--h-en)"><summary><span class="nj-n">31</span>Política externa: do jogo duplo à guerra</summary><div class="a"><p>Até 1942, <b>barganha pragmática</b> entre EUA (Oswaldo Aranha) e Alemanha (Dutra, Góes Monteiro, Francisco Campos), atrás de capital e tecnologia para a siderurgia.</p><p>Os EUA, na política da boa vizinhança, financiaram a CSN em troca de <b>bases aéreas</b> em Natal, Recife e Belém.</p><p>Depois de Pearl Harbor e dos navios brasileiros afundados (agosto de 1942), o Brasil entrou na guerra. A <b>FEB</b> lutou na Itália (1944–45, general Mascarenhas de Morais), e a FAB, com o "Senta a pua".</p><p class="ex">Exercícios 2 (B), 7 (A) e 8 (A) da aula 13.</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-45)">A queda (1945)</h3>
+    <details class="nj" style="--c:var(--h-45)"><summary><span class="nj-n">32</span>Por que o Estado Novo caiu?</summary><div class="a"><p><b>A contradição:</b> soldados lutavam pela democracia na Europa enquanto o Brasil vivia uma ditadura.</p><ul><li>Manifesto dos Mineiros (1943) e Congresso de Escritores (1945)</li><li>Entrevista de José Américo a Carlos Lacerda (fevereiro de 1945) fura a censura</li><li>Vargas abre: eleições e partidos, anistia, PCB legal</li><li>Queremismo ("Queremos Getúlio") e o PCB de Prestes apoiam a continuidade, o que assusta a oposição</li><li>Vargas nomeia o irmão, Benjamin, chefe de polícia: os militares (Góes Monteiro) o <b>depõem em 29 de outubro de 1945</b></li></ul><p>Assume José Linhares, presidente do STF, até a eleição.</p></div></details>
+    <details class="nj" style="--c:var(--h-45)"><summary><span class="nj-n">33</span>Os partidos de 1945 e a eleição de dezembro</summary><div class="a"><ul><li><b>PSD:</b> a máquina dos interventores. Candidato: Eurico Gaspar Dutra</li><li><b>PTB:</b> sindicatos e trabalhadores, a base popular de Vargas</li><li><b>UDN:</b> antigetulista, liberal, pró-EUA. Candidato: brigadeiro <b>Eduardo Gomes</b></li><li><b>PCB:</b> Yedo Fiúza</li></ul><p>Com PSD e PTB juntos, <b>Dutra venceu com 55%</b>: um "varguismo sem Vargas".</p><div class="stampline">★ Caiu na FGV: 2023.1-DIS-CH3</div></div></details>
+    <details class="nj" style="--c:var(--h-45)"><summary><span class="nj-n">34</span>Eduardo Gomes: o fio entre 1922 e 1945</summary><div class="a"><p>Sobrevivente dos 18 do Forte (1922) e rebelde em 1924. Virou brigadeiro e foi o candidato da <b>UDN</b> em 1945, com o slogan "Vote no brigadeiro, ele é bonito e é solteiro". Perdeu para Dutra.</p><p>Mostra como os tenentes de 1922 se dividiram: uns com Vargas (Juarez Távora, João Alberto), outros contra (Eduardo Gomes), Prestes no PCB.</p><p>Foi a pergunta exata da FGV em 2023.</p><div class="stampline">★ Caiu na FGV: 2023.1-DIS-CH3 · tenentismo e a campanha de 1945</div></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-dis)">Se cair dissertativa</h3>
+    <details class="nj" style="--c:var(--h-dis)"><summary><span class="nj-n">35</span>Explique as motivações e o programa do tenentismo. A Coluna Prestes faz parte dele?</summary><div class="a"><p>Roteiro em 3 blocos (12 minutos):</p><ul><li><b>Motivação:</b> contra as oligarquias, a fraude e o coronelismo; estopim na prisão de Hermes e nas cartas falsas (1922)</li><li><b>Programa:</b> voto secreto, moralização, Estado centralizado, ensino, Judiciário independente. Reformismo autoritário, sem o povo</li><li><b>Coluna:</b> sim. Nasce de 1924 (SP e RS), enfrenta Bernardes por dois anos e desgasta as oligarquias</li></ul><p class="ex">É o exercício 9 da aula 12 (FGV-RJ 2020), com resposta no gabarito da apostila.</p><div class="stampline">★ Caiu na FGV: 2023.1-DIS-CH3</div></div></details>
+    <details class="nj" style="--c:var(--h-dis)"><summary><span class="nj-n">36</span>Por que a Revolução de 1930 aconteceu? Organize as causas.</summary><div class="a"><p>Três camadas:</p><ul><li><b>Estrutural:</b> o modelo do café já não se sustentava, e a crise de 1929 derrubou os preços</li><li><b>Social:</b> indústria, classe média, operários e tenentes estavam fora do poder</li><li><b>Imediata:</b> Washington Luís rompe o café com leite (Júlio Prestes), nasce a Aliança Liberal, há fraude, João Pessoa é assassinado</li></ul><p><b>Fecho:</b> racha das elites, não revolução popular ("antes que o povo a faça").</p></div></details>
+    <details class="nj" style="--c:var(--h-dis)"><summary><span class="nj-n">37</span>Relacione a CLT ao corporativismo do Estado Novo.</summary><div class="a"><ul><li><b>Medidas:</b> salário mínimo, carteira de trabalho, 8 horas, férias, Justiça do Trabalho</li><li><b>Corporativismo:</b> o Estado organiza a sociedade por categorias, com sindicato único oficial, e arbitra capital × trabalho</li><li><b>Sentido:</b> negar a luta de classes. Direito como concessão, em troca de controle (pelegos, greve proibida). Modelo: a Carta del Lavoro</li></ul><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH2 · caiu exatamente isso</div></div></details>
+    <details class="nj" style="--c:var(--h-dis)"><summary><span class="nj-n">38</span>O Estado Novo foi autoritário e modernizador ao mesmo tempo. Explique.</summary><div class="a"><ul><li><b>Autoritário:</b> Polaca outorgada, partidos extintos, DIP, polícia política, estados sem autonomia</li><li><b>Modernizador:</b> indústria de base (CSN, Vale), DASP, CLT, planejamento econômico</li><li><b>Conceito:</b> modernização conservadora, de cima para baixo e sem participação popular</li><li><b>Fecho:</b> a própria Segunda Guerra expõe a contradição e derruba o regime em 1945</li></ul></div></details>
+  </section>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="flow" aria-label="Fio condutor das duas aulas">
+      <div class="node" style="--c:var(--h-20)"><small>Aula 12 · 1914–1930</small><strong>A República do café racha</strong><p>Indústria, greves, tenentes, 1922, crise de 29</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" style="--c:var(--h-30)"><small>Outubro de 1930</small><strong>Revolução de 1930</strong><p>Aliança Liberal + tenentes derrubam Washington Luís</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="fork">
+        <div class="node" style="--c:var(--h-v1)"><small>Aula 13 · 1930–1937</small><strong>Vargas negocia</strong><p>1932, Constituição de 1934, AIB × ANL, Plano Cohen</p></div>
+        <div class="node" style="--c:var(--h-en)"><small>Aula 13 · 1937–1945</small><strong>Estado Novo</strong><p>Ditadura, indústria de base, CLT, DIP</p></div>
+      </div>
+      <div class="common"><b>O fio das duas aulas:</b> o Estado deixa de servir só ao café e vira <b>árbitro de todos</b> (oligarquias, industriais, operários), dando direitos em troca de controle. Vargas cai em 1945, mas o sistema dele fica: <b>PSD e PTB elegem Dutra</b>.</div>
+    </div>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-20)">
+        <h2>1914–1922: a República racha</h2>
+        <ul class="tree">
+          <li><span>Primeira Guerra</span>
+            <ul><li>Neutro até 1917; navios afundados, guerra à Alemanha</li><li>Importação cai: <b>indústria de substituição</b> de não duráveis</li></ul></li>
+          <li><span>Greve Geral de 1917</span> <span class="fgv">★ 2021.1-DIS-CH9</span>
+            <ul><li>Carestia (+189%), jornadas de 14–16 h</li><li>Morte de José Martinez · <b>anarcossindicalista</b></li></ul></li>
+          <li><span>Epitácio Pessoa</span>
+            <ul><li>Rodrigues Alves morre de gripe espanhola</li><li>Civis nos ministérios militares: irrita o Exército</li></ul></li>
+          <li><span>1922</span> <span class="fgv">★ 2023.1-DIS-CH3</span>
+            <ul><li>Reação Republicana: <b>RJ, RS, BA, PE</b> × Bernardes</li><li>Cartas falsas · <b>18 do Forte</b> (5/7)</li><li>Semana de Arte Moderna · fundação do PCB</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-ten)">
+        <h2>Tenentismo e anos 20</h2>
+        <ul class="tree">
+          <li><span>O que queriam</span>
+            <ul><li>Voto secreto, moralização, Estado forte, ensino</li><li>Militar e elitista: <b>salvar o povo sem o povo</b></li></ul></li>
+          <li><span>Bernardes (1922–26)</span>
+            <ul><li>Estado de sítio · guerra civil no RS (Pedras Altas)</li><li>Revolta de 1924 em SP (22 dias)</li></ul></li>
+          <li><span>Coluna Prestes (1925–27)</span>
+            <ul><li>25 mil km, sem levantar o sertão</li><li>Desgasta as oligarquias · "Cavaleiro da Esperança"</li></ul></li>
+          <li><span>Washington Luís (1926–30)</span>
+            <ul><li><b>Lei Celerada</b> (1927) · "governar é abrir estradas"</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-30)">
+        <h2>Revolução de 1930</h2>
+        <ul class="tree">
+          <li><span>Crise de 1929</span>
+            <ul><li>Café encalha: a base das oligarquias quebra</li></ul></li>
+          <li><span>Aliança Liberal</span>
+            <ul><li><b>RS, MG, PB</b> · Vargas e João Pessoa</li><li>W. Luís indica Júlio Prestes e rompe o café com leite</li></ul></li>
+          <li><span>Os fatos</span>
+            <ul><li>Fraude · João Pessoa assassinado (26/7)</li><li>Levante em 3/10 · Vargas assume em 3/11/1930</li></ul></li>
+          <li><span>O sentido</span>
+            <ul><li><b>Racha das oligarquias</b>, não luta de classes</li><li>Prestes, já comunista, fica de fora</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-v1)">
+        <h2>Vargas 1930–1937</h2>
+        <ul class="tree">
+          <li><span>Governo Provisório</span> <span class="fgv">★ 2024.1-OBJ-51</span>
+            <ul><li>Congresso fechado · interventores</li><li>Ministério do Trabalho · sindicato controlado</li></ul></li>
+          <li><span>1932 em São Paulo</span>
+            <ul><li>MMDC · perde nas armas, ganha a Constituinte</li></ul></li>
+          <li><span>Voto e Constituição</span> <span class="fgv">★ 2021.1-DIS-CH10</span>
+            <ul><li>Código Eleitoral (1932): <b>voto secreto e feminino</b></li><li>Constituição de 1934: liberal + direitos trabalhistas</li></ul></li>
+          <li><span>Radicalização</span>
+            <ul><li>AIB (Plínio) × ANL (Prestes) · Intentona (1935)</li><li><b>Plano Cohen</b> (falso) → golpe de 10/11/1937</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-en)">
+        <h2>Estado Novo (1937–45)</h2>
+        <ul class="tree">
+          <li><span>Política</span>
+            <ul><li><b>Polaca</b> outorgada · todos os partidos extintos, até a AIB</li><li>DIP (propaganda e censura) · DASP</li></ul></li>
+          <li><span>Economia</span>
+            <ul><li>CSN, Vale, Fábrica Nacional de Motores</li><li><b>Modernização conservadora</b></li></ul></li>
+          <li><span>Trabalhismo</span> <span class="fgv">★ 2025.1-DIS-CH2</span>
+            <ul><li><b>CLT</b> (1943) · Carta del Lavoro</li><li>Sindicato único · pelego · populismo</li></ul></li>
+          <li><span>Propaganda</span> <span class="fgv">★ 2026.1-DIS-CH3</span>
+            <ul><li>Rádio, cartilhas, esporte · "pai dos pobres"</li></ul></li>
+          <li><span>Política externa</span>
+            <ul><li><b>Jogo duplo</b> EUA × Alemanha · CSN por bases</li><li>FEB na Itália (1944–45)</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-45)">
+        <h2>A queda (1945)</h2>
+        <ul class="tree">
+          <li><span>Por que cai</span>
+            <ul><li>Luta pela democracia fora, ditadura dentro</li><li>Manifesto dos Mineiros · censura furada</li></ul></li>
+          <li><span>O fim</span>
+            <ul><li>Queremismo · irmão na chefia de polícia</li><li>Deposto em <b>29/10/1945</b></li></ul></li>
+          <li><span>Eleição de dezembro</span> <span class="fgv">★ 2023.1-DIS-CH3</span>
+            <ul><li>PSD + PTB: <b>Dutra, 55%</b></li><li>UDN: Eduardo Gomes, o tenente de 1922</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch peg">
+        <h2>Pegadinhas</h2>
+        <ol><li>Greve de 1917 = <b>anarquista</b>, não comunista.</li><li>Reação Republicana (1922) = RJ, RS, BA, PE. Aliança Liberal (1930) = RS, MG, PB.</li><li>Voto feminino e secreto só em <b>1932</b>, não nos anos 20.</li><li>Revolução de 1930 = racha das oligarquias, <b>não</b> revolução operária. Prestes ficou de fora.</li><li>Tenentismo <b>não</b> tinha apoio popular amplo nem plano claro de poder.</li><li>SP perdeu a guerra de 1932, mas <b>ganhou a Constituinte</b>.</li><li>O Decreto de dezembro de 1937 extinguiu <b>também a AIB</b>.</li><li>Política externa do Estado Novo = <b>pragmática</b>, jogo duplo EUA × Alemanha.</li><li>CLT = Estado <b>árbitro</b>, inspirada na Carta del Lavoro. Não foi conquista imposta pelos operários.</li><li>Petrobras = <b>1953</b>, não Estado Novo.</li></ol>
+      </article>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1). Das 6 questões do período, 5 foram dissertativas: treine os 4 roteiros do filtro "Se cair dissertativa".</p>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    anos20:{n:"1914–1922: a República racha", c:"var(--h-20)"},
+    ten:{n:"Tenentismo e anos 20", c:"var(--h-ten)"},
+    rev30:{n:"Revolução de 1930", c:"var(--h-30)"},
+    v1:{n:"Vargas 1930–1937", c:"var(--h-v1)"},
+    en:{n:"Estado Novo (1937–45)", c:"var(--h-en)"},
+    fim:{n:"A queda (1945)", c:"var(--h-45)"},
+    dis:{n:"Se cair dissertativa", c:"var(--h-dis)"}
+  };
+  var CARDS = [
+ {
+  "b": "anos20",
+  "q": "O Brasil na Primeira Guerra (1914–18): o que fez e o que mudou na economia?",
+  "a": "<p>Neutro até 1917. Submarinos alemães afundaram os navios <b>Paraná</b> e <b>Macau</b>, e o Brasil declarou guerra à Alemanha. Participação tímida: aviadores, pilotos navais e 90 médicos, sem tropas.</p><p>Na economia, as importações caíram e surgiu a <b>indústria de substituição</b> de bens não duráveis (alimentos, tecidos), com o dinheiro acumulado pelo café.</p><p class=\"warn\">Ainda não é o \"processo de substituição de importações\" da Cepal: esse vem com a crise de 1929 e a Segunda Guerra.</p>"
+ },
+ {
+  "b": "anos20",
+  "q": "Greve Geral de 1917: causa, estopim e ideologia",
+  "a": "<p><b>Causa:</b> o custo de vida subiu 189% na guerra e os salários ficaram parados. Jornadas de 14 a 16 horas, sem nenhuma lei trabalhista.</p><p><b>Estopim:</b> a Força Pública matou o operário espanhol José Martinez numa manifestação de tecelões no Brás (SP), em julho.</p><p>Começou no têxtil (Mariângela, Crespi) e chegou ao Rio e ao RS.</p><p><b>Ideologia: anarcossindicalismo</b> (COB), não comunismo. O PCB só nasce em 1922.</p><p class=\"ex\">Exercício 1 da apostila (gabarito A): concentrada em SP, pedia jornada de 8 horas e o fim do trabalho noturno das mulheres.</p>",
+  "fgv": "2021.1-DIS-CH9 · mulheres na primeira industrialização"
+ },
+ {
+  "b": "anos20",
+  "q": "Quem eram os novos atores sociais dos anos 1920?",
+  "a": "<p>Todos fora do café com leite:</p><ul><li><b>Burguesia industrial</b> (quase 12 mil fábricas em 1918)</li><li><b>Operariado:</b> anarquistas e, depois, PCB (1922) e BOC (1927)</li><li><b>Camadas médias urbanas</b></li><li><b>Tenentes</b></li><li><b>Oligarquias dissidentes</b> (RS, Nordeste)</li></ul>"
+ },
+ {
+  "b": "anos20",
+  "q": "Por que Epitácio Pessoa virou presidente (1919–22), e o que irritou os militares?",
+  "a": "<p>Rodrigues Alves, eleito em 1918, morreu de <b>gripe espanhola</b> antes da posse. Delfim Moreira assumiu e convocou nova eleição. Epitácio, paraibano e fora do café, foi o nome de consenso.</p><p>Ele pôs <b>civis nos ministérios da Guerra e da Marinha</b>, o que irritou os militares. Também baixou a Lei de Repressão ao Anarquismo (1921) e comprou café para estocar.</p>"
+ },
+ {
+  "b": "anos20",
+  "q": "Reação Republicana (1922): quem, e o que foram as \"cartas falsas\"?",
+  "a": "<p><b>RJ, RS, BA e PE</b> lançaram Nilo Peçanha contra o mineiro <b>Arthur Bernardes</b>, com discurso contra fraude e coronelismo.</p><p>O <i>Correio da Manhã</i> publicou cartas atribuídas a Bernardes ofendendo o Exército e o marechal Hermes. Oposição civil e militar se juntaram. Mesmo assim, Bernardes venceu.</p><p class=\"warn\">Reação Republicana (1922) = RJ, RS, BA, PE. Aliança Liberal (1930) = RS, MG, PB. Não troque.</p>"
+ },
+ {
+  "b": "anos20",
+  "q": "Os 18 do Forte (5 de julho de 1922): o que foi?",
+  "a": "<p>A <b>primeira revolta tenentista</b>. Depois da prisão de Hermes da Fonseca, os tenentes do Forte de Copacabana tentaram impedir a posse de Bernardes.</p><p>Cercados, 17 militares e 1 civil saíram pela praia contra as tropas do governo. Sobreviveram só <b>Eduardo Gomes e Siqueira Campos</b>.</p><p class=\"warn\">A página 102 da apostila diz \"Silveira Martins\". Está errado: o exercício 5 confirma Siqueira Campos.</p><p class=\"ex\">Exercício 8 da apostila (gabarito E).</p>",
+  "fgv": "2023.1-DIS-CH3 · tenentismo de 1922 e Eduardo Gomes em 1945"
+ },
+ {
+  "b": "anos20",
+  "q": "Semana de Arte Moderna (fevereiro de 1922): o que propunha e que correntes saíram dela?",
+  "a": "<p>No Teatro Municipal de SP: Mário e Oswald de Andrade, Anita Malfatti, Di Cavalcanti, Villa-Lobos, Brecheret.</p><p>Rompe com o academicismo e usa as vanguardas europeias <b>sem copiar</b>, para redescobrir o \"Brasil real\".</p><ul><li><b>Esquerda:</b> Pau-Brasil e Antropofagia (Oswald)</li><li><b>Direita:</b> Verde-Amarelismo e Anta (<b>Plínio Salgado</b>, futuro chefe integralista)</li></ul><p class=\"ex\">Exercício 4 da apostila (gabarito C).</p>",
+  "fgv": "2022.1-DIS-AR11 · Manifesto Antropófago (prova de Artes)"
+ },
+ {
+  "b": "anos20",
+  "q": "1922: por que esse ano resume a crise da República?",
+  "a": "<ul><li><b>Fevereiro:</b> Semana de Arte Moderna</li><li><b>Março:</b> fundação do PCB e eleição de Bernardes contra a Reação Republicana</li><li><b>Julho:</b> os 18 do Forte</li></ul><p>Cultura, operários, oligarquias dissidentes e militares contestando a ordem no mesmo ano, o do centenário da Independência.</p><p class=\"warn\">O PCB foi fundado em março de 1922. A página 111 da apostila diz janeiro.</p>"
+ },
+ {
+  "b": "ten",
+  "q": "Tenentismo: o que queriam e qual era o limite?",
+  "a": "<p>Jovens oficiais contra fraude, oligarquias e descentralização.</p><p><b>Queriam:</b> voto secreto, moralização, Estado centralizado e forte, reforma do ensino, Judiciário independente.</p><p><b>Limite:</b> movimento militar e elitista, sem base popular nem plano claro de poder. Queriam salvar a nação \"em nome de um povo inerme\" (Boris Fausto). Autoritarismo em embrião.</p><p class=\"ex\">Exercícios 2 (gabarito B) e 5 (gabarito B) da apostila.</p>",
+  "fgv": "2023.1-DIS-CH3"
+ },
+ {
+  "b": "ten",
+  "q": "Governo Arthur Bernardes (1922–26): marcas",
+  "a": "<ul><li>Governou quase todo o tempo sob <b>estado de sítio</b></li><li>Interveio nos estados e no Congresso; economia a serviço do café</li><li><b>Guerra civil no RS (1923):</b> maragatos contra Borges de Medeiros, encerrada pelo Pacto de Pedras Altas, que proibiu a reeleição</li><li><b>Revolta de 1924</b> em SP e <b>Coluna Prestes</b></li></ul>"
+ },
+ {
+  "b": "ten",
+  "q": "Revolta de 5 de julho de 1924, em São Paulo",
+  "a": "<p>Isidoro Dias Lopes, Miguel Costa, Juarez e Joaquim Távora, Eduardo Gomes. Ocuparam a cidade por <b>22 dias</b> exigindo a queda de Bernardes, uma Constituinte e o voto secreto.</p><p>Bombardeados, recuaram para o interior e depois se juntaram aos rebeldes gaúchos: nasce a Coluna.</p>"
+ },
+ {
+  "b": "ten",
+  "q": "Coluna Prestes (1925–27): o que foi e que resultado teve?",
+  "a": "<p>Tenentes paulistas e gaúchos (Prestes, Miguel Costa, Siqueira Campos, Juarez Távora, João Alberto). Cerca de 2 mil homens e <b>25 mil km</b> pelo interior.</p><p>Não levantou o sertão, preso aos coronéis, e terminou na Bolívia. Mas <b>desgastou as oligarquias</b> e fez de Prestes o \"Cavaleiro da Esperança\".</p><p>Prestes vira comunista e <b>fica fora da Revolução de 1930</b>.</p>"
+ },
+ {
+  "b": "ten",
+  "q": "Governo Washington Luís (1926–30)",
+  "a": "<p>Paulista, ligado aos cafeicultores. Acabou com o estado de sítio, mas aprovou a <b>Lei Celerada</b> (1927): censura à imprensa e punição por \"delito ideológico\".</p><p>O BOC e o PCB elegeram vereadores e um deputado, impedidos de tomar posse.</p><p>Lema: \"Governar é abrir estradas\" (Rio–SP e Rio–Petrópolis).</p>"
+ },
+ {
+  "b": "ten",
+  "q": "Presidentes da República Velha e um fato de cada (exercício 6)",
+  "a": "<ul><li><b>Campos Sales:</b> Funding Loan</li><li><b>Rodrigues Alves:</b> Convênio de Taubaté</li><li><b>Hermes da Fonseca:</b> Revolta de Juazeiro</li><li><b>Wenceslau Brás:</b> Greve Geral de 1917</li><li><b>Arthur Bernardes:</b> Coluna Prestes</li><li><b>Washington Luís:</b> Lei Celerada e crise de 1929</li></ul><p class=\"ex\">Exercício 6 da aula 12 (gabarito B).</p>"
+ },
+ {
+  "b": "rev30",
+  "q": "Crise de 1929: como ela bateu no Brasil?",
+  "a": "<p>Os EUA eram o maior comprador de café. Com a quebra da bolsa, o café <b>encalhou nos portos</b> e os preços despencaram.</p><p>O governo já não conseguia comprar os excedentes (a política do Convênio de Taubaté, com supersafras como a de 1928). A base econômica das oligarquias quebrou.</p>"
+ },
+ {
+  "b": "rev30",
+  "q": "Aliança Liberal: quem era e o que propunha?",
+  "a": "<p><b>RS, MG e PB</b>, com Vargas para presidente e João Pessoa para vice. Nasceu quando Washington Luís indicou outro paulista, <b>Júlio Prestes</b>, e rompeu o café com leite.</p><p><b>Programa:</b></p><ul><li>Leis trabalhistas</li><li>Voto secreto e voto feminino</li><li>Anistia aos tenentes</li><li>Incentivo à produção nacional, não só ao café</li></ul>"
+ },
+ {
+  "b": "rev30",
+  "q": "Como a Revolução de 1930 aconteceu?",
+  "a": "<ul><li><b>Março:</b> Júlio Prestes vence, com fraude dos dois lados</li><li><b>26 de julho:</b> João Pessoa é assassinado, e o país se inflama</li><li>\"Façamos a revolução antes que o povo a faça\" (Antônio Carlos, governador de MG)</li><li><b>3 de outubro:</b> levante em MG, RS e no Nordeste, com Góes Monteiro no comando militar; SP resiste</li><li>Uma junta militar depõe Washington Luís, e <b>Vargas assume em 3 de novembro de 1930</b></li></ul><p>Oswaldo Aranha foi o grande articulador.</p>"
+ },
+ {
+  "b": "rev30",
+  "q": "A Revolução de 1930 foi uma revolução de classe?",
+  "a": "<p><b>Não.</b> Não mudou as relações de produção nem levou ao poder uma classe contrária aos cafeicultores. Foi um <b>racha das oligarquias</b> (dissidentes, tenentes, classe média) contra o café paulista.</p><p>O que mudou: o Estado passa a depender das oligarquias sem se subordinar a nenhuma delas.</p><p>Prestes recusou participar: para ele, era briga entre oligarquias.</p><p class=\"ex\">Exercício 7 da apostila (gabarito A: divisão das oligarquias).</p>"
+ },
+ {
+  "b": "v1",
+  "q": "Governo Provisório (1930–34): primeiras medidas",
+  "a": "<ul><li>Fecha o Congresso e os legislativos, suspende a Constituição de 1891</li><li><b>Interventores</b> nos estados, muitos deles tenentes</li><li>Cria o <b>Ministério do Trabalho</b> (Lindolfo Collor) e a Lei de Sindicalização (1931): sindicato sob controle do Ministério</li></ul><p>\"Estado de compromisso\": Vargas se equilibra entre oligarquias, tenentes, militares e industriais.</p>",
+  "fgv": "2024.1-OBJ-51 · charge sobre a posse de Vargas"
+ },
+ {
+  "b": "v1",
+  "q": "Revolução Constitucionalista (1932): por que SP se levantou e o que ganhou?",
+  "a": "<p>SP perdeu o poder em 1930 e exigia <b>Constituinte</b> e um <b>interventor civil e paulista</b> (rejeitava o tenente João Alberto). PRP e PD se uniram na Frente Única Paulista.</p><p>A morte de quatro estudantes em 23 de maio deu nome ao <b>MMDC</b>. A guerra começou em <b>9 de julho</b>; MG e RS não aderiram, e SP se rendeu em cerca de três meses.</p><p>Perdeu nas armas, mas <b>ganhou a Constituinte</b> (eleita em 1933). Espírito conservador: queria frear as reformas e os tenentes (José Murilo de Carvalho).</p><p class=\"ex\">Exercício 9 da apostila (gabarito B).</p>"
+ },
+ {
+  "b": "v1",
+  "q": "Código Eleitoral de 1932: o que mudou?",
+  "a": "<ul><li><b>Voto secreto</b>: golpe no voto de cabresto</li><li><b>Voto feminino</b></li><li><b>Justiça Eleitoral</b></li><li><b>Representação classista</b>: deputados escolhidos por sindicatos e associações patronais</li></ul><p>Em 1933, Carlota Pereira de Queirós virou a primeira deputada federal.</p><p class=\"warn\">Voto feminino e secreto são de 1932, não dos anos 1920. É a afirmação falsa do exercício 3 da aula 12 (gabarito E).</p>",
+  "fgv": "2021.1-DIS-CH10 · voto feminino nos anos 1930"
+ },
+ {
+  "b": "v1",
+  "q": "Constituição de 1934: características",
+  "a": "<p><b>Promulgada</b> em 16 de julho de 1934 por uma Constituinte eleita. Liberal: federalismo, presidencialismo, três poderes. Incorporou o Código Eleitoral.</p><p><b>Direitos trabalhistas:</b> 8 horas, salário mínimo regional, descanso semanal, férias, regras para o trabalho de menores. Apresentados como concessão do Estado, com controle.</p><p>Vargas foi eleito <b>indiretamente</b>, com eleição direta prevista para 1938.</p>"
+ },
+ {
+  "b": "v1",
+  "q": "Ação Integralista (AIB) × Aliança Nacional Libertadora (ANL)",
+  "a": "<p><b>AIB (1932, Plínio Salgado):</b> fascismo à brasileira. Camisas-verdes, \"anauê\", \"Deus, Pátria e Família\", anticomunista e antiliberal.</p><p><b>ANL (1935):</b> frente antifascista do PCB, com Prestes como presidente de honra. Contra o integralismo; nacionalizar bancos e empresas estrangeiras, suspender a dívida externa, reforma agrária.</p><p>A <b>Lei de Segurança Nacional</b> (1935) serviu para fechar a ANL.</p>"
+ },
+ {
+  "b": "v1",
+  "q": "Intentona Comunista (novembro de 1935)",
+  "a": "<p>Levantes em quartéis de <b>Natal, Recife e Rio</b>, sem apoio de massa. Fracassaram em poucos dias.</p><p>A repressão foi feroz, e o \"perigo vermelho\" virou o pretexto para endurecer o regime até o golpe de 1937.</p>"
+ },
+ {
+  "b": "v1",
+  "q": "Plano Cohen e o golpe de 10 de novembro de 1937",
+  "a": "<p>A eleição de 1938 estava dividida (Armando Salles, José Américo, Plínio Salgado).</p><p><b>Plano Cohen:</b> plano comunista <b>falso</b>, escrito pelo capitão integralista Olímpio Mourão Filho e divulgado como verdadeiro.</p><p>Com esse pretexto, Vargas <b>fechou o Congresso</b>, cancelou a eleição e outorgou a Constituição de 1937. O estrategista foi o general Góes Monteiro. Os integralistas apoiaram.</p>"
+ },
+ {
+  "b": "en",
+  "q": "Constituição de 1937, a \"Polaca\"",
+  "a": "<p><b>Outorgada</b>, escrita por Francisco Campos, inspirada na Constituição autoritária da Polônia.</p><ul><li>Executivo como \"órgão supremo do Estado\"; Vargas governa por decreto</li><li>Interventores e fim da autonomia dos estados (bandeiras estaduais queimadas em praça pública)</li><li><b>Decreto de dezembro:</b> todos os partidos extintos, <b>inclusive a AIB</b></li></ul><p>Traídos, os integralistas atacaram o Palácio Guanabara em maio de 1938 e fracassaram.</p><p class=\"ex\">Exercício 4 da aula 13 (gabarito A: presidencialismo autocrático).</p>"
+ },
+ {
+  "b": "en",
+  "q": "Como o Estado Novo controlava e convencia?",
+  "a": "<p><b>Controle:</b> polícia política, prisões, censura. <b>DASP</b>: a burocracia federal centralizada.</p><p><b>Convencimento:</b> o <b>DIP</b> (Departamento de Imprensa e Propaganda) censurava e fazia propaganda no rádio, na imprensa e em cartilhas escolares. Culto a Vargas, o \"pai dos pobres\".</p><p>Igrejas, escolas, sindicatos e esporte também serviram à propaganda.</p>",
+  "fgv": "2026.1-DIS-CH3 · esporte como propaganda"
+ },
+ {
+  "b": "en",
+  "q": "Economia do Estado Novo: o Estado empresário",
+  "a": "<p>Nacionalismo e intervenção: o Estado monta a <b>indústria de base</b> que a burguesia não tinha como bancar.</p><ul><li><b>CSN</b> (Volta Redonda), com empréstimo dos EUA</li><li><b>Vale do Rio Doce</b></li><li>Fábrica Nacional de Motores e Conselho Nacional do Petróleo</li></ul><p>Nome de prova: <b>modernização conservadora</b> (ou revolução passiva): industrializa de cima para baixo sem mexer na estrutura agrária.</p><p class=\"warn\">A Petrobras é de 1953, no governo Vargas eleito, não do Estado Novo (exercício 10, gabarito A).</p>"
+ },
+ {
+  "b": "en",
+  "q": "Trabalhismo: CLT, sindicato único e pelego",
+  "a": "<p><b>CLT (1943):</b> reúne carteira de trabalho, salário mínimo, jornada de 8 horas, férias e Justiça do Trabalho. Inspirada na <b>Carta del Lavoro</b> de Mussolini.</p><p><b>Corporativismo:</b> sindicato único por categoria, atrelado ao Ministério do Trabalho. O Estado arbitra patrão × empregado e <b>nega a luta de classes</b>. Greve e lockout proibidos.</p><p><b>Pelego:</b> o líder sindical fiel ao governo.</p><p>Na rua: \"pai dos pobres e mãe dos ricos\".</p><p class=\"ex\">Exercícios 3 (gabarito C), 5 (D) e 11 (A) da apostila.</p>",
+  "fgv": "2025.1-DIS-CH2 · CLT e corporativismo"
+ },
+ {
+  "b": "en",
+  "q": "Populismo: a definição que a prova cobra",
+  "a": "<p>Líder carismático que fala direto com as massas urbanas. <b>Inclusão controlada</b>: os trabalhadores ganham direitos, mas sem autonomia, em troca de apoio. O Estado se confunde com a figura do presidente.</p><p class=\"ex\">Exercício 1 da aula 13 (gabarito C).</p>"
+ },
+ {
+  "b": "en",
+  "q": "Política externa: do jogo duplo à guerra",
+  "a": "<p>Até 1942, <b>barganha pragmática</b> entre EUA (Oswaldo Aranha) e Alemanha (Dutra, Góes Monteiro, Francisco Campos), atrás de capital e tecnologia para a siderurgia.</p><p>Os EUA, na política da boa vizinhança, financiaram a CSN em troca de <b>bases aéreas</b> em Natal, Recife e Belém.</p><p>Depois de Pearl Harbor e dos navios brasileiros afundados (agosto de 1942), o Brasil entrou na guerra. A <b>FEB</b> lutou na Itália (1944–45, general Mascarenhas de Morais), e a FAB, com o \"Senta a pua\".</p><p class=\"ex\">Exercícios 2 (B), 7 (A) e 8 (A) da aula 13.</p>"
+ },
+ {
+  "b": "fim",
+  "q": "Por que o Estado Novo caiu?",
+  "a": "<p><b>A contradição:</b> soldados lutavam pela democracia na Europa enquanto o Brasil vivia uma ditadura.</p><ul><li>Manifesto dos Mineiros (1943) e Congresso de Escritores (1945)</li><li>Entrevista de José Américo a Carlos Lacerda (fevereiro de 1945) fura a censura</li><li>Vargas abre: eleições e partidos, anistia, PCB legal</li><li>Queremismo (\"Queremos Getúlio\") e o PCB de Prestes apoiam a continuidade, o que assusta a oposição</li><li>Vargas nomeia o irmão, Benjamin, chefe de polícia: os militares (Góes Monteiro) o <b>depõem em 29 de outubro de 1945</b></li></ul><p>Assume José Linhares, presidente do STF, até a eleição.</p>"
+ },
+ {
+  "b": "fim",
+  "q": "Os partidos de 1945 e a eleição de dezembro",
+  "a": "<ul><li><b>PSD:</b> a máquina dos interventores. Candidato: Eurico Gaspar Dutra</li><li><b>PTB:</b> sindicatos e trabalhadores, a base popular de Vargas</li><li><b>UDN:</b> antigetulista, liberal, pró-EUA. Candidato: brigadeiro <b>Eduardo Gomes</b></li><li><b>PCB:</b> Yedo Fiúza</li></ul><p>Com PSD e PTB juntos, <b>Dutra venceu com 55%</b>: um \"varguismo sem Vargas\".</p>",
+  "fgv": "2023.1-DIS-CH3"
+ },
+ {
+  "b": "fim",
+  "q": "Eduardo Gomes: o fio entre 1922 e 1945",
+  "a": "<p>Sobrevivente dos 18 do Forte (1922) e rebelde em 1924. Virou brigadeiro e foi o candidato da <b>UDN</b> em 1945, com o slogan \"Vote no brigadeiro, ele é bonito e é solteiro\". Perdeu para Dutra.</p><p>Mostra como os tenentes de 1922 se dividiram: uns com Vargas (Juarez Távora, João Alberto), outros contra (Eduardo Gomes), Prestes no PCB.</p><p>Foi a pergunta exata da FGV em 2023.</p>",
+  "fgv": "2023.1-DIS-CH3 · tenentismo e a campanha de 1945"
+ },
+ {
+  "b": "dis",
+  "q": "Explique as motivações e o programa do tenentismo. A Coluna Prestes faz parte dele?",
+  "a": "<p>Roteiro em 3 blocos (12 minutos):</p><ul><li><b>Motivação:</b> contra as oligarquias, a fraude e o coronelismo; estopim na prisão de Hermes e nas cartas falsas (1922)</li><li><b>Programa:</b> voto secreto, moralização, Estado centralizado, ensino, Judiciário independente. Reformismo autoritário, sem o povo</li><li><b>Coluna:</b> sim. Nasce de 1924 (SP e RS), enfrenta Bernardes por dois anos e desgasta as oligarquias</li></ul><p class=\"ex\">É o exercício 9 da aula 12 (FGV-RJ 2020), com resposta no gabarito da apostila.</p>",
+  "fgv": "2023.1-DIS-CH3"
+ },
+ {
+  "b": "dis",
+  "q": "Por que a Revolução de 1930 aconteceu? Organize as causas.",
+  "a": "<p>Três camadas:</p><ul><li><b>Estrutural:</b> o modelo do café já não se sustentava, e a crise de 1929 derrubou os preços</li><li><b>Social:</b> indústria, classe média, operários e tenentes estavam fora do poder</li><li><b>Imediata:</b> Washington Luís rompe o café com leite (Júlio Prestes), nasce a Aliança Liberal, há fraude, João Pessoa é assassinado</li></ul><p><b>Fecho:</b> racha das elites, não revolução popular (\"antes que o povo a faça\").</p>"
+ },
+ {
+  "b": "dis",
+  "q": "Relacione a CLT ao corporativismo do Estado Novo.",
+  "a": "<ul><li><b>Medidas:</b> salário mínimo, carteira de trabalho, 8 horas, férias, Justiça do Trabalho</li><li><b>Corporativismo:</b> o Estado organiza a sociedade por categorias, com sindicato único oficial, e arbitra capital × trabalho</li><li><b>Sentido:</b> negar a luta de classes. Direito como concessão, em troca de controle (pelegos, greve proibida). Modelo: a Carta del Lavoro</li></ul>",
+  "fgv": "2025.1-DIS-CH2 · caiu exatamente isso"
+ },
+ {
+  "b": "dis",
+  "q": "O Estado Novo foi autoritário e modernizador ao mesmo tempo. Explique.",
+  "a": "<ul><li><b>Autoritário:</b> Polaca outorgada, partidos extintos, DIP, polícia política, estados sem autonomia</li><li><b>Modernizador:</b> indústria de base (CSN, Vale), DASP, CLT, planejamento econômico</li><li><b>Conceito:</b> modernização conservadora, de cima para baixo e sem participação popular</li><li><b>Fecho:</b> a própria Segunda Guerra expõe a contradição e derruba o regime em 1945</li></ul>"
+ }
+];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("hb1213.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("hb1213.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("hb1213.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("hb1213.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("hb1213.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+</body>
+</html>

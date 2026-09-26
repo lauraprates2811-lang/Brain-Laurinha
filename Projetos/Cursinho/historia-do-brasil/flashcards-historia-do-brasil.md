@@ -309,6 +309,146 @@
 > poder com Tancredo e Sarney e, com o Plano Cruzado, venceu com folga as eleições de 1986.
 > ⭐ 2023.1-OBJ-MH23
 
+### Aulas 12 e 13 do Caderno 4 (1914–1945), estudadas em 25/09
+
+> Baralho completo, com mapa mental e roteiros de dissertativa: `crise-da-republica-velha-e-era-vargas.md`.
+
+> [!question]- 49. Greve Geral de 1917: causa, estopim e ideologia
+> **Causa:** o custo de vida subiu 189% na guerra e os salários ficaram parados. Jornadas de 14 a 16 horas, sem nenhuma lei trabalhista.
+> **Estopim:** a Força Pública matou o operário espanhol José Martinez numa manifestação de tecelões no Brás (SP), em julho.
+> Começou no têxtil (Mariângela, Crespi) e chegou ao Rio e ao RS.
+> **Ideologia: anarcossindicalismo** (COB), não comunismo. O PCB só nasce em 1922.
+> ⭐ 2021.1-DIS-CH9
+
+> [!question]- 50. Reação Republicana (1922): quem, e o que foram as "cartas falsas"?
+> **RJ, RS, BA e PE** lançaram Nilo Peçanha contra o mineiro **Arthur Bernardes**, com discurso contra fraude e coronelismo.
+> O *Correio da Manhã* publicou cartas atribuídas a Bernardes ofendendo o Exército e o marechal Hermes. Oposição civil e militar se juntaram. Mesmo assim, Bernardes venceu.
+> ⚠️ Reação Republicana (1922) = RJ, RS, BA, PE. Aliança Liberal (1930) = RS, MG, PB. Não troque.
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 51. Os 18 do Forte (5 de julho de 1922): o que foi?
+> A **primeira revolta tenentista**. Depois da prisão de Hermes da Fonseca, os tenentes do Forte de Copacabana tentaram impedir a posse de Bernardes.
+> Cercados, 17 militares e 1 civil saíram pela praia contra as tropas do governo. Sobreviveram só **Eduardo Gomes e Siqueira Campos**.
+> ⚠️ A página 102 da apostila diz "Silveira Martins". Está errado: o exercício 5 confirma Siqueira Campos.
+> ⭐ 2023.1-DIS-CH3
+
+> [!question]- 52. Semana de Arte Moderna (fevereiro de 1922): o que propunha e que correntes saíram dela?
+> No Teatro Municipal de SP: Mário e Oswald de Andrade, Anita Malfatti, Di Cavalcanti, Villa-Lobos, Brecheret.
+> Rompe com o academicismo e usa as vanguardas europeias **sem copiar**, para redescobrir o "Brasil real".
+> - **Esquerda:** Pau-Brasil e Antropofagia (Oswald)
+> - **Direita:** Verde-Amarelismo e Anta (**Plínio Salgado**, futuro chefe integralista)
+> ⭐ 2022.1-DIS-AR11
+
+> [!question]- 53. Governo Arthur Bernardes (1922–26): marcas
+> - Governou quase todo o tempo sob **estado de sítio**
+> - Interveio nos estados e no Congresso; economia a serviço do café
+> - **Guerra civil no RS (1923):** maragatos contra Borges de Medeiros, encerrada pelo Pacto de Pedras Altas, que proibiu a reeleição
+> - **Revolta de 1924** em SP e **Coluna Prestes**
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 54. Coluna Prestes (1925–27): o que foi e que resultado teve?
+> Tenentes paulistas e gaúchos (Prestes, Miguel Costa, Siqueira Campos, Juarez Távora, João Alberto). Cerca de 2 mil homens e **25 mil km** pelo interior.
+> Não levantou o sertão, preso aos coronéis, e terminou na Bolívia. Mas **desgastou as oligarquias** e fez de Prestes o "Cavaleiro da Esperança".
+> Prestes vira comunista e **fica fora da Revolução de 1930**.
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 55. Governo Washington Luís (1926–30)
+> Paulista, ligado aos cafeicultores. Acabou com o estado de sítio, mas aprovou a **Lei Celerada** (1927): censura à imprensa e punição por "delito ideológico".
+> O BOC e o PCB elegeram vereadores e um deputado, impedidos de tomar posse.
+> Lema: "Governar é abrir estradas" (Rio–SP e Rio–Petrópolis).
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 56. Presidentes da República Velha e um fato de cada (exercício 6)
+> - **Campos Sales:** Funding Loan
+> - **Rodrigues Alves:** Convênio de Taubaté
+> - **Hermes da Fonseca:** Revolta de Juazeiro
+> - **Wenceslau Brás:** Greve Geral de 1917
+> - **Arthur Bernardes:** Coluna Prestes
+> - **Washington Luís:** Lei Celerada e crise de 1929
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 57. Crise de 1929: como ela bateu no Brasil?
+> Os EUA eram o maior comprador de café. Com a quebra da bolsa, o café **encalhou nos portos** e os preços despencaram.
+> O governo já não conseguia comprar os excedentes (a política do Convênio de Taubaté, com supersafras como a de 1928). A base econômica das oligarquias quebrou.
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 58. Aliança Liberal: quem era e o que propunha?
+> **RS, MG e PB**, com Vargas para presidente e João Pessoa para vice. Nasceu quando Washington Luís indicou outro paulista, **Júlio Prestes**, e rompeu o café com leite.
+> **Programa:**
+> - Leis trabalhistas
+> - Voto secreto e voto feminino
+> - Anistia aos tenentes
+> - Incentivo à produção nacional, não só ao café
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 59. A Revolução de 1930 foi uma revolução de classe?
+> **Não.** Não mudou as relações de produção nem levou ao poder uma classe contrária aos cafeicultores. Foi um **racha das oligarquias** (dissidentes, tenentes, classe média) contra o café paulista.
+> O que mudou: o Estado passa a depender das oligarquias sem se subordinar a nenhuma delas.
+> Prestes recusou participar: para ele, era briga entre oligarquias.
+> Da sua aula 12 de História do Brasil (Caderno 4).
+
+> [!question]- 60. Intentona Comunista (novembro de 1935)
+> Levantes em quartéis de **Natal, Recife e Rio**, sem apoio de massa. Fracassaram em poucos dias.
+> A repressão foi feroz, e o "perigo vermelho" virou o pretexto para endurecer o regime até o golpe de 1937.
+> Da sua aula 13 de História do Brasil (Caderno 4).
+
+> [!question]- 61. Constituição de 1937, a "Polaca"
+> **Outorgada**, escrita por Francisco Campos, inspirada na Constituição autoritária da Polônia.
+> - Executivo como "órgão supremo do Estado"; Vargas governa por decreto
+> - Interventores e fim da autonomia dos estados (bandeiras estaduais queimadas em praça pública)
+> - **Decreto de dezembro:** todos os partidos extintos, **inclusive a AIB**
+> Traídos, os integralistas atacaram o Palácio Guanabara em maio de 1938 e fracassaram.
+> Da sua aula 13 de História do Brasil (Caderno 4).
+
+> [!question]- 62. Como o Estado Novo controlava e convencia?
+> **Controle:** polícia política, prisões, censura. **DASP**: a burocracia federal centralizada.
+> **Convencimento:** o **DIP** (Departamento de Imprensa e Propaganda) censurava e fazia propaganda no rádio, na imprensa e em cartilhas escolares. Culto a Vargas, o "pai dos pobres".
+> Igrejas, escolas, sindicatos e esporte também serviram à propaganda.
+> ⭐ 2026.1-DIS-CH3
+
+> [!question]- 63. Economia do Estado Novo: o Estado empresário
+> Nacionalismo e intervenção: o Estado monta a **indústria de base** que a burguesia não tinha como bancar.
+> - **CSN** (Volta Redonda), com empréstimo dos EUA
+> - **Vale do Rio Doce**
+> - Fábrica Nacional de Motores e Conselho Nacional do Petróleo
+> Nome de prova: **modernização conservadora** (ou revolução passiva): industrializa de cima para baixo sem mexer na estrutura agrária.
+> ⚠️ A Petrobras é de 1953, no governo Vargas eleito, não do Estado Novo (exercício 10, gabarito A).
+> Da sua aula 13 de História do Brasil (Caderno 4).
+
+> [!question]- 64. Populismo: a definição que a prova cobra
+> Líder carismático que fala direto com as massas urbanas. **Inclusão controlada**: os trabalhadores ganham direitos, mas sem autonomia, em troca de apoio. O Estado se confunde com a figura do presidente.
+> Da sua aula 13 de História do Brasil (Caderno 4).
+
+> [!question]- 65. Política externa: do jogo duplo à guerra
+> Até 1942, **barganha pragmática** entre EUA (Oswaldo Aranha) e Alemanha (Dutra, Góes Monteiro, Francisco Campos), atrás de capital e tecnologia para a siderurgia.
+> Os EUA, na política da boa vizinhança, financiaram a CSN em troca de **bases aéreas** em Natal, Recife e Belém.
+> Depois de Pearl Harbor e dos navios brasileiros afundados (agosto de 1942), o Brasil entrou na guerra. A **FEB** lutou na Itália (1944–45, general Mascarenhas de Morais), e a FAB, com o "Senta a pua".
+> Da sua aula 13 de História do Brasil (Caderno 4).
+
+> [!question]- 66. Por que o Estado Novo caiu?
+> **A contradição:** soldados lutavam pela democracia na Europa enquanto o Brasil vivia uma ditadura.
+> - Manifesto dos Mineiros (1943) e Congresso de Escritores (1945)
+> - Entrevista de José Américo a Carlos Lacerda (fevereiro de 1945) fura a censura
+> - Vargas abre: eleições e partidos, anistia, PCB legal
+> - Queremismo ("Queremos Getúlio") e o PCB de Prestes apoiam a continuidade, o que assusta a oposição
+> - Vargas nomeia o irmão, Benjamin, chefe de polícia: os militares (Góes Monteiro) o **depõem em 29 de outubro de 1945**
+> Assume José Linhares, presidente do STF, até a eleição.
+> Da sua aula 13 de História do Brasil (Caderno 4).
+
+> [!question]- 67. Os partidos de 1945 e a eleição de dezembro
+> - **PSD:** a máquina dos interventores. Candidato: Eurico Gaspar Dutra
+> - **PTB:** sindicatos e trabalhadores, a base popular de Vargas
+> - **UDN:** antigetulista, liberal, pró-EUA. Candidato: brigadeiro **Eduardo Gomes**
+> - **PCB:** Yedo Fiúza
+> Com PSD e PTB juntos, **Dutra venceu com 55%**: um "varguismo sem Vargas".
+> ⭐ 2023.1-DIS-CH3
+
+> [!question]- 68. Eduardo Gomes: o fio entre 1922 e 1945
+> Sobrevivente dos 18 do Forte (1922) e rebelde em 1924. Virou brigadeiro e foi o candidato da **UDN** em 1945, com o slogan "Vote no brigadeiro, ele é bonito e é solteiro". Perdeu para Dutra.
+> Mostra como os tenentes de 1922 se dividiram: uns com Vargas (Juarez Távora, João Alberto), outros contra (Eduardo Gomes), Prestes no PCB.
+> Foi a pergunta exata da FGV em 2023.
+> ⭐ 2023.1-DIS-CH3
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]
