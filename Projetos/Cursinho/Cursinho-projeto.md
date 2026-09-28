@@ -25,10 +25,13 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
   - `caderno-1-literatura-fgv.pdf` · `apostila-movimentos-literarios.pdf` · `exercicios-movimentos-literarios-fgv.pdf` · `apostila-bras-cubas-e-parnasianismo.pdf`
 - `historia-do-brasil/` — `aula-10-crise-da-republica-oligarquica-e-era-vargas-1.pdf`
 - `atualidades/` — resumos 06 (Oriente Médio), 07 (Bálcãs) e 08 (Venezuela e Cuba), do Alex
-- `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato · `caderno-4-geografia-fgv.pdf`
-  (Frente 1, aulas 12 a 16, e Frente 2, aulas 12 a 16)
+- `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato, e um PDF por aula
+  dos cadernos 3 e 4 (`geografia-frente-X-aula-NN-caderno-N-<assunto>.pdf`: Frente 1, aulas 8 a 16, e
+  Frente 2, aulas 8 a 16). Os cadernos inteiros foram para a Lixeira em 28/09.
   - [[recursos-hidricos]] — Frente 1, aula 12: mapa mental e 26 flashcards (também em `.html` e na
     página https://claude.ai/artifact/HiwWwWvnB36aiHeWvvwgk6); os cards também estão no baralho do trajeto
+  - [[europa-uniao-europeia-e-leste-europeu]] — Frente 2, aula 11: mapa mental e 47 flashcards (também
+    em `.html` e na página https://claude.ai/artifact/7QMCoANtdc8oAu7FtzyTs7); 45 deles no baralho do trajeto
 - `lingua-portuguesa/`
   - [[formacao-de-palavras-e-efeitos-de-sentido]] — método "questão primeiro", 20 questões de treino,
     33 flashcards e 14 questões reais da FGV, da apostila CPV aula 12 (também em `.html`)
