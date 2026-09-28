@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Europa e União Europeia</title>
+<script>document.documentElement.className+=" js";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E6EBED; --surface:#F6F8F9; --surface-2:#ECF0F2; --ink:#16202A; --muted:#55616B; --line:#C8D1D6;
+  --h-fisico:#2C6B4E;--h-oeste:#94600E;--h-ue:#2B4C9B;--h-paises:#1B6D8C;--h-leste:#A12E4F;--h-iugo:#6B3F8C;--h-russia:#7A4A22;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#11171A; --surface:#192125; --surface-2:#20292E; --ink:#E4EAED; --muted:#98A3AA; --line:#2E3A40;
+    --h-fisico:#74C39A;--h-oeste:#D9A441;--h-ue:#8FA8F2;--h-paises:#6BC1DE;--h-leste:#F08AA6;--h-iugo:#C49BE8;--h-russia:#D6A77A;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#11171A; --surface:#192125; --surface-2:#20292E; --ink:#E4EAED; --muted:#98A3AA; --line:#2E3A40;
+  --h-fisico:#74C39A;--h-oeste:#D9A441;--h-ue:#8FA8F2;--h-paises:#6BC1DE;--h-leste:#F08AA6;--h-iugo:#C49BE8;--h-russia:#D6A77A;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-ue);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.flow{display:grid;grid-template-columns:1fr auto 1.4fr auto 1.2fr;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.node{border:1.5px solid var(--c,var(--ink));border-radius:8px;padding:10px 12px;background:var(--surface)}
+.node small{display:block;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--muted));margin-bottom:4px}
+.node strong{font:700 20px/1.05 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.node p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.arrow{font:700 22px/1 var(--display);color:var(--muted);text-align:center}
+.fork{display:grid;gap:8px}
+.common{grid-column:1/-1;font-size:13.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.common b{color:var(--ink);font-weight:600}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted)}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35)}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg)}
+  .card{min-height:360px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+.ex{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+html:not(.js) .tabs{display:none}
+html.js #cards-simples{display:none}
+.nj-title{margin:0;font:800 30px/1 var(--display);letter-spacing:.015em;text-transform:uppercase}
+.nj-sec{margin:14px 0 0;font:800 21px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.nj{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px}
+.nj summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:baseline;padding:14px 16px;font-weight:600;font-size:16px}
+.nj summary::-webkit-details-marker{display:none}
+.nj summary::after{content:"+";margin-left:auto;font:500 18px/1 var(--mono);color:var(--muted)}
+.nj[open] summary::after{content:"–"}
+.nj-n{font:500 12px/1 var(--mono);color:var(--c);min-width:1.6em}
+.nj .a{padding:0 16px 14px;border-top:1px dashed var(--line);padding-top:12px;display:grid;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Geografia · Frente 2 · Aula 11 · Caderno 3</div>
+    <h1>Europa: União Europeia e Leste Europeu</h1>
+    <p class="lede">A Guerra Fria partiu a Europa em duas. O <b>Oeste capitalista</b> se juntou para depender menos dos EUA e virou a <b>União Europeia</b>, rica mas desigual. O <b>Leste socialista</b> desabou entre 1989 e 1991 e ainda paga a transição: a Iugoslávia em pedaços, a Rússia contra o avanço da OTAN e a guerra na Ucrânia.</p>
+    <div class="fix"><b>Dados da apostila que envelheceram:</b> a UE tem <b>27</b> países (o Reino Unido saiu em 2020); a zona do euro tem <b>21</b> (entraram Croácia, em 2023, e Bulgária, em 2026); a ofensiva do Azerbaijão em Nagorno-Karabakh foi em <b>2023</b>; o chanceler alemão desde maio de 2025 é <b>Friedrich Merz</b>; e Potsdam foi em <b>1945</b>.</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 47</button>
+  </div>
+
+  <!-- Sem JavaScript (pré-visualização do app do Claude): os cards abrem com um toque.
+       Com JavaScript, esta lista some e ficam as abas com os cards que viram. -->
+  <section class="deck" id="cards-simples" aria-label="Flashcards">
+    <h2 class="nj-title">Flashcards · 47</h2>
+    <p class="note">Tente responder antes de tocar. O toque na pergunta abre a resposta.</p>
+    <h3 class="nj-sec" style="--c:var(--h-fisico)">Quadro físico</h3>
+    <details class="nj" style="--c:var(--h-fisico)"><summary><span class="nj-n">1</span>Europa Ocidental × Leste Europeu: qual é o critério, e por que a divisão é imprecisa?</summary><div class="a"><p><b>Critério:</b> a qualidade de vida. A <b>Ocidental</b> é capitalista, desenvolvida e democrática, com as cinco grandes economias (Alemanha, França, Reino Unido, Itália e Espanha). O <b>Leste</b> foi socialista até o fim dos anos 1980 e virou capitalista nos anos 1990.</p><p><b>É imprecisa</b> porque há desigualdade dentro de cada parte: a Itália tem o norte rico e o sul pobre (Mezzogiorno), e no Leste a Polônia, a Rep. Tcheca, a Hungria e a Eslovênia vão bem melhor que a Romênia ou a Albânia.</p></div></details>
+    <details class="nj" style="--c:var(--h-fisico)"><summary><span class="nj-n">2</span>Como é o relevo da Europa, de norte a sul?</summary><div class="a"><p><b>Norte:</b> escudos cristalinos e montanhas <b>antigas</b>, gastas pela erosão: Alpes Escandinavos, Maciço Central francês e <b>Montes Urais</b>, que com o rio Ural separam a Europa da Ásia.</p><p><b>Centro:</b> planícies e baixos planaltos em bacias sedimentares, ao longo dos grandes rios: planície russa, germano-polonesa e parisiense.</p><p><b>Sul:</b> dobramentos <b>jovens</b> e altos, da Era Cenozoica (Terciário): Alpes, Apeninos, Pireneus (França × Espanha), Cárpatos, Bálcãs, Alpes Dináricos e Cáucaso.</p></div></details>
+    <details class="nj" style="--c:var(--h-fisico)"><summary><span class="nj-n">3</span>Por que os rios Reno, Danúbio e Volga importam?</summary><div class="a"><p>São hidrovias que ligam países e escoam mercadorias.</p><ul><li><b>Reno:</b> nasce nos Alpes suíços, corre na fronteira França × Alemanha, cruza a área mais industrial da Europa e deságua no Mar do Norte, junto ao porto de <b>Roterdã</b>.</li><li><b>Danúbio:</b> passa por 8 países e integra o Leste Europeu. Um canal pelo rio Meno liga o Reno ao Danúbio.</li><li><b>Volga:</b> o maior rio da Europa, na Rússia.</li></ul><p>Os três sofrem com poluição industrial, pior no Leste, onde a indústria é mais atrasada.</p></div></details>
+    <details class="nj" style="--c:var(--h-fisico)"><summary><span class="nj-n">4</span>O que a Corrente do Golfo faz com a Europa?</summary><div class="a"><p>É uma corrente marítima <b>quente</b> que aquece o litoral do Atlântico norte. O mar não congela (a pesca da Noruega funciona o ano todo) e o <b>clima temperado oceânico</b> fica ameno no Reino Unido, na Irlanda, nos Países Baixos, na Bélgica e na França.</p></div></details>
+    <details class="nj" style="--c:var(--h-fisico)"><summary><span class="nj-n">5</span>Quais são os climas da Europa, e a vegetação de cada um?</summary><div class="a"><ul><li><b>Subpolar e polar</b> (extremo norte e altas montanhas): tundra.</li><li><b>Temperado continental</b> (longe do mar, inverno seco e muito frio): <b>taiga</b>, a floresta de coníferas, a maior do planeta em extensão e com pouca biodiversidade; e <b>estepes</b> (campos) na Ucrânia e na Rússia.</li><li><b>Temperado oceânico</b> (perto do Atlântico): floresta temperada caducifólia, quase toda devastada.</li><li><b>Mediterrâneo</b> (sul): verão quente e <b>seco</b>, inverno úmido; maquis e garrigue, com oliveira e sobreiro.</li></ul></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-oeste)">Europa Ocidental</h3>
+    <details class="nj" style="--c:var(--h-oeste)"><summary><span class="nj-n">6</span>Plano Marshall e OTAN: o que foram?</summary><div class="a"><p><b>Plano Marshall:</b> dinheiro dos EUA para reconstruir a Europa Ocidental depois da 2ª Guerra. Em troca, os europeus compravam de preferência produtos americanos. O objetivo político era <b>conter a influência soviética</b>.</p><p><b>OTAN (1949):</b> aliança militar dos EUA com a Europa Ocidental, o Canadá e a Turquia contra o bloco socialista. Depois do fim da URSS, <b>avançou para o Leste</b> (Polônia, Rep. Tcheca, países bálticos), e a Rússia vê isso como ameaça.</p><div class="stampline">★ Caiu na FGV: 2026.1-OBJ-54 · texto do governo Truman, de 1949, sobre ajuda econômica para garantir a paz</div></div></details>
+    <details class="nj" style="--c:var(--h-oeste)"><summary><span class="nj-n">7</span>Por que a população europeia envelhece, e que problema isso cria?</summary><div class="a"><p><b>Causa:</b> natalidade muito baixa. A fecundidade está abaixo de 2 filhos por mulher, menos que a <b>taxa de reposição</b>, e a expectativa de vida chega a 80 anos. Na Suécia, os idosos passam de 20% da população; a Rússia perde gente.</p><p><b>Problema:</b> faltam trabalhadores e cresce o peso da previdência. Os incentivos para ter filhos (Suécia, Itália) quase não funcionaram.</p><p><b>Saída:</b> imigração. A ONU calculou 1,5 milhão de imigrantes por ano até 2050 só para manter a população em idade de trabalhar.</p><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH5 e 2026.1-DIS-CH8 · envelhecimento populacional</div></div></details>
+    <details class="nj" style="--c:var(--h-oeste)"><summary><span class="nj-n">8</span>O que é desemprego estrutural, e por que atinge a Europa?</summary><div class="a"><p>É o desemprego que não acaba quando a economia melhora, porque a vaga deixou de existir: a <b>modernização tecnológica</b> substituiu o trabalhador.</p><p>Na Europa, somam-se o baixo crescimento econômico e as demissões nas estatais privatizadas.</p></div></details>
+    <details class="nj" style="--c:var(--h-oeste)"><summary><span class="nj-n">9</span>Imigrantes na Europa Ocidental: como vivem e como são recebidos?</summary><div class="a"><p>Até os anos 1980, a prosperidade atraiu imigrantes de países pobres. Eles ganham menos, fazem os trabalhos menos qualificados, às vezes sem proteção trabalhista, e moram em bairros pobres das metrópoles.</p><p>Sofrem preconceito racial e religioso. Grupos de extrema direita e neonazistas atacam sua presença (Alemanha, Áustria, França, Reino Unido).</p><p>Em <b>Paris, 2005</b>, jovens descendentes de africanos queimaram milhares de carros nas periferias, em resposta à exclusão, ao racismo e ao desemprego.</p></div></details>
+    <details class="nj" style="--c:var(--h-oeste)"><summary><span class="nj-n">10</span>Qual é a contradição da xenofobia na Europa?</summary><div class="a"><p><b>Por que a extrema direita cresce:</b> a crise do Estado de bem-estar social, o desemprego e a mudança tecnológica rápida geram insegurança. Culpar o estrangeiro pelo desemprego e pelo crime é uma resposta simples, e atrai votos.</p><p><b>A contradição:</b> a Europa envelhece e <b>precisa</b> de imigrantes para ter quem trabalhe e pague a previdência. O discurso nacionalista vai contra o interesse do próprio país.</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-ue)">União Europeia</h3>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">11</span>Como começou a integração europeia? (Benelux, CECA e CEE)</summary><div class="a"><p><b>Por quê:</b> depois da 2ª Guerra, a Europa Ocidental dependia dos EUA. Para se recuperar e competir com EUA e Japão, precisou superar rivalidades antigas; a chave foi o acordo entre <b>França e Alemanha</b>.</p><ul><li><b>1948, Benelux:</b> Bélgica, Holanda e Luxemburgo.</li><li><b>1951, CECA</b> (Tratado de Paris): livre circulação de carvão, ferro e aço entre o Benelux, a Alemanha Ocidental, a França e a Itália.</li><li><b>1957, CEE</b> (Tratado de Roma): os mesmos 6 levam a integração para toda a economia. Depois entram Reino Unido, Irlanda e Dinamarca (1973), Grécia (1981), Espanha e Portugal (1986).</li></ul></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">12</span>O que mudou com o Tratado de Maastricht (1992)?</summary><div class="a"><p>A CEE vira <b>União Europeia</b> e se compromete a criar uma <b>moeda única</b>.</p><p>Para entrar no euro, cada país fez a "lição de casa": baixar inflação e juros, controlar o câmbio e o déficit público, e aprovar a adesão em plebiscito.</p><p>Banco Central Europeu em <b>Frankfurt</b> (1998). Em 1995 entram Áustria, Suécia e Finlândia. Ficaram de fora por decisão popular: <b>Suíça, Noruega e Islândia</b>.</p><p class="ex">Exercício 4 da apostila, da FGV (gabarito D): com Maastricht, as empresas passaram a escolher onde produzir pensando no mercado de toda a UE.</p></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">13</span>Como a UE se expandiu para o Leste?</summary><div class="a"><ul><li><b>2004:</b> Estônia, Letônia, Lituânia, Polônia, Rep. Tcheca, Eslováquia, Hungria, Eslovênia, Malta e Chipre.</li><li><b>2007:</b> Bulgária e Romênia (com corrupção, discriminação de ciganos e turcos e baixa produtividade para resolver).</li><li><b>2013:</b> Croácia.</li></ul><p><b>Turquia:</b> candidata, mas barrada por ser muçulmana e populosa, pelos direitos humanos (repressão aos curdos) e pelas finanças.</p><p>Hoje são <b>27</b> países (o Reino Unido saiu em 2020). Depois da invasão russa, <b>Ucrânia e Moldávia</b> viraram candidatas (2022).</p></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">14</span>UE: como o PIB por habitante divide o espaço europeu?</summary><div class="a"><p>A UE é <b>desigual</b> entre os países e dentro deles:</p><ul><li><b>Centro rico:</b> os países do noroeste, muito urbanizados.</li><li><b>Periferia mais pobre:</b> os mediterrâneos.</li><li><b>O Leste</b> aumentou a desigualdade: entrou com PIB por habitante bem menor.</li><li><b>Dentro de um país:</b> a Itália, com o norte rico e o sul pobre.</li></ul><p>Foi o item (a) da discursiva. Para nota cheia, a banca pediu <b>duas</b> diferenças espaciais.</p><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH8 (a) · União Europeia e PIB por habitante</div></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">15</span>Cite dois ganhos da entrada do Leste Europeu na UE.</summary><div class="a"><p>Da grade da FGV (vale quaisquer dois):</p><ul><li>Mais <b>mercado consumidor</b> (cerca de 100 milhões de pessoas) e mais <b>mão de obra</b>.</li><li>A passagem para a economia de mercado atraiu muito <b>investimento de capital</b> (como fez a Alemanha no seu lado oriental).</li><li><b>Modernização da infraestrutura</b> de transportes para integrar o Leste.</li><li>As regras da UE dão <b>estabilidade e segurança</b> ao investimento.</li></ul><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH8 (b) · a entrada do Leste Europeu na UE</div></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">16</span>Zona do euro, Schengen e Tratado de Lisboa: o que é cada um?</summary><div class="a"><p><b>Zona do euro:</b> os países que trocaram a sua moeda pelo euro. Hoje são <b>21</b> (a apostila diz 19: depois entraram a Croácia, em 2023, e a Bulgária, em 2026). Suécia, Dinamarca, Polônia, Hungria, Rep. Tcheca e Romênia seguem fora.</p><p><b>Schengen:</b> livre circulação de pessoas, sem controle nas fronteiras internas.</p><p><b>Lisboa:</b> reforma das regras de funcionamento da UE (a "Constituição").</p></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">17</span>Crise da zona do euro: quem foi mais atingido, e por quê?</summary><div class="a"><p>Os <b>PIIGS</b>: Portugal, Irlanda, Itália, Grécia e Espanha, além do Chipre.</p><p>Os problemas: <b>déficit público</b> alto e <b>dívida</b> alta. No Chipre, crise nos bancos.</p><p>Veio depois da crise financeira mundial de 2008.</p></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">18</span>Brexit: quem votou para sair, e quem votou para ficar?</summary><div class="a"><p>Referendo em <b>2016</b>; a saída valeu em janeiro de <b>2020</b>.</p><p><b>Sair:</b> idosos, conservadores, extrema direita contra imigrantes e refugiados, parte da esquerda e os insatisfeitos com a crise e o desemprego. Venceu na <b>Inglaterra</b> e no <b>País de Gales</b>.</p><p><b>Ficar:</b> jovens, progressistas e as grandes cidades, como <b>Londres</b>, além da <b>Escócia</b> e da <b>Irlanda do Norte</b>.</p><p>O caso <b>Cambridge Analytica</b> (dados roubados do Facebook, a serviço da ultradireita) mostrou o peso das redes e das <i>fake news</i> no resultado.</p></div></details>
+    <details class="nj" style="--c:var(--h-ue)"><summary><span class="nj-n">19</span>Quais são as consequências do Brexit?</summary><div class="a"><p><b>Econômicas:</b> perda de parceiros comerciais, fuga de empresas (Londres perde), empregos em risco para britânicos na UE e estrangeiros no Reino Unido.</p><p><b>Geopolíticas:</b> reforça o <b>separatismo escocês</b> (a Escócia votou para ficar e tem o petróleo e o gás do Mar do Norte); cria problema de fronteira entre a <b>Irlanda</b> (na UE) e a <b>Irlanda do Norte</b> (fora dela); reacende a disputa entre a Espanha e <b>Gibraltar</b>.</p><p>E deixou o país polarizado.</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-paises)">Os grandes do Oeste</h3>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">20</span>Alemanha: como foi a divisão e a reunificação?</summary><div class="a"><p>Depois da 2ª Guerra, o país foi dividido em zonas de ocupação, e em 1949 nasceram a <b>RFA</b> (capitalista, aliada de EUA, França e Reino Unido) e a <b>RDA</b> (socialista, ligada à URSS). Berlim também foi dividida, pelo <b>Muro</b>.</p><p>O Muro caiu em <b>novembro de 1989</b>, e a reunificação veio em <b>3/10/1990</b>, com a RDA incorporada à RFA.</p><p>O custo: empresas do leste fechadas, desemprego e salários mais baixos no leste até hoje (o "muro na cabeça").</p><p>A apostila fala em "Tratado de Potsdam (1949)": a Conferência de Potsdam foi em 1945; 1949 é o ano dos dois Estados.</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">21</span>Onde se concentra a indústria alemã?</summary><div class="a"><p><b>Vale do Ruhr (Renânia):</b> a maior concentração urbano-industrial da Europa (Colônia, Essen, Dortmund, Duisburg, Düsseldorf). Cresceu no século XIX por causa do carvão, da mão de obra, do mercado e da hidrovia do <b>Reno</b>. Siderurgia, metalurgia, química e armas (Thyssen, Krupp). Hoje troca a indústria pesada por alta tecnologia e serviços.</p><p><b>Sul:</b> Munique (tecnopolo: BMW, Audi, Siemens) e Stuttgart (Mercedes-Benz).</p><p><b>Frankfurt:</b> centro financeiro. <b>Hamburgo:</b> porto. <b>Wolfsburg:</b> Volkswagen. <b>Leipzig:</b> tecnopolo.</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">22</span>Alemanha hoje: quais são os desafios?</summary><div class="a"><p>Perdeu o <b>gás russo</b> com as sanções da guerra na Ucrânia e entrou em crise econômica.</p><p>Transição energética: investe em eólica e solar e desligou as usinas nucleares.</p><p>Crescimento da direita e crise demográfica (fecundidade baixa).</p><p>No governo, depois de Merkel (centro-direita) e Scholz (centro-esquerda), o chanceler desde maio de 2025 é <b>Friedrich Merz</b>, de centro-direita. A apostila ainda fala em Scholz.</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">23</span>França: o que sustenta a economia?</summary><div class="a"><p><b>Energia nuclear:</b> com o urânio do Maciço Central, a maior parte da eletricidade vem das usinas nucleares (a apostila diz 75%).</p><p><b>Agronegócio</b>, o mais desenvolvido da UE: trigo e vinho nos vales do Sena, do Loire, do Garonne e do Ródano.</p><p>Paris e o polo de <b>La Défense</b>; carros (Renault, Peugeot, Citroën), química, cosméticos, perfumes e vinhos.</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">24</span>França: quais são as tensões sociais e políticas?</summary><div class="a"><p><b>Imigração e intolerância:</b> conflitos entre polícia e descendentes de imigrantes (Paris, 2005). A proibição de símbolos religiosos e do véu nas escolas é vista como ataque à liberdade religiosa.</p><p><b>Terrorismo:</b> atentados de 2015 (Charlie Hebdo e Bataclan).</p><p><b>Reformas:</b> a aposentadoria passou de 60 para 62 anos (2010). Macron (desde 2017) enfrentou os <b>coletes amarelos</b> (2018).</p><p><b>Oposição:</b> Mélenchon, na esquerda, e <b>Marine Le Pen</b>, na extrema direita, contra imigrantes e muçulmanos. A direita cresce.</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">25</span>Reino Unido × Grã-Bretanha × Irlanda: qual é a diferença?</summary><div class="a"><p><b>Grã-Bretanha:</b> a ilha, com Inglaterra, Escócia e País de Gales.</p><p><b>Reino Unido:</b> essas três nações mais a <b>Irlanda do Norte</b>. Monarquia parlamentarista, maioria protestante, capital Londres, um grande centro financeiro. Indústria antiga, ligada ao <b>carvão</b> (minas fechadas por <b>Thatcher</b> nos anos 1980), e petróleo e gás do <b>Mar do Norte</b>.</p><p><b>República da Irlanda (Eire):</b> país independente desde o começo dos anos 1920, católico, no sul da ilha da Irlanda. Cresceu com educação e tecnologia e sofreu com a crise de 2008.</p><p class="ex">Exercício 2 da apostila, da FGV (gabarito B).</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">26</span>Irlanda do Norte (Ulster): quem é maioria, e quem quer o quê?</summary><div class="a"><p><b>Maioria protestante</b>, descendente de ingleses e escoceses: quer continuar no Reino Unido.</p><p><b>Minoria católica</b>, nacionalista: quer se unir à República da Irlanda. Os mais radicais formaram o <b>IRA</b>, de luta armada.</p><p>Acordo de paz em 1998; o IRA anunciou o desarmamento em 2005.</p><p class="ex">Exercícios 1 e 3 da apostila (gabarito D nos dois); o 1 é da FGV.</p></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">27</span>Itália: por que o norte e o sul são tão diferentes?</summary><div class="a"><p><b>Norte</b> (vale do Pó e Alpes; Lombardia, Piemonte): rico e industrial. Milão (finanças), Turim (Fiat), Gênova (porto), Veneza (turismo); hidrelétricas nos Alpes e agropecuária no vale do Pó. Ali atuam grupos de extrema direita e separatistas.</p><p><b>Sul, o Mezzogiorno</b> (Calábria, Sicília, Sardenha): bem mais pobre. O governo criou a <b>Cassa del Mezzogiorno</b> para industrializar (Nápoles, Bari, Tarento, Palermo).</p><p>O Estado pesa na economia desde o pós-guerra (o conglomerado estatal IRI).</p><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH8 (a) · a banca citou a Itália como desigualdade dentro de um país</div></div></details>
+    <details class="nj" style="--c:var(--h-paises)"><summary><span class="nj-n">28</span>Separatismos na Europa Ocidental: onde, e quem?</summary><div class="a"><p><b>Espanha:</b> a <b>Catalunha</b> (plebiscito de 2017 pela independência) e o <b>País Basco</b> (o grupo ETA se dissolveu em 2018).</p><p><b>Bélgica:</b> Flandres (flamengos, norte mais rico) × Valônia (valões, de língua francesa). Bruxelas é a sede da UE e da OTAN.</p><p><b>Reino Unido:</b> a Escócia (rejeitou a independência no referendo de 2014) e a Irlanda do Norte.</p><p class="ex">Exercício 5 da apostila, da FGV (gabarito D: independência da Espanha).</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-leste)">Leste Europeu</h3>
+    <details class="nj" style="--c:var(--h-leste)"><summary><span class="nj-n">29</span>Pacto de Varsóvia × COMECON</summary><div class="a"><p>As duas associações da URSS com o Leste Europeu na Guerra Fria:</p><p><b>Pacto de Varsóvia:</b> aliança <b>militar</b> (o contrário da OTAN).</p><p><b>COMECON:</b> cooperação <b>econômica</b> (o contrário do Plano Marshall).</p></div></details>
+    <details class="nj" style="--c:var(--h-leste)"><summary><span class="nj-n">30</span>Por que o socialismo real entrou em crise?</summary><div class="a"><p><b>Burocracia e autoritarismo:</b> sem eleições, partido único, repressão e uma elite de burocratas com privilégios.</p><p><b>Economia planificada e estatal:</b> sem concorrência, as empresas não tinham por que melhorar. Baixa produtividade e atraso tecnológico.</p><p>A URSS era forte em siderurgia, armas, energia nuclear e setor aeroespacial, mas os <b>bens de consumo</b> eram poucos e ruins.</p><p class="ex">Exercício 3 da apostila (gabarito C): Chernobyl (1986) expôs a incompetência soviética na tecnologia nuclear.</p></div></details>
+    <details class="nj" style="--c:var(--h-leste)"><summary><span class="nj-n">31</span>Glasnost × perestroika</summary><div class="a"><p>Reformas de <b>Gorbachev</b>, que chegou ao poder em 1985:</p><p><b>Glasnost:</b> abertura <b>política</b> (liberdade para criticar o governo na imprensa).</p><p><b>Perestroika:</b> reestruturação <b>econômica</b> (empresas privadas, tecnologia).</p><p>Vieram junto os acordos com os EUA para reduzir armas nucleares e a retirada de tropas soviéticas do Leste, o que derrubou as ditaduras aliadas.</p></div></details>
+    <details class="nj" style="--c:var(--h-leste)"><summary><span class="nj-n">32</span>Como caíram os regimes socialistas, e como acabou a URSS?</summary><div class="a"><p><b>Queda pacífica:</b> Bulgária, Hungria e Tchecoslováquia (<b>Revolução de Veludo</b>). Na Polônia, a oposição cresceu com o sindicato <b>Solidariedade</b>.</p><p><b>Queda violenta:</b> Romênia, contra o ditador Ceaușescu.</p><p><b>URSS:</b> o nacionalismo das repúblicas e um golpe fracassado contra Gorbachev acabaram com a União Soviética em <b>1991</b>, que virou 15 países. Doze fundaram a <b>CEI</b>; os bálticos (Estônia, Letônia, Lituânia) ficaram fora e entraram na UE em 2004.</p></div></details>
+    <details class="nj" style="--c:var(--h-leste)"><summary><span class="nj-n">33</span>Transição para o capitalismo no Leste: o que piorou, e quem se saiu melhor?</summary><div class="a"><p><b>Piorou:</b> o Estado cortou saúde e educação e vendeu as estatais. Vieram desemprego, pobreza, criminalidade e caos financeiro. Antigos burocratas viraram empresários, e uma minoria enriqueceu.</p><p><b>Melhor:</b> Polônia, Hungria, Rep. Tcheca e Eslovênia, mais industrializadas e hoje área de influência de Alemanha, França e Itália.</p><p><b>Pior:</b> Romênia, Sérvia e Albânia.</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-iugo)">Iugoslávia</h3>
+    <details class="nj" style="--c:var(--h-iugo)"><summary><span class="nj-n">34</span>Como era a Iugoslávia, e o que a mantinha unida?</summary><div class="a"><p>Nasceu depois da 1ª Guerra, de terras dos impérios Austro-Húngaro e Otomano: 6 repúblicas (Sérvia, Montenegro, Croácia, Eslovênia, Bósnia e Macedônia) e 2 regiões autônomas (Voivodina e Kosovo).</p><p>Povos diferentes: <b>eslovenos e croatas</b>, católicos, com alfabeto latino; <b>sérvios, montenegrinos e macedônios</b>, ortodoxos, com alfabeto cirílico; <b>bósnios e albaneses</b>, muçulmanos.</p><p>Quem segurava tudo era <b>Tito</b>, líder socialista que venceu os nazistas e não aceitava ordens da URSS. Ele morreu em 1980, e a crise começou. A <b>Sérvia</b> controlava o exército e a economia.</p></div></details>
+    <details class="nj" style="--c:var(--h-iugo)"><summary><span class="nj-n">35</span>Em que ordem a Iugoslávia se partiu?</summary><div class="a"><ul><li><b>Eslovênia:</b> a primeira, e a mais rica.</li><li><b>Croácia:</b> guerra contra o exército iugoslavo, controlado pelos sérvios.</li><li><b>Macedônia:</b> a mais pobre; depois, conflito com a minoria albanesa (2001).</li><li><b>Bósnia-Herzegovina:</b> plebiscito em 1992 e guerra até 1995.</li><li><b>Montenegro:</b> referendo em 2006 (55,4%), para entrar mais fácil na UE. A Sérvia perdeu o acesso ao mar.</li><li><b>Kosovo:</b> independência unilateral em 2008.</li></ul><p class="ex">Exercício 1 da apostila (gabarito B: rivalidades étnicas, religiosas e territoriais).</p></div></details>
+    <details class="nj" style="--c:var(--h-iugo)"><summary><span class="nj-n">36</span>Guerra da Bósnia (1992–95): por que aconteceu, e como terminou?</summary><div class="a"><p>Três povos com planos opostos: <b>muçulmanos (44%)</b> e <b>croatas (17%)</b> queriam a independência; os <b>sérvios (31%)</b> queriam ficar com a Iugoslávia.</p><p>Cerca de <b>200 mil mortos</b>, <b>limpeza étnica</b>, campos de concentração, valas comuns e estupros em massa.</p><p><b>Acordo de Dayton (1995):</b> a Bósnia continua um país só, com duas partes: a dos sérvios (49% do território) e a federação muçulmano-croata (51%). Sarajevo fica unida, e os crimes de guerra vão ao Tribunal de Haia.</p><p class="ex">Exercício 2 da apostila (gabarito D: Bálcãs).</p></div></details>
+    <details class="nj" style="--c:var(--h-iugo)"><summary><span class="nj-n">37</span>Kosovo: da guerra de 1999 à independência de 2008</summary><div class="a"><p>Província com <b>90% de albaneses</b>. Os separatistas (ELK) foram atacados pelo exército de <b>Milošević</b>.</p><p><b>1999:</b> para evitar outra Bósnia, a <b>OTAN</b> bombardeou a Iugoslávia, e Kosovo passou a ser administrado pela ONU.</p><p><b>2008:</b> independência <b>unilateral</b>. EUA e parte da UE reconheceram; <b>Sérvia e Rússia</b>, não. Países da UE com minorias (Espanha, Grécia) resistiram, com medo do precedente.</p><p>Milošević foi julgado em Haia e morreu preso, em 2006.</p><p class="ex">Exercício 6 da apostila, da FGV (gabarito B: I, II e IV).</p></div></details>
+    <h3 class="nj-sec" style="--c:var(--h-russia)">Rússia e CEI</h3>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">38</span>O que é a CEI, e quem ficou dentro?</summary><div class="a"><p>Comunidade dos Estados Independentes: criada em 1991 por 12 das 15 ex-repúblicas soviéticas, para manter a cooperação econômica.</p><p>Os <b>bálticos</b> nunca entraram. A <b>Geórgia</b> saiu em 2009, e a <b>Ucrânia</b>, em 2014.</p><p>Ficaram 10: Rússia, Belarus, Moldávia, Armênia, Azerbaijão, Cazaquistão, Uzbequistão, Turcomenistão, Tajiquistão e Quirguistão. Os da Ásia Central são de maioria muçulmana.</p><p>Na parte militar, a Rússia lidera a <b>OTSC</b>, com Belarus, Cazaquistão, Armênia, Quirguistão e Tajiquistão.</p><p class="ex">Exercício 5 da apostila (gabarito B: religião islâmica).</p></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">39</span>Geórgia: quais são os conflitos?</summary><div class="a"><p>Duas regiões separatistas: a <b>Abkházia</b> e a <b>Ossétia do Sul</b>, que quer se unir à Ossétia do Norte, na Rússia.</p><p>Depois da <b>Revolução das Rosas</b> (2003), o governo se afastou da Rússia e se aproximou dos EUA e da UE.</p><p><b>2008:</b> a Geórgia reprimiu a Ossétia do Sul, a Rússia invadiu e depois reconheceu a "independência" das duas regiões. Em 2009, a Geórgia saiu da CEI.</p></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">40</span>Armênia × Azerbaijão: por que brigam?</summary><div class="a"><p>Pela região de <b>Nagorno-Karabakh</b>, um enclave de maioria armênia dentro do Azerbaijão. A guerra começou em 1988.</p><p>Armênia <b>cristã ortodoxa</b> × Azerbaijão <b>muçulmano</b>, exportador de petróleo e armado com ajuda da Turquia e de Israel.</p><p>Em setembro de <b>2023</b>, uma ofensiva do Azerbaijão tomou a região, e mais de 100 mil armênios fugiram (a apostila diz 2022).</p><p>O petróleo da região está no <b>Mar Cáspio</b>.</p><p class="ex">Exercício 4 da apostila, da FGV (gabarito B: Mar Cáspio).</p></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">41</span>Ucrânia: como o país se dividiu até 2014?</summary><div class="a"><p><b>Divisão interna:</b> o leste é ortodoxo, fala russo e é ligado à Rússia; o oeste é católico, fala ucraniano e olha para a Europa.</p><p><b>Economia:</b> agropecuária forte e a indústria do <b>Donbass</b> (carvão, ferro, siderurgia). Desmontou o arsenal nuclear herdado da URSS.</p><p><b>2013–14:</b> o governo se aproximou da Rússia, e protestos a favor da UE o derrubaram. A Rússia anexou a <b>Crimeia</b> (maioria russa, base naval de Sevastopol) depois de um referendo, e separatistas pró-Rússia pegaram em armas no leste. A Ucrânia saiu da CEI.</p></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">42</span>Guerra Rússia × Ucrânia (2022): as duas versões e as consequências</summary><div class="a"><p><b>Versão russa:</b> a OTAN avançou para o leste até os bálticos, e uma Ucrânia na OTAN seria uma ameaça; alega também repressão às minorias russas do Donbass.</p><p><b>Versão ucraniana:</b> imperialismo russo, que anexa territórios para refazer a influência soviética e fere a soberania do país.</p><p><b>2022:</b> invasão; a Rússia ocupou cerca de 20% do território, com destaque para o Donbass. Infraestrutura destruída, milhares de mortos, refugiados (Polônia, Romênia, Alemanha).</p><p><b>No mundo:</b> alta dos alimentos e da energia, e a Alemanha perdeu o gás russo. Há risco de confronto entre potências nucleares.</p><div class="stampline">★ Caiu na FGV: 2023.1-OBJ-MH16 e MH17 · efeitos da guerra nos juros e na crise alimentar</div></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">43</span>Mar de Aral: o que aconteceu?</summary><div class="a"><p>Os soviéticos desviaram os rios <b>Amu Darya e Syr Darya</b> para irrigar <b>algodão</b> na Ásia Central (Uzbequistão e Turcomenistão).</p><p>O Aral não tem saída para o oceano e dependia desses rios. Secou com a evaporação, ficou <b>salgado</b> e perdeu os peixes; os pescadores quebraram.</p><p>Os agrotóxicos contaminaram água e solo, a irrigação em excesso salinizou a terra, e a região virou <b>deserto</b>: tentaram criar um oásis e criaram um deserto.</p><p class="ex">Exercício 7 da apostila (gabarito A: Uzbequistão, Cazaquistão e algodão).</p><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH7 · irrigação e agrotóxicos agravam a escassez de água</div></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">44</span>Federação Russa: o que é preciso saber da economia?</summary><div class="a"><p>O maior país do mundo (17 milhões de km²). Herdou o arsenal nuclear e a cadeira da URSS no <b>Conselho de Segurança da ONU</b>.</p><p>Rica em petróleo, gás, carvão, ferro e urânio. Indústria pesada, bélica e aeroespacial forte; bens de consumo atrasados.</p><p>Indústria em Moscou, no Volga e nos <b>Urais</b> (siderurgia); a <b>Transiberiana</b> (Moscou–Vladivostok) criou os centros mais novos, na Sibéria.</p><p>Depois da crise de 1998, se recuperou exportando <b>petróleo e gás</b>. Virou importadora de alimentos nos anos 1990.</p></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">45</span>Kolkhoz × sovkhoz</summary><div class="a"><p>As fazendas do tempo soviético:</p><p><b>Kolkhoz:</b> <b>cooperativa</b> dirigida pelos camponeses, com mais autonomia (1/4 da produção, sobretudo na Ucrânia e na Rússia).</p><p><b>Sovkhoz:</b> fazenda <b>estatal</b>, administrada pelo governo, com as maiores áreas e cultivos especializados.</p></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">46</span>Por que a Rússia vive uma crise demográfica?</summary><div class="a"><p>Natalidade baixa e mortalidade alta: <b>crescimento natural negativo</b>, e a população encolhe.</p><p>A expectativa de vida dos homens caiu (58 anos em 2005).</p><p>Faltam trabalhadores; apesar da xenofobia, o país vai precisar de imigrantes. Uma província chegou a criar um feriado para os casais terem filhos.</p><p class="ex">Exercícios 8 (gabarito A) e 9 (gabarito B) da apostila, da FGV.</p><div class="stampline">★ Caiu na FGV: 2025.1-DIS-CH5 e 2026.1-DIS-CH8 · transição demográfica e envelhecimento</div></div></details>
+    <details class="nj" style="--c:var(--h-russia)"><summary><span class="nj-n">47</span>Chechênia: por que a Rússia fez duas guerras ali?</summary><div class="a"><p>República russa do Cáucaso, <b>muçulmana</b> e com <b>petróleo</b>, que declarou independência (o separatismo atinge também o Daguestão).</p><p><b>1994–96:</b> primeira guerra; os russos recuam e a Chechênia ganha autonomia.</p><p><b>1999:</b> <b>Putin</b> lança nova ofensiva e retoma a capital, Grozni. Mais de 100 mil mortos e denúncias de tortura.</p><p>Os rebeldes responderam com terrorismo (escola de Beslan, metrô de Moscou em 2010). A guerra deixou Putin popular.</p></div></details>
+  </section>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="flow" aria-label="Fio condutor da aula">
+      <div class="node" style="--c:var(--h-oeste)"><small>1945 · pós-guerra</small><strong>Europa partida</strong><p>A Guerra Fria divide o continente em dois blocos</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="fork">
+        <div class="node" style="--c:var(--h-ue)"><small>Oeste · capitalista</small><strong>Integração</strong><p>Plano Marshall e OTAN → CECA → CEE → UE e euro</p></div>
+        <div class="node" style="--c:var(--h-leste)"><small>Leste · socialista</small><strong>Crise e queda</strong><p>Pacto de Varsóvia e COMECON → glasnost → fim da URSS (1991)</p></div>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" style="--c:var(--h-russia)"><small>Hoje</small><strong>Uma Europa desigual</strong><p>O Leste entra na UE e na OTAN; a Rússia reage: Geórgia (2008), Crimeia (2014), Ucrânia (2022)</p></div>
+      <div class="common"><b>O que a FGV já perguntou desta aula:</b> por que a UE é desigual pelo <b>PIB por habitante</b> e o que ela ganhou com a <b>entrada do Leste</b> (2025.1, discursiva 8 de Ciências Humanas).</div>
+    </div>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-fisico)">
+        <h2>Quadro físico</h2>
+        <ul class="tree">
+          <li><span>Relevo, de norte a sul</span>
+            <ul><li><b>Norte:</b> montanhas antigas e gastas; os <b>Urais</b> separam Europa e Ásia</li><li><b>Centro:</b> planícies sedimentares (russa, germano-polonesa, parisiense)</li><li><b>Sul:</b> dobramentos jovens: Alpes, Pireneus, Cárpatos, Cáucaso</li></ul></li>
+          <li><span>Rios e litoral</span>
+            <ul><li><b>Reno</b> (porto de Roterdã) · <b>Danúbio</b> (8 países) · <b>Volga</b> (o maior)</li><li>Litoral recortado: penínsulas Ibérica, Itálica, Balcânica e Escandinava</li><li>Eurotúnel sob o canal da Mancha</li></ul></li>
+          <li><span>Clima</span>
+            <ul><li>Corrente do Golfo: mar sem gelo e clima oceânico ameno</li><li>Tundra → taiga e estepe → floresta temperada → mediterrâneo</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-oeste)">
+        <h2>Europa Ocidental</h2>
+        <ul class="tree">
+          <li><span>Guerra Fria</span> <span class="fgv">★ 2026.1-OBJ-54</span>
+            <ul><li><b>Plano Marshall:</b> dólares para reconstruir e conter a URSS</li><li><b>OTAN</b> (1949), que depois avançou para o Leste</li></ul></li>
+          <li><span>População</span> <span class="fgv">★ 2025.1-DIS-CH5</span>
+            <ul><li>Fecundidade abaixo de 2: a população envelhece</li><li>Previdência pesada e falta de trabalhadores</li></ul></li>
+          <li><span>Trabalho e imigração</span>
+            <ul><li>Desemprego <b>estrutural</b> (tecnologia)</li><li>Imigrantes nos piores empregos; Paris, 2005</li><li>A extrema direita culpa o estrangeiro, mas a Europa precisa dele</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-ue)">
+        <h2>União Europeia</h2>
+        <ul class="tree">
+          <li><span>Linha do tempo</span>
+            <ul><li>1948 Benelux · 1951 CECA · 1957 CEE (Roma)</li><li>1992 UE (Maastricht) · 1998 Banco Central em Frankfurt</li></ul></li>
+          <li><span>Ampliações</span>
+            <ul><li>1973, 1981, 1986, 1995 · o Leste em 2004, 2007 e 2013</li><li>Hoje <b>27</b> países, <b>21</b> no euro</li><li>Fora por escolha: Suíça, Noruega e Islândia</li></ul></li>
+          <li><span>Desigual</span> <span class="fgv">★ 2025.1-DIS-CH8</span>
+            <ul><li>Noroeste rico × periferia mediterrânea</li><li>O Leste entrou mais pobre, mas trouxe mercado e mão de obra</li></ul></li>
+          <li><span>Crises</span>
+            <ul><li><b>PIIGS:</b> déficit e dívida</li><li><b>Brexit:</b> referendo em 2016, saída em 2020; Escócia, Irlanda, Gibraltar</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-paises)">
+        <h2>Os grandes do Oeste</h2>
+        <ul class="tree">
+          <li><span>Alemanha</span>
+            <ul><li>Muro cai em 1989; reunificação em 1990</li><li><b>Ruhr:</b> carvão + Reno = indústria</li><li>Hoje: sem gás russo, usinas nucleares desligadas</li></ul></li>
+          <li><span>França</span>
+            <ul><li>Energia nuclear e o maior agro da UE</li><li>Imigração, véu, Le Pen</li></ul></li>
+          <li><span>Reino Unido e Irlanda</span>
+            <ul><li>Reino Unido = Grã-Bretanha + Irlanda do Norte</li><li>Ulster: protestantes × católicos (IRA)</li></ul></li>
+          <li><span>Itália e separatismos</span>
+            <ul><li>Norte industrial × <b>Mezzogiorno</b> pobre</li><li>Catalunha, País Basco, Flandres × Valônia, Escócia</li></ul></li>
+          <li><span>Os demais</span>
+            <ul><li>Holanda: Roterdã · Luxemburgo e Suíça: finanças</li><li>Noruega: petróleo e pesca · Islândia: geotermia</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-leste)">
+        <h2>Leste Europeu</h2>
+        <ul class="tree">
+          <li><span>Bloco soviético</span>
+            <ul><li><b>Pacto de Varsóvia</b> (militar) · <b>COMECON</b> (econômico)</li></ul></li>
+          <li><span>Por que caiu</span>
+            <ul><li>Burocracia e autoritarismo</li><li>Economia planificada, sem concorrência</li><li>Gorbachev (1985): <b>glasnost</b> + <b>perestroika</b></li></ul></li>
+          <li><span>A queda</span>
+            <ul><li>Revolução de Veludo (pacífica) × Romênia (violenta)</li><li>1991: a URSS vira 15 países</li></ul></li>
+          <li><span>A transição</span>
+            <ul><li>Desemprego, pobreza, novos ricos</li><li>Melhor: Polônia, Hungria, Rep. Tcheca, Eslovênia</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-iugo)">
+        <h2>Iugoslávia</h2>
+        <ul class="tree">
+          <li><span>O mosaico</span>
+            <ul><li>Católicos, ortodoxos e muçulmanos</li><li><b>Tito</b> segurou tudo até 1980; a Sérvia mandava</li></ul></li>
+          <li><span>A quebra</span>
+            <ul><li>Eslovênia → Croácia → Macedônia → Bósnia</li><li>Montenegro (2006) → Kosovo (2008)</li></ul></li>
+          <li><span>Bósnia (1992–95)</span>
+            <ul><li>200 mil mortos, limpeza étnica</li><li><b>Dayton:</b> um país, duas partes</li></ul></li>
+          <li><span>Kosovo</span>
+            <ul><li>A OTAN bombardeia (1999)</li><li>Independência unilateral; Sérvia e Rússia contra</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-russia)">
+        <h2>Rússia e CEI</h2>
+        <ul class="tree">
+          <li><span>CEI</span>
+            <ul><li>12 ex-repúblicas em 1991; hoje 10</li><li>Saíram a Geórgia (2009) e a Ucrânia (2014)</li></ul></li>
+          <li><span>Cáucaso</span>
+            <ul><li>Geórgia: Abkházia e Ossétia do Sul (2008)</li><li>Armênia × Azerbaijão: Nagorno-Karabakh</li><li>Chechênia: duas guerras, Putin</li></ul></li>
+          <li><span>Ucrânia</span> <span class="fgv">★ 2023.1-OBJ-MH17</span>
+            <ul><li>Leste russo × oeste europeu</li><li>Crimeia (2014) · invasão (2022)</li></ul></li>
+          <li><span>Rússia</span>
+            <ul><li>Petróleo e gás · Transiberiana</li><li>Kolkhoz (cooperativa) × sovkhoz (estatal)</li><li>A população encolhe</li></ul></li>
+          <li><span>Mar de Aral</span> <span class="fgv">★ 2025.1-DIS-CH7</span>
+            <ul><li>Rios desviados para o algodão: o mar secou</li></ul></li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1). A União Europeia caiu numa discursiva de Ciências Humanas.</p>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    fisico:{n:"Quadro físico", c:"var(--h-fisico)"},
+    oeste:{n:"Europa Ocidental", c:"var(--h-oeste)"},
+    ue:{n:"União Europeia", c:"var(--h-ue)"},
+    paises:{n:"Os grandes do Oeste", c:"var(--h-paises)"},
+    leste:{n:"Leste Europeu", c:"var(--h-leste)"},
+    iugo:{n:"Iugoslávia", c:"var(--h-iugo)"},
+    russia:{n:"Rússia e CEI", c:"var(--h-russia)"}
+  };
+  var CARDS = [
+ {
+  "b": "fisico",
+  "q": "Europa Ocidental × Leste Europeu: qual é o critério, e por que a divisão é imprecisa?",
+  "a": "<p><b>Critério:</b> a qualidade de vida. A <b>Ocidental</b> é capitalista, desenvolvida e democrática, com as cinco grandes economias (Alemanha, França, Reino Unido, Itália e Espanha). O <b>Leste</b> foi socialista até o fim dos anos 1980 e virou capitalista nos anos 1990.</p><p><b>É imprecisa</b> porque há desigualdade dentro de cada parte: a Itália tem o norte rico e o sul pobre (Mezzogiorno), e no Leste a Polônia, a Rep. Tcheca, a Hungria e a Eslovênia vão bem melhor que a Romênia ou a Albânia.</p>"
+ },
+ {
+  "b": "fisico",
+  "q": "Como é o relevo da Europa, de norte a sul?",
+  "a": "<p><b>Norte:</b> escudos cristalinos e montanhas <b>antigas</b>, gastas pela erosão: Alpes Escandinavos, Maciço Central francês e <b>Montes Urais</b>, que com o rio Ural separam a Europa da Ásia.</p><p><b>Centro:</b> planícies e baixos planaltos em bacias sedimentares, ao longo dos grandes rios: planície russa, germano-polonesa e parisiense.</p><p><b>Sul:</b> dobramentos <b>jovens</b> e altos, da Era Cenozoica (Terciário): Alpes, Apeninos, Pireneus (França × Espanha), Cárpatos, Bálcãs, Alpes Dináricos e Cáucaso.</p>"
+ },
+ {
+  "b": "fisico",
+  "q": "Por que os rios Reno, Danúbio e Volga importam?",
+  "a": "<p>São hidrovias que ligam países e escoam mercadorias.</p><ul><li><b>Reno:</b> nasce nos Alpes suíços, corre na fronteira França × Alemanha, cruza a área mais industrial da Europa e deságua no Mar do Norte, junto ao porto de <b>Roterdã</b>.</li><li><b>Danúbio:</b> passa por 8 países e integra o Leste Europeu. Um canal pelo rio Meno liga o Reno ao Danúbio.</li><li><b>Volga:</b> o maior rio da Europa, na Rússia.</li></ul><p>Os três sofrem com poluição industrial, pior no Leste, onde a indústria é mais atrasada.</p>"
+ },
+ {
+  "b": "fisico",
+  "q": "O que a Corrente do Golfo faz com a Europa?",
+  "a": "<p>É uma corrente marítima <b>quente</b> que aquece o litoral do Atlântico norte. O mar não congela (a pesca da Noruega funciona o ano todo) e o <b>clima temperado oceânico</b> fica ameno no Reino Unido, na Irlanda, nos Países Baixos, na Bélgica e na França.</p>"
+ },
+ {
+  "b": "fisico",
+  "q": "Quais são os climas da Europa, e a vegetação de cada um?",
+  "a": "<ul><li><b>Subpolar e polar</b> (extremo norte e altas montanhas): tundra.</li><li><b>Temperado continental</b> (longe do mar, inverno seco e muito frio): <b>taiga</b>, a floresta de coníferas, a maior do planeta em extensão e com pouca biodiversidade; e <b>estepes</b> (campos) na Ucrânia e na Rússia.</li><li><b>Temperado oceânico</b> (perto do Atlântico): floresta temperada caducifólia, quase toda devastada.</li><li><b>Mediterrâneo</b> (sul): verão quente e <b>seco</b>, inverno úmido; maquis e garrigue, com oliveira e sobreiro.</li></ul>"
+ },
+ {
+  "b": "oeste",
+  "q": "Plano Marshall e OTAN: o que foram?",
+  "a": "<p><b>Plano Marshall:</b> dinheiro dos EUA para reconstruir a Europa Ocidental depois da 2ª Guerra. Em troca, os europeus compravam de preferência produtos americanos. O objetivo político era <b>conter a influência soviética</b>.</p><p><b>OTAN (1949):</b> aliança militar dos EUA com a Europa Ocidental, o Canadá e a Turquia contra o bloco socialista. Depois do fim da URSS, <b>avançou para o Leste</b> (Polônia, Rep. Tcheca, países bálticos), e a Rússia vê isso como ameaça.</p>",
+  "fgv": "2026.1-OBJ-54 · texto do governo Truman, de 1949, sobre ajuda econômica para garantir a paz"
+ },
+ {
+  "b": "oeste",
+  "q": "Por que a população europeia envelhece, e que problema isso cria?",
+  "a": "<p><b>Causa:</b> natalidade muito baixa. A fecundidade está abaixo de 2 filhos por mulher, menos que a <b>taxa de reposição</b>, e a expectativa de vida chega a 80 anos. Na Suécia, os idosos passam de 20% da população; a Rússia perde gente.</p><p><b>Problema:</b> faltam trabalhadores e cresce o peso da previdência. Os incentivos para ter filhos (Suécia, Itália) quase não funcionaram.</p><p><b>Saída:</b> imigração. A ONU calculou 1,5 milhão de imigrantes por ano até 2050 só para manter a população em idade de trabalhar.</p>",
+  "fgv": "2025.1-DIS-CH5 e 2026.1-DIS-CH8 · envelhecimento populacional"
+ },
+ {
+  "b": "oeste",
+  "q": "O que é desemprego estrutural, e por que atinge a Europa?",
+  "a": "<p>É o desemprego que não acaba quando a economia melhora, porque a vaga deixou de existir: a <b>modernização tecnológica</b> substituiu o trabalhador.</p><p>Na Europa, somam-se o baixo crescimento econômico e as demissões nas estatais privatizadas.</p>"
+ },
+ {
+  "b": "oeste",
+  "q": "Imigrantes na Europa Ocidental: como vivem e como são recebidos?",
+  "a": "<p>Até os anos 1980, a prosperidade atraiu imigrantes de países pobres. Eles ganham menos, fazem os trabalhos menos qualificados, às vezes sem proteção trabalhista, e moram em bairros pobres das metrópoles.</p><p>Sofrem preconceito racial e religioso. Grupos de extrema direita e neonazistas atacam sua presença (Alemanha, Áustria, França, Reino Unido).</p><p>Em <b>Paris, 2005</b>, jovens descendentes de africanos queimaram milhares de carros nas periferias, em resposta à exclusão, ao racismo e ao desemprego.</p>"
+ },
+ {
+  "b": "oeste",
+  "q": "Qual é a contradição da xenofobia na Europa?",
+  "a": "<p><b>Por que a extrema direita cresce:</b> a crise do Estado de bem-estar social, o desemprego e a mudança tecnológica rápida geram insegurança. Culpar o estrangeiro pelo desemprego e pelo crime é uma resposta simples, e atrai votos.</p><p><b>A contradição:</b> a Europa envelhece e <b>precisa</b> de imigrantes para ter quem trabalhe e pague a previdência. O discurso nacionalista vai contra o interesse do próprio país.</p>"
+ },
+ {
+  "b": "ue",
+  "q": "Como começou a integração europeia? (Benelux, CECA e CEE)",
+  "a": "<p><b>Por quê:</b> depois da 2ª Guerra, a Europa Ocidental dependia dos EUA. Para se recuperar e competir com EUA e Japão, precisou superar rivalidades antigas; a chave foi o acordo entre <b>França e Alemanha</b>.</p><ul><li><b>1948, Benelux:</b> Bélgica, Holanda e Luxemburgo.</li><li><b>1951, CECA</b> (Tratado de Paris): livre circulação de carvão, ferro e aço entre o Benelux, a Alemanha Ocidental, a França e a Itália.</li><li><b>1957, CEE</b> (Tratado de Roma): os mesmos 6 levam a integração para toda a economia. Depois entram Reino Unido, Irlanda e Dinamarca (1973), Grécia (1981), Espanha e Portugal (1986).</li></ul>"
+ },
+ {
+  "b": "ue",
+  "q": "O que mudou com o Tratado de Maastricht (1992)?",
+  "a": "<p>A CEE vira <b>União Europeia</b> e se compromete a criar uma <b>moeda única</b>.</p><p>Para entrar no euro, cada país fez a \"lição de casa\": baixar inflação e juros, controlar o câmbio e o déficit público, e aprovar a adesão em plebiscito.</p><p>Banco Central Europeu em <b>Frankfurt</b> (1998). Em 1995 entram Áustria, Suécia e Finlândia. Ficaram de fora por decisão popular: <b>Suíça, Noruega e Islândia</b>.</p><p class=\"ex\">Exercício 4 da apostila, da FGV (gabarito D): com Maastricht, as empresas passaram a escolher onde produzir pensando no mercado de toda a UE.</p>"
+ },
+ {
+  "b": "ue",
+  "q": "Como a UE se expandiu para o Leste?",
+  "a": "<ul><li><b>2004:</b> Estônia, Letônia, Lituânia, Polônia, Rep. Tcheca, Eslováquia, Hungria, Eslovênia, Malta e Chipre.</li><li><b>2007:</b> Bulgária e Romênia (com corrupção, discriminação de ciganos e turcos e baixa produtividade para resolver).</li><li><b>2013:</b> Croácia.</li></ul><p><b>Turquia:</b> candidata, mas barrada por ser muçulmana e populosa, pelos direitos humanos (repressão aos curdos) e pelas finanças.</p><p>Hoje são <b>27</b> países (o Reino Unido saiu em 2020). Depois da invasão russa, <b>Ucrânia e Moldávia</b> viraram candidatas (2022).</p>"
+ },
+ {
+  "b": "ue",
+  "q": "UE: como o PIB por habitante divide o espaço europeu?",
+  "a": "<p>A UE é <b>desigual</b> entre os países e dentro deles:</p><ul><li><b>Centro rico:</b> os países do noroeste, muito urbanizados.</li><li><b>Periferia mais pobre:</b> os mediterrâneos.</li><li><b>O Leste</b> aumentou a desigualdade: entrou com PIB por habitante bem menor.</li><li><b>Dentro de um país:</b> a Itália, com o norte rico e o sul pobre.</li></ul><p>Foi o item (a) da discursiva. Para nota cheia, a banca pediu <b>duas</b> diferenças espaciais.</p>",
+  "fgv": "2025.1-DIS-CH8 (a) · União Europeia e PIB por habitante"
+ },
+ {
+  "b": "ue",
+  "q": "Cite dois ganhos da entrada do Leste Europeu na UE.",
+  "a": "<p>Da grade da FGV (vale quaisquer dois):</p><ul><li>Mais <b>mercado consumidor</b> (cerca de 100 milhões de pessoas) e mais <b>mão de obra</b>.</li><li>A passagem para a economia de mercado atraiu muito <b>investimento de capital</b> (como fez a Alemanha no seu lado oriental).</li><li><b>Modernização da infraestrutura</b> de transportes para integrar o Leste.</li><li>As regras da UE dão <b>estabilidade e segurança</b> ao investimento.</li></ul>",
+  "fgv": "2025.1-DIS-CH8 (b) · a entrada do Leste Europeu na UE"
+ },
+ {
+  "b": "ue",
+  "q": "Zona do euro, Schengen e Tratado de Lisboa: o que é cada um?",
+  "a": "<p><b>Zona do euro:</b> os países que trocaram a sua moeda pelo euro. Hoje são <b>21</b> (a apostila diz 19: depois entraram a Croácia, em 2023, e a Bulgária, em 2026). Suécia, Dinamarca, Polônia, Hungria, Rep. Tcheca e Romênia seguem fora.</p><p><b>Schengen:</b> livre circulação de pessoas, sem controle nas fronteiras internas.</p><p><b>Lisboa:</b> reforma das regras de funcionamento da UE (a \"Constituição\").</p>"
+ },
+ {
+  "b": "ue",
+  "q": "Crise da zona do euro: quem foi mais atingido, e por quê?",
+  "a": "<p>Os <b>PIIGS</b>: Portugal, Irlanda, Itália, Grécia e Espanha, além do Chipre.</p><p>Os problemas: <b>déficit público</b> alto e <b>dívida</b> alta. No Chipre, crise nos bancos.</p><p>Veio depois da crise financeira mundial de 2008.</p>"
+ },
+ {
+  "b": "ue",
+  "q": "Brexit: quem votou para sair, e quem votou para ficar?",
+  "a": "<p>Referendo em <b>2016</b>; a saída valeu em janeiro de <b>2020</b>.</p><p><b>Sair:</b> idosos, conservadores, extrema direita contra imigrantes e refugiados, parte da esquerda e os insatisfeitos com a crise e o desemprego. Venceu na <b>Inglaterra</b> e no <b>País de Gales</b>.</p><p><b>Ficar:</b> jovens, progressistas e as grandes cidades, como <b>Londres</b>, além da <b>Escócia</b> e da <b>Irlanda do Norte</b>.</p><p>O caso <b>Cambridge Analytica</b> (dados roubados do Facebook, a serviço da ultradireita) mostrou o peso das redes e das <i>fake news</i> no resultado.</p>"
+ },
+ {
+  "b": "ue",
+  "q": "Quais são as consequências do Brexit?",
+  "a": "<p><b>Econômicas:</b> perda de parceiros comerciais, fuga de empresas (Londres perde), empregos em risco para britânicos na UE e estrangeiros no Reino Unido.</p><p><b>Geopolíticas:</b> reforça o <b>separatismo escocês</b> (a Escócia votou para ficar e tem o petróleo e o gás do Mar do Norte); cria problema de fronteira entre a <b>Irlanda</b> (na UE) e a <b>Irlanda do Norte</b> (fora dela); reacende a disputa entre a Espanha e <b>Gibraltar</b>.</p><p>E deixou o país polarizado.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "Alemanha: como foi a divisão e a reunificação?",
+  "a": "<p>Depois da 2ª Guerra, o país foi dividido em zonas de ocupação, e em 1949 nasceram a <b>RFA</b> (capitalista, aliada de EUA, França e Reino Unido) e a <b>RDA</b> (socialista, ligada à URSS). Berlim também foi dividida, pelo <b>Muro</b>.</p><p>O Muro caiu em <b>novembro de 1989</b>, e a reunificação veio em <b>3/10/1990</b>, com a RDA incorporada à RFA.</p><p>O custo: empresas do leste fechadas, desemprego e salários mais baixos no leste até hoje (o \"muro na cabeça\").</p><p>A apostila fala em \"Tratado de Potsdam (1949)\": a Conferência de Potsdam foi em 1945; 1949 é o ano dos dois Estados.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "Onde se concentra a indústria alemã?",
+  "a": "<p><b>Vale do Ruhr (Renânia):</b> a maior concentração urbano-industrial da Europa (Colônia, Essen, Dortmund, Duisburg, Düsseldorf). Cresceu no século XIX por causa do carvão, da mão de obra, do mercado e da hidrovia do <b>Reno</b>. Siderurgia, metalurgia, química e armas (Thyssen, Krupp). Hoje troca a indústria pesada por alta tecnologia e serviços.</p><p><b>Sul:</b> Munique (tecnopolo: BMW, Audi, Siemens) e Stuttgart (Mercedes-Benz).</p><p><b>Frankfurt:</b> centro financeiro. <b>Hamburgo:</b> porto. <b>Wolfsburg:</b> Volkswagen. <b>Leipzig:</b> tecnopolo.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "Alemanha hoje: quais são os desafios?",
+  "a": "<p>Perdeu o <b>gás russo</b> com as sanções da guerra na Ucrânia e entrou em crise econômica.</p><p>Transição energética: investe em eólica e solar e desligou as usinas nucleares.</p><p>Crescimento da direita e crise demográfica (fecundidade baixa).</p><p>No governo, depois de Merkel (centro-direita) e Scholz (centro-esquerda), o chanceler desde maio de 2025 é <b>Friedrich Merz</b>, de centro-direita. A apostila ainda fala em Scholz.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "França: o que sustenta a economia?",
+  "a": "<p><b>Energia nuclear:</b> com o urânio do Maciço Central, a maior parte da eletricidade vem das usinas nucleares (a apostila diz 75%).</p><p><b>Agronegócio</b>, o mais desenvolvido da UE: trigo e vinho nos vales do Sena, do Loire, do Garonne e do Ródano.</p><p>Paris e o polo de <b>La Défense</b>; carros (Renault, Peugeot, Citroën), química, cosméticos, perfumes e vinhos.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "França: quais são as tensões sociais e políticas?",
+  "a": "<p><b>Imigração e intolerância:</b> conflitos entre polícia e descendentes de imigrantes (Paris, 2005). A proibição de símbolos religiosos e do véu nas escolas é vista como ataque à liberdade religiosa.</p><p><b>Terrorismo:</b> atentados de 2015 (Charlie Hebdo e Bataclan).</p><p><b>Reformas:</b> a aposentadoria passou de 60 para 62 anos (2010). Macron (desde 2017) enfrentou os <b>coletes amarelos</b> (2018).</p><p><b>Oposição:</b> Mélenchon, na esquerda, e <b>Marine Le Pen</b>, na extrema direita, contra imigrantes e muçulmanos. A direita cresce.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "Reino Unido × Grã-Bretanha × Irlanda: qual é a diferença?",
+  "a": "<p><b>Grã-Bretanha:</b> a ilha, com Inglaterra, Escócia e País de Gales.</p><p><b>Reino Unido:</b> essas três nações mais a <b>Irlanda do Norte</b>. Monarquia parlamentarista, maioria protestante, capital Londres, um grande centro financeiro. Indústria antiga, ligada ao <b>carvão</b> (minas fechadas por <b>Thatcher</b> nos anos 1980), e petróleo e gás do <b>Mar do Norte</b>.</p><p><b>República da Irlanda (Eire):</b> país independente desde o começo dos anos 1920, católico, no sul da ilha da Irlanda. Cresceu com educação e tecnologia e sofreu com a crise de 2008.</p><p class=\"ex\">Exercício 2 da apostila, da FGV (gabarito B).</p>"
+ },
+ {
+  "b": "paises",
+  "q": "Irlanda do Norte (Ulster): quem é maioria, e quem quer o quê?",
+  "a": "<p><b>Maioria protestante</b>, descendente de ingleses e escoceses: quer continuar no Reino Unido.</p><p><b>Minoria católica</b>, nacionalista: quer se unir à República da Irlanda. Os mais radicais formaram o <b>IRA</b>, de luta armada.</p><p>Acordo de paz em 1998; o IRA anunciou o desarmamento em 2005.</p><p class=\"ex\">Exercícios 1 e 3 da apostila (gabarito D nos dois); o 1 é da FGV.</p>"
+ },
+ {
+  "b": "paises",
+  "q": "Itália: por que o norte e o sul são tão diferentes?",
+  "a": "<p><b>Norte</b> (vale do Pó e Alpes; Lombardia, Piemonte): rico e industrial. Milão (finanças), Turim (Fiat), Gênova (porto), Veneza (turismo); hidrelétricas nos Alpes e agropecuária no vale do Pó. Ali atuam grupos de extrema direita e separatistas.</p><p><b>Sul, o Mezzogiorno</b> (Calábria, Sicília, Sardenha): bem mais pobre. O governo criou a <b>Cassa del Mezzogiorno</b> para industrializar (Nápoles, Bari, Tarento, Palermo).</p><p>O Estado pesa na economia desde o pós-guerra (o conglomerado estatal IRI).</p>",
+  "fgv": "2025.1-DIS-CH8 (a) · a banca citou a Itália como desigualdade dentro de um país"
+ },
+ {
+  "b": "paises",
+  "q": "Separatismos na Europa Ocidental: onde, e quem?",
+  "a": "<p><b>Espanha:</b> a <b>Catalunha</b> (plebiscito de 2017 pela independência) e o <b>País Basco</b> (o grupo ETA se dissolveu em 2018).</p><p><b>Bélgica:</b> Flandres (flamengos, norte mais rico) × Valônia (valões, de língua francesa). Bruxelas é a sede da UE e da OTAN.</p><p><b>Reino Unido:</b> a Escócia (rejeitou a independência no referendo de 2014) e a Irlanda do Norte.</p><p class=\"ex\">Exercício 5 da apostila, da FGV (gabarito D: independência da Espanha).</p>"
+ },
+ {
+  "b": "leste",
+  "q": "Pacto de Varsóvia × COMECON",
+  "a": "<p>As duas associações da URSS com o Leste Europeu na Guerra Fria:</p><p><b>Pacto de Varsóvia:</b> aliança <b>militar</b> (o contrário da OTAN).</p><p><b>COMECON:</b> cooperação <b>econômica</b> (o contrário do Plano Marshall).</p>"
+ },
+ {
+  "b": "leste",
+  "q": "Por que o socialismo real entrou em crise?",
+  "a": "<p><b>Burocracia e autoritarismo:</b> sem eleições, partido único, repressão e uma elite de burocratas com privilégios.</p><p><b>Economia planificada e estatal:</b> sem concorrência, as empresas não tinham por que melhorar. Baixa produtividade e atraso tecnológico.</p><p>A URSS era forte em siderurgia, armas, energia nuclear e setor aeroespacial, mas os <b>bens de consumo</b> eram poucos e ruins.</p><p class=\"ex\">Exercício 3 da apostila (gabarito C): Chernobyl (1986) expôs a incompetência soviética na tecnologia nuclear.</p>"
+ },
+ {
+  "b": "leste",
+  "q": "Glasnost × perestroika",
+  "a": "<p>Reformas de <b>Gorbachev</b>, que chegou ao poder em 1985:</p><p><b>Glasnost:</b> abertura <b>política</b> (liberdade para criticar o governo na imprensa).</p><p><b>Perestroika:</b> reestruturação <b>econômica</b> (empresas privadas, tecnologia).</p><p>Vieram junto os acordos com os EUA para reduzir armas nucleares e a retirada de tropas soviéticas do Leste, o que derrubou as ditaduras aliadas.</p>"
+ },
+ {
+  "b": "leste",
+  "q": "Como caíram os regimes socialistas, e como acabou a URSS?",
+  "a": "<p><b>Queda pacífica:</b> Bulgária, Hungria e Tchecoslováquia (<b>Revolução de Veludo</b>). Na Polônia, a oposição cresceu com o sindicato <b>Solidariedade</b>.</p><p><b>Queda violenta:</b> Romênia, contra o ditador Ceaușescu.</p><p><b>URSS:</b> o nacionalismo das repúblicas e um golpe fracassado contra Gorbachev acabaram com a União Soviética em <b>1991</b>, que virou 15 países. Doze fundaram a <b>CEI</b>; os bálticos (Estônia, Letônia, Lituânia) ficaram fora e entraram na UE em 2004.</p>"
+ },
+ {
+  "b": "leste",
+  "q": "Transição para o capitalismo no Leste: o que piorou, e quem se saiu melhor?",
+  "a": "<p><b>Piorou:</b> o Estado cortou saúde e educação e vendeu as estatais. Vieram desemprego, pobreza, criminalidade e caos financeiro. Antigos burocratas viraram empresários, e uma minoria enriqueceu.</p><p><b>Melhor:</b> Polônia, Hungria, Rep. Tcheca e Eslovênia, mais industrializadas e hoje área de influência de Alemanha, França e Itália.</p><p><b>Pior:</b> Romênia, Sérvia e Albânia.</p>"
+ },
+ {
+  "b": "iugo",
+  "q": "Como era a Iugoslávia, e o que a mantinha unida?",
+  "a": "<p>Nasceu depois da 1ª Guerra, de terras dos impérios Austro-Húngaro e Otomano: 6 repúblicas (Sérvia, Montenegro, Croácia, Eslovênia, Bósnia e Macedônia) e 2 regiões autônomas (Voivodina e Kosovo).</p><p>Povos diferentes: <b>eslovenos e croatas</b>, católicos, com alfabeto latino; <b>sérvios, montenegrinos e macedônios</b>, ortodoxos, com alfabeto cirílico; <b>bósnios e albaneses</b>, muçulmanos.</p><p>Quem segurava tudo era <b>Tito</b>, líder socialista que venceu os nazistas e não aceitava ordens da URSS. Ele morreu em 1980, e a crise começou. A <b>Sérvia</b> controlava o exército e a economia.</p>"
+ },
+ {
+  "b": "iugo",
+  "q": "Em que ordem a Iugoslávia se partiu?",
+  "a": "<ul><li><b>Eslovênia:</b> a primeira, e a mais rica.</li><li><b>Croácia:</b> guerra contra o exército iugoslavo, controlado pelos sérvios.</li><li><b>Macedônia:</b> a mais pobre; depois, conflito com a minoria albanesa (2001).</li><li><b>Bósnia-Herzegovina:</b> plebiscito em 1992 e guerra até 1995.</li><li><b>Montenegro:</b> referendo em 2006 (55,4%), para entrar mais fácil na UE. A Sérvia perdeu o acesso ao mar.</li><li><b>Kosovo:</b> independência unilateral em 2008.</li></ul><p class=\"ex\">Exercício 1 da apostila (gabarito B: rivalidades étnicas, religiosas e territoriais).</p>"
+ },
+ {
+  "b": "iugo",
+  "q": "Guerra da Bósnia (1992–95): por que aconteceu, e como terminou?",
+  "a": "<p>Três povos com planos opostos: <b>muçulmanos (44%)</b> e <b>croatas (17%)</b> queriam a independência; os <b>sérvios (31%)</b> queriam ficar com a Iugoslávia.</p><p>Cerca de <b>200 mil mortos</b>, <b>limpeza étnica</b>, campos de concentração, valas comuns e estupros em massa.</p><p><b>Acordo de Dayton (1995):</b> a Bósnia continua um país só, com duas partes: a dos sérvios (49% do território) e a federação muçulmano-croata (51%). Sarajevo fica unida, e os crimes de guerra vão ao Tribunal de Haia.</p><p class=\"ex\">Exercício 2 da apostila (gabarito D: Bálcãs).</p>"
+ },
+ {
+  "b": "iugo",
+  "q": "Kosovo: da guerra de 1999 à independência de 2008",
+  "a": "<p>Província com <b>90% de albaneses</b>. Os separatistas (ELK) foram atacados pelo exército de <b>Milošević</b>.</p><p><b>1999:</b> para evitar outra Bósnia, a <b>OTAN</b> bombardeou a Iugoslávia, e Kosovo passou a ser administrado pela ONU.</p><p><b>2008:</b> independência <b>unilateral</b>. EUA e parte da UE reconheceram; <b>Sérvia e Rússia</b>, não. Países da UE com minorias (Espanha, Grécia) resistiram, com medo do precedente.</p><p>Milošević foi julgado em Haia e morreu preso, em 2006.</p><p class=\"ex\">Exercício 6 da apostila, da FGV (gabarito B: I, II e IV).</p>"
+ },
+ {
+  "b": "russia",
+  "q": "O que é a CEI, e quem ficou dentro?",
+  "a": "<p>Comunidade dos Estados Independentes: criada em 1991 por 12 das 15 ex-repúblicas soviéticas, para manter a cooperação econômica.</p><p>Os <b>bálticos</b> nunca entraram. A <b>Geórgia</b> saiu em 2009, e a <b>Ucrânia</b>, em 2014.</p><p>Ficaram 10: Rússia, Belarus, Moldávia, Armênia, Azerbaijão, Cazaquistão, Uzbequistão, Turcomenistão, Tajiquistão e Quirguistão. Os da Ásia Central são de maioria muçulmana.</p><p>Na parte militar, a Rússia lidera a <b>OTSC</b>, com Belarus, Cazaquistão, Armênia, Quirguistão e Tajiquistão.</p><p class=\"ex\">Exercício 5 da apostila (gabarito B: religião islâmica).</p>"
+ },
+ {
+  "b": "russia",
+  "q": "Geórgia: quais são os conflitos?",
+  "a": "<p>Duas regiões separatistas: a <b>Abkházia</b> e a <b>Ossétia do Sul</b>, que quer se unir à Ossétia do Norte, na Rússia.</p><p>Depois da <b>Revolução das Rosas</b> (2003), o governo se afastou da Rússia e se aproximou dos EUA e da UE.</p><p><b>2008:</b> a Geórgia reprimiu a Ossétia do Sul, a Rússia invadiu e depois reconheceu a \"independência\" das duas regiões. Em 2009, a Geórgia saiu da CEI.</p>"
+ },
+ {
+  "b": "russia",
+  "q": "Armênia × Azerbaijão: por que brigam?",
+  "a": "<p>Pela região de <b>Nagorno-Karabakh</b>, um enclave de maioria armênia dentro do Azerbaijão. A guerra começou em 1988.</p><p>Armênia <b>cristã ortodoxa</b> × Azerbaijão <b>muçulmano</b>, exportador de petróleo e armado com ajuda da Turquia e de Israel.</p><p>Em setembro de <b>2023</b>, uma ofensiva do Azerbaijão tomou a região, e mais de 100 mil armênios fugiram (a apostila diz 2022).</p><p>O petróleo da região está no <b>Mar Cáspio</b>.</p><p class=\"ex\">Exercício 4 da apostila, da FGV (gabarito B: Mar Cáspio).</p>"
+ },
+ {
+  "b": "russia",
+  "q": "Ucrânia: como o país se dividiu até 2014?",
+  "a": "<p><b>Divisão interna:</b> o leste é ortodoxo, fala russo e é ligado à Rússia; o oeste é católico, fala ucraniano e olha para a Europa.</p><p><b>Economia:</b> agropecuária forte e a indústria do <b>Donbass</b> (carvão, ferro, siderurgia). Desmontou o arsenal nuclear herdado da URSS.</p><p><b>2013–14:</b> o governo se aproximou da Rússia, e protestos a favor da UE o derrubaram. A Rússia anexou a <b>Crimeia</b> (maioria russa, base naval de Sevastopol) depois de um referendo, e separatistas pró-Rússia pegaram em armas no leste. A Ucrânia saiu da CEI.</p>"
+ },
+ {
+  "b": "russia",
+  "q": "Guerra Rússia × Ucrânia (2022): as duas versões e as consequências",
+  "a": "<p><b>Versão russa:</b> a OTAN avançou para o leste até os bálticos, e uma Ucrânia na OTAN seria uma ameaça; alega também repressão às minorias russas do Donbass.</p><p><b>Versão ucraniana:</b> imperialismo russo, que anexa territórios para refazer a influência soviética e fere a soberania do país.</p><p><b>2022:</b> invasão; a Rússia ocupou cerca de 20% do território, com destaque para o Donbass. Infraestrutura destruída, milhares de mortos, refugiados (Polônia, Romênia, Alemanha).</p><p><b>No mundo:</b> alta dos alimentos e da energia, e a Alemanha perdeu o gás russo. Há risco de confronto entre potências nucleares.</p>",
+  "fgv": "2023.1-OBJ-MH16 e MH17 · efeitos da guerra nos juros e na crise alimentar"
+ },
+ {
+  "b": "russia",
+  "q": "Mar de Aral: o que aconteceu?",
+  "a": "<p>Os soviéticos desviaram os rios <b>Amu Darya e Syr Darya</b> para irrigar <b>algodão</b> na Ásia Central (Uzbequistão e Turcomenistão).</p><p>O Aral não tem saída para o oceano e dependia desses rios. Secou com a evaporação, ficou <b>salgado</b> e perdeu os peixes; os pescadores quebraram.</p><p>Os agrotóxicos contaminaram água e solo, a irrigação em excesso salinizou a terra, e a região virou <b>deserto</b>: tentaram criar um oásis e criaram um deserto.</p><p class=\"ex\">Exercício 7 da apostila (gabarito A: Uzbequistão, Cazaquistão e algodão).</p>",
+  "fgv": "2025.1-DIS-CH7 · irrigação e agrotóxicos agravam a escassez de água"
+ },
+ {
+  "b": "russia",
+  "q": "Federação Russa: o que é preciso saber da economia?",
+  "a": "<p>O maior país do mundo (17 milhões de km²). Herdou o arsenal nuclear e a cadeira da URSS no <b>Conselho de Segurança da ONU</b>.</p><p>Rica em petróleo, gás, carvão, ferro e urânio. Indústria pesada, bélica e aeroespacial forte; bens de consumo atrasados.</p><p>Indústria em Moscou, no Volga e nos <b>Urais</b> (siderurgia); a <b>Transiberiana</b> (Moscou–Vladivostok) criou os centros mais novos, na Sibéria.</p><p>Depois da crise de 1998, se recuperou exportando <b>petróleo e gás</b>. Virou importadora de alimentos nos anos 1990.</p>"
+ },
+ {
+  "b": "russia",
+  "q": "Kolkhoz × sovkhoz",
+  "a": "<p>As fazendas do tempo soviético:</p><p><b>Kolkhoz:</b> <b>cooperativa</b> dirigida pelos camponeses, com mais autonomia (1/4 da produção, sobretudo na Ucrânia e na Rússia).</p><p><b>Sovkhoz:</b> fazenda <b>estatal</b>, administrada pelo governo, com as maiores áreas e cultivos especializados.</p>"
+ },
+ {
+  "b": "russia",
+  "q": "Por que a Rússia vive uma crise demográfica?",
+  "a": "<p>Natalidade baixa e mortalidade alta: <b>crescimento natural negativo</b>, e a população encolhe.</p><p>A expectativa de vida dos homens caiu (58 anos em 2005).</p><p>Faltam trabalhadores; apesar da xenofobia, o país vai precisar de imigrantes. Uma província chegou a criar um feriado para os casais terem filhos.</p><p class=\"ex\">Exercícios 8 (gabarito A) e 9 (gabarito B) da apostila, da FGV.</p>",
+  "fgv": "2025.1-DIS-CH5 e 2026.1-DIS-CH8 · transição demográfica e envelhecimento"
+ },
+ {
+  "b": "russia",
+  "q": "Chechênia: por que a Rússia fez duas guerras ali?",
+  "a": "<p>República russa do Cáucaso, <b>muçulmana</b> e com <b>petróleo</b>, que declarou independência (o separatismo atinge também o Daguestão).</p><p><b>1994–96:</b> primeira guerra; os russos recuam e a Chechênia ganha autonomia.</p><p><b>1999:</b> <b>Putin</b> lança nova ofensiva e retoma a capital, Grozni. Mais de 100 mil mortos e denúncias de tortura.</p><p>Os rebeldes responderam com terrorismo (escola de Beslan, metrô de Moscou em 2010). A guerra deixou Putin popular.</p>"
+ }
+];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("geo-f2a11.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("geo-f2a11.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("geo-f2a11.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("geo-f2a11.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("geo-f2a11.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
