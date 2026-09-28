@@ -85,6 +85,10 @@ repetem: não recriar, só mudar a existente. A semana fixa hoje:
 As matérias mudam por dia da semana; só Matemática é todo dia. Aula particular nova ou com
 horário mudado entra no Todoist também, sempre.
 
+Quando ela disser os assuntos de Matemática do dia, **edite a tarefa fixa de Matemática**, nunca
+crie outra (pedido dela, 28/09). O assunto vai no topo da descrição, com a data ("**Hoje (28/09):**
+…"), e substitui o do dia anterior; a linha do mínimo de 40 min fica sempre no fim.
+
 ## 🔗 Relacionados
 
 [[Calendario]] · [[Vestibular]]
