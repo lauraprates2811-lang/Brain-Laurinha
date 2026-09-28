@@ -85,9 +85,11 @@ repetem: não recriar, só mudar a existente. A semana fixa hoje:
 As matérias mudam por dia da semana; só Matemática é todo dia. Aula particular nova ou com
 horário mudado entra no Todoist também, sempre.
 
-Quando ela disser os assuntos de Matemática do dia, **edite a tarefa fixa de Matemática**, nunca
-crie outra (pedido dela, 28/09). O assunto vai no topo da descrição, com a data ("**Hoje (28/09):**
-…"), e substitui o do dia anterior; a linha do mínimo de 40 min fica sempre no fim.
+Quando ela disser o assunto de uma matéria que **já está fixa naquele dia** ("em Geografia vou
+estudar Europa"), **edite a tarefa fixa daquela matéria**, nunca crie outra (pedido dela, 28/09,
+repetido duas vezes). O assunto vai no topo da descrição, com a data ("**Hoje (28/09):** …"), e
+substitui o do dia anterior; o que já estava na descrição fica embaixo. Só se a matéria **não**
+estiver fixa naquele dia é que nasce uma tarefa nova, para aquele dia.
 
 ## 🔗 Relacionados
 
