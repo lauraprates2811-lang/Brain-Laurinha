@@ -4,6 +4,7 @@
 > ⭐ = tema que já caiu na FGV, com o id da questão no banco de provas antigas.
 > Versão interativa (cards que viram, marcação sabia/revisar): https://claude.ai/artifact/7QMCoANtdc8oAu7FtzyTs7
 > Abrir no Mac mesmo sem internet: `europa-uniao-europeia-e-leste-europeu.html`, nesta pasta.
+> Para imprimir o mapa mental (2 folhas A4 deitadas): `europa-uniao-europeia-e-leste-europeu-mapa.pdf`, nesta pasta.
 > Os mesmos cards também estão no baralho do trajeto (`flashcards-geografia.md`, 77 a 121), menos os dois
 > da discursiva de 2025.1, que já estavam lá (card 49).
 
