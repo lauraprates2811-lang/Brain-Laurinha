@@ -27,8 +27,8 @@
 
 ## Últimas atualizações
 
-- **2026-09-28** — Tarefas do dia agora no **Todoist** (conectado ao Claude), com a semana fixa de
-  matérias, Matemática 40 min todo dia e as aulas particulares. → [[2026-09-28-brain]]
+- **2026-09-28** — Tarefas do dia agora no **Todoist**, com a semana fixa de matérias e as aulas
+  particulares; o assunto do dia entra na tarefa fixa da matéria, sem criar outra. → [[2026-09-28-brain]]
 - **2026-09-24** — Simulado no formato completo da FGV (26–27/09) foi para o Google Calendar,
   espelhando dias e matérias da prova real de 18–19/10; conflito achado com o intensivo de
   Geografia e o cursinho de sábado. → [[2026-09-24-vestibular]]

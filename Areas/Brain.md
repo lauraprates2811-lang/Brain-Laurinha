@@ -64,7 +64,7 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 | 2026-09-22 | Agentes `/banca` e `/discursiva`, detector de mensagens e gerador de PDF de correção | 9 agentes · 2 entram sozinhos |
 | 2026-09-23 | Faxina dos Downloads: 103 itens na Lixeira, provas e material organizados, atalhos `Materias` e `Provas-FGV` | Downloads com 3 itens · backup virou risco |
 | 2026-09-23 | O `/discursiva` passou a gravar o PDF na pasta da matéria (`questoes-discursivas/`); `discursivas/` fica só com as fichas | Pendência da pasta fechada |
-| 2026-09-28 | Todoist conectado ao Claude; tarefas do dia saem do chat e vão para o app, com a semana fixa de matérias e as aulas particulares | 14 tarefas fixas · ela marca sozinha no celular |
+| 2026-09-28 | Todoist conectado ao Claude; tarefas do dia saem do chat e vão para o app, com a semana fixa de matérias e as aulas particulares. Assunto do dia vai na tarefa fixa da matéria | 14 tarefas fixas · ela marca sozinha no celular |
 
 ## 🔗 Relacionados
 
