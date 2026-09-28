@@ -1,6 +1,6 @@
 {
-  "atualizado": "2026-09-24",
-  "proximo_id": 36,
+  "atualizado": "2026-09-28",
+  "proximo_id": 38,
   "tarefas": [
     {
       "id": 1,
@@ -322,6 +322,24 @@
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-24"
+    },
+    {
+      "id": 36,
+      "titulo": "Testar se o Todoist aparece no Claude do celular (o conector está na conta do Claude do Mac)",
+      "area": "brain",
+      "prazo": "2026-09-30",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-28"
+    },
+    {
+      "id": 37,
+      "titulo": "Dizer quais tarefas atrasadas (23–25/09) já foram feitas e quais passam para o Todoist",
+      "area": "brain",
+      "prazo": "2026-09-29",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-28"
     }
   ]
 }

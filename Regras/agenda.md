@@ -33,6 +33,9 @@ pedido dela, sem confirmação extra (2026-09-24). O `Calendario.md` continua se
 verdade para **prazos e datas sem volta**; o Google Calendar é o dia a dia, e a sincronização
 entre os dois é manual, feita quando a data também é desse tipo (ver "O que entra" acima).
 
+Os eventos dela estão **só** na agenda `lauraprates2811@gmail.com` (passar como `calendarId`). A
+agenda principal do conector é de outra pessoa: nunca procurar coisa da Laura nela (2026-09-28).
+
 ## Depois da meia-noite, o "amanhã" da Laura é o dia que está começando (2026-09-22)
 
 Às ~00:20 de quarta ela perguntou o que estudar "amanhã" e queria dizer quarta: ela dorme às
@@ -53,6 +56,34 @@ arquivo complicam a vida dela.
 o dia e a `area` certa. Quando ela pedir a lista, mostrar direto no chat, com ✅ para feita e ⬜
 para aberta, sem PDF. "Fiz X" fecha a tarefa. O que ficou aberto no fim do dia: perguntar se vai
 para amanhã ou se cancela. Tarefa com hora marcada pode virar evento no Google Calendar dela.
+
+**Substituída em 28/09** pela regra abaixo: as metas do dia agora vão para o Todoist.
+
+## Tarefas do dia moram no Todoist, que ela abre e marca sozinha (2026-09-28)
+
+Ver a lista só perguntando ao Claude não funcionou para ela. Ela queria um app tipo Google Tarefas,
+com aviso no celular. O Google Tarefas não tem conector; o Todoist tem, e foi conectado ao Claude
+(conta `lauraprates2811@gmail.com`).
+
+**A regra:** meta ou tarefa do dia que ela mandar entra **na hora** no Todoist, com data (e hora, se
+tiver). "Fiz X" marca como feita lá. "Quais são minhas tarefas de hoje" se responde lendo o Todoist.
+O `tarefas.json` continua para prazos grandes (vestibular, certificação, SAT) e tarefas do Brain,
+que o `/sono` e o `/plano` leem. Estudos fixos e aulas particulares já estão lá como tarefas que se
+repetem: não recriar, só mudar a existente. A semana fixa hoje:
+
+| Dia | Fixos |
+|---|---|
+| Todo dia | Matemática (mínimo 40 min) |
+| Segunda | Geografia · Atualidades |
+| Terça | Literatura · História Geral · Língua Portuguesa |
+| Quarta | só Matemática · aula particular de Redação 21:30–22:30 |
+| Quinta | Geografia · Matemática do Matias (2h a mais) · aula particular de Matemática 20:30–21:30 |
+| Sexta | Geografia · História do Brasil · Redação |
+| Sábado | Exame Oral · Artes & Questões Contemporâneas |
+| Domingo | Simulado |
+
+As matérias mudam por dia da semana; só Matemática é todo dia. Aula particular nova ou com
+horário mudado entra no Todoist também, sempre.
 
 ## 🔗 Relacionados
 

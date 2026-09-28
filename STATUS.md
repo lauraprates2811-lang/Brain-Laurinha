@@ -23,10 +23,12 @@
 | [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. 13 pastas por matéria (atalho `Downloads/Materias`), cada uma com `questoes-discursivas/`, já com o material que estava solto em Downloads. | 4 professores de Matemática · 19 flashcards de HG | Recuperar Física e confirmar datas dos intensivos |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
-| [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes; o detector aciona `/banca` e `/discursiva`, mas dispara em falso. Downloads limpo; provas e apostilas agora são cópia única, **fora do backup**. | 9 agentes · 3 rotinas · ~130 MB sem backup | Decidir o backup das provas e das apostilas |
+| [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes; o detector aciona `/banca` e `/discursiva`, mas dispara em falso. Tarefas do dia no **Todoist** (desde 28/09). Provas e apostilas são cópia única, **fora do backup**. | 9 agentes · 3 rotinas · 14 tarefas fixas no Todoist · ~130 MB sem backup | Testar o Todoist no Claude do celular · decidir o backup das provas |
 
 ## Últimas atualizações
 
+- **2026-09-28** — Tarefas do dia agora no **Todoist** (conectado ao Claude), com a semana fixa de
+  matérias, Matemática 40 min todo dia e as aulas particulares. → [[2026-09-28-brain]]
 - **2026-09-24** — Simulado no formato completo da FGV (26–27/09) foi para o Google Calendar,
   espelhando dias e matérias da prova real de 18–19/10; conflito achado com o intensivo de
   Geografia e o cursinho de sábado. → [[2026-09-24-vestibular]]
@@ -52,7 +54,6 @@
   gabarito e tema de cada questão. → [[2026-09-22-vestibular]]
 - **2026-09-22** — Brain instalado no MacBook: git com o e-mail real, 3 rotinas no ar, Claude Code
   em linha, backup privado no GitHub e grafo revisado. → [[2026-09-22-brain]]
-- **2026-09-22** — Segundo `/otimizar`: lint rodou, 0 erros e 0 avisos; marca de otimização em dia. Falta commit do ajuste da rotina de segunda. → [[2026-09-22-brain]]
 
 ## 🔗 Relacionados
 

@@ -134,6 +134,20 @@ instância (com sufixo de data); apagar a série inteira usa o `eventId` da reco
 
 ---
 
+## Todoist: recorrência que começa hoje se escreve com a data (2026-09-28)
+
+Ao montar as matérias fixas da semana no Todoist, mudar uma tarefa para `every monday` numa segunda
+jogou a tarefa para a segunda seguinte, e ela sumiu do dia. `every monday, thursday, friday
+starting today` foi pior: apagou a recorrência da tarefa.
+
+**A regra:** para a recorrência valer já hoje, escreva `starting` com a data em inglês
+(`every mon, thu, fri starting sep 28`). Depois de criar ou mudar, confira no retorno que
+`recurring` não voltou `false` e que a data é a esperada. E conector novo (Todoist ou outro) só
+se liga com o navegador logado na **mesma conta do Claude** que o app usa; se aparecer
+"Incompatibilidade de conta", é isso.
+
+---
+
 ## O Brain também roda no celular, pela nuvem, e o GitHub é o ponto de encontro (2026-09-24)
 
 A Laura queria usar o Brain no iPhone sem depender do Mac ligado. O Claude do celular (app do
