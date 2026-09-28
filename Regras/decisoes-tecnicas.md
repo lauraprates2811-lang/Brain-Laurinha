@@ -93,20 +93,18 @@ com as páginas de prova e as correções do `/discursiva` (2026-09-23).
 
 ---
 
-## PDF do cursinho: um arquivo por aula, nunca o caderno inteiro (2026-09-28)
+## Caderno do cursinho não se guarda: na pasta da matéria vão só o mapa e os flashcards (2026-09-28)
 
-A Laura mandou o Caderno 3 de Geografia para fazer o mapa da aula 11 e pediu "matérias com
-matérias": não quer PDF de caderno inteiro, quer cada aula no seu arquivo, na pasta da matéria.
+A Laura mandou o Caderno 3 de Geografia para fazer o mapa e os cards da aula 11 (Europa). O Claude
+guardou o caderno na pasta e depois o cortou em um PDF por aula; ela disse que não precisa:
+"só coloca os flashcards e o mapa mental, não o caderno todo".
 
-**A regra:** quando ela mandar um PDF de caderno ou apostila, o Claude corta **uma aula por arquivo**
-(pelo índice e pelo cabeçalho das páginas, que diz frente e aula) e grava direto em
-`Projetos/Cursinho/<materia>/` com o nome
-`<materia>-frente-<N>-aula-<NN>-caderno-<N>-<assunto>.pdf`
-(ex.: `geografia-frente-2-aula-11-caderno-3-europa-uniao-europeia-e-leste-europeu.pdf`). A frente
-entra no nome porque o mesmo número de aula existe nas duas frentes. Aulas que o cursinho junta
-num bloco só viram um arquivo (`aulas-15-e-16`). Conferir que toda página de conteúdo foi para
-algum arquivo e só então mandar o caderno inteiro para a Lixeira (regra da faxina, abaixo).
-O mapa e os cards da aula levam o mesmo `<assunto>` no nome.
+**A regra:** quando ela mandar um caderno ou apostila para fazer mapa e flashcards, o Claude **só lê**
+o PDF. Não copia, não move e não corta o PDF, nem guarda nenhum pedaço dele no Brain. Na pasta
+`Projetos/Cursinho/<materia>/` entram só o `<assunto>.md` e o `<assunto>.html` (mapa + cards).
+Para achar a aula de novo, o `.md` registra a origem na primeira linha (ex.: "Frente 2, Aula 11,
+Caderno 3, páginas 117 a 146"). Os Cadernos 3 e 4 de Geografia e os 17 PDFs por aula foram para a
+Lixeira em 28/09.
 
 ---
 
