@@ -6,7 +6,8 @@ você subiu e em quais caiu.
 
 ## O que ele sabe sobre você
 Que simulado é **domingo** (manhã e tarde) e que a prova antiga de **segunda** é estudo, não
-teste — ele não trata as duas do mesmo jeito nem cobra tempo na de segunda.
+teste — ele não trata as duas do mesmo jeito. Desde 28/09 as duas têm cronômetro: na de segunda,
+o tempo estourado vira registro, não cobrança.
 
 ## Como usar
 ```

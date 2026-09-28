@@ -71,6 +71,10 @@ Ritmo definido por ela.
 por matéria. A prova antiga de segunda é feita **sem rigor de tempo** — é estudo, não teste.
 Não confundir as duas coisas nem na agenda nem na cobrança.
 
+**Ajuste de 28/09:** a Laura decidiu que, a partir de agora, o tempo importa em tudo. A prova antiga
+de segunda **passa a ter cronômetro**, com o tempo da prova real. Continua sendo estudo: estourar o
+tempo vira registro (causa "tempo" no banco de erros), não cobrança.
+
 ---
 
 ## Quando algo atrasa, alguma coisa sai (2026-09-21)
@@ -121,8 +125,8 @@ redação em 2h, Humanas fica com ~11 min por questão e nenhuma folga.
 
 **A regra:** redação em **1h40**; Humanas **~12 min** por questão; Português **~10 min**; Artes
 **~18 min**; 10 min de folga em cada período. Rascunho de dissertativa é só esquema. Passou de
-15 min numa de Humanas, pula e volta. O relógio se treina no simulado de domingo (a prova antiga
-de segunda continua sem cronômetro), e o tempo-alvo se ajusta pelo tempo real dela.
+15 min numa de Humanas, pula e volta. O relógio se treina no simulado de domingo (e, desde 28/09,
+também na prova antiga de segunda), e o tempo-alvo se ajusta pelo tempo real dela.
 
 ---
 
@@ -169,6 +173,43 @@ ficou de fora porque ela é fluente.
 O progresso dela fica na coleção `progresso`, um documento por card (caixa, próxima data, `errouEm`);
 o `/revisar` pode ler dali.
 Com ela, explicar sempre em poucas linhas: textão a deixa confusa.
+
+---
+
+## Reta final até 19/10: seis focos escolhidos por ela, e o tempo manda em todos (2026-09-28)
+
+A 3 semanas da FGV (Insper 11/10, FGV 18–19/10), a Laura disse o que quer melhorar. Os números são
+do `/banca`, base 2023.1–2026.1 (formato atual da prova).
+
+1. **Tempo, em tudo, a partir de agora.** Objetiva de 18/10: 60 questões em 3h30 (14h30–18h) =
+   **3 min por questão**, 45 min por bloco de 15, 15 min no fim para o cartão. Dissertativa e
+   redação seguem o tempo-alvo acima. Todo `/questoes`, `/discursiva`, `/redacao` e `/simulado`
+   pergunta quanto tempo ela levou e compara com o alvo.
+2. **Matemática: só o que sempre cai.** Cinco temas caíram nas 4 provas e somam **32 de 60
+   questões (53%)**: Razão, proporção e porcentagem (8) · Geometria espacial (7) · Álgebra e
+   equações (6) · Probabilidade (6) · Aritmética e problemas (5). Se sobrar tempo: PA/PG (4) e
+   Geometria plana (4). **Sai:** Geometria analítica (3), Trigonometria (2), Estatística (2),
+   Conjuntos (1). Treino com as questões reais desses cinco temas no banco (`banca.py tema`).
+3. **Português: achar o erro.** Toda correção de objetiva diz **por que cada alternativa errada
+   está errada**, não só qual é a certa. E treino de "caça ao erro" com os desvios que ela mesma
+   comete (banco de erros): concordância com o núcleo do sujeito (3 vezes), regência (2), vírgula
+   entre sujeito e verbo, acento. Reescrita com norma-padrão caiu em 3 das 4 provas (6 questões).
+4. **Dissertativa: gramática e estrutura.** Na grade da FGV um desvio derruba um nível (100 → 75,
+   50 → 25). Estrutura: responder item por item, a 1ª frase já é a resposta, depois a prova no
+   texto. Antes de passar a limpo, 30 s de checagem: concordância, vírgula, regência, acento.
+5. **Literatura: análise de poema.** Poema caiu em 3 das 4 objetivas (9 questões: João Cabral em
+   2023.1 e 2024.1, Drummond em 2025.1). A FGV perguntou: recurso central (repetição), conquista da
+   escola literária, licença poética × norma, o que o poeta **não** diz, vocabulário e formação de
+   palavra no poema. Roteiro de leitura: quem fala → o que se repete → recurso → escola e contexto →
+   cortar alternativa que extrapola o poema.
+6. **Mapas: onde fica cada país e continente.** Mapa como figura apareceu em pelo menos 6 questões
+   em 2023.1–2024.1 (busca pela palavra "mapa" nos PDFs) e em nenhuma de 2026.1; a objetiva de
+   2025.1 é imagem e não deu para contar. Mas localizar país sustenta Globalização (tema nº 1 de
+   Geografia, 9 de 40) e as 3 de Atualidades de cada prova. Treino: continentes, países dos
+   resumos de Atualidades do cursinho (fato 2025–26 só sai dali) e Brasil (regiões, biomas, relevo).
+
+**A regra:** até 19/10, todo agente de estudo encaixa o pedido num desses seis focos e mede o
+tempo. O que não está aqui perde lugar quando o dia apertar — e o `/plano` diz o que sai.
 
 ---
 

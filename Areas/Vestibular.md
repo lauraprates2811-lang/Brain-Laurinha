@@ -88,6 +88,9 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 - A FGV manda. Insper é segunda opção e não deve tomar tempo de preparação específica.
 - Faltar ao oral é o pior erro possível: zera as três portas de uma vez.
 - Toda data de edital entra no `Calendario.md` com a fonte, nunca de memória.
+- Até 19/10, seis focos escolhidos por ela, todos com cronômetro: tempo · Matemática só nos 5 temas
+  que sempre caem · achar o erro em Português · gramática e estrutura na dissertativa · poema ·
+  mapas. Detalhe em `Regras/decisoes-estudo.md`.
 
 ## Projeções
 
