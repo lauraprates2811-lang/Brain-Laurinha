@@ -121,13 +121,19 @@ Tudo é leitura de texto. Os três tipos de questão caem em toda prova:
 
 ## História — 6 objetivas + cerca de 4 discursivas
 
-**Nenhum tema caiu nas 4 provas.** História é espalhada, então o melhor é estudar por período. O que caiu em 3 das 4:
+**Nenhum tema caiu nas 4 provas.** São só uns 10 itens de História por prova, espalhados por 16
+temas, então nenhum tema passa de 1 ou 2 por prova. Mas dá para ver o que cai mais:
 
 ### Quase sempre
-- **Brasil Império:** Constituinte de 1823 e Constituição de 1824 (2023.1, 2025.1, 2026.1 *disc.*) · escravidão no fim do Império (2023.1 *disc.*) · IHGB e a identidade nacional (2026.1)
-- **Brasil Colônia:** período joanino (2024.1) · engenho de açúcar (2025.1) · irmandades negras no Rio colonial (2026.1)
-- **Séc. XX, guerras e totalitarismos:** barbárie anti-iluminista, Hobsbawm (2023.1 *disc.*) · social-democracia alemã e a 1ª Guerra (2024.1) · nazismo e esporte como propaganda (2026.1 *disc.*)
-- **Descolonização e Sul Global:** apartheid (2024.1) · criação de Israel (2025.1) · colônias portuguesas na África (2025.1 *disc.*) · independência da Índia e resistência não violenta (2026.1 *disc.*)
+- **Brasil Império · 5 questões:** Constituinte de 1823 e Constituição de 1824 (2023.1, 2025.1, 2026.1 *disc.*) · escravidão no fim do Império (2023.1 *disc.*) · IHGB e a identidade nacional (2026.1)
+- **Descolonização e Sul Global · 4:** apartheid (2024.1) · criação de Israel (2025.1) · colônias portuguesas na África (2025.1 *disc.*) · independência da Índia e resistência não violenta (2026.1 *disc.*)
+- **Brasil Colônia · 3:** período joanino (2024.1) · engenho de açúcar (2025.1) · irmandades negras no Rio colonial (2026.1)
+- **Séc. XX, guerras e totalitarismos · 3:** barbárie anti-iluminista, Hobsbawm (2023.1 *disc.*) · social-democracia alemã e a 1ª Guerra (2024.1) · nazismo e esporte como propaganda (2026.1 *disc.*)
+
+### Caiu em 2 das 4
+- **3 questões cada:** Idade Moderna · Revoluções dos séc. XVIII–XIX · América colonial e independente · Antiguidade
+- **2 questões cada:** Era Vargas (posse de Getúlio numa charge, 2024.1 · CLT e corporativismo do Estado Novo, 2025.1 *disc.*) · Movimentos sociais e cidadania · Brasil pós-1985 · Ditadura militar
+- **1ª Guerra:** caiu **uma vez só** (2024.1), dentro de Séc. XX
 
 ## Artes e Questões Contemporâneas — 5 discursivas
 
