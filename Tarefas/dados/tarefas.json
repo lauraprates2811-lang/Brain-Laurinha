@@ -1,6 +1,6 @@
 {
-  "atualizado": "2026-09-28",
-  "proximo_id": 38,
+  "atualizado": "2026-09-29",
+  "proximo_id": 39,
   "tarefas": [
     {
       "id": 1,
@@ -340,6 +340,15 @@
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-28"
+    },
+    {
+      "id": 38,
+      "titulo": "Atualidades: confirmar com o professor quem 'inocentou' Dilma das pedaladas (a aula disse TCU; o TCU recomendou rejeitar as contas de 2014)",
+      "area": "cursinho",
+      "prazo": "2026-10-06",
+      "prioridade": "baixa",
+      "status": "aberta",
+      "criado": "2026-09-29"
     }
   ]
 }
