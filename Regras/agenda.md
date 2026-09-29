@@ -91,6 +91,17 @@ repetido duas vezes). O assunto vai no topo da descrição, com a data ("**Hoje 
 substitui o do dia anterior; o que já estava na descrição fica embaixo. Só se a matéria **não**
 estiver fixa naquele dia é que nasce uma tarefa nova, para aquele dia.
 
+## O Todoist só se mexe quando ela pedir (2026-09-29)
+
+No `/save` de 29/09 ela contou o que tinha estudado (Atualidades, e log e porcentagem em Matemática).
+O Claude foi ao Todoist para pôr o assunto na tarefa fixa. Ela cortou: "não precisa mexer no
+todoist, mexe apenas quando eu pedir".
+
+**A regra:** criar, editar ou marcar tarefa no Todoist **só a pedido dela** ("põe no Todoist",
+"marca como feita", "coloca essa meta"). Contar o que estudou, num `/save` ou numa conversa, não é
+pedido. As duas regras acima ("entra na hora", "edite a tarefa fixa") valem quando ela pede para pôr
+no Todoist. Ler o Todoist para entender o dia pode. Na dúvida, pergunte.
+
 ## 🔗 Relacionados
 
 [[Calendario]] · [[Vestibular]]

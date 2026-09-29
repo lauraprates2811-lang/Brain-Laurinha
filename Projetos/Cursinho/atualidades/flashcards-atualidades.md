@@ -138,6 +138,91 @@
 > Islâmico-Khorasan é seu rival.
 > Do seu resumo 06 de Atualidades.
 
+### Guerra da Ucrânia e ONU (2026)
+
+> [!question]- 21. Ucrânia: cessar-fogo × acordo de paz — quem quer o quê e por quê?
+> Zelensky propôs **cessar-fogo** na ONU; a Rússia recusou e exige um **acordo de paz definitivo**.
+> Motivo: uma trégua daria tempo para a Ucrânia se recuperar e rearmar.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 22. Consequências econômicas da guerra da Ucrânia
+> **Mais de 15 mil sanções** desde 2022 (EUA, Reino Unido, UE, Austrália, Canadá, Japão). **Inflação
+> global**: Rússia e Ucrânia exportam trigo, milho, óleo de girassol e fertilizantes; a Rússia,
+> petróleo e gás. Estimativa de 500 a 700 mil mortos.
+> ⭐ 2023.1-OBJ-MH17 (crise alimentar global) e 2023.1-OBJ-MH16 (juros em 2022). Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 23. Riscos nucleares da guerra: quais são os dois eixos?
+> **Acidente:** a usina de Zaporizhzhia, maior da Europa, está ocupada pelo exército russo, sem
+> manutenção. **Armas:** Putin rompeu o New START em 2023 e instalou ogivas nucleares em Belarus.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 24. New START: o que limitava e quantas ogivas cada um tem?
+> Tratado EUA–Rússia de **2010**: no máximo **1.550 ogivas prontas para uso** de cada lado. Arsenal
+> total: Rússia **mais de 6.500**, EUA **mais de 5.500**.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 25. Grupo Wagner, Prigozhin e Africa Corps
+> Wagner era o exército de mercenários ligado ao Kremlin. Prigozhin liderou um motim (jun/2023) e
+> morreu na queda de um avião (ago/2023). O grupo virou **Africa Corps**, sob o Ministério da Defesa
+> russo.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 26. Batalhão de Azov e o argumento da "desnazificação"
+> Milícia ucraniana de extrema direita, com símbolos neonazistas, incorporada à **Guarda Nacional**. É
+> a origem do argumento russo de "desnazificar" a Ucrânia, usado como propaganda (o próprio Zelensky é
+> judeu).
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 27. O que acontece com quem se opõe a Putin?
+> Entre **14 e 17 magnatas** que criticaram a guerra morreram de forma suspeita (quedas,
+> envenenamentos, "suicídios"). **Navalny**, o principal opositor, morreu preso na Sibéria em
+> **2024**.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 28. Terras raras: por que o Brasil perdeu uma carta contra as tarifas dos EUA?
+> A China voltou a vender terras raras aos EUA → Trump tem menos pressa de explorar as da Ucrânia → o
+> Brasil queria usar as suas como **barganha** contra as tarifas americanas → a carta perde força.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 29. Assembleia Geral da ONU de 2026: os destaques
+> **Trump:** fake news (Ucrânia "perto do fim", Ormuz "resolvido"); duas conquistas: petroleiras
+> americanas na China e acordo de proteção militar na Groenlândia. **Netanyahu:** delegações saíram do
+> plenário. **Dilma** (Banco dos BRICS) presente, elogiada por Putin.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+### Política fiscal do Brasil
+
+> [!question]- 30. Resultado primário × resultado nominal
+> **Primário:** receitas − despesas do governo, **sem** os juros da dívida. Superávit = sobra; déficit
+> = falta. **Nominal:** inclui os juros (cai menos em prova).
+> Política fiscal brasileira: 0 questões no banco da FGV (2021–2026). Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 31. Histórico do resultado primário no Brasil
+> **Superávit** de 1998 a 2013; **déficit** de 2014 em diante, exceto 2021 e 2022 (pós-pandemia). Com
+> déficit o governo se endivida a juros mais altos, e a dívida cresce.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 32. LDO, LOA e LRF: o que cada uma faz?
+> Constituição de 1988: **LDO** = regras e limites (meta fiscal); **LOA** = autoriza receitas e
+> despesas do ano. **Lei de Responsabilidade Fiscal (2000)**: obriga o governo a cumprir as metas.
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 33. Pedalada fiscal e o impeachment de Dilma
+> Pedalada = **atrasar o repasse aos bancos públicos** para maquiar o cumprimento da meta. Dilma
+> autorizou o Plano Safra fora do orçamento, sem aval do Congresso; sem maioria, sofreu impeachment em
+> **2016**.
+> ⚠️ A aula disse que depois o TCU a inocentou: a confirmar com o professor. Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 34. PEC do Teto dos Gastos (2016)
+> Governo Temer: o gasto público só pode crescer pela **inflação**. Pisos mantidos: **18% educação** e
+> **15% saúde**. Foi substituída pelo **Arcabouço Fiscal** (2023).
+> Da sua aula de Atualidades (apostila de 29/09).
+
+> [!question]- 35. PEC do Orçamento de Guerra (2020)
+> **Orçamento paralelo** na pandemia, com licença para descumprir a LRF por cerca de 1 ano. Auxílio
+> emergencial: o governo propôs **R$ 200**; chegou a **R$ 600**.
+> Da sua aula de Atualidades (apostila de 29/09).
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

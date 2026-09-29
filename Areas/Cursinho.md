@@ -2,7 +2,8 @@
 
 > **Status:** Rotina cheia, 13 frentes, seg a sáb. **Física atrasada**; intensivos com datas inconsistentes (o de **Geografia é 26/09**).
 > Material em `Projetos/Cursinho/<materia>/`: 13 pastas (atalho `~/Downloads/Materias`), cada uma com `questoes-discursivas/`.
-> História Geral já tem mapa mental e 19 flashcards (`.md` + `.html`).
+> História Geral já tem mapa mental e 19 flashcards (`.md` + `.html`). Atualidades ganhou apostila (Ucrânia, ONU, política fiscal) e está em 35 cards.
+> Atualidades fecha com Arcabouço Fiscal, Reforma Tributária e Selic; depois, curso de revisão de 5 semanas.
 
 ## O que é
 
@@ -44,6 +45,8 @@ passou. `[a confirmar]` com o cursinho.
 - [ ] Confirmar o nome do cursinho e a plataforma onde ficam material e correções `[a confirmar]`
 - [ ] Confirmar se o `cronograma-fgv-direito.html` (é de FGV Direito **Rio**) é dela ou pode sair
 - [ ] Definir como as listas e correções do cursinho entram em `Projetos/Cursinho/` (material de aula já tem lugar: uma pasta por matéria)
+- [ ] Atualidades: confirmar com o professor quem "inocentou" Dilma (a aula disse TCU) e a aula de revisão de 12/10 (a transcrição diz "pós-prova da FGV") `[a confirmar]` — tarefa #38
+- [ ] Curso de revisão de Atualidades: 5 semanas, 5 listas; data de início `[a confirmar]`
 
 ## Regras da área
 
@@ -65,6 +68,7 @@ passou. `[a confirmar]` com o cursinho.
 | 2026-09-23 | As 13 pastas por matéria criadas, com atalho em Downloads; flashcards passam a sair também em `.html` | Material de qualquer matéria tem lugar fixo |
 | 2026-09-23 | 28 arquivos de estudo soltos em Downloads organizados nas matérias | Material num lugar só; PDFs fora do git |
 | 2026-09-23 | Subpasta `questoes-discursivas` em cada matéria, com as páginas de prova e as correções | Correção de Artes já está lá |
+| 2026-09-29 | Aula de Atualidades (Ucrânia, ONU, política fiscal) virou apostila de 5 páginas + 15 cards; Mat: log e porcentagem | Política fiscal: 0 questões no banco; 4 imprecisões da aula marcadas ⚠️ |
 
 ## 🔗 Relacionados
 

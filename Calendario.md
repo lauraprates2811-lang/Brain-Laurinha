@@ -13,6 +13,7 @@
 | **27/09/2026** | dom | 🎯 **Simulado completo no formato FGV — dia 2, online** (mesmos horários e matérias de 19/10). Manhã 08h–11h: Português + Artes e Questões Contemporâneas | Substitui o simulado padrão de domingo só nesse dia |
 | `[a confirmar]` | sáb | Intensivos de LIT, HB e HG — datas inconsistentes no cronograma | Confirmar com o cursinho |
 | **11/10/2026** | dom | 🎯 **PROVA DO INSPER** | Simulados em dia · material e documentos separados |
+| **12/10/2026** | seg | Aula de revisão de Atualidades no cursinho. A transcrição diz "pós-prova da FGV", mas a FGV é 18–19/10 `[a confirmar]` | Últimas aulas vistas: Arcabouço, Reforma Tributária, Selic |
 | **18/10/2026** | dom | 🎯 **FGV 1ª FASE — dia 1**. Manhã 08h–11h30: Redação + Ciências Humanas (discursivas). Tarde 14h30–18h: Matemática, Língua Portuguesa, Inglês, Ciências Humanas (objetivas) | Provas antigas feitas · redação no formato da banca |
 | **19/10/2026** | seg | 🎯 **FGV 1ª FASE — dia 2**. Manhã 08h–11h: Língua Portuguesa + Artes e Questões Contemporâneas (discursivas) | — |
 | **21/10/2026** | qua | FGV publica o gabarito das objetivas | — |

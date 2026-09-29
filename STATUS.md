@@ -20,13 +20,15 @@
 |---|---|---|---|
 | [[Vestibular]] | Inscrita em Insper, FGV e ENEM 2026. Insper em 11/10, FGV em 18–19/10, SAT aberto até 18/12. Banco com todas as questões de 2021.1–2026.1 pronto para guiar o estudo. Tempo por dissertativa definido. Provas numa pasta só (atalho `Provas-FGV`). | 25 dias para a FGV · 423 questões no banco · 1 dissertativa corrigida (25%) | Montar o plano até a FGV com `/plano`, usando os números do `/banca` |
 | [[Certificacao]] | 🔴 Não iniciado. Quatro caminhos possíveis, nenhum confirmado. Laura faz 18 anos em 28/11, o que aperta a janela. | 115 dias para 15/01/2027 | Ligar para a secretaria da EABH e perguntar sobre conclusão antecipada |
-| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. 13 pastas por matéria (atalho `Downloads/Materias`), cada uma com `questoes-discursivas/`, já com o material que estava solto em Downloads. | 4 professores de Matemática · 19 flashcards de HG | Recuperar Física e confirmar datas dos intensivos |
+| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades ganhou apostila (Ucrânia + política fiscal); faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas. | 4 professores de Matemática · 19 flashcards de HG · 35 cards de Atualidades | Recuperar Física · confirmar intensivos e a aula de revisão de 12/10 |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
 | [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes; o detector aciona `/banca` e `/discursiva`, mas dispara em falso. Tarefas do dia no **Todoist** (desde 28/09). Provas e apostilas são cópia única, **fora do backup**. | 9 agentes · 3 rotinas · 14 tarefas fixas no Todoist · ~130 MB sem backup | Testar o Todoist no Claude do celular · decidir o backup das provas |
 
 ## Últimas atualizações
 
+- **2026-09-29** — Aula de Atualidades (Ucrânia, ONU, política fiscal) virou apostila de 5 págs + 15 cards;
+  política fiscal tem 0 questões no banco. Mat: logaritmo e porcentagem. → [[2026-09-29-cursinho]]
 - **2026-09-28** — Tarefas do dia agora no **Todoist**, com a semana fixa de matérias e as aulas
   particulares; o assunto do dia entra na tarefa fixa da matéria, sem criar outra. → [[2026-09-28-brain]]
 - **2026-09-24** — Simulado no formato completo da FGV (26–27/09) foi para o Google Calendar,
@@ -52,8 +54,6 @@
   `/discursiva` (correção pela grade FGV, em PDF). → [[2026-09-22-brain]]
 - **2026-09-22** — Banco das provas antigas da FGV Direito SP: 423 itens de 2021.1 a 2026.1, com
   gabarito e tema de cada questão. → [[2026-09-22-vestibular]]
-- **2026-09-22** — Brain instalado no MacBook: git com o e-mail real, 3 rotinas no ar, Claude Code
-  em linha, backup privado no GitHub e grafo revisado. → [[2026-09-22-brain]]
 
 ## 🔗 Relacionados
 

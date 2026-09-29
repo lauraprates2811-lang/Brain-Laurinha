@@ -25,6 +25,8 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
   - `caderno-1-literatura-fgv.pdf` · `apostila-movimentos-literarios.pdf` · `exercicios-movimentos-literarios-fgv.pdf` · `apostila-bras-cubas-e-parnasianismo.pdf`
 - `historia-do-brasil/` — `aula-10-crise-da-republica-oligarquica-e-era-vargas-1.pdf`
 - `atualidades/` — resumos 06 (Oriente Médio), 07 (Bálcãs) e 08 (Venezuela e Cuba), do Alex
+  - [[apostila-ucrania-onu-e-politica-fiscal]] — apostila de teoria da aula de 28/09 (Ucrânia, ONU,
+    terras raras, política fiscal), também em `.pdf`; 15 cards no baralho do trajeto
 - `geografia/` — `frente-1-aulas-02-03-espaco-industrial-no-brasil.pdf`, do Renato. Os cadernos 3 e 4
   foram para a Lixeira em 28/09: caderno não se guarda, só o mapa e os cards.
   - [[recursos-hidricos]] — Frente 1, aula 12: mapa mental e 26 flashcards (também em `.html` e na
