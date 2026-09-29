@@ -108,18 +108,21 @@ Com a rotina nova ela pediu para não esquecer se cada estudo é de dia, à noit
 marcou com ☀️ e 🌙 no título, e ela pediu para tirar os emojis.
 
 **A regra:** tarefa de estudo com período fixo começa com `Dia:` ou `Noite:` no título, sem emoji.
-A tarefa de Matemática mantém o nome, e o período de cada data vai na descrição, no plano
-("30/09 (qua) · assunto · **dia e noite**"). As obras, antes da aula, usam `Manhã:` (29/09).
+As obras, antes da aula, usam `Manhã:` com o tema do dia ("Manhã: Obras e Artes — Teatro"). A
+Matemática leva o assunto e o período no título ("Matemática: Probabilidade · dia e noite"), desde
+que a rotina virou uma tarefa por dia (29/09, regra abaixo).
 
-## Tarefa recorrente aparece só na próxima data (2026-09-29)
+## Até a FGV, a rotina é uma tarefa por dia, sem recorrência (2026-09-29)
 
-Ela abriu o "Em breve" do Todoist e achou que a rotina só ia até 06/10 e que Obras e Artes só
-estava em 30/09. Toda tarefa fixa é recorrente, e o Todoist mostra cada uma só na próxima data.
-Quando ela marca, a tarefa pula para a data seguinte.
+Ela abriu o "Em breve" do Todoist e viu a rotina "desfalcada" a partir de 02/10. Tarefa que se repete
+aparece só na próxima data, e ela quer ver todos os dias com antecedência. As 17 tarefas
+recorrentes viraram a primeira data de cada uma, sem apagar nada, e o resto foi criado dia a dia
+até 19/10: 79 tarefas, com as provas do Insper (11/10) e da FGV (18 e 19/10).
 
-**A regra:** quando ela achar que falta dia no Todoist, confira o campo de recorrência antes de
-qualquer coisa e explique. Nunca crie cópia para as datas futuras, porque isso duplica a rotina.
-Tarefa que não é marcada fica atrasada e não avança.
+**A regra:** a rotina de estudo no Todoist é **uma tarefa por dia, com data fixa**, nunca
+recorrente. Mudar a rotina é mexer nas tarefas de cada dia. Depois de 19/10 não há rotina: montar a
+próxima do mesmo jeito e perguntar até que data. Se ela disser que "falta dia", confira as datas
+antes de criar qualquer coisa. As aulas particulares ganham o lembrete na hora sozinhas.
 
 ## 🔗 Relacionados
 
