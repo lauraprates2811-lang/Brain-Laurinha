@@ -61,6 +61,8 @@ Não existe janela de preparação depois do aviso.
 (sábado 07:00). E a **trajetória biográfica** dela — que o edital diz avaliar literalmente —
 precisa estar escrita e destrinchada em `Projetos/Vestibular/oral/` **antes de 16/11**.
 
+**Substituída em 29/09:** ela decidiu treinar o oral só se passar na 1ª fase (regra de 29/09, abaixo).
+
 ---
 
 ## Domingo é simulado, segunda é prova antiga da FGV (2026-09-21)
@@ -210,6 +212,26 @@ do `/banca`, base 2023.1–2026.1 (formato atual da prova).
 
 **A regra:** até 19/10, todo agente de estudo encaixa o pedido num desses seis focos e mede o
 tempo. O que não está aqui perde lugar quando o dia apertar — e o `/plano` diz o que sai.
+
+---
+
+## Reta final: Matemática por data, rotina de dia e à noite, e o oral só depois de 16/11 (2026-09-29)
+
+A Laura montou o plano de Matemática até a FGV e a rotina da semana, e o Claude revisou com o
+`/banca` (60 questões de Matemática, 2023.1–2026.1). Faltava Aritmética e problemas, que caiu nas 4
+provas (5 questões): ela pôs em 13/10. Manteve PA e PG com dois dias (4 questões, 3 de 4 provas) e
+Equações com um (6 questões, 4 de 4). Depois mexeu na rotina e decidiu o resto.
+
+**A regra:**
+- **Matemática tem assunto e período por data** até 18/10, na descrição da tarefa de Matemática do
+  Todoist e na tabela `Projetos/Vestibular/semanas-ate-a-fgv.pdf`. Sexta é só de dia, 40 min.
+- **De dia é questão, à noite é conteúdo.** A grade da semana está em `Regras/agenda.md`.
+- **Redação:** quinta de manhã, na escola, e no simulado de domingo. Não é antes da aula.
+- **Obras:** saem do sábado e vão para as manhãs antes da aula, de segunda a sexta, de 30/09 a 16/10.
+  A proposta de 13 manhãs (música primeiro, porque caiu nas 4 provas) espera o ok dela.
+- **Exame Oral:** ela decidiu treinar **só se passar na 1ª fase** (resultado 16/11, após 14h). Isso
+  substitui a regra de 21/09. Não reabrir a decisão; o lembrete de 16/11 no Todoist traz as datas
+  do oral (18/11 a 01/12, sem remarcação).
 
 ---
 

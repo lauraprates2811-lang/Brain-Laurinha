@@ -1,8 +1,8 @@
 # Brain
 
-> **Status:** No MacBook, com backup no GitHub e as três rotinas no ar. Tarefas do dia agora moram no
-> **Todoist** (conectado em 28/09), com 14 tarefas fixas por dia da semana. Falta testar no celular e
-> decidir o backup das provas e apostilas, que estão **fora do backup**.
+> **Status:** No MacBook, com backup no GitHub e as três rotinas no ar. Tarefas do dia no **Todoist**, com a
+> rotina nova de 29/09 (título com "Dia:" ou "Noite:", sem emoji). Na rede da escola, GitHub, claude.ai
+> e Todoist não conectam. Provas e apostilas seguem **fora do backup**.
 
 ## O que é
 
@@ -44,6 +44,8 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 - [x] Dar ok (ou mudar) a pasta nova `Projetos/Vestibular/discursivas/` — fica só com as fichas; os PDFs vão para `questoes-discursivas/` de cada matéria (23/09)
 - [ ] Testar se o Todoist aparece no Claude do celular (o conector está na conta do Claude do Mac)
 - [ ] Dizer quais tarefas atrasadas do Brain (23–25/09) já foram feitas e quais passam para o Todoist
+- [ ] Conferir, fora da rede da escola, se o auto-save subiu para o GitHub (em 29/09 o Mac ficou 2 commits à frente)
+- [ ] Tarefa do Todoist com ano errado (27/09/2027, "finalizar as questões da aula de atu"): perguntar se apaga ou corrige
 - [ ] **Decidir o backup** das provas (~130 MB) e das apostilas do cursinho: desde 23/09 são a única cópia
 
 ## Regras da área
@@ -59,13 +61,13 @@ mudanças **no Brain**, separadas das mudanças na vida da Laura.
 
 | Data | O que aconteceu | Resultado |
 |---|---|---|
-| 2026-09-21 | Brain criado do zero a partir da entrevista e do edital da FGV | Estrutura no ar |
 | 2026-09-22 | Instalação no MacBook da Laura: git, rotinas, CLI e backup no GitHub | Brain operando sozinho |
 | 2026-09-22 | Agentes `/banca` e `/discursiva`, detector de mensagens e gerador de PDF de correção | 9 agentes · 2 entram sozinhos |
 | 2026-09-23 | Faxina dos Downloads: 103 itens na Lixeira, provas e material organizados, atalhos `Materias` e `Provas-FGV` | Downloads com 3 itens · backup virou risco |
 | 2026-09-23 | O `/discursiva` passou a gravar o PDF na pasta da matéria (`questoes-discursivas/`); `discursivas/` fica só com as fichas | Pendência da pasta fechada |
 | 2026-09-28 | Todoist conectado ao Claude; tarefas do dia saem do chat e vão para o app, com a semana fixa de matérias e as aulas particulares. Assunto do dia vai na tarefa fixa da matéria | 14 tarefas fixas · ela marca sozinha no celular |
+| 2026-09-29 | Todoist refeito com a rotina nova ("Dia:"/"Noite:" no título, sem emoji, 4 tarefas novas, oral virou lembrete em 16/11); tabela das semanas em PDF (Chrome) e `.docx` montado sem biblioteca | 17 tarefas fixas · rede da escola bloqueia os conectores |
 
 ## 🔗 Relacionados
 
-[[STATUS]] · [[Calendario]] · [[Laura]] · [[Brain-projeto]]
+[[STATUS]] · [[Calendario]] · [[Laura]] · [[Brain-projeto]] · [[Brain-historico]]

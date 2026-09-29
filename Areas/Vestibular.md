@@ -1,8 +1,8 @@
 # Vestibular
 
-> **Status:** Inscrita e confirmada no Insper (11/10), na FGV (18–19/10) e no ENEM 2026.
-> FGV é prioridade absoluta. Faltam **25 dias** para a 1ª fase. A 2ª fase é **Exame Oral** — peso 2,
-> elimina, e só pode ser feito uma vez. Banco 2021.1–2026.1 (423 itens) e provas numa pasta só; tempo por dissertativa definido.
+> **Status:** Inscrita no Insper (11/10), na FGV (18–19/10) e no ENEM 2026. FGV é prioridade absoluta: faltam **19 dias**.
+> Plano até a FGV montado: Matemática por data e rotina de dia e à noite no Todoist, tabela em `semanas-ate-a-fgv.pdf`.
+> Obras nas manhãs antes da aula esperando o ok. Oral (peso 2, elimina): ela treina só se passar na 1ª fase (16/11).
 
 ## O que é
 
@@ -68,13 +68,14 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 ## Pendências
 
-- [ ] Montar o plano até a FGV (`/plano`), usando os números do `/banca`
+- [x] Montar o plano até a FGV, usando os números do `/banca` — Matemática por data e rotina semanal no Todoist (29/09)
+- [ ] Aprovar o plano das obras nas manhãs antes da aula (13 manhãs, 30/09–16/10) e pôr no Todoist
 - [ ] Cronometrar as dissertativas nos simulados de 27/09 e 04/10 e ajustar o tempo-alvo
 - [ ] Resolver o conflito de horário do sábado 26/09: o simulado completo da FGV (08h–11h30 e
       14h30–18h) bate com o intensivo de Geografia, o cursinho de sábado (Oral, Artes & QC) e o
       aniversário de 18 anos da Julia (17h–22h)
 - [ ] Responder as dissertativas 2022.1-AR12 (antropofagia hoje) e 2023.1-CH4 (Hobsbawm) e corrigir pelo `/discursiva` — a AR11 foi feita em 23/09 (25%)
-- [ ] Começar o treino do Exame Oral **agora**, não em novembro (`/oral`)
+- [ ] Se passar na 1ª fase (16/11): começar o treino do Exame Oral (`/oral`) — decisão dela em 29/09
 - [ ] Destrinchar a trajetória biográfica em `Projetos/Vestibular/oral/` — é avaliada literalmente
 - [ ] Confirmar datas do ENEM 2026 no site do INEP `[a confirmar]`
 - [ ] Confirmar data e forma do resultado do Insper `[a confirmar]`
@@ -91,6 +92,8 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 - Até 19/10, seis focos escolhidos por ela, todos com cronômetro: tempo · Matemática só nos 5 temas
   que sempre caem · achar o erro em Português · gramática e estrutura na dissertativa · poema ·
   mapas. Detalhe em `Regras/decisoes-estudo.md`.
+- Matemática tem assunto e período por data até 18/10; a semana tem questões de dia e conteúdo à
+  noite; o oral espera o resultado de 16/11. Detalhe em `Regras/decisoes-estudo.md` (29/09).
 
 ## Projeções
 
@@ -100,13 +103,13 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 | Data | O que aconteceu | Resultado |
 |---|---|---|
-| 2026-09-21 | Datas, vagas e regras extraídas do edital oficial da FGV; descoberto que o Vestibular Regular também tem Exame Oral | Frente mapeada · oral virou prioridade |
 | 2026-09-22 | 6 provas antigas (2021.1–2026.1) viraram banco de 423 questões classificadas, com gabarito | `/banca` e `/discursiva` no ar |
 | 2026-09-23 | Tempo por dissertativa calculado pelo edital e pelo formato das 4 últimas provas | 12 min Humanas · 10 Português · 18 Artes · redação 1h40 |
 | 2026-09-23 | Dissertativas pedidas sobre Crise de 29 e Semana de 22; provas antigas reunidas com atalho | 1929 nunca caiu · modernismo cai em Artes · atalho `Provas-FGV` |
 | 2026-09-23 | 1ª dissertativa corrigida pela grade oficial: Artes 2022.1, pergunta 11 | 0,5 / 2,0 (25%) · leitura anacrônica + ortografia |
 | 2026-09-24 | Simulado no formato completo da FGV (26–27/09) agendado no Google Calendar, espelhando dias e matérias de 18–19/10; simulado padrão de domingo cancelado só em 27/09 | Agenda alinhada com a prova real · conflito de horário em 26/09 achado |
+| 2026-09-29 | Plano até a FGV: Matemática por data (dia/noite), rotina semanal nova no Todoist, tabela das semanas em PDF e Word; obras nas manhãs propostas; oral adiado para depois de 16/11 | Aritmética entrou em 13/10 · 13 manhãs de obras a aprovar |
 
 ## 🔗 Relacionados
 
-[[Calendario]] · [[Certificacao]] · [[Cursinho]] · [[Laura]] · [[Vestibular-projeto]]
+[[Calendario]] · [[Certificacao]] · [[Cursinho]] · [[Laura]] · [[Vestibular-projeto]] · [[Vestibular-historico]]

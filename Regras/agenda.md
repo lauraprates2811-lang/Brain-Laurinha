@@ -69,18 +69,18 @@ com aviso no celular. O Google Tarefas não tem conector; o Todoist tem, e foi c
 tiver). "Fiz X" marca como feita lá. "Quais são minhas tarefas de hoje" se responde lendo o Todoist.
 O `tarefas.json` continua para prazos grandes (vestibular, certificação, SAT) e tarefas do Brain,
 que o `/sono` e o `/plano` leem. Estudos fixos e aulas particulares já estão lá como tarefas que se
-repetem: não recriar, só mudar a existente. A semana fixa hoje:
+repetem: não recriar, só mudar a existente. A semana fixa hoje (rotina nova de 29/09):
 
-| Dia | Fixos |
-|---|---|
-| Todo dia | Matemática (mínimo 40 min) |
-| Segunda | Geografia · Atualidades |
-| Terça | Literatura · História Geral · Língua Portuguesa |
-| Quarta | só Matemática · aula particular de Redação 21:30–22:30 |
-| Quinta | Geografia · Matemática do Matias (2h a mais) · aula particular de Matemática 20:30–21:30 |
-| Sexta | Geografia · História do Brasil · Redação |
-| Sábado | Exame Oral · Artes & Questões Contemporâneas |
-| Domingo | Simulado |
+| Dia | De dia | À noite |
+|---|---|---|
+| Todo dia | Matemática (mínimo 40 min), com o plano por data na descrição da tarefa | |
+| Segunda | — | Atualidades · Língua Portuguesa (o que mais cai ou dificuldade) |
+| Terça | Revisão de Atualidades (só questões) | História Geral · Língua Portuguesa · Literatura (aula + o que mais cai / dissertativas) |
+| Quarta | Revisão de HG + LP + Literatura (só questões) | HG ou HB · aula particular de Redação 21:30–22:30 |
+| Quinta | Redação (de manhã, na escola) · Revisão de HG e/ou HB | Geografia · Matemática do Matias (2h a mais) · aula particular de Matemática 20:30–21:30 |
+| Sexta | Matemática, só 40 min | Geografia · História do Brasil |
+| Sábado | Obras (todas) e um pouco de Matemática — saem do sábado quando ela aprovar as manhãs de obras | |
+| Domingo | Simulado, com Redação | |
 
 As matérias mudam por dia da semana; só Matemática é todo dia. Aula particular nova ou com
 horário mudado entra no Todoist também, sempre.
@@ -101,6 +101,15 @@ todoist, mexe apenas quando eu pedir".
 "marca como feita", "coloca essa meta"). Contar o que estudou, num `/save` ou numa conversa, não é
 pedido. As duas regras acima ("entra na hora", "edite a tarefa fixa") valem quando ela pede para pôr
 no Todoist. Ler o Todoist para entender o dia pode. Na dúvida, pergunte.
+
+## No Todoist, "Dia:" e "Noite:" no título, e nada de emoji (2026-09-29)
+
+Com a rotina nova ela pediu para não esquecer se cada estudo é de dia, à noite ou os dois. O Claude
+marcou com ☀️ e 🌙 no título, e ela pediu para tirar os emojis.
+
+**A regra:** tarefa de estudo com período fixo começa com `Dia:` ou `Noite:` no título, sem emoji.
+A tarefa de Matemática mantém o nome, e o período de cada data vai na descrição, no plano
+("30/09 (qua) · assunto · **dia e noite**").
 
 ## 🔗 Relacionados
 

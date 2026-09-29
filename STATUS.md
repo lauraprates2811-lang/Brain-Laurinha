@@ -1,6 +1,6 @@
 # STATUS — painel da Laura
 
-> **Hoje:** 2026-09-22 (terça) · **Insper em 19 dias** · **FGV em 26 dias**
+> **Hoje:** 2026-09-29 (terça) · **Insper em 12 dias** · **FGV em 19 dias**
 > Última otimização: 2026-09-22
 
 ## Alertas críticos
@@ -9,7 +9,8 @@
    ensino médio para efetivar a matrícula e a EABH só forma em meados de 2027. Sem resolver,
    aprovação não vira vaga. Nada foi investigado ainda. → [[Certificacao]]
 2. 🟠 **Exame Oral da FGV: peso 2, elimina com ≤ 3,0, e só se faz UMA vez** nas três portas.
-   Faltar ou furar o agendamento zera tudo. Treino começa agora, não em novembro. → [[Vestibular]]
+   Faltar ou furar o agendamento zera tudo. Decisão dela (29/09): treinar só se passar na 1ª fase
+   (resultado 16/11); o oral pode ser já em 18/11. → [[Vestibular]]
 3. 🟡 **Física está atrasada** — o cronograma marca "recuperar de segunda" na sexta. → [[Cursinho]]
 4. 🟡 **Intensivo de Geografia neste sábado, 26/09.** As datas dos outros intensivos estão
    inconsistentes e precisam ser confirmadas com o cursinho. → [[Cursinho]]
@@ -18,15 +19,19 @@
 
 | Área | Status | Número que importa | Próximo passo |
 |---|---|---|---|
-| [[Vestibular]] | Inscrita em Insper, FGV e ENEM 2026. Insper em 11/10, FGV em 18–19/10, SAT aberto até 18/12. Banco com todas as questões de 2021.1–2026.1 pronto para guiar o estudo. Tempo por dissertativa definido. Provas numa pasta só (atalho `Provas-FGV`). | 25 dias para a FGV · 423 questões no banco · 1 dissertativa corrigida (25%) | Montar o plano até a FGV com `/plano`, usando os números do `/banca` |
+| [[Vestibular]] | Insper 11/10, FGV 18–19/10, SAT até 18/12. Plano até a FGV montado: Matemática por data e rotina de dia e à noite no Todoist, tabela em PDF e Word. Obras nas manhãs antes da aula (30/09–16/10) esperando o ok. Oral só se passar (16/11). | 19 dias para a FGV · 423 questões no banco · 46 obras em 13 manhãs | Aprovar o plano das obras e pôr no Todoist |
 | [[Certificacao]] | 🔴 Não iniciado. Quatro caminhos possíveis, nenhum confirmado. Laura faz 18 anos em 28/11, o que aperta a janela. | 115 dias para 15/01/2027 | Ligar para a secretaria da EABH e perguntar sobre conclusão antecipada |
 | [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades ganhou apostila (Ucrânia + política fiscal); faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas. | 4 professores de Matemática · 19 flashcards de HG · 35 cards de Atualidades | Recuperar Física · confirmar intensivos e a aula de revisão de 12/10 |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
-| [[Brain]] | No MacBook, com backup no GitHub e 3 rotinas no ar. 9 agentes; o detector aciona `/banca` e `/discursiva`, mas dispara em falso. Tarefas do dia no **Todoist** (desde 28/09). Provas e apostilas são cópia única, **fora do backup**. | 9 agentes · 3 rotinas · 14 tarefas fixas no Todoist · ~130 MB sem backup | Testar o Todoist no Claude do celular · decidir o backup das provas |
+| [[Brain]] | No MacBook, backup no GitHub, 3 rotinas e 9 agentes. **Todoist** com a rotina nova: título começa com "Dia:" ou "Noite:", sem emoji. A rede da escola bloqueia GitHub, claude.ai e Todoist. Provas e apostilas **fora do backup**. | 9 agentes · 3 rotinas · 17 tarefas fixas no Todoist · ~130 MB sem backup | Conferir o push fora da escola · decidir o backup das provas |
 
 ## Últimas atualizações
 
+- **2026-09-29** — Plano até a FGV: Matemática por data (Aritmética em 13/10, sexta só 40 min de dia),
+  rotina de dia e à noite, tabela em PDF e Word. Oral só se passar; obras nas manhãs a aprovar. → [[2026-09-29-vestibular]]
+- **2026-09-29** — Todoist refeito com a rotina nova ("Dia:"/"Noite:", sem emoji, 4 tarefas novas);
+  a rede da escola bloqueia GitHub, claude.ai e Todoist. → [[2026-09-29-brain]]
 - **2026-09-29** — Aula de Atualidades (Ucrânia, ONU, política fiscal) virou apostila de 5 págs + 15 cards;
   política fiscal tem 0 questões no banco. Mat: logaritmo e porcentagem. → [[2026-09-29-cursinho]]
 - **2026-09-28** — Tarefas do dia agora no **Todoist**, com a semana fixa de matérias e as aulas
@@ -50,10 +55,6 @@
   flashcards também em `.html`. → [[2026-09-23-cursinho]]
 - **2026-09-22** — História Geral (Crise de 29 ao totalitarismo) virou mapa mental + 19 flashcards;
   material do cursinho agora fica numa pasta por matéria. Poema pré-modernista: 0 no banco. → [[2026-09-22-cursinho]]
-- **2026-09-22** — Dois agentes novos que entram sozinhos: `/banca` (estatística das provas) e
-  `/discursiva` (correção pela grade FGV, em PDF). → [[2026-09-22-brain]]
-- **2026-09-22** — Banco das provas antigas da FGV Direito SP: 423 itens de 2021.1 a 2026.1, com
-  gabarito e tema de cada questão. → [[2026-09-22-vestibular]]
 
 ## 🔗 Relacionados
 

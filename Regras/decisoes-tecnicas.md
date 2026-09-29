@@ -146,6 +146,10 @@ starting today` foi pior: apagou a recorrência da tarefa.
 se liga com o navegador logado na **mesma conta do Claude** que o app usa; se aparecer
 "Incompatibilidade de conta", é isso.
 
+**Atualização (29/09):** `every mon, tue starting sep 29` também apagou a recorrência, e `every thursday`
+numa terça pulou a quinta seguinte. Mais seguro: mudar com `every ...` sem `starting` e, se a data sair
+errada, corrigir com `reschedule-tasks`, que muda só a data e mantém a recorrência.
+
 ---
 
 ## O Brain também roda no celular, pela nuvem, e o GitHub é o ponto de encontro (2026-09-24)
@@ -163,6 +167,32 @@ resolvido no automático: o hook avisa e o Claude do Mac resolve à mão. Duas c
   (`Regras/`), nunca só na memória local.
 - **Na nuvem não existem os PDFs das provas antigas** (ficam fora do git). O `/banca` funciona pelos
   CSVs do banco; abrir a prova original só no Mac.
+
+---
+
+## Na rede da escola, GitHub, claude.ai e os conectores não funcionam (2026-09-29)
+
+Em 29/09, no Mac na escola, o Todoist falhou cinco vezes seguidas (`ERR_CONNECTION_RESET`). No
+teste, google.com abria; claude.ai, mcp.todoist.com e github.com não. O aviso de "conflito" do
+auto-save na abertura da sessão era a mesma coisa: `git fetch` recusado na porta 22, sem conflito
+de verdade. Minutos depois, quando ela pediu para tentar de novo, o Todoist funcionou.
+
+**A regra:** conector ou auto-save falhando → testar a rede antes de mexer em qualquer coisa
+(`curl` em claude.ai e github.com). Se for a rede, avisar a Laura e tentar de novo depois ou em
+outra rede. Nunca rodar `git pull --rebase` para "resolver conflito" sem ver o conflito.
+
+---
+
+## Google Docs: o conector do Drive não cria arquivo, então vai um .docx (2026-09-29)
+
+Ela pediu a tabela das semanas no Google Docs para editar. O conector do Google Drive só renomeia,
+move, compartilha e manda para a lixeira, e está na conta do Claude do Mac, não na dela. No Mac não
+há Node, python-docx, LibreOffice nem Poppler.
+
+**A regra:** para ela editar no Google Docs, gerar um `.docx` (dá para montar só com `zipfile`, sem
+biblioteca) e mandar com o passo a passo: drive.google.com → Novo → Upload de arquivo → Abrir com
+Documentos Google → Arquivo → Salvar como Documentos Google. Subir pelo Chrome dela só se ela pedir.
+PDF sai do Chrome em modo headless e se confere com `fitz`.
 
 ## 🔗 Relacionados
 

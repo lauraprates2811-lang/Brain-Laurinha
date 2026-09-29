@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-09-29",
-  "proximo_id": 39,
+  "proximo_id": 41,
   "tarefas": [
     {
       "id": 1,
@@ -160,9 +160,9 @@
     },
     {
       "id": 18,
-      "titulo": "Começar o treino semanal de Exame Oral, ancorado na aula do Júlio (sábado 07:00)",
+      "titulo": "Se passar na 1ª fase (resultado 16/11): começar o treino do Exame Oral — decisão dela em 29/09: não treinar antes",
       "area": "vestibular",
-      "prazo": "2026-09-26",
+      "prazo": "2026-11-16",
       "prioridade": "alta",
       "status": "aberta",
       "criado": "2026-09-21"
@@ -347,6 +347,24 @@
       "area": "cursinho",
       "prazo": "2026-10-06",
       "prioridade": "baixa",
+      "status": "aberta",
+      "criado": "2026-09-29"
+    },
+    {
+      "id": 39,
+      "titulo": "Aprovar o plano das obras nas manhãs antes da aula (13 manhãs, 30/09–16/10) e pôr no Todoist",
+      "area": "vestibular",
+      "prazo": "2026-09-30",
+      "prioridade": "alta",
+      "status": "aberta",
+      "criado": "2026-09-29"
+    },
+    {
+      "id": 40,
+      "titulo": "Conferir, fora da rede da escola, se o auto-save subiu para o GitHub (29/09: Mac 2 commits à frente, rede bloqueando)",
+      "area": "brain",
+      "prazo": "2026-09-30",
+      "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-29"
     }
