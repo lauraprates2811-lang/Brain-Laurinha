@@ -103,6 +103,49 @@ e tirar isso do sábado.
 - O ok dela na tabela das 13 manhãs. Com o ok, a tarefa de sábado "Obras — todas" vira "Manhã:
   Obras e Artes" (seg a sex até 16/10) no Todoist.
 
+## Obras e Artes no Todoist (fim da tarde)
+
+**O que era**
+Ela abriu o Todoist e perguntou por que as Artes não estavam nas manhãs.
+
+**Desafios**
+- O plano das 13 manhãs tinha ficado esperando o ok dela, e o Todoist só se mexe a pedido. A
+  pergunta dela deixou claro que ela queria.
+- A tabela das 13 manhãs só existia no chat da sessão anterior. Tive que remontar pelo calendário
+  de obras do cursinho.
+- Na troca da recorrência, o Todoist jogou a primeira data para 05/10.
+- Depois ela achou que a rotina só ia até 06/10 e que Artes só estava em 30/09.
+
+**Como resolvi**
+- A tarefa de sábado "Obras — todas" virou **"Manhã: Obras e Artes"**, com recorrência
+  `every weekday until oct 16` (o Todoist gravou "every weekday ending 2026-10-16"), e voltou para
+  30/09 com `reschedule-tasks`, que mantém a recorrência.
+- O plano por data está na descrição da tarefa: 30/09 música brasileira · 01/10 música de fora ·
+  02/10 cinema brasileiro · 05/10 cinema de fora · 06/10 Arendt, Sueli Carneiro e 1984 ·
+  07/10 modernismo (Manifesto, Abaporu, Segall, Anita, Lygia Clark) · 08/10 artes visuais de fora ·
+  09/10 literatura brasileira I · 12/10 teatro · 13/10 literatura brasileira II · 14/10 literatura
+  de fora · 15/10 treino de 2 dissertativas de Artes · 16/10 revisão.
+- As 46 obras do calendário do cursinho estão no plano: 12 músicas, 9 obras de artes visuais,
+  9 filmes, 14 obras literárias (com teatro) e 2 de pensamento social.
+- Sobre "só até 06/10": as 18 tarefas estão todas recorrentes. O Todoist mostra cada uma só na
+  próxima data. Nada faltava.
+
+**Ferramentas**
+Todoist (conector) · `calendario-obras-artes-fgv-direito-2027.pdf`.
+
+**O que aprendi**
+- `until <data>` funciona na recorrência do Todoist. O que apagou a recorrência antes foi o
+  `starting`.
+- A tarefa recorrente aparece só na próxima data e pula para a seguinte quando ela marca. Virou
+  regra em `Regras/agenda.md`.
+
+**O que errei**
+- O plano das 13 manhãs ficou só no chat, sem ir para um arquivo. Plano proposto vai para a memória
+  mesmo antes do ok, senão a próxima sessão tem que remontar.
+
+**O que ficou aberto**
+- A ordem das manhãs é remontagem minha: se ela quiser trocar algum dia, é só editar a descrição.
+
 ## 🔗 Relacionados
 
 [[2026-09-29]] · [[Vestibular]]

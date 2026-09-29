@@ -5,6 +5,10 @@ inversa (mais recente no topo). Este arquivo se lê **por `grep`**, nunca inteir
 
 ---
 
+- **2026-09-23** — 13 pastas por matéria no cursinho, abertas pelo atalho `Downloads/Materias`;
+  flashcards também em `.html`. → [[2026-09-23-cursinho]]
+- **2026-09-22** — História Geral (Crise de 29 ao totalitarismo) virou mapa mental + 19 flashcards;
+  material do cursinho agora fica numa pasta por matéria. Poema pré-modernista: 0 no banco. → [[2026-09-22-cursinho]]
 - **2026-09-22** — Dois agentes novos que entram sozinhos: `/banca` (estatística das provas) e
   `/discursiva` (correção pela grade FGV, em PDF). → [[2026-09-22-brain]]
 - **2026-09-22** — Banco das provas antigas da FGV Direito SP: 423 itens de 2021.1 a 2026.1, com

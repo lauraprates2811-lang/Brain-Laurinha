@@ -2,7 +2,7 @@
 
 > **Status:** Rotina cheia, 13 frentes, seg a sáb. **Física atrasada**; intensivos com datas inconsistentes (o de **Geografia é 26/09**).
 > Material em `Projetos/Cursinho/<materia>/`: 13 pastas (atalho `~/Downloads/Materias`), cada uma com `questoes-discursivas/`.
-> História Geral já tem mapa mental e 19 flashcards (`.md` + `.html`). Atualidades ganhou apostila (Ucrânia, ONU, política fiscal) e está em 35 cards.
+> História Geral tem mapa mental e 19 flashcards; o professor apontou os focos da Guerra Fria ao fim da URSS (29/09). Atualidades ganhou apostila (Ucrânia, ONU, política fiscal) e está em 35 cards.
 > Atualidades fecha com Arcabouço Fiscal, Reforma Tributária e Selic; depois, curso de revisão de 5 semanas.
 
 ## O que é
@@ -47,6 +47,7 @@ passou. `[a confirmar]` com o cursinho.
 - [ ] Definir como as listas e correções do cursinho entram em `Projetos/Cursinho/` (material de aula já tem lugar: uma pasta por matéria)
 - [ ] Atualidades: confirmar com o professor quem "inocentou" Dilma (a aula disse TCU) e a aula de revisão de 12/10 (a transcrição diz "pós-prova da FGV") `[a confirmar]` — tarefa #38
 - [ ] Curso de revisão de Atualidades: 5 semanas, 5 listas; data de início `[a confirmar]`
+- [ ] História Geral: ler a apostila (Guerra Fria na Ásia, descolonização, fim da URSS) antes da próxima aula; data da aula `[a confirmar]` — tarefa #41
 
 ## Regras da área
 
@@ -63,13 +64,13 @@ passou. `[a confirmar]` com o cursinho.
 
 | Data | O que aconteceu | Resultado |
 |---|---|---|
-| 2026-09-21 | Grade, professores e intensivos mapeados a partir do cronograma semanal | Física identificada como atrasada |
 | 2026-09-22 | Aula de História Geral (Duque) virou mapa mental + 19 flashcards, cruzada com o banco; material separado por matéria | 1ª pasta: `historia-geral/`; 2 erros de fato nas anotações |
 | 2026-09-23 | As 13 pastas por matéria criadas, com atalho em Downloads; flashcards passam a sair também em `.html` | Material de qualquer matéria tem lugar fixo |
 | 2026-09-23 | 28 arquivos de estudo soltos em Downloads organizados nas matérias | Material num lugar só; PDFs fora do git |
 | 2026-09-23 | Subpasta `questoes-discursivas` em cada matéria, com as páginas de prova e as correções | Correção de Artes já está lá |
 | 2026-09-29 | Aula de Atualidades (Ucrânia, ONU, política fiscal) virou apostila de 5 páginas + 15 cards; Mat: log e porcentagem | Política fiscal: 0 questões no banco; 4 imprecisões da aula marcadas ⚠️ |
+| 2026-09-29 | Aula de História Geral: o professor listou o que mais cai (Guerra Fria na Ásia, descolonização, fim da URSS) | Descolonização: 4 questões nas 3 últimas provas · Coreia, Vietnã e URSS: 0 |
 
 ## 🔗 Relacionados
 
-[[Vestibular]] · [[Escola]] · [[Pessoal]] · [[Calendario]] · [[Cursinho-projeto]]
+[[Vestibular]] · [[Escola]] · [[Pessoal]] · [[Calendario]] · [[Cursinho-projeto]] · [[Cursinho-historico]]

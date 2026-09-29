@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-09-29",
-  "proximo_id": 41,
+  "proximo_id": 42,
   "tarefas": [
     {
       "id": 1,
@@ -356,14 +356,24 @@
       "area": "vestibular",
       "prazo": "2026-09-30",
       "prioridade": "alta",
-      "status": "aberta",
-      "criado": "2026-09-29"
+      "status": "feita",
+      "criado": "2026-09-29",
+      "fechado": "2026-09-29"
     },
     {
       "id": 40,
       "titulo": "Conferir, fora da rede da escola, se o auto-save subiu para o GitHub (29/09: Mac 2 commits à frente, rede bloqueando)",
       "area": "brain",
       "prazo": "2026-09-30",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-29"
+    },
+    {
+      "id": 41,
+      "titulo": "Ler a apostila de História Geral (Guerra Fria na Ásia, descolonização, fim da URSS) antes da próxima aula, que vai ser um panorama rápido (prazo pela tarefa de terça no Todoist; data da aula [a confirmar])",
+      "area": "cursinho",
+      "prazo": "2026-10-06",
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-29"

@@ -109,7 +109,17 @@ marcou com ☀️ e 🌙 no título, e ela pediu para tirar os emojis.
 
 **A regra:** tarefa de estudo com período fixo começa com `Dia:` ou `Noite:` no título, sem emoji.
 A tarefa de Matemática mantém o nome, e o período de cada data vai na descrição, no plano
-("30/09 (qua) · assunto · **dia e noite**").
+("30/09 (qua) · assunto · **dia e noite**"). As obras, antes da aula, usam `Manhã:` (29/09).
+
+## Tarefa recorrente aparece só na próxima data (2026-09-29)
+
+Ela abriu o "Em breve" do Todoist e achou que a rotina só ia até 06/10 e que Obras e Artes só
+estava em 30/09. Toda tarefa fixa é recorrente, e o Todoist mostra cada uma só na próxima data.
+Quando ela marca, a tarefa pula para a data seguinte.
+
+**A regra:** quando ela achar que falta dia no Todoist, confira o campo de recorrência antes de
+qualquer coisa e explique. Nunca crie cópia para as datas futuras, porque isso duplica a rotina.
+Tarefa que não é marcada fica atrasada e não avança.
 
 ## 🔗 Relacionados
 

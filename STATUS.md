@@ -19,15 +19,19 @@
 
 | Área | Status | Número que importa | Próximo passo |
 |---|---|---|---|
-| [[Vestibular]] | Insper 11/10, FGV 18–19/10, SAT até 18/12. Plano até a FGV montado: Matemática por data e rotina de dia e à noite no Todoist, tabela em PDF e Word. Obras nas manhãs antes da aula (30/09–16/10) esperando o ok. Oral só se passar (16/11). | 19 dias para a FGV · 423 questões no banco · 46 obras em 13 manhãs | Aprovar o plano das obras e pôr no Todoist |
+| [[Vestibular]] | Insper 11/10, FGV 18–19/10, SAT até 18/12. Plano até a FGV montado: Matemática por data e rotina de dia e à noite no Todoist, tabela em PDF e Word. Obras e Artes nas manhãs, seg a sex, de 30/09 a 16/10, no Todoist. Oral só se passar (16/11). | 19 dias para a FGV · 423 questões no banco · 46 obras em 13 manhãs | Manhãs de obras: música em 30/09 e 01/10 · cronometrar as dissertativas no simulado de 04/10 |
 | [[Certificacao]] | 🔴 Não iniciado. Quatro caminhos possíveis, nenhum confirmado. Laura faz 18 anos em 28/11, o que aperta a janela. | 115 dias para 15/01/2027 | Ligar para a secretaria da EABH e perguntar sobre conclusão antecipada |
-| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades ganhou apostila (Ucrânia + política fiscal); faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas. | 4 professores de Matemática · 19 flashcards de HG · 35 cards de Atualidades | Recuperar Física · confirmar intensivos e a aula de revisão de 12/10 |
+| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades ganhou apostila (Ucrânia + política fiscal); faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas. História Geral: o professor apontou os focos para a FGV (Guerra Fria até o fim da URSS). | 4 professores de Matemática · 19 flashcards de HG · 35 cards de Atualidades | Recuperar Física · ler a apostila de HG antes da próxima aula · confirmar intensivos e a revisão de 12/10 |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
 | [[Brain]] | No MacBook, backup no GitHub, 3 rotinas e 9 agentes. **Todoist** com a rotina nova: título começa com "Dia:" ou "Noite:", sem emoji. A rede da escola bloqueia GitHub, claude.ai e Todoist. Provas e apostilas **fora do backup**. | 9 agentes · 3 rotinas · 17 tarefas fixas no Todoist · ~130 MB sem backup | Conferir o push fora da escola · decidir o backup das provas |
 
 ## Últimas atualizações
 
+- **2026-09-29** — Obras e Artes foram para o Todoist: "Manhã: Obras e Artes", seg a sex até 16/10, com as
+  46 obras em 13 manhãs na descrição (música primeiro). → [[2026-09-29-vestibular]]
+- **2026-09-29** — Aula de História Geral: o professor disse que o efeito dominó na Ásia e o fim da URSS são o que
+  mais cai; no banco, Descolonização caiu nas 3 últimas provas, e Coreia, Vietnã e URSS, nunca. → [[2026-09-29-cursinho]]
 - **2026-09-29** — Plano até a FGV: Matemática por data (Aritmética em 13/10, sexta só 40 min de dia),
   rotina de dia e à noite, tabela em PDF e Word. Oral só se passar; obras nas manhãs a aprovar. → [[2026-09-29-vestibular]]
 - **2026-09-29** — Todoist refeito com a rotina nova ("Dia:"/"Noite:", sem emoji, 4 tarefas novas);
@@ -51,10 +55,6 @@
   reais separadas (Semana de 22 e Hobsbawm). → [[2026-09-23-vestibular]]
 - **2026-09-23** — Tempo por dissertativa definido: 12 min em Humanas, 10 em Português, 18 em Artes,
   com a redação em 1h40. → [[2026-09-23-vestibular]]
-- **2026-09-23** — 13 pastas por matéria no cursinho, abertas pelo atalho `Downloads/Materias`;
-  flashcards também em `.html`. → [[2026-09-23-cursinho]]
-- **2026-09-22** — História Geral (Crise de 29 ao totalitarismo) virou mapa mental + 19 flashcards;
-  material do cursinho agora fica numa pasta por matéria. Poema pré-modernista: 0 no banco. → [[2026-09-22-cursinho]]
 
 ## 🔗 Relacionados
 

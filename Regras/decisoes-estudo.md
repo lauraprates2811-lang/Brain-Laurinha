@@ -228,7 +228,8 @@ Equações com um (6 questões, 4 de 4). Depois mexeu na rotina e decidiu o rest
 - **De dia é questão, à noite é conteúdo.** A grade da semana está em `Regras/agenda.md`.
 - **Redação:** quinta de manhã, na escola, e no simulado de domingo. Não é antes da aula.
 - **Obras:** saem do sábado e vão para as manhãs antes da aula, de segunda a sexta, de 30/09 a 16/10.
-  A proposta de 13 manhãs (música primeiro, porque caiu nas 4 provas) espera o ok dela.
+  As 13 manhãs (música primeiro, porque caiu nas 4 provas) estão no Todoist desde 29/09, na tarefa
+  "Manhã: Obras e Artes", com o plano por data na descrição.
 - **Exame Oral:** ela decidiu treinar **só se passar na 1ª fase** (resultado 16/11, após 14h). Isso
   substitui a regra de 21/09. Não reabrir a decisão; o lembrete de 16/11 no Todoist traz as datas
   do oral (18/11 a 01/12, sem remarcação).
