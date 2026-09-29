@@ -47,6 +47,7 @@ passou. `[a confirmar]` com o cursinho.
 - [ ] Definir como as listas e correções do cursinho entram em `Projetos/Cursinho/` (material de aula já tem lugar: uma pasta por matéria)
 - [ ] Atualidades: confirmar com o professor quem "inocentou" Dilma (a aula disse TCU) e a aula de revisão de 12/10 (a transcrição diz "pós-prova da FGV") `[a confirmar]` — tarefa #38
 - [ ] Curso de revisão de Atualidades: 5 semanas, 5 listas; data de início `[a confirmar]`
+- [ ] Língua Portuguesa: pesquisar e decorar 5 ou 6 palavras de composição erudita e 5 ou 6 de composição híbrida (pedido do professor, 29/09; está na tarefa de LP de 29/09 no Todoist)
 - [ ] História Geral: ler a apostila (Guerra Fria na Ásia, descolonização, fim da URSS) antes da próxima aula; data da aula `[a confirmar]` — tarefa #41
 
 ## Regras da área

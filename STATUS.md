@@ -24,10 +24,12 @@
 | [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades ganhou apostila (Ucrânia + política fiscal); faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas. História Geral: o professor apontou os focos para a FGV (Guerra Fria até o fim da URSS). | 4 professores de Matemática · 19 flashcards de HG · 35 cards de Atualidades | Recuperar Física · ler a apostila de HG antes da próxima aula · confirmar intensivos e a revisão de 12/10 |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
-| [[Brain]] | No MacBook, backup no GitHub, 3 rotinas e 9 agentes. **Todoist** com a rotina nova: título começa com "Dia:" ou "Noite:", sem emoji. A rede da escola bloqueia GitHub, claude.ai e Todoist. Provas e apostilas **fora do backup**. | 9 agentes · 3 rotinas · 17 tarefas fixas no Todoist · ~130 MB sem backup | Conferir o push fora da escola · decidir o backup das provas |
+| [[Brain]] | No MacBook, backup no GitHub, 3 rotinas e 9 agentes. **Todoist**: rotina de estudo dia a dia até 19/10, sem repetição, para ela ver tudo com antecedência. A rede da escola bloqueia GitHub, claude.ai e Todoist. Provas e apostilas **fora do backup**. | 9 agentes · 3 rotinas · 79 tarefas no Todoist até 19/10 · ~130 MB sem backup | Conferir o push fora da escola · decidir o backup das provas · montar a rotina depois da FGV |
 
 ## Últimas atualizações
 
+- **2026-09-29** — Todoist: a rotina virou uma tarefa por dia até 19/10 (79 tarefas, assunto do dia no título,
+  Insper e FGV incluídos), porque recorrente só mostra a próxima data. → [[2026-09-29-brain]]
 - **2026-09-29** — Obras e Artes foram para o Todoist: "Manhã: Obras e Artes", seg a sex até 16/10, com as
   46 obras em 13 manhãs na descrição (música primeiro). → [[2026-09-29-vestibular]]
 - **2026-09-29** — Aula de História Geral: o professor disse que o efeito dominó na Ásia e o fim da URSS são o que
@@ -53,8 +55,6 @@
 - **2026-09-23** — 28 arquivos de estudo soltos em Downloads foram para as pastas das matérias. → [[2026-09-23-cursinho]]
 - **2026-09-23** — Crise de 29 nunca caiu na FGV; modernismo cai pela prova de Artes. Duas dissertativas
   reais separadas (Semana de 22 e Hobsbawm). → [[2026-09-23-vestibular]]
-- **2026-09-23** — Tempo por dissertativa definido: 12 min em Humanas, 10 em Português, 18 em Artes,
-  com a redação em 1h40. → [[2026-09-23-vestibular]]
 
 ## 🔗 Relacionados
 

@@ -5,6 +5,8 @@ inversa (mais recente no topo). Este arquivo se lê **por `grep`**, nunca inteir
 
 ---
 
+- **2026-09-23** — Tempo por dissertativa definido: 12 min em Humanas, 10 em Português, 18 em Artes,
+  com a redação em 1h40. → [[2026-09-23-vestibular]]
 - **2026-09-23** — 13 pastas por matéria no cursinho, abertas pelo atalho `Downloads/Materias`;
   flashcards também em `.html`. → [[2026-09-23-cursinho]]
 - **2026-09-22** — História Geral (Crise de 29 ao totalitarismo) virou mapa mental + 19 flashcards;
