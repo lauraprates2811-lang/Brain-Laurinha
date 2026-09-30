@@ -1,6 +1,6 @@
 {
-  "atualizado": "2026-09-29",
-  "proximo_id": 43,
+  "atualizado": "2026-09-30",
+  "proximo_id": 44,
   "tarefas": [
     {
       "id": 1,
@@ -85,12 +85,13 @@
     },
     {
       "id": 10,
-      "titulo": "Confirmar data e forma de divulgação do resultado do Insper",
+      "titulo": "Confirmar data e forma de divulgação do resultado do Insper — no site do Insper: 1ª chamada 17–20/11, 2ª 24–27/11, 3ª 01–04/12 (edital, p. 5)",
       "area": "vestibular",
       "prazo": "2026-10-15",
       "prioridade": "media",
-      "status": "aberta",
-      "criado": "2026-09-21"
+      "status": "feita",
+      "criado": "2026-09-21",
+      "fechado": "2026-09-30"
     },
     {
       "id": 11,
@@ -386,6 +387,15 @@
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-29"
+    },
+    {
+      "id": 43,
+      "titulo": "Sábado 10/10 à tarde: Natureza para o Insper (Biologia 1h30, Física 40 min, Química 30 min, autoteste 20 min) com os arquivos insper-natureza-*.md das pastas biologia, fisica e quimica; meta: 2 acertos de verdade + chute C",
+      "area": "vestibular",
+      "prazo": "2026-10-10",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-09-30"
     }
   ]
 }

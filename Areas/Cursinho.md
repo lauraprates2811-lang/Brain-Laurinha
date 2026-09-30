@@ -1,9 +1,9 @@
 # Cursinho
 
-> **Status:** Rotina cheia, 13 frentes, seg a sáb. **Física atrasada**; intensivos com datas inconsistentes (o de **Geografia é 26/09**).
+> **Status:** Rotina cheia, 13 frentes, seg a sáb. **Física atrasada**; intensivos com datas inconsistentes.
 > Material em `Projetos/Cursinho/<materia>/`: 13 pastas (atalho `~/Downloads/Materias`), cada uma com `questoes-discursivas/`.
-> História Geral tem mapa mental e 19 flashcards; o professor apontou os focos da Guerra Fria ao fim da URSS (29/09). Atualidades ganhou apostila (Ucrânia, ONU, política fiscal) e está em 35 cards.
-> Atualidades fecha com Arcabouço Fiscal, Reforma Tributária e Selic; depois, curso de revisão de 5 semanas.
+> HG: mapa mental, 19 cards e as listas de foco da próxima aula (30/09). Atualidades: apostila + 35 cards; faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas.
+> Natureza para o Insper: 3 apostilas curtas (biologia, física, química) para o sábado 10/10.
 
 ## O que é
 
@@ -65,12 +65,12 @@ passou. `[a confirmar]` com o cursinho.
 
 | Data | O que aconteceu | Resultado |
 |---|---|---|
-| 2026-09-22 | Aula de História Geral (Duque) virou mapa mental + 19 flashcards, cruzada com o banco; material separado por matéria | 1ª pasta: `historia-geral/`; 2 erros de fato nas anotações |
 | 2026-09-23 | As 13 pastas por matéria criadas, com atalho em Downloads; flashcards passam a sair também em `.html` | Material de qualquer matéria tem lugar fixo |
 | 2026-09-23 | 28 arquivos de estudo soltos em Downloads organizados nas matérias | Material num lugar só; PDFs fora do git |
 | 2026-09-23 | Subpasta `questoes-discursivas` em cada matéria, com as páginas de prova e as correções | Correção de Artes já está lá |
 | 2026-09-29 | Aula de Atualidades (Ucrânia, ONU, política fiscal) virou apostila de 5 páginas + 15 cards; Mat: log e porcentagem | Política fiscal: 0 questões no banco; 4 imprecisões da aula marcadas ⚠️ |
 | 2026-09-29 | Aula de História Geral: o professor listou o que mais cai (Guerra Fria na Ásia, descolonização, fim da URSS) | Descolonização: 4 questões nas 3 últimas provas · Coreia, Vietnã e URSS: 0 |
+| 2026-09-30 | HG: duas listas de foco (professor × banco); Natureza do Insper classificada em 4 provas e virou 3 apostilas curtas | Velocidade média (Q56) e pH caíram nas 4 · 10 de 20 de Biologia são fáceis |
 
 ## 🔗 Relacionados
 

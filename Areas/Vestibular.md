@@ -1,8 +1,8 @@
 # Vestibular
 
-> **Status:** Inscrita no Insper (11/10), na FGV (18–19/10) e no ENEM 2026. FGV é prioridade absoluta: faltam **19 dias**.
-> Plano até a FGV montado: Matemática por data e rotina de dia e à noite no Todoist, tabela em `semanas-ate-a-fgv.pdf`.
-> Obras e Artes nas manhãs antes da aula, seg a sex até 16/10, no Todoist (13 manhãs, música primeiro). Oral (peso 2, elimina): ela treina só se passar na 1ª fase (16/11).
+> **Status:** Inscrita no Insper (11/10), na FGV (18–19/10) e no ENEM 2026. FGV é prioridade absoluta: faltam **18 dias**.
+> Plano até a FGV no Todoist (Matemática por data, rotina de dia e à noite; obras nas 13 manhãs até 16/10).
+> Insper: edital lido; Natureza só no sábado 10/10 (3h) e chute C. Oral (peso 2, elimina): só se passar na 1ª fase (16/11).
 
 ## O que é
 
@@ -66,6 +66,18 @@ uma prova feita em novembro ou dezembro — o exame precisa ter sido feito nos �
 nota mínima para Direito SP é **1.200**. Decisão dela hoje: não priorizar o SAT agora, o foco é
 a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
+### Insper 2027.1 — segunda opção (Direito)
+
+Fonte: `Projetos/Vestibular/editais/edital-insper-2027-1.txt` (p. 12 e 15–17).
+
+- **11/10, fase única, 5h:** 60 objetivas (15 Linguagens · 15 Matemática · 15 Humanas: Hist 5, Geo 6,
+  Filo 2, Socio 2 · 15 Natureza: Quím 5, Fís 5, Bio 5) + redação. Portões fecham às 12h30.
+- **Nota final = 0,75 × objetivas + 0,25 × redação.** Objetivas de Direito: Linguagens 40 · Humanas 30 ·
+  Matemática 20 · Natureza 10. Peso real: Linguagens 30% · Redação 25% · Humanas 22,5% · Mat 15% · Nat 7,5%.
+- **Elimina:** menos de 30 em Linguagens, Matemática, Humanas ou redação; menos de 20 em Natureza.
+- **76 vagas** (53 vestibular · 11 ENEM · 4 SAT · 4 IB · 4 olimpíadas). Nota de corte: o Insper não publica.
+- **Resultado:** 1ª chamada 17–20/11 · 2ª 24–27/11 · 3ª 01–04/12. Recurso do gabarito: 13–14/10.
+
 ## Pendências
 
 - [x] Montar o plano até a FGV, usando os números do `/banca` — Matemática por data e rotina semanal no Todoist (29/09)
@@ -78,7 +90,8 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 - [ ] Se passar na 1ª fase (16/11): começar o treino do Exame Oral (`/oral`) — decisão dela em 29/09
 - [ ] Destrinchar a trajetória biográfica em `Projetos/Vestibular/oral/` — é avaliada literalmente
 - [ ] Confirmar datas do ENEM 2026 no site do INEP `[a confirmar]`
-- [ ] Confirmar data e forma do resultado do Insper `[a confirmar]`
+- [x] Confirmar data e forma do resultado do Insper — 1ª chamada 17–20/11, no site do Insper (30/09)
+- [ ] Sábado 10/10 à tarde: Natureza para o Insper, ~3h (tarefa #43)
 - [ ] Decidir até 18/12 se vai usar a via SAT
 - [ ] Inscrever-se na via ENEM da FGV até 08/01/2027 (taxa separada)
 - [ ] Separar documentos de bolsa **antes** de 16/11, porque a janela é curta (16/11–30/11)
@@ -86,7 +99,10 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 ## Regras da área
 
-- A FGV manda. Insper é segunda opção e não deve tomar tempo de preparação específica.
+- A FGV manda. Insper é segunda opção e não deve tomar tempo de preparação específica. Exceção:
+  ~3h de Natureza em 10/10, só para não ser eliminada (30/09).
+- Chute: no Insper, **C** em Natureza; na FGV, a letra que **menos marcou** no bloco, e nunca em branco.
+  Detalhe em `Regras/decisoes-estudo.md` (30/09).
 - Faltar ao oral é o pior erro possível: zera as três portas de uma vez.
 - Toda data de edital entra no `Calendario.md` com a fonte, nunca de memória.
 - Até 19/10, seis focos escolhidos por ela, todos com cronômetro: tempo · Matemática só nos 5 temas
@@ -103,12 +119,12 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 | Data | O que aconteceu | Resultado |
 |---|---|---|
-| 2026-09-23 | Tempo por dissertativa calculado pelo edital e pelo formato das 4 últimas provas | 12 min Humanas · 10 Português · 18 Artes · redação 1h40 |
 | 2026-09-23 | Dissertativas pedidas sobre Crise de 29 e Semana de 22; provas antigas reunidas com atalho | 1929 nunca caiu · modernismo cai em Artes · atalho `Provas-FGV` |
 | 2026-09-23 | 1ª dissertativa corrigida pela grade oficial: Artes 2022.1, pergunta 11 | 0,5 / 2,0 (25%) · leitura anacrônica + ortografia |
 | 2026-09-24 | Simulado no formato completo da FGV (26–27/09) agendado no Google Calendar, espelhando dias e matérias de 18–19/10; simulado padrão de domingo cancelado só em 27/09 | Agenda alinhada com a prova real · conflito de horário em 26/09 achado |
 | 2026-09-29 | Plano até a FGV: Matemática por data (dia/noite), rotina semanal nova no Todoist, tabela das semanas em PDF e Word; obras nas manhãs propostas; oral adiado para depois de 16/11 | Aritmética entrou em 13/10 · 13 manhãs de obras a aprovar |
 | 2026-09-29 | Obras e Artes nas manhãs foram para o Todoist: a tarefa de sábado virou "Manhã: Obras e Artes", seg a sex, com o plano por data | 46 obras em 13 manhãs · sábado livre das obras |
+| 2026-09-30 | Edital do Insper lido; letras dos gabaritos de Natureza do Insper (4 provas) e da Matemática da FGV contadas | Direito: Português + Redação = 55% · chute C em Natureza · FGV equilibra as letras |
 
 ## 🔗 Relacionados
 

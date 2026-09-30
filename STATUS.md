@@ -1,6 +1,6 @@
 # STATUS — painel da Laura
 
-> **Hoje:** 2026-09-29 (terça) · **Insper em 12 dias** · **FGV em 19 dias**
+> **Hoje:** 2026-09-30 (quarta) · **Insper em 11 dias** · **FGV em 18 dias**
 > Última otimização: 2026-09-22
 
 ## Alertas críticos
@@ -19,15 +19,19 @@
 
 | Área | Status | Número que importa | Próximo passo |
 |---|---|---|---|
-| [[Vestibular]] | Insper 11/10, FGV 18–19/10, SAT até 18/12. Plano até a FGV montado: Matemática por data e rotina de dia e à noite no Todoist, tabela em PDF e Word. Obras e Artes nas manhãs, seg a sex, de 30/09 a 16/10, no Todoist. Oral só se passar (16/11). | 19 dias para a FGV · 423 questões no banco · 46 obras em 13 manhãs | Manhãs de obras: música em 30/09 e 01/10 · cronometrar as dissertativas no simulado de 04/10 |
+| [[Vestibular]] | Insper 11/10, FGV 18–19/10, SAT até 18/12. Plano até a FGV no Todoist. Insper: em Direito, Português + Redação = 55% da nota; Natureza vale 7,5% mas elimina abaixo de 20. Chute: C em Natureza no Insper; na FGV, a letra que menos marcou. Oral só se passar (16/11). | 18 dias para a FGV · 423 questões no banco · Insper: 1ª chamada 17–20/11 | Manhãs de obras até 16/10 · simulado de 04/10 cronometrado · Natureza do Insper no sáb 10/10 à tarde |
 | [[Certificacao]] | 🔴 Não iniciado. Quatro caminhos possíveis, nenhum confirmado. Laura faz 18 anos em 28/11, o que aperta a janela. | 115 dias para 15/01/2027 | Ligar para a secretaria da EABH e perguntar sobre conclusão antecipada |
-| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades ganhou apostila (Ucrânia + política fiscal); faltam Arcabouço, Reforma Tributária e Selic, depois revisão de 5 semanas. História Geral: o professor apontou os focos para a FGV (Guerra Fria até o fim da URSS). | 4 professores de Matemática · 19 flashcards de HG · 35 cards de Atualidades | Recuperar Física · ler a apostila de HG antes da próxima aula · confirmar intensivos e a revisão de 12/10 |
+| [[Cursinho]] | Rotina cheia, 13 frentes com professor definido. Física atrasada. Intensivos de sábado com datas a confirmar. Atualidades: apostila + 35 cards; faltam Arcabouço, Reforma Tributária e Selic. HG: listas de foco da próxima aula (professor × banco). Natureza do Insper: 3 apostilas curtas para 10/10. | 19 flashcards de HG · 35 cards de Atualidades · 3 apostilas de Natureza | Recuperar Física · ler a apostila de HG antes da próxima aula · confirmar intensivos e a revisão de 12/10 |
 | [[Escola]] | EABH, senior, notas por bimestre. A escola virou, na prática, tempo de cursinho. Nada mapeado ainda sobre trabalhos e prazos. | `[a confirmar]` | Listar trabalhos e prazos abertos da EABH |
 | [[Pessoal]] | Rotina de reta final assumida: acorda 06:00, dorme 00:10. Regras de alimentação, caminhada 3x e sem redes sociais já definidas por ela. | 5h50 de sono por noite | Registrar se a caminhada 3x/semana está acontecendo |
 | [[Brain]] | No MacBook, backup no GitHub, 3 rotinas e 9 agentes. **Todoist**: rotina de estudo dia a dia até 19/10, sem repetição, para ela ver tudo com antecedência. A rede da escola bloqueia GitHub, claude.ai e Todoist. Provas e apostilas **fora do backup**. | 9 agentes · 3 rotinas · 79 tarefas no Todoist até 19/10 · ~130 MB sem backup | Conferir o push fora da escola · decidir o backup das provas · montar a rotina depois da FGV |
 
 ## Últimas atualizações
 
+- **2026-09-30** — Edital do Insper lido: em Direito, Português + Redação = 55% da nota; Natureza elimina abaixo de 20.
+  Nos gabaritos, a letra C nunca eliminaria em Natureza; na FGV, as letras vêm equilibradas. → [[2026-09-30-vestibular]]
+- **2026-09-30** — Natureza do Insper classificada em 4 provas (Q56 velocidade média e pH nas 4) e virou 3 apostilas
+  curtas para 10/10; HG ganhou as listas de foco da próxima aula. → [[2026-09-30-cursinho]]
 - **2026-09-29** — Todoist: a rotina virou uma tarefa por dia até 19/10 (79 tarefas, assunto do dia no título,
   Insper e FGV incluídos), porque recorrente só mostra a próxima data. → [[2026-09-29-brain]]
 - **2026-09-29** — Obras e Artes foram para o Todoist: "Manhã: Obras e Artes", seg a sex até 16/10, com as
@@ -52,9 +56,6 @@
 - **2026-09-23** — Cada matéria ganhou a subpasta `questoes-discursivas`; o `/discursiva` grava o PDF ali. → [[2026-09-23-cursinho]]
 - **2026-09-23** — Faxina dos Downloads: 103 itens na Lixeira; ficaram o Brain e os atalhos `Materias` e
   `Provas-FGV`. Provas e apostilas agora são cópia única, fora do backup. → [[2026-09-23-brain]]
-- **2026-09-23** — 28 arquivos de estudo soltos em Downloads foram para as pastas das matérias. → [[2026-09-23-cursinho]]
-- **2026-09-23** — Crise de 29 nunca caiu na FGV; modernismo cai pela prova de Artes. Duas dissertativas
-  reais separadas (Semana de 22 e Hobsbawm). → [[2026-09-23-vestibular]]
 
 ## 🔗 Relacionados
 

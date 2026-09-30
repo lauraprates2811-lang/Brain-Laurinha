@@ -236,6 +236,42 @@ Equações com um (6 questões, 4 de 4). Depois mexeu na rotina e decidiu o rest
 
 ---
 
+## No Insper, Natureza só o mínimo para não ser eliminada: 3h no sábado 10/10 e chute C (2026-09-30)
+
+A Laura leu o edital do Insper 2027.1 com o Claude. Em Direito, Natureza vale 7,5% da nota final, mas
+**nota abaixo de 20 elimina** (cerca de 3 acertos em 15). Ela espera uns 4 acertos, quase tudo no
+chute. O Claude contou as letras do gabarito das questões 46 a 60 em 4 provas oficiais (2026.1,
+reaplicação de 2026.1, 2026.2 e simulado de set/2026). Chutando tudo numa mesma letra, ela seria
+eliminada em 8 das 20 combinações de prova e letra (40%). A letra **C** nunca eliminaria: saiu 16
+vezes em 60 e deu 4, 4, 5 e 3 acertos. Ela não quer gastar tempo com Natureza, mas também não quer
+ser eliminada.
+
+**A regra:**
+- **Sábado 10/10, à tarde, ~3h:** Biologia 1h30, Física 40 min, Química 30 min e 20 min de
+  autoteste, com os arquivos `insper-natureza-*.md` das pastas `biologia`, `fisica` e `quimica`.
+  Só o que se repete: Biologia básica (46–50), velocidade média (sempre a 56) e pH (caiu nas 4).
+  Fora esse bloco, Natureza não entra no plano.
+- **Na prova:** fazer 46 a 50 primeiro, depois a 56 e a de pH, e **chutar C** no resto. A meta são
+  **2 acertos de verdade**. A base é de só 4 provas: C é a melhor aposta, não uma garantia.
+
+---
+
+## Chute na objetiva da FGV: a letra que menos marcou no bloco (2026-09-30)
+
+O Claude contou as letras do gabarito de Matemática objetiva no banco (70 questões, 2022.1–2026.1).
+A FGV equilibra: em 2024.1 e 2025.1, Matemática, Português e Inglês vieram exatamente com 3 de cada
+letra em 15 questões; em 2026.1, a Matemática veio 3-4-3-3-2. Chutar tudo numa letra dá cerca de
+3 acertos, sem vantagem para nenhuma. O edital não prevê desconto por erro.
+
+**A regra:**
+- **Nunca deixar questão em branco** na objetiva da FGV.
+- Depois de fazer as questões que sabe num bloco de 15, **contar as letras marcadas e chutar a que
+  menos apareceu**. Serve também para desempatar entre duas alternativas.
+- É desempate, não certeza: só funciona se as outras respostas estiverem certas, e em 2023.1 o
+  gabarito não veio equilibrado.
+
+---
+
 ## 🔗 Relacionados
 
 [[Vestibular]] · [[Cursinho]] · [[Pessoal]] · [[Laura]]

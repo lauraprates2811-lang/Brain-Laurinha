@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-09-29",
+  "atualizado": "2026-09-30",
   "fonte": "Edital Unificado FGV 1o/2027, itens 9.9 e 14 - Projetos/Vestibular/editais/",
   "prazos": [
     {"data": "2026-09-26", "o_que": "Simulado completo da FGV - dia 1 (discursiva 08h-11h30, objetiva 14h30-18h)", "area": "vestibular", "critico": false},
@@ -11,6 +11,7 @@
     {"data": "2026-10-22", "o_que": "Prazo final para contestar o gabarito da FGV", "area": "vestibular", "critico": false},
     {"data": "2026-10-31", "o_que": "DECIDIR o caminho da certificacao do ensino medio", "area": "certificacao", "critico": true},
     {"data": "2026-11-16", "o_que": "FGV: resultado da 1a fase e convocacao para o Exame Oral (apos 14h)", "area": "vestibular", "critico": true},
+    {"data": "2026-11-17", "o_que": "Insper: 1a chamada do Vestibular (17-20/11); 2a 24-27/11; 3a 01-04/12 - edital Insper 2027.1, p. 5", "area": "vestibular", "critico": false},
     {"data": "2026-11-18", "o_que": "Inicio da janela do EXAME ORAL da FGV (ate 01/12) - sem remarcacao", "area": "vestibular", "critico": true},
     {"data": "2026-11-28", "o_que": "Laura faz 18 anos - destrava certificacao por idade", "area": "certificacao", "critico": false},
     {"data": "2026-11-30", "o_que": "Prazo final para solicitar bolsa de estudos na FGV", "area": "vestibular", "critico": false},

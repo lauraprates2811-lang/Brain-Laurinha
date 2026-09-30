@@ -2,6 +2,7 @@
 
 > Fonte oficial da FGV: `Projetos/Vestibular/editais/edital-unificado-fgv-2027.txt`
 > (Edital Unificado 1º/2027, itens 9.1.3, 9.3.1, 9.7, 9.9 e 14).
+> Fonte oficial do Insper: `Projetos/Vestibular/editais/edital-insper-2027-1.txt` (Edital 2027.1, seções 2 e 5).
 > Tudo marcado `[a confirmar]` precisa ser checado na fonte oficial antes de virar plano.
 
 ## Reta final — 2026
@@ -12,15 +13,16 @@
 | **26/09/2026** | sáb | 🎯 **Simulado completo no formato FGV — dia 1** (mesmos horários e matérias de 18/10). Manhã 08h–11h30: discursiva (Redação + Ciências Humanas). Tarde 14h30–18h: objetiva (Matemática, Português, Inglês, Ciências Humanas) | Bate com o intensivo de Geografia e o cursinho de sábado — conflito ainda sem resolver, ver [[Vestibular]] |
 | **27/09/2026** | dom | 🎯 **Simulado completo no formato FGV — dia 2, online** (mesmos horários e matérias de 19/10). Manhã 08h–11h: Português + Artes e Questões Contemporâneas | Substitui o simulado padrão de domingo só nesse dia |
 | `[a confirmar]` | sáb | Intensivos de LIT, HB e HG — datas inconsistentes no cronograma | Confirmar com o cursinho |
-| **11/10/2026** | dom | 🎯 **PROVA DO INSPER** | Simulados em dia · material e documentos separados |
+| **10/10/2026** | sáb | Natureza para o Insper, à tarde (~3h): Biologia, Física e Química só no que mais cai | Material em `Projetos/Cursinho/biologia/`, `fisica/` e `quimica/` (`insper-natureza-*.md`) — tarefa #43 |
+| **11/10/2026** | dom | 🎯 **PROVA DO INSPER** — 60 objetivas + redação, 5h. **Portões fecham às 12h30** | RG original · caneta preta de corpo transparente · Natureza feita em 10/10 |
 | **12/10/2026** | seg | Aula de revisão de Atualidades no cursinho. A transcrição diz "pós-prova da FGV", mas a FGV é 18–19/10 `[a confirmar]` | Últimas aulas vistas: Arcabouço, Reforma Tributária, Selic |
 | **18/10/2026** | dom | 🎯 **FGV 1ª FASE — dia 1**. Manhã 08h–11h30: Redação + Ciências Humanas (discursivas). Tarde 14h30–18h: Matemática, Língua Portuguesa, Inglês, Ciências Humanas (objetivas) | Provas antigas feitas · redação no formato da banca |
 | **19/10/2026** | seg | 🎯 **FGV 1ª FASE — dia 2**. Manhã 08h–11h: Língua Portuguesa + Artes e Questões Contemporâneas (discursivas) | — |
 | **21/10/2026** | qua | FGV publica o gabarito das objetivas | — |
 | **22/10/2026** | qui | Prazo final para contestar o gabarito | Conferir o gabarito no dia 21 |
-| `[a confirmar]` | — | Resultado do Insper | — |
 | `[a confirmar]` | — | **ENEM 2026** — datas das provas | Confirmar no site do INEP |
 | **16/11/2026** | seg | FGV divulga **resultado da 1ª fase** e o cartão com **dia e hora do Exame Oral** (após 14h) | — |
+| **17–20/11/2026** | — | Insper divulga a **1ª chamada** no site. 2ª chamada 24–27/11 · 3ª chamada 01–04/12 | — |
 | **16/11 a 30/11** | — | Janela para solicitar bolsa de estudos (só para quem passou para a 2ª fase) | Documentos de bolsa separados **antes** |
 | **18/11 a 01/12/2026** | — | 🎯 **EXAME ORAL DA FGV** — presencial em São Paulo, até 2h30, peso 2. Dia e hora individuais, **sem remarcação** | Treino de oral em dia · trajetória biográfica destrinchada |
 | **28/11/2026** | sáb | 🎂 Laura faz **18 anos** — destrava certificação de ensino médio por idade | — |

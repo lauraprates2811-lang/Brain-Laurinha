@@ -38,6 +38,9 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
     33 flashcards e 14 questões reais da FGV, da apostila CPV aula 12 (também em `.html`)
   - análise sintática, sintaxe e regência, e duas atividades de verbos e complementos
 - `matematica/` — questões reais da FGV, tipos que sempre caem e plano de ação
+- `biologia/` · `fisica/` · `quimica/` — Natureza para o Insper, para a véspera (10/10):
+  [[insper-natureza-biologia]] · [[insper-natureza-fisica]] · [[insper-natureza-quimica]] — o que caiu
+  nas questões 46–60 de 4 provas oficiais do Insper, resumo, questões reais resolvidas e autoteste
 - `redacao/` — `aula-05-como-usar-repertorio.pdf`
 - `artes-e-questoes-contemporaneas/` — 3 versões diferentes da apostila de Artes (32, 57 e 66 páginas),
   caderno de exercícios e o calendário de obras do curso de Artes 2027
