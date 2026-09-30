@@ -1,0 +1,65 @@
+{
+  "titulo": "História — Hobsbawm e a barbárie (só o item a)",
+  "data": "2026-09-30",
+  "materia": "História",
+  "origem": "FGV 2023.1 · Ciências Humanas · pergunta 4, corrigida como se tivesse só o item a)",
+  "valor": "2,0 (item a: 1,0 por exemplo, como na grade oficial)",
+  "tipo_grade": "elementos",
+  "enunciado": "Texto-base: trecho de Eric Hobsbawm, “Barbárie: manual do usuário” (Sobre História, 1997). Barbárie é a ruptura das regras morais que organizam a vida em sociedade e, mais especificamente, a reversão do projeto do Iluminismo do século XVIII: regras universais, garantidas pelos Estados, dedicadas ao progresso racional da humanidade.\n\na) Aponte dois exemplos históricos relacionados à Europa contemporânea que possam ser classificados como anti-iluministas, na perspectiva de Hobsbawm.",
+  "gabarito": "Os exemplos têm de ser exclusivamente da Europa contemporânea. Valem, entre outros: os regimes do século XX de Mussolini na Itália (fascismo), de Hitler na Alemanha (nazismo) e de Stalin na União Soviética (stalinismo); os crimes de guerra nos Bálcãs na dissolução da Iugoslávia (anos 1990); a xenofobia contra imigrantes e refugiados na Europa desde o fim do século XX.",
+  "grade": "Apontar entre as possibilidades abaixo, 1,0 cada: fascismo de Mussolini na Itália · nazismo de Hitler, com destaque para o Holocausto (1933–1945) · Holodomor na Ucrânia · franquismo de Franco na Espanha, com destaque para Guernica (1937) · stalinismo na URSS · 1ª Guerra Mundial (Somme, Verdun, armas químicas) · 2ª Guerra Mundial · Guerras dos Bálcãs (1912–1913) · Guerra Civil Iugoslava (1990–2001) · Guerra da Ucrânia (2022-) · crise dos refugiados. A grade de 2023.1 conta os exemplos e não traz desconto por redação.",
+  "resposta_marcada": "{-O-}{+Para o|1+} historiador Eric {-Hobsbaum-}{+Hobsbawm|2+}, {-por valorizar-}{+que valoriza|1+} diversas ideias {-illuministas-}{+iluministas|3+}, guerras como [[Guerra Civil Espanhola e a Segunda Guerra Mundial|4]] na sua {-perpectiva-}{+perspectiva|5+} seriam classificada{+s|6+} como anti-{-illuminista-}{+iluministas|6+}. Desse modo, {-pela Gerra-}{+pelo fato de a Guerra|7+} Civil Espanhola ter tido como resultado uma ditadura{-;-}{+,|8+} contando com {-ideáis-}{+ideais|9+} religiosos e {-totalitarios-}{+totalitários|9+}, {+ela|8+} vai contra o movimento {-illuminista-}{+iluminista|3+}{-, similarmente,-}{+. Similarmente,|10+} a 2ª {-guerra mundial-}{+Guerra Mundial|11+}, mesmo não resultando em uma ditadura{+,|12+} [[teve como intuito|13]] o {-exterminio-}{+extermínio|9+} de raças consideradas inferiores, sendo elas: [[os judeus, ciganos, entre outros|14]]. Assim, sem a {-ciencia-}{+ciência|9+} [[para comprovar a inferioridade da raça que não fosse a alemã|15]] {-faz-}{+fez|16+} que a guerra fosse movida por ideais {-anti illuminista-}{+anti-iluministas|17+} como a {-guerra civil espanhosa-}{+Guerra Civil Espanhola|11+}, fazendo que {-Hobsbaum-}{+Hobsbawm|2+} classificasse ambas {+as|18+} guerras como guerras anti-{-illuminista-}{+iluministas|6+}.",
+  "comentarios": [
+    {"n": 1, "tipo": "gramatica", "texto": "A frase começa com “O historiador Eric Hobsbawm” e nunca dá um verbo para ele: o assunto pula para “guerras… seriam classificadas”. Com “Para o historiador…, que valoriza…”, a frase fica inteira."},
+    {"n": 2, "tipo": "gramatica", "texto": "O nome é Hobsbawm, com “w”. Nome de autor se copia do enunciado, que está na sua frente."},
+    {"n": 3, "tipo": "gramatica", "texto": "Iluminismo, iluminista: com um “l” só. Aparece 5 vezes na resposta."},
+    {"n": 4, "tipo": "elogio", "texto": "Os dois exemplos estão na grade oficial: a Guerra Civil Espanhola corresponde ao item “franquismo na Espanha, com destaque para Guernica (1937)”, e a Segunda Guerra ao item “2ª Guerra Mundial”. Vale 1,0 cada. E você explicou por que cada um é anti-iluminista, o que o item a) nem pedia."},
+    {"n": 5, "tipo": "gramatica", "texto": "Perspectiva: “pers-pec-ti-va”, com r e s."},
+    {"n": 6, "tipo": "gramatica", "texto": "Concordância: o sujeito é “guerras” (plural), então “classificadas” e “anti-iluministas”. É a 4ª vez que a concordância aparece no seu banco de erros."},
+    {"n": 7, "tipo": "gramatica", "texto": "Quando o artigo pertence ao sujeito de um verbo no infinitivo, não se junta com a preposição: “pelo fato de a Guerra… ter tido”, não “pela Guerra… ter tido”. É a 2ª vez (30/09: “ao personagem interpretar”). E “Gerra” saiu sem o “u”."},
+    {"n": 8, "tipo": "gramatica", "texto": "O ponto e vírgula corta a frase no meio, entre a causa e o verbo principal. E “vai” ficou sem sujeito: quem vai contra o Iluminismo? A Guerra Civil está dentro da oração de causa. Com vírgula e “ela”, a frase se sustenta."},
+    {"n": 9, "tipo": "gramatica", "texto": "Acentuação: “ideais” não tem acento; “totalitários”, “extermínio” e “ciência” têm (paroxítonas terminadas em ditongo). Acento foi cobrado também na redação de 26/09."},
+    {"n": 10, "tipo": "gramatica", "texto": "Duas orações completas não se separam com vírgula. Termine a ideia da Guerra Civil com ponto e comece a da Segunda Guerra com “Similarmente,”."},
+    {"n": 11, "tipo": "gramatica", "texto": "Nome de acontecimento histórico vai com maiúscula: Segunda Guerra Mundial, Guerra Civil Espanhola, como você mesma escreveu na 1ª linha. E “espanhosa” é lapso de “Espanhola”."},
+    {"n": 12, "tipo": "gramatica", "texto": "A oração “mesmo não resultando em uma ditadura” está intercalada entre o sujeito e o verbo: abriu com vírgula, fecha com vírgula."},
+    {"n": 13, "tipo": "conteudo", "texto": "Impreciso: quem quis exterminar judeus e ciganos não foi “a guerra”, foi o regime nazista, que promoveu o Holocausto durante a guerra. Diga o nome: nazismo, Hitler, Holocausto. E “mesmo não resultando em uma ditadura” sobra, porque a Alemanha já era uma ditadura desde 1933. A grade de 2023.1 conta o exemplo do mesmo jeito, mas numa grade por níveis isso é contextualização limitada."},
+    {"n": 14, "tipo": "elogio", "texto": "Certo e concreto: judeus e ciganos foram os grupos que o nazismo perseguiu como “raças inferiores”. Exemplo específico vale mais que “minorias”."},
+    {"n": 15, "tipo": "gramatica", "texto": "A ideia é ótima: acreditar numa hierarquia de raças sem nenhuma base racional é exatamente o anti-Iluminismo de Hobsbawm. Mas “sem a ciência para comprovar…” não pode ser sujeito de “fez”. Diga quem fez: “a crença na superioridade da raça alemã, sem nenhuma base científica, fez que…”."},
+    {"n": 16, "tipo": "gramatica", "texto": "Correlação de tempos: “fosse” está no passado, então o verbo principal também: “fez que a guerra fosse”, não “faz que a guerra fosse”."},
+    {"n": 17, "tipo": "gramatica", "texto": "Hífen: quando o prefixo termina na mesma vogal com que a palavra começa, usa-se hífen (anti-iluminista, anti-inflamatório). E plural para concordar com “ideais”."},
+    {"n": 18, "tipo": "gramatica", "texto": "“Ambos” e “ambas” pedem artigo: “ambas as guerras”."}
+  ],
+  "itens": [
+    {"item": "a) exemplo 1", "esperado": "Um exemplo da Europa contemporânea da lista da grade (1,0)", "voce": "Guerra Civil Espanhola, que terminou numa ditadura religiosa e autoritária (o franquismo da grade)", "nivel": "100%", "pontos": "1,0 / 1,0"},
+    {"item": "a) exemplo 2", "esperado": "Outro exemplo da lista (1,0)", "voce": "Segunda Guerra Mundial e o extermínio de judeus e ciganos", "nivel": "100%", "pontos": "1,0 / 1,0"}
+  ],
+  "nota": {
+    "obtida": "2,0",
+    "maxima": "2,0",
+    "percentual": "100%",
+    "criterio": "Pela grade oficial de 2023.1, que dá 1,0 por exemplo e não desconta redação: 2 de 2. Pela régua de 2026.1, em que a redação conta, os 14 tipos de desvio de língua derrubariam para 75% (1,5 / 2,0) na melhor hipótese."
+  },
+  "de_acordo": "Sua resposta está de acordo com o pedido: você apontou dois exemplos da Europa contemporânea que a própria grade aceita. A grade escreve “franquismo” e você escreveu “Guerra Civil Espanhola”, e conta do mesmo jeito: a grade liga o franquismo a Guernica (1937), que é da Guerra Civil, e você mesma disse que ela terminou numa ditadura.",
+  "gramatica": [
+    {"trecho": "O historiador Eric Hobsbaum, por valorizar…, guerras como… seriam", "correcao": "Para o historiador Eric Hobsbawm, que valoriza…, guerras como… seriam", "regra": "O sujeito que abre a frase precisa de um verbo. Se o assunto muda, o autor entra como “para o historiador”."},
+    {"trecho": "Hobsbaum (2x)", "correcao": "Hobsbawm", "regra": "Nome de autor se copia do enunciado."},
+    {"trecho": "illuministas · illuminista (5x)", "correcao": "iluministas · iluminista", "regra": "Iluminismo tem um “l” só."},
+    {"trecho": "perpectiva", "correcao": "perspectiva", "regra": "Ortografia: pers-pec-ti-va."},
+    {"trecho": "seriam classificada como anti-illuminista", "correcao": "seriam classificadas como anti-iluministas", "regra": "Concordância com o sujeito “guerras”, no plural."},
+    {"trecho": "pela Gerra Civil Espanhola ter tido", "correcao": "pelo fato de a Guerra Civil Espanhola ter tido", "regra": "Artigo do sujeito de infinitivo não se junta com a preposição (2ª vez)."},
+    {"trecho": "uma ditadura; contando…, vai contra", "correcao": "uma ditadura, contando…, ela vai contra", "regra": "Ponto e vírgula não separa a causa do verbo principal, e o verbo precisa de sujeito."},
+    {"trecho": "ideáis · totalitarios · exterminio · ciencia", "correcao": "ideais · totalitários · extermínio · ciência", "regra": "“Ideais” não leva acento; paroxítona terminada em ditongo leva."},
+    {"trecho": "movimento illuminista, similarmente, a 2ª", "correcao": "movimento iluminista. Similarmente, a 2ª", "regra": "Vírgula não separa duas orações completas: use ponto."},
+    {"trecho": "2ª guerra mundial · guerra civil espanhosa", "correcao": "2ª Guerra Mundial · Guerra Civil Espanhola", "regra": "Nome de acontecimento histórico vai com maiúscula."},
+    {"trecho": "mesmo não resultando em uma ditadura teve", "correcao": "mesmo não resultando em uma ditadura, teve", "regra": "Oração intercalada abre e fecha com vírgula."},
+    {"trecho": "sem a ciência para comprovar… faz que a guerra fosse", "correcao": "a crença na superioridade da raça alemã, sem base científica, fez que a guerra fosse", "regra": "Expressão com “sem” não pode ser sujeito; e passado combina com passado."},
+    {"trecho": "ideais anti illuminista", "correcao": "ideais anti-iluministas", "regra": "Hífen quando o prefixo termina na vogal que começa a palavra; plural por “ideais”."},
+    {"trecho": "ambas guerras", "correcao": "ambas as guerras", "regra": "“Ambos/ambas” pede artigo."}
+  ],
+  "melhorar": [
+    "Uma ideia por frase, começando por quem fez o quê. As suas três frases têm problema de estrutura: sujeito sem verbo, “vai” sem sujeito, “sem a ciência” no lugar do sujeito. Numa grade por níveis, como a de 2026.1, é isso que tira você dos 100%.",
+    "Use os nomes que a grade usa: franquismo e Franco, nazismo, Hitler e Holocausto. “A 2ª Guerra teve como intuito o extermínio” está impreciso: quem teve esse objetivo foi o regime nazista.",
+    "Guarde 1 minuto no fim para revisar só três coisas: acentos, “iluminista” com um “l” e o plural de “classificadas” e “anti-iluministas”. Concordância já é a 4ª vez no banco de erros."
+  ],
+  "reescrita": "Para o historiador Eric Hobsbawm, que valoriza as ideias iluministas, a Guerra Civil Espanhola e a Segunda Guerra Mundial podem ser classificadas como episódios anti-iluministas. A Guerra Civil Espanhola (1936–1939), marcada pelo bombardeio de Guernica, terminou na ditadura de Francisco Franco, apoiada em ideais religiosos e autoritários, contrários às liberdades defendidas pelo Iluminismo. Já na Segunda Guerra Mundial, o regime nazista promoveu o extermínio de grupos que considerava raças inferiores, como judeus e ciganos, com base na crença, sem nenhum fundamento científico, na superioridade da raça alemã. Por isso, Hobsbawm classificaria ambas as guerras como exemplos de barbárie anti-iluminista."
+}
