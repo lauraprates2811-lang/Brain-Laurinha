@@ -1,0 +1,90 @@
+{
+  "titulo": "Português — ambiguidade e formação de palavras (charge \"porcona\")",
+  "data": "2026-09-30",
+  "materia": "Língua Portuguesa",
+  "origem": "Apostila do cursinho (Língua Portuguesa · Aula 12) · questão 02 — enviada pela Laura, não é prova da FGV do banco",
+  "valor": "1,0",
+  "tipo_grade": "niveis",
+  "enunciado": "Charge de Glauco Góes: numa loja, uma placa na parede diz \"NÃO TROCAMOS ROUPAS ÍNTIMAS\". Um menino, diante da vendedora no balcão, grita: \"PORCONA!\".\n\na) Que recurso expressivo foi utilizado pelo autor da charge para criar humor?\nb) A expressão porcona, típica da oralidade, é exemplo de que processo de formação de palavras?",
+  "gabarito": "Sem gabarito enviado — referência usada na correção:\na) Ambiguidade (duplo sentido) do verbo \"trocar\". A loja quer dizer que não aceita troca/devolução de roupas íntimas compradas ali; o menino entende \"trocar\" no sentido de mudar a roupa que se veste, como se as funcionárias não trocassem a própria roupa íntima — por isso chama a vendedora de \"porcona\".\nb) Derivação sufixal: radical porc- (de \"porco\") + sufixo aumentativo \"-ona\", aqui com valor pejorativo, próprio da fala. Base: a sua apostila de formação de palavras, seção 6.1: a palavra nova do neologismo formal nasce \"pelos processos que você já estudou\", como a derivação (mensalão).\nPeso dos itens não informado: considerei 50% cada.",
+  "grade": "",
+  "resposta_marcada": "a) O autor utiliza, como recurso expressivo, para criar humor na charge acima, [[a ironia|1]]. Assim, {-ao-}{+como o|2+} personagem, presente na charge, {-interpretar-}{+interpreta+} [[o anúncio da loja|3]] [[de modo literal|4]], provocando um efeito de humor, é evidente que o recurso expressivo utilizado é [[a ironia|1]].\n\nb) A palavra {+“+}porcona{+”|5+} é um exemplo de [[neologismo|6]], pois é a formação de uma palavra nova, [[a qual não está presente na norma culta|7]].",
+  "comentarios": [
+    {
+      "n": 1,
+      "tipo": "conteudo",
+      "texto": "Ironia é dizer o contrário do que se pensa (\"que dia lindo!\" num temporal). Ninguém faz isso na charge. O recurso é a ambiguidade: o verbo \"trocar\" tem dois sentidos, e o humor sai do choque entre eles."
+    },
+    {
+      "n": 2,
+      "tipo": "gramatica",
+      "texto": "\"Ao personagem interpretar\" junta a preposição ao artigo do sujeito do infinitivo — a norma não aceita. Troque por \"como o personagem interpreta\" ou reorganize: \"ao interpretar o anúncio, o personagem...\"."
+    },
+    {
+      "n": 3,
+      "tipo": "elogio",
+      "texto": "Esta é a melhor parte da resposta: você percebeu que o humor nasce de o menino ler a placa de um jeito diferente do que a loja quis dizer. Estava no caminho — faltou dizer qual palavra permite as duas leituras."
+    },
+    {
+      "n": 4,
+      "tipo": "conteudo",
+      "texto": "Não é literal × figurado: os dois sentidos de \"trocar\" são literais (trocar a mercadoria × trocar a roupa do corpo). A banca quer a palavra \"trocar\" e os dois sentidos escritos na resposta."
+    },
+    {
+      "n": 5,
+      "tipo": "gramatica",
+      "texto": "Palavra citada como palavra vai entre aspas (à mão, pode ser sublinhada)."
+    },
+    {
+      "n": 6,
+      "tipo": "conteudo",
+      "texto": "Neologismo é o resultado (uma palavra nova), não o processo. A pergunta é \"que processo\": desmonte a palavra — porc- + -ona. Entrou um sufixo, então é derivação sufixal, igual a \"mensalão\" (mensal + -ão) na sua apostila."
+    },
+    {
+      "n": 7,
+      "tipo": "conteudo",
+      "texto": "Norma culta não é dicionário. \"Porcona\" é informal (registro de fala), o que não faz dela uma palavra nova. E a palavra não \"é a formação\": ela resulta de uma formação."
+    }
+  ],
+  "itens": [
+    {
+      "item": "a)",
+      "esperado": "Ambiguidade (duplo sentido) do verbo \"trocar\": a placa fala em troca de mercadoria; o menino entende trocar a roupa íntima do corpo",
+      "voce": "Ironia; o personagem lê a placa \"de modo literal\" — sem citar \"trocar\" nem os dois sentidos",
+      "nivel": "0%",
+      "pontos": "0 / 0,5"
+    },
+    {
+      "item": "b)",
+      "esperado": "Derivação sufixal: porc- + sufixo aumentativo -ona (valor pejorativo)",
+      "voce": "Neologismo, \"palavra nova que não está na norma culta\"",
+      "nivel": "0%",
+      "pontos": "0 / 0,5"
+    }
+  ],
+  "nota": {
+    "obtida": "0",
+    "maxima": "1,0",
+    "percentual": "0%",
+    "criterio": "Item a não atende ao pedido (recurso errado: ironia no lugar de ambiguidade); item b não atende (neologismo não é processo de formação). Pesos de 50% por item supostos, a questão não informa."
+  },
+  "de_acordo": "A questão veio sem gabarito, então a nota é menos segura do que seria com a resposta indicada. Ainda assim, os dois itens não estão de acordo com o pedido: \"ironia\" não descreve o que acontece na charge, e \"neologismo\" nomeia o produto, não o processo — a sua própria apostila (seção 6.1) diz que o neologismo formal é feito \"pelos processos que você já estudou\". Se o gabarito do cursinho disser outra coisa, mande que eu refaço a correção.",
+  "gramatica": [
+    {
+      "trecho": "ao personagem, presente na charge, interpretar",
+      "correcao": "como o personagem, presente na charge, interpreta",
+      "regra": "O artigo do sujeito de um verbo no infinitivo não se junta à preposição: \"antes de o jogo começar\", não \"antes do jogo começar\". Na dúvida, troque por \"como\" + verbo conjugado."
+    },
+    {
+      "trecho": "A palavra porcona",
+      "correcao": "A palavra “porcona”",
+      "regra": "Palavra citada como palavra (e não usada) vai entre aspas."
+    }
+  ],
+  "melhorar": [
+    "Charge com placa ou aviso: procure a palavra que tem dois sentidos e escreva os dois na resposta. Aqui, \"trocar\" = devolver a mercadoria × mudar a roupa do corpo. O nome é ambiguidade (duplo sentido). Ironia só quando alguém diz o contrário do que pensa.",
+    "\"Que processo de formação\" pede o mecanismo, não a categoria: separe a palavra em pedaços (porc- + -ona), diga o que entrou (sufixo) e dê o nome (derivação sufixal). É o 3º erro de formação de palavras em uma semana (vacina, desnome, porcona).",
+    "Uma ideia por frase: nomeie o recurso e depois mostre-o na charge. Cortar \"é evidente que\" e o \"humor\" repetido abre espaço para a explicação que dá ponto."
+  ],
+  "reescrita": "a) O autor utiliza, como recurso expressivo para criar humor na charge, a ambiguidade do verbo “trocar”. A placa da loja quer dizer que roupas íntimas compradas ali não podem ser trocadas por outras; o menino, porém, interpreta “trocar” no sentido de mudar a roupa que se veste, como se as funcionárias não trocassem a própria roupa íntima. Por isso ele chama a vendedora de “porcona”, e o humor nasce desse duplo sentido.\n\nb) A palavra “porcona” é formada por derivação sufixal: ao radical de “porco” acrescenta-se o sufixo aumentativo “-ona”, que aqui tem valor pejorativo, próprio da linguagem oral."
+}

@@ -30,6 +30,20 @@ Todo erro de Português, com a causa. É daqui que o `/revisar` monta a revisão
 **O que revisar:** concordância com sujeito composto e sujeito longo; regência de contribuir/ocasionar/acordo/impressão; conjunção subordinativa pede oração principal; "por outro lado" é contraste, não adição
 **Nota:** redação estimada em 4,5 / 10 (passa do corte de 3,0) · cards 12 e 51–55 em `Projetos/Cursinho/lingua-portuguesa/flashcards-lingua-portuguesa.md`
 
+### 2026-09-30 — Charge "porcona": recurso de humor (apostila do cursinho, Aula 12, questão 02, item a)
+**Questão:** placa "NÃO TROCAMOS ROUPAS ÍNTIMAS", menino grita "PORCONA!" para a vendedora. Que recurso expressivo o autor usou para criar humor?
+**Respondi:** ironia — "o personagem interpreta o anúncio da loja de modo literal"   **Correto (sem gabarito enviado):** ambiguidade (duplo sentido) do verbo "trocar": a loja fala em troca de mercadoria; o menino entende trocar a roupa íntima do corpo
+**Causa:** conceito (confundiu ironia — dizer o contrário do que se pensa — com ambiguidade; não apontou a palavra de duplo sentido nem os dois sentidos). Língua: "ao personagem interpretar" (preposição contraída com o artigo do sujeito do infinitivo)
+**O que revisar:** ironia × ambiguidade × polissemia; em charge com placa/aviso, achar a palavra com dois sentidos e escrever os dois.
+**Nota:** 0 / 0,5 no item (0%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-09-30-lingua-portuguesa-ambiguidade-porcona.pdf`
+
+### 2026-09-30 — Formação de "porcona" (apostila do cursinho, Aula 12, questão 02, item b)
+**Questão:** a expressão "porcona", típica da oralidade, é exemplo de que processo de formação de palavras?
+**Respondi:** neologismo — "palavra nova, que não está presente na norma culta"   **Correto (sem gabarito enviado):** derivação sufixal — porc- + sufixo aumentativo "-ona", com valor pejorativo (mesmo mecanismo de "mensalão")
+**Causa:** conceito (neologismo é o resultado, não o processo; confundiu registro informal com palavra nova). **3º erro de formação de palavras em uma semana** (vacina 23/09, desnome 24/09, porcona 30/09)
+**O que revisar:** "que processo" pede o mecanismo: separar a palavra em pedaços, dizer o que entrou (prefixo, sufixo, os dois) e dar o nome. Neologismo formal nasce desses processos.
+**Nota:** 0 / 0,5 no item (0%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-09-30-lingua-portuguesa-ambiguidade-porcona.pdf`
+
 ## 🔗 Relacionados
 
 [[Vestibular-projeto]]
