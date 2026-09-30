@@ -330,6 +330,126 @@
 > **Não.** Vírgula entre sujeito e verbo. Sujeito longo não autoriza vírgula.
 > ⚠️ Sua redação de 26/09 (2 vezes). A professora já tinha marcado esse erro na redação da escala 6x1.
 
+### Aula de 29/09: formação de palavras, estrangeirismos e vírgula
+
+> Do baralho `formacao-de-palavras-e-virgula.md` (39 cards), só os que ainda não estavam no Trajeto.
+> Os números seguem o Trajeto; 56 a 64 (exemplos de erudita e híbrida) estão só lá.
+
+> [!question]- 65. Democracia ou sociologia: qual das duas é híbrida?
+> **Sociologia:** socio vem do latim e logia, do grego.
+> Democracia é erudita: demo e cracia são os dois gregos.
+
+> [!question]- 66. Classifique: entristecer, infelizmente, subterrâneo, desigualdade.
+> **Parassíntese:** entristecer, subterrâneo (tristecer, entriste, terrâneo, subterra não existem).
+> **Prefixal e sufixal:** infelizmente, desigualdade (felizmente, infeliz, igualdade, desigual existem).
+
+> [!question]- 67. O que é derivação regressiva, e o que é um deverbal?
+> A palavra nova é **menor**: o verbo perde a terminação e vira substantivo com -a, -o ou -e.
+> Esse substantivo é o **deverbal**: buscar → busca, recuar → recuo, atacar → ataque.
+
+> [!question]- 68. Substantivo e verbo parecidos: como saber quem veio primeiro?
+> Critério da **ação**: "o ato de ___".
+> Funciona (a busca = o ato de buscar) → **regressiva**.
+> Não funciona (perfume é coisa) → o substantivo veio antes e o verbo deriva dele por **sufixação**: perfume → perfumar, planta → plantar.
+
+> [!question]- 69. A anotação diz "perfumar → perfume: derivação sufixal". O que está errado?
+> A seta está **invertida**: perfume → perfumar.
+> Perfume é primitiva; a derivada é o verbo perfumar (perfume + -ar), por sufixação.
+> Ajuste à aula de 29/09.
+
+> [!question]- 70. "Estudar é bom" é um exemplo seguro de derivação imprópria?
+> **Não é o mais seguro.** Estudar é núcleo de oração subordinada substantiva subjetiva reduzida de infinitivo (aceita advérbio: "estudar muito").
+> Seguro é com determinante: "o estudar constante", "o jantar".
+> Ajuste à aula de 29/09.
+
+> [!question]- 71. Além de verbo → substantivo, que outras derivações impróprias existem?
+> Adjetivo → substantivo (o belo) · conjunção → substantivo (o porquê, um senão) · substantivo → adjetivo (produtos piratas) · próprio → comum (um judas, gilete) · comum → próprio (Pereira) · particípio → preposição (durante, exceto) · → interjeição (Viva! Basta!).
+> ⭐ 2023.1-OBJ-IL30 ("o mirabolante").
+
+> [!question]- 72. "O jantar" e "a pesca": qual é imprópria e qual é regressiva?
+> **O jantar:** imprópria (forma idêntica, só ganhou artigo).
+> **A pesca:** regressiva (pescar perdeu o -r e encolheu).
+
+> [!question]- 73. Quais são as três formas de um estrangeirismo entrar no português?
+> **Sem adaptação:** site, link, bullying.
+> **Aportuguesada:** futebol, bife, sanduíche, xampu, abajur.
+> **Decalque** (tradução ao pé da letra): arranha-céu, cachorro-quente, fim de semana.
+
+> [!question]- 74. Galicismos e anglicismos: quando e por quê?
+> **Galicismos:** até os anos 1950, prestígio cultural francês, 2ª língua das escolas (batom, perfume, maionese).
+> **Anglicismos:** desde o pós-guerra, poderio econômico e tecnológico dos EUA (futebol, site, link).
+
+> [!question]- 75. De onde vêm os africanismos? E "feijoada" é um deles?
+> Mais de três séculos de escravidão, até 1888; línguas bantas e iorubá: samba, caçula, cafuné, moleque, tutu, candomblé, macumba.
+> **Feijoada não:** feijão + -ada, palavra portuguesa.
+> Ajuste à aula de 29/09.
+
+> [!question]- 76. Como usar estrangeirismo na redação e na dissertativa?
+> Estrangeirismo desnecessário é vício de linguagem (delivery × entrega).
+> Tem equivalente? Use o português. Não tem? Escreva **entre aspas**.
+> ⭐ 2023.1-DIS-LP15 (estrangeirismos, trecho de Bechara).
+
+> [!question]- 77. O que é siglonímia? E sigla soletrada × acrônimo?
+> Palavras formadas pelas iniciais, por **economia comunicativa**.
+> **Soletrada:** FMI, FGV, INSS. **Acrônimo** (lida como palavra): ONU, OTAN, Unicamp.
+> OTAN = NATO em inglês.
+
+> [!question]- 78. Sigla, abreviação vocabular e abreviatura: qual a diferença?
+> **Sigla:** iniciais (ONU).
+> **Abreviação:** corte usado também na fala (foto, metrô, pneu).
+> **Abreviatura:** só na escrita, com ponto (Dr., pág.).
+
+> [!question]- 79. Neologismo formal ou semântico: qual a diferença?
+> **Formal:** palavra nova (mensalão, podcast, deletar).
+> **Semântico:** sentido novo para palavra antiga (laranja, nuvem, vírus).
+> O oposto é o **arcaísmo**.
+
+> [!question]- 80. Mensalão, petrolão, laranja, rachadinha: como se formaram?
+> **Mensalão:** mensal + -ão (pagamentos a parlamentares por votos, 2005).
+> **Petrolão:** petróleo + -ão, por analogia com mensalão (Petrobras, Lava Jato).
+> **Laranja:** sentido novo (quem empresta o nome).
+> **Rachadinha:** rachar + -inha (parte do salário do assessor).
+
+> [!question]- 81. Que efeito de sentido têm os sufixos de "mensalão" e "rachadinha"?
+> **-ão:** marca o tamanho do escândalo.
+> **-inha:** tom de coisa pequena e informal, irônico diante de desvio de dinheiro público.
+
+> [!question]- 82. Sinais de pausa e sinais de melodia: quais são?
+> **Pausa:** vírgula, ponto e vírgula, ponto.
+> **Melodia:** dois-pontos, interrogação, exclamação, aspas, reticências, parênteses, travessão.
+
+> [!question]- 83. Vírgula se põe onde a gente respira?
+> **Não.** A regra é sintática, pela ordem dos termos.
+> Depois de sujeito longo há pausa e não há vírgula.
+
+> [!question]- 84. "Os alunos que estudaram durante o ano inteiro, passaram." Está certo?
+> **Não.** A vírgula separa sujeito e verbo. Sujeito longo continua sendo sujeito.
+
+> [!question]- 85. "Chegaram, os resultados." Está certo?
+> **Não.** Sujeito posposto não se separa do verbo.
+> A inversão que pede vírgula é a do adjunto adverbial.
+> ⭐ Sujeito posposto: 2024.1-OBJ-27 e 2026.1-OBJ-20.
+
+> [!question]- 86. Adjunto adverbial no início da frase: quando leva vírgula?
+> **Longo:** vírgula. **Curto:** facultativa.
+> **Oração adverbial** no início: vírgula (no fim, facultativa).
+> ⚠️ Seu erro de 23/09: "Sob essa perspectiva a palavra…" sem vírgula.
+
+> [!question]- 87. Que elementos intercalados ficam entre vírgulas?
+> Aposto, vocativo, conjunção deslocada (porém, portanto), expressão explicativa (isto é, ou seja), oração intercalada, oração adjetiva explicativa.
+> Sempre **duas** vírgulas.
+> ⭐ 2025.1-OBJ-17 (vírgulas da oração adjetiva e do vocativo).
+
+> [!question]- 88. Quando vai vírgula antes do "e"?
+> Sujeitos diferentes · "e" com valor de "mas" · "e" repetido (polissíndeto).
+> Mesmo sujeito: sem vírgula.
+> Com sujeitos diferentes é recomendada (a aula disse obrigatória). Na redação, use sempre.
+> Ajuste à aula de 29/09.
+
+> [!question]- 89. O que é zeugma, e como ele difere da elipse?
+> **Zeugma:** omite termo já dito; a vírgula marca o lugar ("Eu prefiro café; ela, chá.").
+> **Elipse:** omite termo que não apareceu ("Estudamos ontem").
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]
