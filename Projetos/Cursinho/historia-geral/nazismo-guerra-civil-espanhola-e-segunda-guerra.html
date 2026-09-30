@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Nazismo, Espanha e 2ª Guerra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E9EBE6; --surface:#F7F8F4; --surface-2:#EFF1EC; --ink:#1A1E23; --muted:#5A6068; --line:#CDD1CA;
+  --h-weimar:#A5690F; --h-nazi:#8E2C2C; --h-holo:#5F3A72; --h-espanha:#2E6863; --h-guerra:#2B4C9B; --h-pos:#5E6B1F;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+    --h-weimar:#D9A441; --h-nazi:#E58383; --h-holo:#BE9FDA; --h-espanha:#6FC2BA; --h-guerra:#8FA8F2; --h-pos:#B9C86E;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+  --h-weimar:#D9A441; --h-nazi:#E58383; --h-holo:#BE9FDA; --h-espanha:#6FC2BA; --h-guerra:#8FA8F2; --h-pos:#B9C86E;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-guerra);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1.3fr;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.node{border:1.5px solid var(--c,var(--ink));border-radius:8px;padding:10px 12px;background:var(--surface)}
+.node small{display:block;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--muted));margin-bottom:4px}
+.node strong{font:700 20px/1.05 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.node p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.arrow{font:700 22px/1 var(--display);color:var(--muted);text-align:center}
+.fork{display:grid;gap:8px}
+.common{grid-column:1/-1;font-size:13.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.common b{color:var(--ink);font-weight:600}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted)}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35)}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg)}
+  .card{min-height:360px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">História Geral · Caderno 4 · Aula 14</div>
+    <h1>Nazismo, Guerra Civil Espanhola e Segunda Guerra</h1>
+    <p class="lede">A humilhação de Versalhes e a crise de 1929 derrubam a República de Weimar e põem o <b>nazismo</b> no poder. O nazifascismo testa suas armas na <b>Guerra Civil Espanhola</b> e leva o mundo à <b>guerra total</b>, que termina com 50 milhões de mortos, a ONU e o mundo dividido entre EUA e URSS.</p>
+    <div class="fix"><b>Correções no caderno:</b> Hindenburg morreu em <b>1934</b> (não 1939); o levante dos generais espanhóis foi em <b>julho de 1936</b> (não março); o Japão invadiu a Manchúria em <b>1931</b>; Tito resistiu na <b>Iugoslávia</b>; quem desembarcou no norte da África em 1942 foram <b>americanos e ingleses</b>; e <b>Hiroshima</b> teve mais mortos que Nagasaki.</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 37</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="flow" aria-label="Fio condutor da aula">
+      <div class="node" style="--c:var(--h-weimar)"><small>O terreno</small><strong>Versalhes + 1929</strong><p>Humilhação, hiperinflação e desemprego</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" style="--c:var(--h-nazi)"><small>1933</small><strong>Nazismo no poder</strong><p>Terror, propaganda, Holocausto</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="fork">
+        <div class="node" style="--c:var(--h-espanha)"><small>O ensaio · 1936–1939</small><strong>Guerra Civil Espanhola</strong><p>Franco vence com Hitler e Mussolini</p></div>
+        <div class="node" style="--c:var(--h-guerra)"><small>A guerra total · 1939–1945</small><strong>Segunda Guerra Mundial</strong><p>Eixo × Aliados · virada em 1942</p></div>
+      </div>
+      <div class="common"><b>O que sai dela:</b> 50 milhões de mortos, ONU, Bretton Woods e o mundo dividido entre EUA e URSS, o começo da Guerra Fria.</div>
+    </div>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-weimar)">
+        <h2>Weimar e ascensão</h2>
+        <ul class="tree">
+          <li><span>Versalhes: o <i>Diktat</i></span>
+            <ul><li>Colônias, 1/5 do território, 132 bi de marcos</li><li>Exército de 100 mil · hiperinflação em 1923</li></ul></li>
+          <li><span>República de Weimar</span>
+            <ul><li>Reichstag, presidente e chanceler</li><li>Espartaquistas reprimidos (1919–1923)</li><li>Bauhaus, Einstein, Brecht, Escola de Frankfurt</li></ul></li>
+          <li><span>Ideário nazista</span>
+            <ul><li>Raça ariana e “punhalada nas costas”</li><li>Industriais financiam por medo do comunismo</li></ul></li>
+          <li><span>Caminho ao poder</span>
+            <ul><li>Plano Dawes, depois o colapso de 1929</li><li><b>1930:</b> 107 deputados · <b>1932:</b> 260</li><li><b>1933:</b> chanceler; incêndio do Reichstag</li><li><b>1934:</b> Führer, 3º Reich</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-nazi)">
+        <h2>Governo nazista</h2>
+        <ul class="tree">
+          <li><span>Repressão</span>
+            <ul><li>Gestapo · SA · SS (Himmler) · SD</li></ul></li>
+          <li><span>Educação</span>
+            <ul><li>Meninas: eugenia e maternidade</li><li>Meninos: tiro e Juventude Hitlerista</li></ul></li>
+          <li><span>Economia</span>
+            <ul><li>Estado controla câmbio, salários e lucros</li><li>Obras + rearmamento: desemprego perto de 0%</li></ul></li>
+          <li><span>Propaganda</span> <span class="fgv">★ 2026.1-DIS-CH3</span>
+            <ul><li>Goebbels · monopólio da mídia</li><li>Cinema: Leni Riefenstahl</li><li>“Heil Hitler” e culto ao líder</li></ul></li>
+          <li><span>Estética</span>
+            <ul><li>Arte moderna “degenerada” · Wagner</li><li>“Embelezar” pelo extermínio</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-holo)">
+        <h2>Holocausto</h2>
+        <ul class="tree">
+          <li><span>Escalada contra os judeus</span>
+            <ul><li>1933 afastados · <b>1935 Leis de Nuremberg</b></li><li><b>1938 Noite dos Cristais</b> · 1939 guetos</li></ul></li>
+          <li><span>Outras vítimas</span>
+            <ul><li>Ciganos e eslavos · cobaias</li><li>Deficientes: esterilização e eutanásia</li></ul></li>
+          <li><span>Campos</span> <span class="fgv">★ 2023.1-DIS-CH4</span>
+            <ul><li>Concentração (trabalho) × extermínio</li><li>Auschwitz · 6 milhões de judeus</li></ul></li>
+          <li><span>Shoah</span> <span class="fgv">★ 2024.1-DIS-AR2</span>
+            <ul><li>“Catástrofe” em hebraico</li><li>Adorno: depois de Auschwitz, não há poesia</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-espanha)">
+        <h2>Guerra Civil Espanhola</h2>
+        <ul class="tree">
+          <li><span>“Pátria invertebrada”</span>
+            <ul><li>Separatismo basco, galego e catalão</li><li>Operários anarquistas e socialistas</li><li>Colônias perdidas</li></ul></li>
+          <li><span>Até 1936</span>
+            <ul><li>1923 Primo de Rivera · 1931 República</li><li>1933 Falange · 1936 Frente Popular</li></ul></li>
+          <li><span>Os dois lados</span>
+            <ul><li><b>Franco:</b> Hitler, Mussolini, Salazar</li><li><b>República:</b> URSS e Brigadas Internacionais</li><li>Não Intervenção favorece Franco</li></ul></li>
+          <li><span>Guernica, 1937</span> <span class="fgv">★ 2021.1-DIS-AR4 · AR5</span>
+            <ul><li>Legião Condor arrasa a vila</li><li>Picasso: manifesto contra a guerra</li></ul></li>
+          <li><span>Fim em 1939</span> <span class="fgv">★ 2023.1-DIS-CH4</span>
+            <ul><li>~1 milhão de mortos · Franco até 1975</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-guerra)">
+        <h2>Segunda Guerra</h2>
+        <ul class="tree">
+          <li><span>Antecedentes</span>
+            <ul><li><i>Lebensraum</i> · rearmamento · Renânia</li><li>Japão na Manchúria (1931) e na China</li></ul></li>
+          <li><span>1938</span> <span class="fgv">★ 2026.1-DIS-CH3</span>
+            <ul><li>Anschluss e Sudetos</li><li>Apaziguamento inglês, “mãos livres” francesas</li></ul></li>
+          <li><span>1939</span>
+            <ul><li>Pacto Molotov-Ribbentrop</li><li>1º/09: Polônia · Eixo × Aliados</li></ul></li>
+          <li><span>Vitórias do Eixo</span>
+            <ul><li>Blitzkrieg · França cai em 1940</li><li>RAF segura a Inglaterra</li><li>Barbarossa (1941) trava na URSS</li><li>Pearl Harbor: EUA entram</li></ul></li>
+          <li><span>Virada e fim</span>
+            <ul><li>Stalingrado (1942–1943)</li><li>Dia D, 6/6/1944 · Berlim, 8/5/1945</li><li>Hiroshima e Nagasaki</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-pos)">
+        <h2>Consequências</h2>
+        <ul class="tree">
+          <li><span>Saldo</span>
+            <ul><li>~50 milhões de mortos, 20 milhões soviéticos</li><li>EUA intactos, com ~80% do ouro</li></ul></li>
+          <li><span>Conferências</span>
+            <ul><li>Teerã 1943 · Yalta e Potsdam 1945</li><li>Alemanha em 4 zonas → RFA e RDA</li><li>Tribunal de Nuremberg</li></ul></li>
+          <li><span>Nova ordem</span>
+            <ul><li>Bretton Woods: dólar, FMI, Banco Mundial</li><li>ONU, 24/10/1945</li></ul></li>
+          <li><span>Longo prazo</span> <span class="fgv">★ 2025.1-OBJ-50 · 2026.1-OBJ-47</span>
+            <ul><li>Guerra Fria · descolonização</li><li>Oriente Médio: Israel, 1948</li></ul></li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1).</p>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    weimar:{n:"Weimar e ascensão", c:"var(--h-weimar)"},
+    nazi:{n:"Governo nazista", c:"var(--h-nazi)"},
+    holo:{n:"Holocausto", c:"var(--h-holo)"},
+    espanha:{n:"Guerra Civil Espanhola", c:"var(--h-espanha)"},
+    guerra:{n:"Segunda Guerra", c:"var(--h-guerra)"},
+    pos:{n:"Consequências", c:"var(--h-pos)"}
+  };
+  var CARDS = [
+    {b:"weimar", q:"O que o Tratado de Versalhes impôs à Alemanha, e como os alemães o chamaram?",
+     a:"<ul><li>Culpa pela 1ª Guerra</li><li>Perda de <b>todas as colônias</b> e de <b>1/5 do território</b> (Alsácia-Lorena, corredor polonês até Dantzig)</li><li>Indenização de <b>132 bilhões de marcos</b></li><li>Exército limitado a <b>100 mil homens</b></li></ul><p>Os alemães chamaram o tratado de <b>Diktat</b> (“imposição”). Resultado: crise e <b>hiperinflação</b> em 1923.</p>"},
+    {b:"weimar", q:"O que foi a República de Weimar e que ameaças ela enfrentou?",
+     a:"<p>A 1ª república alemã (1919–1933), com Constituição social-democrata feita em Weimar: Parlamento (<b>Reichstag</b>) eleito por voto universal e executivo dividido entre <b>presidente e chanceler</b>.</p><p>Ameaças: hiperinflação e tentativas comunistas de 1919 a 1923, como a <b>Liga Espartaquista</b> (Rosa Luxemburgo e Karl Liebknecht), reprimida pelo governo.</p>"},
+    {b:"weimar", q:"Que florescimento cultural marcou Weimar, e o que o nazismo fez com ele?",
+     a:"<ul><li><b>Bauhaus</b> (Gropius): design para a produção industrial</li><li><b>Einstein</b>, Nobel de 1921, e o dramaturgo <b>Brecht</b></li><li><b>Escola de Frankfurt</b> (Adorno e Horkheimer): indústria cultural e crítica à razão iluminista</li></ul><p>O nazismo queimou <b>20 mil livros</b>, destruiu 16 mil obras e chamou a arte moderna de <b>“degenerada”</b>.</p>"},
+    {b:"weimar", q:"O que era a “punhalada nas costas” (Dolchstoss)?",
+     a:"<p>A mentira nazista de que a Alemanha <b>perdeu a 1ª Guerra por traição</b> de socialistas, comunistas e judeus.</p><p>Somava-se à ideia de uma <b>raça ariana pura</b>, “corrompida” por judeus, ciganos, poloneses e negros, e à acusação de que os judeus causaram a crise econômica.</p>"},
+    {b:"weimar", q:"Por que a Crise de 1929 foi decisiva para os nazistas?",
+     a:"<p>De 1924 a 1929 a Alemanha se recuperou com moeda estável e dinheiro americano (<b>Plano Dawes</b>). Dependente desse dinheiro, a economia <b>desabou em 1929</b> e o desemprego explodiu.</p><p>Nazistas: <b>107 deputados em 1930 → 260 cadeiras em 1932</b>. Grandes industriais (Thyssen, Krupp) financiaram o partido por <b>medo do comunismo</b>.</p>"},
+    {b:"weimar", q:"Como Hitler passou de chanceler a Führer (1933–1934)?",
+     a:"<ul><li><b>Jan. 1933:</b> Hindenburg o nomeia chanceler, pressionado por empresários e com medo do comunismo</li><li><b>Fev. 1933:</b> incêndio do Reichstag, atribuído a um comunista, é o pretexto para prender ~4 mil comunistas</li><li>Partidos e sindicatos dissolvidos: <b>partido único</b></li><li><b>1934:</b> morre Hindenburg e Hitler vira <b>Führer e chanceler</b>: nasce o <b>3º Reich</b></li></ul>"},
+    {b:"nazi", q:"Quais eram os órgãos de repressão do regime nazista?",
+     a:"<ul><li><b>Gestapo:</b> polícia secreta, caçava opositores</li><li><b>SA:</b> tropa de assalto, os “camisas pardas”, violência de rua</li><li><b>SS:</b> de Himmler; guarda dos líderes, depois comandou os <b>campos de concentração</b></li><li><b>SD:</b> serviço de inteligência do Partido</li></ul>"},
+    {b:"nazi", q:"Como era a educação nazista para meninos e para meninas?",
+     a:"<p>Objetivo: formar <b>soldados obedientes a Hitler</b> e aos princípios racistas.</p><ul><li><b>Meninas:</b> ler, escrever, contar, educação física e <b>eugenia</b>, para serem mães da raça ariana</li><li><b>Meninos:</b> esporte e tiro; dos 10 aos 14 anos, <b>Juventude Hitlerista</b> e técnicas de combate</li></ul><p>Nas escolas, orações ao Führer e livros que culpavam os judeus pela queda das civilizações.</p>"},
+    {b:"nazi", q:"Como era a economia nazista, e por que o desemprego quase zerou?",
+     a:"<p><b>Forte intervenção do Estado:</b> câmbio, salários e lucros controlados, e grandes <b>obras públicas</b> (rodovias, ferrovias).</p><p>O <b>rearmamento</b>, desrespeitando Versalhes, levou o desemprego para perto de <b>0%</b>. Em 1939 a indústria alemã era a <b>2ª do mundo</b>, atrás só dos EUA.</p>"},
+    {b:"nazi", q:"Como funcionava a propaganda nazista?",
+     a:"<ul><li><b>Monopólio estatal</b> dos meios de comunicação, com <b>Goebbels</b> no Ministério da Propaganda</li><li>Mensagem simples, no nível do menos instruído, repetida sem parar</li><li><b>Cinema</b> foi o maior investimento: +2.000 filmes. <b>Leni Riefenstahl</b> fez <i>O triunfo da vontade</i> e <i>Olímpia</i> (Jogos de Berlim, 1936)</li><li>Culto ao líder: a saudação <b>“Heil Hitler”</b></li></ul>",
+     fgv:"2026.1-DIS-CH3 · saudação nazista e propaganda pelo esporte"},
+    {b:"nazi", q:"Qual era o ideal estético do nazismo?",
+     a:"<p>“<b>Embelezar</b>” a sociedade: a raça ariana seria pura e as outras, “degeneradas”.</p><ul><li>Arte moderna = <b>“arte degenerada”</b>, de comunistas e judeus</li><li>Arte oficial: batalhas, heróis, mitologia, atletas e soldados arianos</li><li>Música: <b>Wagner</b>, antissemita e mitológico</li></ul><p>Hitler se via como um artista “regenerando” a beleza do mundo pelo extermínio dos “impuros”.</p>"},
+    {b:"holo", q:"Quais foram as etapas da perseguição aos judeus de 1933 a 1939?",
+     a:"<ul><li><b>1933:</b> funcionários públicos judeus afastados; proibidos na imprensa, na arte, nos tribunais e na saúde</li><li><b>1935: Leis de Nuremberg</b> tiram os direitos civis</li><li><b>1936:</b> expulsos do Exército</li><li><b>1938:</b> expulsos do comércio; <b>Noite dos Cristais</b> (sinagogas e lojas destruídas, 30 mil levados a campos)</li><li><b>1939:</b> bens confiscados, <b>guetos</b> e campos</li></ul>"},
+    {b:"holo", q:"Além dos judeus, quem o nazismo tratava como “raça inferior” ou “vida sem valor”?",
+     a:"<ul><li><b>Ciganos e eslavos</b>, sobretudo poloneses: massacres, campos e uso como <b>cobaias</b> por médicos nazistas</li><li><b>Deficientes físicos e mentais:</b> esterilização e eutanásia, “vidas que não valiam a pena ser vividas”. Cerca de <b>70 mil</b> doentes mentais mortos até 1941</li></ul>"},
+    {b:"holo", q:"Qual a diferença entre campo de concentração e campo de extermínio? Qual foi o maior?",
+     a:"<p><b>Concentração:</b> trabalho forçado até a exaustão. <b>Extermínio:</b> feito para matar as “raças inferiores”.</p><p>O maior foi <b>Auschwitz</b> (Polônia): mais de 1 milhão de judeus mortos. No total, cerca de <b>6 milhões de judeus</b>, um terço dos judeus do mundo.</p><p>⚠️ Quem promoveu o extermínio foi o <b>regime nazista</b>, não “a guerra”: foi o seu erro na discursiva de 30/09.</p>",
+     fgv:"2023.1-DIS-CH4 · barbárie anti-iluminista (Hobsbawm)"},
+    {b:"holo", q:"Por que muitos judeus preferem “Shoah” a “Holocausto”? E o que disse Adorno?",
+     a:"<p>“Holocausto” lembra um <b>sacrifício religioso</b>; muitos judeus acham o termo inadequado e preferem <b>Shoah</b>, palavra hebraica para <b>catástrofe, destruição</b>.</p><p>Adorno: <b>depois de Auschwitz, não há poesia</b>. O genocídio como fracasso da civilização ocidental.</p>",
+     fgv:"2024.1-DIS-AR2 · As origens do totalitarismo (Arendt)"},
+    {b:"espanha", q:"Por que a Guerra Civil Espanhola (1936–1939) é chamada de “ensaio” da 2ª Guerra?",
+     a:"<p>Todas as ideologias da época se enfrentaram lá: <b>comunismo, anarquismo, republicanismo, fascismo e nacionalismo</b>.</p><p>Hitler e Mussolini <b>testaram armas</b>, treinaram soldados e <b>selaram a aliança</b> Itália–Alemanha.</p>",
+     fgv:"2021.1-DIS-AR4 · Guernica no seu contexto político"},
+    {b:"espanha", q:"Que tensões a Espanha tinha antes da guerra, a “pátria invertebrada”?",
+     a:"<p>Monarquia Bourbon apoiada em <b>latifundiários</b> e numa <b>Igreja</b> cheia de privilégios; massa de camponeses sem terra. Três tensões:</p><ul><li><b>Separatismo:</b> País Basco, Galícia e Catalunha</li><li><b>Operários organizados:</b> anarquistas (CNT, FAI) e socialistas (UGT, PSOE)</li><li><b>Perda das colônias:</b> Cuba, Filipinas e Porto Rico</li></ul><p>“Pátria invertebrada” é de Ortega y Gasset.</p>"},
+    {b:"espanha", q:"Como a Espanha foi da ditadura à República e à Frente Popular (1923–1936)?",
+     a:"<ul><li><b>1923:</b> golpe do general <b>Primo de Rivera</b>, inspirado em Mussolini; o rei Afonso XIII fica</li><li><b>1930:</b> Rivera renuncia</li><li><b>1931:</b> o rei vai para o exílio e a <b>República</b> é proclamada</li><li><b>1933:</b> nasce a <b>Falange</b>, o partido fascista espanhol</li><li><b>Fev. 1936:</b> a <b>Frente Popular</b> (esquerdas) vence por 200 mil votos: anistia, autonomia basca e catalã, <b>reforma agrária</b></li></ul>"},
+    {b:"espanha", q:"Quem eram os dois lados da guerra, e quem ajudou cada um?",
+     a:"<p><b>Nacionalistas:</b> militares de <b>Franco</b> e Mola, com a Falange, a Igreja e os latifundiários. Ajuda de <b>Hitler</b> (Legião Condor), <b>Mussolini</b> e <b>Salazar</b>, e de empresas americanas (Texaco, Ford, GM).</p><p><b>Republicanos:</b> socialistas, comunistas, anarquistas e liberais. Ajuda da <b>URSS</b> (até o pacto com Hitler) e das <b>Brigadas Internacionais</b>: ~60 mil voluntários de 54 países, como Hemingway e Orwell.</p>"},
+    {b:"espanha", q:"O que foi o Comitê de Não Intervenção, e por que ele favoreceu Franco?",
+     a:"<p>Proposto por <b>França e Inglaterra</b> (Comitê de Londres, 1936–1939): nenhum país europeu entraria no conflito.</p><p>Na prática ajudou os fascistas: <b>Alemanha e Itália continuaram armando Franco</b> e a República ficou sozinha.</p>"},
+    {b:"espanha", q:"Por que os republicanos perderam, e como a guerra terminou?",
+     a:"<p><b>Divididos e sem armas:</b> stalinistas (PCE) e trotskistas (POUM) brigavam entre si e contra os anarquistas; operários enfrentavam tanques com espingardas.</p><p>Fim em <b>1º de abril de 1939</b>, com cerca de <b>1 milhão de mortos</b>. <b>Ditadura de Franco até 1975</b>. Destruída, a Espanha ficou <b>neutra na 2ª Guerra</b>.</p>",
+     fgv:"2023.1-DIS-CH4 · franquismo como barbárie (Hobsbawm)"},
+    {b:"espanha", q:"O que aconteceu em Guernica, e o que o quadro de Picasso representa?",
+     a:"<p><b>26 de abril de 1937:</b> a <b>Legião Condor</b> nazista bombardeou a vila basca de Guernica, o 1º bombardeio aéreo feito para <b>aniquilar uma cidade</b>.</p><p><i>Guernica</i> (Picasso, 1937) é uma declaração <b>contra a guerra e a violência</b> e virou símbolo do antimilitarismo. Outras obras da guerra: <i>Premonição da Guerra Civil</i> (Dalí) e a foto do soldado legalista (Robert Capa).</p>",
+     fgv:"2021.1-DIS-AR4 e AR5 · Guernica e Revolution"},
+    {b:"guerra", q:"Quais foram os antecedentes da 2ª Guerra?",
+     a:"<ul><li><b>Versalhes:</b> Alemanha humilhada; Itália sem as colônias que queria</li><li><b>Crise de 1929</b> e ascensão do nazifascismo expansionista</li><li><b>Itália:</b> conquista a Etiópia e a Albânia</li><li><b>Alemanha:</b> busca o <b>espaço vital</b> (<i>Lebensraum</i>), para de pagar indenizações, rearma-se e reocupa Sarre e Renânia (1935–1936)</li><li><b>Japão:</b> invade a Manchúria (1931) e a China (1937)</li></ul><p>A <b>Liga das Nações</b> foi impotente.</p>"},
+    {b:"guerra", q:"O que aconteceu em 1938, e o que foi o apaziguamento?",
+     a:"<ul><li><b>Março de 1938:</b> <b>Anschluss</b>, a anexação da Áustria sem um tiro</li><li>Depois, os <b>Sudetos</b>, região da Tchecoslováquia de maioria alemã</li></ul><p><b>Apaziguamento:</b> a Inglaterra cedia a Hitler, a França deixava “mãos livres” e os EUA ficavam isolados. Motivos: Versalhes teria sido duro demais, a crise econômica e a esperança de que Hitler e Stalin se destruíssem.</p>",
+     fgv:"2026.1-DIS-CH3 · Conferência de Munique e apaziguamento"},
+    {b:"guerra", q:"O que foi o Pacto Molotov-Ribbentrop, e o que cada lado ganhava?",
+     a:"<p><b>23 de agosto de 1939:</b> pacto de não agressão entre Alemanha e URSS, com divisão de áreas de influência. A <b>Polônia foi partilhada</b>.</p><ul><li><b>URSS:</b> territórios e tempo; temia uma frente anglo-francesa contra ela</li><li><b>Alemanha:</b> evitar a guerra em <b>duas frentes</b>, como na 1ª Guerra</li></ul>"},
+    {b:"guerra", q:"Como começou a guerra, e quem eram o Eixo e os Aliados?",
+     a:"<p><b>1º de setembro de 1939:</b> a Alemanha invade a Polônia; França e Inglaterra declaram guerra.</p><ul><li><b>Eixo:</b> Alemanha, Itália e Japão</li><li><b>Aliados:</b> Reino Unido e França; <b>URSS e EUA a partir de 1941</b></li></ul><p>Para alguns historiadores, 1914–1945 foi uma só “<b>Segunda Guerra dos Trinta Anos</b>”.</p>"},
+    {b:"guerra", q:"O que foi a Blitzkrieg, e até onde ela funcionou (1939–1941)?",
+     a:"<p><b>Guerra-relâmpago:</b> aviação (Luftwaffe) e tanques juntos. A Polônia caiu em 20 dias, depois Dinamarca, Noruega, Bélgica e Holanda.</p><p>A <b>França caiu em 1940</b> (a Linha Maginot não segurou) e <b>De Gaulle</b> organizou a resistência.</p><p>A <b>Inglaterra resistiu</b>: a RAF derrotou a força aérea alemã.</p>"},
+    {b:"guerra", q:"O que foi a Operação Barbarossa, e por que ela fracassou?",
+     a:"<p><b>Junho de 1941:</b> a Alemanha invade a URSS, rompendo o pacto.</p><p>Fracassou pelo <b>território imenso</b> (sem Blitzkrieg possível), pelo <b>frio</b>, pela tática de <b>terra arrasada</b> (a mesma usada contra Napoleão) e pelo <b>contra-ataque soviético</b> diante de Moscou.</p>"},
+    {b:"guerra", q:"Por que o Japão atacou Pearl Harbor, e o que isso mudou?",
+     a:"<p>O Japão se expandia pelo Pacífico (Indochina, Filipinas, Indonésia) e os EUA cortaram o seu <b>petróleo</b>.</p><p><b>7 de dezembro de 1941:</b> ataque à base de <b>Pearl Harbor</b> (Havaí). Os <b>EUA entram na guerra</b>, e a América Latina rompe com o Eixo, exceto Argentina e Chile.</p>"},
+    {b:"guerra", q:"Por que 1942 é o ano da “virada”?",
+     a:"<p>Dois fatores: <b>vitórias soviéticas</b> e a <b>entrada dos EUA</b>.</p><ul><li><b>Stalingrado</b> (1942–1943), a batalha mais importante da guerra: ~2 milhões de mortos e feridos</li><li><b>1943:</b> o Eixo perde o norte da África; os Aliados invadem a Itália e <b>Mussolini é deposto</b></li></ul>"},
+    {b:"guerra", q:"Como a guerra terminou na Europa?",
+     a:"<ul><li><b>6 de junho de 1944, Dia D:</b> desembarque aliado na <b>Normandia</b> (Eisenhower)</li><li><b>Agosto de 1944:</b> Paris libertada</li><li><b>Abril de 1945:</b> os soviéticos cercam Berlim; <b>Hitler se suicida</b> em 30/04</li><li><b>8 de maio de 1945:</b> rendição incondicional da Alemanha</li></ul>"},
+    {b:"guerra", q:"Por que os EUA lançaram as bombas atômicas, segundo o caderno?",
+     a:"<p>O <b>Projeto Manhattan</b> (1942–1945) criou a bomba. Em <b>agosto de 1945</b>, bombas em <b>Hiroshima</b> (Little Boy) e <b>Nagasaki</b> (Fat Man).</p><p>O Japão já estava praticamente derrotado: o objetivo era <b>afastar a URSS do Pacífico</b> e mostrar a força dos EUA. As bombas encerram a 2ª Guerra e <b>abrem a Guerra Fria</b>.</p>"},
+    {b:"pos", q:"Qual foi o saldo da guerra, e quem saiu mais forte?",
+     a:"<p>Cerca de <b>50 milhões de mortos</b>, dos quais <b>20 milhões soviéticos</b>: o desempenho da URSS deu prestígio ao socialismo.</p><p>Europa arrasada. Os <b>EUA</b> saíram com o território intacto, a indústria em alta e <b>~80% do ouro do mundo</b>.</p>"},
+    {b:"pos", q:"O que decidiram as conferências de Teerã, Yalta e Potsdam?",
+     a:"<ul><li><b>Teerã (1943)</b>, com Roosevelt, Churchill e Stalin: ajuda anglo-americana para aliviar a frente soviética</li><li><b>Yalta (fev. 1945):</b> <b>Europa Oriental para a URSS</b>, entrada soviética no Pacífico e proposta da ONU</li><li><b>Potsdam (jul.–ago. 1945)</b>, com Truman, Attlee e Stalin: Alemanha em <b>4 zonas</b> (EUA, Inglaterra, França, URSS), que viram <b>RFA</b> capitalista e <b>RDA</b> socialista; <b>Tribunal de Nuremberg</b></li></ul>"},
+    {b:"pos", q:"O que foi a Conferência de Bretton Woods (1944)?",
+     a:"<p>Encontro para estabilizar o capitalismo e <b>evitar outra 1929</b>, com Keynes presente.</p><ul><li><b>Dólar</b> como moeda-padrão, lastreado em ouro (35 dólares = 1 onça)</li><li><b>FMI:</b> socorro a economias em crise e controle do câmbio</li><li><b>Banco Mundial / BIRD:</b> reconstrução da Europa</li></ul>"},
+    {b:"pos", q:"Quando a ONU foi criada, e qual é seu órgão máximo?",
+     a:"<p><b>24 de outubro de 1945</b>, com sede em <b>Nova York</b>, para manter a paz e evitar novas guerras.</p><p>Órgão máximo: o <b>Conselho de Segurança</b>, responsável pela paz e pela segurança internacionais.</p>"},
+    {b:"pos", q:"Que transformações de longo prazo a 2ª Guerra deixou?",
+     a:"<ul><li><b>Guerra Fria:</b> EUA × URSS</li><li><b>Social-democracia</b> e Estado de bem-estar na Europa</li><li><b>Descolonização</b> da Ásia e da África</li><li><b>Conflitos no Oriente Médio</b>, com a criação de Israel (1948)</li><li><b>Industrialização da América Latina</b></li></ul>",
+     fgv:"2025.1-OBJ-50 · Israel em 1948 · 2026.1-OBJ-47 · 80 anos do fim da guerra"}
+  ];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("hg14.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("hg14.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("hg14.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("hg14.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("hg14.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+
+</body>
+</html>

@@ -3,6 +3,9 @@
 > Cards do baralho de revisão diária (trajeto e antes de dormir), criados em 25/09/2026.
 > Base: o que mais cai em História na FGV (banco 2021.1–2026.1) e as suas aulas 1 e 2 do cursinho.
 > Os cards 1 a 19 (Crise de 1929 e nazifascismo) estão em `crise-de-1929-e-nazifascismo.md`, nesta pasta.
+> Os cards 65 a 99 (Aula 14: nazismo, Guerra Civil Espanhola e 2ª Guerra, entraram em 30/09) estão em
+> `nazismo-guerra-civil-espanhola-e-segunda-guerra.md`, nesta pasta. Lá são 37: os de Versalhes e do fim
+> da guerra na Europa ficaram fora do Trajeto porque repetem os cards 23 e 26.
 > ⭐ = já caiu na FGV, com o id da questão no banco.
 > Versão para o celular, com revisão espaçada (todas as matérias juntas): https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX
 
