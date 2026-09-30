@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Gerações do Modernismo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E9EBE6; --surface:#F7F8F4; --surface-2:#EFF1EC; --ink:#1A1E23; --muted:#5A6068; --line:#CDD1CA;
+  --h-g1:#A5690F; --h-g2po:#2B4C9B; --h-g2pr:#8E2C2C; --h-g3:#2E6863; --h-geral:#5F3A72;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+    --h-g1:#D9A441; --h-g2po:#8FA8F2; --h-g2pr:#E58383; --h-g3:#6FC2BA; --h-geral:#BE9FDA;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+  --h-g1:#D9A441; --h-g2po:#8FA8F2; --h-g2pr:#E58383; --h-g3:#6FC2BA; --h-geral:#BE9FDA;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-g2po);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1.3fr;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.node{border:1.5px solid var(--c,var(--ink));border-radius:8px;padding:10px 12px;background:var(--surface)}
+.node small{display:block;font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--muted));margin-bottom:4px}
+.node strong{font:700 20px/1.05 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.node p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.arrow{font:700 22px/1 var(--display);color:var(--muted);text-align:center}
+.fork{display:grid;gap:8px}
+.common{grid-column:1/-1;font-size:13.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.common b{color:var(--ink);font-weight:600}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted)}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35)}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+.flow.gen{grid-template-columns:1fr auto 1.3fr auto 1fr}
+@media (max-width:760px){
+  .flow.gen{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg)}
+  .card{min-height:360px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Literatura · Caderno 4 · aulas 12 e 14</div>
+    <h1>As gerações do Modernismo</h1>
+    <p class="lede">A <b>1ª geração</b> (1922–30) quebra a forma. A <b>2ª</b> (1930–45) guarda essas conquistas e aprofunda o tema: o romance de 30 na prosa, o homem no mundo em guerra na poesia. A <b>3ª</b> (1945 em diante) mistura estéticas, e a Geração de 45 volta à métrica.</p>
+    <div class="fix"><b>O que já caiu destas aulas:</b> Drummond na objetiva (“No meio do caminho”, 2025.1) e Graciliano em Artes (<i>Vidas secas</i>, 2026.1). Bandeira, Alcântara Machado e Vinicius ainda não caíram.</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 36</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="flow gen" aria-label="As três gerações">
+      <div class="node" style="--c:var(--h-g1)"><small>1922–1930 · Semana de 22</small><strong>1ª geração</strong><p>Ruptura e pesquisa formal: verso livre, fala, humor, paródia</p></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="fork">
+        <div class="node" style="--c:var(--h-g2pr)"><small>1930–1945 · prosa</small><strong>Romance de 30</strong><p>Engajado, social e psicológico · regionalismo nordestino</p></div>
+        <div class="node" style="--c:var(--h-g2po)"><small>1930–1945 · poesia</small><strong>Safra lírica</strong><p>O homem no mundo em guerra · forma livre e clássica juntas</p></div>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" style="--c:var(--h-g3)"><small>1945 em diante</small><strong>3ª geração</strong><p>Mistura de estéticas · Geração de 45 volta à métrica</p></div>
+      <div class="common"><b>A virada da 1ª para a 2ª:</b> sai a pesquisa formal, entra a profundidade do tema, sem perder as conquistas de 22. <span class="fgv">★ 2025.1-OBJ-29</span> pesquisa estética, segundo Mário de Andrade.</div>
+    </div>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-g1)">
+        <h2>1ª geração · 1922–1930</h2>
+        <ul class="tree">
+          <li><span>Manuel Bandeira</span>
+            <ul><li>“Humilde sublime”: cotidiano e simplicidade</li><li>Morte resignada, nunca trágica (tuberculose)</li><li>Não foi à Semana; “Os Sapos” foi lido lá</li><li>Pasárgada (evasão) · “Poema tirado de uma notícia de jornal”</li><li>“Evocação do Recife”: a língua do povo</li></ul></li>
+          <li><span>Alcântara Machado</span>
+            <ul><li>Linguagem telegráfica e cinematográfica</li><li>Imigrantes italianos dos bairros operários de SP</li><li><i>Brás, Bexiga e Barra Funda</i> (1927) · “Gaetaninho”</li></ul></li>
+          <li><span>Intertextualidade</span>
+            <ul><li>Paródia que ri do original e o atualiza</li><li>“Canção do exílio”: Oswald, Murilo Mendes, Drummond, José Paulo Paes</li><li>“Teresa”: Bandeira desidealiza Castro Alves</li><li>Juó Bananére: português macarrônico</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-g2pr)">
+        <h2>2ª geração · prosa</h2>
+        <ul class="tree">
+          <li><span>Neorrealismo, romance de 30</span>
+            <ul><li>Engajado: análise social e psicológica</li><li>Urbano · intimista · épico · regionalista</li></ul></li>
+          <li><span>Regionalismo nordestino</span>
+            <ul><li>Engenho arcaico × usina e exportação</li><li>Coronelismo × indústria; a desigualdade fica</li><li>Freyre e José Américo abrem; <i>O Quinze</i> (1930) consolida</li></ul></li>
+          <li><span>Graciliano Ramos</span> <span class="fgv">★ 2026.1-DIS-AR2</span>
+            <ul><li>Regional → universal; homem × meio</li><li>Anti-herói, situações-limite, linguagem seca</li><li>Preso no Estado Novo: <i>Memórias do Cárcere</i></li></ul></li>
+          <li><span><i>São Bernardo</i></span>
+            <ul><li>Paulo Honório narra: tudo vira objeto</li><li>Madalena, a única que não vira; ciúme = ódio</li><li>“Vida agreste”, “alma agreste”: o peso do meio</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-g2po)">
+        <h2>2ª geração · poesia</h2>
+        <ul class="tree">
+          <li><span>“Admirável safra lírica”</span>
+            <ul><li>Drummond, Cecília, Murilo Mendes, Jorge de Lima, Vinicius</li><li>Reflexão e pessimismo diante da guerra</li></ul></li>
+          <li><span>Drummond</span> <span class="fgv">★ 2025.1-OBJ-28 a 30</span>
+            <ul><li>Crise do lirismo: para que serve o poeta?</li><li>Ironia, antissentimentalismo, o eu gauche</li><li>1930–34: poema-piada, Minas, “No meio do caminho”</li><li>1940–45: social, “Mãos dadas”, “E agora, José?”</li></ul></li>
+          <li><span>Vinicius de Moraes</span>
+            <ul><li>Mística → sensual → social</li><li>Sonetos: forma clássica, tema moderno</li><li>“A Rosa de Hiroxima” · bossa nova com Tom Jobim</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-g3)">
+        <h2>3ª geração · 1945 em diante</h2>
+        <ul class="tree">
+          <li><span>Pós-guerra</span>
+            <ul><li>Rádio, TV, cinema, quadrinhos, propaganda</li><li>Mistura de estéticas; há quem diga Pós-Modernismo</li></ul></li>
+          <li><span>Geração de 45</span> <span class="fgv">★ João Cabral</span>
+            <ul><li>Volta à métrica, à rima e à linguagem culta</li><li>“Neoparnasianos”, injustamente</li><li>Lêdo Ivo, Péricles Eugênio, João Cabral (aula 15)</li></ul></li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1).</p>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {"geral": {"n": "As três gerações", "c": "var(--h-geral)"}, "g1": {"n": "1ª geração", "c": "var(--h-g1)"}, "g2pr": {"n": "2ª · prosa", "c": "var(--h-g2pr)"}, "g2po": {"n": "2ª · poesia", "c": "var(--h-g2po)"}, "g3": {"n": "3ª geração", "c": "var(--h-g3)"}};
+  var CARDS = [
+ {
+  "b": "geral",
+  "q": "Quais são as três gerações do Modernismo, com datas e proposta?",
+  "a": "<ul><li><b>1ª (1922–1930), a da Semana de 22:</b> ruptura e pesquisa formal. Verso livre, língua falada, humor, paródia.</li><li><b>2ª (1930–1945):</b> guarda as conquistas e aprofunda o tema. Prosa: o romance de 30, engajado e regionalista. Poesia: o homem no mundo em guerra.</li><li><b>3ª (1945 em diante):</b> experiências com a palavra e mistura de estéticas. A Geração de 45 volta à métrica e à rima.</li></ul>"
+ },
+ {
+  "b": "geral",
+  "q": "O que a 2ª geração troca em relação à 1ª?",
+  "a": "<p>Troca a <b>pesquisa formal</b> pela <b>profundidade do tema</b>, sem abrir mão das conquistas de 22.</p><p>E passa a misturar: forma livre e forma clássica (o soneto volta), linguagem coloquial e culta, humor e ironia.</p>"
+ },
+ {
+  "b": "geral",
+  "q": "Quais são as três conquistas do Modernismo segundo Mário de Andrade, e qual delas a FGV cobrou?",
+  "a": "<ol><li>Direito permanente à <b>pesquisa estética</b></li><li>Atualização da inteligência artística brasileira</li><li>Estabilização de uma consciência criadora nacional</li></ol><p>Este card vem do banco de provas, não do caderno.</p>",
+  "fgv": "2025.1-OBJ-29 · \"No meio do caminho\" usa o direito à pesquisa estética"
+ },
+ {
+  "b": "g1",
+  "q": "Manuel Bandeira: qual é a marca da poesia dele?",
+  "a": "<p>O \"<b>humilde sublime</b>\" (ou \"banal sublime\"): poesia do cotidiano e da simplicidade.</p><p>Linguagem coloquial, mas densa e cheia de sentidos. Para ele, o mistério está na simplicidade: dizer com singeleza coisas humanas profundas.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "Quais são os temas de Bandeira, e como a morte aparece?",
+  "a": "<p>Paixão pela vida, amor e erotismo, solidão, angústia, infância e cotidiano.</p><p>A <b>tuberculose</b> o fez esperar a morte desde jovem, e ela aparece <b>melancólica e resignada, nunca trágica</b>. Ex.: \"Pneumotórax\", em que o médico, sem cura, manda tocar um tango argentino.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "Qual foi a relação de Bandeira com a Semana de 22?",
+  "a": "<p>Não foi, porque discordava da postura agressiva do grupo.</p><p>Mas esteve presente pelo poema <b>\"Os Sapos\"</b>, sátira aos parnasianos (o \"sapo-tanoeiro\" que martela o verso), lido por Ronald de Carvalho.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "O que é Pasárgada, em \"Vou-me embora pra Pasárgada\"?",
+  "a": "<p>Um lugar imaginário de <b>evasão</b>: lá ele é amigo do rei e tem tudo o que a vida doente lhe negou (ginástica, bicicleta, banho de mar, amor).</p><p>É a fuga romântica refeita com linguagem modernista.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "O que \"Poema tirado de uma notícia de jornal\" mostra do Modernismo?",
+  "a": "<p>Um fato banal de jornal vira poema: João Gostoso, carregador de feira, bebe, canta, dança e se afoga.</p><p><b>Cotidiano, verso livre, frases secas</b>, e a morte contada sem comentário.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "\"Evocação do Recife\": o que o poema defende sobre a língua?",
+  "a": "<p>A <b>língua do povo</b>, \"errada\" para a gramática e \"certa\" porque é o português do Brasil, contra a imitação da sintaxe de Portugal.</p><p>É bandeira modernista, junto com a memória da infância no Recife.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "Como Bandeira parodia o Romantismo em \"Teresa\"?",
+  "a": "<p>Retoma \"O 'Adeus' de Teresa\", de <b>Castro Alves</b>, e <b>desidealiza a amada</b>: onde o romântico via a pálida Teresa da valsa, Bandeira vê pernas \"estúpidas\" e olhos mais velhos que o corpo.</p><p>A paródia ri do original e o atualiza.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "Alcântara Machado: qual é o estilo e qual é o tema?",
+  "a": "<p><b>Estilo:</b> linguagem telegráfica, elíptica e <b>cinematográfica</b>, com cortes rápidos de cena (recurso cubista), leve e bem-humorada.</p><p><b>Tema:</b> os <b>imigrantes italianos</b> dos bairros operários de São Paulo e a luta dos \"novos brasileiros\" para se integrar.</p><p><i>Brás, Bexiga e Barra Funda</i> (1927) é, com <i>Macunaíma</i>, a maior renovação da prosa modernista.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "O que Alcântara quis dizer com \"este livro não nasceu livro: nasceu jornal\"?",
+  "a": "<p>Os contos têm <b>atmosfera de reportagem</b>: captam o fato, o instantâneo da vida cotidiana da cidade, como uma notícia.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "\"Gaetaninho\": qual é a ironia do conto?",
+  "a": "<p>O menino sonha andar de carro, coisa que na Rua do Oriente só acontece em enterro.</p><p>Ele morre atropelado pelo bonde e vai, enfim, no carro da frente, <b>dentro do caixão</b>. Ironia trágica, contada seca, sem sentimentalismo.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "O que é a intertextualidade modernista?",
+  "a": "<p>Um texto que se refere a outro, quase sempre em <b>paródia</b>: faz piada ou ironia com o original e o <b>recontextualiza</b>, atualizando o conteúdo e a linguagem.</p>"
+ },
+ {
+  "b": "g1",
+  "q": "Quem parodiou a \"Canção do exílio\", de Gonçalves Dias, e de que geração é cada um?",
+  "a": "<ul><li><b>Oswald de Andrade</b> (1ª), \"Canto de regresso à pátria\": troca palmeiras por palmares e o sabiá pelo progresso de São Paulo</li><li><b>Murilo Mendes</b> (2ª), \"Canção do exílio\": a terra das macieiras da Califórnia, crítica à cultura importada</li><li><b>Drummond</b> (2ª), \"Nova canção do exílio\"</li><li><b>José Paulo Paes</b> (poesia contemporânea), \"Canção de exílio facilitada\", reduzida a rimas em \"á\"</li></ul>"
+ },
+ {
+  "b": "g1",
+  "q": "Quem foi Juó Bananére?",
+  "a": "<p>Pseudônimo de Alexandre Marcondes Machado, que parodiava Camões, Bilac e os políticos da República Velha num <b>português macarrônico</b> de imigrante italiano.</p><p>\"Uvi strella\" parodia o \"Ora (direis) ouvir estrelas\", de Bilac. Livro: <i>La divina Increnca</i> (1915).</p>"
+ },
+ {
+  "b": "g2pr",
+  "q": "Como se chama a prosa da 2ª geração, e qual é a proposta?",
+  "a": "<p><b>Neorrealismo</b>, ou romance de 30: prosa <b>engajada</b>, de análise crítica <b>social e psicológica</b>. A crítica fala em \"grande surto do romance\".</p><p>Quer entender a dor humana em todas as origens: social, natural, familiar, política e psicológica.</p>"
+ },
+ {
+  "b": "g2pr",
+  "q": "Quais são as vertentes do romance de 30, e qual é a mais importante?",
+  "a": "<ul><li>Urbano: Marques Rebelo, Érico Veríssimo</li><li>Intimista: Cornélio Pena, Lúcio Cardoso, Dyonélio Machado</li><li>Épico (histórico-político): Érico Veríssimo</li><li><b>Regionalista nordestino, a mais importante:</b> Rachel de Queiroz, Graciliano Ramos, Jorge Amado, José Lins do Rego e José Américo de Almeida</li></ul>"
+ },
+ {
+  "b": "g2pr",
+  "q": "O que o regionalismo nordestino de 30 analisa?",
+  "a": "<p>A passagem do Nordeste da sociedade <b>arcaica e senhorial dos engenhos</b> para um capitalismo parcial das <b>usinas</b> e da exportação (cacau e açúcar).</p><p>O contraste entre coronelismo e indústria, e a <b>desigualdade que continua</b>: o pobre da periferia e do sertão segue desamparado.</p>"
+ },
+ {
+  "b": "g2pr",
+  "q": "Quem abriu o regionalismo de 30, e quem o consolidou?",
+  "a": "<p><b>Idealizadores:</b> Gilberto Freyre (<i>Casa-Grande &amp; Senzala</i>) e José Américo de Almeida (<i>A Bagaceira</i>, 1928).</p><p><b>Consolidou:</b> Rachel de Queiroz, com <i>O Quinze</i> (1930).</p><p>📋 <i>Caminho de pedras</i>, de Rachel, está na lista de Artes de 2027.</p>"
+ },
+ {
+  "b": "g2pr",
+  "q": "Graciliano Ramos: quais são as marcas da obra?",
+  "a": "<ul><li>Parte do <b>regional para o universal</b></li><li>Tensão máxima entre o <b>homem e o meio</b> (natural ou social); o protagonista é anti-herói</li><li>Situações-limite (violência, humilhação, rejeição) e final trágico ou angustiado</li><li>Linguagem <b>seca, concisa, enxuta</b></li></ul>",
+  "fgv": "2026.1-DIS-AR2 · Vidas secas, em Artes (📋 e na lista de 2027)"
+ },
+ {
+  "b": "g2pr",
+  "q": "O que a vida de Graciliano tem a ver com a obra?",
+  "a": "<p>Foi prefeito de Palmeira dos Índios (AL) e, no <b>Estado Novo</b>, foi preso, acusado de ligação com o Partido Comunista. A prisão virou <i>Memórias do Cárcere</i>.</p><p>Obras: <i>Caetés</i>, <i>São Bernardo</i>, <i>Angústia</i>, <i>Vidas Secas</i>, <i>Insônia</i>.</p>"
+ },
+ {
+  "b": "g2pr",
+  "q": "<i>São Bernardo</i>: quem narra e qual é o enredo?",
+  "a": "<p><b>Paulo Honório</b>, em 1ª pessoa e em retrospectiva: de guia de cego a dono da fazenda São Bernardo, que tomou do jogador Padilha.</p><p>Trata <b>tudo e todos como objeto</b>, pelo lucro. Casa com Madalena, tem um ciúme doentio, ela se suicida, a fazenda se arruína, e ele escreve para tentar entender a própria vida.</p>"
+ },
+ {
+  "b": "g2pr",
+  "q": "Por que Madalena é o centro do conflito em <i>São Bernardo</i>?",
+  "a": "<p>Professora humanitária, com leve ideal socialista, ela defende os empregados e é <b>a única pessoa que Paulo Honório não consegue transformar em objeto</b>.</p><p>O ciúme dele é ódio deturpado: cada pedido dela diminui o lucro. No fim ele culpa a si e à \"vida agreste\" que lhe deu \"uma alma agreste\": o peso do meio.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "Como a crítica chama a poesia de 30, e qual é o tema dela?",
+  "a": "<p>\"<b>Admirável safra lírica</b>\": Drummond, Cecília Meireles, Murilo Mendes, Jorge de Lima e Vinicius de Moraes.</p><p>O tema é <b>o homem no mundo</b> e o horror dos anos 30 e 40 (a guerra): poesia de reflexão e pessimismo, mas com vontade de combate e indignação.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "O que Drummond declara em \"Mãos dadas\"?",
+  "a": "<p>Que não vai cantar o mundo velho nem o futuro, nem fugir para o amor, a paisagem ou o sonho: sua matéria é o <b>tempo presente e os homens presentes</b>, de mãos dadas com os companheiros.</p><p>É o manifesto da <b>poesia participante</b>.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "Drummond: o que é a \"crise do lirismo\"?",
+  "a": "<p>O poeta pergunta <b>para que serve um poeta</b> num mundo confuso e violento, e desconfia da palavra, que prende o que quer dizer.</p><p>A resposta dele: <b>ironia</b> (gracejo que disfarça lamento), <b>antissentimentalismo</b>, estilo seco e antirretórico, e reflexão tirada de coisas banais do cotidiano.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "Quais são as duas primeiras fases de Drummond?",
+  "a": "<ul><li><b><i>Alguma Poesia</i> (1930) e <i>Brejo das Almas</i> (1934):</b> poema-piada, sintaxe solta, ironia, Minas. \"Poema de sete faces\", \"Cidadezinha qualquer\", \"Quadrilha\", \"No meio do caminho\".</li><li><b><i>Sentimento do Mundo</i> (1940), <i>José</i> (1942) e <i>A Rosa do Povo</i> (1945):</b> a história e a experiência coletiva, a guerra, a solidariedade. \"Mãos dadas\", \"E agora, José?\".</li></ul>"
+ },
+ {
+  "b": "g2po",
+  "q": "\"Poema de sete faces\": o que é ser gauche?",
+  "a": "<p><i>Gauche</i> é \"esquerdo\" em francês: <b>desajustado</b>. Um anjo torto manda o poeta ser gauche na vida.</p><p>É o eu deslocado e irônico de Drummond, que sabe que uma rima (Raimundo com mundo) não é solução.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "\"No meio do caminho\": o que a FGV perguntou?",
+  "a": "<ul><li><b>Recurso central:</b> a reiteração, a repetição insistente da pedra</li><li><b>Conquista modernista:</b> o direito à pesquisa estética</li><li><b>Licença poética:</b> \"tinha uma pedra\", <i>ter</i> no lugar de <i>haver</i>, infração à norma culta que imita a fala</li></ul>",
+  "fgv": "2025.1-OBJ-28 a 30 · \"No meio do caminho\""
+ },
+ {
+  "b": "g2po",
+  "q": "\"E agora, José?\": quem é José?",
+  "a": "<p>O <b>homem comum sem saída</b>: a festa acabou, está sem mulher, sem discurso, sem utopia, e cada porta que tenta não existe.</p><p>A pergunta repetida marca o impasse, mas José não morre: é duro e segue marchando. Poema de <i>José</i> (1942), em plena guerra.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "Vinicius de Moraes: quais são as fases?",
+  "a": "<ul><li><b>Mística e religiosa:</b> <i>Caminho para a Distância</i>, <i>Forma e Exegese</i>, <i>Ariana, a Mulher</i> (1936, o auge)</li><li><b>Sensual e cotidiana</b>, com sintaxe mais popular: <i>Cinco Elegias</i> (1938), <i>Poemas, Sonetos e Baladas</i> (1948)</li><li><b>Social</b>, depois</li></ul><p>A marca é o <b>lirismo</b>, muitas vezes sensual.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "Por que os sonetos de Vinicius são típicos da 2ª geração?",
+  "a": "<p>Usam a <b>forma clássica</b> (o soneto) com tema e linguagem modernos, a mistura que a 2ª geração faz.</p><p>\"Soneto de fidelidade\": o amor intenso, mas finito, que vale enquanto dura. \"Soneto da separação\": antíteses (riso e pranto) e o \"de repente\" repetido.</p>"
+ },
+ {
+  "b": "g2po",
+  "q": "Onde aparecem o Vinicius social e o Vinicius da música?",
+  "a": "<p><b>Social:</b> \"A Rosa de Hiroxima\" (a antirrosa atômica, contra a bomba) e \"Balada dos mortos dos campos de concentração\".</p><p><b>Palco e música:</b> <i>Orfeu da Conceição</i> (teatro, 1956), que virou o filme <i>Orfeu Negro</i> (Palma de Ouro e Oscar), e a <b>bossa nova</b> com Tom Jobim (\"Garota de Ipanema\").</p>"
+ },
+ {
+  "b": "g3",
+  "q": "O que muda na literatura a partir de 1945?",
+  "a": "<p>O pós-guerra traz a comunicação de massa (rádio, TV, cinema, quadrinhos, propaganda), e a literatura passa a <b>misturar estéticas</b>, reciclando influências de fora (o \"caráter antropófago\" de Oswald).</p><p>Por isso há quem chame o período de <b>Pós-Modernismo</b> e marque 1945 como o fim do Modernismo: agora se aceita até o passado clássico.</p>"
+ },
+ {
+  "b": "g3",
+  "q": "O que foi a Geração de 45?",
+  "a": "<p>Poetas que quiseram <b>voltar a ser clássicos</b>: métrica, rima, linguagem culta e cuidada, recusando em parte o Modernismo. Chamados, injustamente, de \"<b>neoparnasianos</b>\".</p><p>Nomes: Lêdo Ivo, Péricles Eugênio da Silva Ramos e <b>João Cabral de Melo Neto</b> (que vem na aula 15).</p>",
+  "fgv": "2023.1-OBJ-27 a 29 e 2024.1-OBJ-29 e 30 · João Cabral, o autor que mais caiu na objetiva"
+ }
+];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("litmod.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("litmod.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("litmod.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("litmod.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("litmod.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+
+</body>
+</html>
