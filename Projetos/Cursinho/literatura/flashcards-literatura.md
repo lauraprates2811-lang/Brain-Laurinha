@@ -168,7 +168,7 @@
 
 ### Gerações do Modernismo (Caderno 4, aulas 12 e 14)
 
-> Baralho completo, com mapa: `geracoes-modernistas.md`, nesta pasta.
+> Baralho completo, com mapa: `geracoes-modernistas.md`, nesta pasta. Só características, nada de interpretar trecho.
 
 > [!question]- 29. Quais são as três gerações do Modernismo, com datas e proposta?
 > - **1ª (1922–1930), a da Semana de 22:** ruptura e pesquisa formal. Verso livre, língua falada, humor, paródia.
@@ -186,146 +186,103 @@
 > Este card vem do banco de provas, não do caderno.
 > ⭐ `2025.1-OBJ-29` · "No meio do caminho" usa o direito à pesquisa estética
 
-> [!question]- 32. Manuel Bandeira: qual é a marca da poesia dele?
+> [!question]- 32. Quais são as características da 1ª geração?
+> - **Ruptura** com a tradição, sobretudo com o Parnasianismo
+> - **Verso livre** e **linguagem coloquial**: a língua falada no Brasil contra a sintaxe de Portugal
+> - Poesia do **cotidiano** e das coisas simples
+> - **Humor**, poema-piada e **paródia** dos clássicos
+> - Prosa **experimental**: frases curtas, cortes de cena como no cinema
+
+> [!question]- 33. Manuel Bandeira: qual é a marca da poesia dele?
 > O "**humilde sublime**" (ou "banal sublime"): poesia do cotidiano e da simplicidade.
 > Linguagem coloquial, mas densa e cheia de sentidos. Para ele, o mistério está na simplicidade: dizer com singeleza coisas humanas profundas.
 
-> [!question]- 33. Quais são os temas de Bandeira, e como a morte aparece?
+> [!question]- 34. Quais são os temas de Bandeira, e como a morte aparece?
 > Paixão pela vida, amor e erotismo, solidão, angústia, infância e cotidiano.
-> A **tuberculose** o fez esperar a morte desde jovem, e ela aparece **melancólica e resignada, nunca trágica**. Ex.: "Pneumotórax", em que o médico, sem cura, manda tocar um tango argentino.
+> É uma alma romântica refeita pelo século XX: **sem sentimentalismo e sem idealização**. A tuberculose o fez esperar a morte desde jovem, e ela aparece **melancólica e resignada, nunca trágica**.
 
-> [!question]- 34. Qual foi a relação de Bandeira com a Semana de 22?
-> Não foi, porque discordava da postura agressiva do grupo.
-> Mas esteve presente pelo poema **"Os Sapos"**, sátira aos parnasianos (o "sapo-tanoeiro" que martela o verso), lido por Ronald de Carvalho.
+> [!question]- 35. Bandeira: quais são os livros, e qual foi a relação dele com a Semana de 22?
+> **Livros:** *Cinza das Horas* (1917), *Carnaval* (1919), *Libertinagem* (1930), *Estrela da Manhã* (1936), reunidos em *Estrela da Vida Inteira* (1966).
+> **Semana de 22:** não foi, porque discordava da postura agressiva do grupo, mas o poema "Os Sapos", sátira aos parnasianos, foi lido lá.
 
-> [!question]- 35. O que é Pasárgada, em "Vou-me embora pra Pasárgada"?
-> Um lugar imaginário de **evasão**: lá ele é amigo do rei e tem tudo o que a vida doente lhe negou (ginástica, bicicleta, banho de mar, amor).
-> É a fuga romântica refeita com linguagem modernista.
-
-> [!question]- 36. O que "Poema tirado de uma notícia de jornal" mostra do Modernismo?
-> Um fato banal de jornal vira poema: João Gostoso, carregador de feira, bebe, canta, dança e se afoga.
-> **Cotidiano, verso livre, frases secas**, e a morte contada sem comentário.
-
-> [!question]- 37. "Evocação do Recife": o que o poema defende sobre a língua?
-> A **língua do povo**, "errada" para a gramática e "certa" porque é o português do Brasil, contra a imitação da sintaxe de Portugal.
-> É bandeira modernista, junto com a memória da infância no Recife.
-
-> [!question]- 38. Como Bandeira parodia o Romantismo em "Teresa"?
-> Retoma "O 'Adeus' de Teresa", de **Castro Alves**, e **desidealiza a amada**: onde o romântico via a pálida Teresa da valsa, Bandeira vê pernas "estúpidas" e olhos mais velhos que o corpo.
-> A paródia ri do original e o atualiza.
-
-> [!question]- 39. Alcântara Machado: qual é o estilo e qual é o tema?
-> **Estilo:** linguagem telegráfica, elíptica e **cinematográfica**, com cortes rápidos de cena (recurso cubista), leve e bem-humorada.
+> [!question]- 36. Alcântara Machado: qual é o estilo e qual é o tema?
+> **Estilo:** contos com linguagem telegráfica, elíptica e **cinematográfica**, com cortes rápidos de cena (recurso cubista), leve e bem-humorada. Têm **atmosfera de reportagem**: captam o instantâneo da vida na cidade.
 > **Tema:** os **imigrantes italianos** dos bairros operários de São Paulo e a luta dos "novos brasileiros" para se integrar.
 > *Brás, Bexiga e Barra Funda* (1927) é, com *Macunaíma*, a maior renovação da prosa modernista.
 
-> [!question]- 40. O que Alcântara quis dizer com "este livro não nasceu livro: nasceu jornal"?
-> Os contos têm **atmosfera de reportagem**: captam o fato, o instantâneo da vida cotidiana da cidade, como uma notícia.
-
-> [!question]- 41. "Gaetaninho": qual é a ironia do conto?
-> O menino sonha andar de carro, coisa que na Rua do Oriente só acontece em enterro.
-> Ele morre atropelado pelo bonde e vai, enfim, no carro da frente, **dentro do caixão**. Ironia trágica, contada seca, sem sentimentalismo.
-
-> [!question]- 42. O que é a intertextualidade modernista?
+> [!question]- 37. O que é a intertextualidade modernista?
 > Um texto que se refere a outro, quase sempre em **paródia**: faz piada ou ironia com o original e o **recontextualiza**, atualizando o conteúdo e a linguagem.
+> O alvo preferido são os clássicos: a "Canção do exílio" (parodiada por Oswald, Murilo Mendes, Drummond e José Paulo Paes), Castro Alves, Bilac.
 
-> [!question]- 43. Quem parodiou a "Canção do exílio", de Gonçalves Dias, e de que geração é cada um?
-> - **Oswald de Andrade** (1ª), "Canto de regresso à pátria": troca palmeiras por palmares e o sabiá pelo progresso de São Paulo
-> - **Murilo Mendes** (2ª), "Canção do exílio": a terra das macieiras da Califórnia, crítica à cultura importada
-> - **Drummond** (2ª), "Nova canção do exílio"
-> - **José Paulo Paes** (poesia contemporânea), "Canção de exílio facilitada", reduzida a rimas em "á"
-
-> [!question]- 44. Quem foi Juó Bananére?
-> Pseudônimo de Alexandre Marcondes Machado, que parodiava Camões, Bilac e os políticos da República Velha num **português macarrônico** de imigrante italiano.
-> "Uvi strella" parodia o "Ora (direis) ouvir estrelas", de Bilac. Livro: *La divina Increnca* (1915).
-
-> [!question]- 45. Como se chama a prosa da 2ª geração, e qual é a proposta?
+> [!question]- 38. Como se chama a prosa da 2ª geração, e qual é a proposta?
 > **Neorrealismo**, ou romance de 30: prosa **engajada**, de análise crítica **social e psicológica**. A crítica fala em "grande surto do romance".
 > Quer entender a dor humana em todas as origens: social, natural, familiar, política e psicológica.
 
-> [!question]- 46. Quais são as vertentes do romance de 30, e qual é a mais importante?
+> [!question]- 39. Quais são as vertentes do romance de 30, e qual é a mais importante?
 > - Urbano: Marques Rebelo, Érico Veríssimo
 > - Intimista: Cornélio Pena, Lúcio Cardoso, Dyonélio Machado
 > - Épico (histórico-político): Érico Veríssimo
 > - **Regionalista nordestino, a mais importante:** Rachel de Queiroz, Graciliano Ramos, Jorge Amado, José Lins do Rego e José Américo de Almeida
 
-> [!question]- 47. O que o regionalismo nordestino de 30 analisa?
+> [!question]- 40. O que o regionalismo nordestino de 30 analisa?
 > A passagem do Nordeste da sociedade **arcaica e senhorial dos engenhos** para um capitalismo parcial das **usinas** e da exportação (cacau e açúcar).
 > O contraste entre coronelismo e indústria, e a **desigualdade que continua**: o pobre da periferia e do sertão segue desamparado.
 
-> [!question]- 48. Quem abriu o regionalismo de 30, e quem o consolidou?
+> [!question]- 41. Quem abriu o regionalismo de 30, e quem o consolidou?
 > **Idealizadores:** Gilberto Freyre (*Casa-Grande & Senzala*) e José Américo de Almeida (*A Bagaceira*, 1928).
 > **Consolidou:** Rachel de Queiroz, com *O Quinze* (1930).
 > 📋 *Caminho de pedras*, de Rachel, está na lista de Artes de 2027.
 
-> [!question]- 49. Graciliano Ramos: quais são as marcas da obra?
+> [!question]- 42. Graciliano Ramos: quais são as marcas da obra?
 > - Parte do **regional para o universal**
 > - Tensão máxima entre o **homem e o meio** (natural ou social); o protagonista é anti-herói
 > - Situações-limite (violência, humilhação, rejeição) e final trágico ou angustiado
 > - Linguagem **seca, concisa, enxuta**
 > ⭐ `2026.1-DIS-AR2` · *Vidas secas*, em Artes (📋 e na lista de 2027)
 
-> [!question]- 50. O que a vida de Graciliano tem a ver com a obra?
+> [!question]- 43. O que a vida de Graciliano tem a ver com a obra?
 > Foi prefeito de Palmeira dos Índios (AL) e, no **Estado Novo**, foi preso, acusado de ligação com o Partido Comunista. A prisão virou *Memórias do Cárcere*.
 > Obras: *Caetés*, *São Bernardo*, *Angústia*, *Vidas Secas*, *Insônia*.
 
-> [!question]- 51. *São Bernardo*: quem narra e qual é o enredo?
-> **Paulo Honório**, em 1ª pessoa e em retrospectiva: de guia de cego a dono da fazenda São Bernardo, que tomou do jogador Padilha.
-> Trata **tudo e todos como objeto**, pelo lucro. Casa com Madalena, tem um ciúme doentio, ela se suicida, a fazenda se arruína, e ele escreve para tentar entender a própria vida.
+> [!question]- 44. *São Bernardo*: como a obra mostra as marcas de Graciliano?
+> - **Narrador em 1ª pessoa**, em retrospectiva: o fazendeiro Paulo Honório conta a própria vida para tentar entendê-la
+> - **Reificação:** ele trata tudo e todos, até a mulher, como objeto, pelo lucro
+> - **Homem × meio:** ele mesmo culpa a vida dura do sertão que o formou
+> - Linguagem seca, reduzida ao essencial; final de ruína e solidão
 
-> [!question]- 52. Por que Madalena é o centro do conflito em *São Bernardo*?
-> Professora humanitária, com leve ideal socialista, ela defende os empregados e é **a única pessoa que Paulo Honório não consegue transformar em objeto**.
-> O ciúme dele é ódio deturpado: cada pedido dela diminui o lucro. No fim ele culpa a si e à "vida agreste" que lhe deu "uma alma agreste": o peso do meio.
-
-> [!question]- 53. Como a crítica chama a poesia de 30, e qual é o tema dela?
+> [!question]- 45. Como a crítica chama a poesia de 30, e quais são as características dela?
 > "**Admirável safra lírica**": Drummond, Cecília Meireles, Murilo Mendes, Jorge de Lima e Vinicius de Moraes.
-> O tema é **o homem no mundo** e o horror dos anos 30 e 40 (a guerra): poesia de reflexão e pessimismo, mas com vontade de combate e indignação.
+> - O tema é **o homem no mundo** e o horror dos anos 30 e 40 (a guerra)
+> - Reflexão e pessimismo, mas com vontade de combate e indignação
+> - Mistura forma livre e clássica, linguagem coloquial e culta, humor e ironia
 
-> [!question]- 54. O que Drummond declara em "Mãos dadas"?
-> Que não vai cantar o mundo velho nem o futuro, nem fugir para o amor, a paisagem ou o sonho: sua matéria é o **tempo presente e os homens presentes**, de mãos dadas com os companheiros.
-> É o manifesto da **poesia participante**.
-
-> [!question]- 55. Drummond: o que é a "crise do lirismo"?
-> O poeta pergunta **para que serve um poeta** num mundo confuso e violento, e desconfia da palavra, que prende o que quer dizer.
-> A resposta dele: **ironia** (gracejo que disfarça lamento), **antissentimentalismo**, estilo seco e antirretórico, e reflexão tirada de coisas banais do cotidiano.
-
-> [!question]- 56. Quais são as duas primeiras fases de Drummond?
-> - ***Alguma Poesia* (1930) e *Brejo das Almas* (1934):** poema-piada, sintaxe solta, ironia, Minas. "Poema de sete faces", "Cidadezinha qualquer", "Quadrilha", "No meio do caminho".
-> - ***Sentimento do Mundo* (1940), *José* (1942) e *A Rosa do Povo* (1945):** a história e a experiência coletiva, a guerra, a solidariedade. "Mãos dadas", "E agora, José?".
-
-> [!question]- 57. "Poema de sete faces": o que é ser gauche?
-> *Gauche* é "esquerdo" em francês: **desajustado**. Um anjo torto manda o poeta ser gauche na vida.
-> É o eu deslocado e irônico de Drummond, que sabe que uma rima (Raimundo com mundo) não é solução.
-
-> [!question]- 58. "No meio do caminho": o que a FGV perguntou?
-> - **Recurso central:** a reiteração, a repetição insistente da pedra
-> - **Conquista modernista:** o direito à pesquisa estética
-> - **Licença poética:** "tinha uma pedra", *ter* no lugar de *haver*, infração à norma culta que imita a fala
+> [!question]- 46. Drummond: quais são as marcas da poesia dele?
+> - **Crise do lirismo:** pergunta para que serve um poeta num mundo confuso e violento, e desconfia da palavra
+> - **Ironia** (gracejo que disfarça lamento) e **antissentimentalismo**
+> - O **eu gauche**, desajustado, deslocado no mundo
+> - Estilo seco e antirretórico; a reflexão sai de coisas banais do cotidiano
 > ⭐ `2025.1-OBJ-28 a 30` · "No meio do caminho"
 
-> [!question]- 59. "E agora, José?": quem é José?
-> O **homem comum sem saída**: a festa acabou, está sem mulher, sem discurso, sem utopia, e cada porta que tenta não existe.
-> A pergunta repetida marca o impasse, mas José não morre: é duro e segue marchando. Poema de *José* (1942), em plena guerra.
+> [!question]- 47. Quais são as duas primeiras fases de Drummond?
+> - ***Alguma Poesia* (1930) e *Brejo das Almas* (1934):** poema-piada, sintaxe solta, ironia, o eu gauche e Minas
+> - ***Sentimento do Mundo* (1940), *José* (1942) e *A Rosa do Povo* (1945):** **poesia participante**: a história, a guerra, a experiência coletiva e a solidariedade
 
-> [!question]- 60. Vinicius de Moraes: quais são as fases?
+> [!question]- 48. Vinicius de Moraes: quais são as fases?
 > - **Mística e religiosa:** *Caminho para a Distância*, *Forma e Exegese*, *Ariana, a Mulher* (1936, o auge)
 > - **Sensual e cotidiana**, com sintaxe mais popular: *Cinco Elegias* (1938), *Poemas, Sonetos e Baladas* (1948)
 > - **Social**, depois
 > A marca é o **lirismo**, muitas vezes sensual.
 
-> [!question]- 61. Por que os sonetos de Vinicius são típicos da 2ª geração?
-> Usam a **forma clássica** (o soneto) com tema e linguagem modernos, a mistura que a 2ª geração faz.
-> "Soneto de fidelidade": o amor intenso, mas finito, que vale enquanto dura. "Soneto da separação": antíteses (riso e pranto) e o "de repente" repetido.
+> [!question]- 49. Vinicius: o que marca a forma e o alcance da obra dele?
+> - **Soneto:** a forma clássica com tema e linguagem modernos, a mistura típica da 2ª geração
+> - **Poesia social:** contra a guerra e a bomba atômica
+> - **Palco e música:** *Orfeu da Conceição* (teatro, 1956), que virou o filme *Orfeu Negro* (Palma de Ouro e Oscar), e a **bossa nova** com Tom Jobim
 
-> [!question]- 62. Onde aparecem o Vinicius social e o Vinicius da música?
-> **Social:** "A Rosa de Hiroxima" (a antirrosa atômica, contra a bomba) e "Balada dos mortos dos campos de concentração".
-> **Palco e música:** *Orfeu da Conceição* (teatro, 1956), que virou o filme *Orfeu Negro* (Palma de Ouro e Oscar), e a **bossa nova** com Tom Jobim ("Garota de Ipanema").
-
-> [!question]- 63. O que muda na literatura a partir de 1945?
+> [!question]- 50. O que muda na literatura a partir de 1945?
 > O pós-guerra traz a comunicação de massa (rádio, TV, cinema, quadrinhos, propaganda), e a literatura passa a **misturar estéticas**, reciclando influências de fora (o "caráter antropófago" de Oswald).
 > Por isso há quem chame o período de **Pós-Modernismo** e marque 1945 como o fim do Modernismo: agora se aceita até o passado clássico.
 
-> [!question]- 64. O que foi a Geração de 45?
+> [!question]- 51. O que foi a Geração de 45?
 > Poetas que quiseram **voltar a ser clássicos**: métrica, rima, linguagem culta e cuidada, recusando em parte o Modernismo. Chamados, injustamente, de "**neoparnasianos**".
 > Nomes: Lêdo Ivo, Péricles Eugênio da Silva Ramos e **João Cabral de Melo Neto** (que vem na aula 15).
 > ⭐ `2023.1-OBJ-27 a 29` e `2024.1-OBJ-29 e 30` · João Cabral, o autor que mais caiu na objetiva

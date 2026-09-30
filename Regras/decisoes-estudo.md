@@ -178,6 +178,20 @@ Com ela, explicar sempre em poucas linhas: textão a deixa confusa.
 
 ---
 
+## Flashcard de Literatura é característica, não interpretação de trecho (2026-09-30)
+
+A Laura pediu os cards das aulas 12 e 14 de Literatura (gerações modernistas). O Claude fez 36, e
+13 eram sobre o que está dentro do poema ou do conto ("o que é Pasárgada", "a ironia de
+Gaetaninho"). Ela disse que isso ela interpreta na hora da prova, com o texto na frente.
+
+**A regra:** card de Literatura guarda só **característica**: da geração (datas, proposta, marcas),
+do autor (estilo, temas, fases, obras, vida que explica a obra) e da obra (narrador, tema,
+movimento). Nada de "quando o autor diz X, o que quer dizer", resumo de poema ou enredo de conto.
+Título de poema pode aparecer como exemplo, sem explicação. O baralho das aulas 12 e 14 ficou com
+23 cards.
+
+---
+
 ## Reta final até 19/10: seis focos escolhidos por ela, e o tempo manda em todos (2026-09-28)
 
 A 3 semanas da FGV (Insper 11/10, FGV 18–19/10), a Laura disse o que quer melhorar. Os números são
