@@ -90,6 +90,8 @@ estudar Europa"), **edite a tarefa fixa daquela matéria**, nunca crie outra (pe
 repetido duas vezes). O assunto vai no topo da descrição, com a data ("**Hoje (28/09):** …"), e
 substitui o do dia anterior; o que já estava na descrição fica embaixo. Só se a matéria **não**
 estiver fixa naquele dia é que nasce uma tarefa nova, para aquele dia.
+**Exceção desde 30/09:** nas tarefas `Dia:` a coisa específica vira **subtarefa**, não descrição
+(regra abaixo).
 
 ## O Todoist só se mexe quando ela pedir (2026-09-29)
 
@@ -111,6 +113,25 @@ marcou com ☀️ e 🌙 no título, e ela pediu para tirar os emojis.
 As obras, antes da aula, usam `Manhã:` com o tema do dia ("Manhã: Obras e Artes — Teatro"). A
 Matemática leva o assunto e o período no título ("Matemática: Probabilidade · dia e noite"), desde
 que a rotina virou uma tarefa por dia (29/09, regra abaixo).
+
+## Na tarefa "Dia:", cada coisa específica é uma subtarefa com a sigla da matéria (2026-09-30)
+
+Ela montou sozinha o modelo na tarefa "Dia: Revisão de História Geral + Língua Portuguesa +
+Literatura — só questões" (14/10) e pediu que o Claude siga esse formato:
+
+- **HG** - assuntos importantes ditos na aula de ontem (com subtarefas próprias)
+- **HG** - 6 discursivas
+- **LIT** - revisar aula (montar apostilinha no Claude com a transcrição da aula) (com data própria)
+- **LP** - 8 dissertativas (se não der, 5 no mínimo)
+- Em cada matéria fazer suas questões objetivas e também as questões objetivas da REV (sem sigla:
+  vale para todas)
+
+**A regra:** o que ela for fazer no horário das aulas, de dia, numa matéria que está na tarefa
+`Dia:` daquele dia entra como **subtarefa** dessa tarefa, no formato `SIGLA - o que fazer`. Nada de
+tarefa nova, nada de descrição. Subtarefa pode ter subtarefas e data próprias; o que vale para
+todas as matérias do dia fica sem sigla. Siglas que ela já usa: **HG** (História Geral), **LP**
+(Língua Portuguesa), **LIT** (Literatura). Matéria nova: confirmar a sigla com ela na primeira vez.
+Continua valendo que o Todoist só se mexe quando ela pedir.
 
 ## Até a FGV, a rotina é uma tarefa por dia, sem recorrência (2026-09-29)
 
