@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Música Brasileira FGV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: linha do tempo das 8 músicas no topo, galhos por época, e o baralho com filtros por época. */
+:root{
+  --ground:#E9EBE6; --surface:#F7F8F4; --surface-2:#EFF1EC; --ink:#1A1E23; --muted:#5A6068; --line:#CDD1CA;
+  --h-prova:#2B4C9B; --h-samba:#A5690F; --h-tropic:#2E6863; --h-jovem:#5F3A72; --h-rock:#8E2C2C;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+    --h-prova:#8FA8F2; --h-samba:#D9A441; --h-tropic:#6FC2BA; --h-jovem:#BE9FDA; --h-rock:#E58383;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+  --h-prova:#8FA8F2; --h-samba:#D9A441; --h-tropic:#6FC2BA; --h-jovem:#BE9FDA; --h-rock:#E58383;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-prova);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.timeline{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px}
+.timeline h2{margin:0;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px}
+.tl li{--c:var(--ink);border-top:4px solid var(--c);background:var(--surface-2);border-radius:6px;padding:8px 10px 10px;display:grid;gap:2px;align-content:start;min-width:0}
+.tl .yr{font:800 26px/1 var(--display);color:var(--c);font-variant-numeric:tabular-nums}
+.tl .song{font-weight:600;font-size:14px;line-height:1.25}
+.tl .who{font-size:12.5px;color:var(--muted)}
+.tl .fgv{justify-self:start;margin:4px 0 0}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px;min-width:0}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+.pairs{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px}
+.pairs h2{margin:0;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:0}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);min-width:0}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.warn{font-size:13.5px;color:var(--rev);border-left:3px solid var(--rev);padding:2px 0 2px 10px;margin:4px 0 0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .card{min-height:380px}
+  .keys{display:none}
+  .branches{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Artes e Questões Contemporâneas · manhã de obras de 30/09/2026</div>
+    <h1>Música brasileira da lista</h1>
+    <p class="lede">As 8 músicas contam o Brasil de 1930 a 1994: a pobreza com humor no samba, a identidade diante do estrangeiro, a censura da ditadura e o desencanto da redemocratização. A FGV pede sempre <b>contexto + o que a letra diz + ligação com outra obra</b>.</p>
+    <div class="fix"><b>Divergência com a apostila:</b> ela lê <i>Malandragem</i> como desilusão amorosa. Para a prova, use a leitura da jovem que quer viver, que é a que conversa com o Cartola (2023.1).</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 30</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="timeline">
+      <h2>As 8 em ordem no tempo</h2>
+      <ol class="tl">
+        <li style="--c:var(--h-samba)"><span class="yr">1930</span><span class="song">Com que roupa?</span><span class="who">Noel Rosa</span></li>
+        <li style="--c:var(--h-samba)"><span class="yr">1940</span><span class="song">Disseram que voltei americanizada</span><span class="who">Carmen Miranda</span></li>
+        <li style="--c:var(--h-tropic)"><span class="yr">1967</span><span class="song">Domingo no parque</span><span class="who">Gilberto Gil</span><span class="fgv">★ 2024.1</span></li>
+        <li style="--c:var(--h-tropic)"><span class="yr">1973</span><span class="song">Cálice</span><span class="who">Chico e Gil · Criolo, anos 2010</span><span class="fgv">★ 2026.1</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1976</span><span class="song">O mundo é um moinho</span><span class="who">Cartola</span><span class="fgv">★ 2023.1</span></li>
+        <li style="--c:var(--h-rock)"><span class="yr">1987</span><span class="song">Que país é esse?</span><span class="who">Legião Urbana · escrita em 1978</span></li>
+        <li style="--c:var(--h-rock)"><span class="yr">1988</span><span class="song">O tempo não para</span><span class="who">Cazuza</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1994</span><span class="song">Malandragem</span><span class="who">Cazuza e Frejat · voz de Cássia Eller</span><span class="fgv">★ 2023.1</span></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-samba)">
+        <h2>Samba e Era Vargas</h2>
+        <ul class="tree">
+          <li><span>Com que roupa? · Noel Rosa, 1930</span>
+            <ul><li>Crise de 29 e Revolução de 30</li><li>Sem roupa = sem dinheiro: <b>pobreza com humor</b></li><li>Ironia e crônica do cotidiano</li><li>O sujeito pobre vira retrato do Brasil em crise</li></ul></li>
+          <li><span>Americanizada · Carmen Miranda, 1940</span>
+            <ul><li>De Luiz Peixoto e Vicente Paiva</li><li>Estado Novo + Política da Boa Vizinhança</li><li>Volta de Hollywood, recebida com frieza: a canção é a resposta</li><li><b>Nacional × estrangeiro</b> e estereótipo (a "baiana das frutas")</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-tropic)">
+        <h2>Tropicália e censura</h2>
+        <ul class="tree">
+          <li><span>Domingo no parque · Gil, 1967</span> <span class="fgv">★ 2024.1-DIS-AR3</span>
+            <ul><li>Festival da Record, Os Mutantes, arranjo de Rogério Duprat · 2º lugar</li><li>Ano da passeata contra a guitarra elétrica</li><li><b>Berimbau + guitarra = antropofagia</b> na música</li><li>José, João e Juliana: crime passional</li><li>Letra montada como cinema, em cortes</li></ul></li>
+          <li><span>Tropicália</span>
+            <ul><li>Caetano, Gil, Tom Zé, Gal, Os Mutantes</li><li>Acaba com prisão e exílio depois do AI-5</li></ul></li>
+          <li><span>Cálice · Chico e Gil, 1973</span> <span class="fgv">★ 2026.1-DIS-AR1</span>
+            <ul><li>Trocadilho <b>cálice / cale-se</b></li><li>Paixão de Cristo para falar de censura</li><li>Censurada: microfones cortados no Phono 73; disco só em 1978</li><li><b>Criolo:</b> periferia, racismo, violência policial</li><li>2026.1: Criolo lido com Sueli Carneiro</li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-jovem)">
+        <h2>A jovem e o mundo</h2>
+        <ul class="tree">
+          <li><span>O mundo é um moinho · Cartola, 1976</span> <span class="fgv">★ 2023.1-DIS-AR4</span>
+            <ul><li>Samba-canção, samba de raiz · Mangueira</li><li>Conselho de quem é mais velho a uma jovem que quer sair de casa</li><li>O <b>moinho</b> tritura os sonhos</li></ul></li>
+          <li><span>Malandragem · Cássia Eller, 1994</span> <span class="fgv">★ 2023.1-DIS-AR4</span>
+            <ul><li>Cazuza e Frejat, fim dos anos 80</li><li>A voz da própria jovem, que quer experiência e liberdade</li><li>Malandragem do samba = sobreviver · aqui = perder a inocência</li></ul></li>
+          <li><span>A comparação</span>
+            <ul><li>A mesma cena, dois lados: <b>quem aconselha × quem quer ir</b></li></ul></li>
+        </ul>
+      </article>
+
+      <article class="branch" style="--c:var(--h-rock)">
+        <h2>Rock dos anos 80</h2>
+        <ul class="tree">
+          <li><span>Que país é esse? · Legião Urbana</span>
+            <ul><li>Escrita em 1978 (ditadura, punk de Brasília), lançada em 1987</li><li><b>A ditadura acabou e o país não mudou</b></li><li>Corrupção, desigualdade, impunidade</li><li>Fala da Constituição enquanto a nova era escrita</li></ul></li>
+          <li><span>O tempo não para · Cazuza, 1988</span>
+            <ul><li>Com Arnaldo Brandão · Cazuza já com HIV</li><li>Nova República frustrada: Sarney, inflação</li><li>Hipocrisia: o velho vendido como novidade</li><li><b>Crítica social + finitude pessoal</b></li></ul></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="pairs">
+      <h2 style="color:var(--h-prova)">As duplas para cruzar</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Eixo</th><th>Músicas e obras</th></tr></thead>
+          <tbody>
+            <tr><td>Ditadura e censura</td><td><i>Cálice</i> + <i>Ainda estou aqui</i>, <i>Cabra marcado para morrer</i>, <i>As meninas</i>, <i>1984</i>, Arendt</td></tr>
+            <tr><td>Desencanto pós-ditadura</td><td><i>Que país é esse?</i> + <i>O tempo não para</i> (+ <i>O bem-amado</i>)</td></tr>
+            <tr><td>Nacional × estrangeiro</td><td><i>Americanizada</i> + <i>Domingo no parque</i> (+ Manifesto Antropófago, Abaporu)</td></tr>
+            <tr><td>A jovem e o mundo</td><td><i>O mundo é um moinho</i> × <i>Malandragem</i></td></tr>
+            <tr><td>Racismo hoje</td><td><i>Cálice</i> de Criolo + Sueli Carneiro (+ <i>Cidade de Deus</i>)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1). Música caiu em 5 das 6 provas, sempre na discursiva.</p>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    prova:{n:"Como cai", c:"var(--h-prova)"},
+    samba:{n:"Samba e Vargas", c:"var(--h-samba)"},
+    tropic:{n:"Tropicália e censura", c:"var(--h-tropic)"},
+    jovem:{n:"A jovem e o mundo", c:"var(--h-jovem)"},
+    rock:{n:"Rock dos anos 80", c:"var(--h-rock)"}
+  };
+  var CARDS = [
+    {b:"prova", q:"Como a música cai na prova de Artes da FGV?",
+     a:"<ul><li>Em <b>5 das 6 provas</b> do banco (2021.1 a 2026.1), sempre na <b>discursiva</b>, nunca na objetiva.</li><li>Nunca pediu teoria musical. Pede <b>contexto + o que a letra diz + ligação</b> com outra obra.</li><li>Das 8 brasileiras da lista, 3 já caíram.</li></ul>"},
+    {b:"prova", q:"Quais músicas brasileiras da lista já caíram, e quais nunca caíram?",
+     a:"<p><b>Já caíram:</b> <i>Domingo no parque</i> (2024.1), <i>O mundo é um moinho</i> × <i>Malandragem</i> (2023.1), <i>Cálice</i> de Criolo (2026.1).</p><p><b>Nunca caíram:</b> <i>Com que roupa?</i>, <i>Disseram que voltei americanizada</i>, <i>Que país é esse?</i>, <i>O tempo não para</i>.</p>"},
+    {b:"prova", q:"Coloque as 8 músicas brasileiras em ordem no tempo.",
+     a:"<ol><li>1930 · <i>Com que roupa?</i></li><li>1940 · <i>Americanizada</i></li><li>1967 · <i>Domingo no parque</i></li><li>1973 · <i>Cálice</i> (Criolo, anos 2010)</li><li>1976 · <i>O mundo é um moinho</i></li><li>1978/1987 · <i>Que país é esse?</i></li><li>1988 · <i>O tempo não para</i></li><li>1994 · <i>Malandragem</i></li></ol>"},
+    {b:"prova", q:"Qual é o esqueleto de uma boa resposta sobre música?", erro:true,
+     a:"<ol><li>Situe a música no tempo dela.</li><li>Diga o que a letra diz e qual recurso usa.</li><li>Ligue a outra obra ou conceito da lista.</li></ol><p class=\"warn\">Seu erro: leia com os olhos da época, não com os de hoje. A leitura anacrônica custou a dissertativa do Manifesto Antropófago (23/09, 25%).</p>"},
+    {b:"samba", q:"“Com que roupa?”: quem, quando e em que Brasil?",
+     a:"<p><b>Noel Rosa, 1930.</b></p><p>Crise de 1929 e Revolução de 30. O samba estava virando a música urbana do Rio.</p>"},
+    {b:"samba", q:"“Com que roupa?”: do que fala e qual é a chave?",
+     a:"<p>O eu lírico não tem roupa (dinheiro) para ir ao samba: a <b>pobreza contada com humor</b>.</p><p><b>Chave:</b> ironia e crônica do cotidiano. O sujeito pobre vira retrato do Brasil em crise.</p><p><b>Liga com:</b> <i>Malandragem</i> e <i>O bem-amado</i>.</p>"},
+    {b:"samba", q:"“Disseram que voltei americanizada”: quem, quando e por que foi feita?",
+     a:"<p><b>Carmen Miranda, 1940</b> (composição de Luiz Peixoto e Vicente Paiva).</p><p>Ela fez sucesso em Hollywood, voltou e foi recebida com frieza, acusada de ter se americanizado. A canção é a resposta: ela continua brasileira.</p>"},
+    {b:"samba", q:"Em que contexto político Carmen virou “a cara do Brasil” nos EUA?",
+     a:"<p><b>Era Vargas</b> (Estado Novo) + <b>Política da Boa Vizinhança</b>: os EUA se aproximavam da América Latina, e Carmen virou a vitrine do Brasil em Hollywood.</p>"},
+    {b:"samba", q:"Que debate “Americanizada” levanta?",
+     a:"<p><b>Identidade nacional × estrangeiro</b> e <b>estereótipo</b> (a “baiana das frutas” que Hollywood vendia como América Latina). A identidade não é uma pureza fixa.</p><p><b>Liga com:</b> Manifesto Antropófago e <i>Domingo no parque</i> (a Tropicália resgatou Carmen como ícone).</p>"},
+    {b:"tropic", q:"“Domingo no parque”: quando e onde estreou?",
+     a:"<p><b>Gilberto Gil, Festival da Record de 1967</b>, com Os Mutantes e arranjo de Rogério Duprat. Ficou em 2º lugar.</p>",
+     fgv:"2024.1-DIS-AR3 · Domingo no parque e a Tropicália"},
+    {b:"tropic", q:"Por que tocar guitarra elétrica num festival de 1967 era provocação?",
+     a:"<p>No mesmo ano houve a <b>passeata contra a guitarra elétrica</b>: parte da MPB via a guitarra como invasão estrangeira.</p><p>Gil juntou berimbau e guitarra no mesmo palco.</p>"},
+    {b:"tropic", q:"O que foi a Tropicália?",
+     a:"<p>A <b>antropofagia de Oswald na música</b>: arcaico + moderno, nacional + estrangeiro, popular + vanguarda.</p><p>Caetano, Gil, Tom Zé, Gal, Os Mutantes. Acaba com a prisão e o exílio de Gil e Caetano depois do AI-5.</p>",
+     fgv:"2024.1-DIS-AR3 · Tropicália no contexto dos anos 1960"},
+    {b:"tropic", q:"“Domingo no parque”: o que conta e como?",
+     a:"<p>José, João e Juliana: um triângulo amoroso num domingo de parque que acaba em <b>crime passional</b>.</p><p>Personagens populares, berimbau e capoeira da Bahia, e a letra <b>montada como cinema, em cortes</b>.</p>"},
+    {b:"tropic", q:"“Cálice”: quem, quando, e o que aconteceu com ela?",
+     a:"<p><b>Chico Buarque e Gilberto Gil, 1973</b>, auge da repressão.</p><p>Foi censurada: no show Phono 73 cortaram os microfones. Só saiu em disco em 1978.</p>"},
+    {b:"tropic", q:"Qual é o recurso central de “Cálice”?",
+     a:"<p>O trocadilho <b>cálice / cale-se</b>.</p><p>Usa a Paixão de Cristo (o pedido de afastar o cálice) para falar de sofrimento e do silêncio imposto pela censura.</p>"},
+    {b:"tropic", q:"O que muda no “Cálice” de Criolo?",
+     a:"<p>Nos anos 2010, Criolo reescreveu a letra em rap para o Brasil de hoje: <b>periferia, racismo, violência policial, tráfico</b>.</p><p>O silenciamento continua, com outros alvos.</p>",
+     fgv:"2026.1-DIS-AR1 · Cálice de Criolo"},
+    {b:"tropic", q:"Como a FGV cobrou o “Cálice” de Criolo em 2026.1?",
+     a:"<p>Pediu para ler a letra pelas ideias de <b>Sueli Carneiro</b>:</p><ul><li>O <b>mito da democracia racial</b>: o país se diz sem racismo, mas a violência tem cor.</li><li><b>Raça × classe</b>: a desigualdade não se explica só pela pobreza.</li></ul>",
+     fgv:"2026.1-DIS-AR1 · Criolo lido com Sueli Carneiro"},
+    {b:"tropic", q:"Com que obras da lista “Cálice” (1973) conversa?",
+     a:"<p><b>Ditadura e memória:</b> <i>Ainda estou aqui</i>, <i>Cabra marcado para morrer</i>, <i>As meninas</i> (também de 1973).</p><p><b>Poder e censura:</b> <i>1984</i> e Arendt.</p>"},
+    {b:"jovem", q:"“O mundo é um moinho”: quem, quando e que gênero?",
+     a:"<p><b>Cartola, 1976.</b> Samba-canção, samba de raiz.</p><p>Cartola foi um dos fundadores da Mangueira.</p>"},
+    {b:"jovem", q:"“O mundo é um moinho”: qual é o tema e a metáfora?",
+     a:"<p>Um conselho de alguém mais velho a uma <b>jovem que quer sair de casa cedo</b>: o mundo é um <b>moinho</b> que vai triturar os sonhos dela.</p><p>Mostra o samba como poesia: lírico, melancólico.</p>",
+     fgv:"2023.1-DIS-AR4 · Moinho × Malandragem"},
+    {b:"jovem", q:"“Malandragem”: quem compôs, quem gravou e quando?",
+     a:"<p><b>Cazuza e Frejat</b> compuseram no fim dos anos 80.</p><p>Estourou na voz de <b>Cássia Eller, em 1994</b>.</p>"},
+    {b:"jovem", q:"“Malandragem”: de que fala?",
+     a:"<p>A voz de uma <b>jovem presa à imagem de menina boazinha</b>, que pede um pouco de malandragem: quer experiência, liberdade, perder a inocência.</p><p>A apostila lê como desilusão amorosa. Para a prova, use esta leitura.</p>",
+     fgv:"2023.1-DIS-AR4 · Moinho × Malandragem"},
+    {b:"jovem", q:"Quais são os dois sentidos de “malandragem” na lista?",
+     a:"<p><b>No samba (Noel, anos 30):</b> o jeito de sobreviver na pobreza.</p><p><b>Em Cássia Eller (anos 90):</b> deixar de ser ingênua e viver.</p>"},
+    {b:"jovem", q:"Como comparar “O mundo é um moinho” com “Malandragem”?",
+     a:"<p>A mesma cena, a jovem saindo para o mundo, vista dos dois lados:</p><ul><li><b>Cartola:</b> quem aconselha, mais velho, pessimista.</li><li><b>Malandragem:</b> a própria jovem, que quer ir.</li></ul><p>E samba de raiz × rock/MPB.</p>",
+     fgv:"2023.1-DIS-AR4 · comparar as duas letras"},
+    {b:"rock", q:"“Que país é esse?”: quando foi escrita e quando saiu?",
+     a:"<p><b>Escrita por Renato Russo em 1978</b>, na ditadura, no punk de Brasília.</p><p><b>Lançada pela Legião Urbana em 1987.</b></p>"},
+    {b:"rock", q:"Por que importa ela ter sido escrita em 1978 e lançada em 1987?",
+     a:"<p>Uma letra da ditadura continuava valendo na redemocratização: <b>a ditadura acabou e o país não mudou</b> (Sarney, inflação, Constituinte).</p><p>A letra diz até que ninguém respeita a Constituição, e saiu enquanto a nova estava sendo escrita.</p>"},
+    {b:"rock", q:"“Que país é esse?”: qual é o tema?",
+     a:"<p>Enumera as mazelas do país: <b>corrupção, desigualdade, impunidade</b>. A pergunta do título é a denúncia.</p><p><b>Liga com:</b> <i>O tempo não para</i>, <i>O bem-amado</i>, <i>Cidade de Deus</i>.</p>"},
+    {b:"rock", q:"“O tempo não para”: quem, quando e em que contexto?",
+     a:"<p><b>Cazuza (com Arnaldo Brandão), 1988.</b></p><p>Desencanto com a Nova República (Sarney, inflação). Cazuza já tinha HIV, o que dá urgência à letra.</p>"},
+    {b:"rock", q:"“O tempo não para”: qual é o tema e a chave?",
+     a:"<p>Ataca a <b>hipocrisia</b> e a elite acomodada: um país que repete o velho e chama de novidade.</p><p><b>Chave:</b> crítica social + finitude pessoal. Com <i>Que país é esse?</i>, forma a dupla do <b>desencanto dos anos 80</b>.</p>"},
+    {b:"prova", q:"Quais duplas de música a FGV pode cruzar?",
+     a:"<ul><li><b>Ditadura e censura:</b> <i>Cálice</i></li><li><b>Desencanto pós-ditadura:</b> <i>Que país é esse?</i> + <i>O tempo não para</i></li><li><b>Nacional × estrangeiro:</b> <i>Americanizada</i> + <i>Domingo no parque</i> (+ Oswald, Tarsila)</li><li><b>A jovem e o mundo:</b> <i>Moinho</i> × <i>Malandragem</i></li><li><b>Racismo hoje:</b> <i>Cálice</i> (Criolo) + Sueli Carneiro</li></ul>"}
+  ];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("mpb.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("mpb.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("mpb.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':(c.erro?'<span class="mark rev">seu erro</span>':"");
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("mpb.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("mpb.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+
+</body>
+</html>
