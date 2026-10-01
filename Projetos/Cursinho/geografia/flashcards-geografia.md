@@ -932,6 +932,160 @@
 > deixou Putin popular.
 > Da sua aula 11 de Geografia (Frente 2, Caderno 3).
 
+### Biomas brasileiros (aula de 01/10)
+
+> [!question]- 122. Mapa de biomas (IBGE) × domínios morfoclimáticos (Ab'Sáber)
+> **IBGE:** 6 biomas, **sem faixas de transição**.
+> **Ab'Sáber:** relevo + clima → 6 domínios **com faixas de transição**.
+> Mata Atlântica = **Mares de Morros**; Pampa = **Pradarias**; Araucárias = domínio próprio;
+> **Pantanal = faixa de transição**, não é domínio.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 123. Amazônia Legal × bioma Amazônia
+> **Bioma:** natural, 49,5% do país.
+> **Amazônia Legal:** região política de planejamento (1953), cerca de **59%**: AC, AM, AP, PA, RO,
+> RR, TO, MT e oeste do MA. Inclui **Cerrado e Pantanal**.
+> Os dados de desmatamento do INPE costumam ser da Amazônia Legal.
+> ⭐ 2024.1-OBJ-55 e 2025.1-OBJ-57.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 124. Igapó × várzea × terra firme
+> **Igapó:** alagado o ano **inteiro**.
+> **Várzea:** alaga **só na cheia**; recebe sedimentos e é o solo mais fértil.
+> **Terra firme:** **nunca** alaga; a maior parte da Amazônia, com as árvores mais altas.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 125. Savanização: o que é, e o que é o "ponto de não retorno"?
+> A floresta produz boa parte da própria chuva. Desmatamento → menos vapor → menos chuva e mais fogo →
+> a floresta morre e vira **savana empobrecida** (processo típico da **Amazônia**).
+> **Ponto de não retorno (Carlos Nobre):** com **20–25%** de desmatamento, grandes áreas podem
+> savanizar sozinhas. Já se perdeu cerca de 18%.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 126. Desmatamento da Amazônia: o que marcou 2004, 2012 e 2019–22?
+> **2004 (Lula):** pico, cerca de 27,8 mil km²; reação com o PPCDAm (satélite DETER, fiscalização,
+> crédito cortado).
+> **2012 (Dilma):** menor índice da série, cerca de 4,6 mil km².
+> **2019–22 (Bolsonaro):** volta a subir, acima de 10 mil km²/ano, com a fiscalização enfraquecida.
+> **Desde 2023:** cai de novo.
+> ⭐ 2025.1-OBJ-57 (dados do INPE).
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 127. Por que as árvores do Cerrado são tortas? (escleromorfismo oligotrófico)
+> **Solo pobre** (oligotrófico), **ácido e com alumínio**: a planta cresce dura e retorcida. O
+> **fogo** queima os brotos da ponta e o galho rebrota de lado.
+> **Não é falta de água**: chove 1.200–1.800 mm e as raízes chegam ao lençol freático. Seca é a
+> resposta da Caatinga.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 128. Por que o Cerrado é a "caixa d'água do Brasil"?
+> Ocupa os **planaltos**, onde nascem rios de **6 das 8 grandes bacias** (Amazonas,
+> Tocantins-Araguaia, Paraná, Paraguai, São Francisco, Parnaíba).
+> As raízes profundas fazem a chuva infiltrar e recarregar **aquíferos** (como o Guarani). Desmatar =
+> menos água nos rios, nas hidrelétricas e no Pantanal.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 129. Cerradão, cerrado típico e campos: qual a diferença?
+> **Cerradão:** formação florestal, árvores altas e de copa quase fechada.
+> **Cerrado típico (sentido restrito):** savânico, árvores baixas, tortas e espaçadas; parece a savana
+> africana.
+> **Campestre:** campo sujo (capim + arbustos) e campo limpo (só gramíneas).
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 130. Vereda: o que é e por que importa?
+> Vale do Cerrado onde o **lençol freático aflora**: solo **hidromórfico** (encharcado) com fileiras
+> de **buriti**.
+> Garante **água e alimento o ano todo**, mesmo na seca. Dá nome a *Grande Sertão: Veredas*.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 131. Mata dos Cocais e Lei do Babaçu Livre
+> **Faixa de transição** entre Amazônia, Cerrado e Caatinga, no **MA e PI**. Palmeiras: **babaçu**
+> (lado úmido) e **carnaúba** (lado seco, cera).
+> **Lei do Babaçu Livre:** as **quebradeiras de coco** podem entrar até em **propriedade privada**
+> para coletar, e as palmeiras não podem ser derrubadas.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 132. Matopiba: o que é, e por que é mais fácil desmatar o Cerrado?
+> **MA + TO + PI + BA:** nova fronteira agrícola da soja no Cerrado; segundo a aula, 42% do
+> desmatamento recente.
+> **Código Florestal (Reserva Legal):** 80% em floresta na Amazônia Legal, 35% no Cerrado da Amazônia
+> Legal, **só 20%** no resto. Muito do desmatamento do Cerrado é **legal**.
+> ⭐ 2022.1-DIS-CH4 (agricultura empresarial no Cerrado).
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 133. Mata das Araucárias: onde, como é e quanto resta?
+> Planaltos e serras do **Sul** e trechos altos do Sudeste; clima **subtropical**, com geada.
+> Araucária (pinheiro-do-paraná, dá o pinhão): **aciculifoliada**, mata **relativamente homogênea**.
+> Resta **menos de 5%**: madeira, papel e celulose, agropecuária. Ab'Sáber a separa da Mata Atlântica.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 134. Mangue: como é, e por que é protegido?
+> Onde o **rio encontra o mar**: água salobra, lama sem oxigênio, maré.
+> Plantas **halófitas** (toleram sal), com **pneumatóforos** (raízes que respiram) e raízes-escora.
+> **Berçário marinho**, protege a costa da erosão. É **APP** por lei. Caso clássico: **Recife**,
+> construída aterrando mangues.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 135. Caatinga: por que é semiárida, e como a vegetação se adapta?
+> Chuva **pouca, concentrada e irregular**; a umidade do Atlântico fica no litoral e na **Borborema**.
+> Rios intermitentes (menos o São Francisco e o Parnaíba).
+> **Xerófila:** espinhos, cactos (mandacaru, xique-xique). **Caducifólia:** perde as folhas na seca.
+> "Caatinga" = mata branca. Único bioma só brasileiro.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 136. Desertificação: o que é, e onde acontece no Brasil?
+> Degradação da terra em clima **árido, semiárido ou subúmido seco** (ONU), por clima + ação humana: o
+> solo perde a capacidade de produzir.
+> Na **Caatinga**: pecuária e **lenha** (polo gesseiro, cerâmicas). Núcleos: Gilbués (PI), Irauçuba
+> (CE), Seridó (RN/PB), Cabrobó (PE).
+> Em 2023, a 1ª área de **clima árido** do país, no norte da BA.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 137. Arenização: o que é, e por que não é desertificação?
+> **Areais** no sudoeste do RS (Alegrete), no **Pampa**: solo **arenoso e frágil** perde o capim
+> (pisoteio do gado, soja) e a chuva e o vento expõem a areia.
+> Não é desertificação porque o clima do Pampa é **úmido**. Termo de Dirce Suertegaray.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 138. Pantanal: como funciona, e qual é a principal ameaça?
+> **Planície alagável** (a maior do mundo) na bacia do Rio Paraguai, em MT e MS. Alaga no **verão**,
+> seca no inverno (julho). Ave símbolo: **tuiuiú**. Só 15% destruído.
+> Ameaça principal: o **entorno** (Cerrado do planalto) → **assoreamento** (rio Taquari), agrotóxicos,
+> hidrelétricas. Queimadas de 2020.
+> ⭐ 2023.1, Inglês IL8 e IL9 (queimadas de 2020).
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 139. SNUC: proteção integral × uso sustentável. E o Parque Nacional?
+> **Lei 9.985/2000 (FHC).**
+> **Proteção integral:** só uso indireto (pesquisa, educação, visita). Estação Ecológica, Reserva
+> Biológica, **Parque Nacional**, Monumento Natural, Refúgio de Vida Silvestre.
+> **Uso sustentável:** uso direto controlado (morar, extrair). APA, ARIE, Flona, Resex, RDS, RPPN...
+> **Parque Nacional é proteção integral**: visita é uso indireto.
+> Atenção: o resumo da aula pôs o Parque Nacional em uso sustentável, e está errado.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 140. Deslizamento: quais os três fatores, e quais casos lembrar?
+> **Declividade** + **chuva forte** (naturais) + **desmatamento e ocupação** (humano).
+> **Caraguatatuba, 1967:** 436 mortos em uma noite.
+> **Região Serrana do RJ, 2011:** cerca de 900, o maior desastre climático do país.
+> **São Sebastião, 2023:** 65 mortos, a maior chuva em 24 h já registrada.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 141. El Niño × La Niña no Brasil
+> **El Niño:** aquecimento do Pacífico equatorial. **Sul alaga**, **Norte e Nordeste secam**.
+> **La Niña:** resfriamento. Sul seca, Norte e Nordeste com mais chuva.
+> Previsão do professor: ano de El Niño, chuva forte no litoral Sul–Sudeste e risco de deslizamentos
+> em dez/jan.
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
+> [!question]- 142. Os seis biomas: tamanho e quanto cada um já perdeu
+> **Tamanho:** Amazônia 49,5% · Cerrado 23,3% · Mata Atlântica 13,1% · Caatinga 10% · Pampa 2,3% ·
+> Pantanal 1,8%.
+> **Destruído:** Mata Atlântica 75% · Pampa 58% · Cerrado 49% · Caatinga 40% · Amazônia 18% · Pantanal
+> 15%.
+> Causa número 1 em todos: **agropecuária** (pecuária extensiva).
+> Da sua aula de Geografia de 01/10/2026 (biomas).
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]
