@@ -449,6 +449,25 @@
 > Foi a pergunta exata da FGV em 2023.
 > ⭐ 2023.1-DIS-CH3
 
+> [!question]- 69. Festa de coroação de reis negros: denúncia ou encenação?
+> **Encenação.** As irmandades faziam o cortejo com **aval do poder público e da Igreja**, então não era denúncia nem afronta ao catolicismo.
+> Era um **espetáculo** ("palco") em que a escravidão ficava suspensa e se lembrava, ou se imaginava, uma **África idealizada**.
+> **Cênico** = de teatro, de encenação.
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 50): você marcou A (denúncia); o certo era D. No gabarito oficial é D, não E. ⭐ 2026.1-OBJ-50
+
+> [!question]- 70. IHGB atrás de inscrição fenícia na Pedra da Gávea (1839): que ideologia é essa?
+> **Nacionalismo** (romântico, do Império): procurar um passado antigo e nobre para dar **origem e identidade ao Estado brasileiro**.
+> **Não é positivismo:** o positivismo (Comte, "Ordem e Progresso") só ganha força no Brasil no fim do Império e na República, décadas depois.
+> Pista da prova: "vínculo com populações antigas" + "identidade do Estado" = nacionalismo.
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 52): você marcou D (positivismo); o certo era E. ⭐ 2026.1-OBJ-52
+
+> [!question]- 71. Ufanismo × excepcionalismo × naturalismo
+> **Ufanismo:** orgulho exagerado da pátria (vem do livro *Por que me ufano do meu país*, de Afonso Celso, 1900).
+> **Excepcionalismo:** a ideia de que um país é único, diferente de todos os outros (o exemplo clássico são os EUA).
+> **Naturalismo:** explicar as coisas por causas naturais (física, biologia). Também é escola literária (Aluísio Azevedo).
+> Os três foram alternativas erradas na questão do IHGB.
+> Palavras que você não sabia no mini simulado de 02/10. ⭐ 2026.1-OBJ-52
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

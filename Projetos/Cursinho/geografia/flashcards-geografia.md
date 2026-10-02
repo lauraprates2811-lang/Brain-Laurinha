@@ -1086,6 +1086,41 @@
 > Causa número 1 em todos: **agropecuária** (pecuária extensiva).
 > Da sua aula de Geografia de 01/10/2026 (biomas).
 
+> [!question]- 143. Espraiamento urbano: o que é e o que ele causa?
+> A cidade cresce **para fora**, espalhada e com pouca gente por área (loteamentos e condomínios longe do centro), dependente do carro: a "cidade do automóvel".
+> Efeito: centro mais **longe**, trânsito, infraestrutura cara e **segregação espacial**. Nunca "integração social".
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 58): você marcou C; a exceção era a D, que dizia que o espraiamento integrava. ⭐ 2026.1-OBJ-58
+
+> [!question]- 144. Relevo brasileiro (Jurandyr Ross): o que predomina, e qual é a pegadinha da Amazônia?
+> Ross divide o relevo em **planaltos, depressões e planícies**. Predominam **planaltos e depressões**; planícies são poucas.
+> **Pegadinha:** a Amazônia não é uma grande planície. A **Planície Amazônica** é só a faixa estreita ao longo dos rios; o resto é depressão e planalto.
+> Ideia do texto da prova: **estrutura antiga** (as rochas), **formas recentes** (a erosão continua esculpindo).
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 60): você marcou B (Planície Amazônica com a maior área); o certo era D (Planalto Brasileiro). ⭐ 2026.1-OBJ-60
+
+> [!question]- 145. Por que o caminhão tira competitividade da soja brasileira?
+> Soja é carga **a granel**, pesada, de **baixo valor por tonelada**, e viaja mais de 1.000 km do Centro-Oeste até o porto. O caminhão é o frete mais caro por tonelada e gasta mais combustível.
+> Para carga pesada e distância longa: **ferrovia e hidrovia** (intermodalidade). E os portos do **Arco Norte** (Itacoatiara, Santarém) encurtam o caminho até o mercado externo.
+> Na FGV, as três afirmativas (I, II e III) eram verdadeiras.
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 59): você descartou a I e marcou D; o certo era E. ⭐ 2026.1-OBJ-59 · 2023.1-OBJ-MH29
+
+> [!question]- 146. Mudanças climáticas: o que já é consenso científico?
+> O **IPCC** (painel de cientistas da ONU) afirma: as **emissões humanas** de gases de efeito estufa (CO₂ dos combustíveis fósseis, metano, óxido nitroso) aquecem o planeta e mudam o padrão de **chuvas e secas**, com mais **ondas de calor** e **chuvas extremas**.
+> Na prova, afirmativa que diz isso é **verdadeira**: não desconfie do "são responsáveis".
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 56): você descartou a I e marcou D; o certo era E (I, II e III). ⭐ 2026.1-OBJ-56 · Meio ambiente: 7 de 40 questões de Geografia, nas 4 últimas provas
+
+> [!question]- 147. As eras geológicas, da mais antiga para a mais recente
+> **Pré-Cambriano** (até ~540 milhões de anos): os **terrenos cristalinos**, as rochas mais antigas do Brasil.
+> **Paleozoico** → **Mesozoico** (o dos dinossauros, até ~66 milhões): as grandes **bacias sedimentares**.
+> **Cenozoico** (de 66 milhões até hoje): as **planícies**, como a do Pantanal, e as montanhas jovens, como os Andes.
+> **Litologia** = tipo de rocha. "Formação litológica" = o conjunto de rochas de um lugar.
+> Palavra que você não sabia no mini simulado de 02/10. ⭐ 2026.1-OBJ-60
+
+> [!question]- 148. Contíguo · locus privilegiado · rendimento: o que querem dizer?
+> **Contíguo:** vizinho, que encosta no outro. "Municípios contíguos" = cidades coladas (é a base da conurbação).
+> **Locus privilegiado:** o lugar principal, onde a coisa mais acontece. "O urbano é o locus privilegiado da economia" = a economia está sobretudo na cidade.
+> **Rendimento (agrícola):** quanto se colhe por área (toneladas por hectare). "Ganho de rendimento" = produtividade maior.
+> Palavras que você não sabia no mini simulado de 02/10. ⭐ 2026.1-OBJ-55, 58 e 59
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

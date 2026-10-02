@@ -223,6 +223,12 @@
 > emergencial: o governo propôs **R$ 200**; chegou a **R$ 600**.
 > Da sua aula de Atualidades (apostila de 29/09).
 
+> [!question]- 36. Organização de Cooperação de Xangai (OCX): o que é?
+> Bloco criado em **2001** por **China e Rússia** com países da Ásia Central; depois entraram **Índia e Paquistão** (2017) e o **Irã** (2023). Trata de segurança e economia.
+> A China usa a OCX como vitrine de um **mundo alternativo a Washington** e se apresenta como **eixo (centro) da Eurásia** (Europa + Ásia).
+> **Tibete:** a China já o ocupou em 1950–51, então não é "meta". A meta de reunificação é **Taiwan**.
+> Questão que você deixou em branco no mini simulado de 02/10 (gabarito A). ⭐ 2026.1-OBJ-47
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

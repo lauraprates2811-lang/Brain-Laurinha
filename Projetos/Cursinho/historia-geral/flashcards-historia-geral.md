@@ -298,6 +298,26 @@
 > e esconde outras.
 > ⭐ 2025.1-OBJ-51
 
+> [!question]- 100. Ocidentalização × sincretismo × aculturação: qual é qual?
+> **Ocidentalização:** o colonizador **impõe** a visão de mundo europeia e destrói a do outro (templos, imagens, sacerdotes; "seus deuses são falsos").
+> **Sincretismo:** as religiões se **misturam** (santo católico + divindade local).
+> **Aculturação mútua:** as duas culturas mudam **uma à outra**.
+> **Pré-hispânico** = antes da chegada dos espanhóis (astecas, maias, incas).
+> O texto de Gruzinski só fala de imposição e destruição → ocidentalização.
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 49): você marcou A (dominação econômica), que o texto nem cita; o certo era E. ⭐ 2026.1-OBJ-49
+
+> [!question]- 101. Ponto IV de Truman (1949): o que era?
+> Programa dos EUA de **cooperação técnica e econômica** com os países pobres ("subdesenvolvidos"): levar tecnologia e conhecimento para combater a pobreza, que gerava instabilidade e abria espaço ao comunismo.
+> Era influência **sem armas**: o texto não falava de força militar.
+> **Harry Truman:** presidente dos EUA de 1945 a 1953 (Doutrina Truman, Plano Marshall, OTAN).
+> ⚠️ Seu erro de 02/10 (mini simulado FGV 2026.1, questão 54): você marcou A (superioridade militar); o certo era E. ⭐ 2026.1-OBJ-54
+
+> [!question]- 102. O que foi a Queda da Bastilha?
+> A Bastilha era uma **prisão-fortaleza de Paris**, símbolo do **absolutismo**: o rei mandava prender ali, sem julgamento, quem considerava inimigo.
+> Em **14 de julho de 1789** a população tomou a Bastilha: é o marco do início da Revolução Francesa. O 14 de julho virou festa nacional (a Festa da Federação, de 1790, é a do texto de Michelet).
+> **Michelet:** historiador francês do século XIX.
+> Você acertou a questão, mas marcou a Bastilha como não sabida (02/10). ⭐ 2026.1-OBJ-51
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]
