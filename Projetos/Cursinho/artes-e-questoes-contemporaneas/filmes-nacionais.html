@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Filmes Nacionais FGV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: linha do tempo dos 4 filmes no topo, um galho por filme, eixos para cruzar, e o baralho com filtro por filme. */
+:root{
+  --ground:#E9EBE6; --surface:#F7F8F4; --surface-2:#EFF1EC; --ink:#1A1E23; --muted:#5A6068; --line:#CDD1CA;
+  --h-prova:#5F3A72; --h-pagador:#8E3B2A; --h-cabra:#4F6B3A; --h-cdd:#9A6A0C; --h-ainda:#2F4A7A;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+    --h-prova:#BE9FDA; --h-pagador:#E58A73; --h-cabra:#9CC48A; --h-cdd:#E2B451; --h-ainda:#93ACE0;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+  --h-prova:#BE9FDA; --h-pagador:#E58A73; --h-cabra:#9CC48A; --h-cdd:#E2B451; --h-ainda:#93ACE0;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-prova);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.timeline{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px}
+.timeline h2{margin:0;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px}
+.tl li{--c:var(--ink);border-top:4px solid var(--c);background:var(--surface-2);border-radius:6px;padding:8px 10px 10px;display:grid;gap:2px;align-content:start;min-width:0}
+.tl .yr{font:800 26px/1 var(--display);color:var(--c);font-variant-numeric:tabular-nums}
+.tl .song{font-weight:600;font-size:14px;line-height:1.25}
+.tl .who{font-size:12.5px;color:var(--muted)}
+.tl .fgv{justify-self:start;margin:4px 0 0}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px;min-width:0}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+.pairs{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px}
+.pairs h2{margin:0;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:0}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);min-width:0}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.warn{font-size:13.5px;color:var(--rev);border-left:3px solid var(--rev);padding:2px 0 2px 10px;margin:4px 0 0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .card{min-height:380px}
+  .keys{display:none}
+  .branches{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+@media (min-width:761px){.branches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Artes e Questões Contemporâneas · cinema · 02/10/2026</div>
+    <h1>Os 4 filmes nacionais</h1>
+    <p class="lede">Do homem do interior barrado na porta da igreja à família que espera um pai que não volta: os quatro filmes mostram quem tem terra, quem tem voz e como o Estado trata cada um. Na prova de cinema, a FGV cobra <b>enredo concreto + conflito central + um problema de hoje</b>.</p>
+    <div class="fix"><b>Por que tem card de enredo:</b> em Literatura você interpreta o texto na hora, com ele na frente. Em cinema não há filme na prova, e a grade cobra o enredo (2024.1).</div>
+  </header>
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards">Flashcards · 44</button>
+  </div>
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="timeline">
+      <h2>Os 4 em ordem no tempo</h2>
+      <ol class="tl">
+        <li style="--c:var(--h-pagador)"><span class="yr">1962</span><span class="song">O pagador de promessas</span><span class="who">Anselmo Duarte</span><span class="fgv">★ 2024.1</span></li>
+        <li style="--c:var(--h-cabra)"><span class="yr">1984</span><span class="song">Cabra marcado para morrer</span><span class="who">Eduardo Coutinho</span><span class="fgv">★ 2023.1</span></li>
+        <li style="--c:var(--h-cdd)"><span class="yr">2002</span><span class="song">Cidade de Deus</span><span class="who">Fernando Meirelles e Kátia Lund</span></li>
+        <li style="--c:var(--h-ainda)"><span class="yr">2024</span><span class="song">Ainda estou aqui</span><span class="who">Walter Salles</span></li>
+      </ol>
+    </div>
+    <div class="branches">
+      <article class="branch" style="--c:var(--h-pagador)">
+        <h2>O pagador de promessas</h2>
+        <ul class="tree">
+          <li><span>A história · Salvador, 1962</span> <span class="fgv">★ 2024.1-DIS-AR4</span>
+            <ul><li>Zé do Burro promete a <b>Iansã</b>, no terreiro, levar uma cruz até a igreja de <b>Santa Bárbara</b></li><li>O padre barra a cruz: <b>conflito central</b></li><li>Zé morre baleado e entra na igreja como <b>mártir</b></li></ul></li>
+          <li><span>Quem usa Zé</span>
+            <ul><li>Repórter (manchete de “agitador”)</li><li>Polícia, Bonitão, comerciantes</li></ul></li>
+          <li><span>Temas</span>
+            <ul><li><b>Sincretismo</b> e intolerância</li><li>Campo × cidade: “dois Brasis”</li><li>Reforma agrária e concentração de terras</li></ul></li>
+          <li><span>Forma</span>
+            <ul><li>Escadaria = hierarquia</li><li>Praça = Brasil em miniatura</li><li>Narrativa clássica, P&amp;B</li></ul></li>
+          <li><span>Direito</span>
+            <ul><li>CF art. 5º, VI (crença) e art. 19, I (Estado laico)</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-cabra)">
+        <h2>Cabra marcado para morrer</h2>
+        <ul class="tree">
+          <li><span>A história</span> <span class="fgv">★ 2023.1-DIS-AR3</span>
+            <ul><li><b>João Pedro Teixeira</b>, Liga Camponesa de Sapé, morto em 1962</li><li>1964: ficção com camponeses, parada pelo golpe</li><li>1981: Coutinho volta e reencontra todos</li></ul></li>
+          <li><span>Elizabeth Teixeira</span>
+            <ul><li>17 anos clandestina como <b>Marta Maria da Costa</b></li><li>11 filhos espalhados</li></ul></li>
+          <li><span>Forma</span>
+            <ul><li><b>Metadocumentário</b>: o filme conta a própria história</li><li>P&amp;B de 1964 × cor de 1981</li><li>Memória como método</li></ul></li>
+          <li><span>Hoje</span>
+            <ul><li>MST (1984) · Carajás (1996) · Bruno e Dom (2022)</li></ul></li>
+          <li><span>Direito</span>
+            <ul><li>Função social da propriedade: art. 5º, XXIII, 184 e 186</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-cdd)">
+        <h2>Cidade de Deus</h2>
+        <ul class="tree">
+          <li><span>O lugar</span>
+            <ul><li>Conjunto dos <b>anos 1960</b>, Zona Oeste do Rio</li><li>Para removidos das favelas da Zona Sul</li></ul></li>
+          <li><span>A história</span>
+            <ul><li><b>Buscapé</b> narra e escapa pela fotografia</li><li>Anos 60 Trio Ternura · 70 Zé Pequeno · 80 guerra com Mané Galinha</li><li>Fim: a Caixa Baixa mata Zé, <b>o ciclo recomeça</b></li></ul></li>
+          <li><span>Forma</span>
+            <ul><li>Montagem acelerada, câmera na mão</li><li>Estrutura circular (a galinha)</li><li>Elenco sem experiência</li></ul></li>
+          <li><span>Debate</span>
+            <ul><li>Estética da fome (Glauber) × <b>cosmética da fome</b> (Ivana Bentes)</li></ul></li>
+          <li><span>Hoje</span>
+            <ul><li>Estado só como polícia (art. 144)</li><li>Racismo (Sueli Carneiro) · ADPF 635</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--h-ainda)">
+        <h2>Ainda estou aqui</h2>
+        <ul class="tree">
+          <li><span>O caso</span>
+            <ul><li><b>Rubens Paiva</b>, cassado em 1964</li><li>Levado de casa em janeiro de 1971, morto no DOI-CODI</li><li>Corpo nunca encontrado</li></ul></li>
+          <li><span>Eunice</span>
+            <ul><li>12 dias presa</li><li>Pede que a família <b>sorria</b> na foto</li><li>Forma-se em Direito em 1973</li></ul></li>
+          <li><span>Três tempos</span>
+            <ul><li>1971 · 1996 (atestado de óbito) · 2014 (Comissão da Verdade)</li></ul></li>
+          <li><span>Forma</span>
+            <ul><li>Casa aberta → casa fechada</li><li>Tortura <b>fora de quadro</b></li><li>Contenção</li></ul></li>
+          <li><span>Direito</span>
+            <ul><li>Lei da Anistia (1979) · ADPF 153 · caso Gomes Lund</li><li>CNV: 434 mortos e desaparecidos</li></ul></li>
+        </ul>
+      </article>
+    </div>
+    <div class="pairs">
+      <h2 style="color:var(--h-prova)">Eixos para cruzar</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Eixo</th><th>Filmes e obras</th></tr></thead>
+          <tbody>
+            <tr><td>Terra</td><td><i>O pagador</i> + <i>Cabra marcado</i> (+ <i>Torto arado</i>, <i>Vidas secas</i>)</td></tr>
+            <tr><td>Memória da ditadura</td><td><i>Cabra marcado</i> + <i>Ainda estou aqui</i> (+ <i>Cálice</i>, <i>As meninas</i>, Arendt)</td></tr>
+            <tr><td>Desigualdade urbana</td><td><i>Cidade de Deus</i> (+ Sueli Carneiro, <i>Que país é esse?</i>, <i>A hora da estrela</i>)</td></tr>
+            <tr><td>Imagem como poder</td><td>a manchete do repórter · o negativo salvo · a foto de Buscapé · o sorriso de Eunice</td></tr>
+            <tr><td>Mulheres que lutam</td><td>Elizabeth Teixeira × Eunice Paiva: mesma perda, classes diferentes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (id da questão no banco de provas antigas, 2021.1–2026.1). Cinema caiu em 3 das 4 últimas provas, sempre na dissertativa.</p>
+  </section>
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    prova:{n:"Como cai e ligações", c:"var(--h-prova)"},
+    pagador:{n:"O pagador de promessas", c:"var(--h-pagador)"},
+    cabra:{n:"Cabra marcado para morrer", c:"var(--h-cabra)"},
+    cdd:{n:"Cidade de Deus", c:"var(--h-cdd)"},
+    ainda:{n:"Ainda estou aqui", c:"var(--h-ainda)"}
+  };
+  var CARDS = [
+    {"b": "prova", "q": "Como o cinema cai na prova de Artes da FGV?", "a": "<ul><li>Em <b>3 das 4 últimas provas</b> (2023.1, 2024.1, 2026.1), sempre como <b>dissertativa</b>.</li><li>Formato: um texto sobre um problema brasileiro de hoje + o pedido de ligar ao filme.</li><li>Dos 4 nacionais, já caíram <i>Cabra marcado</i> e <i>O pagador</i>. <i>Cidade de Deus</i> e <i>Ainda estou aqui</i> nunca caíram.</li></ul>", "fgv": "2023.1-DIS-AR3 · 2024.1-DIS-AR4 · 2026.1-DIS-AR3"},
+    {"b": "prova", "q": "O que a grade da FGV exige numa questão de cinema?", "a": "<ul><li><b>Conhecer o enredo de verdade:</b> nome de personagem e cena concreta. A grade de 2024.1 pede “evidências de conhecimento do enredo”.</li><li><b>Achar o conflito central</b> e o problema social que o filme levanta.</li><li>Faltar uma parte do pedido = 50%. Um desvio de português derruba um nível.</li></ul><p>Tempo-alvo: <b>18 min</b>.</p>"},
+    {"b": "prova", "q": "Coloque os 4 filmes em ordem: ano do filme e época que ele mostra.", "a": "<ol><li>1962 · <i>O pagador de promessas</i> · início dos anos 60</li><li>1984 · <i>Cabra marcado para morrer</i> · 1962 a 1981</li><li>2002 · <i>Cidade de Deus</i> · anos 60 a 80</li><li>2024 · <i>Ainda estou aqui</i> · 1970 a 2014</li></ol>"},
+    {"b": "pagador", "q": "“O pagador de promessas”: quem dirigiu, quando, e de onde vem a história?", "a": "<p><b>Anselmo Duarte, 1962.</b> Da peça de <b>Dias Gomes</b>, o mesmo de <i>O bem-amado</i>.</p><p>Preto e branco, filmado em Salvador.</p><p><b>Palma de Ouro em Cannes</b>, a única do cinema brasileiro, e primeiro filme do Brasil indicado ao Oscar de filme estrangeiro.</p>"},
+    {"b": "pagador", "q": "Qual foi a promessa de Zé do Burro, a quem e onde?", "a": "<p>Para salvar o burro <b>Nicolau</b>, prometeu a <b>Iansã</b>, num <b>terreiro de candomblé</b>, levar uma cruz pesada como a de Cristo até a igreja de <b>Santa Bárbara</b>, em Salvador. Também prometeu dividir suas terras com lavradores pobres.</p><p>No sincretismo, Iansã = Santa Bárbara.</p>", "fgv": "2024.1-DIS-AR4 · a promessa feita no terreiro"},
+    {"b": "pagador", "q": "Por que o padre não deixa a cruz entrar na igreja?", "a": "<ul><li>A promessa foi feita em terreiro: para ele, feitiçaria.</li><li>Zé estaria querendo imitar o sacrifício de Cristo: soberba.</li></ul><p>É o <b>conflito central</b>: a Igreja oficial contra o catolicismo popular, “rústico”, de Zé.</p>", "fgv": "2024.1-DIS-AR4 · o conflito central"},
+    {"b": "pagador", "q": "Quem usa Zé do Burro em proveito próprio?", "a": "<ul><li><b>O repórter:</b> a manchete faz de Zé um agitador da reforma agrária.</li><li><b>A polícia:</b> quer a ordem.</li><li><b>Bonitão:</b> seduz Rosa, a mulher de Zé.</li><li><b>Os comerciantes</b> da praça vendem para a multidão.</li></ul><p>Ninguém quer saber da promessa.</p>", "fgv": "2024.1-DIS-AR4 · a imprensa deturpando o caso"},
+    {"b": "pagador", "q": "Como termina “O pagador de promessas”, e qual é a ironia?", "a": "<p>Na confusão com a polícia, Zé leva um tiro e morre. Os capoeiristas põem o corpo dele sobre a cruz e entram na igreja.</p><p><b>Ironia:</b> ele só entra morto, como <b>mártir</b>, o que a Igreja queria evitar.</p>", "fgv": "2024.1-DIS-AR4 · Zé vira mártir"},
+    {"b": "pagador", "q": "Em que Brasil “O pagador” foi feito?", "a": "<p><b>1962:</b> governo João Goulart, reformas de base (a reforma agrária no centro), Ligas Camponesas, êxodo rural enchendo as cidades.</p><p>Dois anos antes do golpe de 1964.</p>"},
+    {"b": "pagador", "q": "Que temas a FGV ligou a “O pagador”?", "a": "<ul><li>Religiosidade popular e <b>sincretismo</b></li><li><b>Intolerância</b> religiosa</li><li><b>Campo × cidade</b>: os “dois Brasis” da grade</li><li>Êxodo rural e <b>reforma agrária</b> (concentração de terras)</li><li><b>Realismo</b> no cinema para tratar conflitos sociais</li></ul>", "fgv": "2024.1-DIS-AR4 · temas pedidos no comando"},
+    {"b": "pagador", "q": "Que recursos de linguagem marcam “O pagador”?", "a": "<ul><li>A <b>escadaria</b>: padre no alto, Zé e o povo embaixo. A hierarquia vira imagem.</li><li>A <b>praça</b> como um Brasil em miniatura (herança do teatro).</li><li>Tema próximo do Cinema Novo, mas <b>narrativa clássica</b>: Anselmo Duarte vinha dos estúdios (Atlântida, Vera Cruz).</li></ul>"},
+    {"b": "pagador", "q": "Que artigos da Constituição conversam com “O pagador”?", "a": "<ul><li><b>Art. 5º, VI:</b> liberdade de crença e proteção aos locais de culto.</li><li><b>Art. 19, I:</b> Estado laico.</li></ul><p>Hoje: ataques a terreiros e intolerância contra religiões de matriz africana. Sueli Carneiro liga isso ao racismo.</p>"},
+    {"b": "cabra", "q": "“Cabra marcado para morrer”: o que é, e por que levou 20 anos?", "a": "<p><b>Documentário de Eduardo Coutinho, 1984.</b></p><p>Em 1964 era uma ficção filmada com camponeses em Pernambuco (Engenho Galileia). Com o golpe, o Exército apreendeu o material e parte da equipe foi presa; só parte do negativo se salvou.</p><p>Em <b>1981</b>, depois da Lei da Anistia, Coutinho volta e reencontra os personagens.</p>", "fgv": "2023.1-DIS-AR3 · Cabra marcado e a luta pela terra"},
+    {"b": "cabra", "q": "Quem foi João Pedro Teixeira?", "a": "<p>Líder da <b>Liga Camponesa de Sapé (PB)</b>, assassinado em <b>1962</b> a mando de latifundiários.</p><p>O filme de 1964 era sobre a vida e a morte dele.</p>", "fgv": "2023.1-DIS-AR3"},
+    {"b": "cabra", "q": "O que eram as Ligas Camponesas?", "a": "<p>Organizações de trabalhadores do campo no Nordeste contra os despejos e o <b>cambão</b> (dias de trabalho de graça para o dono da terra), pela <b>reforma agrária</b>.</p><p>Nome ligado a elas: <b>Francisco Julião</b>, em Pernambuco.</p>"},
+    {"b": "cabra", "q": "De onde vem o título “Cabra marcado para morrer”?", "a": "<p>“Cabra marcado para morrer” é o homem jurado de morte.</p><p>Vem do poema de cordel de <b>Ferreira Gullar</b> <i>João Boa-Morte, cabra marcado para morrer</i> (1962).</p>"},
+    {"b": "cabra", "q": "Quem é Elizabeth Teixeira, e o que o golpe fez com a vida dela?", "a": "<p>Viúva de João Pedro. Em 1964 fazia o papel dela mesma no filme.</p><p>Depois do golpe viveu <b>17 anos na clandestinidade</b>, no interior do Rio Grande do Norte, como <b>Marta Maria da Costa</b>, longe da maioria dos 11 filhos.</p>"},
+    {"b": "cabra", "q": "Quais são as duas camadas de tempo de “Cabra marcado”?", "a": "<ul><li><b>1962–64:</b> o filme interrompido, em preto e branco.</li><li><b>1981:</b> o reencontro, em cor.</li></ul><p>Coutinho mostra as imagens antigas aos camponeses, que se veem na tela: o passado entra no presente.</p>"},
+    {"b": "cabra", "q": "Por que “Cabra marcado” é um metadocumentário?", "a": "<p>O filme conta <b>a própria história</b>: Coutinho aparece, pergunta, mostra a equipe.</p><p>Mistura ficção e realidade, e usa a <b>memória como método</b>.</p>", "fgv": "2023.1-DIS-AR3 · “mistura de ficção e realidade”"},
+    {"b": "cabra", "q": "O que a FGV pediu sobre “Cabra marcado” em 2023.1?", "a": "<p>Texto: o assassinato de <b>Bruno Pereira e Dom Phillips</b> (2022). Três pedidos:</p><ol><li>Em que medida o filme retrata a <b>luta pela terra</b>.</li><li>Se ele é <b>testemunho de uma história e reconstrução de um passado</b>.</li><li>Se a <b>arte impede o esquecimento</b> e provoca reflexão crítica.</li></ol><p>Três pedidos = três linhas no esquema.</p>", "fgv": "2023.1-DIS-AR3"},
+    {"b": "cabra", "q": "Que casos mostram que a violência no campo continuou depois do filme?", "a": "<ul><li><b>MST</b>, fundado em 1984 (ano do filme)</li><li><b>Chico Mendes</b>, 1988</li><li><b>Eldorado dos Carajás</b>, 1996: 19 sem-terra mortos</li><li><b>Irmã Dorothy Stang</b>, 2005</li><li><b>Bruno Pereira e Dom Phillips</b>, 2022</li></ul>"},
+    {"b": "cabra", "q": "O que a Constituição de 1988 diz sobre a terra?", "a": "<ul><li>A propriedade deve cumprir sua <b>função social</b> (art. 5º, XXIII, e art. 186).</li><li>O imóvel rural que não cumpre pode ser <b>desapropriado para reforma agrária</b> (art. 184).</li></ul>"},
+    {"b": "cdd", "q": "“Cidade de Deus”: quem fez, de onde vem e que reconhecimento teve?", "a": "<p><b>Fernando Meirelles e Kátia Lund, 2002.</b> Do romance de <b>Paulo Lins</b> (1997). Roteiro de Bráulio Mantovani.</p><p><b>4 indicações ao Oscar:</b> direção, roteiro adaptado, fotografia e montagem.</p>"},
+    {"b": "cdd", "q": "O que é a Cidade de Deus, o lugar?", "a": "<p>Conjunto habitacional criado nos <b>anos 1960</b> em Jacarepaguá, Zona Oeste do Rio, para famílias <b>removidas de favelas da Zona Sul</b> e desabrigados de enchentes.</p><p>O Estado criou o lugar longe de tudo e depois quase só aparece como polícia.</p>"},
+    {"b": "cdd", "q": "Quem é Paulo Lins, e por que isso importa?", "a": "<p>Cresceu na Cidade de Deus e trabalhou na pesquisa da antropóloga <b>Alba Zaluar</b> sobre a violência no bairro.</p><p>É a periferia contando a periferia. O filme, porém, foi dirigido por cineastas de fora: debate sobre <b>quem representa quem</b>.</p>"},
+    {"b": "cdd", "q": "Quem narra “Cidade de Deus”, e o que a câmera significa para ele?", "a": "<p><b>Buscapé</b>, que tenta e não consegue ser bandido.</p><p>A <b>fotografia</b> é a saída dele. É narrador-testemunha: olha de dentro, com alguma distância.</p>"},
+    {"b": "cdd", "q": "O que muda no crime em cada década de “Cidade de Deus”?", "a": "<ul><li><b>Anos 60:</b> o Trio Ternura (Cabeleira, Alicate e Marreco), assaltos “românticos”.</li><li><b>Anos 70:</b> Dadinho vira <b>Zé Pequeno</b> e toma as bocas de fumo; o tráfico vira negócio.</li><li><b>Anos 80:</b> a guerra entre Zé Pequeno e <b>Mané Galinha</b>; crianças armadas.</li></ul><p>A violência cresce e fica mais jovem.</p>"},
+    {"b": "cdd", "q": "Como termina “Cidade de Deus”?", "a": "<p>Buscapé tem a foto da <b>polícia pegando dinheiro</b> de Zé Pequeno e a do <b>cadáver</b> de Zé. Publica a do cadáver (a outra o mataria) e ganha estágio no jornal.</p><p>Os meninos da <b>Caixa Baixa</b> matam Zé Pequeno e saem listando quem vão matar: <b>o ciclo recomeça</b>.</p>"},
+    {"b": "cdd", "q": "Que recursos de linguagem marcam “Cidade de Deus”?", "a": "<ul><li><b>Montagem acelerada</b> e câmera na mão</li><li><b>Estrutura circular:</b> abre e fecha com a galinha fugindo e Buscapé entre a polícia e a gangue</li><li>Capítulos (“A história do apartamento”)</li><li>Cores que esfriam com as décadas</li><li>Elenco de jovens sem experiência, vindos de comunidades</li></ul>"},
+    {"b": "cdd", "q": "“Estética da fome” × “cosmética da fome”: qual é o debate?", "a": "<p><b>Glauber Rocha (1965):</b> a estética da fome, a miséria mostrada para incomodar.</p><p><b>Ivana Bentes:</b> em filmes como <i>Cidade de Deus</i>, a “cosmética da fome”: a violência vira espetáculo para consumo.</p><p><b>Defesa:</b> o ritmo põe o espectador dentro do caos e levou o tema a milhões. Na prova: os dois lados + sua posição.</p>"},
+    {"b": "cdd", "q": "Que temas e debates de hoje se ligam a “Cidade de Deus”?", "a": "<ul><li><b>Estado ausente, ou presente só como polícia</b> (CF, art. 144: segurança pública é “dever do Estado”)</li><li><b>Racismo:</b> quem mora, mata e morre é sobretudo negro (Sueli Carneiro)</li><li><b>Letalidade policial</b> e a <b>ADPF 635</b> no STF, que limitou operações nas favelas do Rio a partir de 2020</li></ul><p>Número de violência, só do Atlas da Violência ou do material de Atualidades.</p>"},
+    {"b": "ainda", "q": "“Ainda estou aqui”: quem fez, de onde vem e que prêmios teve?", "a": "<p><b>Walter Salles, 2024.</b> Do livro de <b>Marcelo Rubens Paiva</b> (2015), filho de Rubens e Eunice.</p><p>Fernanda Torres (Eunice), Selton Mello (Rubens), Fernanda Montenegro (Eunice idosa).</p><p><b>Oscar de Melhor Filme Internacional (2025)</b>, o primeiro do Brasil. Roteiro premiado em Veneza e Globo de Ouro para Fernanda Torres.</p>"},
+    {"b": "ainda", "q": "Quem era Rubens Paiva, e o que aconteceu com ele?", "a": "<p>Engenheiro, deputado federal <b>cassado em 1964</b> (AI-1).</p><p>Em <b>janeiro de 1971</b> foi levado de casa, no Leblon, por agentes da ditadura, torturado e morto no <b>DOI-CODI</b> do Rio. O corpo nunca apareceu.</p><p>O regime manteve por décadas uma versão falsa: a de que ele teria sido “resgatado” por militantes.</p>"},
+    {"b": "ainda", "q": "Em que momento da ditadura se passa “Ainda estou aqui”?", "a": "<p><b>Anos de chumbo:</b> depois do AI-5 (1968), governo Médici, “milagre econômico”, censura e tortura como política de Estado.</p>"},
+    {"b": "ainda", "q": "O que acontece com Eunice e a filha Eliana depois que Rubens é levado?", "a": "<p>As duas também vão para o DOI-CODI. <b>Eliana</b>, de 15 anos, sai no dia seguinte.</p><p><b>Eunice</b> fica presa <b>12 dias</b> e volta sem nenhuma resposta sobre o marido.</p>"},
+    {"b": "ainda", "q": "Quais são os três tempos de “Ainda estou aqui”?", "a": "<ul><li><b>1970–71:</b> prisão e desaparecimento.</li><li><b>1996:</b> Eunice recebe o <b>atestado de óbito</b> (Lei 9.140/1995, que reconheceu os desaparecidos como mortos).</li><li><b>2014:</b> Eunice idosa, com Alzheimer, no ano do relatório da <b>Comissão Nacional da Verdade</b>.</li></ul>"},
+    {"b": "ainda", "q": "Por que Eunice pede que a família sorria na foto para a revista?", "a": "<p>Recusa a imagem de família destruída que se esperava dela.</p><p>Sorrir é <b>não entregar ao regime a foto da vítima</b>.</p>"},
+    {"b": "ainda", "q": "Que escolhas de linguagem marcam “Ainda estou aqui”?", "a": "<ul><li>A <b>casa</b>: aberta, luz, praia, filmes em Super 8 → cortinas fechadas, agentes dentro, silêncio.</li><li>A tortura de Rubens fica <b>fora de quadro</b>: o que se vê é a ausência e a espera.</li><li><b>Contenção</b>: a atuação de Fernanda Torres evita o melodrama.</li></ul>"},
+    {"b": "ainda", "q": "Quais são os sentidos do título “Ainda estou aqui”?", "a": "<ul><li>Eunice que <b>resiste</b>.</li><li>A <b>memória de Rubens</b>, que não some.</li><li>Eunice com <b>Alzheimer</b>, perdendo a memória enquanto o país também “esquece”: memória pessoal × memória nacional.</li></ul>"},
+    {"b": "ainda", "q": "O que foi a Lei da Anistia (1979), e por que ainda é polêmica?", "a": "<p>Perdoou crimes políticos e “conexos”, o que foi lido como perdão também aos torturadores (e excluiu condenados por “terrorismo”).</p><ul><li><b>O STF manteve a lei:</b> ADPF 153, em 2010.</li><li><b>A Corte Interamericana condenou o Brasil</b> no mesmo ano (caso Gomes Lund, Araguaia): anistia não pode impedir investigar e punir.</li></ul><p>Conceito: <b>justiça de transição</b> (memória, verdade, reparação, justiça).</p>"},
+    {"b": "ainda", "q": "O que é um desaparecido político, e quantos a Comissão da Verdade listou?", "a": "<p>Sem corpo não há atestado, enterro nem luto. Parte dos juristas trata a ocultação de cadáver como <b>crime permanente</b>, que a Anistia não alcançaria.</p><p>A <b>CNV (2014)</b> listou <b>434 mortos e desaparecidos</b>: 191 mortos e 243 desaparecidos.</p>"},
+    {"b": "prova", "q": "Eunice Paiva e Elizabeth Teixeira: o que têm em comum, e o que muda?", "a": "<p><b>Em comum:</b> perdem o marido para a violência e viram figuras públicas de luta. Eunice ainda se forma em Direito (1973) e defende os povos indígenas.</p><p><b>Diferença de classe:</b> Eunice, classe média alta carioca; Elizabeth, camponesa que perdeu os filhos e o próprio nome por 17 anos.</p><p>A repressão atinge todos, mas não do mesmo jeito.</p>"},
+    {"b": "prova", "q": "Que eixos ligam os 4 filmes?", "a": "<ul><li><b>Terra:</b> <i>O pagador</i> + <i>Cabra marcado</i></li><li><b>Memória da ditadura:</b> <i>Cabra marcado</i> + <i>Ainda estou aqui</i></li><li><b>Desigualdade e violência urbana:</b> <i>Cidade de Deus</i> (o campo que vira periferia)</li><li><b>A imagem como poder:</b> a manchete, o negativo salvo, a foto de Buscapé, o sorriso de Eunice</li></ul>"},
+    {"b": "prova", "q": "Com que outras obras da lista cada filme conversa?", "a": "<ul><li><i>O pagador:</i> <i>O bem-amado</i>, Sueli Carneiro, <i>The Post</i></li><li><i>Cabra marcado:</i> <i>Torto arado</i>, <i>Vidas secas</i>, <i>Cálice</i>, <i>As meninas</i></li><li><i>Cidade de Deus:</i> Sueli Carneiro, <i>Que país é esse?</i>, <i>A hora da estrela</i></li><li><i>Ainda estou aqui:</i> <i>Cálice</i>, <i>As meninas</i>, Arendt, <i>Persépolis</i></li></ul>"}
+  ];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("filmes.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("filmes.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("filmes.tab","mapa")==="cards"?"cards":"mapa");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':(c.erro?'<span class="mark rev">seu erro</span>':"");
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("filmes.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("filmes.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+
+</body>
+</html>
