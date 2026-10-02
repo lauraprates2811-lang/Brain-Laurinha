@@ -6,7 +6,7 @@
 
 ## Como usar
 
-- **Não é simulado.** São perguntas para você pensar antes, durante e depois de ver (ou rever) cada filme. Responda de cabeça ou em tópicos na margem. A **pista** embaixo de cada pergunta é para conferir depois, não para ler antes.
+- **Não é simulado.** São perguntas para você pensar antes, durante e depois de ver (ou rever) cada filme. Responda de cabeça ou em tópicos na margem. As **pistas** são para conferir depois de responder (no PDF, ficam no fim, pelo número da pergunta).
 - **O que a banca cobra** (grades oficiais de 2024.1 e 2026.1): conhecer o enredo de verdade, achar o conflito central e ligar o filme a um problema do Brasil de hoje. A grade de 2024.1 pede “evidências de conhecimento do enredo fílmico”: nome de personagem e cena concreta, não resumo genérico.
 - **O número:** Cinema caiu em **3 das 4 últimas provas**, sempre como dissertativa de Artes (2023.1 *Cabra marcado* · 2024.1 *O pagador* · 2026.1 *Laranja mecânica*). *Cidade de Deus* e *Ainda estou aqui* ainda não caíram. Tempo-alvo: **18 min** por questão de Artes.
 
