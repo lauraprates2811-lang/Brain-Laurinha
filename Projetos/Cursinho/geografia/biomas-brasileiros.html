@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biomas Brasileiros FGV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: ficha de atlas. Os seis biomas em fichas com área e destruição em escala, galhos por bioma, e o baralho filtrado por bioma. */
+:root{
+  --ground:#E7EBE5; --surface:#F6F8F3; --surface-2:#EDF1EA; --ink:#17201A; --muted:#55605A; --line:#CAD2C8;
+  --b-geral:#3E4C63; --b-amazonia:#1E6B41; --b-cerrado:#946410; --b-mata:#1C7A6D; --b-caatinga:#A2502C;
+  --b-pampa:#5E7812; --b-pantanal:#2A6A99; --b-leis:#5D4691; --b-riscos:#9B2D3A;
+  --ok:#2F7A45; --rev:#B0461F; --stamp:#17201A;
+  --display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#111613; --surface:#19201C; --surface-2:#202823; --ink:#E3EAE4; --muted:#97A39A; --line:#2E3933;
+    --b-geral:#A9B6CC; --b-amazonia:#6CC48F; --b-cerrado:#E0B25A; --b-mata:#63C7B6; --b-caatinga:#EE9670;
+    --b-pampa:#B6D15A; --b-pantanal:#7DB7E6; --b-leis:#B7A3EC; --b-riscos:#F08A97;
+    --ok:#6CC486; --rev:#F08C5E; --stamp:#E3EAE4;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#111613; --surface:#19201C; --surface-2:#202823; --ink:#E3EAE4; --muted:#97A39A; --line:#2E3933;
+  --b-geral:#A9B6CC; --b-amazonia:#6CC48F; --b-cerrado:#E0B25A; --b-mata:#63C7B6; --b-caatinga:#EE9670;
+  --b-pampa:#B6D15A; --b-pantanal:#7DB7E6; --b-leis:#B7A3EC; --b-riscos:#F08A97;
+  --ok:#6CC486; --rev:#F08C5E; --stamp:#E3EAE4;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(38px,7vw,66px);line-height:.92;letter-spacing:.005em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0}
+.lede b{font-weight:600}
+.fix{max-width:72ch;font-size:14px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px;display:grid;gap:4px}
+.fix b{color:var(--ink);font-weight:600}
+.fix ol{margin:0;padding-left:18px}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 15px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible,.card:focus-visible{outline:2px solid var(--b-pantanal);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.sec-title{margin:0;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.biomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.biome{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:8px;padding:10px 12px 12px;display:grid;gap:6px;align-content:start;min-width:0}
+.biome h3{margin:0;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:22px;line-height:1;text-transform:uppercase;color:var(--c)}
+.biome .big{font-family:var(--display);font-weight:700;font-stretch:75%;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.biome .big small{font:500 11px/1 var(--mono);letter-spacing:.04em;color:var(--muted);margin-left:4px;text-transform:uppercase}
+.gauge{display:grid;gap:3px}
+.gauge .lbl{display:flex;justify-content:space-between;font:500 11px/1.2 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.gauge .track{height:7px;border-radius:4px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.gauge .fill{display:block;height:100%;background:var(--c)}
+.gauge .fill.lost{background:var(--rev)}
+.biome dl{margin:2px 0 0;display:grid;gap:4px;font-size:13.5px;line-height:1.35}
+.biome dt{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.biome dd{margin:0}
+.scale-note{font-size:12.5px;color:var(--muted);margin:0}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px;min-width:0}
+.branch h2{margin:0 0 8px;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:25px;line-height:1;letter-spacing:.01em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14.5px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+
+.pairs{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px}
+.pairs h2{margin:0;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:25px;line-height:1;text-transform:uppercase}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:0}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:340px;border-radius:12px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);min-width:0}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(28px,4.6vw,40px);line-height:1.04;letter-spacing:.005em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:13px;color:var(--muted)}
+.a{align-self:start;font-size:16px;min-width:0}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font-family:var(--display);font-weight:700;font-stretch:75%;font-size:18px;line-height:1.1;text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 15px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn.small{padding:6px 10px;font-size:12.5px}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12.5px;color:var(--muted);margin:0}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .card{min-height:400px}
+  .keys{display:none}
+  .branches{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Geografia · aula do cursinho de 01/10/2026</div>
+    <h1>Biomas brasileiros</h1>
+    <p class="lede">Seis biomas, um mesmo motor de destruição: a <b>agropecuária</b>, sobretudo o boi. Mas cada um se degrada de um jeito: a Amazônia vira <b>savana</b>, a Caatinga vira <b>deserto</b>, o Pampa vira <b>areia</b>. E onde se desmata e se ocupa morro em serra com chuva forte, vêm os <b>deslizamentos</b>.</p>
+    <div class="fix"><b>4 correções do resumo da aula, já aplicadas nos cards:</b>
+      <ol>
+        <li><b>Parque Nacional</b> é de proteção integral, não de uso sustentável.</li>
+        <li>A <b>Ilha da Queimada Grande</b> é ARIE, do grupo de uso sustentável (mesmo com visita proibida).</li>
+        <li>Deslizamentos: os ~430 mortos são de <b>Caraguatatuba, 1967</b>; o Litoral Norte em 2023 teve <b>65</b>; os ~900 de 2011 foram na <b>Região Serrana do RJ</b>.</li>
+        <li>As árvores do Cerrado são tortas pelo <b>solo pobre e pelo fogo</b>, não por falta de água.</li>
+      </ol>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa" type="button">Mapa mental</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards" type="button">Flashcards · 50</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <h2 class="sec-title">Os seis biomas, do maior para o menor</h2>
+    <div class="biomes">
+      <article class="biome" style="--c:var(--b-amazonia)">
+        <h3>Amazônia</h3>
+        <div class="big">49,5%<small>do país</small></div>
+        <div class="gauge"><div class="lbl"><span>destruído</span><span>18%</span></div><div class="track"><span class="fill lost" style="width:18%"></span></div></div>
+        <dl><dt>Clima</dt><dd>Equatorial</dd><dt>Vegetação</dt><dd>Perene, latifoliada, ombrófila</dd><dt>Degradação</dt><dd><b>Savanização</b></dd></dl>
+      </article>
+      <article class="biome" style="--c:var(--b-cerrado)">
+        <h3>Cerrado</h3>
+        <div class="big">23,3%<small>do país</small></div>
+        <div class="gauge"><div class="lbl"><span>destruído</span><span>49%</span></div><div class="track"><span class="fill lost" style="width:49%"></span></div></div>
+        <dl><dt>Clima</dt><dd>Tropical, verão chuvoso e inverno seco</dd><dt>Vegetação</dt><dd>Tortas e esparsas: solo pobre</dd><dt>Ameaça</dt><dd><b>Matopiba</b>, soja e boi</dd></dl>
+      </article>
+      <article class="biome" style="--c:var(--b-mata)">
+        <h3>Mata Atlântica</h3>
+        <div class="big">13,1%<small>do país</small></div>
+        <div class="gauge"><div class="lbl"><span>destruído</span><span>75%</span></div><div class="track"><span class="fill lost" style="width:75%"></span></div></div>
+        <dl><dt>Clima</dt><dd>Tropical úmido</dd><dt>Vegetação</dt><dd>Perene, latifoliada; araucárias e mangues</dd><dt>Ameaça</dt><dd><b>Fragmentação</b></dd></dl>
+      </article>
+      <article class="biome" style="--c:var(--b-caatinga)">
+        <h3>Caatinga</h3>
+        <div class="big">10%<small>do país</small></div>
+        <div class="gauge"><div class="lbl"><span>destruído</span><span>40%</span></div><div class="track"><span class="fill lost" style="width:40%"></span></div></div>
+        <dl><dt>Clima</dt><dd>Semiárido</dd><dt>Vegetação</dt><dd>Xerófila, caducifólia</dd><dt>Degradação</dt><dd><b>Desertificação</b></dd></dl>
+      </article>
+      <article class="biome" style="--c:var(--b-pampa)">
+        <h3>Pampa</h3>
+        <div class="big">2,3%<small>do país</small></div>
+        <div class="gauge"><div class="lbl"><span>destruído</span><span>58%</span></div><div class="track"><span class="fill lost" style="width:58%"></span></div></div>
+        <dl><dt>Clima</dt><dd>Subtropical úmido</dd><dt>Vegetação</dt><dd>Campos de gramíneas, coxilhas</dd><dt>Degradação</dt><dd><b>Arenização</b></dd></dl>
+      </article>
+      <article class="biome" style="--c:var(--b-pantanal)">
+        <h3>Pantanal</h3>
+        <div class="big">1,8%<small>do país</small></div>
+        <div class="gauge"><div class="lbl"><span>destruído</span><span>15%</span></div><div class="track"><span class="fill lost" style="width:15%"></span></div></div>
+        <dl><dt>Clima</dt><dd>Cheia no verão, seca no inverno</dd><dt>Vegetação</dt><dd>Mistura de biomas (transição)</dd><dt>Ameaça</dt><dd><b>O entorno</b>: assoreamento</dd></dl>
+      </article>
+    </div>
+    <p class="scale-note">A barra mostra quanto de cada bioma já foi destruído (a barra cheia seria 100% do bioma). Números da aula.</p>
+
+    <div class="branches">
+      <article class="branch" style="--c:var(--b-geral)">
+        <h2>Visão geral</h2>
+        <ul class="tree">
+          <li><span>Dois mapas</span>
+            <ul><li><b>IBGE:</b> 6 biomas, sem faixa de transição</li><li><b>Ab'Sáber:</b> relevo + clima, com faixas de transição</li><li>Mares de Morros · Pradarias · Araucárias à parte</li><li>Pantanal = <b>faixa de transição</b></li></ul></li>
+          <li><span>Amazônia Legal</span><span class="fgv">★ 2024.1 · 2025.1</span>
+            <ul><li>Região <b>política</b>, ~59% do país</li><li>Inclui Cerrado e Pantanal</li><li>Base dos dados do INPE</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-amazonia)">
+        <h2>Amazônia</h2>
+        <ul class="tree">
+          <li><span>Floresta</span>
+            <ul><li>Solo pobre: a floresta se <b>recicla</b> (serrapilheira)</li><li><b>Igapó</b> sempre alagado · <b>várzea</b> só na cheia · <b>terra firme</b> nunca</li></ul></li>
+          <li><span>Desmatamento</span><span class="fgv">★ 2024.1 · 2025.1</span>
+            <ul><li>~18% do bioma · <b>Arco do Desmatamento</b></li><li>Madeira → <b>pasto</b> → soja · grilagem</li><li>Pico 2004 · mínimo 2012 · alta 2019–22</li></ul></li>
+          <li><span>Por que importa</span>
+            <ul><li><b>Savanização</b> · ponto de não retorno 20–25%</li><li><b>Rios voadores</b> <span class="fgv">★ 2024.1 disc.</span></li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-cerrado)">
+        <h2>Cerrado</h2>
+        <ul class="tree">
+          <li><span>Natureza</span>
+            <ul><li><b>Caixa d'água:</b> 6 de 8 grandes bacias</li><li>Tortas pelo <b>solo pobre + fogo</b> (escleromorfismo oligotrófico)</li><li>Cerradão · típico · campos · <b>veredas</b> (buriti)</li></ul></li>
+          <li><span>Mata dos Cocais</span>
+            <ul><li>Transição no MA e PI · babaçu e carnaúba</li><li><b>Babaçu Livre:</b> coleta até em terra privada</li></ul></li>
+          <li><span>Destruição</span><span class="fgv">★ 2022.1 · 2023.1</span>
+            <ul><li>~49% · pecuária extensiva e soja · Embrapa</li><li><b>Matopiba</b> · Reserva Legal de só 20–35%</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-mata)">
+        <h2>Mata Atlântica</h2>
+        <ul class="tree">
+          <li><span>Litoral, chuva orográfica</span>
+            <ul><li>75% destruída · restam ~25%, em <b>fragmentos</b></li><li>Pau-brasil → cana → ouro → <b>café</b> → cidades <span class="fgv">★ 2023.1</span></li></ul></li>
+          <li><span>Araucárias</span>
+            <ul><li>Sul, subtropical · aciculifoliada · <b>menos de 5%</b></li></ul></li>
+          <li><span>Mangue</span>
+            <ul><li>Halófitas, pneumatóforos · <b>berçário</b> · APP · Recife</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-caatinga)">
+        <h2>Caatinga</h2>
+        <ul class="tree">
+          <li><span>Semiárido</span>
+            <ul><li>Pouca chuva, concentrada e irregular · rios intermitentes</li><li><b>Xerófila</b> e <b>caducifólia</b> · mandacaru · "mata branca"</li></ul></li>
+          <li><span>Desertificação</span>
+            <ul><li>Pecuária + <b>lenha</b> (gesso, cerâmica) · ~40%</li><li>Gilbués, Irauçuba, Seridó, Cabrobó</li><li>1º <b>clima árido</b> do país em 2023 (norte da BA)</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-pampa)">
+        <h2>Pampa</h2>
+        <ul class="tree">
+          <li><span>Campos do sul do RS</span>
+            <ul><li>Subtropical <b>úmido</b> · coxilhas · pecuária gaúcha</li><li>~58%: <b>2º mais destruído</b></li></ul></li>
+          <li><span>Arenização</span>
+            <ul><li>Areais no sudoeste do RS (Alegrete)</li><li><b>Não é desertificação</b>: o clima é úmido</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-pantanal)">
+        <h2>Pantanal</h2>
+        <ul class="tree">
+          <li><span>Planície alagável</span>
+            <ul><li>Bacia do Paraguai · MT e MS · cheia no verão</li><li>Tuiuiú · Patrimônio Nacional (art. 225)</li></ul></li>
+          <li><span>Ameaça de fora</span><span class="fgv">★ 2023.1 Inglês</span>
+            <ul><li>Desmatamento no planalto → <b>assoreamento</b> (Taquari)</li><li>Agrotóxicos · hidrelétricas · queimadas de 2020</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-leis)">
+        <h2>Leis e panorama</h2>
+        <ul class="tree">
+          <li><span>SNUC (2000, FHC)</span>
+            <ul><li><b>Integral:</b> uso indireto · inclui <b>Parque Nacional</b></li><li><b>Sustentável:</b> uso direto controlado · APA, ARIE, Resex</li></ul></li>
+          <li><span>Código Florestal</span>
+            <ul><li><b>APP:</b> rios, nascentes, topos, encostas > 45°, mangues</li><li><b>Reserva Legal:</b> 80 · 35 · 20%</li></ul></li>
+          <li><span>Panorama</span>
+            <ul><li>45% destruído · causa: <b>agropecuária</b></li><li>Pastagem degradada: dá para produzir 50% mais sem desmatar</li></ul></li>
+        </ul>
+      </article>
+      <article class="branch" style="--c:var(--b-riscos)">
+        <h2>Deslizamentos e El Niño</h2>
+        <ul class="tree">
+          <li><span>Deslizamento</span>
+            <ul><li><b>Declividade + chuva forte</b> (naturais) + <b>desmatamento e ocupação</b></li><li>Caraguatatuba 1967 · Serrana 2011 · São Sebastião 2023</li></ul></li>
+          <li><span>El Niño</span>
+            <ul><li>Pacífico aquecido: <b>Sul alaga</b>, Norte e Nordeste secam</li><li>Previsão: risco nas serras do Sul e Sudeste em dez/jan</li></ul></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="pairs">
+      <h2>As três degradações</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Processo</th><th>Bioma</th><th>Clima</th><th>O que acontece</th></tr></thead>
+          <tbody>
+            <tr><td>Savanização</td><td>Amazônia</td><td>Equatorial, úmido</td><td>Desmatamento + fogo + menos chuva reciclada: a floresta vira savana pobre</td></tr>
+            <tr><td>Desertificação</td><td>Caatinga</td><td>Semiárido</td><td>Pecuária + lenha + secas: o solo erode e fica estéril</td></tr>
+            <tr><td>Arenização</td><td>Pampa</td><td>Subtropical úmido</td><td>Solo arenoso sem capim + chuva e vento: areais</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn small" id="shuffle" type="button">Embaralhar</button> <button class="btn small" id="reset" type="button">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {"geral": {"n": "Visão geral", "c": "var(--b-geral)"}, "amazonia": {"n": "Amazônia", "c": "var(--b-amazonia)"}, "cerrado": {"n": "Cerrado", "c": "var(--b-cerrado)"}, "mata": {"n": "Mata Atlântica", "c": "var(--b-mata)"}, "caatinga": {"n": "Caatinga", "c": "var(--b-caatinga)"}, "pampa": {"n": "Pampa", "c": "var(--b-pampa)"}, "pantanal": {"n": "Pantanal", "c": "var(--b-pantanal)"}, "leis": {"n": "Leis e panorama", "c": "var(--b-leis)"}, "riscos": {"n": "Deslizamentos e El Niño", "c": "var(--b-riscos)"}};
+  var CARDS = [
+{
+"b": "geral",
+"q": "Quais são os seis biomas, do maior para o menor?",
+"a": "<ul><li><b>Amazônia</b> 49,5%</li><li><b>Cerrado</b> 23,3%</li><li><b>Mata Atlântica</b> 13,1%</li><li><b>Caatinga</b> 10%</li><li><b>Pampa</b> 2,3%</li><li><b>Pantanal</b> 1,8%</li></ul><p>Amazônia + Cerrado = 72,8%, quase <b>três quartos</b> do país. São justamente os dois que estão na fronteira agrícola hoje.</p>"
+},
+{
+"b": "geral",
+"q": "Mapa de biomas (IBGE) × domínios morfoclimáticos (Ab'Sáber): qual a diferença?",
+"a": "<p><b>IBGE:</b> 6 biomas, critério de vegetação e clima, <b>sem faixas de transição</b>.</p><p><b>Ab'Sáber:</b> relevo + clima (e vegetação, solo, rios): 6 domínios <b>com faixas de transição</b> entre eles.</p>"
+},
+{
+"b": "geral",
+"q": "No mapa de Ab'Sáber, que nomes mudam?",
+"a": "<ul><li>Mata Atlântica → <b>Mares de Morros</b> (morros arredondados em sequência, as \"meias-laranjas\")</li><li>Pampa → <b>Pradarias</b> (campos)</li><li>Araucárias → <b>domínio próprio</b>, separado da Mata Atlântica</li><li>Pantanal → <b>não é domínio</b>: é faixa de transição</li></ul>"
+},
+{
+"b": "geral",
+"q": "Pegadinha: o Pantanal é um domínio morfoclimático?",
+"a": "<p><b>Não.</b> É bioma no mapa do IBGE, mas no mapa de Ab'Sáber é <b>faixa de transição</b>: mistura Cerrado, Amazônia, Mata Atlântica e Chaco. O mesmo vale para a Mata dos Cocais.</p>"
+},
+{
+"b": "geral",
+"q": "Amazônia Legal × bioma Amazônia",
+"a": "<p><b>Bioma:</b> natural, onde está a floresta, 49,5% do país.</p><p><b>Amazônia Legal:</b> região <b>política</b> de planejamento (1953), cerca de <b>59%</b>: AC, AM, AP, PA, RO, RR, TO, MT e o oeste do MA. Inclui <b>Cerrado e Pantanal</b>.</p><p>Os números de desmatamento do INPE costumam ser da Amazônia Legal.</p>",
+"fgv": "2024.1-OBJ-55 e 2025.1-OBJ-57 · desmatamento na Amazônia Legal"
+},
+{
+"b": "geral",
+"q": "Vocabulário: perene, caducifólia, latifoliada, aciculifoliada",
+"a": "<ul><li><b>Perene:</b> verde o ano todo (Amazônia, Mata Atlântica)</li><li><b>Caducifólia:</b> perde as folhas na seca (Caatinga)</li><li><b>Latifoliada:</b> folha larga, de lugar quente e úmido</li><li><b>Aciculifoliada:</b> folha fina como agulha (Araucária)</li></ul>"
+},
+{
+"b": "geral",
+"q": "Vocabulário: ombrófila, higrófila, xerófila, halófita",
+"a": "<ul><li><b>Ombrófila:</b> \"amiga da chuva\", vive com chuva o ano todo</li><li><b>Higrófila:</b> adaptada a muita umidade</li><li><b>Xerófila:</b> adaptada à seca (<i>xero</i> = seco): Caatinga</li><li><b>Halófita:</b> tolera sal (<i>halo</i> = sal): mangue</li></ul>"
+},
+{
+"b": "geral",
+"q": "Vocabulário: hidromórfico, oligotrófico, escleromorfismo, pneumatóforo",
+"a": "<ul><li><b>Hidromórfico:</b> solo encharcado (vereda, Pantanal)</li><li><b>Oligotrófico:</b> pobre em nutrientes (solo do Cerrado)</li><li><b>Escleromorfismo:</b> planta dura e rígida (Cerrado)</li><li><b>Pneumatóforo:</b> raiz que sai da lama para respirar (mangue)</li></ul>"
+},
+{
+"b": "amazonia",
+"q": "Como é o clima equatorial da Amazônia?",
+"a": "<ul><li><b>Quente o ano todo</b> (média de 25 a 27 °C), com <b>amplitude térmica baixa</b></li><li><b>Chuva muito alta</b> (mais de 2.000 mm/ano), bem distribuída</li></ul><p>Muito calor + muita água = muita evaporação = chuvas de convecção, as pancadas de fim de tarde.</p>"
+},
+{
+"b": "amazonia",
+"q": "Como é a vegetação amazônica?",
+"a": "<p><b>Perene, latifoliada, ombrófila e higrófila.</b></p><p>Também <b>densa</b>, <b>heterogênea</b> (muitas espécies misturadas) e em <b>andares</b>: árvores emergentes de mais de 50 m, a copa fechada e o sub-bosque.</p>"
+},
+{
+"b": "amazonia",
+"q": "Como uma floresta tão rica vive num solo pobre?",
+"a": "<p>O solo é <b>pobre e ácido</b> porque a chuva \"lava\" os nutrientes (<b>lixiviação</b>).</p><p>A floresta <b>recicla a si mesma</b>: folhas e galhos caem (<b>serrapilheira</b>), apodrecem rápido e os nutrientes voltam às raízes.</p><p>Derrubada a mata, o ciclo quebra e a terra se esgota em poucos anos.</p>"
+},
+{
+"b": "amazonia",
+"q": "Igapó × várzea × terra firme",
+"a": "<ul><li><b>Igapó:</b> alagado o ano <b>inteiro</b></li><li><b>Várzea:</b> alaga <b>só na cheia</b>; recebe sedimentos e é o solo mais <b>fértil</b></li><li><b>Terra firme:</b> <b>nunca</b> alaga; é a <b>maior parte</b> da Amazônia, com as árvores mais altas</li></ul><p>Truque: <b>I</b>gapó = <b>I</b>nundado o ano <b>I</b>nteiro; <b>Va</b>rzea = <b>va</b>ria.</p>"
+},
+{
+"b": "amazonia",
+"q": "O que é o Arco do Desmatamento?",
+"a": "<p>Faixa em forma de meia-lua na <b>borda sul e leste da floresta, onde ela encontra o Cerrado</b>: oeste do MA, sul e sudeste do PA, norte de MT, RO e AC.</p><p>O desmatamento se concentra ali porque é por onde chegam as <b>estradas</b> e a fronteira agrícola do Centro-Sul.</p>"
+},
+{
+"b": "amazonia",
+"q": "Em que ordem a floresta costuma cair, e o que é grilagem?",
+"a": "<ol><li><b>Madeira</b> (muitas vezes ilegal) abre a mata</li><li>Queimada e <b>pasto</b>: a <b>pecuária é a principal causa</b></li><li><b>Soja</b> e grãos quando há estrada</li></ol><p><b>Grilagem:</b> invasão de terra pública com documento falso. Pôr boi é o jeito mais barato de \"provar\" que a terra tem dono.</p>",
+"fgv": "2024.1-OBJ-55 · fronteira agrícola e pecuária"
+},
+{
+"b": "amazonia",
+"q": "Savanização: o que é, e o que é o \"ponto de não retorno\"?",
+"a": "<p>A floresta produz boa parte da própria chuva. Desmatou → menos vapor → <b>menos chuva e mais fogo</b> → a floresta morre e vira uma <b>savana empobrecida</b>.</p><p><b>Ponto de não retorno (Carlos Nobre):</b> com <b>20–25%</b> de desmatamento, grandes áreas podem savanizar <b>sozinhas</b>. Já se perdeu cerca de 18%.</p>"
+},
+{
+"b": "amazonia",
+"q": "O que são os rios voadores?",
+"a": "<p>Os ventos trazem umidade do Atlântico; a floresta a <b>recicla pela transpiração</b>; os <b>Andes</b> barram esse fluxo e o desviam para o sul, levando chuva ao <b>Centro-Oeste, Sudeste e Sul</b>.</p><p>Conclusão da banca: desmatar a Amazônia <b>prejudica o próprio agronegócio</b> e as hidrelétricas.</p>",
+"fgv": "2024.1-DIS-CH6 · rios voadores (discursiva)"
+},
+{
+"b": "amazonia",
+"q": "Desmatamento da Amazônia: o que marcou 2004, 2012 e 2019–22?",
+"a": "<ul><li><b>2004 (Lula):</b> <b>pico</b>, cerca de 27,8 mil km²</li><li><b>2012 (Dilma):</b> <b>menor índice</b> da série, cerca de 4,6 mil km²</li><li><b>2019–22 (Bolsonaro):</b> volta a subir, acima de 10 mil km²/ano</li><li><b>Desde 2023:</b> cai de novo</li></ul>",
+"fgv": "2025.1-OBJ-57 · dados do INPE"
+},
+{
+"b": "amazonia",
+"q": "Por que o desmatamento caiu de 2004 a 2012 e subiu de 2019 a 2022?",
+"a": "<p><b>Queda:</b> o <b>PPCDAm</b> (Marina Silva): alerta por satélite (<b>DETER</b>), fiscalização, novas áreas protegidas e <b>corte de crédito</b> para quem desmata.</p><p><b>Alta:</b> <b>enfraquecimento da fiscalização</b> (Ibama, ICMBio).</p><p>O desmatamento responde à política.</p>"
+},
+{
+"b": "cerrado",
+"q": "Onde fica o Cerrado e como é o clima?",
+"a": "<p><b>2º maior bioma (23,3%)</b>, com o coração no Planalto Central, mas <b>presente nas cinco regiões</b>.</p><p>Clima <b>tropical</b> com <b>duas estações</b>: verão chuvoso e inverno seco. Chove 1.200–1.800 mm/ano. O <b>fogo</b> natural faz parte do ciclo.</p>"
+},
+{
+"b": "cerrado",
+"q": "Por que o Cerrado é a \"caixa d'água do Brasil\"?",
+"a": "<p>Fica nos <b>planaltos</b>, onde nascem rios de <b>6 das 8 grandes bacias</b>: Amazonas, Tocantins-Araguaia, Paraná, Paraguai, São Francisco e Parnaíba.</p><p>As raízes profundas fazem a chuva infiltrar e recarregar <b>aquíferos</b> (como o Guarani). Desmatar = menos água nos rios.</p>"
+},
+{
+"b": "cerrado",
+"q": "Como é a vegetação clássica do Cerrado?",
+"a": "<ul><li>Árvores <b>baixas e espaçadas</b>, com capim entre elas</li><li>Troncos e galhos <b>retorcidos</b></li><li><b>Casca grossa</b>, que protege do fogo</li><li><b>Folhas duras</b>, como couro</li><li><b>Raízes profundas</b>: \"floresta de cabeça para baixo\"</li></ul>"
+},
+{
+"b": "cerrado",
+"q": "Por que as árvores do Cerrado são tortas? (escleromorfismo oligotrófico)",
+"a": "<p><b>Solo pobre (oligotrófico), ácido e com alumínio</b>: a planta cresce dura e retorcida. O <b>fogo</b> queima os brotos da ponta e o galho rebrota de lado.</p><p><b>Não é falta de água</b>: chove bastante e as raízes chegam ao lençol freático. Seca é a resposta da Caatinga.</p>"
+},
+{
+"b": "cerrado",
+"q": "Quais são as três formações do Cerrado?",
+"a": "<ul><li><b>Cerradão:</b> formação florestal, copa quase fechada</li><li><b>Cerrado típico (sentido restrito):</b> savânico, árvores baixas e tortas; parece a savana africana</li><li><b>Campestre:</b> campo sujo (capim + arbustos) e campo limpo (só gramíneas)</li></ul>"
+},
+{
+"b": "cerrado",
+"q": "Vereda: o que é e por que importa?",
+"a": "<p>Vale onde o <b>lençol freático aflora</b>: solo <b>hidromórfico</b>, com fileiras de <b>buriti</b>.</p><p>Garante <b>água e alimento o ano todo</b>, mesmo na seca. Dá nome a <i>Grande Sertão: Veredas</i>.</p>"
+},
+{
+"b": "cerrado",
+"q": "Mata dos Cocais e Lei do Babaçu Livre",
+"a": "<p><b>Faixa de transição</b> entre Amazônia, Cerrado e Caatinga, no <b>MA e PI</b>. Palmeiras: <b>babaçu</b> (lado úmido) e <b>carnaúba</b> (lado seco, cera).</p><p><b>Lei do Babaçu Livre:</b> as <b>quebradeiras de coco</b> podem entrar até em <b>propriedade privada</b> para coletar, e as palmeiras não podem ser derrubadas.</p>"
+},
+{
+"b": "cerrado",
+"q": "Quanto do Cerrado já se perdeu, e como ele virou celeiro?",
+"a": "<p>Cerca de <b>49%</b>. Principal causa: <b>pecuária extensiva</b> (gado solto em áreas enormes); depois soja, milho, algodão.</p><p><b>Embrapa (1973):</b> calcário para corrigir a acidez, adubação e soja adaptada ao clima tropical. O <b>relevo plano das chapadas</b> facilitou as máquinas.</p>",
+"fgv": "2022.1-DIS-CH4 e 2023.1-OBJ-MH29 · agronegócio no Cerrado"
+},
+{
+"b": "cerrado",
+"q": "Matopiba: o que é, e por que é mais fácil desmatar o Cerrado?",
+"a": "<p><b>MA + TO + PI + BA:</b> nova fronteira da soja no Cerrado; segundo a aula, 42% do desmatamento recente.</p><p><b>Reserva Legal (Código Florestal):</b> 80% em floresta na Amazônia Legal, 35% no Cerrado da Amazônia Legal, <b>só 20%</b> no resto. Muito do desmatamento do Cerrado é <b>legal</b>.</p>"
+},
+{
+"b": "mata",
+"q": "Onde fica a Mata Atlântica e por que chove tanto nela?",
+"a": "<p>Litoral do <b>RN ao RS</b>, interior do Sul, SP, MG, BA, RJ, ES, e manchas no PI e CE.</p><p>Clima <b>tropical úmido</b>. A chuva é <b>orográfica</b>: o vento úmido do mar bate na <b>Serra do Mar</b>, sobe, esfria e chove na encosta.</p>"
+},
+{
+"b": "mata",
+"q": "Quanto resta da Mata Atlântica, e por que a fragmentação é grave?",
+"a": "<p>Cerca de <b>75% destruída</b>; restam cerca de <b>25%</b>, parte degradada ou em <b>fragmentos</b>.</p><p>Os animais não passam de um fragmento a outro. Solução: <b>corredores ecológicos</b>.</p><p>Cerca de <b>70% da população</b> vive na área dela.</p>"
+},
+{
+"b": "mata",
+"q": "Que ciclos econômicos destruíram a Mata Atlântica?",
+"a": "<ul><li><b>XVI:</b> pau-brasil</li><li><b>XVI–XVII:</b> cana-de-açúcar (daí o nome <b>Zona da Mata</b>)</li><li><b>XVII–XVIII:</b> ouro em MG</li><li><b>XIX:</b> <b>café</b>, do Vale do Paraíba ao oeste paulista</li><li><b>XX:</b> urbanização e industrialização</li></ul>",
+"fgv": "2023.1-OBJ-MH30 · expansão cafeeira"
+},
+{
+"b": "mata",
+"q": "Mata das Araucárias: onde, como é e quanto resta?",
+"a": "<p>Planaltos e serras do <b>Sul</b> e trechos altos do Sudeste; clima <b>subtropical</b>, com geada.</p><p>Araucária (pinheiro-do-paraná, dá o pinhão): <b>aciculifoliada</b>, mata <b>relativamente homogênea</b>.</p><p>Resta <b>menos de 5%</b>: madeira, papel e celulose, agropecuária.</p>"
+},
+{
+"b": "mata",
+"q": "Mangue: como é, e por que é protegido?",
+"a": "<p>Onde o <b>rio encontra o mar</b>: água <b>salobra</b>, lama sem oxigênio, maré.</p><p>Plantas <b>halófitas</b>, com <b>pneumatóforos</b> e raízes-escora.</p><p><b>Berçário marinho</b> e proteção da costa. É <b>APP</b> por lei. Caso clássico: <b>Recife</b>, construída aterrando mangues.</p>"
+},
+{
+"b": "caatinga",
+"q": "Por que a Caatinga é semiárida?",
+"a": "<p>Chuva <b>pouca</b> (geralmente menos de 800 mm), <b>concentrada</b> em 3 ou 4 meses e <b>irregular</b>; evapora mais do que chove.</p><p>A umidade do Atlântico fica no litoral e na <b>Borborema</b> (sombra de chuva).</p><p>Rios <b>intermitentes</b>, menos o São Francisco e o Parnaíba.</p>"
+},
+{
+"b": "caatinga",
+"q": "Como a vegetação da Caatinga se adapta à seca?",
+"a": "<p><b>Xerófila:</b> espinhos no lugar de folhas, caules que guardam água, cactos (<b>mandacaru</b>, <b>xique-xique</b>).</p><p><b>Caducifólia:</b> perde as folhas na seca.</p><p>\"Caatinga\" = <b>mata branca</b> em tupi. Único bioma <b>exclusivamente brasileiro</b>.</p>"
+},
+{
+"b": "caatinga",
+"q": "O que destrói a Caatinga?",
+"a": "<p>Cerca de <b>40%</b> destruída (aula).</p><p><b>Pecuária</b> (bois, cabras, ovelhas) e <b>lenha</b> para o <b>polo gesseiro</b> (Araripe, PE) e as <b>cerâmicas</b>.</p>"
+},
+{
+"b": "caatinga",
+"q": "Desertificação: o que é, e onde acontece no Brasil?",
+"a": "<p>Degradação da terra em clima <b>árido, semiárido ou subúmido seco</b> (ONU): o solo perde a capacidade de produzir.</p><p>Núcleos: <b>Gilbués (PI), Irauçuba (CE), Seridó (RN/PB), Cabrobó (PE)</b>.</p><p>Em 2023, a <b>1ª área de clima árido</b> do país, no <b>norte da Bahia</b>.</p>"
+},
+{
+"b": "pampa",
+"q": "Como é o Pampa?",
+"a": "<p><b>Metade sul do RS</b> (2,3%), seguindo pelo Uruguai e Argentina.</p><p>Clima <b>subtropical úmido</b>, quatro estações. Relevo de <b>coxilhas</b> (colinas suaves). <b>Campos</b> de gramíneas de até 60 cm: pasto natural, terra da pecuária gaúcha.</p><p>Cerca de <b>58%</b> destruído: o <b>2º mais destruído</b> da história.</p>"
+},
+{
+"b": "pampa",
+"q": "Arenização: o que é, e por que não é desertificação?",
+"a": "<p><b>Areais</b> no <b>sudoeste do RS</b> (Alegrete): solo <b>arenoso e frágil</b> perde o capim (pisoteio do gado, soja) e a chuva e o vento expõem a areia.</p><p>Não é desertificação porque o clima do Pampa é <b>úmido</b>. Termo de Dirce Suertegaray.</p>"
+},
+{
+"b": "pantanal",
+"q": "Como funciona o Pantanal?",
+"a": "<p><b>Maior planície alagável do mundo</b>, na bacia do <b>Rio Paraguai</b>, em MT e MS (1,8%).</p><p>No <b>verão</b> chove, os rios transbordam e a planície <b>alaga</b>; no <b>inverno</b> (auge em julho) a água baixa e ficam as lagoas.</p><p>Ave símbolo: <b>tuiuiú</b>. Só cerca de <b>15%</b> destruído.</p>"
+},
+{
+"b": "pantanal",
+"q": "Qual é a principal ameaça ao Pantanal?",
+"a": "<p>O <b>entorno</b>: o Cerrado do planalto, onde nascem os rios que o enchem.</p><ul><li>desmatamento → <b>assoreamento</b> (rio Taquari)</li><li><b>agrotóxicos</b> da soja</li><li>pequenas <b>hidrelétricas</b></li></ul><p>E as <b>queimadas de 2020</b>, que queimaram mais de um quarto do bioma.</p>",
+"fgv": "2023.1-OBJ-IL8 e IL9 · queimadas de 2020 (prova de Inglês)"
+},
+{
+"b": "pantanal",
+"q": "Quais biomas são Patrimônio Nacional na Constituição?",
+"a": "<p>Art. 225 (1988): <b>Floresta Amazônica, Mata Atlântica, Serra do Mar, Pantanal Mato-Grossense e Zona Costeira</b>.</p><p>Pegadinha: <b>Cerrado e Caatinga ficaram de fora</b>.</p>"
+},
+{
+"b": "leis",
+"q": "SNUC: quais são os dois grupos de Unidades de Conservação?",
+"a": "<p><b>Lei 9.985/2000 (FHC).</b></p><p><b>Proteção integral:</b> só uso <b>indireto</b> (pesquisa, educação, visita). Estação Ecológica, Reserva Biológica, <b>Parque Nacional</b>, Monumento Natural, Refúgio de Vida Silvestre.</p><p><b>Uso sustentável:</b> uso <b>direto</b> controlado (morar, extrair). APA, ARIE, Flona, Resex, Reserva de Fauna, RDS, RPPN.</p>"
+},
+{
+"b": "leis",
+"q": "Parque Nacional e Ilha da Queimada Grande: em que grupo do SNUC?",
+"a": "<p><b>Parque Nacional = proteção integral.</b> Visita é uso indireto: o turista não leva nada.</p><p><b>Ilha da Queimada Grande</b> (\"ilha das cobras\", SP): visita proibida, mas a categoria é <b>ARIE</b>, do grupo de <b>uso sustentável</b>.</p><p>Teste: pode morar ou extrair? Não → integral. Sim, controlado → sustentável.</p><p>O resumo da aula trazia os dois trocados.</p>"
+},
+{
+"b": "leis",
+"q": "Código Florestal: o que é APP e o que é Reserva Legal?",
+"a": "<p><b>APP:</b> não pode desmatar em nenhuma propriedade: margens de rios, nascentes, <b>topos de morro</b>, <b>encostas acima de 45°</b>, mangues, veredas.</p><p><b>Reserva Legal:</b> parte do imóvel que mantém vegetação nativa: 80% (floresta na Amazônia Legal), 35% (Cerrado na Amazônia Legal), 20% (resto).</p>"
+},
+{
+"b": "leis",
+"q": "Savanização × desertificação × arenização",
+"a": "<ul><li><b>Savanização → Amazônia</b> (úmida): a floresta vira savana</li><li><b>Desertificação → Caatinga</b> (semiárida): o solo fica estéril</li><li><b>Arenização → Pampa</b> (úmido): solo arenoso vira areal</li></ul><p>Pense no clima: úmido vira savana, seco vira deserto, úmido com solo de areia vira areal.</p>"
+},
+{
+"b": "leis",
+"q": "O Brasil já destruiu quanto, e dá para produzir sem desmatar?",
+"a": "<p>Segundo a aula, <b>45% destruído e 55% preservado</b>: alto perto de EUA, China e Europa, graças à Amazônia. Causa em todos os biomas: <b>agropecuária</b>.</p><p>Recuperar <b>pastagens degradadas</b> e usar <b>integração lavoura-pecuária-floresta</b> permitiria produzir <b>50% mais</b> sem desmatar. Não se faz porque <b>derrubar custa menos</b>.</p>"
+},
+{
+"b": "riscos",
+"q": "Quais são os três fatores de um deslizamento?",
+"a": "<ul><li><b>Declividade acentuada</b> (natural)</li><li><b>Chuva forte</b> (natural): o solo encharcado pesa e perde coesão</li><li><b>Desmatamento e ocupação</b> (humano): sem raízes, com cortes no barranco e peso das casas</li></ul><p>Quem mora na encosta é a população pobre: <b>segregação socioespacial</b>.</p>"
+},
+{
+"b": "riscos",
+"q": "Que casos de deslizamento você precisa conhecer?",
+"a": "<ul><li><b>Caraguatatuba, 1967:</b> 436 mortos, praticamente em uma noite</li><li><b>Angra dos Reis, réveillon de 2010:</b> cerca de 52</li><li><b>Região Serrana do RJ, 2011:</b> cerca de 900, o <b>maior desastre climático</b> do país (levou à criação do Cemaden)</li><li><b>São Sebastião, 2023:</b> 65 mortos, a maior chuva em 24 h já registrada</li></ul><p>O resumo da aula tinha esses números trocados.</p>"
+},
+{
+"b": "riscos",
+"q": "El Niño × La Niña no Brasil",
+"a": "<p><b>El Niño:</b> aquecimento do Pacífico equatorial. <b>Sul alaga</b>; <b>Norte e Nordeste secam</b>.</p><p><b>La Niña:</b> resfriamento. Sul seca; Norte e Nordeste com mais chuva.</p>"
+},
+{
+"b": "riscos",
+"q": "Qual é a previsão do professor para este verão?",
+"a": "<p>Ano de <b>El Niño</b>, com chuva forte no <b>litoral Sul–Sudeste</b>.</p><p>Risco: serras do Sudeste, Serra Gaúcha, litoral de SP e serras do Rio.</p><p>Declividade + desmatamento + ocupação + El Niño = <b>mortes em dez/jan</b>, logo no começo do mandato do presidente eleito.</p>"
+}
+];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var KEY = "biomas.";
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(KEY+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(location.hash==="#cards" || store.get("tab","mapa")==="cards" ? "cards" : "mapa");
+
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>

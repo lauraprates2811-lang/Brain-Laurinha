@@ -3,6 +3,9 @@
 > Aula de Geografia do cursinho de 01/10/2026 (transcrição e resumo da Laura). Apostila de teoria feita em 01/10/2026, pensada para FGV e Insper.
 > ⭐ = tema que já caiu na FGV, com o id da questão no banco de provas antigas.
 > Para ler e imprimir: `biomas-brasileiros.pdf`, nesta pasta (fica só no Mac: PDF do cursinho não vai para o backup).
+> Mapa mental + 50 flashcards no fim desta nota, feitos em 01/10/2026.
+> Versão interativa (cards que viram, marcação sabia/revisar): https://claude.ai/artifact/SHt38hRE3MXmfDBFthq6YK
+> Abrir no Mac mesmo sem internet: `biomas-brasileiros.html`, nesta pasta.
 > Os pontos principais também viraram 21 cards no baralho do trajeto (`flashcards-geografia.md`, 122 a 142).
 
 **O fio da aula em uma frase:** o Brasil tem seis biomas e todos estão sendo destruídos pelo mesmo
@@ -855,6 +858,372 @@ Tente responder de cabeça antes de olhar a resposta.
     que vira chuva no Centro-Oeste, Sudeste e Sul.
 14. **Qual a principal ameaça ao Pantanal?**
     → O entorno: o desmatamento no planalto (Cerrado) assoreia os rios e leva agrotóxicos à planície.
+
+## Mapa mental
+
+```mermaid
+mindmap
+  root((Biomas brasileiros))
+    Visão geral
+      Amazônia 49,5 · Cerrado 23,3 · Mata Atlântica 13,1 · Caatinga 10 · Pampa 2,3 · Pantanal 1,8
+      IBGE sem transição × Ab'Sáber com transição
+      Amazônia Legal 59%, inclui Cerrado e Pantanal
+    Amazônia
+      Equatorial · perene, latifoliada, ombrófila
+      Igapó, várzea, terra firme
+      Arco do Desmatamento · pecuária
+      Savanização · ponto de não retorno 20 a 25%
+      Rios voadores
+    Cerrado
+      Caixa d'água · 6 de 8 bacias
+      Tortas pelo solo pobre e pelo fogo
+      Cerradão, típico, campos · veredas · Cocais
+      Matopiba · Reserva Legal de só 20 ou 35%
+    Mata Atlântica
+      75% destruída · ciclos econômicos · café
+      Araucárias · menos de 5%
+      Mangue · APP · berçário · Recife
+    Caatinga
+      Semiárido · xerófila, caducifólia
+      Pecuária e lenha
+      Desertificação · 1º clima árido em 2023
+    Pampa
+      Subtropical úmido · coxilhas · campos
+      58% destruído · arenização
+    Pantanal
+      Planície alagável · tuiuiú
+      15% destruído · ameaça do entorno
+    Leis e panorama
+      SNUC 2000 · integral × sustentável
+      Parque Nacional é proteção integral
+      Código Florestal · APP e Reserva Legal
+    Riscos
+      Declividade + chuva + desmatamento e ocupação
+      Caraguatatuba 1967 · Serrana 2011 · São Sebastião 2023
+      El Niño · Sul alaga, Norte e Nordeste secam
+```
+
+## Flashcards
+
+Clique na pergunta para abrir a resposta. ⭐ = já caiu na FGV.
+
+### Visão geral
+
+> [!question]- 1. Quais são os seis biomas, do maior para o menor?
+> - **Amazônia** 49,5%
+> - **Cerrado** 23,3%
+> - **Mata Atlântica** 13,1%
+> - **Caatinga** 10%
+> - **Pampa** 2,3%
+> - **Pantanal** 1,8%
+> Amazônia + Cerrado = 72,8%, quase **três quartos** do país. São justamente os dois que estão na
+> fronteira agrícola hoje.
+
+> [!question]- 2. Mapa de biomas (IBGE) × domínios morfoclimáticos (Ab'Sáber): qual a diferença?
+> **IBGE:** 6 biomas, critério de vegetação e clima, **sem faixas de transição**.
+> **Ab'Sáber:** relevo + clima (e vegetação, solo, rios): 6 domínios **com faixas de transição** entre
+> eles.
+
+> [!question]- 3. No mapa de Ab'Sáber, que nomes mudam?
+> - Mata Atlântica → **Mares de Morros** (morros arredondados em sequência, as "meias-laranjas")
+> - Pampa → **Pradarias** (campos)
+> - Araucárias → **domínio próprio**, separado da Mata Atlântica
+> - Pantanal → **não é domínio**: é faixa de transição
+
+> [!question]- 4. Pegadinha: o Pantanal é um domínio morfoclimático?
+> **Não.** É bioma no mapa do IBGE, mas no mapa de Ab'Sáber é **faixa de transição**: mistura Cerrado,
+> Amazônia, Mata Atlântica e Chaco. O mesmo vale para a Mata dos Cocais.
+
+> [!question]- 5. Amazônia Legal × bioma Amazônia
+> **Bioma:** natural, onde está a floresta, 49,5% do país.
+> **Amazônia Legal:** região **política** de planejamento (1953), cerca de **59%**: AC, AM, AP, PA,
+> RO, RR, TO, MT e o oeste do MA. Inclui **Cerrado e Pantanal**.
+> Os números de desmatamento do INPE costumam ser da Amazônia Legal.
+> ⭐ Caiu na FGV: 2024.1-OBJ-55 e 2025.1-OBJ-57 · desmatamento na Amazônia Legal
+
+> [!question]- 6. Vocabulário: perene, caducifólia, latifoliada, aciculifoliada
+> - **Perene:** verde o ano todo (Amazônia, Mata Atlântica)
+> - **Caducifólia:** perde as folhas na seca (Caatinga)
+> - **Latifoliada:** folha larga, de lugar quente e úmido
+> - **Aciculifoliada:** folha fina como agulha (Araucária)
+
+> [!question]- 7. Vocabulário: ombrófila, higrófila, xerófila, halófita
+> - **Ombrófila:** "amiga da chuva", vive com chuva o ano todo
+> - **Higrófila:** adaptada a muita umidade
+> - **Xerófila:** adaptada à seca (*xero* = seco): Caatinga
+> - **Halófita:** tolera sal (*halo* = sal): mangue
+
+> [!question]- 8. Vocabulário: hidromórfico, oligotrófico, escleromorfismo, pneumatóforo
+> - **Hidromórfico:** solo encharcado (vereda, Pantanal)
+> - **Oligotrófico:** pobre em nutrientes (solo do Cerrado)
+> - **Escleromorfismo:** planta dura e rígida (Cerrado)
+> - **Pneumatóforo:** raiz que sai da lama para respirar (mangue)
+
+### Amazônia
+
+> [!question]- 9. Como é o clima equatorial da Amazônia?
+> - **Quente o ano todo** (média de 25 a 27 °C), com **amplitude térmica baixa**
+> - **Chuva muito alta** (mais de 2.000 mm/ano), bem distribuída
+> Muito calor + muita água = muita evaporação = chuvas de convecção, as pancadas de fim de tarde.
+
+> [!question]- 10. Como é a vegetação amazônica?
+> **Perene, latifoliada, ombrófila e higrófila.**
+> Também **densa**, **heterogênea** (muitas espécies misturadas) e em **andares**: árvores emergentes
+> de mais de 50 m, a copa fechada e o sub-bosque.
+
+> [!question]- 11. Como uma floresta tão rica vive num solo pobre?
+> O solo é **pobre e ácido** porque a chuva "lava" os nutrientes (**lixiviação**).
+> A floresta **recicla a si mesma**: folhas e galhos caem (**serrapilheira**), apodrecem rápido e os
+> nutrientes voltam às raízes.
+> Derrubada a mata, o ciclo quebra e a terra se esgota em poucos anos.
+
+> [!question]- 12. Igapó × várzea × terra firme
+> - **Igapó:** alagado o ano **inteiro**
+> - **Várzea:** alaga **só na cheia**; recebe sedimentos e é o solo mais **fértil**
+> - **Terra firme:** **nunca** alaga; é a **maior parte** da Amazônia, com as árvores mais altas
+> Truque: **I**gapó = **I**nundado o ano **I**nteiro; **Va**rzea = **va**ria.
+
+> [!question]- 13. O que é o Arco do Desmatamento?
+> Faixa em forma de meia-lua na **borda sul e leste da floresta, onde ela encontra o Cerrado**: oeste
+> do MA, sul e sudeste do PA, norte de MT, RO e AC.
+> O desmatamento se concentra ali porque é por onde chegam as **estradas** e a fronteira agrícola do
+> Centro-Sul.
+
+> [!question]- 14. Em que ordem a floresta costuma cair, e o que é grilagem?
+> 1. **Madeira** (muitas vezes ilegal) abre a mata
+> 2. Queimada e **pasto**: a **pecuária é a principal causa**
+> 3. **Soja** e grãos quando há estrada
+> **Grilagem:** invasão de terra pública com documento falso. Pôr boi é o jeito mais barato de
+> "provar" que a terra tem dono.
+> ⭐ Caiu na FGV: 2024.1-OBJ-55 · fronteira agrícola e pecuária
+
+> [!question]- 15. Savanização: o que é, e o que é o "ponto de não retorno"?
+> A floresta produz boa parte da própria chuva. Desmatou → menos vapor → **menos chuva e mais fogo** →
+> a floresta morre e vira uma **savana empobrecida**.
+> **Ponto de não retorno (Carlos Nobre):** com **20–25%** de desmatamento, grandes áreas podem
+> savanizar **sozinhas**. Já se perdeu cerca de 18%.
+
+> [!question]- 16. O que são os rios voadores?
+> Os ventos trazem umidade do Atlântico; a floresta a **recicla pela transpiração**; os **Andes**
+> barram esse fluxo e o desviam para o sul, levando chuva ao **Centro-Oeste, Sudeste e Sul**.
+> Conclusão da banca: desmatar a Amazônia **prejudica o próprio agronegócio** e as hidrelétricas.
+> ⭐ Caiu na FGV: 2024.1-DIS-CH6 · rios voadores (discursiva)
+
+> [!question]- 17. Desmatamento da Amazônia: o que marcou 2004, 2012 e 2019–22?
+> - **2004 (Lula):** **pico**, cerca de 27,8 mil km²
+> - **2012 (Dilma):** **menor índice** da série, cerca de 4,6 mil km²
+> - **2019–22 (Bolsonaro):** volta a subir, acima de 10 mil km²/ano
+> - **Desde 2023:** cai de novo
+> ⭐ Caiu na FGV: 2025.1-OBJ-57 · dados do INPE
+
+> [!question]- 18. Por que o desmatamento caiu de 2004 a 2012 e subiu de 2019 a 2022?
+> **Queda:** o **PPCDAm** (Marina Silva): alerta por satélite (**DETER**), fiscalização, novas áreas
+> protegidas e **corte de crédito** para quem desmata.
+> **Alta:** **enfraquecimento da fiscalização** (Ibama, ICMBio).
+> O desmatamento responde à política.
+
+### Cerrado
+
+> [!question]- 19. Onde fica o Cerrado e como é o clima?
+> **2º maior bioma (23,3%)**, com o coração no Planalto Central, mas **presente nas cinco regiões**.
+> Clima **tropical** com **duas estações**: verão chuvoso e inverno seco. Chove 1.200–1.800 mm/ano. O
+> **fogo** natural faz parte do ciclo.
+
+> [!question]- 20. Por que o Cerrado é a "caixa d'água do Brasil"?
+> Fica nos **planaltos**, onde nascem rios de **6 das 8 grandes bacias**: Amazonas,
+> Tocantins-Araguaia, Paraná, Paraguai, São Francisco e Parnaíba.
+> As raízes profundas fazem a chuva infiltrar e recarregar **aquíferos** (como o Guarani). Desmatar =
+> menos água nos rios.
+
+> [!question]- 21. Como é a vegetação clássica do Cerrado?
+> - Árvores **baixas e espaçadas**, com capim entre elas
+> - Troncos e galhos **retorcidos**
+> - **Casca grossa**, que protege do fogo
+> - **Folhas duras**, como couro
+> - **Raízes profundas**: "floresta de cabeça para baixo"
+
+> [!question]- 22. Por que as árvores do Cerrado são tortas? (escleromorfismo oligotrófico)
+> **Solo pobre (oligotrófico), ácido e com alumínio**: a planta cresce dura e retorcida. O **fogo**
+> queima os brotos da ponta e o galho rebrota de lado.
+> **Não é falta de água**: chove bastante e as raízes chegam ao lençol freático. Seca é a resposta da
+> Caatinga.
+
+> [!question]- 23. Quais são as três formações do Cerrado?
+> - **Cerradão:** formação florestal, copa quase fechada
+> - **Cerrado típico (sentido restrito):** savânico, árvores baixas e tortas; parece a savana africana
+> - **Campestre:** campo sujo (capim + arbustos) e campo limpo (só gramíneas)
+
+> [!question]- 24. Vereda: o que é e por que importa?
+> Vale onde o **lençol freático aflora**: solo **hidromórfico**, com fileiras de **buriti**.
+> Garante **água e alimento o ano todo**, mesmo na seca. Dá nome a *Grande Sertão: Veredas*.
+
+> [!question]- 25. Mata dos Cocais e Lei do Babaçu Livre
+> **Faixa de transição** entre Amazônia, Cerrado e Caatinga, no **MA e PI**. Palmeiras: **babaçu**
+> (lado úmido) e **carnaúba** (lado seco, cera).
+> **Lei do Babaçu Livre:** as **quebradeiras de coco** podem entrar até em **propriedade privada**
+> para coletar, e as palmeiras não podem ser derrubadas.
+
+> [!question]- 26. Quanto do Cerrado já se perdeu, e como ele virou celeiro?
+> Cerca de **49%**. Principal causa: **pecuária extensiva** (gado solto em áreas enormes); depois
+> soja, milho, algodão.
+> **Embrapa (1973):** calcário para corrigir a acidez, adubação e soja adaptada ao clima tropical. O
+> **relevo plano das chapadas** facilitou as máquinas.
+> ⭐ Caiu na FGV: 2022.1-DIS-CH4 e 2023.1-OBJ-MH29 · agronegócio no Cerrado
+
+> [!question]- 27. Matopiba: o que é, e por que é mais fácil desmatar o Cerrado?
+> **MA + TO + PI + BA:** nova fronteira da soja no Cerrado; segundo a aula, 42% do desmatamento
+> recente.
+> **Reserva Legal (Código Florestal):** 80% em floresta na Amazônia Legal, 35% no Cerrado da Amazônia
+> Legal, **só 20%** no resto. Muito do desmatamento do Cerrado é **legal**.
+
+### Mata Atlântica
+
+> [!question]- 28. Onde fica a Mata Atlântica e por que chove tanto nela?
+> Litoral do **RN ao RS**, interior do Sul, SP, MG, BA, RJ, ES, e manchas no PI e CE.
+> Clima **tropical úmido**. A chuva é **orográfica**: o vento úmido do mar bate na **Serra do Mar**,
+> sobe, esfria e chove na encosta.
+
+> [!question]- 29. Quanto resta da Mata Atlântica, e por que a fragmentação é grave?
+> Cerca de **75% destruída**; restam cerca de **25%**, parte degradada ou em **fragmentos**.
+> Os animais não passam de um fragmento a outro. Solução: **corredores ecológicos**.
+> Cerca de **70% da população** vive na área dela.
+
+> [!question]- 30. Que ciclos econômicos destruíram a Mata Atlântica?
+> - **XVI:** pau-brasil
+> - **XVI–XVII:** cana-de-açúcar (daí o nome **Zona da Mata**)
+> - **XVII–XVIII:** ouro em MG
+> - **XIX:** **café**, do Vale do Paraíba ao oeste paulista
+> - **XX:** urbanização e industrialização
+> ⭐ Caiu na FGV: 2023.1-OBJ-MH30 · expansão cafeeira
+
+> [!question]- 31. Mata das Araucárias: onde, como é e quanto resta?
+> Planaltos e serras do **Sul** e trechos altos do Sudeste; clima **subtropical**, com geada.
+> Araucária (pinheiro-do-paraná, dá o pinhão): **aciculifoliada**, mata **relativamente homogênea**.
+> Resta **menos de 5%**: madeira, papel e celulose, agropecuária.
+
+> [!question]- 32. Mangue: como é, e por que é protegido?
+> Onde o **rio encontra o mar**: água **salobra**, lama sem oxigênio, maré.
+> Plantas **halófitas**, com **pneumatóforos** e raízes-escora.
+> **Berçário marinho** e proteção da costa. É **APP** por lei. Caso clássico: **Recife**, construída
+> aterrando mangues.
+
+### Caatinga
+
+> [!question]- 33. Por que a Caatinga é semiárida?
+> Chuva **pouca** (geralmente menos de 800 mm), **concentrada** em 3 ou 4 meses e **irregular**;
+> evapora mais do que chove.
+> A umidade do Atlântico fica no litoral e na **Borborema** (sombra de chuva).
+> Rios **intermitentes**, menos o São Francisco e o Parnaíba.
+
+> [!question]- 34. Como a vegetação da Caatinga se adapta à seca?
+> **Xerófila:** espinhos no lugar de folhas, caules que guardam água, cactos (**mandacaru**,
+> **xique-xique**).
+> **Caducifólia:** perde as folhas na seca.
+> "Caatinga" = **mata branca** em tupi. Único bioma **exclusivamente brasileiro**.
+
+> [!question]- 35. O que destrói a Caatinga?
+> Cerca de **40%** destruída (aula).
+> **Pecuária** (bois, cabras, ovelhas) e **lenha** para o **polo gesseiro** (Araripe, PE) e as
+> **cerâmicas**.
+
+> [!question]- 36. Desertificação: o que é, e onde acontece no Brasil?
+> Degradação da terra em clima **árido, semiárido ou subúmido seco** (ONU): o solo perde a capacidade
+> de produzir.
+> Núcleos: **Gilbués (PI), Irauçuba (CE), Seridó (RN/PB), Cabrobó (PE)**.
+> Em 2023, a **1ª área de clima árido** do país, no **norte da Bahia**.
+
+### Pampa
+
+> [!question]- 37. Como é o Pampa?
+> **Metade sul do RS** (2,3%), seguindo pelo Uruguai e Argentina.
+> Clima **subtropical úmido**, quatro estações. Relevo de **coxilhas** (colinas suaves). **Campos** de
+> gramíneas de até 60 cm: pasto natural, terra da pecuária gaúcha.
+> Cerca de **58%** destruído: o **2º mais destruído** da história.
+
+> [!question]- 38. Arenização: o que é, e por que não é desertificação?
+> **Areais** no **sudoeste do RS** (Alegrete): solo **arenoso e frágil** perde o capim (pisoteio do
+> gado, soja) e a chuva e o vento expõem a areia.
+> Não é desertificação porque o clima do Pampa é **úmido**. Termo de Dirce Suertegaray.
+
+### Pantanal
+
+> [!question]- 39. Como funciona o Pantanal?
+> **Maior planície alagável do mundo**, na bacia do **Rio Paraguai**, em MT e MS (1,8%).
+> No **verão** chove, os rios transbordam e a planície **alaga**; no **inverno** (auge em julho) a
+> água baixa e ficam as lagoas.
+> Ave símbolo: **tuiuiú**. Só cerca de **15%** destruído.
+
+> [!question]- 40. Qual é a principal ameaça ao Pantanal?
+> O **entorno**: o Cerrado do planalto, onde nascem os rios que o enchem.
+> - desmatamento → **assoreamento** (rio Taquari)
+> - **agrotóxicos** da soja
+> - pequenas **hidrelétricas**
+> E as **queimadas de 2020**, que queimaram mais de um quarto do bioma.
+> ⭐ Caiu na FGV: 2023.1-OBJ-IL8 e IL9 · queimadas de 2020 (prova de Inglês)
+
+> [!question]- 41. Quais biomas são Patrimônio Nacional na Constituição?
+> Art. 225 (1988): **Floresta Amazônica, Mata Atlântica, Serra do Mar, Pantanal Mato-Grossense e Zona
+> Costeira**.
+> Pegadinha: **Cerrado e Caatinga ficaram de fora**.
+
+### Leis e panorama
+
+> [!question]- 42. SNUC: quais são os dois grupos de Unidades de Conservação?
+> **Lei 9.985/2000 (FHC).**
+> **Proteção integral:** só uso **indireto** (pesquisa, educação, visita). Estação Ecológica, Reserva
+> Biológica, **Parque Nacional**, Monumento Natural, Refúgio de Vida Silvestre.
+> **Uso sustentável:** uso **direto** controlado (morar, extrair). APA, ARIE, Flona, Resex, Reserva de
+> Fauna, RDS, RPPN.
+
+> [!question]- 43. Parque Nacional e Ilha da Queimada Grande: em que grupo do SNUC?
+> **Parque Nacional = proteção integral.** Visita é uso indireto: o turista não leva nada.
+> **Ilha da Queimada Grande** ("ilha das cobras", SP): visita proibida, mas a categoria é **ARIE**, do
+> grupo de **uso sustentável**.
+> Teste: pode morar ou extrair? Não → integral. Sim, controlado → sustentável.
+> O resumo da aula trazia os dois trocados.
+
+> [!question]- 44. Código Florestal: o que é APP e o que é Reserva Legal?
+> **APP:** não pode desmatar em nenhuma propriedade: margens de rios, nascentes, **topos de morro**,
+> **encostas acima de 45°**, mangues, veredas.
+> **Reserva Legal:** parte do imóvel que mantém vegetação nativa: 80% (floresta na Amazônia Legal),
+> 35% (Cerrado na Amazônia Legal), 20% (resto).
+
+> [!question]- 45. Savanização × desertificação × arenização
+> - **Savanização → Amazônia** (úmida): a floresta vira savana
+> - **Desertificação → Caatinga** (semiárida): o solo fica estéril
+> - **Arenização → Pampa** (úmido): solo arenoso vira areal
+> Pense no clima: úmido vira savana, seco vira deserto, úmido com solo de areia vira areal.
+
+> [!question]- 46. O Brasil já destruiu quanto, e dá para produzir sem desmatar?
+> Segundo a aula, **45% destruído e 55% preservado**: alto perto de EUA, China e Europa, graças à
+> Amazônia. Causa em todos os biomas: **agropecuária**.
+> Recuperar **pastagens degradadas** e usar **integração lavoura-pecuária-floresta** permitiria
+> produzir **50% mais** sem desmatar. Não se faz porque **derrubar custa menos**.
+
+### Deslizamentos e El Niño
+
+> [!question]- 47. Quais são os três fatores de um deslizamento?
+> - **Declividade acentuada** (natural)
+> - **Chuva forte** (natural): o solo encharcado pesa e perde coesão
+> - **Desmatamento e ocupação** (humano): sem raízes, com cortes no barranco e peso das casas
+> Quem mora na encosta é a população pobre: **segregação socioespacial**.
+
+> [!question]- 48. Que casos de deslizamento você precisa conhecer?
+> - **Caraguatatuba, 1967:** 436 mortos, praticamente em uma noite
+> - **Angra dos Reis, réveillon de 2010:** cerca de 52
+> - **Região Serrana do RJ, 2011:** cerca de 900, o **maior desastre climático** do país (levou à criação do Cemaden)
+> - **São Sebastião, 2023:** 65 mortos, a maior chuva em 24 h já registrada
+> O resumo da aula tinha esses números trocados.
+
+> [!question]- 49. El Niño × La Niña no Brasil
+> **El Niño:** aquecimento do Pacífico equatorial. **Sul alaga**; **Norte e Nordeste secam**.
+> **La Niña:** resfriamento. Sul seca; Norte e Nordeste com mais chuva.
+
+> [!question]- 50. Qual é a previsão do professor para este verão?
+> Ano de **El Niño**, com chuva forte no **litoral Sul–Sudeste**.
+> Risco: serras do Sudeste, Serra Gaúcha, litoral de SP e serras do Rio.
+> Declividade + desmatamento + ocupação + El Niño = **mortes em dez/jan**, logo no começo do mandato
+> do presidente eleito.
 
 ## 🔗 Relacionados
 
