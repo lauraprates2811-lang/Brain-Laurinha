@@ -286,6 +286,32 @@ letra em 15 questões; em 2026.1, a Matemática veio 3-4-3-3-2. Chutar tudo numa
 
 ---
 
+## Análise de simulado: sempre em PDF colorido, uma página por erro, com a foto da questão (2026-10-03)
+
+Em 03/10 o Claude entregou a análise do simulado de Português num PDF de texto corrido, sem cor, e
+ela reclamou: "que PDF mal feito [...] sem cor. Faça igual você estava fazendo". O modelo que ela
+aprovou é o de `Projetos/Vestibular/simulados/2026-10-03-fgv-2025-1-humanas-analise.pdf` (refeito no
+mesmo formato em `2026-10-03-fgv-2026-1-portugues-analise.pdf`).
+
+**A regra:** toda análise de simulado sai em PDF (HTML → Chrome headless), gravado em
+`Projetos/Vestibular/simulados/AAAA-MM-DD-<prova>-analise.pdf`, sempre com:
+- **Página 1:** título grande em azul-marinho; placar com a nota e uma barra colorida por bloco;
+  **mapa da prova** (faixa de cor por bloco, número e ✓/✗ de cada questão, ✓ âmbar para acerto com
+  dúvida anotada); "Em uma frase"; tabela numerada "Os erros que se repetem" (padrão · onde · o que
+  acontece); caixa verde "A parte boa".
+- **Uma página por erro:** faixa com "Questão N" na cor do bloco + tema em azul-marinho; **recorte da
+  foto da questão dela**, com as marcas; quadros lado a lado "VOCÊ MARCOU" (rosa) e "A CERTA" (verde);
+  tipo de erro e padrão; "Por que você errou" · "Por que a X é a certa" · "Por que as outras caem";
+  caixa creme "Regra para a próxima".
+- **Fechamento:** comparação com o(s) simulado(s) anterior(es), "O que focar até a FGV" (técnica, com
+  a coluna "teria salvado", e conteúdo em ordem, com os números do `/banca`), caixa azul "Resumo para
+  colar na mesa" e, se ela grifou palavras, o glossário.
+- Rodapé com o nome do simulado e o número da página.
+
+Análise em texto corrido ou sem cor não serve, mesmo quando é para ser rápida.
+
+---
+
 ## 🔗 Relacionados
 
 [[Vestibular]] · [[Cursinho]] · [[Pessoal]] · [[Laura]]
