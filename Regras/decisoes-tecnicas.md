@@ -194,6 +194,12 @@ biblioteca) e mandar com o passo a passo: drive.google.com → Novo → Upload d
 Documentos Google → Arquivo → Salvar como Documentos Google. Subir pelo Chrome dela só se ela pedir.
 PDF sai do Chrome em modo headless e se confere com `fitz`.
 
+**HTML de rascunho sempre inteiro (2026-10-03):** no app do Mac, todo `.html` gravado abre sozinho no
+painel do navegador, que fica ao lado da conversa. Se o estilo estiver num arquivo e o texto em outro, ela vê
+o texto sem estilo e acha que é a análise ("sem cor, desorganizado"), e isso aconteceu duas vezes em 03/10.
+Rascunho de PDF é um `.html` único, com o `<style>` dentro. Depois de gerar o PDF, abrir o próprio PDF
+no painel.
+
 ## iCloud Drive: cópia das pastas de estudo para abrir no iPad (2026-10-03)
 
 Ela pediu para "colocar as pastas na nuvem" para estudar no iPad, e escolheu **só uma cópia**, sem
