@@ -194,6 +194,21 @@ biblioteca) e mandar com o passo a passo: drive.google.com → Novo → Upload d
 Documentos Google → Arquivo → Salvar como Documentos Google. Subir pelo Chrome dela só se ela pedir.
 PDF sai do Chrome em modo headless e se confere com `fitz`.
 
+## iCloud Drive: cópia das pastas de estudo para abrir no iPad (2026-10-03)
+
+Ela pediu para "colocar as pastas na nuvem" para estudar no iPad, e escolheu **só uma cópia**, sem
+atualização automática. O Brain continua no Mac (repositório git com rotinas: dentro do iCloud ele
+corromperia), e é a fonte de verdade.
+
+**A regra:** no iCloud Drive, três pastas copiadas do Brain em 03/10: `Provas-FGV` (PDFs de
+`provas-antigas/`, sem o banco), `Materias` (todo o `Projetos/Cursinho/`) e `Simulados` (as análises,
+mais `Fotos dos simulados/<matéria>/` com as fotos dela renomeadas por prova e data). O material que
+ela recebe e não entra no Brain (cadernos do cursinho, rascunhos de redação) fica **só** em
+`iCloud/Materias/<matéria>/`. Material novo vai para o iCloud **quando ela pedir**, com `rsync -a`
+(nunca com `--delete`). As pastas que ela mesma criou no iCloud (`Lp (provas antigas FGV)`, `Provas
+antigas FGV`, `Downloads/L.Portuguesa`) ficam como ela deixou. Isso substitui o "nada de cópia
+fora do Brain" de 23/09 só para o iCloud, e resolve o backup das provas e apostilas.
+
 ## 🔗 Relacionados
 
 [[Brain]]
