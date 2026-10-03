@@ -1,134 +1,9 @@
-# Poemas que caem — FGV e Insper
+# Poemas para treinar — FGV e Insper
 
-> Os 7 poemas das últimas provas (FGV 2023.1–2025.1 e Insper 2026.1 a set/2026), com perguntas de análise,
-> e 6 clássicos em domínio público para treinar a escola literária. PDF: `poemas-que-caem-fgv-insper.pdf`.
+> ★★★ caiu na prova (poema ou autor/escola) · ★★ escola que a banca cobra · ★ treino de escola. PDF: `poemas-que-caem-fgv-insper.pdf`.
 
-## Onde o poema aparece
-
-- **FGV (banco):** poema em 3 de 4 objetivas, 9 questões — Drummond 2025.1-28 a 30 · João Cabral 2024.1-29 e 30 · João Cabral 2023.1-27 a 30. 2026.1 sem poema.
-- **Insper (site oficial, 5 cadernos recentes):** poema em 4, 16 questões — Cecília Meireles, “Retrato” (simulado set/26, 08–10) · Bandeira, “Poética” (2026.2, 11–15) · Bandeira, “Desencanto” (simulado mai/26, 04–07) · Raul de Leoni, “Exortação” (2026.1, caderno de 21/12/25, 03–06).
-- **Tipos das 25 questões:** sentido/tom/eu lírico 11 · recurso 5 · gramática no poema 5 · escola 3 (sempre Parnasianismo × Modernismo) · contexto 1.
-
-## Parte 1 — os poemas que caíram
-
-### No meio do caminho — Carlos Drummond de Andrade
-*Alguma poesia* (1930; poema de 1928) · **Modernismo · 2ª geração** · FGV 2025.1 Q28–30
-
-Onde ler: Provas-FGV › 2025.1 › Portugues-objetiva-2025.1.pdf, página 3
-
-1. Conte quantas vezes a palavra “pedra” aparece. Que efeito essa repetição causa em quem lê?
-2. O poema usa “tinha” onde a norma culta escrita pede outro verbo. Qual? Por que isso é escolha, e não erro?
-3. Que marcas mostram que o poema é modernista? Pense em rima, métrica, linguagem e assunto.
-4. O que a pedra pode representar? Dê duas leituras possíveis.
-5. Que parte do corpo do eu lírico aparece cansada? O que isso diz sobre o encontro com a pedra?
-6. Por que um parnasiano como Bilac nunca escreveria este poema? Compare com “A um poeta”, na Parte 2.
-
-> [!note]- Respostas
-> 1. 7 vezes. A repetição faz o leitor tropeçar na pedra junto com o eu lírico: o poema “não sai do lugar”, como quem esbarra num obstáculo. A FGV chamou isso de reiteração múltipla.
-> 2. “Havia” (haver no sentido de existir). “Tinha” é a forma da fala do dia a dia. Trazer a língua falada para a poesia foi bandeira do Modernismo, então é licença poética, não erro (FGV 2025.1-30).
-> 3. Verso livre, sem métrica fixa e sem rima; linguagem coloquial; assunto banal do cotidiano tratado como acontecimento. É o “direito à pesquisa estética” que a FGV cobrou (2025.1-29).
-> 4. Qualquer obstáculo da vida; a dificuldade de escrever; a própria rotina que cansa. A banca aceita leituras abertas desde que você não invente o que o poema não diz.
-> 5. Os olhos (as retinas, “tão fatigadas”). Um fato pequeno marcou para sempre alguém já cansado: o banal virou memória.
-> 6. Bilac pede forma trabalhada, rima rica, métrica e linguagem nobre. Drummond usa repetição “pobre”, fala coloquial e assunto banal: é exatamente a ruptura modernista.
-
-### Um piolho de Rui Barbosa — João Cabral de Melo Neto
-*Museu de tudo* (1975) · **Geração de 45** · FGV 2024.1 Q29–30
-
-Onde ler: Provas-FGV › 2024.1 › Portugues-objetiva-2024.1.pdf, página 5
-
-1. Quem é o “piolho” e quem é o memorialista? Quem diz que nascer pernambucano é nascer ninguém?
-2. Que ideia está por trás de dizer que a “paisagem pouca” de Pernambuco não podia gerar gênios? Dê o nome dela.
-3. Que “estilo nacional” o poema descreve? Aponte três comportamentos ligados a ele.
-4. Qual é a virada do fim do poema: como o próprio Rui falava?
-5. Por que um poeta como João Cabral criticaria a eloquência? Ligue com o jeito como ele escreve.
-
-> [!note]- Respostas
-> 1. “Piolho de” alguém é o fã grudado, que vive agarrado ao ídolo. É o piolho quem fala com o memorialista; o memorialista só registra.
-> 2. Determinismo geográfico: o meio (a paisagem) decidiria o valor das pessoas. Somado ao desprezo por Pernambuco, é preconceito regional.
-> 3. A oratória: ler poema como se fosse discurso, não conseguir escrever sem tom de fala, não conseguir falar sem estufar o peito.
-> 4. Rui falava “apagado”, baixo, sem picos. O Rui-vulcão é invenção dos seguidores: são eles que põem “vulcões na melodia”.
-> 5. João Cabral defende uma poesia construída, objetiva, sem sentimentalismo nem pompa. A eloquência é o oposto do verso seco dele.
-
-### Descoberta da literatura — João Cabral de Melo Neto
-(a prova cita *A educação pela pedra*) · **Geração de 45** · FGV 2023.1 Q27–30
-
-Onde ler: Provas-FGV › 2023.1 › 9-UNIFICADO-2023_1-INGLES-LP.pdf, página 11
-
-1. Quem lê, para quem lê e onde a cena acontece?
-2. O que é o “romance de barbante” que vem da feira? Por que esse nome?
-3. O que o menino descobre sobre a literatura ao ver a reação dos ouvintes?
-4. Do que ele tem medo enquanto lê? Cite dois receios.
-5. Por que a Casa-Grande poderia reprovar a cena? Pense em classes sociais.
-6. Em “todo o mirabolante”, que classe de palavra “mirabolante” virou? Como se chama esse processo?
-
-> [!note]- Respostas
-> 1. O menino, filho do senhor de engenho, lê em voz alta para os cassacos (trabalhadores do eito), sentados numa roda de carro de boi, no engenho.
-> 2. O folheto de cordel nordestino, vendido pendurado em barbante nas feiras.
-> 3. Que a obra de arte verbal pode ter uma recepção intensa e encantada: a tensão sobe, ele vira “alto-falante” e prende todos.
-> 4. Que confundam o perto com o distante, que o tomem pelo autor da história, ou que tenha de enfrentar o bandido (o “brigante”) do folheto.
-> 5. O filho do engenho estava se misturando aos trabalhadores e lendo literatura popular de feira: atravessava a fronteira entre a Casa-Grande e o eito.
-> 6. Adjetivo virou substantivo (veio com o artigo “o”). É derivação imprópria: muda a classe, não muda a forma.
-
-### Poética — Manuel Bandeira
-*Libertinagem* (1930) · **Modernismo · 1ª geração** · Insper 2026.2 Q11–15
-
-Onde ler: Caderno da Prova Objetiva 2026.2, página 5 — https://www.insper.edu.br/content/dam/insper-portal/documentos/vestibular/vestibular-26-2/Caderno%20de%20Quest%C3%B5es%20-%20Prova%20Objetiva.pdf
-
-1. Contra que tipo de lirismo o eu lírico protesta? Liste três adjetivos que ele usa.
-2. Que movimento literário está sendo atacado? Que marcas dele aparecem na crítica (dicionário, regra, “bem-comportado”)?
-3. Que lirismo ele quer no lugar? O que loucos, bêbados e palhaços têm em comum?
-4. Como a forma do poema (versos de tamanhos muito diferentes, versos longos sem vírgula) confirma o que ele diz?
-5. O que significa a imagem do “funcionário público com livro de ponto” aplicada à poesia?
-6. Por que o poema funciona como manifesto da 1ª geração modernista?
-
-> [!note]- Respostas
-> 1. Contra o lirismo comedido, bem-comportado, funcionário público, que consulta o dicionário, namorador, político. É a poesia presa a regras.
-> 2. O Parnasianismo: correção gramatical, vocabulário “vernáculo”, purismo, forma controlada. “Abaixo os puristas” resume.
-> 3. O lirismo livre, intenso, que é “libertação”. Loucos, bêbados e palhaços falam sem censura e sem regra.
-> 4. Verso livre, sem métrica nem rima, sintaxe solta: a forma pratica a liberdade que o poema pede (Insper 2026.2-14).
-> 5. Poesia burocrática, feita por obrigação e protocolo, sem emoção: bate ponto, segue regras, agrada ao chefe.
-> 6. Declara o programa de 22: liberdade formal, todas as palavras e construções, ruptura com a tradição.
-
-### Desencanto — Manuel Bandeira
-*A cinza das horas* (1917), o livro de estreia · **Pré-Modernismo** · Insper · simulado mai/2026 Q04–07
-
-Onde ler: Simulado Insper 2026/2 (maio), Prova Objetiva, página 3 — https://www.insper.edu.br/content/dam/insper-portal/documentos/vestibular/vestibular-26-2/SIMULADO%20INSPER%20-%20MAIO%20-%20PROVA%20OBJETIVA-1_2026_2.pdf
-
-1. Qual é o tom do poema? Que palavras do começo já mostram isso?
-2. “Como quem chora”: que figura é essa? O que muda quando o último verso troca o verbo?
-3. “Sangue”, “veias” e “coração” remetem a algo maior. A quê? Que figura é essa?
-4. Passe para a ordem direta os dois primeiros versos da última estrofe. Como se chama a inversão?
-5. O livro é de 1917, antes da Semana de 22. Que marcas mostram que o poema ainda não é modernista?
-6. Compare com “Poética” (1930), do mesmo Bandeira: o que mudou no jeito de fazer poesia?
-
-> [!note]- Respostas
-> 1. Desalento, melancolia, angústia: o título e as primeiras palavras (desalento, desencanto, pranto) já dão o tom.
-> 2. Comparação. No fim, “chora” vira “morre”: a dor sobe de grau (gradação) e o poema fecha com a ideia de morte.
-> 3. Ao corpo, à vida física. É metonímia: a parte pelo todo (Insper, simulado mai/2026-04).
-> 4. A vida corre assim dos lábios nestes versos de angústia rouca (ou: Assim a vida corre dos lábios...). A inversão da ordem é o hipérbato.
-> 5. Rima regular, métrica, estrofes certinhas e o tom de sofrimento subjetivo herdado do Simbolismo.
-> 6. Em 1930 ele já usa verso livre, fala coloquial e ironia, e ataca justamente o “lirismo comedido” que praticava em 1917.
-
-### Retrato — Cecília Meireles
-*Viagem* (1939) · **Modernismo · 2ª geração** · Insper · simulado set/2026 Q08–10
-
-Onde ler: Simulado Online Insper 2027.1 (set/2026), Prova Objetiva, página 5 — https://www.insper.edu.br/content/dam/insper-portal/documentos/vestibular/vestibular-27-1/S5INSPER2026-2S.pdf
-
-1. O que mudou no eu lírico? Faça duas colunas: “antes” e “agora”.
-2. Que palavras se repetem no começo de segmentos seguidos em dois versos? Como se chama esse recurso?
-3. Por que o título “Retrato” combina com o poema? É um retrato de fora ou de dentro?
-4. Qual é o tema central: amor, tempo, morte ou sociedade? Prove com a última estrofe.
-5. Cecília usa rima e musicalidade. Por que ela não é parnasiana?
-
-> [!note]- Respostas
-> 1. Agora: rosto calmo, triste e magro, olhos vazios, lábio amargo, mãos sem força, coração que não se mostra. Antes: nada disso. E ela nem percebeu a mudança.
-> 2. “Assim... assim... assim” e “tão... tão... tão”. É anáfora (Insper, simulado set/2026-09).
-> 3. É um autorretrato interior: ela se olha e não se reconhece. O retrato registra a perda da identidade com o tempo.
-> 4. O tempo e a transitoriedade: a pergunta final sobre o espelho em que ficou perdida a própria face.
-> 5. A musicalidade dela está a serviço da vida interior e da reflexão sobre o tempo, não da “arte pela arte” e da forma perfeita.
-
-### Exortação — Raul de Leoni
-*Luz mediterrânea* (1922) · **Pré-Modernismo** · Insper 2026.1 Q03–06
+## Exortação — Raul de Leoni (Luz mediterrânea, 1922) ★★★
+*Caiu no Insper 2026.1 (4 questões).*
 
 ```
 Sê na Vida a expressão límpida e exata
@@ -150,61 +25,260 @@ Essa felicidade ingênua e calma,
 Que é a tendência recôndita das cousas!...
 ```
 
-1. Com quem o eu lírico fala? Que pessoa verbal mostra isso?
-2. Na 1ª estrofe, a árvore “retrata” a semente. A semente corresponde a quê na vida do homem?
-3. Segundo a 2ª estrofe, de onde vem a infelicidade?
-4. Que conselho os tercetos dão? Resuma em uma frase.
-5. Conte estrofes, versos e sílabas do 1º verso. Que forma fixa é essa? Como são as rimas?
-6. O livro é de 1922, ano da Semana de Arte Moderna. O poema é modernista? Justifique pela forma e pelo tema.
+**1.** O eu lírico dirige-se
+- A) à própria Vida, personificada.
+- B) a uma mulher amada, em tom de súplica.
+- C) a um “homem prudente”, em tom de conselho.
+- D) a si mesmo, em tom de arrependimento.
+- E) a Deus, em tom de oração.
 
-> [!note]- Respostas
-> 1. Com o “homem prudente”. Ele usa a 2ª pessoa do singular: sê, teu, te infelicita, deixa-te.
-> 2. Ao temperamento: assim como a árvore mostra o que já estava na semente, a vida deve mostrar o temperamento de cada um.
-> 3. De querer ser outra pessoa: ficar remoendo a própria forma de ser e querer mudá-la de repente.
-> 4. Aceite-se e viva sem tentar decifrar o mistério do mundo; assim virá uma felicidade simples e calma.
-> 5. Soneto: 2 quartetos e 2 tercetos, 14 versos decassílabos (Sê/na/Vi/da a ex/pres/são/lím/pi/da e e/xa = 10). Rimas ABAB ABAB CDC EED.
-> 6. Não. Forma clássica (soneto, métrica, rima), vocabulário culto e tema filosófico universal. É Pré-Modernismo com forma neoparnasiana.
+**2.** Na primeira estrofe, a relação entre a árvore e a semente ilustra a ideia de que a vida deve
+- A) revelar com fidelidade o temperamento de cada um.
+- B) superar as limitações herdadas de nascença.
+- C) crescer apesar das adversidades do meio.
+- D) dar frutos úteis à coletividade.
+- E) imitar a regularidade da natureza.
 
-## Parte 2 — treino de escola
+**3.** Segundo a segunda estrofe, a infelicidade humana resulta
+- A) da indiferença diante do sofrimento alheio.
+- B) da pressa em transformar o mundo.
+- C) da dependência da opinião dos outros.
+- D) do desejo de ser diferente do que se é.
+- E) da instabilidade das coisas do mundo.
 
-### Pequei, Senhor, mas não porque hei pecado — Gregório de Matos
-século XVII · **Barroco**
+**4.** O conselho dos tercetos pode ser resumido como:
+- A) investigue o sentido oculto da existência.
+- B) aceite-se e viva sem tentar decifrar o mistério do mundo.
+- C) busque a felicidade na harmonia com os outros.
+- D) renuncie aos prazeres em nome da prudência.
+- E) desconfie da aparente calma das coisas.
+
+**5.** Embora publicado em 1922, ano da Semana de Arte Moderna, o poema não é modernista porque
+- A) usa verso livre e linguagem coloquial.
+- B) rejeita a reflexão sobre a existência.
+- C) ironiza a tradição parnasiana.
+- D) explora o cotidiano urbano e a fala popular.
+- E) mantém o soneto, com métrica e rimas regulares, e trata de tema filosófico em linguagem culta.
+
+## A um poeta — Olavo Bilac (Tarde, 1919) ★★★
+*Parnasianismo foi perguntado 2 vezes no Insper (2026.2 e simulado set/26).*
 
 ```
-Pequei, Senhor, mas não porque hei pecado,
-Da vossa piedade me despido,
-Porque quanto mais tenho delinquido,
-Vos tenho a perdoar mais empenhado.
+Longe do estéril turbilhão da rua,
+Beneditino, escreve! No aconchego
+Do claustro, na paciência e no sossego,
+Trabalha, e teima, e lima, e sofre, e sua!
 
-Se basta a vos irar tanto um pecado,
-A abrandar-vos sobeja um só gemido,
-Que a mesma culpa, que vos há ofendido,
-Vos tem para o perdão lisonjeado.
+Mas que na forma se disfarce o emprego
+Do esforço; e a trama viva se construa
+De tal modo, que a imagem fique nua,
+Rica mas sóbria, como um templo grego.
 
-Se uma ovelha perdida, e já cobrada
-Glória tal, e prazer tão repentino
-Vos deu, como afirmais na Sacra História:
+Não se mostre na fábrica o suplício
+Do mestre. E, natural, o efeito agrade,
+Sem lembrar os andaimes do edifício:
 
-Eu sou, Senhor, a ovelha desgarrada,
-Cobrai-a, e não queirais, Pastor divino,
-Perder na vossa ovelha a vossa glória.
+Porque a Beleza, gêmea da Verdade,
+Arte pura, inimiga do artifício,
+É a força e a graça na simplicidade.
 ```
 
-1. Qual é o movimento? Dê duas provas tiradas do poema.
-2. O eu lírico pede perdão com que argumento? Por que esse raciocínio é quase uma “armadilha” para Deus?
-3. Que história bíblica aparece no 1º terceto, e como ele a usa a seu favor?
-4. Encontre duas antíteses (pares de ideias opostas).
-5. Mostre no poema o conflito barroco entre o pecado e a fé.
+**6.** O soneto pertence ao
+- A) Simbolismo, pela busca do mistério e da transcendência.
+- B) Romantismo, pela valorização da emoção espontânea.
+- C) Parnasianismo, pelo culto da forma e pela defesa do trabalho paciente do poeta.
+- D) Modernismo, pela linguagem do cotidiano.
+- E) Arcadismo, pela exaltação da vida simples no campo.
 
-> [!note]- Respostas
-> 1. Barroco: tema religioso, conflito pecado × salvação, antíteses e um raciocínio cheio de jogo de ideias (conceptismo). Soneto, forma clássica da época.
-> 2. Quanto mais ele pecou, mais Deus fica “empenhado” em perdoar, porque perdoar é a glória de Deus. É conceptismo: um jogo lógico engenhoso.
-> 3. A parábola da ovelha perdida: Deus se alegra com a ovelha reencontrada. Ele se apresenta como a ovelha desgarrada; se Deus não o salvar, perde a própria glória.
-> 4. Pecado × perdão; irar × abrandar; ovelha perdida × ovelha cobrada (recuperada).
-> 5. Ele se sabe culpado, mas tem certeza do perdão: a culpa e a fé convivem no mesmo poema, em tensão.
+**7.** Ao chamar o poeta de “Beneditino” e mandá-lo para o “claustro”, o eu lírico defende que o poeta
+- A) se afaste do mundo para trabalhar a forma com disciplina.
+- B) se dedique à poesia religiosa.
+- C) renuncie à fama e ao dinheiro.
+- D) escreva sobre a vida nas ruas da cidade.
+- E) imite os poetas medievais.
 
-### Canção do exílio — Gonçalves Dias
-*Primeiros cantos* · escrito em Coimbra, 1843 · **Romantismo**
+**8.** No verso “Trabalha, e teima, e lima, e sofre, e sua!”, a repetição do “e” (polissíndeto) reforça a ideia de
+- A) espontaneidade da criação.
+- B) alegria do trabalho artístico.
+- C) pressa em terminar o poema.
+- D) esforço contínuo e cansativo.
+- E) dúvida sobre o valor da arte.
+
+**9.** Segundo a segunda e a terceira estrofes, o esforço do poeta deve
+- A) ficar visível, para mostrar o mérito do autor.
+- B) ficar escondido, para que o efeito pareça natural.
+- C) ser substituído pela inspiração.
+- D) ser explicado ao leitor.
+- E) ser evitado, porque a beleza é espontânea.
+
+**10.** A expressão “Arte pura”, no último terceto, resume o princípio parnasiano da
+- A) arte engajada.
+- B) arte como desabafo do eu.
+- C) arte popular.
+- D) arte como denúncia social.
+- E) arte pela arte.
+
+## Pronominais — Oswald de Andrade (Pau Brasil, 1925) ★★★
+*Oswald caiu na FGV 2022.1 (Artes); a conquista modernista caiu na FGV 2025.1.*
+
+```
+Dê-me um cigarro
+Diz a gramática
+Do professor e do aluno
+E do mulato sabido
+Mas o bom negro e o bom branco
+Da Nação Brasileira
+Dizem todos os dias
+Deixa disso camarada
+Me dá um cigarro
+```
+
+**11.** O poema pertence à primeira geração modernista, o que se confirma
+- A) pela métrica regular e pelas rimas ricas.
+- B) pelo tom místico e pela musicalidade.
+- C) pelo verso livre, pela linguagem coloquial e pelo humor.
+- D) pela defesa da norma culta lusitana.
+- E) pelo pessimismo e pelo vocabulário científico.
+
+**12.** O assunto gramatical em jogo no poema é a
+- A) colocação do pronome oblíquo.
+- B) concordância verbal.
+- C) regência do verbo dar.
+- D) crase.
+- E) pontuação.
+
+**13.** Segundo o poema, a forma “Me dá um cigarro” é usada
+- A) só pelos que não estudaram.
+- B) pelo professor e pelo aluno.
+- C) pela gramática.
+- D) pelo povo brasileiro, no dia a dia.
+- E) apenas pelos estrangeiros.
+
+**14.** O poema valoriza
+- A) a correção gramatical como sinal de cultura.
+- B) o português falado no Brasil, contra o purismo da norma lusitana.
+- C) a fala do “mulato sabido” como modelo.
+- D) o uso de estrangeirismos.
+- E) a linguagem rebuscada da elite.
+
+**15.** A ausência de pontuação e de rima no poema
+- A) é um descuido do autor.
+- B) imita a poesia simbolista.
+- C) mostra a influência do Barroco.
+- D) segue as regras do soneto.
+- E) é uma escolha que aproxima o texto da fala e rompe com o formalismo parnasiano.
+
+## Inspiração — Mário de Andrade (Pauliceia desvairada, 1922) ★★
+*Modernismo de 22: escola cobrada na FGV (2025.1) e no Insper (2026.2).*
+
+```
+São Paulo! comoção de minha vida...
+Os meus amores são flores feitas de original...
+Arlequinal!... Traje de losangos... Cinza e ouro...
+Luz e bruma... Forno e inverno morno...
+Elegâncias sutis sem escândalos, sem ciúmes...
+Perfumes de Paris... Arys!
+Bofetadas líricas no Trianon... Algodoal!...
+
+São Paulo! comoção de minha vida...
+Galicismo a berrar nos desertos da América!
+```
+
+**16.** O poema abre o livro que é marco da poesia modernista. Uma marca modernista presente nele é
+- A) o soneto com rimas ricas.
+- B) a linguagem clássica e o vocabulário raro.
+- C) o verso livre, com frases soltas, sem verbo, separadas por reticências.
+- D) a narração linear de uma história.
+- E) o tema bucólico da vida no campo.
+
+**17.** São Paulo aparece no poema como
+- A) uma cidade de contrastes, que comove o eu lírico.
+- B) uma cidade calma e provinciana.
+- C) o cenário de uma natureza intocada.
+- D) o lugar de exílio e de saudade.
+- E) o símbolo da decadência moral.
+
+**18.** Em “Luz e bruma... Forno e inverno morno...”, predomina a
+- A) metonímia.
+- B) eufemismo.
+- C) gradação.
+- D) antítese, que mostra a cidade feita de opostos.
+- E) hipérbole.
+
+**19.** O adjetivo “Arlequinal” (de Arlequim, personagem de roupa de losangos coloridos) sugere uma cidade
+- A) triste e cinzenta.
+- B) multicolorida, feita de pedaços diferentes.
+- C) uniforme e organizada.
+- D) antiga e tradicional.
+- E) violenta e perigosa.
+
+**20.** O último verso, “Galicismo a berrar nos desertos da América!”, critica
+- A) a falta de cultura dos paulistanos.
+- B) a influência indígena na língua.
+- C) o crescimento desordenado da cidade.
+- D) a seca no interior do Brasil.
+- E) a imitação da cultura francesa numa terra americana.
+
+## Versos íntimos — Augusto dos Anjos (Eu, 1912) ★★
+*Pré-Modernismo: caiu na FGV 2024.1, com Os sertões.*
+
+```
+Vês?! Ninguém assistiu ao formidável
+Enterro de tua última quimera.
+Somente a Ingratidão — esta pantera —
+Foi tua companheira inseparável!
+
+Acostuma-te à lama que te espera!
+O Homem, que, nesta terra miserável,
+Mora, entre feras, sente inevitável
+Necessidade de também ser fera.
+
+Toma um fósforo. Acende teu cigarro!
+O beijo, amigo, é a véspera do escarro,
+A mão que afaga é a mesma que apedreja.
+
+Se a alguém causa inda pena a tua chaga,
+Apedreja essa mão vil que te afaga,
+Escarra nessa boca que te beija!
+```
+
+**21.** O poema é classificado no Pré-Modernismo porque
+- A) rompe com a métrica e usa verso livre.
+- B) exalta a natureza e a pátria.
+- C) mistura a forma parnasiana do soneto com pessimismo e vocabulário chocante.
+- D) segue a arte pela arte sem desvios.
+- E) usa linguagem coloquial e humor.
+
+**22.** O eu lírico se dirige
+- A) a um amigo, em tom de conselho amargo.
+- B) a uma mulher amada.
+- C) a Deus.
+- D) a si mesmo no passado.
+- E) ao leitor, pedindo piedade.
+
+**23.** O verso “A mão que afaga é a mesma que apedreja” apresenta
+- A) comparação.
+- B) eufemismo.
+- C) pleonasmo.
+- D) antítese, que revela a hipocrisia humana.
+- E) personificação.
+
+**24.** Palavras como “escarro”, “lama” e “chaga” num soneto produzem
+- A) suavidade.
+- B) choque, quebrando a expectativa de beleza.
+- C) ironia romântica.
+- D) musicalidade simbolista.
+- E) neutralidade.
+
+**25.** A visão do ser humano no poema é
+- A) otimista: o homem é bom por natureza.
+- B) religiosa: o homem será salvo.
+- C) indiferente.
+- D) heroica.
+- E) pessimista: o homem vive entre feras e precisa virar fera.
+
+## Canção do exílio — Gonçalves Dias (Primeiros cantos · escrito em Coimbra, 1843) ★★
+*Romantismo: caiu na FGV 2026.1, em prosa (Memórias de um sargento de milícias).*
 
 ```
 Minha terra tem palmeiras,
@@ -237,57 +311,43 @@ Sem qu’inda aviste as palmeiras,
 Onde canta o Sabiá.
 ```
 
-1. Qual é o movimento e a geração? Dê duas provas.
-2. Os advérbios “cá” e “lá” organizam o poema. O que é “cá” e o que é “lá”?
-3. Que sentimento domina o poema? Como se chama esse sentimento típico do Romantismo?
-4. Quase não há adjetivos: a terra é elogiada só com “mais”. Que efeito isso cria?
-5. Por que este poema virou símbolo do nacionalismo brasileiro? Pense na data: 1843.
+**26.** O poema pertence à primeira geração romântica, o que se nota
+- A) pelo pessimismo e pelo desejo de morte.
+- B) pela denúncia da escravidão.
+- C) pelo nacionalismo e pela idealização da natureza da pátria.
+- D) pelo culto da forma perfeita.
+- E) pelo verso livre.
 
-> [!note]- Respostas
-> 1. Romantismo, 1ª geração: nacionalismo, natureza idealizada, saudade e subjetividade (o eu lírico sozinho, à noite).
-> 2. Cá é Portugal (ele escreveu em Coimbra, onde estudava); lá é o Brasil.
-> 3. A saudade da pátria, com exaltação ufanista da terra natal: o nacionalismo romântico.
-> 4. A comparação constante faz tudo do Brasil parecer superior sem precisar descrever: o elogio vem pelo contraste.
-> 5. O Brasil tinha ficado independente em 1822 e procurava uma identidade própria. Versos dele foram parar no Hino Nacional (“Nossos bosques têm mais vida...”).
+**27.** No poema, “cá” e “lá” referem-se, respectivamente, a
+- A) Portugal e Brasil.
+- B) Brasil e Portugal.
+- C) cidade e campo.
+- D) céu e terra.
+- E) passado e presente.
 
-### A um poeta — Olavo Bilac
-*Tarde* (1919) · **Parnasianismo**
+**28.** O sentimento predominante no poema é
+- A) a revolta.
+- B) o arrependimento.
+- C) a indiferença.
+- D) a saudade da pátria.
+- E) o medo da morte.
 
-```
-Longe do estéril turbilhão da rua,
-Beneditino, escreve! No aconchego
-Do claustro, na paciência e no sossego,
-Trabalha, e teima, e lima, e sofre, e sua!
+**29.** Em “Nosso céu tem mais estrelas, / Nossas várzeas têm mais flores”, a terra natal é exaltada por meio de
+- A) eufemismo.
+- B) comparação implícita com a terra estrangeira.
+- C) ironia.
+- D) antítese entre o céu e a terra.
+- E) metáfora da pátria como mãe.
 
-Mas que na forma se disfarce o emprego
-Do esforço; e a trama viva se construa
-De tal modo, que a imagem fique nua,
-Rica mas sóbria, como um templo grego.
+**30.** Na última estrofe, o eu lírico
+- A) aceita morrer no exílio.
+- B) desiste de voltar.
+- C) critica a pátria.
+- D) promete nunca mais sair.
+- E) pede a Deus que não o deixe morrer sem voltar.
 
-Não se mostre na fábrica o suplício
-Do mestre. E, natural, o efeito agrade,
-Sem lembrar os andaimes do edifício:
-
-Porque a Beleza, gêmea da Verdade,
-Arte pura, inimiga do artifício,
-É a força e a graça na simplicidade.
-```
-
-1. Qual é o movimento? Dê duas provas no poema.
-2. Por que o poeta é chamado de “beneditino” e mandado para longe da rua?
-3. Liste os verbos do 4º verso. O que eles dizem sobre o trabalho do poeta?
-4. A arte deve mostrar ou esconder o esforço? Prove com a 2ª e a 3ª estrofes.
-5. Que “lirismo” Bandeira atacaria neste soneto, em “Poética”?
-
-> [!note]- Respostas
-> 1. Parnasianismo: culto da forma (soneto, decassílabo, rima rica), arte pela arte, vocabulário culto e referência clássica (templo grego).
-> 2. Beneditino é monge: o poeta deve se isolar no claustro, longe da vida comum. É a “torre de marfim” parnasiana.
-> 3. Trabalha, teima, lima, sofre, sua: o poema é trabalho artesanal, de ourives, que se “lima” até ficar perfeito.
-> 4. Esconder: o efeito tem de parecer natural, “sem lembrar os andaimes do edifício”. Muito trabalho para parecer simples.
-> 5. O lirismo comedido e bem-comportado, que consulta o dicionário: é exatamente o ideal deste soneto (Insper 2026.2-15).
-
-### Cárcere das almas — Cruz e Sousa
-*Últimos sonetos* (1905) · **Simbolismo**
+## Cárcere das almas — Cruz e Sousa (Últimos sonetos, 1905) ★
+*Treino de escola: Simbolismo não caiu nas provas que temos.*
 
 ```
 Ah! Toda a alma num cárcere anda presa,
@@ -309,82 +369,177 @@ Que chaveiro do Céu possui as chaves
 Para abrir-vos as portas do Mistério?!
 ```
 
-1. Qual é o movimento? Dê duas provas no poema.
-2. Onde está a alma e com o que ela sonha?
-3. Por que palavras como Pureza, Dor, Céu e Mistério vêm com maiúscula?
-4. Leia em voz alta “Soluçando nas trevas, entre as grades”. Que sons se repetem? Para que serve isso no Simbolismo?
-5. O poema termina com resposta ou com pergunta? O que isso revela sobre a escola?
+**31.** O soneto pertence ao
+- A) Parnasianismo, pela descrição objetiva.
+- B) Romantismo, pelo nacionalismo.
+- C) Simbolismo, pela espiritualidade, pelas maiúsculas alegóricas e pelo mistério.
+- D) Modernismo, pelo verso livre.
+- E) Arcadismo, pela vida simples no campo.
 
-> [!note]- Respostas
-> 1. Simbolismo: espiritualidade, desejo de transcendência, vocabulário vago e abstrato, maiúsculas alegóricas, musicalidade e mistério.
-> 2. Presa no corpo e no mundo, como num cárcere. Sonha com liberdade, imensidão e imortalidade, o “Espaço da Pureza”.
-> 3. Viram entidades absolutas, quase sagradas (maiúscula alegórica). Não é a dor de alguém, é a Dor.
-> 4. O som de “s” se repete (aliteração), sugerindo o soluço. No Simbolismo a música do verso sugere em vez de explicar.
-> 5. Com uma pergunta sem resposta. O Simbolismo não resolve o mistério: sugere, não explica.
+**32.** O “cárcere” do título representa
+- A) a condição da alma presa ao corpo e ao mundo material.
+- B) uma prisão real onde o eu lírico esteve.
+- C) um convento onde o eu lírico se isolou.
+- D) a solidão do poeta na cidade grande.
+- E) o medo da morte do eu lírico.
 
-### Versos íntimos — Augusto dos Anjos
-*Eu* (1912) · **Pré-Modernismo**
+**33.** As maiúsculas em “Pureza”, “Dor”, “Céu” e “Mistério” servem para
+- A) indicar nomes de pessoas.
+- B) marcar o início dos versos.
+- C) seguir a ortografia da época, sem efeito expressivo.
+- D) dar às palavras valor absoluto e simbólico.
+- E) indicar ironia.
 
-```
-Vês?! Ninguém assistiu ao formidável
-Enterro de tua última quimera.
-Somente a Ingratidão — esta pantera —
-Foi tua companheira inseparável!
+**34.** O poema termina com uma pergunta sem resposta, o que reforça
+- A) a certeza religiosa.
+- B) a ideia de mistério, típica do Simbolismo.
+- C) a crítica social.
+- D) a clareza parnasiana.
+- E) a indiferença do eu lírico.
 
-Acostuma-te à lama que te espera!
-O Homem, que, nesta terra miserável,
-Mora, entre feras, sente inevitável
-Necessidade de também ser fera.
-
-Toma um fósforo. Acende teu cigarro!
-O beijo, amigo, é a véspera do escarro,
-A mão que afaga é a mesma que apedreja.
-
-Se a alguém causa inda pena a tua chaga,
-Apedreja essa mão vil que te afaga,
-Escarra nessa boca que te beija!
-```
-
-1. Augusto dos Anjos é chamado de “inclassificável”. Que escolas se misturam neste soneto?
-2. Com quem o eu lírico fala, e que conselho ele dá?
-3. Encontre palavras “antipoéticas”, que ninguém esperaria num soneto. Que efeito elas causam?
-4. Explique a antítese “A mão que afaga é a mesma que apedreja”.
-5. Que visão do ser humano o poema tem? Ligue com a ideia de que o meio transforma o homem.
-
-> [!note]- Respostas
-> 1. Forma parnasiana (soneto, decassílabo, rima), pessimismo e musicalidade simbolistas, e vocabulário chocante. Por isso fica no Pré-Modernismo.
-> 2. Com um amigo (“tu”, “amigo”). Aconselha a não esperar nada de ninguém e a revidar: ser fera entre feras.
-> 3. Escarro, lama, fósforo, cigarro, pantera, chaga. Chocam e quebram a expectativa de beleza do soneto.
-> 4. O carinho e a agressão vêm da mesma pessoa: o ser humano é hipócrita e traiçoeiro.
-> 5. Pessimista: o homem vive entre feras e é obrigado a virar fera. O meio hostil molda o comportamento, como no determinismo.
-
-### Pronominais — Oswald de Andrade
-*Pau Brasil* (1925) · **Modernismo · 1ª geração**
+## Pequei, Senhor, mas não porque hei pecado — Gregório de Matos (século XVII) ★
+*Treino de escola: Barroco não caiu nas provas que temos.*
 
 ```
-Dê-me um cigarro
-Diz a gramática
-Do professor e do aluno
-E do mulato sabido
-Mas o bom negro e o bom branco
-Da Nação Brasileira
-Dizem todos os dias
-Deixa disso camarada
-Me dá um cigarro
+Pequei, Senhor, mas não porque hei pecado,
+Da vossa piedade me despido,
+Porque quanto mais tenho delinquido,
+Vos tenho a perdoar mais empenhado.
+
+Se basta a vos irar tanto um pecado,
+A abrandar-vos sobeja um só gemido,
+Que a mesma culpa, que vos há ofendido,
+Vos tem para o perdão lisonjeado.
+
+Se uma ovelha perdida, e já cobrada
+Glória tal, e prazer tão repentino
+Vos deu, como afirmais na Sacra História:
+
+Eu sou, Senhor, a ovelha desgarrada,
+Cobrai-a, e não queirais, Pastor divino,
+Perder na vossa ovelha a vossa glória.
 ```
 
-1. Qual é o movimento e a geração? Dê duas provas.
-2. Que regra de gramática está em jogo? Mostre as duas formas que aparecem.
-3. Quem usa cada forma, segundo o poema?
-4. O poema não tem rima, métrica fixa nem pontuação. Por que essa ausência é uma escolha?
-5. Ligue com o “tinha” de Drummond (FGV 2025.1-30): o que os dois fazem com a norma culta?
+**35.** O soneto pertence ao Barroco porque
+- A) exalta a vida simples no campo.
+- B) usa verso livre.
+- C) idealiza a mulher amada.
+- D) defende a arte pela arte.
+- E) apresenta conflito entre pecado e salvação, com antíteses e jogo de raciocínio.
 
-> [!note]- Respostas
-> 1. Modernismo, 1ª geração: verso livre, linguagem coloquial, humor (poema-piada) e valorização do jeito brasileiro de falar.
-> 2. A colocação do pronome: “Dê-me” (pronome depois do verbo, como manda a norma) × “Me dá” (pronome no começo da frase, como se fala no Brasil).
-> 3. A gramática, o professor, o aluno e o “mulato sabido” usam “Dê-me”; o povo da Nação, no dia a dia, diz “Me dá”.
-> 4. O poema imita a fala e ataca o formalismo parnasiano: a ausência de regra é o recado.
-> 5. Os dois usam a “infração” à norma culta como licença poética, para aproximar a poesia da língua falada no Brasil.
+**36.** O argumento do eu lírico para obter o perdão é que
+- A) nunca pecou de verdade.
+- B) já pagou seus pecados com sofrimento.
+- C) quanto mais pecou, maior a glória de Deus ao perdoá-lo.
+- D) outros pecaram mais do que ele.
+- E) Deus não tem o direito de julgá-lo.
+
+**37.** No primeiro terceto, há referência à
+- A) parábola da ovelha perdida.
+- B) criação do mundo.
+- C) história de Adão e Eva.
+- D) crucificação de Cristo.
+- E) torre de Babel.
+
+**38.** O raciocínio engenhoso, que “encurrala” Deus com lógica, é típico do
+- A) cultismo, o jogo de palavras e imagens.
+- B) bucolismo.
+- C) ufanismo.
+- D) conceptismo, o jogo de ideias e argumentos.
+- E) sentimentalismo romântico.
+
+## Autopsicografia — Fernando Pessoa (1932) ★
+*Literatura portuguesa: está no programa do Insper, não caiu nas provas que temos.*
+
+```
+O poeta é um fingidor.
+Finge tão completamente
+Que chega a fingir que é dor
+A dor que deveras sente.
+
+E os que leem o que escreve,
+Na dor lida sentem bem,
+Não as duas que ele teve,
+Mas só a que eles não têm.
+
+E assim nas calhas de roda
+Gira, a entreter a razão,
+Esse comboio de corda
+Que se chama coração.
+```
+
+**39.** Segundo a primeira estrofe, o poeta
+- A) só escreve o que sente de fato.
+- B) finge tão bem que finge até a dor que sente de verdade.
+- C) nunca sente dor.
+- D) escreve para curar a própria dor.
+- E) copia a dor dos leitores.
+
+**40.** Segundo a segunda estrofe, os leitores sentem
+- A) as duas dores do poeta.
+- B) só a dor real do poeta.
+- C) só a dor fingida do poeta.
+- D) alegria com a leitura.
+- E) uma dor que não é nenhuma das duas do poeta.
+
+**41.** Na última estrofe, o coração é comparado a
+- A) uma roda que gira sem parar.
+- B) um relógio.
+- C) um trenzinho de brinquedo (“comboio de corda”) que entretém a razão.
+- D) uma calha de água.
+- E) um pássaro preso.
+
+**42.** O tema central do poema é
+- A) a relação entre sentir, fingir e criar poesia.
+- B) o amor não correspondido.
+- C) o nacionalismo português.
+- D) a natureza.
+- E) a morte.
+
+## Gabarito
+
+- **1** C — “Do teu temperamento, homem prudente”: ele fala com “tu” (sê, teu, deixa-te).
+- **2** A — A árvore mostra o que já estava na semente; a vida deve mostrar o temperamento.
+- **3** D — “A ingrata aspiração de uma alma diferente”: querer transformar a própria forma inata.
+- **4** B — “Deixa-te ser!” e “sem nunca interpretar o seu sentido”.
+- **5** E — Forma clássica + tema filosófico = Pré-Modernismo com forma neoparnasiana. As erradas descrevem justamente o Modernismo.
+- **6** C — Soneto, rima rica, vocabulário culto, referência clássica (templo grego) e poesia como trabalho de ourives.
+- **7** A — Beneditino é monge: isolamento e disciplina, “longe do estéril turbilhão da rua”.
+- **8** D — Os verbos se acumulam um atrás do outro, como o trabalho que não acaba.
+- **9** B — “Que na forma se disfarce o emprego do esforço” e “sem lembrar os andaimes do edifício”.
+- **10** E — Para o parnasiano, o valor da arte está na própria beleza da forma.
+- **11** C — Poema-piada, sem rima e sem métrica, com a fala do dia a dia.
+- **12** A — “Dê-me” (pronome depois do verbo) × “Me dá” (pronome no começo da frase).
+- **13** D — “O bom negro e o bom branco da Nação Brasileira dizem todos os dias”.
+- **14** B — É a bandeira de 22: a língua brasileira como ela é falada.
+- **15** E — Na FGV 2025.1-30, a infração à norma culta foi tratada como licença poética.
+- **16** C — Versos de tamanhos diferentes e imagens soltas, como flashes da cidade.
+- **17** A — “Comoção de minha vida” e imagens opostas: luz e bruma, forno e inverno.
+- **18** D — Luz × bruma, forno × inverno: pares opostos.
+- **19** B — A roupa do Arlequim é feita de retalhos: a cidade mistura tudo.
+- **20** E — Galicismo é imitação do francês (“Perfumes de Paris”): a elite copiava a Europa.
+- **21** C — Augusto dos Anjos é “inclassificável”: forma antiga, conteúdo que choca.
+- **22** A — “O beijo, amigo, é a véspera do escarro”.
+- **23** D — Afagar × apedrejar: carinho e agressão vêm da mesma pessoa.
+- **24** B — O soneto era a forma “nobre”; o vocabulário é o oposto.
+- **25** E — “Mora, entre feras, sente inevitável / Necessidade de também ser fera”.
+- **26** C — Exaltação da terra natal e da natureza brasileira.
+- **27** A — Ele escreveu em Coimbra, onde estudava: “cá” é Portugal.
+- **28** D — Exílio + desejo de voltar.
+- **29** B — “Mais” do que onde? Do que lá fora: a comparação fica subentendida.
+- **30** E — “Não permita Deus que eu morra, / Sem que eu volte para lá”.
+- **31** C — Alma, transcendência, Pureza, Mistério: a escola da sugestão.
+- **32** A — É a alma que está presa, sonhando com liberdade e imortalidade.
+- **33** D — Não é a dor de alguém, é a Dor: maiúscula alegórica.
+- **34** B — O Simbolismo sugere; não explica.
+- **35** E — Tema religioso, culpa × perdão, raciocínio engenhoso.
+- **36** C — “Quanto mais tenho delinquido, / Vos tenho a perdoar mais empenhado”.
+- **37** A — A ovelha perdida e reencontrada, da Bíblia: “Eu sou, Senhor, a ovelha desgarrada”.
+- **38** D — Conceptismo = ideias; cultismo = palavras e imagens.
+- **39** B — “Chega a fingir que é dor / A dor que deveras sente”.
+- **40** E — “Não as duas que ele teve, / Mas só a que eles não têm”.
+- **41** C — Metáfora: o coração é o “comboio de corda” que gira para entreter a razão.
+- **42** A — É metalinguagem: um poema sobre como se faz poema.
 
 ## 🔗 Relacionados
 
