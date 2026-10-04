@@ -221,6 +221,12 @@ perguntar**, além do Brain: análise de simulado, compilado e fotos da prova em
 material de matéria (apostila, mapa, flashcards em `.html`/`.pdf`) em `iCloud/Materias/<matéria>/`.
 Copiar com `cp` ou `rsync -a` e conferir pelo hash que a cópia é igual ao original.
 
+**Atualização (04/10, madrugada):** a pedido dela, o estudo de um dia ganhou **pasta própria** na raiz do
+iCloud: `Correção e teoria dos simulados (04-10)`, com os PDFs numerados na ordem do dia
+(`0 - Cronograma do dia`, `1 - Língua Portuguesa (06h25 e 11h20)`...), o compilado, a subpasta
+`Análises de cada simulado` e a tela de fundo do celular com a rotina. As cópias por matéria em
+`Materias/` continuam. Próximo pacote de estudo do mesmo tipo: mesma forma, nome com a data.
+
 ## 🔗 Relacionados
 
 [[Brain]]
