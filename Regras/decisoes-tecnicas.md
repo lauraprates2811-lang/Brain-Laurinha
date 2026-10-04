@@ -215,6 +215,12 @@ ela recebe e não entra no Brain (cadernos do cursinho, rascunhos de redação) 
 antigas FGV`, `Downloads/L.Portuguesa`) ficam como ela deixou. Isso substitui o "nada de cópia
 fora do Brain" de 23/09 só para o iCloud, e resolve o backup das provas e apostilas.
 
+**Atualização (03/10, noite):** ela autorizou: "sempre quando criar esse tipo de coisa pode colocar no
+iCloud Drive". Agora todo material que o Claude cria para ela abrir vai para o iCloud **na hora, sem
+perguntar**, além do Brain: análise de simulado, compilado e fotos da prova em `iCloud/Simulados/`;
+material de matéria (apostila, mapa, flashcards em `.html`/`.pdf`) em `iCloud/Materias/<matéria>/`.
+Copiar com `cp` ou `rsync -a` e conferir pelo hash que a cópia é igual ao original.
+
 ## 🔗 Relacionados
 
 [[Brain]]
