@@ -450,6 +450,74 @@
 > **Zeugma:** omite termo já dito; a vírgula marca o lugar ("Eu prefiro café; ela, chá.").
 > **Elipse:** omite termo que não apareceu ("Estudamos ontem").
 
+### Escrita: o que derruba a redação (análise de 05/10)
+
+> [!question]- 90. Que regra de acento você mais esquece? (camera, medico, rapida, cronica)
+> **Proparoxítona:** a sílaba forte é a antepenúltima → **sempre** tem acento.
+> Teste: fale batendo na sílaba forte (**CÂ**-me-ra, **MÉ**-di-co).
+> ⚠️ Suas redações: câmera, estética, rápida, dúvida, próxima, médicos, crônicas, práticos (análise de 05/10).
+
+> [!question]- 91. Acentue: memoria · comercio · frequencia · proprio · individuo
+> **memória · comércio · frequência · próprio · indivíduo**
+> Paroxítona terminada em ditongo (-ia, -io, -ência, -ância, -ário, -ório) leva acento.
+> ⚠️ A regra que mais aparece nas suas redações (Nostalgia, Eutanásia, IA, Democracia).
+
+> [!question]- 92. "Eles vem" ou "eles vêm"? "Eles tem" ou "eles têm"?
+> **Vêm, têm** (plural, com circunflexo).
+> Singular: ele vem, ele tem.
+> ⚠️ Nostalgia: "muitas vezes vem acompanhado" → vêm acompanhados.
+
+> [!question]- 93. Plural de decisão, eleição, gestão, situação
+> **decisões, eleições, gestões, situações**: -ões, com til e sem n. Nunca "-oens".
+> ⚠️ Redação Democracia: decisoens, eleiçoens, gestoens, situaçoens.
+
+> [!question]- 94. "Eles utilizão" ou "eles utilizam"?
+> **Utilizam.** Presente e passado terminam em **-am** (utilizam, optam, suportaram).
+> **-ão** só no futuro, com força no fim (terão, trarão).
+> E é **u**tilizar, sem L.
+> ⚠️ Redação Crianças em ambientes digitais: "ultilizão".
+
+> [!question]- 95. Escreva certo: almentar · recentimente · apartir · contra partida · bem estar · opitar
+> **aumentar · recentemente · a partir · contrapartida · bem-estar · optar**
+> Você escreve pelo som: "al" e "au" soam igual; o "i" de "opitar" se fala e não se escreve.
+> ⚠️ Nostalgia, 6x1 e Democracia (análise de 05/10).
+
+> [!question]- 96. "Devido a evolução" ou "devido à evolução"?
+> **Devido à.** Teste do masculino: "devido **ao** avanço" → "devido **à** evolução".
+> Também: veio **à** tona · diante **da** realidade · perante **o** avanço (perante não pede "a").
+> ⚠️ "devido a" sem crase 2 vezes (IA e Lição 2); "veio a tona" (6x1).
+
+> [!question]- 97. "Sentimentos que compõe" ou "que compõem"?
+> **Compõem.** Depois de "que", o verbo concorda com a palavra que o "que" retoma: sentimentos → compõem.
+> ⚠️ Nostalgia. Também "empresas que não suporta" → suportam (6x1).
+
+> [!question]- 98. "A violência sempre esteve presente, isso ocorre por..." Pode?
+> **Não.** Duas frases inteiras coladas por vírgula: é o truncamento que a FGV pune.
+> Use ponto: "...presente. Isso ocorre porque..."
+> ⚠️ Comentário da professora na Lição 2 (Violência contra a mulher).
+
+> [!question]- 99. Frase que começa com "Visto que" ou "Embora" precisa de quê?
+> De uma **oração principal** depois: "Visto que X, Y acontece."
+> Sem o Y, a frase fica quebrada. Regra prática: frase de no máximo 2 linhas.
+> ⚠️ Redação de IA: 3 frases sem oração principal.
+
+### Gramática de prova (análise de 05/10)
+
+> [!question]- 100. Voz passiva: "acompanhavam" vira o quê?
+> **Eram acompanhados.** O "ser" fica no **mesmo tempo** do verbo original + particípio concordando com o novo sujeito.
+> acompanham → são · acompanharam → foram · acompanhariam → seriam.
+> ⚠️ Insper 2026.2 Q3 (marcou "seriam"). ⭐ Voz passiva: 5 questões em 4 das 6 edições (2021.1-DIS-LP2, 2022.1-DIS-LP19, 2025.1-DIS-LP6, 2026.1-OBJ-21, 2026.1-DIS-LP5).
+
+> [!question]- 101. "Um tema onde o Estado reassume o protagonismo": certo na norma-padrão?
+> **Não.** "Onde" só retoma **lugar físico**. Tema, época, situação → **em que** / **no qual**.
+> "Aonde" só com verbo de movimento (ir, chegar).
+> ⚠️ Insper 2026.2 Q7 (marcou "aonde").
+
+> [!question]- 102. Prefixos de posição: abaixo, acima, além, através
+> **Abaixo:** infra-, sub-, hipo- · **acima:** super-, supra-, sobre-, hiper- · **além:** ultra- · **através:** trans- · **dentro:** intra- · **fora:** extra-, ex- · **em volta:** peri-
+> Teste: tire o pedaço; sobrou palavra? (de|trimento não; infra|estrutura sim)
+> ⚠️ Insper 2026.2 Q8. 5º erro de formação de palavras em 2 semanas.
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]
