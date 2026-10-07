@@ -33,6 +33,8 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
     página https://claude.ai/artifact/HiwWwWvnB36aiHeWvvwgk6); os cards também estão no baralho do trajeto
   - [[europa-uniao-europeia-e-leste-europeu]] — Frente 2, aula 11: mapa mental e 47 flashcards (também
     em `.html` e na página https://claude.ai/artifact/7QMCoANtdc8oAu7FtzyTs7); 45 deles no baralho do trajeto
+  - [[clima-do-brasil]] — clima de cada região (pedido de 07/10): régua do ano, fichas, massas de ar e
+    51 flashcards (também em `.html` e na página https://claude.ai/artifact/X4jjr4UUB9ipSuWo5V47j4)
 - `lingua-portuguesa/`
   - [[formacao-de-palavras-e-efeitos-de-sentido]] — método "questão primeiro", 20 questões de treino,
     33 flashcards e 14 questões reais da FGV, da apostila CPV aula 12 (também em `.html`)

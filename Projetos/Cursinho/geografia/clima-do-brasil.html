@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clima das Regiões Brasileiras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: almanaque do tempo. Uma régua de 12 meses por região (chuva em cima, temperatura embaixo), fichas por região e o baralho filtrado por região e por tipo. */
+:root{
+  --ground:#E4E9EC; --surface:#F5F8F9; --surface-2:#EAF0F2; --ink:#152027; --muted:#52616B; --line:#C6D0D6;
+  --r-norte:#1E6B41; --r-nordeste:#A2502C; --r-centro:#8A5D0C; --r-sudeste:#1A7569; --r-sul:#5D4691; --r-brasil:#3E4C63;
+  --rain:#2D6FA3; --rain-lt:#B5D1E8; --dry:#E2CD9C; --hot:#C4512F; --mild:#EDC874; --cold:#7890B3;
+  --ok:#2F7A45; --rev:#B0461F; --stamp:#152027; --focus:#2D6FA3;
+  --display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0F151A; --surface:#172027; --surface-2:#1E2830; --ink:#E1E9EE; --muted:#93A2AC; --line:#2C3841;
+    --r-norte:#6CC48F; --r-nordeste:#EE9670; --r-centro:#E0B25A; --r-sudeste:#63C7B6; --r-sul:#B7A3EC; --r-brasil:#A9B6CC;
+    --rain:#5A9FD6; --rain-lt:#2A4A64; --dry:#5C4C2B; --hot:#E2724F; --mild:#A08139; --cold:#8199C0;
+    --ok:#6CC486; --rev:#F08C5E; --stamp:#E1E9EE; --focus:#7DB7E6;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0F151A; --surface:#172027; --surface-2:#1E2830; --ink:#E1E9EE; --muted:#93A2AC; --line:#2C3841;
+  --r-norte:#6CC48F; --r-nordeste:#EE9670; --r-centro:#E0B25A; --r-sudeste:#63C7B6; --r-sul:#B7A3EC; --r-brasil:#A9B6CC;
+  --rain:#5A9FD6; --rain-lt:#2A4A64; --dry:#5C4C2B; --hot:#E2724F; --mild:#A08139; --cold:#8199C0;
+  --ok:#6CC486; --rev:#F08C5E; --stamp:#E1E9EE; --focus:#7DB7E6;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(38px,7vw,66px);line-height:.92;letter-spacing:.005em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0}
+.lede b{font-weight:600}
+.note{max-width:72ch;font-size:14px;color:var(--muted);border-left:3px solid var(--rain);padding:4px 0 4px 12px;margin:0}
+.note b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 15px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible,.card:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.sec-title{margin:0;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px 16px;display:grid;gap:12px;min-width:0}
+.panel h2{margin:0;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:26px;line-height:1;text-transform:uppercase}
+.panel .sub{margin:0;font-size:14px;color:var(--muted);max-width:72ch}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend .grp{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.legend .k{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.legend span.it{display:inline-flex;align-items:center;gap:5px}
+.sw{width:18px;height:12px;border-radius:3px;display:inline-block;border:1px solid var(--line)}
+
+.year{display:grid;gap:0}
+.yr-row{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.yr-row.head{border-top:0;padding:0 0 4px}
+.yr-label{display:grid;gap:2px;align-content:start;min-width:0}
+.yr-label b{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:20px;line-height:1.05;text-transform:uppercase;color:var(--c)}
+.yr-label span{font-size:13px;color:var(--muted);line-height:1.3}
+.yr-lines{display:grid;grid-template-columns:50px minmax(0,1fr);column-gap:8px;row-gap:4px;align-items:center;min-width:0}
+.yr-lines .k{font:500 10.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.cells{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3px}
+.cells i{display:block;height:18px;border-radius:3px}
+.cells.mon span{font:500 11px/1 var(--mono);color:var(--muted);text-align:center;text-transform:uppercase}
+.cells.sea span{font:500 10.5px/1.1 var(--mono);text-align:center;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:3px 0;white-space:nowrap;overflow:hidden;letter-spacing:.02em}
+.cells.sea span.inv{border-color:var(--cold)}
+.cells.sea span.ver{border-color:var(--hot)}
+.yr-note{grid-column:2;margin:2px 0 0;font-size:13.5px;line-height:1.35;color:var(--ink)}
+.c-C{background:var(--rain)} .c-M{background:var(--rain-lt)} .c-S{background:var(--dry)}
+.c-J{background:repeating-linear-gradient(135deg,var(--rain) 0 3px,var(--rain-lt) 3px 7px)}
+.t-Q{background:var(--hot)} .t-A{background:var(--mild)} .t-F{background:var(--cold)}
+.foot{font-size:12.5px;color:var(--muted);margin:0}
+
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.region{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:8px;padding:12px 14px 14px;display:grid;gap:8px;align-content:start;min-width:0}
+.region h3{margin:0;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:26px;line-height:1;text-transform:uppercase;color:var(--c)}
+.region dl{margin:0;display:grid;gap:7px;font-size:14.5px;line-height:1.38}
+.region dt{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.region dd{margin:2px 0 0}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:2px;white-space:nowrap;vertical-align:1px}
+
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:0}
+td:first-child{font-weight:600;white-space:nowrap}
+td small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+.memo{margin:0;font-size:14px}
+.memo b{font-weight:600}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips.types{padding-top:2px}
+.chip{--c:var(--ink);font:500 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+.chips.types .chip{font-size:13px;padding:6px 10px;background:var(--surface-2)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:340px;border-radius:12px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);min-width:0}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.meta em{font-style:normal;color:var(--muted)}
+.q{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(28px,4.6vw,40px);line-height:1.04;letter-spacing:.005em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:13px;color:var(--muted)}
+.a{align-self:start;font-size:16px;min-width:0}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font-family:var(--display);font-weight:700;font-stretch:75%;font-size:18px;line-height:1.1;text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 15px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn.small{padding:6px 10px;font-size:12.5px}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12.5px;color:var(--muted);margin:0}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:700px){
+  .yr-row{grid-template-columns:minmax(0,1fr);row-gap:6px}
+  .yr-row.head .yr-label{display:none}
+  .yr-lines{grid-template-columns:44px minmax(0,1fr)}
+  .cells{gap:2px}
+  .cells.mon span{font-size:9.5px}
+  .cells.sea span{font-size:9px;letter-spacing:0}
+}
+@media (max-width:760px){
+  .card{min-height:400px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Geografia · clima do Brasil · FGV, Insper e ENEM</div>
+    <h1>Clima das regiões</h1>
+    <p class="lede">Quase todo o Brasil é quente. O que separa uma região da outra é <b>quando chove</b> e <b>quanto esfria</b>: o Norte chove o ano todo, o Sertão quase não chove, o Centro-Oeste seca no inverno, o litoral nordestino chove no inverno e o Sul esfria de verdade.</p>
+    <p class="note"><b>No banco da FGV (2021–2026):</b> clima caiu em 4 das 6 provas, sempre na discursiva (efeito estufa, matriz energética, água e rios voadores). O clima de cada região nunca caiu sozinho; o elo é a questão dos rios voadores, de 2024.1. Insper e ENEM não estão no banco.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa" type="button">Mapa do clima</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards" type="button">Flashcards · 51</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+    <div class="panel">
+      <h2>O ano de cada região</h2>
+      <p class="sub">Em cada região, a linha de cima é a <b>chuva</b> e a de baixo é a <b>temperatura</b>. Compare com a faixa das estações: verão e inverno falam de calor e frio; chuvoso e seco falam de chuva.</p>
+      <div class="legend"><div class="grp"><span class="k">Chuva</span><span class="it"><i class="sw c-C"></i>chuvoso</span><span class="it"><i class="sw c-M"></i>chove menos</span><span class="it"><i class="sw c-J"></i>janela irregular</span><span class="it"><i class="sw c-S"></i>seco</span></div><div class="grp"><span class="k">Temperatura</span><span class="it"><i class="sw t-Q"></i>quente</span><span class="it"><i class="sw t-A"></i>ameno</span><span class="it"><i class="sw t-F"></i>frio</span></div></div>
+      <div class="year">
+<div class="yr-row head"><div class="yr-label"></div><div class="yr-lines"><span class="k">estação</span><div class="cells sea"><span class="ver" style="grid-column:1/3">verão</span><span style="grid-column:3/6">outono</span><span class="inv" style="grid-column:6/9">inverno</span><span style="grid-column:9/12">primavera</span><span class="ver" style="grid-column:12/13" title="verão">ver.</span></div><span class="k">mês</span><div class="cells mon" aria-hidden="true"><span>j</span><span>f</span><span>m</span><span>a</span><span>m</span><span>j</span><span>j</span><span>a</span><span>s</span><span>o</span><span>n</span><span>d</span></div></div></div>
+<div class="yr-row" style="--c:var(--r-norte)"><div class="yr-label"><b>Norte</b><span>Equatorial · Manaus, Belém</span></div><div class="yr-lines"><span class="k">chuva</span><div class="cells" role="img" aria-label="Chuva: jan chuvoso; fev chuvoso; mar chuvoso; abr chuvoso; mai chuvoso; jun chove menos; jul chove menos; ago chove menos; set chove menos; out chove menos; nov chove menos; dez chuvoso"><i class="c-C" title="jan: chuvoso"></i><i class="c-C" title="fev: chuvoso"></i><i class="c-C" title="mar: chuvoso"></i><i class="c-C" title="abr: chuvoso"></i><i class="c-C" title="mai: chuvoso"></i><i class="c-M" title="jun: chove menos"></i><i class="c-M" title="jul: chove menos"></i><i class="c-M" title="ago: chove menos"></i><i class="c-M" title="set: chove menos"></i><i class="c-M" title="out: chove menos"></i><i class="c-M" title="nov: chove menos"></i><i class="c-C" title="dez: chuvoso"></i></div><span class="k">temp.</span><div class="cells" role="img" aria-label="Temperatura: jan quente; fev quente; mar quente; abr quente; mai quente; jun quente; jul quente; ago quente; set quente; out quente; nov quente; dez quente"><i class="t-Q" title="jan: quente"></i><i class="t-Q" title="fev: quente"></i><i class="t-Q" title="mar: quente"></i><i class="t-Q" title="abr: quente"></i><i class="t-Q" title="mai: quente"></i><i class="t-Q" title="jun: quente"></i><i class="t-Q" title="jul: quente"></i><i class="t-Q" title="ago: quente"></i><i class="t-Q" title="set: quente"></i><i class="t-Q" title="out: quente"></i><i class="t-Q" title="nov: quente"></i><i class="t-Q" title="dez: quente"></i></div><p class="yr-note">Chove o ano todo. De junho a novembro chove menos, mas não chega a secar.</p></div></div>
+<div class="yr-row" style="--c:var(--r-nordeste)"><div class="yr-label"><b>Nordeste · Sertão</b><span>Semiárido · interior</span></div><div class="yr-lines"><span class="k">chuva</span><div class="cells" role="img" aria-label="Chuva: jan janela de chuva irregular; fev janela de chuva irregular; mar janela de chuva irregular; abr janela de chuva irregular; mai janela de chuva irregular; jun seco; jul seco; ago seco; set seco; out seco; nov seco; dez janela de chuva irregular"><i class="c-J" title="jan: janela de chuva irregular"></i><i class="c-J" title="fev: janela de chuva irregular"></i><i class="c-J" title="mar: janela de chuva irregular"></i><i class="c-J" title="abr: janela de chuva irregular"></i><i class="c-J" title="mai: janela de chuva irregular"></i><i class="c-S" title="jun: seco"></i><i class="c-S" title="jul: seco"></i><i class="c-S" title="ago: seco"></i><i class="c-S" title="set: seco"></i><i class="c-S" title="out: seco"></i><i class="c-S" title="nov: seco"></i><i class="c-J" title="dez: janela de chuva irregular"></i></div><span class="k">temp.</span><div class="cells" role="img" aria-label="Temperatura: jan quente; fev quente; mar quente; abr quente; mai quente; jun quente; jul quente; ago quente; set quente; out quente; nov quente; dez quente"><i class="t-Q" title="jan: quente"></i><i class="t-Q" title="fev: quente"></i><i class="t-Q" title="mar: quente"></i><i class="t-Q" title="abr: quente"></i><i class="t-Q" title="mai: quente"></i><i class="t-Q" title="jun: quente"></i><i class="t-Q" title="jul: quente"></i><i class="t-Q" title="ago: quente"></i><i class="t-Q" title="set: quente"></i><i class="t-Q" title="out: quente"></i><i class="t-Q" title="nov: quente"></i><i class="t-Q" title="dez: quente"></i></div><p class="yr-note">A chuva cai em 3 a 4 meses dentro dessa janela, e em alguns anos quase não vem.</p></div></div>
+<div class="yr-row" style="--c:var(--r-nordeste)"><div class="yr-label"><b>Nordeste · litoral leste</b><span>Tropical litorâneo · Recife, Salvador</span></div><div class="yr-lines"><span class="k">chuva</span><div class="cells" role="img" aria-label="Chuva: jan chove menos; fev chove menos; mar chove menos; abr chuvoso; mai chuvoso; jun chuvoso; jul chuvoso; ago chove menos; set chove menos; out chove menos; nov chove menos; dez chove menos"><i class="c-M" title="jan: chove menos"></i><i class="c-M" title="fev: chove menos"></i><i class="c-M" title="mar: chove menos"></i><i class="c-C" title="abr: chuvoso"></i><i class="c-C" title="mai: chuvoso"></i><i class="c-C" title="jun: chuvoso"></i><i class="c-C" title="jul: chuvoso"></i><i class="c-M" title="ago: chove menos"></i><i class="c-M" title="set: chove menos"></i><i class="c-M" title="out: chove menos"></i><i class="c-M" title="nov: chove menos"></i><i class="c-M" title="dez: chove menos"></i></div><span class="k">temp.</span><div class="cells" role="img" aria-label="Temperatura: jan quente; fev quente; mar quente; abr quente; mai quente; jun quente; jul quente; ago quente; set quente; out quente; nov quente; dez quente"><i class="t-Q" title="jan: quente"></i><i class="t-Q" title="fev: quente"></i><i class="t-Q" title="mar: quente"></i><i class="t-Q" title="abr: quente"></i><i class="t-Q" title="mai: quente"></i><i class="t-Q" title="jun: quente"></i><i class="t-Q" title="jul: quente"></i><i class="t-Q" title="ago: quente"></i><i class="t-Q" title="set: quente"></i><i class="t-Q" title="out: quente"></i><i class="t-Q" title="nov: quente"></i><i class="t-Q" title="dez: quente"></i></div><p class="yr-note">Chove mais no outono e no inverno: o contrário do resto do país.</p></div></div>
+<div class="yr-row" style="--c:var(--r-centro)"><div class="yr-label"><b>Centro-Oeste</b><span>Tropical típico · Brasília, Cuiabá</span></div><div class="yr-lines"><span class="k">chuva</span><div class="cells" role="img" aria-label="Chuva: jan chuvoso; fev chuvoso; mar chuvoso; abr chove menos; mai seco; jun seco; jul seco; ago seco; set seco; out chuvoso; nov chuvoso; dez chuvoso"><i class="c-C" title="jan: chuvoso"></i><i class="c-C" title="fev: chuvoso"></i><i class="c-C" title="mar: chuvoso"></i><i class="c-M" title="abr: chove menos"></i><i class="c-S" title="mai: seco"></i><i class="c-S" title="jun: seco"></i><i class="c-S" title="jul: seco"></i><i class="c-S" title="ago: seco"></i><i class="c-S" title="set: seco"></i><i class="c-C" title="out: chuvoso"></i><i class="c-C" title="nov: chuvoso"></i><i class="c-C" title="dez: chuvoso"></i></div><span class="k">temp.</span><div class="cells" role="img" aria-label="Temperatura: jan quente; fev quente; mar quente; abr quente; mai ameno; jun ameno; jul ameno; ago quente; set quente; out quente; nov quente; dez quente"><i class="t-Q" title="jan: quente"></i><i class="t-Q" title="fev: quente"></i><i class="t-Q" title="mar: quente"></i><i class="t-Q" title="abr: quente"></i><i class="t-A" title="mai: ameno"></i><i class="t-A" title="jun: ameno"></i><i class="t-A" title="jul: ameno"></i><i class="t-Q" title="ago: quente"></i><i class="t-Q" title="set: quente"></i><i class="t-Q" title="out: quente"></i><i class="t-Q" title="nov: quente"></i><i class="t-Q" title="dez: quente"></i></div><p class="yr-note">Verão chuvoso, inverno seco. O calor mais forte vem em setembro e outubro, antes das chuvas.</p></div></div>
+<div class="yr-row" style="--c:var(--r-sudeste)"><div class="yr-label"><b>Sudeste · interior</b><span>Tropical e de altitude · São Paulo, BH</span></div><div class="yr-lines"><span class="k">chuva</span><div class="cells" role="img" aria-label="Chuva: jan chuvoso; fev chuvoso; mar chuvoso; abr chove menos; mai chove menos; jun seco; jul seco; ago seco; set chove menos; out chuvoso; nov chuvoso; dez chuvoso"><i class="c-C" title="jan: chuvoso"></i><i class="c-C" title="fev: chuvoso"></i><i class="c-C" title="mar: chuvoso"></i><i class="c-M" title="abr: chove menos"></i><i class="c-M" title="mai: chove menos"></i><i class="c-S" title="jun: seco"></i><i class="c-S" title="jul: seco"></i><i class="c-S" title="ago: seco"></i><i class="c-M" title="set: chove menos"></i><i class="c-C" title="out: chuvoso"></i><i class="c-C" title="nov: chuvoso"></i><i class="c-C" title="dez: chuvoso"></i></div><span class="k">temp.</span><div class="cells" role="img" aria-label="Temperatura: jan quente; fev quente; mar quente; abr ameno; mai ameno; jun ameno; jul ameno; ago ameno; set ameno; out quente; nov quente; dez quente"><i class="t-Q" title="jan: quente"></i><i class="t-Q" title="fev: quente"></i><i class="t-Q" title="mar: quente"></i><i class="t-A" title="abr: ameno"></i><i class="t-A" title="mai: ameno"></i><i class="t-A" title="jun: ameno"></i><i class="t-A" title="jul: ameno"></i><i class="t-A" title="ago: ameno"></i><i class="t-A" title="set: ameno"></i><i class="t-Q" title="out: quente"></i><i class="t-Q" title="nov: quente"></i><i class="t-Q" title="dez: quente"></i></div><p class="yr-note">No interior de MG o inverno é seco de verdade; em SP, só mais seco. Nas serras, frio e geada.</p></div></div>
+<div class="yr-row" style="--c:var(--r-sul)"><div class="yr-label"><b>Sul</b><span>Subtropical · Curitiba, Porto Alegre</span></div><div class="yr-lines"><span class="k">chuva</span><div class="cells" role="img" aria-label="Chuva: jan chuvoso; fev chuvoso; mar chuvoso; abr chuvoso; mai chuvoso; jun chuvoso; jul chuvoso; ago chuvoso; set chuvoso; out chuvoso; nov chuvoso; dez chuvoso"><i class="c-C" title="jan: chuvoso"></i><i class="c-C" title="fev: chuvoso"></i><i class="c-C" title="mar: chuvoso"></i><i class="c-C" title="abr: chuvoso"></i><i class="c-C" title="mai: chuvoso"></i><i class="c-C" title="jun: chuvoso"></i><i class="c-C" title="jul: chuvoso"></i><i class="c-C" title="ago: chuvoso"></i><i class="c-C" title="set: chuvoso"></i><i class="c-C" title="out: chuvoso"></i><i class="c-C" title="nov: chuvoso"></i><i class="c-C" title="dez: chuvoso"></i></div><span class="k">temp.</span><div class="cells" role="img" aria-label="Temperatura: jan quente; fev quente; mar ameno; abr ameno; mai ameno; jun frio; jul frio; ago frio; set ameno; out ameno; nov ameno; dez quente"><i class="t-Q" title="jan: quente"></i><i class="t-Q" title="fev: quente"></i><i class="t-A" title="mar: ameno"></i><i class="t-A" title="abr: ameno"></i><i class="t-A" title="mai: ameno"></i><i class="t-F" title="jun: frio"></i><i class="t-F" title="jul: frio"></i><i class="t-F" title="ago: frio"></i><i class="t-A" title="set: ameno"></i><i class="t-A" title="out: ameno"></i><i class="t-A" title="nov: ameno"></i><i class="t-Q" title="dez: quente"></i></div><p class="yr-note">Chove nas quatro estações. Inverno frio, com geada; neve rara nas serras.</p></div></div>
+</div>
+      <p class="foot">Estações aproximadas por mês: o verão vai de 21/12 a 20/03 e o inverno de 21/06 a 22/09. Padrão geral de cada região; dentro dela há variações (veja as exceções).</p>
+    </div>
+
+    <h2 class="sec-title">As cinco regiões em fichas</h2>
+    <div class="regions">
+      <article class="region" style="--c:var(--r-norte)"><h3>Norte</h3><dl><div><dt>Clima</dt><dd>Equatorial: quente e úmido</dd></div><div><dt>Temperatura</dt><dd>Quente o ano todo (25 a 27 °C). Amplitude anual baixa</dd></div><div><dt>Chuva</dt><dd>Muita, mais de 2.000 mm. Mais de dez a mai; menos de jun a nov, sem seca de verdade</dd></div><div><dt>Marcas de prova</dt><dd>mEc · chuva de convecção à tarde · rios voadores <span class="fgv">★ 2024.1</span> · friagem no inverno</dd></div><div><dt>Exceções</dt><dd>Tocantins e sul do PA com inverno seco · Roraima chove de mai a ago</dd></div></dl></article>
+<article class="region" style="--c:var(--r-nordeste)"><h3>Nordeste</h3><dl><div><dt>Clima</dt><dd>Semiárido no Sertão · tropical litorâneo no litoral leste · tropical no oeste · equatorial no oeste do MA</dd></div><div><dt>Temperatura</dt><dd>Quente o ano todo. Serras e chapadas mais amenas</dd></div><div><dt>Chuva</dt><dd>Sertão: pouca (menos de 800 mm), em 3 a 4 meses, irregular. Litoral leste: chove bem, no outono e inverno (abr–jul)</dd></div><div><dt>Marcas de prova</dt><dd>Sombra de chuva da Borborema · rios intermitentes · El Niño agrava a seca · 1ª área árida em 2023</dd></div><div><dt>Exceções</dt><dd>Agreste = transição · Meio-Norte (MA, PI) mais úmido</dd></div></dl></article>
+<article class="region" style="--c:var(--r-centro)"><h3>Centro-Oeste</h3><dl><div><dt>Clima</dt><dd>Tropical típico: duas estações bem marcadas</dd></div><div><dt>Temperatura</dt><dd>Quente; no inverno, dias quentes e noites frescas. Pico de calor em set–out</dd></div><div><dt>Chuva</dt><dd>Chuvoso de out a mar; seco de mai a set (pior em ago–set). 1.200 a 1.800 mm</dd></div><div><dt>Marcas de prova</dt><dd>Umidade do ar abaixo de 20% no inverno · queimadas · mEc traz a chuva de verão · cheia do Pantanal no verão</dd></div><div><dt>Exceções</dt><dd>Norte de MT equatorial · sul de MS com frentes frias e geada</dd></div></dl></article>
+<article class="region" style="--c:var(--r-sudeste)"><h3>Sudeste</h3><dl><div><dt>Clima</dt><dd>Tropical de altitude nos planaltos · tropical litorâneo no litoral · tropical no interior · semiárido no norte de MG</dd></div><div><dt>Temperatura</dt><dd>Verão quente; inverno ameno; frio e geada nas serras</dd></div><div><dt>Chuva</dt><dd>Chuvoso de out a mar; inverno mais seco no interior. O litoral chove o ano todo</dd></div><div><dt>Marcas de prova</dt><dd>Chuva orográfica na Serra do Mar · temporais e deslizamentos no verão · inversão térmica e ilha de calor</dd></div><div><dt>Exceções</dt><dd>Norte de MG semiárido · serras (Mantiqueira) frias</dd></div></dl></article>
+<article class="region" style="--c:var(--r-sul)"><h3>Sul</h3><dl><div><dt>Clima</dt><dd>Subtropical úmido: quatro estações</dd></div><div><dt>Temperatura</dt><dd>Verão quente; inverno frio, com geada e neve rara nas serras. Maior amplitude anual do país</dd></div><div><dt>Chuva</dt><dd>Bem distribuída o ano todo, sem estação seca</dd></div><div><dt>Marcas de prova</dt><dd>mPa e frentes frias · minuano · ciclones extratropicais · El Niño = enchente; La Niña = estiagem</dd></div><div><dt>Exceções</dt><dd>Norte do PR mais quente, com chuva de verão · serras mais frias · litoral menos frio</dd></div></dl></article>
+    </div>
+
+    <div class="panel">
+      <h2>As massas de ar</h2>
+      <p class="memo">Para memorizar: <b>só uma é fria</b> (mPa) e <b>só uma é seca</b> (mTc). As outras três são quentes e úmidas.</p>
+      <div class="tablewrap"><table><thead><tr><th>Massa</th><th>Como é</th><th>Onde nasce</th><th>O que faz no Brasil</th></tr></thead><tbody><tr><td>mEc<small>Equatorial continental</small></td><td>quente e úmida</td><td>Amazônia</td><td>Chuva o ano todo no Norte; no verão leva chuva ao Centro-Oeste e ao Sudeste</td></tr><tr><td>mEa<small>Equatorial atlântica</small></td><td>quente e úmida</td><td>Atlântico, perto do Equador</td><td>Umidade no litoral do Norte e do Nordeste</td></tr><tr><td>mTa<small>Tropical atlântica</small></td><td>quente e úmida</td><td>Atlântico Sul</td><td>Atua o ano todo no litoral, do Nordeste ao Sul; chuva na Serra do Mar</td></tr><tr><td>mTc<small>Tropical continental</small></td><td>quente e seca</td><td>Chaco (Paraguai, Bolívia, Argentina)</td><td>Tempo quente e seco numa área pequena do interior: Centro-Oeste e oeste de SP e do PR</td></tr><tr><td>mPa<small>Polar atlântica</small></td><td>fria e úmida</td><td>Atlântico Sul, perto da Patagônia</td><td>Inverno: frentes frias, geada e neve rara no Sul, friagem na Amazônia</td></tr></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por região"></div>
+      <div class="chips types" id="tchips" role="group" aria-label="Filtrar por tipo"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn small" id="shuffle" type="button">Embaralhar</button> <button class="btn small" id="reset" type="button">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {"norte": {"n": "Norte", "c": "var(--r-norte)"}, "nordeste": {"n": "Nordeste", "c": "var(--r-nordeste)"}, "centro": {"n": "Centro-Oeste", "c": "var(--r-centro)"}, "sudeste": {"n": "Sudeste", "c": "var(--r-sudeste)"}, "sul": {"n": "Sul", "c": "var(--r-sul)"}, "brasil": {"n": "Comparando regiões", "c": "var(--r-brasil)"}};
+  var TP = {"clima": "Clima", "temp": "Temperatura", "chuva": "Chuva", "fen": "Massas e fenômenos", "exc": "Exceções"};
+  var CARDS = [{"b": "norte", "t": "clima", "q": "Qual é o clima predominante na Região Norte?", "a": "<p><b>Equatorial<\/b>: quente e úmido o ano todo.<\/p><p>Por quê: a região fica perto da <b>linha do Equador<\/b> (Sol forte o ano inteiro), e a floresta e os rios soltam muita umidade.<\/p>"}, {"b": "norte", "t": "temp", "q": "Como são as temperaturas no clima equatorial?", "a": "<p><b>Quentes o ano todo<\/b>: média de 25 a 27 °C.<\/p><p>Verão e inverno quase iguais: <b>amplitude térmica anual baixa<\/b>.<\/p><p>Detalhe de prova: a diferença entre o dia e a noite costuma ser maior que a diferença entre os meses.<\/p>"}, {"b": "norte", "t": "chuva", "q": "Como é a chuva no Norte ao longo do ano?", "a": "<p><b>Muita chuva<\/b>: mais de 2.000 mm por ano.<\/p><ul><li><b>Mais chuvoso:<\/b> dezembro a maio<\/li><li><b>Menos chuvoso:<\/b> junho a novembro<\/li><\/ul><p>Na maior parte da região <b>não existe seca de verdade<\/b>: só chove menos.<\/p>"}, {"b": "norte", "t": "chuva", "q": "Que chuva cai quase todo fim de tarde na Amazônia, e por quê?", "a": "<p><b>Chuva de convecção<\/b> (convectiva).<\/p><p>O calor da manhã evapora a água da floresta e dos rios → o ar quente e úmido <b>sobe<\/b>, esfria e condensa → pancada à tarde.<\/p>"}, {"b": "norte", "t": "chuva", "q": "O que é o \"inverno amazônico\"?", "a": "<p>É como o povo do Norte chama a <b>época de mais chuva<\/b> (dez–mai). A de menos chuva (jun–nov) vira o \"verão\".<\/p><p><b>Não tem a ver com frio<\/b>: a temperatura quase não muda. Na prova, inverno é a estação do meio do ano.<\/p>"}, {"b": "norte", "t": "fen", "q": "Qual massa de ar se forma na Amazônia, e como ela é?", "a": "<p><b>mEc (Equatorial continental)<\/b>: quente e úmida.<\/p><p>Garante a chuva do Norte e, no <b>verão<\/b>, avança e leva chuva ao Centro-Oeste e ao Sudeste.<\/p>"}, {"b": "norte", "t": "fen", "q": "Qual fenômeno pode provocar queda de temperatura na Amazônia?", "a": "<p>A <b>friagem<\/b>.<\/p><p>No <b>inverno<\/b>, a massa <b>Polar atlântica (mPa)<\/b> sobe pelo interior do continente, entre os Andes e o Planalto Brasileiro, e chega ao sudoeste da Amazônia (AC, RO, sul do AM).<\/p><p>A temperatura despenca de repente e fica baixa por alguns dias.<\/p>"}, {"b": "norte", "t": "fen", "q": "O que são os rios voadores?", "fgv": "2024.1-DIS-CH6", "a": "<p>Umidade que sai da <b>transpiração da floresta<\/b> amazônica, é levada pelos ventos, <b>barrada pelos Andes<\/b> e desviada para o <b>Centro-Oeste, o Sudeste e o Sul<\/b>, onde vira chuva.<\/p><p>Desmatar a Amazônia = menos chuva nessas regiões.<\/p>"}, {"b": "norte", "t": "exc", "q": "Quais são as exceções ao clima equatorial no Norte?", "a": "<ul><li><b>Tocantins e sul do Pará:<\/b> clima tropical, com <b>inverno seco<\/b> (mai–set), igual ao Centro-Oeste<\/li><li><b>Roraima:<\/b> fica ao norte do Equador, então o calendário muda: chove mais de <b>maio a agosto<\/b>, e a seca é de <b>dezembro a março<\/b><\/li><\/ul>"}, {"b": "nordeste", "t": "clima", "q": "Quais são os climas do Nordeste, e onde fica cada um?", "a": "<ul><li><b>Semiárido:<\/b> Sertão (interior)<\/li><li><b>Tropical litorâneo (úmido):<\/b> litoral leste, a Zona da Mata<\/li><li><b>Tropical:<\/b> oeste (oeste da BA, sul do MA e do PI)<\/li><li><b>Equatorial:<\/b> oeste do Maranhão<\/li><\/ul><p>O <b>Agreste<\/b> fica no meio, como transição.<\/p>"}, {"b": "nordeste", "t": "temp", "q": "Como é a temperatura no Nordeste?", "a": "<p><b>Quente o ano todo<\/b> em quase toda a região, com <b>amplitude térmica anual baixa<\/b>.<\/p><p>Exceção: <b>serras e chapadas<\/b> (Planalto da Borborema, Chapada Diamantina) são mais amenas, por causa da altitude.<\/p>"}, {"b": "nordeste", "t": "chuva", "q": "Como funciona o regime de chuvas do clima semiárido?", "a": "<ul><li><b>Pouca chuva:<\/b> em geral menos de 800 mm por ano<\/li><li><b>Concentrada:<\/b> 3 a 4 meses, entre o verão e o outono<\/li><li><b>Irregular:<\/b> há anos de seca forte<\/li><\/ul><p>O resto do ano é <b>seco<\/b>. Evapora mais do que chove, por isso a maioria dos rios é <b>intermitente<\/b>.<\/p>"}, {"b": "nordeste", "t": "chuva", "q": "Quando chove no Sertão?", "a": "<p>Depende da parte:<\/p><ul><li><b>Norte do Sertão (CE, RN):<\/b> fevereiro a maio, a \"quadra chuvosa\"<\/li><li><b>Sul do Sertão (BA):<\/b> mais no verão, por volta de novembro a março<\/li><\/ul><p>No resto do ano, seca. O sertanejo chama a época da chuva de <b>\"inverno\"<\/b>, mesmo sendo quente.<\/p>"}, {"b": "nordeste", "t": "chuva", "q": "Por que chove tão pouco no Sertão?", "a": "<ul><li><b>Relevo:<\/b> a umidade do mar descarrega na encosta do <b>Planalto da Borborema<\/b> e das chapadas, virada para o litoral. Do outro lado, o ar chega seco: é a <b>sombra de chuva<\/b><\/li><li>As massas de ar úmidas chegam <b>fracas<\/b> ao interior<\/li><li><b>Calor forte<\/b> = muita evaporação<\/li><li>O <b>El Niño<\/b> agrava as secas<\/li><\/ul>"}, {"b": "nordeste", "t": "chuva", "q": "Como é o clima do litoral leste do Nordeste (Recife, Salvador)?", "a": "<p><b>Tropical litorâneo (úmido)<\/b>: quente o ano todo e chuvoso.<\/p><p>A pegadinha: a chuva se concentra no <b>outono e no inverno (abr–jul)<\/b>, não no verão. Vem da umidade da massa <b>Tropical atlântica (mTa)<\/b> e das <b>frentes frias<\/b> que chegam ao litoral no meio do ano.<\/p>"}, {"b": "nordeste", "t": "exc", "q": "O que é o Agreste, do ponto de vista do clima?", "a": "<p>A <b>faixa de transição<\/b> entre a Zona da Mata (úmida) e o Sertão (seco).<\/p><p>Chove mais que no Sertão e menos que no litoral. As partes altas, como a Borborema, são mais amenas.<\/p>"}, {"b": "nordeste", "t": "fen", "q": "O que um estudo de 2023 achou no semiárido?", "a": "<p>A <b>primeira área de clima árido<\/b> do Brasil (e não só semiárido), no <b>norte da Bahia<\/b>, com cerca de 5.700 km² (INPE e Cemaden).<\/p><p>Sinal de que o semiárido está ficando mais seco.<\/p>"}, {"b": "nordeste", "t": "exc", "q": "Como é o clima do Meio-Norte (Maranhão e Piauí)?", "a": "<p><b>Transição<\/b> entre a Amazônia úmida e o Sertão seco.<\/p><ul><li><b>Oeste do MA:<\/b> equatorial, bem chuvoso<\/li><li><b>Rumo ao PI:<\/b> tropical, com chuva de janeiro a abril e seca no segundo semestre<\/li><\/ul><p>É a área da <b>Mata dos Cocais<\/b> (babaçu e carnaúba).<\/p>"}, {"b": "centro", "t": "clima", "q": "Qual é o clima predominante no Centro-Oeste?", "a": "<p><b>Tropical típico<\/b> (também chamado de continental ou semiúmido).<\/p><p>Marca registrada: <b>duas estações bem definidas<\/b>, verão chuvoso e inverno seco. É o clima do Cerrado.<\/p>"}, {"b": "centro", "t": "chuva", "q": "Quando ocorre o período chuvoso no Centro-Oeste?", "a": "<ul><li><b>Chuvoso:<\/b> outubro a março (às vezes até abril), na primavera e no verão<\/li><li><b>Seco:<\/b> maio a setembro, no inverno. O pior é em agosto e setembro<\/li><\/ul><p>No total chove bem, 1.200 a 1.800 mm por ano. O problema é que vem tudo concentrado.<\/p>"}, {"b": "centro", "t": "temp", "q": "Como é a temperatura no Centro-Oeste ao longo do ano?", "a": "<p><b>Quente<\/b> na maior parte do ano.<\/p><p><b>Inverno:<\/b> dias quentes e noites frescas.<\/p><p>Pegadinha: o <b>calor mais forte<\/b> costuma vir em <b>setembro e outubro<\/b>, no fim da seca e antes das chuvas, e não no meio do verão.<\/p>"}, {"b": "centro", "t": "fen", "q": "O que acontece com a umidade do ar no inverno do Centro-Oeste?", "a": "<p><b>Cai muito.<\/b> Em Brasília, pode ficar abaixo de 20% em agosto e setembro, nível de alerta para a saúde.<\/p><p>Ar seco + vegetação seca = <b>queimadas<\/b> e fumaça.<\/p><p>O céu limpo também aumenta a <b>amplitude térmica diária<\/b>: o calor do dia escapa à noite.<\/p>"}, {"b": "centro", "t": "fen", "q": "Qual massa de ar traz a chuva de verão ao Centro-Oeste?", "a": "<p>A <b>mEc (Equatorial continental)<\/b>, quente e úmida, que vem da Amazônia, junto com os <b>rios voadores<\/b>.<\/p><p>No inverno ela recua para o norte, e o ar seco toma conta.<\/p>"}, {"b": "centro", "t": "chuva", "q": "Como o clima explica a cheia do Pantanal?", "a": "<p>As <b>chuvas de verão<\/b> (out–mar) enchem os rios da bacia do Paraguai, e a planície alaga: é a <b>cheia<\/b>.<\/p><p>No <b>inverno seco<\/b>, a água baixa: vazante e seca.<\/p>"}, {"b": "centro", "t": "exc", "q": "Quais são as exceções de clima no Centro-Oeste?", "a": "<ul><li><b>Norte de MT:<\/b> equatorial (Amazônia), mais úmido e com seca mais curta<\/li><li><b>Sul de MS:<\/b> inverno mais frio, com frentes frias e até geada<\/li><li><b>Planalto Central<\/b> (Brasília, a mais de 1.000 m): um pouco mais ameno<\/li><\/ul>"}, {"b": "sudeste", "t": "clima", "q": "Quais são os climas do Sudeste, e onde fica cada um?", "a": "<ul><li><b>Tropical de altitude:<\/b> planaltos e serras (SP, sul de MG, serras do RJ e do ES)<\/li><li><b>Tropical litorâneo (úmido):<\/b> litoral<\/li><li><b>Tropical típico:<\/b> interior (oeste de SP e de MG)<\/li><li><b>Semiárido:<\/b> norte de MG<\/li><\/ul><p>O que explica a variedade: o <b>relevo<\/b> e a distância do mar.<\/p>"}, {"b": "sudeste", "t": "temp", "q": "O que muda no clima tropical de altitude?", "a": "<p>O calendário é o do tropical (verão chuvoso, inverno mais seco), mas a <b>altitude deixa tudo mais ameno<\/b>: cerca de 0,6 °C a menos a cada 100 m.<\/p><p>Verão menos quente, inverno frio, com <b>geada nas serras<\/b> (Mantiqueira, Campos do Jordão).<\/p>"}, {"b": "sudeste", "t": "temp", "q": "Como são o verão e o inverno no Sudeste?", "a": "<ul><li><b>Verão:<\/b> quente e chuvoso, com temporais de fim de tarde<\/li><li><b>Inverno:<\/b> ameno e mais seco no interior; frio nas serras<\/li><\/ul><p>Chuva concentrada de <b>outubro a março<\/b>. No interior de MG o inverno é seco de verdade; em São Paulo, só mais seco.<\/p>"}, {"b": "sudeste", "t": "chuva", "q": "Como é o clima do litoral do Sudeste?", "a": "<p><b>Tropical litorâneo (úmido):<\/b> quente e úmido, chove o ano todo (mais no verão).<\/p><p>A umidade da <b>mTa<\/b> bate na <b>Serra do Mar<\/b>, sobe e vira <b>chuva orográfica<\/b>: a encosta da serra está entre as áreas mais chuvosas do país.<\/p>"}, {"b": "sudeste", "t": "fen", "q": "Por que o verão do Sudeste tem enchentes e deslizamentos?", "a": "<p><b>Chuva forte e concentrada<\/b> + <b>serras íngremes<\/b> + <b>desmatamento e ocupação<\/b> das encostas.<\/p><p>Exemplos: Região Serrana do RJ (2011) e São Sebastião (2023).<\/p>"}, {"b": "sudeste", "t": "fen", "q": "O que é inversão térmica, e quando ela piora em São Paulo?", "a": "<p>Normalmente o ar perto do chão é mais quente, sobe e leva a poluição embora.<\/p><p>Na inversão, uma camada de <b>ar quente fica por cima do ar frio<\/b> e funciona como tampa: a <b>poluição fica presa<\/b>.<\/p><p>É mais comum no <b>inverno<\/b>: noites frias, ar seco e pouco vento.<\/p>"}, {"b": "sudeste", "t": "fen", "q": "O que é ilha de calor?", "a": "<p>O <b>centro das grandes cidades<\/b> fica mais quente que a periferia e o campo.<\/p><p>Causas: asfalto e concreto guardam calor, há pouca vegetação e pouca água, os prédios barram o vento, e carros e indústrias soltam calor.<\/p>"}, {"b": "sudeste", "t": "exc", "q": "Quais são as exceções de clima no Sudeste?", "a": "<ul><li><b>Norte de MG:<\/b> semiárido, como o Sertão<\/li><li><b>Serras<\/b> (Mantiqueira, alto da Serra do Mar): frio e geada no inverno<\/li><li><b>Litoral:<\/b> chove o ano todo, sem seca<\/li><\/ul>"}, {"b": "sul", "t": "clima", "q": "Qual é o clima predominante no Sul, e por que ele é diferente?", "a": "<p><b>Subtropical (úmido).<\/b><\/p><p>A região fica quase toda <b>abaixo do Trópico de Capricórnio<\/b>, mais longe do Equador. Por isso é a mais fria do país e tem <b>quatro estações bem definidas<\/b>.<\/p>"}, {"b": "sul", "t": "temp", "q": "Como são as temperaturas no Sul ao longo do ano?", "a": "<ul><li><b>Verão (dez–fev):<\/b> quente nas áreas baixas, ameno nas serras<\/li><li><b>Outono e primavera:<\/b> amenos<\/li><li><b>Inverno (jun–ago):<\/b> frio, com geada frequente<\/li><\/ul><p>É a região com a <b>maior amplitude térmica anual<\/b> e as menores médias do país.<\/p>"}, {"b": "sul", "t": "chuva", "q": "Como é a chuva no Sul?", "a": "<p><b>Bem distribuída o ano todo.<\/b> Não tem estação seca.<\/p><p>Essa é a grande diferença: no Sul não existe o esquema \"verão chuvoso, inverno seco\".<\/p><p>Chuva <b>frontal<\/b> (frentes frias) o ano todo, <b>convectiva<\/b> no verão e <b>orográfica<\/b> nas serras.<\/p>"}, {"b": "sul", "t": "temp", "q": "Onde neva no Brasil?", "a": "<p>Nas <b>áreas mais altas do Sul<\/b>: Serra Catarinense (São Joaquim, Urubici) e Campos de Cima da Serra, no RS.<\/p><p>Só no <b>inverno<\/b>, com ar polar, e <b>não é todo ano<\/b>.<\/p>"}, {"b": "sul", "t": "fen", "q": "Qual massa de ar mais marca o inverno do Sul?", "a": "<p>A <b>mPa (Polar atlântica)<\/b>: fria e úmida.<\/p><p>Chega em <b>frentes frias<\/b>: chuva na passagem, depois céu limpo, frio forte e geada.<\/p><p>No RS, depois da frente fria, sopra o <b>minuano<\/b>: vento frio e seco do sudoeste.<\/p>"}, {"b": "sul", "t": "fen", "q": "O que é geada, e quando ela acontece?", "a": "<p><b>Gelo que se forma sobre plantas e solo<\/b> quando a temperatura perto do chão chega a 0 °C ou menos.<\/p><p>Acontece em <b>noites de inverno frias, de céu limpo e sem vento<\/b>, depois de uma frente fria. Prejudica lavouras: a geada de 1975 acabou com boa parte do café do Paraná.<\/p>"}, {"b": "sul", "t": "fen", "q": "Que fenômenos extremos atingem o Sul?", "a": "<ul><li><b>Ciclones extratropicais:<\/b> ventos fortes e muita chuva (RS, 2023)<\/li><li><b>Furacão Catarina<\/b> (SC, 2004): raríssimo no Atlântico Sul<\/li><li><b>El Niño:<\/b> chuva acima da média e enchentes (RS, maio de 2024)<\/li><li><b>La Niña:<\/b> estiagem e perdas na safra<\/li><\/ul>"}, {"b": "sul", "t": "exc", "q": "Quais são as exceções de clima no Sul?", "a": "<ul><li><b>Norte do Paraná:<\/b> o Trópico de Capricórnio passa ali; mais quente, chuva concentrada no verão, geada mais rara<\/li><li><b>Serras e planaltos<\/b> (Curitiba, Serra Catarinense): mais frios, verão ameno<\/li><li><b>Litoral:<\/b> mais úmido e menos frio<\/li><\/ul>"}, {"b": "brasil", "t": "clima", "q": "Qual região apresenta maior influência do clima subtropical?", "a": "<p><b>Sul.<\/b> É a única região quase toda abaixo do Trópico de Capricórnio.<\/p><p>Só o norte do Paraná fica acima dele, e já tem cara de tropical.<\/p>"}, {"b": "brasil", "t": "fen", "q": "Quais são as massas de ar que atuam no Brasil?", "a": "<ul><li><b>mEc:<\/b> quente e úmida · Amazônia<\/li><li><b>mEa:<\/b> quente e úmida · Atlântico, perto do Equador<\/li><li><b>mTa:<\/b> quente e úmida · Atlântico Sul<\/li><li><b>mTc:<\/b> quente e <b>seca<\/b> · Chaco (Paraguai, Bolívia, Argentina)<\/li><li><b>mPa:<\/b> <b>fria<\/b> e úmida · Atlântico Sul, perto da Patagônia<\/li><\/ul><p>Para memorizar: só uma é fria (mPa) e só uma é seca (mTc).<\/p>"}, {"b": "brasil", "t": "chuva", "q": "Quais são os três tipos de chuva, e onde cada um marca o Brasil?", "a": "<ul><li><b>Convectiva:<\/b> o calor faz o ar úmido subir. Amazônia todo dia; temporais de verão no CO e no SE<\/li><li><b>Orográfica:<\/b> o vento úmido sobe a serra. Serra do Mar; Borborema<\/li><li><b>Frontal:<\/b> massa fria encontra massa quente. Sul o ano todo; Sudeste e litoral do NE no inverno<\/li><\/ul>"}, {"b": "brasil", "t": "temp", "q": "Qual região tem a maior amplitude térmica anual? E a menor?", "a": "<p><b>Maior: Sul<\/b>, com verão quente e inverno frio.<\/p><p><b>Menor: Norte<\/b>, quente o ano todo, perto do Equador.<\/p>"}, {"b": "brasil", "t": "chuva", "q": "Onde chove mais e onde chove menos no Brasil?", "a": "<p><b>Mais:<\/b> Norte (Amazônia), além de pontos como a encosta da Serra do Mar.<\/p><p><b>Menos:<\/b> Sertão nordestino (semiárido), em geral abaixo de 800 mm por ano.<\/p>"}, {"b": "brasil", "t": "chuva", "q": "Quais áreas têm verão chuvoso e inverno seco?", "a": "<p>As de <b>clima tropical típico<\/b>, o clima do Cerrado: <b>Centro-Oeste<\/b>, interior do <b>Sudeste<\/b>, <b>Tocantins<\/b>, oeste da Bahia e sul do Maranhão e do Piauí.<\/p><p>Chuva de outubro a março; seca de maio a setembro.<\/p>"}, {"b": "brasil", "t": "chuva", "q": "Onde a chuva se concentra no outono e no inverno?", "a": "<p>No <b>litoral leste do Nordeste<\/b> (Recife, Salvador, Maceió), de abril a julho.<\/p><p>É o contrário do Centro-Oeste e do Sudeste, onde chove no verão. Num climograma, barras altas no meio do ano entregam o litoral nordestino.<\/p>"}, {"b": "brasil", "t": "chuva", "q": "Verão e período chuvoso são a mesma coisa?", "a": "<p><b>Não.<\/b> Verão e inverno falam de <b>temperatura<\/b> (estação do ano). Chuvoso e seco falam de <b>chuva<\/b>.<\/p><ul><li><b>CO e SE:<\/b> coincidem (verão chuvoso, inverno seco)<\/li><li><b>Litoral leste do NE:<\/b> chove no inverno<\/li><li><b>Sul:<\/b> chove nas quatro estações<\/li><li><b>Norte e Sertão:<\/b> chamam a época da chuva de \"inverno\", mesmo quente<\/li><\/ul>"}, {"b": "brasil", "t": "fen", "q": "El Niño × La Niña: o que cada um faz no Brasil?", "a": "<p><b>El Niño<\/b> (Pacífico aquecido): <b>Sul<\/b> com chuva acima da média e enchentes; <b>Norte e Nordeste<\/b> mais secos.<\/p><p><b>La Niña<\/b> (Pacífico resfriado): o contrário. Sul com estiagem; Norte e Nordeste com mais chuva.<\/p>"}, {"b": "brasil", "t": "clima", "q": "Que fatores explicam as diferenças de clima entre as regiões?", "a": "<ul><li><b>Latitude:<\/b> quase todo o país fica entre os trópicos, por isso é quente; o Sul fica abaixo<\/li><li><b>Altitude:<\/b> serras e planaltos são mais frescos<\/li><li><b>Massas de ar:<\/b> qual chega, e quando<\/li><li><b>Mar × interior:<\/b> o litoral é mais úmido e varia menos de temperatura<\/li><li><b>Relevo:<\/b> barra ou força a chuva<\/li><\/ul>"}];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var KEY = "climabr.";
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(KEY+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("marks",{}) || {};
+  var filter = "todos", tfilter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(location.hash==="#cards" || store.get("tab","mapa")==="cards" ? "cards" : "mapa");
+
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var TFILTERS = [["todos","Todos os tipos"]].concat(Object.keys(TP).map(function(k){return [k,TP[k]];}));
+  var chipsEl = document.getElementById("chips"), tchipsEl = document.getElementById("tchips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function inType(c,t){ return t==="todos" || c.t===t; }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]) && inType(c,tfilter);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+    tchipsEl.innerHTML="";
+    TFILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inType(c,f[0]) && inFilter(c,filter);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", tfilter===f[0]?"true":"false");
+      b.innerHTML=f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){tfilter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      tchipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter) && inType(c,tfilter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+' <em>· '+TP[c.t]+'</em></span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
