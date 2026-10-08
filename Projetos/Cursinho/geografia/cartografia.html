@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cartografia e Fusos Horários</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: carta de navegação. Fundo azul-acinzentado de carta náutica, graus em fonte mono, um painel por bloco do caderno e o baralho filtrado por bloco e por tipo. */
+:root{
+  --ground:#E3EAEE; --surface:#F6F9FA; --surface-2:#E9EFF2; --ink:#14212A; --muted:#506370; --line:#C3CFD6;
+  --sea:#D4E5EF; --sea-line:#9DBBCC;
+  --b-terra:#A15A0B; --b-coord:#1B6E78; --b-fusos:#3A4C9E; --b-escala:#2F7438; --b-proj:#8A356F; --b-rep:#5E5440;
+  --ok:#2F7A45; --rev:#B0461F; --stamp:#14212A; --focus:#2D6FA3;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0E151A; --surface:#162027; --surface-2:#1D2830; --ink:#E0E9EE; --muted:#93A4AF; --line:#2B3842;
+    --sea:#17303F; --sea-line:#3F6A82;
+    --b-terra:#E9A35A; --b-coord:#5FC3CD; --b-fusos:#9AA9F0; --b-escala:#7FCB86; --b-proj:#E28CC6; --b-rep:#C9B993;
+    --ok:#6CC486; --rev:#F08C5E; --stamp:#E0E9EE; --focus:#7DB7E6;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0E151A; --surface:#162027; --surface-2:#1D2830; --ink:#E0E9EE; --muted:#93A4AF; --line:#2B3842;
+  --sea:#17303F; --sea-line:#3F6A82;
+  --b-terra:#E9A35A; --b-coord:#5FC3CD; --b-fusos:#9AA9F0; --b-escala:#7FCB86; --b-proj:#E28CC6; --b-rep:#C9B993;
+  --ok:#6CC486; --rev:#F08C5E; --stamp:#E0E9EE; --focus:#7DB7E6;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,8vw,76px);line-height:.9;letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0}
+.lede b{font-weight:600}
+.note{max-width:72ch;font-size:14px;color:var(--muted);border-left:3px solid var(--b-coord);padding:4px 0 4px 12px;margin:0}
+.note b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 15px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible,.card:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
+.panel{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:12px;padding:14px 16px 18px;display:grid;gap:12px;align-content:start;min-width:0}
+.panel h2{margin:0;font-family:var(--display);font-weight:800;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--c)}
+.panel .sub{margin:0;font-size:14.5px;color:var(--muted);max-width:68ch}
+.panel .sub b{color:var(--ink);font-weight:600}
+.panel h3{margin:4px 0 0;font:500 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.fix{border:1px solid var(--rev);border-radius:12px;background:var(--surface);padding:14px 16px;display:grid;gap:8px}
+.fix h2{margin:0;font-family:var(--display);font-weight:800;font-size:24px;line-height:1;text-transform:uppercase;color:var(--rev)}
+.fix ol{margin:0;padding-left:22px;display:grid;gap:4px;font-size:15px}
+.fix s{color:var(--muted)}
+.fix b{font-weight:600}
+
+.globe{width:100%;height:auto;display:block}
+.globe text{font-family:var(--sans);font-size:13px;fill:var(--ink)}
+.globe .deg{font-family:var(--mono);font-size:11.5px;fill:var(--muted)}
+.globe .lbl-small{font-size:11.5px;fill:var(--muted)}
+
+.names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;margin:0}
+.names div{display:flex;gap:8px;align-items:baseline;min-width:0;font-size:14.5px}
+.names dt{font:700 17px/1 var(--display);text-transform:uppercase;min-width:52px;color:var(--b-terra)}
+.names dd{margin:0;color:var(--ink)}
+
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td b{font-weight:600}
+.tscroll{overflow-x:auto;min-width:0}
+
+.lonrow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center}
+.lonrow div{padding:8px 2px;border-right:1px solid var(--line);display:grid;gap:3px;background:var(--surface-2)}
+.lonrow div:last-child{border-right:0}
+.lonrow .g{font:500 12px/1.1 var(--mono);color:var(--muted)}
+.lonrow .h{font:700 20px/1 var(--display);color:var(--b-fusos)}
+.lonrow .zero{background:var(--surface)}
+.lonrow .zero .h{color:var(--ink)}
+.lonrow .hit{box-shadow:inset 0 0 0 2px var(--rev)}
+.arrows{display:flex;justify-content:space-between;font:500 12px/1.2 var(--mono);color:var(--muted)}
+
+.clocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.clock{border:1px solid var(--line);border-radius:10px;padding:10px 10px 9px;display:grid;gap:4px;background:var(--surface-2)}
+.clock .t{font:700 34px/1 var(--display);font-variant-numeric:tabular-nums;color:var(--b-fusos)}
+.clock .z{font:500 11.5px/1 var(--mono);color:var(--muted)}
+.clock .p{font-size:13.5px;line-height:1.25}
+.clock.on{background:var(--surface);border-color:var(--b-fusos);box-shadow:inset 0 0 0 1px var(--b-fusos)}
+.clock.on .t{color:var(--ink)}
+
+.zones{display:grid;gap:6px;margin:0;padding:0;list-style:none;font-size:14.5px}
+.zones li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:baseline}
+.zones .z{font:700 18px/1 var(--display);color:var(--b-fusos)}
+.zones .warn{color:var(--rev);font-weight:600}
+
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sc{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:4px;background:var(--surface-2);min-width:0}
+.sc .k{font:700 20px/1 var(--display);text-transform:uppercase;color:var(--b-escala)}
+.sc .r{font:500 13px/1.2 var(--mono)}
+.sc ul{margin:0;padding-left:18px;font-size:14px}
+.steps{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:baseline;font-size:14.5px}
+.steps .n{font:500 12px/1 var(--mono);color:var(--b-escala)}
+.steps .warn{color:var(--rev)}
+.ruler{display:grid;gap:4px;max-width:340px}
+.ruler .segs{display:grid;grid-template-columns:repeat(4,1fr);height:10px;border:1.5px solid var(--ink)}
+.ruler .segs span:nth-child(odd){background:var(--ink)}
+.ruler .ticks{display:grid;grid-template-columns:repeat(4,1fr);font:500 11.5px/1 var(--mono);color:var(--muted)}
+.ruler .ticks span:last-child{display:flex;justify-content:space-between}
+
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center;font-size:14px}
+.bar-track{height:16px;background:var(--surface-2);border-radius:3px;position:relative}
+.bar-fill{height:100%;background:var(--b-proj);border-radius:3px}
+.bar-val{font:500 12px/1 var(--mono);color:var(--muted);margin-top:3px;display:block}
+.pj{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.pj div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface-2);display:grid;gap:3px;font-size:14px}
+.pj b{font:700 19px/1 var(--display);text-transform:uppercase;color:var(--b-proj);font-weight:700}
+.pj .tag{font:500 11.5px/1.2 var(--mono);color:var(--muted)}
+
+.contours{width:100%;height:auto;display:block;max-width:420px}
+.contours text{font-family:var(--sans);font-size:13px;fill:var(--ink)}
+.tech{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tech span{font:600 14px/1 var(--sans);border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:var(--surface-2)}
+.tech .grp{border:1px dashed var(--b-rep);border-radius:12px;padding:5px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.tech .grp em{font:500 11px/1 var(--mono);font-style:normal;color:var(--muted);padding:0 4px}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;white-space:nowrap}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips.types{padding-top:2px}
+.chip{--c:var(--ink);font:500 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+.chips.types .chip{font-size:13px;padding:6px 10px;background:var(--surface-2)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:340px;border-radius:12px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);min-width:0}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.meta em{font-style:normal;color:var(--muted)}
+.q{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,42px);line-height:1.04;letter-spacing:.005em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.hint .warn{color:var(--rev);font:500 11.5px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.a{align-self:start;font-size:16px;min-width:0}
+.a p{margin:0 0 8px}
+.a ul{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.a .warnp{color:var(--rev);border-left:3px solid var(--rev);padding-left:10px}
+.qsmall{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.1;text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 15px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn.small{padding:6px 10px;font-size:12.5px}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.pbar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.pbar span{display:block;height:100%}
+.pbar .b-ok{background:var(--ok)} .pbar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12.5px;color:var(--muted);margin:0}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:520px){
+  .names{grid-template-columns:minmax(0,1fr)}
+  .two{grid-template-columns:minmax(0,1fr)}
+  .lonrow .h{font-size:17px}
+  .lonrow .g{font-size:10.5px}
+  .bar-row{grid-template-columns:80px minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .card{min-height:400px}
+  .keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Geografia · cartografia · do seu caderno, 08/10</div>
+    <h1>Cartografia</h1>
+    <p class="lede">Quatro perguntas que a cartografia responde: <b>como a Terra se move</b>, <b>onde fica um ponto</b>, <b>que horas são lá</b> e <b>como se põe o globo no papel</b> sem mentir demais.</p>
+    <p class="note"><b>No banco da FGV (2021–2026):</b> Cartografia nunca caiu como tema de Geografia. O único mapa em prova foi numa discursiva de História, a 2023.1 (mapa de 1558 e o imaginário europeu sobre a América). Insper e ENEM não estão no banco.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-mapa" role="tab" aria-selected="true" aria-controls="panel-mapa" type="button">Mapa</button>
+    <button id="tab-cards" role="tab" aria-selected="false" aria-controls="panel-cards" type="button">Flashcards · 51</button>
+  </div>
+
+  <!-- MAPA -->
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px">
+
+    <div class="fix">
+      <h2>Corrigir no caderno</h2>
+      <ol>
+        <li>Três meses depois de 21/12 vem o equinócio de <b>outono</b> no Sul, e não de primavera. Primavera em março é no Norte.</li>
+        <li><b>30° O = −2 h</b> (30 ÷ 15 = 2). No caderno parece estar −1, que é o de 15° O.</li>
+        <li>1:100.000 com 15 cm dá <b>1.500.000 cm = 15 km</b>. No caderno saiu <s>15.000.000 cm = 150 km</s>: sobrou um zero.</li>
+        <li>O Brasil tem 4 fusos, e faltou o <b>−2</b>: Fernando de Noronha e as ilhas do Atlântico.</li>
+      </ol>
+    </div>
+
+    <div class="grid">
+
+      <article class="panel" style="--c:var(--b-terra)">
+        <h2>A Terra e as linhas</h2>
+        <p class="sub"><b>Rotação</b> (24 h, de oeste para leste) faz o dia e a noite. <b>Translação</b> (365 dias e 6 h) com o eixo inclinado em <b>23,5°</b> faz as estações.</p>
+        <svg class="globe" viewBox="0 0 470 292" role="img" aria-label="Globo com Equador a 0 grau, trópicos a 23,5 graus e círculos polares a 66,5 graus, e o meridiano de Greenwich">
+          <circle cx="130" cy="145" r="115" fill="var(--sea)" stroke="var(--sea-line)" stroke-width="1.5"/>
+          <line x1="130" y1="30" x2="130" y2="260" stroke="var(--b-coord)" stroke-width="1.5"/>
+          <text x="130" y="20" text-anchor="middle" class="lbl-small">Greenwich 0°</text>
+          <line x1="84" y1="39.5" x2="176" y2="39.5" stroke="var(--b-fusos)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="24.5" y1="99.1" x2="235.5" y2="99.1" stroke="var(--b-terra)" stroke-width="1.8" stroke-dasharray="6 3"/>
+          <line x1="15" y1="145" x2="245" y2="145" stroke="var(--b-coord)" stroke-width="2.6"/>
+          <line x1="24.5" y1="190.9" x2="235.5" y2="190.9" stroke="var(--b-terra)" stroke-width="1.8" stroke-dasharray="6 3"/>
+          <line x1="84" y1="250.5" x2="176" y2="250.5" stroke="var(--b-fusos)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="178" y1="39.5" x2="262" y2="39.5"/>
+            <line x1="238" y1="99.1" x2="262" y2="99.1"/>
+            <line x1="247" y1="145" x2="262" y2="145"/>
+            <line x1="238" y1="190.9" x2="262" y2="190.9"/>
+            <line x1="178" y1="250.5" x2="262" y2="250.5"/>
+          </g>
+          <text x="268" y="36">Círculo Polar Ártico</text><text x="268" y="50" class="deg">66,5° N</text>
+          <text x="268" y="96">Trópico de Câncer</text><text x="268" y="110" class="deg">23,5° N</text>
+          <text x="268" y="142" font-weight="600">Equador</text><text x="268" y="156" class="deg">0°</text>
+          <text x="268" y="188">Trópico de Capricórnio</text><text x="268" y="202" class="deg">23,5° S · cruza MS, PR e SP</text>
+          <text x="268" y="247">Círculo Polar Antártico</text><text x="268" y="261" class="deg">66,5° S</text>
+          <text x="130" y="284" text-anchor="middle" class="lbl-small">← Ocidental (oeste) · Oriental (leste) →</text>
+        </svg>
+        <h3>Estações no Hemisfério Sul</h3>
+        <div class="tscroll"><table>
+          <thead><tr><th>Data</th><th>Sol a pino sobre</th><th>Começa no Sul</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">21/12</td><td>Trópico de Capricórnio</td><td><b>Verão</b> · solstício</td></tr>
+            <tr><td class="mono">~20/03</td><td>Equador</td><td><b>Outono</b> · equinócio</td></tr>
+            <tr><td class="mono">~21/06</td><td>Trópico de Câncer</td><td><b>Inverno</b> · solstício</td></tr>
+            <tr><td class="mono">~22/09</td><td>Equador</td><td><b>Primavera</b> · equinócio</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Outros nomes</h3>
+        <dl class="names">
+          <div><dt>Norte</dt><dd>setentrional · boreal</dd></div>
+          <div><dt>Sul</dt><dd>meridional · austral</dd></div>
+          <div><dt>Leste</dt><dd>oriente · nascente</dd></div>
+          <div><dt>Oeste</dt><dd>ocidente · poente</dd></div>
+        </dl>
+      </article>
+
+      <article class="panel" style="--c:var(--b-fusos)">
+        <h2>Fusos horários</h2>
+        <p class="sub">360° ÷ 24 h = <b>15° por hora</b>. Diferença de horas = diferença de longitude ÷ 15. <b>Leste adianta, oeste atrasa.</b></p>
+        <div class="lonrow" aria-label="Longitude e fuso: de 45 graus oeste a 45 graus leste">
+          <div><span class="g">45° O</span><span class="h">−3</span></div>
+          <div class="hit"><span class="g">30° O</span><span class="h">−2</span></div>
+          <div><span class="g">15° O</span><span class="h">−1</span></div>
+          <div class="zero"><span class="g">0°</span><span class="h">0</span></div>
+          <div><span class="g">15° L</span><span class="h">+1</span></div>
+          <div><span class="g">30° L</span><span class="h">+2</span></div>
+          <div><span class="g">45° L</span><span class="h">+3</span></div>
+        </div>
+        <div class="arrows"><span>← atrasa</span><span>Greenwich</span><span>adianta →</span></div>
+        <h3>Meio-dia em Brasília</h3>
+        <div class="clocks">
+          <div class="clock"><span class="t">10h</span><span class="z">UTC −5</span><span class="p">Rio Branco (AC)</span></div>
+          <div class="clock"><span class="t">11h</span><span class="z">UTC −4</span><span class="p">Manaus (AM)</span></div>
+          <div class="clock on"><span class="t">12h</span><span class="z">UTC −3</span><span class="p">Brasília</span></div>
+          <div class="clock"><span class="t">13h</span><span class="z">UTC −2</span><span class="p">Fernando de Noronha</span></div>
+          <div class="clock"><span class="t">15h</span><span class="z">UTC 0</span><span class="p">Londres</span></div>
+        </div>
+        <h3>Os 4 fusos do Brasil</h3>
+        <ul class="zones">
+          <li><span class="z">−2</span><span>Fernando de Noronha e ilhas oceânicas <span class="warn">· faltou no caderno</span></span></li>
+          <li><span class="z">−3</span><span>Sul, Sudeste e Nordeste inteiros + GO, DF, TO, PA e AP</span></li>
+          <li><span class="z">−4</span><span>MS, MT, RO, RR e quase todo o AM</span></li>
+          <li><span class="z">−5</span><span>Acre e sudoeste do AM</span></li>
+        </ul>
+        <p class="sub">Sem horário de verão desde 2019.</p>
+      </article>
+
+      <article class="panel" style="--c:var(--b-escala)">
+        <h2>Escala</h2>
+        <p class="sub">Relação entre a <b>medida no mapa</b> e a <b>medida real</b>. 1:100.000 = 1 cm no mapa vale 100.000 cm (1 km).</p>
+        <div class="two">
+          <div class="sc"><span class="k">Escala grande</span><span class="r">1:1.000</span><ul><li>denominador pequeno</li><li>área pequena</li><li><b>muito detalhe</b></li><li>planta de bairro</li></ul></div>
+          <div class="sc"><span class="k">Escala pequena</span><span class="r">1:10.000.000</span><ul><li>denominador grande</li><li>área grande</li><li><b>pouco detalhe</b></li><li>mapa-múndi</li></ul></div>
+        </div>
+        <h3>A conta do caderno, refeita</h3>
+        <ol class="steps">
+          <li><span class="n">1</span><span>Escala 1:100.000 · 15 cm no mapa</span></li>
+          <li><span class="n">2</span><span class="mono">15 × 100.000 = 1.500.000 cm</span></li>
+          <li><span class="n">3</span><span>Corta 5 zeros (1 km = 100.000 cm) → <b>15 km</b></span></li>
+          <li><span class="n">!</span><span class="warn">150 km só se a escala fosse 1:1.000.000</span></li>
+        </ol>
+        <h3>Escala gráfica</h3>
+        <div class="ruler" aria-label="Régua de escala gráfica de 0 a 4 quilômetros">
+          <div class="segs"><span></span><span></span><span></span><span></span></div>
+          <div class="ticks"><span>0</span><span>1</span><span>2</span><span><span>3</span><span>4 km</span></span></div>
+        </div>
+        <p class="sub">Continua certa se o mapa for ampliado ou reduzido; a numérica, não.</p>
+      </article>
+
+      <article class="panel" style="--c:var(--b-proj)">
+        <h2>Projeções</h2>
+        <p class="sub">Não dá para achatar uma esfera sem distorcer. Cada projeção escolhe <b>o que mantém</b>.</p>
+        <div class="tscroll"><table>
+          <thead><tr><th>Tipo</th><th>Mantém</th><th>Distorce</th><th>Exemplo</th></tr></thead>
+          <tbody>
+            <tr><td><b>Conforme</b></td><td>formas</td><td>áreas</td><td>Mercator</td></tr>
+            <tr><td><b>Equivalente</b></td><td>áreas</td><td>formas</td><td>Peters</td></tr>
+            <tr><td><b>Equidistante</b></td><td>distâncias</td><td>formas e áreas</td><td>Azimutal equidistante</td></tr>
+            <tr><td><b>Afilática</b></td><td>nada por inteiro</td><td>um pouco de tudo</td><td>Robinson</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Área real · na Mercator parecem do mesmo tamanho</h3>
+        <div class="bars">
+          <div class="bar-row"><span>África</span><span><span class="bar-track" style="display:block"><span class="bar-fill" style="display:block;width:100%"></span></span><span class="bar-val">30,4 milhões de km²</span></span></div>
+          <div class="bar-row"><span>Groenlândia</span><span><span class="bar-track" style="display:block"><span class="bar-fill" style="display:block;width:7.1%"></span></span><span class="bar-val">2,2 milhões de km² · ~14× menor</span></span></div>
+        </div>
+        <div class="pj">
+          <div><b>Mercator</b><span class="tag">cilíndrica · conforme · 1569</span><span>Navegação. Europa no centro e no alto.</span></div>
+          <div><b>Peters</b><span class="tag">cilíndrica · equivalente · 1973</span><span>Tamanho real do Sul. Formas esticadas.</span></div>
+          <div><b>Azimutal</b><span class="tag">plana · equidistante</span><span>Distâncias certas a partir do centro. Emblema da ONU.</span></div>
+        </div>
+        <p class="sub">Mapa não é neutro. <span class="fgv">★ 2023.1-DIS-CH1</span> um mapa de 1558 como fonte do imaginário europeu.</p>
+      </article>
+
+      <article class="panel" style="--c:var(--b-rep)">
+        <h2>Outros mapas e tecnologia</h2>
+        <p class="sub"><b>Temática:</b> mapa de um tema (população, clima, renda), lido pela legenda. <b>Anamorfose</b> (cartograma): o tamanho de cada país vira o dado (população, PIB), sem ligar para a forma.</p>
+        <h3>Curvas de nível · mesma altitude</h3>
+        <svg class="contours" viewBox="0 0 340 160" role="img" aria-label="Curvas de nível: juntas indicam terreno íngreme, afastadas indicam terreno suave">
+          <g fill="none" stroke="var(--b-rep)" stroke-width="1.4">
+            <ellipse cx="85" cy="68" rx="62" ry="50"/><ellipse cx="85" cy="68" rx="52" ry="42"/><ellipse cx="85" cy="68" rx="42" ry="34"/><ellipse cx="85" cy="68" rx="32" ry="26"/><ellipse cx="85" cy="68" rx="22" ry="18"/><ellipse cx="85" cy="68" rx="12" ry="10"/>
+            <ellipse cx="252" cy="68" rx="76" ry="56"/><ellipse cx="252" cy="68" rx="48" ry="35"/><ellipse cx="252" cy="68" rx="20" ry="15"/>
+          </g>
+          <text x="85" y="140" text-anchor="middle">juntas = íngreme</text>
+          <text x="252" y="140" text-anchor="middle">afastadas = suave</text>
+        </svg>
+        <h3>Nova cartografia</h3>
+        <div class="tech">
+          <span class="grp"><em>sensoriamento remoto</em><span>Foto aérea</span><span>Radar</span><span>Satélite</span></span>
+          <span>GPS · onde estou</span>
+          <span>SIG · camadas de dados</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden>
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por bloco"></div>
+      <div class="chips types" id="tchips" role="group" aria-label="Filtrar por tipo"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="pbar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn small" id="shuffle" type="button">Embaralhar</button> <button class="btn small" id="reset" type="button">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BL = {"terra": {"n": "Movimentos e estações", "c": "var(--b-terra)"}, "coord": {"n": "Coordenadas", "c": "var(--b-coord)"}, "fusos": {"n": "Fusos horários", "c": "var(--b-fusos)"}, "escala": {"n": "Escala", "c": "var(--b-escala)"}, "proj": {"n": "Projeções", "c": "var(--b-proj)"}, "rep": {"n": "Outros mapas e tecnologia", "c": "var(--b-rep)"}};
+  var TP = {"def": "Conceito", "compara": "Comparação", "conta": "Conta", "erro": "Corrigir no caderno"};
+  var CARDS = [{"b": "terra", "t": "def", "q": "Hemisfério Sul e Hemisfério Norte: quais são os outros nomes?", "a": "<p><b>Sul<\/b> = meridional ou austral.<\/p><p><b>Norte<\/b> = setentrional ou boreal.<\/p><p>Dica: austral como em Austrália (fica no Sul); boreal como em aurora boreal (no Norte).<\/p>"}, {"b": "terra", "t": "def", "q": "Leste e oeste: quais são os outros nomes?", "a": "<p><b>Leste<\/b> = oriente: onde o Sol nasce (nascente).<\/p><p><b>Oeste<\/b> = ocidente: onde o Sol se põe (poente).<\/p>"}, {"b": "terra", "t": "def", "q": "Que movimento gera o dia e a noite?", "a": "<p><b>Rotação<\/b>: a Terra gira em torno do próprio eixo, de <b>oeste para leste<\/b>, uma volta a cada ~24 h.<\/p>"}, {"b": "terra", "t": "def", "q": "O que é a translação (revolução)?", "a": "<p>A volta da Terra <b>em torno do Sol<\/b>, em ~365 dias e 6 horas.<\/p><p>As 6 horas que sobram somam um dia a cada 4 anos: o 29/02 do ano bissexto.<\/p>"}, {"b": "terra", "t": "compara", "q": "O que causa as estações do ano?", "a": "<p>A <b>inclinação do eixo<\/b> (~23,5°) somada à <b>translação<\/b>: ao longo do ano, cada hemisfério recebe o Sol mais de frente ou mais inclinado.<\/p><p>Pegadinha: <b>não<\/b> é a distância até o Sol.<\/p>"}, {"b": "terra", "t": "def", "q": "Solstício de dezembro (~21/12): onde fica o Sol a pino, e o que começa?", "a": "<p>Sol a pino sobre o <b>Trópico de Capricórnio<\/b>.<\/p><p>Começa o <b>verão no Sul<\/b> e o inverno no Norte. É o dia mais longo do ano no Sul.<\/p>"}, {"b": "terra", "t": "def", "q": "Solstício de junho (~21/06): onde fica o Sol a pino, e o que começa?", "a": "<p>Sol a pino sobre o <b>Trópico de Câncer<\/b>.<\/p><p>Começa o <b>verão no Norte<\/b> e o <b>inverno no Sul<\/b>. É a noite mais longa do ano no Sul.<\/p>"}, {"b": "terra", "t": "def", "q": "O que é o equinócio, e quando acontece?", "a": "<p>Sol a pino sobre o <b>Equador<\/b>: dia e noite com a <b>mesma duração<\/b> nos dois hemisférios.<\/p><p>Acontece duas vezes: <b>~20/03<\/b> e <b>~22/09<\/b>.<\/p>"}, {"b": "terra", "t": "erro", "q": "No Hemisfério Sul, que estação começa em cada data?", "a": "<ul><li><b>21/12<\/b> solstício → verão<\/li><li><b>~20/03<\/b> equinócio → <b>outono<\/b><\/li><li><b>~21/06<\/b> solstício → inverno<\/li><li><b>~22/09<\/b> equinócio → primavera<\/li><\/ul><p class=\"warnp\">⚠️ No caderno está \"3 meses depois [de 21/12] equinócio (primavera)\". No Sul, o equinócio de março abre o <b>outono<\/b>; primavera em março é no Norte.<\/p>"}, {"b": "coord", "t": "def", "q": "O que é latitude?", "a": "<p>A distância em graus de um ponto até o <b>Equador<\/b>.<\/p><p>Vai de <b>0° a 90°<\/b>, Norte ou Sul. É medida pelos <b>paralelos<\/b>.<\/p>"}, {"b": "coord", "t": "def", "q": "O que é longitude?", "a": "<p>A distância em graus de um ponto até o <b>meridiano de Greenwich<\/b>.<\/p><p>Vai de <b>0° a 180°<\/b>, Leste ou Oeste. É medida pelos <b>meridianos<\/b>.<\/p>"}, {"b": "coord", "t": "compara", "q": "Paralelos × meridianos: qual é qual?", "a": "<p><b>Paralelos:<\/b> círculos paralelos ao Equador, \"deitados\" → marcam a <b>latitude<\/b>.<\/p><p><b>Meridianos:<\/b> linhas de polo a polo → marcam a <b>longitude<\/b>.<\/p>"}, {"b": "coord", "t": "def", "q": "Qual é a latitude do Equador e dos dois trópicos?", "a": "<ul><li><b>Equador:<\/b> 0°<\/li><li><b>Trópico de Câncer:<\/b> 23,5° N (acima do Equador)<\/li><li><b>Trópico de Capricórnio:<\/b> 23,5° S (abaixo; cruza o Brasil em MS, PR e SP)<\/li><\/ul>"}, {"b": "coord", "t": "def", "q": "Qual é a latitude dos círculos polares?", "a": "<p><b>Ártico:<\/b> 66,5° N, perto do Polo Norte.<\/p><p><b>Antártico:<\/b> 66,5° S, perto do Polo Sul.<\/p>"}, {"b": "coord", "t": "compara", "q": "Por que os trópicos ficam a 23,5° e os círculos polares a 66,5°?", "a": "<p><b>23,5°<\/b> é a inclinação do eixo da Terra: os trópicos marcam até onde o Sol pode ficar a pino.<\/p><p>Os círculos polares ficam a <b>90° − 23,5° = 66,5°<\/b>: dali até o polo, há dia ou noite de 24 h em algum momento do ano.<\/p>"}, {"b": "coord", "t": "def", "q": "Qual é o meridiano de origem, e o que ele divide?", "a": "<p><b>Greenwich (0°)<\/b>, que passa por Londres.<\/p><p>Divide o Hemisfério <b>Oriental<\/b> (leste) do <b>Ocidental<\/b> (oeste). O meridiano oposto, 180°, é a base da Linha Internacional de Data.<\/p>"}, {"b": "coord", "t": "def", "q": "Em quais hemisférios fica o Brasil?", "a": "<p>Todo no <b>Ocidental<\/b> (a oeste de Greenwich).<\/p><p>A maior parte no <b>Sul<\/b>, mas o Equador corta AM, RR, PA e AP (passa por Macapá): um pedaço fica no Norte.<\/p>"}, {"b": "fusos", "t": "conta", "q": "Por que são 24 fusos, e quantos graus tem cada um?", "a": "<p>A Terra gira <b>360° em 24 h<\/b> → 360 ÷ 24 = <b>15°<\/b>.<\/p><p>Cada fuso = 15° = <b>1 hora<\/b>.<\/p>"}, {"b": "fusos", "t": "def", "q": "Indo para leste, a hora adianta ou atrasa?", "a": "<p><b>Leste adianta<\/b> (+1 h a cada 15°). <b>Oeste atrasa<\/b> (−1 h a cada 15°).<\/p><p>Por quê: a Terra gira de oeste para leste, então o Sol nasce primeiro no leste.<\/p>"}, {"b": "fusos", "t": "erro", "q": "Um lugar a 30° O de Greenwich: qual é o fuso?", "a": "<p>30 ÷ 15 = 2 fusos a oeste → <b>−2 h<\/b>. Se em Londres é meio-dia, lá são <b>10h<\/b>.<\/p><p class=\"warnp\">⚠️ No caderno parece estar \"30° O → −1\". O −1 é para 15° O.<\/p>"}, {"b": "fusos", "t": "conta", "q": "Meio-dia em Londres: que horas são num lugar a 45° L?", "a": "<p>45 ÷ 15 = 3 fusos a leste → <b>+3 h<\/b> → <b>15h<\/b>.<\/p>"}, {"b": "fusos", "t": "conta", "q": "Brasília (−3) às 10h: que horas são em Londres?", "a": "<p>Londres está no fuso 0, 3 h à frente → <b>13h<\/b>.<\/p><p>O Brasil não tem horário de verão desde 2019.<\/p>"}, {"b": "fusos", "t": "erro", "q": "Quantos fusos horários tem o Brasil?", "a": "<p><b>4:<\/b> −2, −3, −4 e −5 (em relação a Greenwich).<\/p><p class=\"warnp\">⚠️ No caderno faltou o <b>−2<\/b>: Fernando de Noronha e as ilhas do Atlântico.<\/p>"}, {"b": "fusos", "t": "def", "q": "Quem fica no fuso −3 (hora de Brasília)?", "a": "<p><b>Sul, Sudeste e Nordeste<\/b> inteiros, mais <b>GO, DF, TO, PA e AP<\/b>.<\/p>"}, {"b": "fusos", "t": "def", "q": "Quem fica no fuso −4?", "a": "<p><b>MS, MT, RO, RR<\/b> e a maior parte do <b>AM<\/b> (Manaus).<\/p>"}, {"b": "fusos", "t": "def", "q": "Quem fica no fuso −5?", "a": "<p>O <b>Acre<\/b> e o <b>sudoeste do Amazonas<\/b>.<\/p>"}, {"b": "fusos", "t": "def", "q": "Quem fica no fuso −2?", "a": "<p><b>Fernando de Noronha<\/b> e as outras ilhas oceânicas (Trindade, Atol das Rocas, São Pedro e São Paulo).<\/p>"}, {"b": "fusos", "t": "conta", "q": "Meio-dia em Brasília: que horas são em Manaus, Rio Branco e Noronha?", "a": "<ul><li><b>Manaus<\/b> (−4): 11h<\/li><li><b>Rio Branco<\/b> (−5): 10h<\/li><li><b>Noronha<\/b> (−2): 13h<\/li><\/ul>"}, {"b": "escala", "t": "def", "q": "O que é escala cartográfica?", "a": "<p>A relação entre a <b>medida no mapa<\/b> e a <b>medida real<\/b>.<\/p><p>1:100.000 = 1 cm no mapa vale 100.000 cm (<b>1 km<\/b>) no terreno.<\/p>"}, {"b": "escala", "t": "compara", "q": "Escala numérica × escala gráfica?", "a": "<p><b>Numérica:<\/b> uma fração (1:100.000).<\/p><p><b>Gráfica:<\/b> uma régua graduada desenhada no mapa (0 — 1 km — 2 km).<\/p><p>Vantagem da gráfica: continua certa se o mapa for ampliado ou reduzido.<\/p>"}, {"b": "escala", "t": "compara", "q": "Escala grande × escala pequena?", "a": "<p><b>Grande:<\/b> denominador pequeno (1:1.000) → área pequena, <b>muito detalhe<\/b> (planta de bairro).<\/p><p><b>Pequena:<\/b> denominador grande (1:10.000.000) → área grande, <b>pouco detalhe<\/b> (mapa-múndi).<\/p>"}, {"b": "escala", "t": "compara", "q": "Qual escala é maior: 1:50.000 ou 1:1.000.000?", "a": "<p><b>1:50.000.<\/b> Fração maior = escala maior = mais detalhe.<\/p><p>Pegadinha: número grande no denominador é escala <b>pequena<\/b>.<\/p>"}, {"b": "escala", "t": "conta", "q": "Como passar de cm para km rapidinho?", "a": "<p>1 km = 100.000 cm: <b>corte 5 zeros<\/b>.<\/p><p>Ex.: 1:500.000 → 1 cm = 5 km.<\/p>"}, {"b": "escala", "t": "erro", "q": "Escala 1:100.000: quanto valem 15 cm no mapa?", "a": "<p>15 × 100.000 = <b>1.500.000 cm = 15 km<\/b>.<\/p><p class=\"warnp\">⚠️ No caderno saiu 15.000.000 cm = 150 km: sobrou um zero (150 km seria na escala 1:1.000.000).<\/p>"}, {"b": "escala", "t": "conta", "q": "Mapa em 1:2.000.000: quantos cm valem 40 km?", "a": "<p>40 km = 4.000.000 cm.<\/p><p>4.000.000 ÷ 2.000.000 = <b>2 cm<\/b>.<\/p>"}, {"b": "escala", "t": "conta", "q": "2 cm no mapa valem 10 km no real. Qual é a escala?", "a": "<p>10 km = 1.000.000 cm.<\/p><p>1.000.000 ÷ 2 = 500.000 → <b>1:500.000<\/b>.<\/p>"}, {"b": "proj", "t": "def", "q": "Por que toda projeção cartográfica tem defeito?", "a": "<p>Não dá para passar uma esfera para o plano sem esticar ou rasgar.<\/p><p>Cada projeção escolhe o que <b>manter<\/b> (forma, área ou distância) e <b>distorce<\/b> o resto.<\/p>"}, {"b": "proj", "t": "def", "q": "O que é uma projeção conforme?", "a": "<p>Mantém as <b>formas<\/b> (os ângulos) e distorce as <b>áreas<\/b>.<\/p><p>Ex.: <b>Mercator<\/b>.<\/p>"}, {"b": "proj", "t": "def", "q": "O que é uma projeção equivalente?", "a": "<p>Mantém as <b>proporções entre as áreas<\/b> e distorce as <b>formas<\/b>.<\/p><p>Ex.: <b>Peters<\/b>.<\/p>"}, {"b": "proj", "t": "def", "q": "O que é uma projeção equidistante?", "a": "<p>Mantém as <b>distâncias<\/b> (a partir de um ponto ou ao longo de certas linhas).<\/p><p>Ex.: <b>azimutal equidistante<\/b>.<\/p>"}, {"b": "proj", "t": "def", "q": "O que é uma projeção afilática?", "a": "<p>Não mantém nenhuma das três por inteiro: espalha as distorções para o mapa ficar mais equilibrado.<\/p><p>Ex.: <b>Robinson<\/b>.<\/p>"}, {"b": "proj", "t": "def", "q": "Projeção de Mercator: tipo, uso e defeito?", "a": "<p><b>Cilíndrica e conforme<\/b> (1569). Feita para a <b>navegação<\/b>: o rumo vira linha reta.<\/p><p>Defeito: aumenta as áreas perto dos polos. A Groenlândia parece do tamanho da África, que é <b>~14 vezes maior<\/b>.<\/p>"}, {"b": "proj", "t": "def", "q": "Projeção de Peters: tipo e proposta?", "a": "<p><b>Cilíndrica e equivalente<\/b> (1973). Mostra o tamanho real da África e da América do Sul, e por isso virou a resposta ao <b>eurocentrismo<\/b> da Mercator.<\/p><p>Defeito: as formas ficam esticadas.<\/p>"}, {"b": "proj", "t": "compara", "q": "Forma certa ou tamanho certo: Mercator ou Peters?", "a": "<p><b>Forma certa<\/b> → Mercator (conforme).<\/p><p><b>Tamanho certo<\/b> → Peters (equivalente).<\/p>"}, {"b": "proj", "t": "def", "q": "O que é a projeção azimutal (plana)?", "a": "<p>Projeta o globo num <b>plano<\/b> que toca um ponto (muitas vezes um polo).<\/p><p>A azimutal equidistante mantém certas as <b>distâncias a partir do centro<\/b>. Ex.: o emblema da ONU, centrado no Polo Norte.<\/p>"}, {"b": "proj", "t": "compara", "q": "Mapa é neutro?", "a": "<p><b>Não.<\/b> Toda projeção escolhe o que distorcer e o que pôr no centro.<\/p><p>A Mercator põe a Europa no centro e no alto; a Peters foi usada como crítica a isso.<\/p><p>Na FGV, um mapa de 1558 apareceu como fonte do imaginário europeu sobre a América.<\/p>", "fgv": "2023.1-DIS-CH1"}, {"b": "rep", "t": "def", "q": "O que é cartografia temática?", "a": "<p>Mapas sobre <b>um tema<\/b> (população, clima, renda, desmatamento), lidos pela <b>legenda<\/b>.<\/p>"}, {"b": "rep", "t": "def", "q": "O que as curvas de nível mostram?", "a": "<p>São linhas que ligam pontos de <b>mesma altitude<\/b> (mapa topográfico).<\/p><p><b>Curvas juntas<\/b> = declive acentuado (terreno íngreme).<\/p><p><b>Curvas afastadas<\/b> = declive suave.<\/p>"}, {"b": "rep", "t": "def", "q": "O que é anamorfose (cartograma)?", "a": "<p>Mapa que muda o <b>tamanho<\/b> de cada país conforme um <b>dado estatístico<\/b> (população, PIB, emissões), sem se preocupar com a forma real.<\/p><p>Ex.: no de população, Índia e China ficam enormes.<\/p>"}, {"b": "rep", "t": "def", "q": "Quais tecnologias fazem a nova cartografia?", "a": "<p>Fotografia aérea, imagens de radar, imagens de satélite, <b>GPS<\/b> e <b>SIG<\/b>.<\/p><p>Foto aérea, radar e satélite são <b>sensoriamento remoto<\/b>: imagem obtida a distância.<\/p>"}, {"b": "rep", "t": "compara", "q": "GPS × SIG: qual é a diferença?", "a": "<p><b>GPS:<\/b> diz <b>onde<\/b> um ponto está (as coordenadas), por sinais de satélites.<\/p><p><b>SIG<\/b> (Sistema de Informação Geográfica): programa que <b>junta e cruza dados em camadas<\/b> sobre um mapa (ex.: desmatamento + estradas + rios).<\/p>"}];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var KEY = "cartografia.";
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(KEY+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("marks",{}) || {};
+  var filter = "todos", tfilter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(location.hash==="#cards" || store.get("tab","mapa")==="cards" ? "cards" : "mapa");
+
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BL).map(function(k){return [k,BL[k].n,BL[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var TFILTERS = [["todos","Todos os tipos"]].concat(Object.keys(TP).map(function(k){return [k,TP[k]];}));
+  var chipsEl = document.getElementById("chips"), tchipsEl = document.getElementById("tchips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function inType(c,t){ return t==="todos" || c.t===t; }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]) && inType(c,tfilter);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+    tchipsEl.innerHTML="";
+    TFILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inType(c,f[0]) && inFilter(c,filter);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", tfilter===f[0]?"true":"false");
+      b.innerHTML=f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){tfilter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      tchipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter) && inType(c,tfilter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], bl=BL[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':"";
+    var side = c.fgv?'<span class="fgv">★ caiu na FGV</span>':(c.t==="erro"?'<span class="warn">⚠ corrigir no caderno</span>':tag);
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+bl.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+bl.n+' <em>· '+TP[c.t]+'</em></span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint"><span>Toque para ver a resposta</span>'+side+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
