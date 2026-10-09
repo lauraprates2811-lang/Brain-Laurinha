@@ -1,0 +1,410 @@
+<title>Simulado Insper · FGV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: uma coluna estreita como um caderno de prova; cada questão é uma linha da folha de respostas, com as bolinhas A–E à direita. */
+:root {
+  --paper: #f3f5f2;
+  --surface: #ffffff;
+  --ink: #17201c;
+  --muted: #5a6560;
+  --line: #d6dcd7;
+  --sheet: #33609f;       /* tinta azul de cartão-resposta */
+  --sheet-tint: #e5ecf6;
+  --good: #1f7546;
+  --good-tint: #e1f1e7;
+  --bad: #b23a2f;
+  --bad-tint: #f8e3e0;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111513; --surface: #181d1b; --ink: #e7ebe8; --muted: #9ba6a0; --line: #2c3431;
+    --sheet: #8eb0e6; --sheet-tint: #1c2839; --good: #6cc896; --good-tint: #173226; --bad: #f08a7f; --bad-tint: #3a1d1a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111513; --surface: #181d1b; --ink: #e7ebe8; --muted: #9ba6a0; --line: #2c3431;
+  --sheet: #8eb0e6; --sheet-tint: #1c2839; --good: #6cc896; --good-tint: #173226; --bad: #f08a7f; --bad-tint: #3a1d1a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-inline: 16px; padding-block: 0 120px;
+}
+.wrap { max-width: 880px; margin: 0 auto; }
+header.top { padding-block: 40px 20px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--sheet); }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(32px, 6vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
+.lede { margin: 0; max-width: 64ch; color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 3px 10px; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.howto { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-block: 8px 28px; padding: 0; list-style: none; counter-reset: step; }
+.howto li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; min-width: 0; }
+.howto li::before { content: "Passo " counter(step); font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--sheet); }
+.howto p { margin: 0; font-size: 14px; }
+
+.note { border-left: 3px solid var(--sheet); background: var(--sheet-tint); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 14px; margin-block: 0 28px; }
+.note p { margin: 0; }
+.note p + p { margin-top: 6px; }
+
+#results { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-block: 0 32px; display: grid; gap: 14px; scroll-margin-top: 20px; }
+#results h2 { font-family: var(--font-display); font-weight: 600; font-size: 24px; margin: 0; }
+.total { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.total .big { font-family: var(--font-mono); font-size: 34px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.total .pct { color: var(--muted); font-family: var(--font-mono); }
+.bars { display: grid; gap: 8px; }
+.bar { display: grid; grid-template-columns: minmax(0, 210px) 1fr 64px; gap: 10px; align-items: center; font-size: 13px; }
+.bar .track { height: 8px; background: var(--sheet-tint); border-radius: 99px; overflow: hidden; }
+.bar .fill { height: 100%; background: var(--sheet); border-radius: 99px; }
+.bar .n { font-family: var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
+.bar .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+section.block { margin-block: 0 36px; }
+.block-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; border-bottom: 2px solid var(--sheet); padding-bottom: 6px; margin-bottom: 4px; }
+.block-head h2 { font-family: var(--font-display); font-weight: 600; font-size: 26px; margin: 0; text-wrap: balance; }
+.block-head .sub { color: var(--muted); font-size: 14px; }
+.block-head .score { font-family: var(--font-mono); font-size: 13px; color: var(--sheet); font-variant-numeric: tabular-nums; }
+.block-note { font-size: 13px; color: var(--muted); margin: 8px 0 4px; max-width: 70ch; }
+.group-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 16px 0 2px; }
+
+.q { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr) auto; gap: 6px 14px; align-items: center; padding: 12px 6px; border-bottom: 1px solid var(--line); }
+.q .num { font-family: var(--font-mono); font-weight: 600; font-size: 15px; color: var(--sheet); font-variant-numeric: tabular-nums; }
+.q .topic { font-weight: 500; margin: 0; }
+.q .src { font-size: 13px; color: var(--muted); margin: 2px 0 0; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.q .src a { color: var(--sheet); text-underline-offset: 2px; }
+.q .src a:focus-visible { outline: 2px solid var(--sheet); outline-offset: 2px; border-radius: 3px; }
+.q .src .code { font-family: var(--font-mono); font-size: 12px; }
+.bubbles { display: flex; gap: 6px; }
+.bubbles input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.bubbles label {
+  width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--sheet);
+  display: grid; place-items: center; cursor: pointer; user-select: none;
+  font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--sheet);
+  transition: background-color .12s ease, color .12s ease;
+}
+.bubbles label:hover { background: var(--sheet-tint); }
+.bubbles input:checked + label { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.bubbles input:focus-visible + label { outline: 2px solid var(--sheet); outline-offset: 2px; }
+.verdict { grid-column: 2 / -1; font-size: 13px; font-family: var(--font-mono); }
+.q.right { background: var(--good-tint); }
+.q.wrong { background: var(--bad-tint); }
+.q.right .verdict { color: var(--good); }
+.q.wrong .verdict, .q.blank .verdict { color: var(--bad); }
+.q.graded .bubbles label.is-key { border-color: var(--good); box-shadow: 0 0 0 2px var(--good); }
+.q.wrong .bubbles input:checked + label { background: var(--bad); border-color: var(--bad); color: var(--surface); }
+.q.right .bubbles input:checked + label { background: var(--good); border-color: var(--good); color: var(--surface); }
+
+.sources h2 { font-family: var(--font-display); font-weight: 600; font-size: 24px; margin: 0 0 8px; }
+.sources ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+.sources a { color: var(--sheet); }
+
+.bar-fixed {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+}
+.bar-inner { max-width: 880px; margin: 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.progress { flex: 1 1 180px; display: grid; gap: 4px; min-width: 0; }
+.progress .txt { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.progress .track { height: 6px; background: var(--sheet-tint); border-radius: 99px; overflow: hidden; }
+.progress .fill { height: 100%; width: 0; background: var(--sheet); transition: width .2s ease; }
+button { font: inherit; font-weight: 600; font-size: 14px; border-radius: 8px; padding: 9px 16px; cursor: pointer; border: 1.5px solid var(--sheet); }
+button.primary { background: var(--sheet); color: var(--surface); }
+button.ghost { background: transparent; color: var(--sheet); }
+button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.confirm { font-size: 13px; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+@media (max-width: 560px) {
+  .q { grid-template-columns: 2.2rem minmax(0, 1fr); }
+  .bubbles { grid-column: 2 / -1; }
+  .bar { grid-template-columns: minmax(0, 1fr) 56px; }
+  .bar .track { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Simulado com questões de provas anteriores</span>
+    <h1>Simulado Insper · FGV</h1>
+    <p class="lede">Geografia, Pré-História, Brasil Colonial, Guerra Fria, História da América e Língua Portuguesa. Todas as questões vêm de provas aplicadas pelo Insper e pela FGV-SP, com o enunciado original e sem adaptações.</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <ol class="howto">
+    <li><p>Abra o caderno pelo link de cada questão. Os links levam à prova oficial do Insper ou à prova da FGV publicada pelo Curso Objetivo.</p></li>
+    <li><p>Resolva exatamente a questão indicada (nº da prova original). Leia também o texto-base que vem antes dela.</p></li>
+    <li><p>Marque sua resposta nas bolinhas e, ao terminar, toque em <strong>Corrigir</strong>. O gabarito usado é o oficial de cada prova.</p></li>
+  </ol>
+
+  <div class="note">
+    <p>Os enunciados não estão copiados aqui: eles ficam no caderno original, do jeito que caíram na prova.</p>
+    <p>No PDF da FGV, a resolução aparece logo abaixo de cada questão. Cubra a tela ou role com cuidado para não ver a resposta.</p>
+  </div>
+
+  <section id="results" hidden aria-live="polite"></section>
+
+  <div id="blocks"></div>
+
+  <section class="sources">
+    <h2>Provas usadas</h2>
+    <ul id="sources"></ul>
+  </section>
+</div>
+
+<div class="bar-fixed">
+  <div class="bar-inner">
+    <div class="progress">
+      <span class="txt" id="progTxt">0 de 48 marcadas</span>
+      <div class="track"><div class="fill" id="progFill"></div></div>
+    </div>
+    <div class="confirm" id="confirmBox" hidden>
+      <span>Apagar todas as respostas?</span>
+      <button class="ghost" id="cancelClear" type="button">Cancelar</button>
+      <button class="primary" id="doClear" type="button">Apagar</button>
+    </div>
+    <button class="ghost" id="clearBtn" type="button">Limpar</button>
+    <button class="primary" id="gradeBtn" type="button">Corrigir</button>
+  </div>
+</div>
+
+<script>
+const OBJ = 'https://www.curso-objetivo.br/vestibular/resolucao-comentada/fgvsp/';
+const objPdf = n => OBJ + n + '/fgvsp' + n + '.pdf';
+const INS = 'https://www.insper.edu.br/content/dam/insper-portal/documentos/vestibular/';
+
+const DOCS = {
+  I261b: { label: 'Insper 2026.1 · prova de 21/12/2025', short: 'Insper 2026.1 · 21/12/2025',
+    url: INS + 'Vestibular_26_1_caderno%20de%20quest%C3%B5es%20prova%20objetiva_21_12_25.pdf',
+    gab: INS + 'Vestibular_Insper_26_1_gabarito%2021_12_25.pdf' },
+  I261a: { label: 'Insper 2026.1 · prova de 30/11/2025 (aplicação anulada e refeita em 21/12)', short: 'Insper 2026.1 · 30/11/2025',
+    url: INS + 'Vestibular%2026.1_Prova%20Objetiva.pdf',
+    gab: INS + 'Vestibular%2026.1_Gabarito.pdf' },
+  I262: { label: 'Insper 2026.2 · prova de 07/06/2026', short: 'Insper 2026.2 · 07/06/2026',
+    url: INS + 'vestibular-26-2/Caderno%20de%20Quest%C3%B5es%20-%20Prova%20Objetiva.pdf',
+    gab: INS + 'vestibular-26-2/Gabarito%20-%20Prova%20Objetiva.pdf' },
+  I192: { label: 'Insper 2019.2 · prova de 16/06/2019 · Caderno 1, versão 1', short: 'Insper 2019.2 · Caderno 1 V1',
+    url: 'https://insper.edu.br/wp-content/uploads/2019/06/caderno_questoes_caderno-1_linguagens_codigos_matematica_V1.pdf',
+    gab: 'https://insper.edu.br/wp-content/uploads/2019/06/gabarito_caderno-1_linguagens_codigos_matematica_V1.pdf' },
+  I191: { label: 'Insper 2019.1 · prova de 14/12/2018 · Caderno 1, versão 1', short: 'Insper 2019.1 · Caderno 1 V1',
+    url: 'https://www.insper.edu.br/wp-content/uploads/2018/12/caderno-questoes-_caderno-1_linguagens-e-codigos-matematica_V1.pdf',
+    gab: 'https://www.insper.edu.br/wp-content/uploads/2018/12/gabarito_caderno-1_-linguagens-codigos-e-matema%CC%81tica-V1.pdf' },
+  F12A: { label: 'FGV-SP Administração 2012 · prova de dez/2011', short: 'FGV Adm. 2012', url: objPdf('2012_administracao') },
+  F13A: { label: 'FGV-SP Administração 2013 · prova de dez/2012', short: 'FGV Adm. 2013', url: objPdf('2013_administracao') },
+  F132A: { label: 'FGV-SP Administração 2013/2 · prova de jun/2013', short: 'FGV Adm. 2013/2', url: objPdf('2013_2_administracao') },
+  F14A: { label: 'FGV-SP Administração 2014', short: 'FGV Adm. 2014', url: objPdf('2014_administracao') },
+  F15A: { label: 'FGV-SP Administração 2015 · prova de dez/2014', short: 'FGV Adm. 2015', url: objPdf('2015_administracao') },
+  F152A: { label: 'FGV-SP Administração 2015/2 · prova de maio/2015', short: 'FGV Adm. 2015/2', url: objPdf('2015_2_administracao') },
+  F16A: { label: 'FGV-SP Administração 2016 · prova de dez/2015', short: 'FGV Adm. 2016', url: objPdf('2016_administracao') },
+  F162A: { label: 'FGV-SP Administração 2016/2 · prova de jun/2016', short: 'FGV Adm. 2016/2', url: objPdf('2016_2_administracao') },
+  F172A: { label: 'FGV-SP Administração 2017/2 · prova de jun/2017', short: 'FGV Adm. 2017/2', url: objPdf('2017_2_administracao') },
+  F18A: { label: 'FGV-SP Administração 2018 · prova de dez/2017', short: 'FGV Adm. 2018', url: objPdf('2018_administracao') },
+  F19A: { label: 'FGV-SP Administração 2019 · prova de dez/2018', short: 'FGV Adm. 2019', url: objPdf('2019_administracao') },
+  F192A: { label: 'FGV-SP Administração 2019/2 · prova de jun/2019', short: 'FGV Adm. 2019/2', url: objPdf('2019_2_administracao') },
+  F20A: { label: 'FGV-SP Administração 2020 · prova de dez/2019', short: 'FGV Adm. 2020', url: objPdf('2020_administracao') },
+  F12E: { label: 'FGV-SP Economia 2012 · 1ª fase · prova de dez/2011', short: 'FGV Econ. 2012', url: objPdf('2012_economia_1fase') },
+  F18E: { label: 'FGV-SP Economia 2018 · 1ª fase · prova de nov/2017', short: 'FGV Econ. 2018', url: objPdf('2018_economia_1fase') },
+  F19E: { label: 'FGV-SP Economia 2019 · 1ª fase · prova de nov/2018', short: 'FGV Econ. 2019', url: objPdf('2019_economia_1fase') },
+  F20E: { label: 'FGV-SP Economia 2020 · 1ª fase', short: 'FGV Econ. 2020', url: objPdf('2020_economia_1fase') }
+};
+
+const BLOCKS = [
+  { id: 'geo', title: 'Geografia', sub: 'Cartografia, clima e relevo', items: [
+    { g: 'Cartografia', d: 'I261b', q: 41, k: 'C', t: 'Projeção de Mercator: o que ela deforma' },
+    { g: 'Cartografia', d: 'F20E', q: 73, k: 'A', t: 'Converter escala gráfica em escala numérica', s: 'Geografia' },
+    { g: 'Cartografia', d: 'F20E', q: 75, k: 'D', t: 'Fusos horários: voo Nova York–Berlim no horário de verão', s: 'Geografia' },
+    { g: 'Cartografia', d: 'I261a', q: 41, k: 'A', t: 'Levantamento aerofotogramétrico com drone feito pelo IBGE' },
+    { g: 'Cartografia', d: 'I262', q: 41, k: 'B', t: 'Tecnologias cartográficas: qual sistema a figura mostra' },
+    { g: 'Clima', d: 'F18E', q: 69, k: 'A', t: 'Circulação geral da atmosfera e zonas de pressão', s: 'Geografia' },
+    { g: 'Clima', d: 'F19E', q: 66, k: 'E', t: 'Chuvas de monções na Índia, em Bangladesh e no Nepal', s: 'Geografia' },
+    { g: 'Clima', d: 'F12E', q: 68, k: 'B', t: 'Leitura de climogramas de duas cidades', s: 'Geografia' },
+    { g: 'Clima', d: 'I262', q: 39, k: 'C', t: 'Característica climática de Porto Rico e energia solar' },
+    { g: 'Relevo', d: 'I261b', q: 38, k: 'B', t: 'Vale em fenda na Islândia e as placas tectônicas' },
+    { g: 'Relevo', d: 'I261a', q: 39, k: 'B', t: 'Transformações das rochas mostradas na imagem' },
+    { g: 'Relevo', d: 'F20E', q: 68, k: 'B', t: 'Unidades do relevo brasileiro (classificação de Ross)', s: 'Geografia' },
+    { g: 'Relevo', d: 'I262', q: 40, k: 'C', t: 'Obra de recuperação de área degradada em Loanda (PR)' }
+  ]},
+  { id: 'pre', title: 'Pré-História', items: [
+    { d: 'I261a', q: 31, k: 'C', t: 'Pinturas rupestres no Parque Nacional do Itatiaia' },
+    { d: 'I262', q: 31, k: 'D', t: 'Passagem do nomadismo para o sedentarismo' }
+  ]},
+  { id: 'bra', title: 'História do Brasil', sub: 'Pré-colonial (1500–1530) e Colonial (1530–1822)',
+    note: 'Não encontrei nessas provas uma questão só sobre 1500–1530 (pau-brasil, escambo). As duas primeiras cobrem os antecedentes e o contato com os povos indígenas.',
+    items: [
+    { d: 'I261a', q: 33, k: 'E', t: 'Interesses por trás da expansão marítima portuguesa' },
+    { d: 'F132A', q: 46, k: 'E', t: 'Aldeias indígenas e seus deslocamentos no início da colonização' },
+    { d: 'F18A', q: 46, k: 'C', t: 'O sentido da colonização da América (Fernando Novais)' },
+    { d: 'F14A', q: 47, k: 'D', t: 'Engenhos de açúcar descritos por Antonil' },
+    { d: 'F20E', q: 49, k: 'B', t: 'Pecuária no sertão e a “época do couro”', s: 'História' },
+    { d: 'F13A', q: 47, k: 'A', t: 'Ocupação holandesa no Nordeste' },
+    { d: 'F172A', q: 46, k: 'C', t: 'O papel das Câmaras Municipais na colônia' },
+    { d: 'F16A', q: 47, k: 'B', t: 'Revolta de Beckman (Maranhão, 1684)' },
+    { d: 'F20A', q: 48, k: 'E', t: 'Palmares e os quilombos' },
+    { d: 'F152A', q: 48, k: 'E', t: 'Mineração e agricultura nas Minas do século XVIII' }
+  ]},
+  { id: 'gf', title: 'Guerra Fria e declínio do socialismo',
+    note: 'Não achei nessas provas uma questão centrada na Perestroika ou na queda do Muro. As duas últimas tratam do socialismo chinês de hoje e da Rússia depois da URSS.',
+    items: [
+    { d: 'F12A', q: 49, k: 'D', t: 'Criação da OTAN (1949)' },
+    { d: 'F19A', q: 50, k: 'E', t: 'Crise dos mísseis em Cuba (1962)' },
+    { d: 'F192A', q: 47, k: 'C', t: 'Revolução Sandinista na Nicarágua (1979)' },
+    { d: 'F132A', q: 49, k: 'B', t: 'Boicotes às Olimpíadas de Moscou (1980) e Los Angeles (1984)' },
+    { d: 'F162A', q: 52, k: 'B', t: 'Charge sobre a China no congresso do Partido Comunista (2007)' },
+    { d: 'F19A', q: 60, k: 'D', t: 'A Rússia de Putin depois do fim da URSS' }
+  ]},
+  { id: 'ame', title: 'História da América', sub: 'Questões de nível mais fácil', items: [
+    { d: 'F12A', q: 48, k: 'C', t: 'Declaração de Independência dos Estados Unidos' },
+    { d: 'F15A', q: 47, k: 'B', t: 'Independência dos EUA comparada às demais da América' },
+    { d: 'F13A', q: 48, k: 'B', t: 'Guerra de Secessão (1861–1865)' },
+    { d: 'F16A', q: 48, k: 'C', t: 'Muralismo mexicano: painel de Juan O’Gorman' }
+  ]},
+  { id: 'por', title: 'Língua Portuguesa', sub: 'Figuras de linguagem e elementos da narrativa', items: [
+    { g: 'Humor', d: 'I261b', q: 1, k: 'A', t: 'Tirinha de Adão Iturrusgarai: de onde vem o humor' },
+    { g: 'Humor', d: 'I261a', q: 9, k: 'D', t: 'Meme: recurso expressivo que produz o humor' },
+    { g: 'Humor', d: 'I262', q: 10, k: 'C', t: 'Tirinha: elemento dos quadrinhos percebido pelos personagens' },
+    { g: 'Humor', d: 'I192', q: 13, k: 'A', t: 'Charge: jogo de palavras na fala da personagem' },
+    { g: 'Figuras de linguagem', d: 'I261b', q: 11, k: 'A', t: 'Conto de Drummond: principal recurso expressivo' },
+    { g: 'Figuras de linguagem', d: 'I262', q: 6, k: 'A', t: 'Figura de linguagem em “A miopia da Logística 4.0”' },
+    { g: 'Figuras de linguagem', d: 'I191', q: 11, k: 'A', t: 'Associação insólita em Machado de Assis e numa canção' },
+    { g: 'Figuras de linguagem', d: 'I191', q: 15, k: 'A', t: 'Linguagem figurada em um editorial' },
+    { g: 'Figuras de linguagem', d: 'F152A', q: 18, k: 'B', t: 'Hipérbole e metáfora em texto de jornal', s: 'Português' },
+    { g: 'Narrativa: narrador, personagem e tempo', d: 'I261b', q: 12, k: 'E', t: 'Conto de Drummond: o que a personagem esperava do filme' },
+    { g: 'Narrativa: narrador, personagem e tempo', d: 'I261a', q: 2, k: 'D', t: 'Autoconsciência narrativa: o narrador comenta a própria escrita' },
+    { g: 'Narrativa: narrador, personagem e tempo', d: 'I192', q: 10, k: 'D', t: 'Como o narrador caracteriza a personagem Isaura' },
+    { g: 'Narrativa: narrador, personagem e tempo', d: 'I261a', q: 14, k: 'C', t: 'Tempo: um fato anterior ao passado narrado' }
+  ]}
+];
+
+const STORE_KEY = 'simulado-insper-fgv-v1';
+let answers = {};
+try { answers = JSON.parse(localStorage.getItem(STORE_KEY) || '{}') || {}; } catch (e) { answers = {}; }
+const save = () => { try { localStorage.setItem(STORE_KEY, JSON.stringify(answers)); } catch (e) {} };
+
+const all = [];
+let n = 0;
+BLOCKS.forEach(b => b.items.forEach(it => { n += 1; it.n = n; it.block = b.id; all.push(it); }));
+const TOTAL = all.length;
+
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+const insperCount = all.filter(i => i.d.startsWith('I')).length;
+document.getElementById('meta').innerHTML =
+  `<span class="chip">${TOTAL} questões</span><span class="chip">${insperCount} Insper · ${TOTAL - insperCount} FGV-SP</span><span class="chip">Tempo sugerido: 2h40</span><span class="chip">Alternativas A–E</span>`;
+
+const blocksEl = document.getElementById('blocks');
+BLOCKS.forEach(b => {
+  const sec = el('section', 'block');
+  sec.id = b.id;
+  const head = el('div', 'block-head');
+  head.append(el('div', null, `<h2>${esc(b.title)}</h2>${b.sub ? `<div class="sub">${esc(b.sub)}</div>` : ''}`));
+  const score = el('span', 'score', `${b.items.length} questões`);
+  score.id = 'score-' + b.id;
+  head.append(score);
+  sec.append(head);
+  if (b.note) sec.append(el('p', 'block-note', esc(b.note)));
+  let lastGroup = null;
+  b.items.forEach(it => {
+    if (it.g && it.g !== lastGroup) { sec.append(el('div', 'group-label', esc(it.g))); lastGroup = it.g; }
+    const doc = DOCS[it.d];
+    const row = el('div', 'q');
+    row.id = 'q' + it.n;
+    const where = (it.s ? it.s + ', ' : '') + 'questão ' + it.q;
+    row.append(el('span', 'num', String(it.n).padStart(2, '0')));
+    const body = el('div', null,
+      `<p class="topic">${esc(it.t)}</p>
+       <p class="src"><span>${esc(doc.short)}</span><span class="code">${esc(where)}</span><a href="${doc.url}" target="_blank" rel="noopener">Abrir prova ↗</a></p>`);
+    body.style.minWidth = '0';
+    row.append(body);
+    const bub = el('div', 'bubbles');
+    bub.setAttribute('role', 'radiogroup');
+    bub.setAttribute('aria-label', 'Resposta da questão ' + it.n);
+    'ABCDE'.split('').forEach(L => {
+      const id = `q${it.n}${L}`;
+      const inp = el('input');
+      inp.type = 'radio'; inp.name = 'q' + it.n; inp.id = id; inp.value = L;
+      if (answers[it.n] === L) inp.checked = true;
+      inp.addEventListener('change', () => { answers[it.n] = L; save(); updateProgress(); if (graded) grade(false); });
+      const lab = el('label', null, L);
+      lab.htmlFor = id;
+      bub.append(inp, lab);
+    });
+    row.append(bub);
+    const v = el('div', 'verdict');
+    v.hidden = true;
+    row.append(v);
+    sec.append(row);
+  });
+  blocksEl.append(sec);
+});
+
+const srcEl = document.getElementById('sources');
+const used = [...new Set(all.map(i => i.d))];
+used.forEach(k => {
+  const d = DOCS[k];
+  const li = el('li', null, `${esc(d.label)}: <a href="${d.url}" target="_blank" rel="noopener">${k.startsWith('I') ? 'caderno de questões' : 'prova com resolução (Curso Objetivo)'}</a>${d.gab ? ` · <a href="${d.gab}" target="_blank" rel="noopener">gabarito oficial</a>` : ''}`);
+  srcEl.append(li);
+});
+srcEl.append(el('li', null, 'Página oficial do Insper com todas as provas: <a href="https://www.insper.edu.br/pt/cursos/vestibular/provas-e-gabaritos" target="_blank" rel="noopener">Provas e Gabaritos</a>'));
+
+function updateProgress() {
+  const c = Object.keys(answers).filter(k => answers[k]).length;
+  document.getElementById('progTxt').textContent = `${c} de ${TOTAL} marcadas`;
+  document.getElementById('progFill').style.width = (c / TOTAL * 100) + '%';
+}
+
+let graded = false;
+function grade(scroll) {
+  graded = true;
+  let right = 0;
+  const per = {};
+  BLOCKS.forEach(b => per[b.id] = { r: 0, t: b.items.length, title: b.title });
+  all.forEach(it => {
+    const row = document.getElementById('q' + it.n);
+    const a = answers[it.n];
+    const ok = a === it.k;
+    if (ok) { right++; per[it.block].r++; }
+    row.classList.remove('right', 'wrong', 'blank');
+    row.classList.add('graded', ok ? 'right' : (a ? 'wrong' : 'blank'));
+    row.querySelectorAll('label').forEach(l => l.classList.toggle('is-key', l.textContent === it.k));
+    const v = row.querySelector('.verdict');
+    v.hidden = false;
+    v.textContent = ok ? `Certo · gabarito ${it.k}` : (a ? `Errado · você marcou ${a}, gabarito ${it.k}` : `Em branco · gabarito ${it.k}`);
+  });
+  BLOCKS.forEach(b => { document.getElementById('score-' + b.id).textContent = `${per[b.id].r} de ${per[b.id].t} certas`; });
+  const res = document.getElementById('results');
+  const pct = Math.round(right / TOTAL * 100);
+  res.innerHTML = `<h2>Resultado</h2>
+    <div class="total"><span class="big">${right}/${TOTAL}</span><span class="pct">${pct}% de acerto</span></div>
+    <div class="bars">${BLOCKS.map(b => { const p = per[b.id]; const w = Math.round(p.r / p.t * 100); return `<div class="bar"><span class="lbl">${esc(p.title)}</span><div class="track"><div class="fill" style="width:${w}%"></div></div><span class="n">${p.r}/${p.t}</span></div>`; }).join('')}</div>`;
+  res.hidden = false;
+  if (scroll) res.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+}
+
+function clearAll() {
+  answers = {}; save(); graded = false;
+  document.querySelectorAll('.bubbles input').forEach(i => { i.checked = false; });
+  document.querySelectorAll('.q').forEach(r => { r.classList.remove('graded', 'right', 'wrong', 'blank'); const v = r.querySelector('.verdict'); v.hidden = true; v.textContent = ''; });
+  document.querySelectorAll('.bubbles label').forEach(l => l.classList.remove('is-key'));
+  BLOCKS.forEach(b => { document.getElementById('score-' + b.id).textContent = `${b.items.length} questões`; });
+  const res = document.getElementById('results'); res.hidden = true; res.innerHTML = '';
+  updateProgress();
+}
+
+const confirmBox = document.getElementById('confirmBox');
+const clearBtn = document.getElementById('clearBtn');
+document.getElementById('gradeBtn').addEventListener('click', () => grade(true));
+clearBtn.addEventListener('click', () => { confirmBox.hidden = false; clearBtn.hidden = true; document.getElementById('cancelClear').focus(); });
+document.getElementById('cancelClear').addEventListener('click', () => { confirmBox.hidden = true; clearBtn.hidden = false; });
+document.getElementById('doClear').addEventListener('click', () => { clearAll(); confirmBox.hidden = true; clearBtn.hidden = false; });
+
+updateProgress();
+</script>
