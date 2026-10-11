@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Banco de questões das provas antigas da FGV Direito SP.
+"""Banco de questões das provas antigas da FGV Direito SP e do Insper.
 
-Os dados são os CSVs desta pasta (um por edição, separador ';').
+Os dados são os CSVs desta pasta (FGV) e da subpasta insper/ (Insper), um por edição,
+separador ';'. Os dois usam o mesmo temas.json. Sem --vest, a conta é só da FGV.
 Este script só lê, valida e conta — nunca altera os CSVs.
 
 Uso:
@@ -11,6 +12,8 @@ Uso:
   python3 banca.py tema "<tema ou subtema>"          # linha do tempo + lista das questões
   python3 banca.py busca "<termo>" [--materia M]      # procura em tema, subtema, tags e resumo
   python3 banca.py recomendar [--materia M] [--prova P] [--ultimas 3] [--top 15]
+
+Qualquer comando aceita --vest insper para usar o banco do Insper (padrão: fgv).
 
 Nos CSVs: separador ';' — nunca usar ';' dentro de um campo (use ' — ').
 """
@@ -32,10 +35,15 @@ def ordem_edicao(e):
     return (int(a), int(s))
 
 
-def carregar():
+PASTAS = {"fgv": AQUI, "insper": os.path.join(AQUI, "insper")}
+
+
+def carregar(vest="fgv"):
     temas = json.load(open(os.path.join(AQUI, "temas.json"), encoding="utf-8"))
     qs, erros = [], []
-    for f in sorted(glob.glob(os.path.join(AQUI, "*.csv"))):
+    if vest not in PASTAS:
+        sys.exit(f"--vest {vest}: use {' ou '.join(PASTAS)}")
+    for f in sorted(glob.glob(os.path.join(PASTAS[vest], "*.csv"))):
         with open(f, encoding="utf-8") as fh:
             linhas = [l for l in fh if l.strip() and not l.startswith("#")]
         for i, r in enumerate(csv.DictReader(linhas, delimiter=";"), start=2):
@@ -176,8 +184,8 @@ def cmd_recomendar(qs, temas, erros, a, pos):
 
 
 if __name__ == "__main__":
-    qs, temas, erros = carregar()
     a, pos = args(sys.argv[2:])
+    qs, temas, erros = carregar(norm(a.pop("vest", "fgv")))
     cmd = sys.argv[1] if len(sys.argv) > 1 else "edicoes"
     fn = globals().get(f"cmd_{cmd}")
     if not fn:

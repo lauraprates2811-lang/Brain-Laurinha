@@ -1,5 +1,5 @@
 ---
-description: Responde com números o que mais cai na FGV, a partir do banco de provas antigas. Use SEMPRE, mesmo sem a Laura digitar /banca, quando ela perguntar sobre provas ou questões antigas, o que mais cai ou apareceu, quantas vezes um tema caiu, estatística ou frequência de matérias, ou o que estudar/priorizar com base na prova
+description: Responde com números o que mais cai na FGV e no Insper (provas de Direito), a partir do banco de provas antigas. Use SEMPRE, mesmo sem a Laura digitar /banca, quando ela perguntar sobre provas ou questões antigas, o que mais cai ou apareceu, quantas vezes um tema caiu, estatística ou frequência de matérias, ou o que estudar/priorizar com base na prova
 ---
 
 # /banca — o estatístico das provas antigas
@@ -23,6 +23,22 @@ Ex.: `/banca o que mais cai em matemática` · `/banca literatura nos últimos 3
 | `banca.py` | Lê, valida e conta. Nunca altera os CSVs |
 
 Os PDFs originais ficam em `Projetos/Vestibular/provas-antigas/<edição>/`.
+
+## Banco do Insper (subpasta `insper/`)
+
+Mesmo formato, mesmo `temas.json`, mesmo script: acrescente **`--vest insper`** em qualquer comando
+(sem ele, a conta é só da FGV). Ex.: `python3 banca.py tema figuras --vest insper`.
+
+- **Só provas que valem para Direito**, por decisão da Laura (11/10/2026): 2026.1 (30/11/2025, números
+  1–60, e a reaplicação de 21/12/2025, números R1–R60) e 2026.2 (07/06/2026). São 183 itens: 180
+  objetivas e 3 redações (número R; a da reaplicação é RR).
+- As provas de 2016 a 2020 que estão no site **não entram**: a capa lista só Administração, Economia
+  e Engenharias. As de 2021 a 2025 o Insper não publica.
+- Formato (2026): Português 1–15 · Matemática 16–30 · História 31–35 · Geografia 36–41 ·
+  Filosofia/Sociologia 42–45 · Biologia 46–50 · Química 51–55 · Física 56–60. Não tem Inglês.
+- Os PDFs **não estão no Brain**: foram lidos no site (provas-e-gabaritos), sem baixar. Gabarito oficial
+  conferido letra por letra. Para mandar a Laura à prova real, dê o id e o link da página do Insper.
+- Base pequena (3 provas): diga isso sempre que der um número do Insper.
 
 ## Como responder
 

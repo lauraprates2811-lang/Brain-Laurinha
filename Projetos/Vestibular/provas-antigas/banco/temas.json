@@ -43,6 +43,7 @@
     "Gramática"
   ],
   "História": [
+    "Pré-História",
     "Brasil Colônia",
     "Brasil Império",
     "Primeira República (1889–1930)",
@@ -101,5 +102,71 @@
     "Economia e trabalho",
     "Cultura e educação",
     "Meio ambiente"
+  ],
+  "Filosofia": [
+    "Filosofia e mito",
+    "Epistemologia e conhecimento",
+    "Lógica e argumentação",
+    "Estética e indústria cultural",
+    "Ética",
+    "Filosofia política"
+  ],
+  "Sociologia": [
+    "Clássicos da sociologia",
+    "Indivíduo, instituições e identidade",
+    "Trabalho e sociedade",
+    "Desigualdade e classes sociais",
+    "Cultura e pluralismo",
+    "Estado, política e cidadania",
+    "Sociedade brasileira",
+    "Globalização, migração e fronteiras",
+    "Mídia, consumo e tecnologia"
+  ],
+  "Física": [
+    "Grandezas, unidades e vetores",
+    "Cinemática",
+    "Dinâmica e leis de Newton",
+    "Energia, trabalho e potência",
+    "Quantidade de movimento",
+    "Estática e hidrostática",
+    "Gravitação",
+    "Termologia e calorimetria",
+    "Gases e termodinâmica",
+    "Óptica",
+    "Ondulatória e acústica",
+    "Eletrostática",
+    "Eletrodinâmica",
+    "Magnetismo e eletromagnetismo",
+    "Física moderna"
+  ],
+  "Química": [
+    "Materiais, misturas e separação",
+    "Atomística e tabela periódica",
+    "Ligações e interações",
+    "Funções inorgânicas",
+    "Reações e estequiometria",
+    "Gases",
+    "Soluções",
+    "Termoquímica",
+    "Cinética química",
+    "Equilíbrio químico e pH",
+    "Eletroquímica",
+    "Radioatividade",
+    "Química orgânica",
+    "Química ambiental"
+  ],
+  "Biologia": [
+    "Ecologia",
+    "Bioquímica e metabolismo",
+    "Citologia",
+    "Genética",
+    "Evolução",
+    "Fisiologia humana",
+    "Saúde e doenças",
+    "Microbiologia",
+    "Zoologia",
+    "Botânica",
+    "Reprodução e embriologia",
+    "Biotecnologia"
   ]
 }
