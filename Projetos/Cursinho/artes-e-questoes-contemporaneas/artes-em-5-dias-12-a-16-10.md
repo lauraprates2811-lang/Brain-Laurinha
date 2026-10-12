@@ -8,7 +8,7 @@ PDF colorido: `artes-em-5-dias-12-a-16-10.pdf` (mesma pasta).
 
 ## As 2h de cada dia
 
-10 min mapa · 40 min 2 dissertativas reais (18 min cada + 4 de correção pela grade) · 60 min teoria na apostila v3 · 10 min explicar 2 obras em voz alta.
+07:00–08:20 teoria das obras do dia na apostila v3 · 08:20–09:00 as 2 dissertativas do dia (18 min cada + correção pela grade).
 Em cada obra, 4 perguntas: **Quando?** · **O quê?** (tema e recurso) · **Com quem conversa?** (trilha da p. 51) · **E hoje?**
 
 | Dia | Tema | Obras | Ler | Dissertativas |
@@ -23,8 +23,7 @@ Se sobrar: 2024.1-AR3 · 2025.1-AR4 · 2026.1-AR4 · 2022.1-AR12 · 2025.1-AR1 �
 
 ## Quando
 
-07:00–09:00, de segunda a sexta, na rotina fixa da Laura (decisão dela em 12/10).
-07:00–08:00: mapa + as 2 dissertativas do dia + correção · 08:00–09:00: teoria na apostila + explicar em voz alta.
+07:00–09:00, de segunda a sexta, na rotina fixa da Laura (decisão dela em 12/10): 1h20 de teoria e 40 min de questões.
 
 Fontes: Edital Unificado 1º/2027 (Anexo de Artes; itens 9.3.2 e 9.3.5) · `/banca` (30 dissertativas de Artes, 2021.1–2026.1) · apostila v3, p. 51 (trilhas).
 
