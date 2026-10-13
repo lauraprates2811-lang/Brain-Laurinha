@@ -518,6 +518,17 @@
 > Teste: tire o pedaço; sobrou palavra? (de|trimento não; infra|estrutura sim)
 > ⚠️ Insper 2026.2 Q8. 5º erro de formação de palavras em 2 semanas.
 
+> [!question]- 103. Reescreva trocando "sem" por "sem que" e "algum" por outro pronome: "Poder criticar o mundo sem fazer esforço algum para mudá-lo"
+> **"...sem que se faça esforço nenhum (ou: qualquer esforço) para mudá-lo."**
+> "Sem que" pede subjuntivo e **mantém o verbo** (fazer → se faça). "Algum" depois do nome, em frase negativa = "nenhum".
+> Troque só o pedido: "sem que seja preciso" muda o sentido.
+> ⚠️ FGV Direito nov/2018 Q01b — tirou o "fazer" e perdeu metade do item.
+
+> [!question]- 104. "O poço realiza o desejo sem exigi-lo esforço": certo na norma-padrão?
+> **Não.** Exige-se **algo** (esforço) **de alguém** (o personagem): a pessoa é objeto indireto → **lhe**.
+> "sem **lhe exigir** esforço" / "sem exigir-**lhe** esforço".
+> ⚠️ FGV Direito nov/2018 Q01a. 3º erro de regência (23/09, 26/09, 12/10).
+
 ## 🔗 Relacionados
 
 [[Cursinho-projeto]]

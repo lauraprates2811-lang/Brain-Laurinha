@@ -44,6 +44,20 @@ Todo erro de Português, com a causa. É daqui que o `/revisar` monta a revisão
 **O que revisar:** "que processo" pede o mecanismo: separar a palavra em pedaços, dizer o que entrou (prefixo, sufixo, os dois) e dar o nome. Neologismo formal nasce desses processos.
 **Nota:** 0 / 0,5 no item (0%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-09-30-lingua-portuguesa-ambiguidade-porcona.pdf`
 
+### 2026-10-12 — Tirinha "O poço dos desejos": semelhança poço × rede social (FGV Direito nov/2018, Q01, item a)
+**Questão:** que semelhança há entre recorrer a um poço dos desejos e se servir de uma rede social, como aponta a tirinha? Explique.
+**Respondi:** semelhança certa (nos dois, o desejo se realiza sem esforço), mas com desvios: período sem verbo principal ("Na tirinha acima a crítica imposta sobre as redes sociais, e como..."), "imposta sobre" (= feita a), vírgula unindo duas frases, "sem exigi-lo esforço" (→ sem lhe exigir), "às-utilizam" (→ as utilizam), "pra", acentos (crítica, usuários, está, também, mudá-lo), "o que" sem vírgula antes, "ezigi/exforso" pelo que li na foto   **Correto:** "Na tirinha, há uma crítica às redes sociais... O poço realiza o desejo do personagem sem lhe exigir esforço, o que cria uma semelhança entre a função das redes e a do poço."
+**Causa:** desatenção (língua). Regência é a **3ª vez** (23/09 "constar com", 26/09 "contribuindo ao", hoje "exigi-lo"); acento e frase sem oração principal repetem a redação de 26/09.
+**O que revisar:** exigir algo DE alguém (lhe); período precisa de verbo principal; vírgula não une frases completas; pronome "as" não leva crase nem hífen antes do verbo.
+**Nota:** 0,375 / 0,5 no item (75%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-10-12-lingua-portuguesa-poco-dos-desejos-sem-que.pdf`
+
+### 2026-10-12 — Reescrita com "sem que" (FGV Direito nov/2018, Q01, item b)
+**Questão:** reescreva, sem alterar o sentido, "Poder criticar o mundo sem fazer esforço algum para mudá-lo", trocando "sem" por "sem que" e "algum" por outro pronome.
+**Respondi:** "Poder criticar o mundo sem que seja preciso qualquer tipo de esforço para muda-lo"   **Correto (sem gabarito enviado):** "Poder criticar o mundo sem que se faça esforço nenhum (ou: qualquer esforço) para mudá-lo"
+**Causa:** interpretação (mexeu além do pedido: tirou o verbo "fazer", pôs "seja preciso" e "tipo de", e "não fazer esforço" virou "não ser preciso esforço") + desatenção (acento em mudá-lo). As duas trocas pedidas estavam certas.
+**O que revisar:** em reescrita "sem alterar o sentido", trocar só o que foi pedido e copiar o resto; oração reduzida de infinitivo → desenvolvida mantém o mesmo verbo no subjuntivo (sem fazer → sem que se faça).
+**Nota:** 0,125 / 0,5 no item (25%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-10-12-lingua-portuguesa-poco-dos-desejos-sem-que.pdf`
+
 ## 🔗 Relacionados
 
 [[Vestibular-projeto]]

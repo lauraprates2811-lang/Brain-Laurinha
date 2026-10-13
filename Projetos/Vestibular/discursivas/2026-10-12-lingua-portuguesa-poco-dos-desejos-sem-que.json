@@ -1,0 +1,58 @@
+{
+  "titulo": "Português — tirinha \"O poço dos desejos\" (semelhança + reescrita com \"sem que\")",
+  "data": "2026-10-12",
+  "materia": "Língua Portuguesa",
+  "origem": "FGV Direito · novembro/2018 · questão 01 — enviada pela Laura em foto; fora do banco (2021.1–2026.1), sem grade oficial",
+  "valor": "1,0",
+  "tipo_grade": "niveis",
+  "enunciado": "Tirinha de André Dahmer (Malvados), \"O poço dos desejos\", em três quadros. 1º: o personagem, diante do poço, pensa \"Um desejo? Poder criticar o mundo...\". 2º: ele joga a moeda e completa \"...sem fazer esforço algum para mudá-lo.\". 3º: do poço sai o ícone de uma rede social, e ele comemora: \"Oba! Uma rede social!\".\n\na) Que semelhança há entre recorrer a um \"poço dos desejos\" e se servir de uma rede social tal como apontado na tirinha? Explique.\nb) Reescreva, sem alterar seu sentido, a frase \"Poder criticar o mundo sem fazer esforço algum para mudá-lo\", substituindo a preposição \"sem\" pela locução \"sem que\" e \"algum\" por outro pronome adequado ao contexto.",
+  "gabarito": "Sem gabarito enviado — resposta esperada estimada pelo Brain, a confirmar na resolução da prova.\n\na) Nos dois casos, a pessoa consegue o que deseja sem esforço próprio, sem ação efetiva: no poço, basta jogar uma moeda para ter o desejo atendido; na rede social, basta postar críticas para ter a sensação de agir sobre o mundo, sem fazer nada para mudá-lo. A tirinha ironiza essa atitude cômoda e passiva.\n\nb) \"Poder criticar o mundo sem que se faça esforço nenhum para mudá-lo\" (ou: \"sem que se faça qualquer esforço\" / \"sem que eu faça esforço nenhum\"). \"Sem que\" pede verbo no subjuntivo; \"algum\" depois do substantivo, em frase negativa, vale \"nenhum\". O resto da frase, inclusive o verbo \"fazer\", fica igual.",
+  "grade": "",
+  "resposta_marcada": "a) [[Na tirinha acima|1]]{+,+} {+há+} a {-critica-}{+crítica|3+} {-imposta sobre as|2-}{+feita às+} redes sociais{-,-} e {+ao modo+} como seus {-usuarios-}{+usuários|3+} {-às-utilizam|4-}{+as utilizam+} para expor {-criticas-}{+críticas|3+} sobre o mundo sem fazer esforço {-pra|5-}{+para+} {-muda-lo-}{+mudá-lo|3+}{-, um|6-}{+. Um+} poço de desejos {-esta-}{+está|3+} {-tambem-}{+também|3+} presente nos quadrinhos, [[realizando os desejos do personagem|14]] sem {-ezigi-lo exforso|7-}{+lhe exigir esforço|8+}{+,|9+} o que cria uma semelhança entre a função das redes sociais e {-o-}{+a do|10+} poço de desejos.\n\nb) {-re-escrita|11-}{+reescrita+} -> “Poder criticar o mundo [[sem que|13]] {-seja preciso|12-}{+se faça+} qualquer {-tipo de|12-} esforço para {-muda-lo-}{+mudá-lo|3+}.”",
+  "comentarios": [
+    {"n": 1, "tipo": "gramatica", "texto": "Período sem verbo principal: \"Na tirinha acima a crítica imposta sobre as redes sociais, e como seus usuários...\" começa com o sujeito e nunca chega ao verbo — a frase fica truncada. Bastava \"Na tirinha acima, há a crítica...\" (ou \"a tirinha critica as redes sociais...\")."},
+    {"n": 2, "tipo": "gramatica", "texto": "Palavra errada: \"impor\" é obrigar. Crítica se FAZ A alguma coisa: \"a crítica feita às redes sociais\" (a + as = às)."},
+    {"n": 3, "tipo": "gramatica", "texto": "Acentos faltando: crítica, críticas, usuários, está, também e mudá-lo (este, duas vezes — no a e no b). Um acento sozinho já derruba um nível na grade."},
+    {"n": 4, "tipo": "gramatica", "texto": "\"as\" aqui é pronome (= as redes sociais): sem crase e sem hífen. Hífen só quando o pronome vem depois do verbo (utilizam-nas); \"como\" puxa o pronome para antes: \"como seus usuários as utilizam\"."},
+    {"n": 5, "tipo": "gramatica", "texto": "\"Pra\" é registro informal — na prova, conta como desvio. Sempre \"para\"."},
+    {"n": 6, "tipo": "gramatica", "texto": "A vírgula está unindo duas frases completas (\"...sem fazer esforço para mudá-lo\" / \"um poço de desejos está presente...\"). Entre elas, ponto final."},
+    {"n": 7, "tipo": "gramatica", "texto": "Regência: exige-se ALGO (esforço) DE ALGUÉM (o personagem). Quem sofre a exigência é objeto indireto -> \"lhe\", não \"o\". \"Sem exigi-lo esforço\" -> \"sem lhe exigir esforço\" (ou \"sem exigir-lhe esforço\")."},
+    {"n": 8, "tipo": "gramatica", "texto": "Na foto li \"ezigi\" e \"exforso\". Se foi só a letra corrida, atenção do mesmo jeito: na FGV o corretor lê o que vê. O certo é exigir (com x) e esforço (com s e ç)."},
+    {"n": 9, "tipo": "gramatica", "texto": "\"O que\" retomando a frase anterior inteira vem depois de vírgula: \"sem lhe exigir esforço, o que cria uma semelhança\"."},
+    {"n": 10, "tipo": "gramatica", "texto": "Paralelismo: você compara a FUNÇÃO das redes com o POÇO. Compare função com função: \"a função das redes sociais e a do poço\"."},
+    {"n": 11, "tipo": "gramatica", "texto": "\"Reescrita\" é sem hífen (re- + e junta direto: reescrever, reeleger). E não precisa escrever rótulo na folha da prova — vá direto à frase."},
+    {"n": 12, "tipo": "conteudo", "texto": "Aqui você mexeu além do pedido e mudou o sentido. O original diz que a pessoa NÃO FAZ esforço (atitude dela); a sua frase diz que NÃO É PRECISO esforço (necessidade) — e ainda pode ser lida como se mudar o mundo não exigisse esforço nenhum. Tirou o verbo \"fazer\" e acrescentou \"tipo de\". A questão pedia só duas trocas; o resto fica igual: \"sem que se faça qualquer esforço\"."},
+    {"n": 13, "tipo": "elogio", "texto": "As duas trocas pedidas estão certas: \"sem que\" seguido de subjuntivo (\"seja\") e \"qualquer\" no lugar de \"algum\" (depois de \"sem\", \"qualquer\" tem valor de \"nenhum\"). A gramática da troca você domina."},
+    {"n": 14, "tipo": "elogio", "texto": "Aqui está o centro da resposta, e está certo: o poço realiza o desejo sem exigir esforço, assim como a rede deixa criticar sem esforço para mudar. Você achou a semelhança e explicou os dois lados."}
+  ],
+  "itens": [
+    {"item": "a)", "esperado": "A semelhança (nos dois, o desejo se realiza sem esforço / sem ação real) explicada dos dois lados", "voce": "Semelhança certa e explicada dos dois lados; vários desvios (período sem verbo principal, acentos, \"pra\", regência de \"exigir\", vírgula unindo frases)", "nivel": "75%", "pontos": "0,375 / 0,5"},
+    {"item": "b)", "esperado": "\"sem que\" + verbo no subjuntivo, \"algum\" -> \"nenhum\"/\"qualquer\", mantendo \"fazer esforço\" e o sentido", "voce": "Trocas certas (\"sem que seja\", \"qualquer\"), mas trocou \"fazer\" por \"seja preciso\" e acrescentou \"tipo de\" — sentido alterado; \"muda-lo\" sem acento", "nivel": "25%", "pontos": "0,125 / 0,5"}
+  ],
+  "nota": {
+    "obtida": "0,5",
+    "maxima": "1,0",
+    "percentual": "50%",
+    "criterio": "Item a completo, com desvios de redação (75%); item b parcial — sentido alterado — e com desvio (25%). Pesos de 50% por item supostos; sem gabarito oficial, a nota é estimativa."
+  },
+  "de_acordo": "Item a): sua resposta está de acordo com o pedido — a semelhança está certa e explicada; o que derrubou foi só a língua. Item b): as duas trocas estão certas, mas a frase mudou de sentido ao perder o verbo \"fazer\". Este é o ponto de maior dúvida da nota: se a banca aceitasse \"seja preciso\" como sentido equivalente, o b iria a 75% (só o acento de mudá-lo) e a questão a 0,75.",
+  "gramatica": [
+    {"trecho": "Na tirinha acima a crítica imposta sobre as redes sociais, e como...", "correcao": "Na tirinha acima, há a crítica feita às redes sociais e ao modo como...", "regra": "Todo período precisa de verbo principal; o seu começa pelo sujeito e nunca chega ao verbo."},
+    {"trecho": "imposta sobre as redes", "correcao": "feita às redes", "regra": "Impor é obrigar. Crítica se faz A algo (a + as = às)."},
+    {"trecho": "critica · criticas · usuarios · esta · tambem · muda-lo (2x)", "correcao": "crítica · críticas · usuários · está · também · mudá-lo", "regra": "Proparoxítona sempre tem acento; paroxítona em ditongo (usuários); oxítona em -a e -em (está, também); verbo + pronome: tira o r e acentua a oxítona (mudá-lo)."},
+    {"trecho": "às-utilizam", "correcao": "as utilizam", "regra": "Pronome objeto não leva crase; hífen só se vier depois do verbo (utilizam-nas). \"Como\" puxa o pronome para antes."},
+    {"trecho": "pra", "correcao": "para", "regra": "Registro informal é desvio na prova."},
+    {"trecho": "mudá-lo, um poço de desejos está", "correcao": "mudá-lo. Um poço de desejos está", "regra": "Vírgula não une duas frases completas: use ponto."},
+    {"trecho": "sem exigi-lo esforço", "correcao": "sem lhe exigir esforço", "regra": "Exigir algo DE alguém: a pessoa é objeto indireto (lhe)."},
+    {"trecho": "ezigi · exforso", "correcao": "exigir · esforço", "regra": "Grafia (pelo que li na foto): exigir com x; esforço com s e ç."},
+    {"trecho": "esforço o que cria", "correcao": "esforço, o que cria", "regra": "\"O que\" retomando a frase inteira vem depois de vírgula."},
+    {"trecho": "a função das redes sociais e o poço", "correcao": "a função das redes sociais e a do poço", "regra": "Paralelismo: compare função com função."},
+    {"trecho": "re-escrita", "correcao": "reescrita", "regra": "Prefixo re- junta sem hífen (reescrever, reeleger)."}
+  ],
+  "melhorar": [
+    "Em reescrita \"sem alterar o sentido\", troque SÓ o que foi pedido e copie o resto, verbo incluído: \"sem fazer esforço algum\" -> \"sem que se faça esforço nenhum\". Mexer além do pedido é onde o b perdeu metade.",
+    "Antes de passar para o próximo item, confira a estrutura: o período tem verbo principal? Há duas frases completas presas por vírgula? Só isso tiraria três desvios do item a.",
+    "Reserve o último minuto para caçar acento e \"pra\": no a e no b, um desvio sozinho já tira 25 pontos percentuais de uma resposta que estava certa."
+  ],
+  "reescrita": "a) Na tirinha, há uma crítica às redes sociais e ao modo como seus usuários as utilizam para expor críticas sobre o mundo sem fazer esforço algum para mudá-lo. O poço dos desejos também está presente nos quadrinhos e realiza o desejo do personagem sem lhe exigir esforço, o que cria uma semelhança entre a função das redes sociais e a do poço: nos dois, consegue-se o que se quer sem agir de fato — a moeda no poço e a crítica postada dão a sensação de ação, mas o mundo continua igual.\n\nb) “Poder criticar o mundo sem que se faça qualquer esforço para mudá-lo.”"
+}
