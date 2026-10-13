@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>12 Músicas em 12 Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: baralho primeiro (um card por música), linha do tempo na segunda aba. */
+:root{
+  --ground:#E9EBE6; --surface:#F7F8F4; --surface-2:#EFF1EC; --ink:#1A1E23; --muted:#5A6068; --line:#CDD1CA;
+  --h-prova:#2B4C9B; --h-samba:#A5690F; --h-tropic:#2E6863; --h-jovem:#5F3A72; --h-rock:#8E2C2C;
+  --stamp:#1A1E23; --ok:#2F7A45; --rev:#B0461F;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+    --h-prova:#8FA8F2; --h-samba:#D9A441; --h-tropic:#6FC2BA; --h-jovem:#BE9FDA; --h-rock:#E58383;
+    --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#14171B; --surface:#1D2126; --surface-2:#23282E; --ink:#E6E8E3; --muted:#9AA0A6; --line:#323940;
+  --h-prova:#8FA8F2; --h-samba:#D9A441; --h-tropic:#6FC2BA; --h-jovem:#BE9FDA; --h-rock:#E58383;
+  --stamp:#E6E8E3; --ok:#6CC486; --rev:#F08C5E;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:10px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(34px,6vw,58px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+.lede{max-width:68ch;margin:0;color:var(--ink)}
+.lede b{font-weight:600}
+.fix{max-width:68ch;font-size:13.5px;color:var(--muted);border-left:3px solid var(--rev);padding:4px 0 4px 12px}
+.fix b{color:var(--ink);font-weight:600}
+
+.tabs{display:inline-flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:4px;justify-self:start}
+.tabs button{font:600 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--h-prova);outline-offset:2px}
+
+/* ---------- Mapa ---------- */
+.timeline{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px}
+.timeline h2{margin:0;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px}
+.tl li{--c:var(--ink);border-top:4px solid var(--c);background:var(--surface-2);border-radius:6px;padding:8px 10px 10px;display:grid;gap:2px;align-content:start;min-width:0}
+.tl .yr{font:800 26px/1 var(--display);color:var(--c);font-variant-numeric:tabular-nums}
+.tl .song{font-weight:600;font-size:14px;line-height:1.25}
+.tl .who{font-size:12.5px;color:var(--muted)}
+.tl .fgv{justify-self:start;margin:4px 0 0}
+
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.branch{--c:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 16px 16px;min-width:0}
+.branch h2{margin:0 0 8px;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase;color:var(--c)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:14px}
+.tree li{position:relative;padding:3px 0 3px 18px}
+.tree li::before{content:"";position:absolute;left:0;top:0;bottom:0;border-left:1.5px solid var(--c);opacity:.55}
+.tree li:last-child::before{bottom:auto;height:15px}
+.tree li::after{content:"";position:absolute;left:0;top:15px;width:12px;border-top:1.5px solid var(--c);opacity:.55}
+.tree > li > span{font-weight:600}
+.tree ul li{font-size:14px;color:var(--muted)}
+.tree ul li b{color:var(--ink);font-weight:600}
+.fgv{display:inline-block;font:500 11px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:4px;padding:1px 5px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+.pairs{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px}
+.pairs h2{margin:0;font:800 23px/1 var(--display);letter-spacing:.015em;text-transform:uppercase}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:0}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* ---------- Flashcards ---------- */
+.deck{display:grid;gap:14px;max-width:760px;width:100%;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{--c:var(--ink);font:500 13px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.chip[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:600}
+.chip .n{font:500 11px/1 var(--mono);color:var(--muted)}
+
+.stage{perspective:1400px}
+.card{--c:var(--ink);display:grid;cursor:pointer;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;min-height:320px}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:12px;padding:18px 22px 22px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);min-width:0}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.meta span:last-child{color:var(--muted)}
+.q{font:800 clamp(26px,4.4vw,38px)/1.05 var(--display);letter-spacing:.01em;margin:0;align-self:center;text-wrap:balance}
+.hint{font-size:12.5px;color:var(--muted)}
+.a{align-self:start;font-size:15.5px}
+.a p{margin:0 0 8px}
+.a ul,.a ol{margin:0 0 8px;padding-left:20px}
+.a li{margin:2px 0}
+.a b{font-weight:600}
+.qsmall{font:700 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted);margin:0 0 8px}
+.warn{font-size:13.5px;color:var(--rev);border-left:3px solid var(--rev);padding:2px 0 2px 10px;margin:4px 0 0}
+.stampline{font:500 12px/1.3 var(--mono);color:var(--stamp);border:1px dashed currentColor;border-radius:5px;padding:6px 8px;justify-self:start}
+.mark{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px}
+.mark.ok{color:var(--ok);border:1px solid var(--ok)}
+.mark.rev{color:var(--rev);border:1px solid var(--rev)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1 var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.ok{color:var(--ok);border-color:var(--ok)}
+.btn.rev{color:var(--rev);border-color:var(--rev)}
+.btn[disabled]{opacity:.4;cursor:default}
+.progress{display:grid;gap:6px}
+.bar{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .b-ok{background:var(--ok)} .bar .b-rev{background:var(--rev)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 12px/1.2 var(--mono);color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.keys{font-size:12px;color:var(--muted)}
+kbd{font:500 11px/1 var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:2px 5px;background:var(--surface)}
+
+@media (max-width:760px){
+  .card{min-height:380px}
+  .keys{display:none}
+  .branches{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Artes e Questões Contemporâneas · música</div>
+    <h1>12 músicas, 12 cards</h1>
+    <p class="lede">Um card por música. Na frente, só o título. No verso: <b>quem e quando</b>, o <b>contexto histórico</b> e o <b>enredo</b>, do que a música trata.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Modo de estudo">
+    <button id="tab-cards" role="tab" aria-selected="true" aria-controls="panel-cards">Flashcards · 12</button>
+    <button id="tab-mapa" role="tab" aria-selected="false" aria-controls="panel-mapa">Linha do tempo</button>
+  </div>
+
+  <section id="panel-mapa" role="tabpanel" aria-labelledby="tab-mapa" style="display:grid;gap:16px" hidden>
+    <div class="timeline">
+      <h2>As 12 em ordem no tempo · <span style="color:var(--h-jovem)">brasileiras</span> e <span style="color:var(--h-prova)">internacionais</span></h2>
+      <ol class="tl">
+        <li style="--c:var(--h-jovem)"><span class="yr">1930</span><span class="song">Com que roupa?</span><span class="who">Noel Rosa</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1940</span><span class="song">Disseram que voltei americanizada</span><span class="who">Carmen Miranda</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1967</span><span class="song">Domingo no parque</span><span class="who">Gilberto Gil e Os Mutantes</span><span class="fgv">★ caiu</span></li>
+        <li style="--c:var(--h-prova)"><span class="yr">1968</span><span class="song">Revolution</span><span class="who">The Beatles</span><span class="fgv">★ caiu</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1973</span><span class="song">Cálice</span><span class="who">Chico Buarque e Gilberto Gil</span><span class="fgv">★ caiu</span></li>
+        <li style="--c:var(--h-prova)"><span class="yr">1975</span><span class="song">Young Americans</span><span class="who">David Bowie</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1976</span><span class="song">O mundo é um moinho</span><span class="who">Cartola</span><span class="fgv">★ caiu</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1978/1987</span><span class="song">Que país é esse?</span><span class="who">Legião Urbana</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1988</span><span class="song">O tempo não para</span><span class="who">Cazuza</span></li>
+        <li style="--c:var(--h-prova)"><span class="yr">1988</span><span class="song">Everybody knows</span><span class="who">Leonard Cohen</span></li>
+        <li style="--c:var(--h-jovem)"><span class="yr">1988/1994</span><span class="song">Malandragem</span><span class="who">Cazuza e Frejat · voz de Cássia Eller</span><span class="fgv">★ caiu</span></li>
+        <li style="--c:var(--h-prova)"><span class="yr">2006</span><span class="song">Rehab</span><span class="who">Amy Winehouse</span></li>
+      </ol>
+    </div>
+    <p class="note">★ = já caiu na FGV Direito SP (banco de provas antigas, 2021.1–2026.1). Fontes: apostila v3, p. 39–50, e as grades de correção da FGV.</p>
+  </section>
+  <!-- FLASHCARDS -->
+  <section id="panel-cards" role="tabpanel" aria-labelledby="tab-cards">
+    <div class="deck">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar cards"></div>
+      <div id="stageWrap"></div>
+      <div class="controls">
+        <div class="grp">
+          <button class="btn" id="prev" type="button">← Anterior</button>
+          <button class="btn" id="flip" type="button">Virar</button>
+          <button class="btn" id="next" type="button">Próximo →</button>
+        </div>
+        <div class="grp" id="judge" hidden>
+          <button class="btn ok" id="gotIt" type="button">Sabia</button>
+          <button class="btn rev" id="review" type="button">Revisar</button>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="bar" aria-hidden="true"><span class="b-ok" id="barOk"></span><span class="b-rev" id="barRev"></span></div>
+        <div class="stats"><span id="statLine"></span><span><button class="btn" id="shuffle" type="button" style="padding:6px 10px;font-size:12px">Embaralhar</button> <button class="btn" id="reset" type="button" style="padding:6px 10px;font-size:12px">Zerar marcações</button></span></div>
+      </div>
+      <p class="keys">Teclado: <kbd>espaço</kbd> vira · <kbd>←</kbd> <kbd>→</kbd> navega · <kbd>1</kbd> sabia · <kbd>2</kbd> revisar</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var BR = {
+    br:{n:"Brasileira", c:"var(--h-jovem)"},
+    int:{n:"Internacional", c:"var(--h-prova)"}
+  };
+  var CARDS = [
+    {b:"br", q:"Com que roupa?",
+     a:"<p><b>Noel Rosa, 1930.</b></p><p><b>Contexto:</b> Crise de 1929 e Revolução de 30 (Vargas). O samba vira a música urbana do Rio, levada pelo rádio.</p><p><b>Enredo:</b> O sujeito quer ir ao samba, mas não tem roupa, ou seja, dinheiro. É a pobreza contada com humor e ironia.</p>"},
+    {b:"br", q:"Disseram que voltei americanizada",
+     a:"<p><b>Carmen Miranda, 1940.</b></p><p><b>Contexto:</b> Estado Novo e Política da Boa Vizinhança: na 2ª Guerra os EUA se aproximam da América Latina, e Carmen vira a vitrine do Brasil em Hollywood.</p><p><b>Enredo:</b> Ela volta dos EUA, é acusada de ter se americanizado e responde que continua brasileira. Debate: identidade nacional × estrangeiro.</p>"},
+    {b:"br", q:"Domingo no parque",
+     a:"<p><b>Gilberto Gil e Os Mutantes, 1967.</b></p><p><b>Contexto:</b> Ditadura, um ano antes do AI-5. Festival da Record, no ano da passeata contra a guitarra elétrica. Começo da Tropicália.</p><p><b>Enredo:</b> José, João e Juliana: um triângulo amoroso num domingo de parque que acaba em crime passional. Letra em cortes de cinema, berimbau + guitarra.</p>", fgv:"2024.1-DIS-AR3"},
+    {b:"int", q:"Revolution",
+     a:"<p><b>The Beatles, 1968.</b></p><p><b>Contexto:</b> 1968: Maio de 68 em Paris, Guerra do Vietnã, direitos civis, contracultura.</p><p><b>Enredo:</b> Lennon quer mudar o mundo, mas recusa a violência como método: revolução × pacifismo.</p>", fgv:"2021.1-DIS-AR4 e AR5 · 2025.1-DIS-AR4"},
+    {b:"br", q:"Cálice",
+     a:"<p><b>Chico Buarque e Gilberto Gil, 1973.</b></p><p><b>Contexto:</b> Auge da ditadura: governo Médici, AI-5, censura. Foi censurada no show Phono 73 (cortaram os microfones).</p><p><b>Enredo:</b> Cálice / cale-se: usa a Paixão de Cristo para falar do silêncio imposto pela censura. Criolo (anos 2010) reescreveu em rap: periferia, racismo, violência policial.</p><p class=\"warn\">Na FGV 2026.1, a resposta oficial leu a versão do Criolo como racismo subordinado à classe: a letra sugere que o dinheiro apaga o preconceito.</p>", fgv:"2026.1-DIS-AR1"},
+    {b:"int", q:"Young Americans",
+     a:"<p><b>David Bowie, 1975.</b></p><p><b>Contexto:</b> EUA dos anos 70, pós-Vietnã e pós-Watergate: consumo e crise do sonho americano.</p><p><b>Enredo:</b> Retrata jovens americanos e o vazio por trás do sonho de consumo. Um inglês fazendo soul “americano”.</p>"},
+    {b:"br", q:"O mundo é um moinho",
+     a:"<p><b>Cartola, 1976.</b></p><p><b>Contexto:</b> Samba de raiz, samba-canção. Cartola, da Mangueira, só gravou disco nos anos 70. Ditadura, mas a música é lírica, não política.</p><p><b>Enredo:</b> Um pai ou uma mãe aconselha a filha que quer sair de casa cedo: o mundo é um moinho que vai triturar os sonhos dela.</p>", fgv:"2023.1-DIS-AR4"},
+    {b:"br", q:"Que país é esse?",
+     a:"<p><b>Legião Urbana, 1978/1987.</b></p><p><b>Contexto:</b> Escrita por Renato Russo em 1978, na ditadura. Lançada em 1987, na redemocratização: Sarney, inflação, Constituinte.</p><p><b>Enredo:</b> Lista corrupção, desigualdade e impunidade: a ditadura acabou e o país não mudou.</p>"},
+    {b:"br", q:"O tempo não para",
+     a:"<p><b>Cazuza, 1988.</b></p><p><b>Contexto:</b> Nova República frustrada: Sarney, inflação, ano da Constituição. Cazuza já tinha HIV.</p><p><b>Enredo:</b> Ataca a hipocrisia de um país que repete o velho e chama de novo. O tempo passa e nada muda.</p>"},
+    {b:"int", q:"Everybody knows",
+     a:"<p><b>Leonard Cohen, 1988.</b></p><p><b>Contexto:</b> Fim dos anos 80: capitalismo global, desigualdade, epidemia de aids, desilusão.</p><p><b>Enredo:</b> O refrão lista injustiças que “todo mundo sabe” e todos aceitam: o jogo é viciado, os ricos ganham, e tudo segue.</p>"},
+    {b:"br", q:"Malandragem",
+     a:"<p><b>Cazuza e Frejat · voz de Cássia Eller, 1988/1994.</b></p><p><b>Contexto:</b> Composta no fim dos anos 80 (a FGV data de 1988). Estourou com Cássia Eller em 1994, no Brasil já redemocratizado.</p><p><b>Enredo:</b> A jovem, cansada de ser a “menina boazinha”, pede um pouco de malandragem: quer viver e aprender a se virar num mundo que ela ainda não conhece.</p>", fgv:"2023.1-DIS-AR4"},
+    {b:"int", q:"Rehab",
+     a:"<p><b>Amy Winehouse, 2006.</b></p><p><b>Contexto:</b> Pop dos anos 2000: indústria da fama, tabloides.</p><p><b>Enredo:</b> Autobiográfica: ela se recusa a ir para a reabilitação. Som alegre × tema sombrio (vício e pressão da fama).</p>"}
+  ];
+  CARDS.forEach(function(c,i){c.id=i;});
+
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  };
+  var marks = store.get("m12d.marks",{}) || {};
+  var filter = "todos", order = CARDS.map(function(c){return c.id;}), pos = 0, flipped = false;
+
+  /* tabs */
+  var tabs = {mapa:document.getElementById("tab-mapa"), cards:document.getElementById("tab-cards")};
+  var panels = {mapa:document.getElementById("panel-mapa"), cards:document.getElementById("panel-cards")};
+  function showTab(t){
+    Object.keys(tabs).forEach(function(k){
+      var on = k===t; tabs[k].setAttribute("aria-selected", on?"true":"false"); panels[k].hidden = !on;
+    });
+    store.set("m12d.tab", t);
+  }
+  tabs.mapa.onclick=function(){showTab("mapa");};
+  tabs.cards.onclick=function(){showTab("cards");};
+  showTab(store.get("m12d.tab","cards")==="mapa"?"mapa":"cards");
+
+  /* chips */
+  var FILTERS = [["todos","Todos",null]].concat(Object.keys(BR).map(function(k){return [k,BR[k].n,BR[k].c];})).concat([["fgv","★ Caiu na FGV",null],["rev","Para revisar","var(--rev)"]]);
+  var chipsEl = document.getElementById("chips");
+  function inFilter(c,f){
+    if(f==="todos") return true;
+    if(f==="fgv") return !!c.fgv;
+    if(f==="rev") return marks[c.id]==="rev";
+    return c.b===f;
+  }
+  function renderChips(){
+    chipsEl.innerHTML="";
+    FILTERS.forEach(function(f){
+      var n = CARDS.filter(function(c){return inFilter(c,f[0]);}).length;
+      var b = document.createElement("button");
+      b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", filter===f[0]?"true":"false");
+      if(f[2]) b.style.setProperty("--c", f[2]);
+      b.innerHTML=(f[2]?"<i></i>":"")+f[1]+' <span class="n">'+n+"</span>";
+      b.onclick=function(){filter=f[0]; pos=0; flipped=false; renderChips(); render();};
+      chipsEl.appendChild(b);
+    });
+  }
+  function visible(){ return order.map(function(id){return CARDS[id];}).filter(function(c){return inFilter(c,filter);}); }
+
+  var stageWrap=document.getElementById("stageWrap"), judge=document.getElementById("judge");
+  function render(){
+    var list = visible();
+    if(pos>=list.length) pos=Math.max(0,list.length-1);
+    if(!list.length){
+      stageWrap.innerHTML='<div class="empty">'+(filter==="rev"?"Nenhum card marcado para revisar. Bom sinal.":"Nenhum card neste filtro.")+"</div>";
+      judge.hidden=true; updateStats(); return;
+    }
+    var c=list[pos], br=BR[c.b], m=marks[c.id];
+    var tag = m==="ok"?'<span class="mark ok">sabia</span>':m==="rev"?'<span class="mark rev">revisar</span>':(c.erro?'<span class="mark rev">seu erro</span>':"");
+    stageWrap.innerHTML =
+      '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" id="card" style="--c:'+br.c+'" role="button" tabindex="0" aria-label="Virar card">'+
+        '<div class="face front"><div class="meta"><span>'+br.n+'</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<h3 class="q">'+c.q+'</h3><div class="hint" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span>Toque para ver a resposta</span>'+(c.fgv?'<span class="fgv">★ caiu na FGV</span>':tag)+'</div></div>'+
+        '<div class="face back"><div class="meta"><span>Resposta</span><span>'+(pos+1)+" / "+list.length+'</span></div>'+
+          '<div class="a"><p class="qsmall">'+c.q+'</p>'+c.a+'</div>'+
+          (c.fgv?'<div class="stampline">★ Caiu na FGV: '+c.fgv+'</div>':'<div></div>')+'</div>'+
+      '</div></div>';
+    var card=document.getElementById("card");
+    card.onclick=doFlip;
+    card.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();doFlip();}};
+    judge.hidden=!flipped;
+    document.getElementById("prev").disabled = pos===0;
+    document.getElementById("next").disabled = pos>=list.length-1;
+    updateStats();
+  }
+  function doFlip(){
+    flipped=!flipped;
+    var card=document.getElementById("card"); if(card) card.classList.toggle("flipped",flipped);
+    judge.hidden=!flipped;
+  }
+  function go(d){
+    var list=visible(); var np=pos+d;
+    if(np<0||np>=list.length) return;
+    pos=np; flipped=false; render();
+  }
+  function markCur(v){
+    var list=visible(); if(!list.length) return;
+    var c=list[pos]; marks[c.id]=v; store.set("m12d.marks",marks);
+    renderChips();
+    var after=visible();
+    if(filter==="rev" && v==="ok"){ flipped=false; render(); return; }
+    if(pos<after.length-1){pos++;} flipped=false; render();
+  }
+  function updateStats(){
+    var ok=0,rev=0; CARDS.forEach(function(c){if(marks[c.id]==="ok")ok++; else if(marks[c.id]==="rev")rev++;});
+    var t=CARDS.length;
+    document.getElementById("barOk").style.width=(ok/t*100)+"%";
+    document.getElementById("barRev").style.width=(rev/t*100)+"%";
+    document.getElementById("statLine").textContent=ok+" sabia · "+rev+" revisar · "+(t-ok-rev)+" sem marca";
+  }
+  document.getElementById("prev").onclick=function(){go(-1);};
+  document.getElementById("next").onclick=function(){go(1);};
+  document.getElementById("flip").onclick=doFlip;
+  document.getElementById("gotIt").onclick=function(){markCur("ok");};
+  document.getElementById("review").onclick=function(){markCur("rev");};
+  document.getElementById("shuffle").onclick=function(){
+    for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+    pos=0; flipped=false; render();
+  };
+  document.getElementById("reset").onclick=function(){marks={}; store.set("m12d.marks",marks); renderChips(); render();};
+  document.addEventListener("keydown",function(e){
+    if(panels.cards.hidden) return;
+    var tag=(e.target&&e.target.tagName)||"";
+    if(tag==="INPUT"||tag==="TEXTAREA") return;
+    if(e.key===" "){ if(tag==="BUTTON") return; e.preventDefault(); doFlip(); }
+    else if(e.key==="ArrowRight") go(1);
+    else if(e.key==="ArrowLeft") go(-1);
+    else if(e.key==="1"&&flipped) markCur("ok");
+    else if(e.key==="2"&&flipped) markCur("rev");
+  });
+
+  renderChips(); render();
+})();
+</script>
+
+</body>
+</html>
