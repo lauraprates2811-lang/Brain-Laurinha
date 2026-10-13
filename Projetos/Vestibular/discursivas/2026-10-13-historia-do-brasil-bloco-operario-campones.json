@@ -1,0 +1,132 @@
+{
+  "titulo": "História do Brasil — Bloco Operário Camponês e a crise dos anos 1920",
+  "data": "2026-10-13",
+  "materia": "História do Brasil",
+  "origem": "FGV Direito · nov/2015 · questão 10 (enviada pela Laura, sem gabarito)",
+  "valor": "1,0",
+  "tipo_grade": "niveis",
+  "enunciado": "Na plataforma do Bloco Operário de 5 de janeiro de 1927, apresentava-se a noção de 'direitos políticos de classe': defesa dos interesses dos trabalhadores urbanos e rurais, apoio às suas lutas e reivindicações e defesa das liberdades políticas dos trabalhadores (associação, reunião, pensamento e palavra). (D. Karepovs, A classe operária vai ao Parlamento, 2006)\n\na) Explique o que era o Bloco Operário Camponês.\nb) Aponte as características políticas da crise política no Brasil na década de 1920.\nc) Apresente quatro itens do programa do BOC.",
+  "gabarito": "Sem gabarito oficial no Brain. Referência usada na correção:\na) Frente eleitoral legal criada em 1927 pelo PCB (fundado em 1922 e posto na ilegalidade) para disputar eleições; reunia sobretudo operários urbanos e buscava aliança com os camponeses. Elegeu um deputado federal (Azevedo Lima, 1927) e vereadores no Rio (1928); lançou candidato operário à Presidência em 1930.\nb) Crise das oligarquias da República Velha: contestação do café com leite e da política dos governadores (Reação Republicana, 1922); tenentismo (Copacabana 1922, revolta de 1924, Coluna Prestes); governo Bernardes em estado de sítio, repressão e Lei Celerada (1927); crescimento do movimento operário e fundação do PCB; ruptura de 1929–30 (Júlio Prestes x Aliança Liberal, morte de João Pessoa, Revolução de 1930).\nc) Voto secreto, anistia aos presos políticos, jornada de 8 horas, férias, salário mínimo, proteção ao trabalho de mulheres e menores, liberdades de associação, reunião e imprensa, luta contra o imperialismo.",
+  "grade": "Pesos não informados: cada item vale 1/3 da questão (≈ 0,33). Grade por níveis (régua FGV 2026.1).",
+  "resposta_marcada": "a) O Bloco Operário Camponês era [[um grupo de trabalhadores rurais, ou seja, pessoas que trabalhavam em fazendas|1]], {-plantaçõens-}{+plantações|2+} ou na {-pecária-}{+pecuária|2+}.\n\nb) Na {-decada-}{+década|3+} de 1920 {-ove-}{+houve|3+} uma crise política, em que a morte do vice de Getúlio Vargas foi {-asossiada-}{+associada|3+} a motivos políticos e então o presidente da {-epoca-}{+época|3+} [[teve que se revindicar|4]]. Devido ao ocorrido{+,|5+} Getúlio Vargas assume o poder.\n\nc) O programa{+ do|6+} BOC apresentava diversos direitos políticos de classe, como o voto feminino, [[o voto secreto, direitos trabalhistas como férias, salário mínimo|7]] e a definição de uma carga horária {-maxima-}{+máxima|6+} semanal.",
+  "comentarios": [
+    {
+      "n": 1,
+      "tipo": "conteudo",
+      "texto": "Errado. O BOC não era um grupo de trabalhadores rurais: era a frente eleitoral legal do PCB (1927), formada sobretudo por operários urbanos, para disputar eleições enquanto o partido estava na ilegalidade. O 'Camponês' do nome era a aliança que eles queriam com o campo, não a base do grupo."
+    },
+    {
+      "n": 2,
+      "tipo": "gramatica",
+      "texto": "'Plantações' (o plural de -ção é -ções, sem 'n'). 'Pecuária', com 'u'."
+    },
+    {
+      "n": 3,
+      "tipo": "gramatica",
+      "texto": "Acentos e ortografia: década, época (proparoxítonas: sempre acento); 'houve' (verbo haver) tem 'h' e 'u'; 'associada' com 'ss' só no meio."
+    },
+    {
+      "n": 4,
+      "tipo": "conteudo",
+      "texto": "Fato errado e palavra errada. Washington Luís não renunciou: foi deposto pela Revolução de 1930. E 'se revindicar' não existe ('reivindicar' é pedir um direito). Além disso, você só falou de 1930 (o fim da crise) e não citou nenhuma característica da década: tenentismo, contestação do café com leite, estado de sítio de Bernardes. O 'vice' era João Pessoa: diga o nome."
+    },
+    {
+      "n": 5,
+      "tipo": "gramatica",
+      "texto": "Vírgula depois da expressão adverbial deslocada no início ('Devido ao ocorrido,')."
+    },
+    {
+      "n": 6,
+      "tipo": "gramatica",
+      "texto": "'Programa do BOC' (falta a preposição). 'Máxima' é proparoxítona: leva acento."
+    },
+    {
+      "n": 7,
+      "tipo": "elogio",
+      "texto": "Item bom: voto secreto, férias, salário mínimo e limite da jornada (8 horas) são do programa do BOC. Isso já fecha os quatro pedidos. O voto feminino fica [a confirmar] na fonte: não conte com ele como um dos quatro."
+    }
+  ],
+  "itens": [
+    {
+      "item": "a)",
+      "esperado": "Frente eleitoral legal do PCB (1927), de base operária urbana, para disputar eleições",
+      "voce": "Disse que era um grupo de trabalhadores rurais",
+      "nivel": "0%",
+      "pontos": "0 / 0,33"
+    },
+    {
+      "item": "b)",
+      "esperado": "Características da crise da República Velha nos anos 1920 (tenentismo, contestação do café com leite, estado de sítio, crise até 1930)",
+      "voce": "Só a morte de João Pessoa e a chegada de Vargas em 1930, com erro de fato (renúncia) e desvios de língua",
+      "nivel": "25%",
+      "pontos": "0,08 / 0,33"
+    },
+    {
+      "item": "c)",
+      "esperado": "Quatro itens do programa",
+      "voce": "Quatro itens corretos (voto secreto, férias, salário mínimo, jornada máxima), com dois desvios de língua",
+      "nivel": "75%",
+      "pontos": "0,25 / 0,33"
+    }
+  ],
+  "nota": {
+    "obtida": "0,33",
+    "maxima": "1,0",
+    "percentual": "33%",
+    "criterio": "Item a errado; item b parcial e com desvio de redação; item c completo, mas com desvio de redação."
+  },
+  "de_acordo": "O item c) está de acordo com o pedido: os itens que você deu fazem parte do programa do BOC. Os itens a) e b) não atendem: o a) troca a base social do BOC e o b) fala de 1930, não da década de 1920.",
+  "gramatica": [
+    {
+      "trecho": "plantaçõens",
+      "correcao": "plantações",
+      "regra": "Plural de palavras em -ção: -ções."
+    },
+    {
+      "trecho": "pecária",
+      "correcao": "pecuária",
+      "regra": "Ortografia: pecuária (de 'pecus', gado)."
+    },
+    {
+      "trecho": "decada / epoca",
+      "correcao": "década / época",
+      "regra": "Toda proparoxítona leva acento."
+    },
+    {
+      "trecho": "ove",
+      "correcao": "houve",
+      "regra": "Pretérito do verbo haver: houve."
+    },
+    {
+      "trecho": "asossiada",
+      "correcao": "associada",
+      "regra": "Ortografia: as-so-ci-a-da."
+    },
+    {
+      "trecho": "teve que se revindicar",
+      "correcao": "foi deposto",
+      "regra": "'Reivindicar' (com 'ei') é exigir um direito; não serve aqui e não é pronominal."
+    },
+    {
+      "trecho": "Devido ao ocorrido Getúlio",
+      "correcao": "Devido ao ocorrido, Getúlio",
+      "regra": "Expressão adverbial deslocada no início da frase pede vírgula."
+    },
+    {
+      "trecho": "O programa BOC",
+      "correcao": "O programa do BOC",
+      "regra": "Falta a preposição que liga 'programa' a 'BOC'."
+    },
+    {
+      "trecho": "maxima",
+      "correcao": "máxima",
+      "regra": "Proparoxítona: acento."
+    }
+  ],
+  "melhorar": [
+    "No a), o BOC é o braço eleitoral legal do PCB: decore a frase 'frente eleitoral criada pelo PCB em 1927 para disputar eleições, já que o partido era ilegal'. O próprio texto falava em 'trabalhadores urbanos e rurais', e não só rurais.",
+    "No b), 'década de 1920' pede as características da década: tenentismo (1922, 1924, Coluna Prestes), contestação do café com leite (Reação Republicana), estado de sítio e repressão de Bernardes. Fale de 1930 só como desfecho.",
+    "Reserve 1 minuto no fim para os acentos: década, época e máxima custaram nível em dois itens."
+  ],
+  "reescrita": "a) O Bloco Operário Camponês era uma frente eleitoral criada em 1927 pelo Partido Comunista do Brasil (PCB), que estava na ilegalidade, para disputar eleições. Reunia sobretudo trabalhadores urbanos e buscava aliança com os trabalhadores do campo, que trabalhavam em fazendas, plantações ou na pecuária. Chegou a eleger um deputado federal e vereadores no Rio de Janeiro.\n\nb) Na década de 1920, houve uma crise política da República Velha: o domínio das oligarquias de São Paulo e Minas (café com leite) passou a ser contestado por oligarquias dissidentes, como na Reação Republicana de 1922; os tenentes se revoltaram em 1922, em 1924 e na Coluna Prestes; e o governo Bernardes governou quase todo o tempo em estado de sítio, com censura e repressão. A crise terminou em 1930: depois da derrota da Aliança Liberal e do assassinato de João Pessoa, vice de Getúlio Vargas, o presidente Washington Luís foi deposto e Vargas assumiu o poder.\n\nc) O programa do BOC defendia direitos políticos de classe, como o voto secreto, e direitos trabalhistas, como férias, salário mínimo e a definição de uma jornada máxima de trabalho, de 8 horas."
+}
