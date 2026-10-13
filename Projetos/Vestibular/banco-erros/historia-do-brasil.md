@@ -9,6 +9,12 @@ Todo erro de História do Brasil, com a causa. É daqui que o `/revisar` monta a
 **O que revisar:** BOC = braço eleitoral do PCB; crise dos anos 1920 = tenentismo + oligarquias dissidentes + estado de sítio. 1 minuto final para acento.
 **Nota:** 0,33 / 1,0 (33%) · a 0% · b 25% · c 75% · correção em `Projetos/Cursinho/historia-do-brasil/questoes-discursivas/2026-10-13-historia-do-brasil-bloco-operario-campones.pdf`
 
+### 2026-10-13 — Lista CPV Revisão FGV, Brasil pré-colonial e colonial (p. 31–32, objetivas)
+**Errou:** pré-colonial 01, colonial 01, 02, 03, 04, 05, 07, 08, 09 · **acertou:** 06 e 10.
+**Correto (resumo):** 01 pré: crise das especiarias + açúcar das ilhas atlânticas · 01: carta de 1548 = pedido de socorro que leva ao Governo-Geral (1549) · 02: o norte dos EUA era colônia de povoamento, o oposto do Brasil · 03: povoamento só deslanchou com o açúcar ligado ao comércio mundial; jesuítas eram contra escravizar indígenas · 04: poder dividido entre elites metropolitanas e coloniais; não havia indústria na colônia · 05: Estado ausente só em certas áreas (sertão), não é a regra; bandeiras eram iniciativa privada · 07: escravidão como base da sociedade, pouca mobilidade · 08: tráfico negreiro · 09: trabalho braçal = desonroso para o branco; colono queria escravo, não pequena propriedade.
+**Causa:** **conceito** (lógica da colonização: exploração x povoamento, papel do Estado, sociedade escravista) e **interpretacao** (01 e 09: o texto-base dizia a resposta).
+**Gabarito a confirmar:** 05 e 07 — marcas ambíguas na foto; pela análise, d nas duas.
+
 ## 🔗 Relacionados
 
 [[Vestibular-projeto]]
