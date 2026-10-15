@@ -1,6 +1,6 @@
 {
-  "atualizado": "2026-09-30",
-  "proximo_id": 44,
+  "atualizado": "2026-10-15",
+  "proximo_id": 45,
   "tarefas": [
     {
       "id": 1,
@@ -396,6 +396,15 @@
       "prioridade": "media",
       "status": "aberta",
       "criado": "2026-09-30"
+    },
+    {
+      "id": 44,
+      "titulo": "Artes: ver no livro Guerra e Spray, do Banksy (Intrínseca, 2012), quais obras estão nas p. 22, 139 e 203, e o que é \"Don't forget to eat your lunch and make some trouble\" (Anexo de Artes do edital FGV 2027); completar o card 10 de artes-visuais-e-manifesto-10-obras-cards-diretos",
+      "area": "cursinho",
+      "prazo": "2026-10-18",
+      "prioridade": "media",
+      "status": "aberta",
+      "criado": "2026-10-15"
     }
   ]
 }
