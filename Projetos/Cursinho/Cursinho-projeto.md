@@ -4,12 +4,10 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 
 ## O que tem aqui
 
-- `cronograma-semanal-original.docx` — o cronograma que a Laura montou, como veio dela
 - `calendario-semi-fgv-insper-tarde.pdf` — calendário do semiextensivo do cursinho
-- `cronograma-fgv-direito.html` — cronograma de estudos que estava em Downloads (é de FGV Direito **Rio**)
-- **Uma pasta por matéria da grade (13):** `artes-e-questoes-contemporaneas/` · `atualidades/` ·
-  `biologia/` · `expressao-oral/` · `fisica/` · `geografia/` · `historia-do-brasil/` ·
-  `historia-geral/` · `lingua-portuguesa/` · `literatura/` · `matematica/` · `quimica/` · `redacao/`
+- **Uma pasta por matéria da grade (10):** `artes-e-questoes-contemporaneas/` · `atualidades/` ·
+  `expressao-oral/` · `geografia/` · `historia-do-brasil/` ·
+  `historia-geral/` · `lingua-portuguesa/` · `literatura/` · `matematica/` · `redacao/`
 - **Flashcards da revisão diária** (página Cards do Trajeto, no celular:
   https://claude.ai/artifact/9Kca8yE6fRP5sPcJhA3GLX): [[flashcards-lingua-portuguesa]] ·
   [[flashcards-matematica]] · [[flashcards-literatura]] · [[flashcards-geografia]] · [[flashcards-artes]] ·
@@ -40,9 +38,6 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
     33 flashcards e 14 questões reais da FGV, da apostila CPV aula 12 (também em `.html`)
   - análise sintática, sintaxe e regência, e duas atividades de verbos e complementos
 - `matematica/` — questões reais da FGV, tipos que sempre caem e plano de ação
-- `biologia/` · `fisica/` · `quimica/` — Natureza para o Insper, para a véspera (10/10):
-  [[insper-natureza-biologia]] · [[insper-natureza-fisica]] · [[insper-natureza-quimica]] — o que caiu
-  nas questões 46–60 de 4 provas oficiais do Insper, resumo, questões reais resolvidas e autoteste
 - `redacao/` — `aula-05-como-usar-repertorio.pdf`
 - `artes-e-questoes-contemporaneas/` — 3 versões diferentes da apostila de Artes (32, 57 e 66 páginas),
   caderno de exercícios e o calendário de obras do curso de Artes 2027
@@ -55,7 +50,7 @@ Hub da pasta de material do cursinho. A ficha de estado da área é `Areas/Cursi
 Material de matéria vai para cá, **uma pasta por matéria** (decidido pela Laura em 22/09/2026).
 Nome da pasta em minúsculas e com hífen, como na grade: `historia-geral/`, `historia-do-brasil/`,
 `lingua-portuguesa/`, `matematica/` e assim por diante. Cada aula vira um arquivo com o nome do
-assunto (ex.: `crise-de-1929-e-nazifascismo.md`). As 13 pastas já existem.
+assunto (ex.: `crise-de-1929-e-nazifascismo.md`). As 10 pastas já existem (Biologia, Física e Química saíram na limpeza de 20/10/2026: eram só para o Insper).
 
 Material com flashcards sai em dois arquivos com o mesmo nome: `.md` (Obsidian) e `.html` (abre no
 navegador, cards que viram). A Laura chega aqui pelo atalho `~/Downloads/Materias`, que aponta

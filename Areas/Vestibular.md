@@ -68,7 +68,7 @@ a prova de outubro. **Correto — mas a data 18/12 não pode ser perdida.**
 
 ### Insper 2027.1 — segunda opção (Direito)
 
-Fonte: `Projetos/Vestibular/editais/edital-insper-2027-1.txt` (p. 12 e 15–17).
+Fonte: edital do Insper 2027.1 (apagado na limpeza de 20/10; continua no histórico do git).
 
 - **11/10, fase única, 5h:** 60 objetivas (15 Linguagens · 15 Matemática · 15 Humanas: Hist 5, Geo 6,
   Filo 2, Socio 2 · 15 Natureza: Quím 5, Fís 5, Bio 5) + redação. Portões fecham às 12h30.

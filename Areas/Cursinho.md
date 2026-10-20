@@ -43,7 +43,7 @@ passou. `[a confirmar]` com o cursinho.
 - [ ] **Recuperar a aula de Física (Meca)** que ficou atrasada
 - [ ] Confirmar as datas reais dos 5 intensivos de sábado `[a confirmar]`
 - [ ] Confirmar o nome do cursinho e a plataforma onde ficam material e correções `[a confirmar]`
-- [ ] Confirmar se o `cronograma-fgv-direito.html` (é de FGV Direito **Rio**) é dela ou pode sair
+- [x] `cronograma-fgv-direito.html` (de FGV Direito Rio) apagado na limpeza de 20/10
 - [ ] Definir como as listas e correções do cursinho entram em `Projetos/Cursinho/` (material de aula já tem lugar: uma pasta por matéria)
 - [ ] Atualidades: confirmar com o professor quem "inocentou" Dilma (a aula disse TCU) e a aula de revisão de 12/10 (a transcrição diz "pós-prova da FGV") `[a confirmar]` — tarefa #38
 - [ ] Curso de revisão de Atualidades: 5 semanas, 5 listas; data de início `[a confirmar]`

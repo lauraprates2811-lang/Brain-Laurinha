@@ -2,7 +2,6 @@
 
 > Fonte oficial da FGV: `Projetos/Vestibular/editais/edital-unificado-fgv-2027.txt`
 > (Edital Unificado 1º/2027, itens 9.1.3, 9.3.1, 9.7, 9.9 e 14).
-> Fonte oficial do Insper: `Projetos/Vestibular/editais/edital-insper-2027-1.txt` (Edital 2027.1, seções 2 e 5).
 > Tudo marcado `[a confirmar]` precisa ser checado na fonte oficial antes de virar plano.
 
 ## Reta final — 2026
@@ -13,7 +12,7 @@
 | **26/09/2026** | sáb | 🎯 **Simulado completo no formato FGV — dia 1** (mesmos horários e matérias de 18/10). Manhã 08h–11h30: discursiva (Redação + Ciências Humanas). Tarde 14h30–18h: objetiva (Matemática, Português, Inglês, Ciências Humanas) | Bate com o intensivo de Geografia e o cursinho de sábado — conflito ainda sem resolver, ver [[Vestibular]] |
 | **27/09/2026** | dom | 🎯 **Simulado completo no formato FGV — dia 2, online** (mesmos horários e matérias de 19/10). Manhã 08h–11h: Português + Artes e Questões Contemporâneas | Substitui o simulado padrão de domingo só nesse dia |
 | `[a confirmar]` | sáb | Intensivos de LIT, HB e HG — datas inconsistentes no cronograma | Confirmar com o cursinho |
-| **10/10/2026** | sáb | Natureza para o Insper, à tarde (~3h): Biologia, Física e Química só no que mais cai | Material em `Projetos/Cursinho/biologia/`, `fisica/` e `quimica/` (`insper-natureza-*.md`) — tarefa #43 |
+| **10/10/2026** | sáb | Natureza para o Insper, à tarde (~3h): Biologia, Física e Química só no que mais cai | Feito. Material apagado na limpeza de 20/10 |
 | **11/10/2026** | dom | 🎯 **PROVA DO INSPER** — 60 objetivas + redação, 5h. **Portões fecham às 12h30** | RG original · caneta preta de corpo transparente · Natureza feita em 10/10 |
 | **12/10/2026** | seg | Aula de revisão de Atualidades no cursinho. A transcrição diz "pós-prova da FGV", mas a FGV é 18–19/10 `[a confirmar]` | Últimas aulas vistas: Arcabouço, Reforma Tributária, Selic |
 | **18/10/2026** | dom | 🎯 **FGV 1ª FASE — dia 1**. Manhã 08h–11h30: Redação + Ciências Humanas (discursivas). Tarde 14h30–18h: Matemática, Língua Portuguesa, Inglês, Ciências Humanas (objetivas) | Provas antigas feitas · redação no formato da banca |
