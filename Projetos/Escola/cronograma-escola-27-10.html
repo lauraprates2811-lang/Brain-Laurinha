@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Cronograma da escola · 27/10 a 03/11</title>
+<style>
+  @page { size: A4 landscape; margin: 8mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    color: #1f2937;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 281mm; height: 193mm; display: flex; flex-direction: column; gap: 2.6mm; overflow: hidden; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Cabeçalho */
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 6mm; }
+  h1 { font-size: 19pt; font-weight: 800; letter-spacing: -0.3px; line-height: 1.05; }
+  h1 .d { color: #2563eb; }
+  .sub { font-size: 9pt; color: #4b5563; margin-top: 1.2mm; }
+  .sub b { color: #111827; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.6mm 3mm; justify-content: flex-end; max-width: 120mm; font-size: 6.8pt; color: #374151; }
+  .legend span { display: inline-flex; align-items: center; gap: 1.2mm; }
+  .sw { width: 3.4mm; height: 3.4mm; border-radius: .8mm; display: inline-block; }
+
+  /* Faixa de prazos */
+  .deadlines { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; }
+  .dl { border-radius: 2.2mm; padding: 1.6mm 2.4mm; color: #fff; display: flex; flex-direction: column; justify-content: center; }
+  .dl .when { font-size: 6.8pt; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; opacity: .92; }
+  .dl .what { font-size: 8.8pt; font-weight: 700; line-height: 1.2; margin-top: .4mm; }
+  .dl.red { background: #dc2626; }
+  .dl.orange { background: #f97316; }
+  .dl.amber { background: #ca8a04; }
+  .dl.rest { background: #ecfdf5; color: #065f46; border: .4mm solid #a7f3d0; }
+
+  /* Grade da semana */
+  table.grid { width: 100%; border-collapse: separate; border-spacing: 1.1mm; table-layout: fixed; margin: -1.1mm; width: calc(100% + 2.2mm); }
+  .grid th { background: #1f2937; color: #fff; border-radius: 2mm; padding: 1.3mm 1mm; font-size: 9pt; font-weight: 800; letter-spacing: .3px; }
+  .grid th small { display: block; font-size: 6.5pt; font-weight: 600; opacity: .75; letter-spacing: 0; margin-top: .3mm; }
+  .grid th.today { background: #2563eb; }
+  .grid th.quizday { background: #dc2626; }
+  .grid th.res { background: #9ca3af; }
+  .grid th.corner { background: transparent; }
+  .grid td { vertical-align: top; border-radius: 1.8mm; padding: 1.1mm 1.7mm; font-size: 8.4pt; }
+  .grid col.tcol { width: 19mm; }
+  td.time { background: #f3f4f6; text-align: center; vertical-align: middle; font-size: 7.2pt; font-weight: 800; color: #374151; line-height: 1.25; }
+  td.time small { display: block; font-weight: 600; color: #6b7280; font-size: 6.4pt; }
+  tr.big td { height: 16.3mm; }
+  tr.mid td { height: 10.5mm; }
+  tr.short td { height: 6.6mm; }
+
+  .cls { font-size: 6.2pt; text-transform: uppercase; letter-spacing: .3px; font-weight: 700; opacity: .62; margin-bottom: .5mm; }
+  .task { font-weight: 700; line-height: 1.18; }
+  .note { font-size: 6.8pt; color: #4b5563; margin-top: .4mm; line-height: 1.2; }
+  .pill { display: inline-block; margin-top: .9mm; font-size: 6.2pt; font-weight: 800; color: #fff; padding: .25mm 1.6mm; border-radius: 3mm; letter-spacing: .2px; }
+  .p1 { background: #dc2626; } .p2 { background: #f97316; } .p3 { background: #ca8a04; } .p4 { background: #16a34a; } .p0 { background: #9ca3af; }
+
+  .qui { background: #dbeafe; border-left: 1.3mm solid #2563eb; }
+  .eco { background: #ccfbf1; border-left: 1.3mm solid #0d9488; }
+  .mat { background: #ede9fe; border-left: 1.3mm solid #7c3aed; }
+  .eng { background: #ffedd5; border-left: 1.3mm solid #ea580c; }
+  .art { background: #fce7f3; border-left: 1.3mm solid #db2777; }
+  .quiz { background: #fee2e2; border: .5mm solid #dc2626; border-left: 1.3mm solid #dc2626; }
+  .quiz .task { color: #991b1b; font-size: 9.4pt; }
+  .casa { background: #fef3c7; border-left: 1.3mm solid #d97706; }
+  .aula { background: repeating-linear-gradient(135deg, #f3f4f6 0 1.6mm, #e9eaee 1.6mm 3.2mm); color: #6b7280; }
+  .aula .task { font-weight: 600; font-size: 7.6pt; }
+  .livre { background: #fafafa; color: #b6bac2; font-size: 7pt; }
+  .reserva { background: #fff; border: .4mm dashed #9ca3af; color: #4b5563; }
+  .gone { background: #f9fafb; color: #9ca3af; vertical-align: middle !important; text-align: center; font-size: 7.6pt; }
+  .gone b { color: #2563eb; display: block; font-size: 9pt; margin-top: 1mm; }
+
+  /* Faixa de casa */
+  .home { display: grid; grid-template-columns: 42mm 1fr 1fr 1.05fr; gap: 2mm; align-items: stretch; }
+  .home > div { border-radius: 2.2mm; padding: 1.6mm 2.4mm; font-size: 8pt; line-height: 1.25; }
+  .home .lbl { background: #d97706; color: #fff; font-weight: 800; font-size: 9pt; display: flex; align-items: center; }
+  .home .it { background: #fef3c7; }
+  .home .it b { display: block; font-size: 6.8pt; text-transform: uppercase; letter-spacing: .3px; color: #92400e; }
+  .home .free { background: #ecfdf5; color: #065f46; font-weight: 700; display: flex; align-items: center; }
+
+  /* Página 2 */
+  h2 { font-size: 15pt; font-weight: 800; letter-spacing: -0.2px; }
+  .cards { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 3.5mm; align-items: start; margin-top: 1mm; }
+  .col { display: flex; flex-direction: column; gap: 3mm; min-height: 0; }
+  .card { border-radius: 2.6mm; padding: 3mm 3.6mm; border: .35mm solid #e5e7eb; }
+  .card h3 { font-size: 12.5pt; font-weight: 800; display: flex; justify-content: space-between; align-items: center; gap: 2mm; margin-bottom: 1.6mm; }
+  .card h3 .pill { margin-top: 0; font-size: 7.4pt; padding: .4mm 2mm; }
+  .card.qui { border-left-width: 1.6mm; }
+  .card.eco, .card.mat, .card.eng, .card.art { border-left-width: 1.6mm; }
+  ul.check { list-style: none; display: flex; flex-direction: column; gap: 2mm; }
+  ul.check li { display: grid; grid-template-columns: 5mm 1fr; gap: 2mm; align-items: start; font-size: 9.6pt; line-height: 1.2; }
+  .box { width: 4.4mm; height: 4.4mm; border: .45mm solid #374151; border-radius: .7mm; background: #fff; margin-top: .2mm; }
+  ul.check li b { font-weight: 700; }
+  ul.check li small { display: block; font-size: 7.8pt; color: #4b5563; margin-top: .2mm; }
+  ul.check li.hl b { color: #991b1b; }
+  .sep { font-size: 7.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: .4px; color: #1e40af; margin: 1.4mm 0 .2mm; }
+  .open { background: #f9fafb; }
+  .open h3 { color: #374151; }
+  .open ul { padding-left: 4mm; font-size: 8.8pt; line-height: 1.3; display: flex; flex-direction: column; gap: 1mm; }
+  .why { background: #eff6ff; border: .35mm solid #bfdbfe; border-radius: 2.6mm; padding: 2.6mm 3.6mm; font-size: 9.4pt; margin-top: 1mm; line-height: 1.35; }
+  .why b { color: #1e40af; }
+</style>
+</head>
+<body>
+
+<!-- ============ PÁGINA 1: A SEMANA ============ -->
+<section class="page">
+  <header>
+    <div>
+      <h1>Minha semana na escola · <span class="d">27/10 a 03/11</span></h1>
+      <p class="sub"><b>Química primeiro</b> (vence sex e é a matéria do quiz) · <b>Economics na sexta</b> · <b>fim de semana livre</b></p>
+    </div>
+    <div class="legend">
+      <span><i class="sw" style="background:#2563eb"></i>Química</span>
+      <span><i class="sw" style="background:#0d9488"></i>Economics</span>
+      <span><i class="sw" style="background:#7c3aed"></i>Math</span>
+      <span><i class="sw" style="background:#ea580c"></i>English</span>
+      <span><i class="sw" style="background:#db2777"></i>Artes</span>
+      <span><i class="sw" style="background:#d97706"></i>Em casa</span>
+      <span><i class="sw" style="background:repeating-linear-gradient(135deg,#e5e7eb 0 1mm,#cfd2d8 1mm 2mm)"></i>Aula: prestar atenção</span>
+      <span><i class="sw" style="border:.4mm dashed #9ca3af"></i>Reserva</span>
+      <span><i class="sw p1"></i>Urgente</span>
+      <span><i class="sw p2"></i>Vence sex</span>
+      <span><i class="sw p3"></i>Vence 03/11</span>
+      <span><i class="sw p4"></i>Leve</span>
+    </div>
+  </header>
+
+  <div class="deadlines">
+    <div class="dl red"><span class="when">Ter 27/10 · hoje</span><span class="what">Math: Lesson 1</span></div>
+    <div class="dl red"><span class="when">Qui 29/10 · 11:46</span><span class="what">Quiz 1 e 2 de Química</span></div>
+    <div class="dl orange"><span class="when">Sex 30/10</span><span class="what">Química: os 7 assignments</span></div>
+    <div class="dl rest"><span class="when">Sáb 31 e dom 01</span><span class="what">Livre 🌿</span></div>
+    <div class="dl amber"><span class="when">Ter 03/11</span><span class="what">Economics: os 3 assignments</span></div>
+  </div>
+
+  <table class="grid">
+    <colgroup><col class="tcol"><col><col><col><col><col></colgroup>
+    <thead>
+      <tr>
+        <th class="corner"></th>
+        <th class="today">TER 27/10<small>hoje</small></th>
+        <th>QUA 28/10<small>late start</small></th>
+        <th class="quizday">QUI 29/10<small>dia do quiz</small></th>
+        <th>SEX 30/10<small>prazo de Química</small></th>
+        <th class="res">SEG 02/11<small>reserva · Finados? a confirmar</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 08:15 -->
+      <tr class="big">
+        <td class="time">08:15<br>09:08</td>
+        <td class="gone" rowspan="7">Antes disso você ainda não começou<b>Você começa às 13:42 ↓</b></td>
+        <td class="livre"><div class="cls">Late start</div>descanso</td>
+        <td class="casa" rowspan="2"><div class="cls">🏠 Em casa, antes da escola</div><div class="task">Estudar Quiz 1 e 2 (Unit 1)</div><span class="pill p1">quiz 11:46</span></td>
+        <td class="eco"><div class="cls">Economics</div><div class="task">Seu assignment simples</div><div class="note">no fim da aula</div><span class="pill p4">leve</span></td>
+        <td class="livre"><div class="cls">Chemistry</div>livre</td>
+      </tr>
+      <!-- Snack -->
+      <tr class="short">
+        <td class="time">09:08<small>Snack</small></td>
+        <td class="livre"></td>
+        <td class="livre"></td>
+        <td class="livre"></td>
+      </tr>
+      <!-- 09:26 -->
+      <tr class="big">
+        <td class="time">09:26<br>10:18</td>
+        <td class="qui"><div class="cls">Aula de Chemistry</div><div class="task">Khan Academy video + Isotope notes</div><span class="pill p2">vence sex 30/10</span></td>
+        <td class="qui"><div class="cls">Brazilian College Prep</div><div class="task">Periodic table + Atomic radius</div><span class="pill p2">vence sex 30/10</span></td>
+        <td class="reserva"><div class="cls">English Lang &amp; Lit</div><div class="task">Reserva: o que sobrar de Química</div><div class="note">se nada sobrou, folga</div></td>
+        <td class="livre"><div class="cls">English</div>livre</td>
+      </tr>
+      <!-- Advisory -->
+      <tr class="mid">
+        <td class="time">10:22<small>Advisory</small></td>
+        <td class="livre"></td>
+        <td class="livre"></td>
+        <td class="art"><div class="task">Artes: late assignments</div></td>
+        <td class="reserva"><div class="task">Reserva: Artes, se faltar</div></td>
+      </tr>
+      <!-- 10:50 -->
+      <tr class="big">
+        <td class="time">10:50<br>11:42</td>
+        <td class="qui"><div class="cls">Math of Finance</div><div class="task">Build an atom pt 2 (Isotopes) + Exciting electrons simulation</div><span class="pill p2">vence sex 30/10</span></td>
+        <td class="qui"><div class="cls">Free Period</div><div class="task">Revisão rápida para o quiz</div><div class="note">o que você errou da 1ª vez</div><span class="pill p1">antes do quiz</span></td>
+        <td class="livre"><div class="cls">P.E.</div>livre</td>
+        <td class="livre"><div class="cls">P.E.</div>livre</td>
+      </tr>
+      <!-- 11:46 -->
+      <tr class="big">
+        <td class="time">11:46<br>12:38</td>
+        <td class="aula"><div class="cls">Portuguese – Honors</div><div class="task">Aula</div></td>
+        <td class="quiz"><div class="cls">Aula de Chemistry</div><div class="task">⭐ QUIZ 1 e QUIZ 2</div><div class="note">Unit 1</div></td>
+        <td class="eco"><div class="cls">Math of Finance</div><div class="task">Unit 2: Stock market investing practice</div><span class="pill p3">vence ter 03/11</span></td>
+        <td class="aula"><div class="cls">Art</div><div class="task">Aula</div></td>
+      </tr>
+      <!-- Almoço -->
+      <tr class="short">
+        <td class="time">12:38<small>Almoço</small></td>
+        <td class="livre"></td>
+        <td class="livre"></td>
+        <td class="livre"></td>
+        <td class="livre"></td>
+      </tr>
+      <!-- 13:42 -->
+      <tr class="big">
+        <td class="time">13:42<br>14:34</td>
+        <td class="mat"><div class="cls">Math of Finance</div><div class="task">Lesson 1 — Understanding Entrepreneurship</div><span class="pill p1">vence hoje</span></td>
+        <td class="eco"><div class="cls">Aula de Economics</div><div class="task">Unit 2: Buyers and sellers</div><span class="pill p3">vence ter 03/11</span></td>
+        <td class="aula"><div class="cls">Portuguese – Honors</div><div class="task">Aula</div></td>
+        <td class="aula"><div class="cls">Arts</div><div class="task">Aula</div></td>
+        <td class="aula"><div class="cls">Portuguese</div><div class="task">Aula</div></td>
+      </tr>
+      <!-- 14:38 -->
+      <tr class="big">
+        <td class="time">14:38<br>15:30</td>
+        <td class="aula"><div class="cls">Portuguese – Honors</div><div class="task">Aula</div></td>
+        <td class="eng"><div class="cls">Aula de English Lang</div><div class="task">Entregar a melhor redação da Tarsila</div><div class="note">~15 min · o resto é folga</div><span class="pill p4">prazo a confirmar</span></td>
+        <td class="qui"><div class="cls">Math of Finance</div><div class="task">Ionization energy simulation</div><div class="note">o último de Química ✓</div><span class="pill p2">vence sex 30/10</span></td>
+        <td class="eco"><div class="cls">Free Period</div><div class="task">Stock investments case studies</div><div class="note">atrasado desde 23/10</div><span class="pill p3">vence ter 03/11</span></td>
+        <td class="reserva"><div class="cls">Free Period</div><div class="task">Reserva: Economics que sobrar</div></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="home">
+    <div class="lbl">🏠 Em casa, só isso</div>
+    <div class="it"><b>Ter 27 · à noite</b>Terminar o Lesson 1, <u>só se</u> não fechar na aula</div>
+    <div class="it"><b>Qui 29 · antes da escola</b>Estudar Quiz 1 e 2 de Química</div>
+    <div class="free">Noites de qua, qui e sex e o fim de semana: livres 🌿</div>
+  </div>
+</section>
+
+<!-- ============ PÁGINA 2: CHECKLIST ============ -->
+<section class="page">
+  <header>
+    <div>
+      <h2>Checklist por matéria</h2>
+      <p class="sub">Marque cada quadradinho quando entregar. Ao lado de cada item: quando ele está na semana.</p>
+    </div>
+  </header>
+
+  <div class="cards">
+    <div class="col">
+      <div class="card qui">
+        <h3>Química <span class="pill p2">vence sex 30/10</span></h3>
+        <div class="sep">Missing assignments</div>
+        <ul class="check">
+          <li><i class="box"></i><div><b>Khan Academy video</b><small>qua 09:26 · aula de Chemistry</small></div></li>
+          <li><i class="box"></i><div><b>Isotope notes</b><small>qua 09:26 · aula de Chemistry</small></div></li>
+          <li><i class="box"></i><div><b>Build an atom part 2 — Isotopes</b><small>qua 10:50 · Math of Finance</small></div></li>
+          <li><i class="box"></i><div><b>Exciting electrons simulation</b><small>qua 10:50 · Math of Finance</small></div></li>
+          <li><i class="box"></i><div><b>Periodic table</b><small>qui 09:26 · Brazilian College Prep</small></div></li>
+          <li><i class="box"></i><div><b>Atomic radius</b><small>qui 09:26 · Brazilian College Prep</small></div></li>
+          <li><i class="box"></i><div><b>Ionization energy simulation</b><small>qui 14:38 · Math of Finance</small></div></li>
+        </ul>
+        <div class="sep" style="color:#991b1b">Quiz de quinta, 11:46</div>
+        <ul class="check">
+          <li><i class="box"></i><div><b>Estudar Quiz 1 e 2</b><small>qui de manhã · 🏠 em casa</small></div></li>
+          <li><i class="box"></i><div><b>Revisão rápida</b><small>qui 10:50 · Free Period</small></div></li>
+          <li class="hl"><i class="box"></i><div><b>⭐ Quiz 1 e Quiz 2 (Unit 1)</b><small>qui 11:46 · aula de Chemistry</small></div></li>
+          <li><i class="box"></i><div><b>Project Ut1</b><small>refaz junto ou é entrega? · a confirmar</small></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card eco">
+        <h3>Economics <span class="pill p3">vence ter 03/11</span></h3>
+        <ul class="check">
+          <li><i class="box"></i><div><b>Unit 2: Buyers and sellers</b><small>qua 13:42 · aula de Economics</small></div></li>
+          <li><i class="box"></i><div><b>Seu assignment simples</b><small>sex 08:15 · no fim da aula de Economics</small></div></li>
+          <li><i class="box"></i><div><b>Unit 2: Stock market investing practice</b><small>sex 11:46 · Math of Finance</small></div></li>
+          <li><i class="box"></i><div><b>Stock investments case studies</b><small>sex 14:38 · Free Period · atrasado desde 23/10</small></div></li>
+        </ul>
+      </div>
+      <div class="card mat">
+        <h3>Math of Finance <span class="pill p1">vence hoje</span></h3>
+        <ul class="check">
+          <li><i class="box"></i><div><b>Lesson 1 — Understanding Entrepreneurship</b><small>ter 13:42 · se não fechar, em casa à noite</small></div></li>
+        </ul>
+      </div>
+      <div class="card eng">
+        <h3>English <span class="pill p4">prazo a confirmar</span></h3>
+        <ul class="check">
+          <li><i class="box"></i><div><b>Entregar a melhor redação da Tarsila</b><small>qua 14:38 · aula de English Lang · ~15 min</small></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card art">
+        <h3>Artes <span class="pill p4">prazo a confirmar</span></h3>
+        <ul class="check">
+          <li><i class="box"></i><div><b>Late assignments</b><small>sex 10:22 · advisory (mesmo dia da aula de Arts)</small></div></li>
+          <li><i class="box"></i><div><b>O que faltar</b><small>seg 02/11 · advisory, se tiver aula</small></div></li>
+        </ul>
+      </div>
+      <div class="card open">
+        <h3>Em aberto</h3>
+        <ul>
+          <li>O assignment de Math que substitui os atrasados é o próprio Lesson 1? Se for outro, vai para a reserva de sex 09:26.</li>
+          <li>Project Ut1: refaz junto com os quizzes ou é entrega?</li>
+          <li>Prazos de English e de Artes.</li>
+          <li>Seg 02/11 é Finados: a EABH tem aula?</li>
+          <li>Os tempos de Química são estimativa (~20–25 min cada). Se um demorar, empurre para a reserva de sexta.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <b>Por que essa ordem:</b> os 7 assignments de Química cobrem a matéria da Unit 1, então fazê-los antes de quinta já é estudar para o quiz.
+    Economics só vence em 03/11, e terminando na sexta você não depende da segunda, que pode ser feriado.
+    Snack, almoço e os outros advisories ficam livres; Português e Artes, só aula.
+  </div>
+</section>
+
+</body>
+</html>
