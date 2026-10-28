@@ -58,6 +58,13 @@ Todo erro de Português, com a causa. É daqui que o `/revisar` monta a revisão
 **O que revisar:** em reescrita "sem alterar o sentido", trocar só o que foi pedido e copiar o resto; oração reduzida de infinitivo → desenvolvida mantém o mesmo verbo no subjuntivo (sem fazer → sem que se faça).
 **Nota:** 0,125 / 0,5 no item (25%) · correção em `Projetos/Cursinho/lingua-portuguesa/questoes-discursivas/2026-10-12-lingua-portuguesa-poco-dos-desejos-sem-que.pdf`
 
+### 2026-10-28 — Redação: economia cresce, bem-estar cai (manuscrita, enviada pela Laura)
+**Questão:** redação dissertativa sobre o crescimento da economia com queda do bem-estar (proposta não enviada).
+**Respondi:** 2 períodos sem verbo principal ("a desigualdade social presente no Brasil que impulsiona…", "a grande parcela da sociedade que vive…"); "razão da economia estar"; "contribuindo à economia"; "impõe jovens a trabalhar"; "impossibilitando uma parcela a migrar"; "motivos pela diminuição"; "à essa"; "salários… benéfico"; "do Legião Urbana"; "Portanto" abrindo argumento; "os preços dos combustíveis elevam seus preços"; Ormuz ligado à guerra Israel × Palestina   **Correto:** "Isso se explica pela desigualdade social, que impulsiona…"; "razão de a economia estar"; "contribui para a economia"; "obriga jovens a trabalhar"; "impede uma parcela de migrar"; "motivos da diminuição"; "a essa"; "benéficos"; "da Legião Urbana"; "Portanto" só na conclusão; "os preços se elevam"; Ormuz fica entre Irã e Omã (conflitos envolvendo o Irã)
+**Causa:** desatenção (língua) + conceito (repertório). Período sem verbo principal é a **3ª vez** (26/09, 12/10, hoje); regência de "contribuir" repete 26/09 ("contribuindo ao"); preposição contraída com o sujeito do infinitivo repete 30/09 ("ao personagem interpretar").
+**O que revisar:** ler cada período sem o trecho "que…" e ver se sobra uma oração com verbo; contribuir PARA, obrigar alguém A, impedir alguém DE; "de a economia estar" (sem contrair); sem crase antes de "essa"; "Portanto" conclui, não abre argumento; conferir onde fica cada lugar citado no repertório.
+**Nota:** redação 4,0 / 10 (estimada) · correção em `Projetos/Vestibular/redacoes/2026-10-28-economia-x-bem-estar.md`
+
 ## 🔗 Relacionados
 
 [[Vestibular-projeto]]
