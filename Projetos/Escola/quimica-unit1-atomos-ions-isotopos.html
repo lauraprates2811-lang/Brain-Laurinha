@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Química Unit 1 – átomos, íons e isótopos</title>
+<style>
+  @page { size: A4; margin: 12mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10.6pt; line-height: 1.42; color: #1a1a1a; max-width: 800px; margin: 0 auto; padding: 14px; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1 { font-size: 20pt; color: #1f3a9e; margin: 0 0 2px; }
+  h2 { font-size: 13.5pt; color: #1f3a9e; margin: 14px 0 6px; display: flex; align-items: center; gap: 9px; }
+  h3 { font-size: 11pt; margin: 0 0 4px; }
+  p { margin: 4px 0; }
+  .sub { color: #555; margin: 0 0 10px; font-size: 11pt; }
+  .num { display: inline-block; min-width: 25px; height: 25px; border-radius: 50%; background: #1f3a9e; color: #fff; text-align: center; line-height: 25px; font-weight: 700; font-size: 10.5pt; }
+  .aviso { background: #fff6d6; border-left: 5px solid #e0a800; padding: 7px 12px; border-radius: 4px; margin: 8px 0 10px; }
+  .aviso ol { margin: 3px 0 0; padding-left: 20px; } .aviso li { margin: 1px 0; }
+  .quebra { break-before: page; page-break-before: always; }
+  .nobreak { break-inside: avoid; page-break-inside: avoid; }
+
+  .cores-p { color: #dc2626; font-weight: 700; } .cores-n { color: #6b7280; font-weight: 700; } .cores-e { color: #2563eb; font-weight: 700; }
+  .cA { color: #7c3aed; font-weight: 700; } .cZ { color: #16a34a; font-weight: 700; } .cQ { color: #ea7a0c; font-weight: 700; }
+
+  .lado { display: grid; grid-template-columns: 235px 1fr; gap: 14px; align-items: center; }
+  table.t { border-collapse: collapse; width: 100%; font-size: 10.3pt; }
+  table.t th { background: #1f3a9e; color: #fff; text-align: left; padding: 5px 7px; font-weight: 700; }
+  table.t td { border-bottom: 1px solid #ddd; padding: 5px 7px; vertical-align: middle; }
+
+  .contas { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 4px; }
+  .conta { border: 2px solid #c9d3ee; border-radius: 10px; padding: 8px 11px; break-inside: avoid; }
+  .conta .f { font-size: 13pt; font-weight: 800; margin: 2px 0 3px; }
+  .conta.z { border-color: #16a34a; background: #f0fdf4; } .conta.a { border-color: #7c3aed; background: #f5f3ff; }
+  .conta.n { border-color: #6b7280; background: #f6f7f9; } .conta.q { border-color: #ea7a0c; background: #fff7ed; }
+  .conta small { color: #444; font-size: 9.6pt; display: block; }
+
+  .box { border-radius: 10px; padding: 9px 12px; margin: 6px 0; break-inside: avoid; }
+  .box.azul { background: #eef2ff; border: 2px solid #c7d2fe; }
+  .box.verde { background: #ecfdf3; border: 2px solid #16a34a; }
+  .box.vermelho { background: #fef2f2; border: 2px solid #dc2626; }
+  .box.vermelho h3 { color: #dc2626; }
+  .box ul { margin: 3px 0; padding-left: 19px; } .box li { margin: 2px 0; }
+
+  .dois { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .z-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0 12px; font-size: 9.8pt; }
+  .z-grid div { border-bottom: 1px dotted #ccc; padding: 1px 0; display: flex; justify-content: space-between; }
+  .z-grid b { color: #16a34a; }
+  .voc td { padding: 3px 7px; }
+  .voc td:first-child { font-weight: 700; white-space: nowrap; }
+
+  /* notação nuclear: A em cima, Z embaixo, carga à direita */
+  .nuc { white-space: nowrap; font-weight: 700; font-size: 1.05em; }
+  .az { display: inline-block; vertical-align: -0.4em; text-align: right; font-size: .6em; line-height: 1.1; margin-right: 1px; }
+  .az span { display: block; }
+  .az .a { color: #7c3aed; } .az .z { color: #16a34a; }
+  .ch { font-size: .6em; vertical-align: .75em; color: #ea7a0c; margin-left: 1px; }
+
+  /* questões no formato da prova */
+  .q { margin: 10px 0 12px; break-inside: avoid; }
+  .q .enun { font-weight: 700; display: flex; gap: 8px; }
+  .q .enun .n { min-width: 20px; }
+  .op { margin: 3px 0 0 28px; }
+  .op div { margin: 2px 0; display: flex; gap: 8px; align-items: center; }
+  .op div::before { content: ""; width: 12px; height: 12px; border: 1.5px solid #333; border-radius: 2px; flex: none; }
+  .op div.certa::before { background: #16a34a; border-color: #16a34a; }
+  .op div.certa { font-weight: 700; color: #15803d; }
+  .resol { margin: 5px 0 0 28px; background: #ecfdf3; border-left: 4px solid #16a34a; padding: 5px 10px; border-radius: 4px; font-size: 10.2pt; }
+  .resol .pega { color: #dc2626; font-weight: 700; }
+  .linha-calc { margin: 6px 0 0 28px; border-bottom: 1px solid #999; height: 24px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px 16px; }
+  .cols3 .op, .cols3 .resol { margin-left: 22px; }
+  table.t.gab2 td { padding: 3px 7px; }
+
+  table.prova { border-collapse: collapse; width: 100%; font-size: 10pt; margin-top: 4px; }
+  table.prova th { border: 1px solid #333; padding: 5px; font-weight: 700; text-align: left; background: #f3f4f6; font-size: 9.6pt; }
+  table.prova td { border: 1px solid #333; padding: 4px 5px; height: 32px; text-align: center; vertical-align: middle; }
+  table.prova td.dado { color: #555; }
+  table.prova td.resp { color: #1f3a9e; font-weight: 800; background: #eef2ff; }
+  .calc-linha { font-size: 9.6pt; color: #333; margin: 2px 0; }
+  .calc-linha b { color: #1f3a9e; }
+  .gab td { height: auto; padding: 5px; }
+  .fim { text-align: center; color: #16a34a; font-weight: 800; font-size: 13pt; margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<!-- ============ PÁGINA 1: TEORIA ============ -->
+<h1>Química – Unit 1: átomos, íons e isótopos</h1>
+<p class="sub">Prova amanhã, quinta 29/10, antes das aulas. Tudo o que o formato da prova pede, do zero.</p>
+
+<div class="aviso"><b>Como usar (cerca de 1 hora):</b>
+<ol>
+  <li>Leia as páginas 1 e 2 (15 min). São só <b>4 contas</b>.</li>
+  <li>Página 3: tente a prova da foto <b>tapando a resolução</b>, depois confira (15 min).</li>
+  <li>Páginas 4 e 5: faça o treino sozinha e corrija na página 6 (25 min).</li>
+  <li>Amanhã antes da prova: releia só o quadro das 4 contas e as pegadinhas (5 min).</li>
+</ol></div>
+
+<h2><span class="num">1</span> O átomo tem duas regiões</h2>
+<div class="lado">
+  <svg viewBox="0 0 240 230" width="235" role="img" aria-label="Desenho de um átomo de lítio-7">
+    <circle cx="120" cy="112" r="52" fill="none" stroke="#93a4d6" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="120" cy="112" r="92" fill="none" stroke="#93a4d6" stroke-width="2" stroke-dasharray="5 4"/>
+    <g stroke="#fff" stroke-width="1.5">
+      <circle cx="126" cy="101" r="10" fill="#9ca3af"/>
+      <circle cx="108" cy="116" r="10" fill="#9ca3af"/>
+      <circle cx="131" cy="123" r="10" fill="#9ca3af"/>
+      <circle cx="119" cy="111" r="10" fill="#9ca3af"/>
+      <circle cx="111" cy="102" r="10" fill="#dc2626"/>
+      <circle cx="130" cy="112" r="10" fill="#dc2626"/>
+      <circle cx="117" cy="125" r="10" fill="#dc2626"/>
+    </g>
+    <g fill="#fff" font-size="13" font-weight="700" text-anchor="middle" font-family="Arial">
+      <text x="111" y="107">+</text><text x="130" y="117">+</text><text x="117" y="130">+</text>
+    </g>
+    <g fill="#2563eb"><circle cx="172" cy="112" r="8"/><circle cx="68" cy="112" r="8"/><circle cx="120" cy="20" r="8"/></g>
+    <g fill="#fff" font-size="15" font-weight="700" text-anchor="middle" font-family="Arial">
+      <text x="172" y="117">−</text><text x="68" y="117">−</text><text x="120" y="25">−</text>
+    </g>
+    <text x="120" y="222" text-anchor="middle" font-size="12" fill="#333" font-family="Arial">Lithium-7: 3 p⁺ · 4 n⁰ · 3 e⁻</text>
+  </svg>
+  <div>
+    <table class="t">
+      <tr><th>Partícula</th><th>Onde fica</th><th>Carga</th><th>Massa</th></tr>
+      <tr><td class="cores-p">Proton (p⁺)</td><td>nucleus (núcleo)</td><td><b>+1</b></td><td>1</td></tr>
+      <tr><td class="cores-n">Neutron (n⁰)</td><td>nucleus (núcleo)</td><td><b>0</b></td><td>1</td></tr>
+      <tr><td class="cores-e">Electron (e⁻)</td><td><b>outside the nucleus, in electron shells</b> (camadas)</td><td><b>−1</b></td><td>quase 0</td></tr>
+    </table>
+    <p style="margin-top:7px">Quase toda a massa está no <b>núcleo</b>. Por isso o <i>mass number</i> conta só prótons + nêutrons: o elétron não entra.</p>
+    <p>A carga negativa (<span class="cores-e">elétrons</span>) fica <b>fora</b> do núcleo. Essa é a questão 1 da prova.</p>
+  </div>
+</div>
+
+<h2><span class="num">2</span> As 4 contas (é a prova inteira)</h2>
+<div class="contas">
+  <div class="conta z"><h3 class="cZ">① Atomic number (Z)</h3>
+    <div class="f">Z = protons</div>
+    <small>É o RG do elemento: está na tabela periódica. 12 prótons é <b>sempre</b> magnésio, 16 é sempre enxofre. Quem decide o elemento são só os prótons.</small></div>
+  <div class="conta a"><h3 class="cA">② Mass number (A)</h3>
+    <div class="f">A = protons + neutrons</div>
+    <small>Vem no nome (<b>Iodine-127</b> → A = 127) ou no número de cima da notação. Não é o número com vírgula da tabela periódica.</small></div>
+  <div class="conta n"><h3 style="color:#4b5563">③ Neutrons</h3>
+    <div class="f">neutrons = A − Z</div>
+    <small>Mass number menos atomic number. Ex.: Iodine-127 → 127 − 53 = 74 nêutrons.</small></div>
+  <div class="conta q"><h3 class="cQ">④ Charge (carga)</h3>
+    <div class="f">charge = protons − electrons</div>
+    <small>Virando a conta: <b>electrons = protons − charge</b>.<br>
+    +2 → 2 elétrons <b>a menos</b> · −1 → 1 elétron <b>a mais</b> · sem carga (neutral) → elétrons = prótons.</small></div>
+</div>
+
+<div class="box azul" style="margin-top:9px"><h3>Vocabulário da prova</h3>
+<p><b>nucleus</b> = núcleo · <b>electron shells</b> = camadas de elétrons · <b>gains / loses</b> = ganha / perde · <b>neutral</b> = neutro (carga 0) · <b>charge</b> = carga · <b>mass number</b> = número de massa · <b>atomic number</b> = número atômico · <b>isotope</b> = isótopo</p></div>
+
+<!-- ============ PÁGINA 2: ÍONS, ISÓTOPOS, NOTAÇÃO ============ -->
+<div class="quebra"></div>
+<h2><span class="num">3</span> Íon = átomo que ganhou ou perdeu ELÉTRONS</h2>
+<div class="dois">
+  <div class="box azul"><h3>Loses electrons → íon <span class="cQ">positivo</span> (cation)</h3>
+    <p>Na → Na⁺: <b>loses one electron</b>.<br>Mg → Mg²⁺: loses two electrons.</p></div>
+  <div class="box azul"><h3>Gains electrons → íon <span class="cQ">negativo</span> (anion)</h3>
+    <p>Cl → Cl⁻: <b>gains one electron</b>.<br>S → S²⁻: gains two electrons.</p></div>
+</div>
+<p><b>Por que o sinal parece "ao contrário":</b> o elétron é negativo. Tirar uma coisa negativa deixa o átomo mais positivo; colocar deixa mais negativo.</p>
+<p><b>Num íon, prótons e nêutrons não mudam.</b> Se mudasse próton, virava outro elemento. E nêutron não tem carga, então ganhar ou perder nêutron nunca mexe na carga.</p>
+
+<h2><span class="num">4</span> Isótopo = mesmo elemento, número de nêutrons diferente</h2>
+<table class="t" style="width:auto">
+  <tr><th></th><th>Protons (Z)</th><th>Neutrons</th><th>Mass number (A)</th></tr>
+  <tr><td><b>Carbon-12</b></td><td>6</td><td>6</td><td>12</td></tr>
+  <tr><td><b>Carbon-14</b></td><td>6</td><td><b>8</b></td><td><b>14</b></td></tr>
+</table>
+<p>Mesmo Z (os dois são carbono), A diferente. Se o número de prótons for diferente, <b>não</b> é isótopo: é outro elemento.</p>
+
+<h2><span class="num">5</span> Os dois jeitos de escrever (isotope notation)</h2>
+<p><b>Hyphen notation:</b> nome-A → <b>Magnesium-24</b>, <b>Iodine-127</b>, <b>Sulfur-32</b>.</p>
+<p><b>Nuclear symbol:</b></p>
+<svg viewBox="0 0 600 130" width="560" role="img" aria-label="Notação nuclear do magnésio 24 com carga +2">
+  <g font-family="Arial">
+    <text x="0" y="36" font-size="13" font-weight="700" fill="#7c3aed">MASS NUMBER (A)</text>
+    <text x="0" y="54" font-size="13" fill="#7c3aed">= protons + neutrons</text>
+    <text x="0" y="96" font-size="13" font-weight="700" fill="#16a34a">ATOMIC NUMBER (Z)</text>
+    <text x="0" y="114" font-size="13" fill="#16a34a">= protons (está na tabela)</text>
+    <line x1="165" y1="44" x2="222" y2="44" stroke="#7c3aed" stroke-width="1.5"/>
+    <line x1="182" y1="104" x2="222" y2="104" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="258" y="54" font-size="30" font-weight="700" fill="#7c3aed" text-anchor="end">24</text>
+    <text x="258" y="114" font-size="30" font-weight="700" fill="#16a34a" text-anchor="end">12</text>
+    <text x="263" y="106" font-size="74" font-weight="700" fill="#1a1a1a">Mg</text>
+    <text x="378" y="54" font-size="30" font-weight="700" fill="#ea7a0c">+2</text>
+    <line x1="420" y1="44" x2="448" y2="44" stroke="#ea7a0c" stroke-width="1.5"/>
+    <text x="455" y="36" font-size="13" font-weight="700" fill="#ea7a0c">CHARGE</text>
+    <text x="455" y="54" font-size="13" fill="#ea7a0c">= protons − electrons</text>
+    <text x="455" y="72" font-size="12" fill="#666">(sem número = 0)</text>
+  </g>
+</svg>
+<p>Dica: o número de <b>cima</b> é sempre o <b>maior</b> (A), porque A = Z + nêutrons.</p>
+
+<div class="box vermelho">
+  <h3>⚠ As pegadinhas desse tipo de prova</h3>
+  <ul>
+    <li><b>O elemento é decidido só pelos prótons.</b> Um íon com 18 elétrons não é argônio só porque o argônio tem 18 elétrons. Ache os prótons primeiro.</li>
+    <li><b>Carga + significa MENOS elétrons</b>, carga − significa MAIS elétrons.</li>
+    <li><b>Nêutron não muda carga.</b> Qualquer alternativa "gains/loses one neutron" em pergunta de íon está errada.</li>
+    <li>Sem carga escrita = <b>neutral</b> = elétrons iguais aos prótons.</li>
+    <li>Símbolo do latim: <b>Na</b> = Sodium, <b>K</b> = Potassium, <b>Fe</b> = Iron, <b>Cu</b> = Copper, <b>Ag</b> = Silver, <b>Au</b> = Gold.</li>
+  </ul>
+</div>
+
+<div class="nobreak" style="margin-top:8px">
+  <h3>Atomic number (Z) dos mais usados <span style="font-weight:400;color:#555;font-size:9.5pt">· se a prova der a tabela periódica, é dela que sai o Z</span></h3>
+  <div class="z-grid">
+    <div>H <b>1</b></div><div>He <b>2</b></div><div>Li <b>3</b></div><div>Be <b>4</b></div><div>B <b>5</b></div><div>C <b>6</b></div><div>N <b>7</b></div>
+    <div>O <b>8</b></div><div>F <b>9</b></div><div>Ne <b>10</b></div><div>Na <b>11</b></div><div>Mg <b>12</b></div><div>Al <b>13</b></div><div>Si <b>14</b></div>
+    <div>P <b>15</b></div><div>S <b>16</b></div><div>Cl <b>17</b></div><div>Ar <b>18</b></div><div>K <b>19</b></div><div>Ca <b>20</b></div><div>Fe <b>26</b></div>
+    <div>Cu <b>29</b></div><div>Zn <b>30</b></div><div>Br <b>35</b></div><div>Ag <b>47</b></div><div>I <b>53</b></div><div>Au <b>79</b></div><div></div>
+  </div>
+</div>
+
+<!-- ============ PÁGINA 3: A PROVA DA FOTO RESOLVIDA ============ -->
+<div class="quebra"></div>
+<h1 style="font-size:17pt">A prova da foto, resolvida</h1>
+<p class="sub">Tape o verde com uma folha, tente, e só depois confira.</p>
+
+<div class="cols">
+<div class="q">
+  <div class="enun"><span class="n">1.</span>In which region of an atom would you find particles with a negative charge?</div>
+  <div class="op"><div>In the nucleus only</div><div class="certa">Outside the nucleus in electron shells</div><div>Both in and outside the nucleus</div><div>Particles with negative charge don't exist in atoms</div></div>
+  <div class="resol">Negativo = elétron, e elétron fica nas camadas, fora do núcleo. No núcleo só há prótons (+) e nêutrons (0).</div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">2.</span>A Copper (Cu) atom has 29 protons. If a Copper ion has 27 electrons, what is the charge of this ion?</div>
+  <div class="resol">Escreva assim na prova:<br><b>charge = protons − electrons = 29 − 27 = +2</b><br>É o íon Cu²⁺ (perdeu 2 elétrons).</div>
+</div>
+</div>
+
+<div class="q">
+  <div class="enun"><span class="n">3.</span>Complete the table:</div>
+  <table class="prova">
+    <tr><th>Isotope notation</th><th>Isotope notation</th><th>Atomic Number</th><th>Mass number</th><th># of neutrons</th><th>Number of electrons</th><th>Charge</th></tr>
+    <tr><td class="resp">Magnesium-24</td><td class="dado"><span class="nuc"><span class="az"><span class="a">24</span><span class="z">12</span></span>Mg<span class="ch">+2</span></span></td><td class="resp">12</td><td class="resp">24</td><td class="resp">12</td><td class="resp">10</td><td class="resp">+2</td></tr>
+    <tr><td class="dado">Iodine-127</td><td class="resp"><span class="nuc"><span class="az"><span class="a">127</span><span class="z">53</span></span>I<span class="ch">−1</span></span></td><td class="resp">53</td><td class="resp">127</td><td class="resp">74</td><td class="resp">54</td><td class="dado">−1</td></tr>
+    <tr><td class="dado">Sulfur-32</td><td class="resp"><span class="nuc"><span class="az"><span class="a">32</span><span class="z">16</span></span>S<span class="ch">−2</span></span></td><td class="resp">16</td><td class="resp">32</td><td class="resp">16</td><td class="dado">18</td><td class="resp">−2</td></tr>
+    <tr><td class="resp">Calcium-42</td><td class="resp"><span class="nuc"><span class="az"><span class="a">42</span><span class="z">20</span></span>Ca<span class="ch">+2</span></span></td><td class="dado">20</td><td class="resp">42</td><td class="dado">22</td><td class="resp">18</td><td class="dado">+2</td></tr>
+  </table>
+  <p style="font-size:9.5pt;color:#555;margin-top:3px">Cinza = o que a prova deu · <span style="color:#1f3a9e;font-weight:700">azul = o que você calcula</span></p>
+  <div class="resol">
+    <div class="calc-linha"><b>Mg:</b> Z = 12 (de baixo) · A = 24 (de cima) · n = 24 − 12 = <b>12</b> · e = 12 − 2 = <b>10</b> · nome: Magnesium-24</div>
+    <div class="calc-linha"><b>Iodine-127:</b> tabela → Z = 53 · A = 127 · n = 127 − 53 = <b>74</b> · e = 53 − (−1) = 53 + 1 = <b>54</b></div>
+    <div class="calc-linha"><b>Sulfur-32:</b> tabela → Z = 16 · A = 32 · n = 32 − 16 = <b>16</b> · charge = 16 − 18 = <b>−2</b></div>
+    <div class="calc-linha"><b>Linha 4:</b> Z = 20 → é <b>cálcio (Ca)</b> · A = 20 + 22 = <b>42</b> · e = 20 − 2 = <b>18</b> · nome: Calcium-42</div>
+    <div class="calc-linha" style="margin-top:4px"><b>Método para qualquer linha:</b> ache o elemento e o Z → ache o A → nêutrons = A − Z → elétrons = Z − carga → escreva as duas notações.</div>
+  </div>
+</div>
+
+<div class="cols3">
+<div class="q">
+  <div class="enun"><span class="n">4.</span>When a Sodium atom (Na) becomes a Na⁺ ion, this transformation occurs by:</div>
+  <div class="op"><div>The atom gains one neutron</div><div>The atom loses one neutron</div><div>The atom gains one electron</div><div class="certa">The atom loses one electron</div></div>
+  <div class="resol">+1 = um elétron a menos. Nêutron nunca muda a carga.</div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">5.</span>An unknown ion has 18 electrons and carries a charge of +2. Identify this element.</div>
+  <div class="op"><div>Argon (Ar)</div><div class="certa">Calcium (Ca)</div><div>Sulfur (S)</div><div>Chlorine (Cl)</div></div>
+  <div class="resol">protons = electrons + charge = 18 + 2 = <b>20</b> → cálcio.<br><span class="pega">Pegadinha:</span> argônio tem 18 elétrons, mas o elemento sai dos prótons.</div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">6.</span>An atom has 16 protons, 18 neutrons, and 18 electrons. This particle is:</div>
+  <div class="op"><div>A neutral sulfur atom</div><div class="certa">A sulfur ion with -2 charge</div><div>A neutral argon atom</div><div>An argon ion with +2 charge</div></div>
+  <div class="resol">16 prótons → enxofre. charge = 16 − 18 = <b>−2</b>. Os 18 nêutrons não servem para nada aqui.</div>
+</div>
+</div>
+
+<!-- ============ PÁGINAS 4-5: TREINO ============ -->
+<div class="quebra"></div>
+<h1 style="font-size:17pt">Treino – mesmo formato, números novos</h1>
+<p class="sub">Faça sem olhar as páginas anteriores. Gabarito resolvido na página 6. (Exercícios montados para treinar o formato, não são da sua escola.)</p>
+
+<div class="cols">
+<div class="q">
+  <div class="enun"><span class="n">1.</span>Which particle has NO electric charge?</div>
+  <div class="op"><div>Proton</div><div>Neutron</div><div>Electron</div><div>All three particles have a charge</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">2.</span>Where is almost all the mass of an atom?</div>
+  <div class="op"><div>In the nucleus</div><div>In the electron shells</div><div>Spread evenly through the atom</div><div>In the electrons, because they move fast</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">3.</span>An Iron (Fe) atom has 26 protons. If an Iron ion has 23 electrons, what is the charge of this ion?</div>
+  <p style="margin-left:28px;font-style:italic">Show your calculation:</p><div class="linha-calc"></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">4.</span>A Chlorine (Cl) atom has 17 protons. If a Chlorine ion has 18 electrons, what is the charge of this ion?</div>
+  <p style="margin-left:28px;font-style:italic">Show your calculation:</p><div class="linha-calc"></div>
+</div>
+</div>
+<div class="q" style="max-width:50%">
+  <div class="enun"><span class="n">5.</span>An Oxygen ion (8 protons) has a charge of −2. How many electrons does it have?</div>
+  <p style="margin-left:28px;font-style:italic">Show your calculation:</p><div class="linha-calc"></div>
+</div>
+
+<div class="q">
+  <div class="enun"><span class="n">6.</span>Complete the table:</div>
+  <table class="prova">
+    <tr><th>Isotope notation</th><th>Isotope notation</th><th>Atomic Number</th><th>Mass number</th><th># of neutrons</th><th>Number of electrons</th><th>Charge</th></tr>
+    <tr><td></td><td><span class="nuc"><span class="az"><span class="a">27</span><span class="z">13</span></span>Al<span class="ch">+3</span></span></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Bromine-81</td><td></td><td></td><td></td><td></td><td></td><td>-1</td></tr>
+    <tr><td>Potassium-39</td><td></td><td></td><td></td><td></td><td>18</td><td></td></tr>
+    <tr><td></td><td></td><td>8</td><td></td><td>10</td><td></td><td>-2</td></tr>
+    <tr><td></td><td></td><td></td><td>23</td><td>12</td><td>10</td><td></td></tr>
+    <tr><td></td><td><span class="nuc"><span class="az"><span class="a">35</span><span class="z">17</span></span>Cl</span></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+</div>
+
+<div class="quebra"></div>
+<div class="cols">
+<div class="q">
+  <div class="enun"><span class="n">7.</span>When a Chlorine atom (Cl) becomes a Cl⁻ ion, this transformation occurs by:</div>
+  <div class="op"><div>The atom gains one neutron</div><div>The atom loses one neutron</div><div>The atom gains one electron</div><div>The atom loses one electron</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">8.</span>When a Magnesium atom (Mg) becomes a Mg²⁺ ion, this transformation occurs by:</div>
+  <div class="op"><div>The atom gains two protons</div><div>The atom loses two protons</div><div>The atom gains two electrons</div><div>The atom loses two electrons</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">9.</span>An unknown ion has 10 electrons and carries a charge of +1. Identify this element.</div>
+  <div class="op"><div>Neon (Ne)</div><div>Sodium (Na)</div><div>Fluorine (F)</div><div>Magnesium (Mg)</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">10.</span>An unknown ion has 18 electrons and carries a charge of −1. Identify this element.</div>
+  <div class="op"><div>Argon (Ar)</div><div>Chlorine (Cl)</div><div>Potassium (K)</div><div>Sulfur (S)</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">11.</span>An atom has 20 protons, 20 neutrons, and 18 electrons. This particle is:</div>
+  <div class="op"><div>A neutral calcium atom</div><div>A calcium ion with +2 charge</div><div>A neutral argon atom</div><div>An argon ion with −2 charge</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">12.</span>An atom has 12 protons, 12 neutrons, and 12 electrons. This particle is:</div>
+  <div class="op"><div>A neutral magnesium atom</div><div>A magnesium ion with +2 charge</div><div>A neutral sodium atom</div><div>A neon ion with −2 charge</div></div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">13.</span>Which pair are isotopes of the same element?</div>
+  <div class="op">
+    <div><span class="nuc"><span class="az"><span class="a">12</span><span class="z">6</span></span>C</span> &nbsp;and&nbsp; <span class="nuc"><span class="az"><span class="a">14</span><span class="z">6</span></span>C</span></div>
+    <div><span class="nuc"><span class="az"><span class="a">14</span><span class="z">6</span></span>C</span> &nbsp;and&nbsp; <span class="nuc"><span class="az"><span class="a">14</span><span class="z">7</span></span>N</span></div>
+    <div><span class="nuc"><span class="az"><span class="a">40</span><span class="z">18</span></span>Ar</span> &nbsp;and&nbsp; <span class="nuc"><span class="az"><span class="a">40</span><span class="z">20</span></span>Ca</span></div>
+    <div><span class="nuc"><span class="az"><span class="a">23</span><span class="z">11</span></span>Na</span> &nbsp;and&nbsp; <span class="nuc"><span class="az"><span class="a">24</span><span class="z">12</span></span>Mg</span></div>
+  </div>
+</div>
+<div class="q">
+  <div class="enun"><span class="n">14.</span>Carbon-12 and Carbon-14 have a different number of:</div>
+  <div class="op"><div>Protons</div><div>Neutrons</div><div>Electrons</div><div>Atomic number</div></div>
+</div>
+</div>
+
+<!-- ============ PÁGINA 6: GABARITO ============ -->
+<div class="quebra"></div>
+<h1 style="font-size:17pt">Gabarito do treino</h1>
+<p class="sub">Errou alguma? Volte no quadro das 4 contas (página 1) e refaça só ela.</p>
+
+<table class="t gab2">
+  <tr><th style="width:34px">#</th><th style="width:210px">Resposta</th><th>Conta / por quê</th></tr>
+  <tr><td>1</td><td><b>Neutron</b></td><td>Nêutron tem carga 0 (o nome vem de "neutro").</td></tr>
+  <tr><td>2</td><td><b>In the nucleus</b></td><td>Prótons e nêutrons têm massa 1; o elétron, quase 0.</td></tr>
+  <tr><td>3</td><td><b>+3</b></td><td>charge = 26 − 23 = +3 (Fe³⁺)</td></tr>
+  <tr><td>4</td><td><b>−1</b></td><td>charge = 17 − 18 = −1 (Cl⁻)</td></tr>
+  <tr><td>5</td><td><b>10 electrons</b></td><td>electrons = protons − charge = 8 − (−2) = 8 + 2 = 10</td></tr>
+  <tr><td>7</td><td><b>gains one electron</b></td><td>−1 = um elétron a mais.</td></tr>
+  <tr><td>8</td><td><b>loses two electrons</b></td><td>+2 = dois elétrons a menos. Próton nunca muda num íon.</td></tr>
+  <tr><td>9</td><td><b>Sodium (Na)</b></td><td>protons = 10 + 1 = 11 → sódio. (Neon tem 10 elétrons: pegadinha.)</td></tr>
+  <tr><td>10</td><td><b>Chlorine (Cl)</b></td><td>protons = 18 + (−1) = 17 → cloro.</td></tr>
+  <tr><td>11</td><td><b>A calcium ion with +2 charge</b></td><td>20 prótons → cálcio; charge = 20 − 18 = +2.</td></tr>
+  <tr><td>12</td><td><b>A neutral magnesium atom</b></td><td>12 prótons → magnésio; 12 − 12 = 0 → neutral.</td></tr>
+  <tr><td>13</td><td><b>¹²C and ¹⁴C</b></td><td>Mesmo Z (6), A diferente. Nas outras, o número de baixo muda: são elementos diferentes.</td></tr>
+  <tr><td>14</td><td><b>Neutrons</b></td><td>Os dois têm 6 prótons e 6 elétrons; nêutrons: 6 e 8.</td></tr>
+</table>
+
+<h2 style="margin-top:14px"><span class="num">6</span> A tabela</h2>
+<table class="prova gab">
+  <tr><th>Isotope notation</th><th>Isotope notation</th><th>Atomic Number</th><th>Mass number</th><th># of neutrons</th><th>Number of electrons</th><th>Charge</th></tr>
+  <tr><td class="resp">Aluminum-27</td><td class="dado"><span class="nuc"><span class="az"><span class="a">27</span><span class="z">13</span></span>Al<span class="ch">+3</span></span></td><td class="resp">13</td><td class="resp">27</td><td class="resp">14</td><td class="resp">10</td><td class="resp">+3</td></tr>
+  <tr><td class="dado">Bromine-81</td><td class="resp"><span class="nuc"><span class="az"><span class="a">81</span><span class="z">35</span></span>Br<span class="ch">−1</span></span></td><td class="resp">35</td><td class="resp">81</td><td class="resp">46</td><td class="resp">36</td><td class="dado">−1</td></tr>
+  <tr><td class="dado">Potassium-39</td><td class="resp"><span class="nuc"><span class="az"><span class="a">39</span><span class="z">19</span></span>K<span class="ch">+1</span></span></td><td class="resp">19</td><td class="resp">39</td><td class="resp">20</td><td class="dado">18</td><td class="resp">+1</td></tr>
+  <tr><td class="resp">Oxygen-18</td><td class="resp"><span class="nuc"><span class="az"><span class="a">18</span><span class="z">8</span></span>O<span class="ch">−2</span></span></td><td class="dado">8</td><td class="resp">18</td><td class="dado">10</td><td class="resp">10</td><td class="dado">−2</td></tr>
+  <tr><td class="resp">Sodium-23</td><td class="resp"><span class="nuc"><span class="az"><span class="a">23</span><span class="z">11</span></span>Na<span class="ch">+1</span></span></td><td class="resp">11</td><td class="dado">23</td><td class="dado">12</td><td class="dado">10</td><td class="resp">+1</td></tr>
+  <tr><td class="resp">Chlorine-35</td><td class="dado"><span class="nuc"><span class="az"><span class="a">35</span><span class="z">17</span></span>Cl</span></td><td class="resp">17</td><td class="resp">35</td><td class="resp">18</td><td class="resp">17</td><td class="resp">0</td></tr>
+</table>
+<div class="resol" style="margin-left:0;margin-top:6px">
+  <div class="calc-linha"><b>Al:</b> n = 27 − 13 = 14 · e = 13 − 3 = 10</div>
+  <div class="calc-linha"><b>Br:</b> Z = 35 · n = 81 − 35 = 46 · e = 35 + 1 = 36</div>
+  <div class="calc-linha"><b>K:</b> Z = 19 · n = 39 − 19 = 20 · charge = 19 − 18 = +1</div>
+  <div class="calc-linha"><b>Linha 4:</b> Z = 8 → oxigênio · A = 8 + 10 = 18 · e = 8 + 2 = 10</div>
+  <div class="calc-linha"><b>Linha 5 (a mais difícil):</b> Z = A − n = 23 − 12 = 11 → sódio · charge = 11 − 10 = +1</div>
+  <div class="calc-linha"><b>Cl sem carga escrita:</b> neutral → e = 17 · n = 35 − 17 = 18</div>
+</div>
+
+<p class="fim">Acertou 12 de 14 ou mais? Está pronta para a prova.</p>
+
+</body>
+</html>
