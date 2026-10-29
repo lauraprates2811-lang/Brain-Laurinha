@@ -1,0 +1,120 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Tabela Periódica</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: grade da tabela periódica (períodos 2–5, grupos 1, 2, 13–17), só os 6 elementos do quiz preenchidos */
+:root{
+  --bg:#f2f6f7; --surface:#ffffff; --fg:#13222b; --muted:#56666f; --line:#d3dee3;
+  --accent:#0b6f7a;
+  --metal:#fde9d4; --metal-line:#d9893b;
+  --nonmetal:#dcefe2; --nonmetal-line:#3f9a5e;
+  --f-display:"Bricolage Grotesque", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1418; --surface:#142026; --fg:#e1e9ed; --muted:#93a5ae; --line:#26363e;
+    --accent:#5bc5ce;
+    --metal:#3a2a18; --metal-line:#e8a25a;
+    --nonmetal:#173024; --nonmetal-line:#62c487; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1418; --surface:#142026; --fg:#e1e9ed; --muted:#93a5ae; --line:#26363e;
+  --accent:#5bc5ce;
+  --metal:#3a2a18; --metal-line:#e8a25a;
+  --nonmetal:#173024; --nonmetal-line:#62c487; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding:28px 16px 56px;display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(28px,7vw,40px);line-height:1.1;margin:4px 0 0}
+.lede{color:var(--muted);margin:8px 0 0;max-width:60ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.pt{display:grid;grid-template-columns:18px repeat(2,minmax(0,1fr)) 14px repeat(5,minmax(0,1fr));gap:5px;align-items:stretch}
+.h{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-align:center;align-self:end}
+.p{font-family:var(--f-mono);font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.gap{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+.ghost{aspect-ratio:1;border:1px dashed var(--line);border-radius:6px}
+.el{aspect-ratio:1;border:2px solid;border-radius:7px;padding:3px 4px;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.el.metal{background:var(--metal);border-color:var(--metal-line)}
+.el.nonmetal{background:var(--nonmetal);border-color:var(--nonmetal-line)}
+.z{font-family:var(--f-mono);font-weight:700;font-size:clamp(10px,2.6vw,14px);line-height:1}
+.sym{font-family:var(--f-display);font-weight:800;font-size:clamp(15px,4.4vw,30px);line-height:1;margin:auto 0 0;text-align:center}
+.nm{font-size:clamp(7.5px,1.9vw,11px);line-height:1.1;text-align:center;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:14px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:4px;border:2px solid}
+.sw.metal{background:var(--metal);border-color:var(--metal-line)}
+.sw.nonmetal{background:var(--nonmetal);border-color:var(--nonmetal-line)}
+.key{font-size:14px;color:var(--muted);margin:0}
+.key b{color:var(--fg)}
+/* No celular a célula fica pequena demais para o nome: ele sai da célula e vai para a lista abaixo da grade */
+.names{display:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;font-size:14px;margin:12px 0 0;padding:0;list-style:none}
+.names b{font-family:var(--f-mono)}
+@media (max-width:560px){
+  .card{padding:12px}
+  .pt{gap:3px;grid-template-columns:14px repeat(2,minmax(0,1fr)) 10px repeat(5,minmax(0,1fr))}
+  .el{padding:2px 3px}
+  .nm{display:none}
+  .names{display:grid}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Química · Quiz 1</div>
+    <h1>Mini tabela periódica</h1>
+    <p class="lede">Só os elementos da tabela de isótopos. O número no canto é o <b>atomic number</b> (Z).</p>
+  </header>
+
+  <div class="card">
+    <div class="pt">
+      <!-- cabeçalho: grupos -->
+      <div></div><div class="h">1</div><div class="h">2</div><div class="h">…</div>
+      <div class="h">13</div><div class="h">14</div><div class="h">15</div><div class="h">16</div><div class="h">17</div>
+
+      <!-- período 2 -->
+      <div class="p">2</div><div class="ghost"></div><div class="ghost"></div><div class="gap"></div>
+      <div class="ghost"></div><div class="ghost"></div><div class="ghost"></div>
+      <div class="el nonmetal"><span class="z">8</span><span class="sym">O</span><span class="nm">Oxygen</span></div>
+      <div class="ghost"></div>
+
+      <!-- período 3 -->
+      <div class="p">3</div>
+      <div class="el metal"><span class="z">11</span><span class="sym">Na</span><span class="nm">Sodium</span></div>
+      <div class="el metal"><span class="z">12</span><span class="sym">Mg</span><span class="nm">Magnesium</span></div>
+      <div class="gap">…</div>
+      <div class="el metal"><span class="z">13</span><span class="sym">Al</span><span class="nm">Aluminum</span></div>
+      <div class="ghost"></div><div class="ghost"></div>
+      <div class="el nonmetal"><span class="z">16</span><span class="sym">S</span><span class="nm">Sulfur</span></div>
+      <div class="ghost"></div>
+
+      <!-- período 4 -->
+      <div class="p">4</div><div class="ghost"></div><div class="ghost"></div><div class="gap">…</div>
+      <div class="ghost"></div><div class="ghost"></div><div class="ghost"></div><div class="ghost"></div><div class="ghost"></div>
+
+      <!-- período 5 -->
+      <div class="p">5</div><div class="ghost"></div><div class="ghost"></div><div class="gap">…</div>
+      <div class="ghost"></div><div class="ghost"></div><div class="ghost"></div><div class="ghost"></div>
+      <div class="el nonmetal"><span class="z">53</span><span class="sym">I</span><span class="nm">Iodine</span></div>
+    </div>
+
+    <ul class="names">
+      <li><b>8</b> O · Oxygen</li><li><b>11</b> Na · Sodium</li>
+      <li><b>12</b> Mg · Magnesium</li><li><b>13</b> Al · Aluminum</li>
+      <li><b>16</b> S · Sulfur</li><li><b>53</b> I · Iodine</li>
+    </ul>
+
+    <div class="legend">
+      <span><i class="sw metal"></i>Metal</span>
+      <span><i class="sw nonmetal"></i>Ametal (nonmetal)</span>
+      <span>Linhas = períodos · colunas = grupos</span>
+    </div>
+  </div>
+
+  <p class="key"><b>Atomic number</b> = nº de prótons. O <b>mass number</b> já vem no nome do isótopo: Magnesium-<b>24</b>.</p>
+</div>
