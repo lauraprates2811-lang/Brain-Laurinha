@@ -1,0 +1,524 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Química – Quiz 2: modelos, tabela, Lewis e tendências</title>
+<style>
+  @page { size: A4; margin: 12mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10.6pt; line-height: 1.42; color: #1a1a1a; max-width: 800px; margin: 0 auto; padding: 14px; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1 { font-size: 20pt; color: #1f3a9e; margin: 0 0 2px; }
+  h2 { font-size: 13.5pt; color: #1f3a9e; margin: 14px 0 6px; display: flex; align-items: center; gap: 9px; }
+  h3 { font-size: 11pt; margin: 0 0 4px; }
+  p { margin: 4px 0; }
+  .sub { color: #555; margin: 0 0 10px; font-size: 11pt; }
+  .num { display: inline-block; min-width: 25px; height: 25px; border-radius: 50%; background: #1f3a9e; color: #fff; text-align: center; line-height: 25px; font-weight: 700; font-size: 10.5pt; }
+  .aviso { background: #fff6d6; border-left: 5px solid #e0a800; padding: 7px 12px; border-radius: 4px; margin: 8px 0 10px; }
+  .aviso ol { margin: 3px 0 0; padding-left: 20px; } .aviso li { margin: 1px 0; }
+  .quebra { break-before: page; page-break-before: always; }
+  .nobreak { break-inside: avoid; page-break-inside: avoid; }
+
+  .cores-p { color: #dc2626; font-weight: 700; } .cores-n { color: #6b7280; font-weight: 700; } .cores-e { color: #2563eb; font-weight: 700; }
+  .cA { color: #7c3aed; font-weight: 700; } .cZ { color: #16a34a; font-weight: 700; } .cQ { color: #ea7a0c; font-weight: 700; }
+
+  .lado { display: grid; grid-template-columns: 235px 1fr; gap: 14px; align-items: center; }
+  table.t { border-collapse: collapse; width: 100%; font-size: 10.3pt; }
+  table.t th { background: #1f3a9e; color: #fff; text-align: left; padding: 5px 7px; font-weight: 700; }
+  table.t td { border-bottom: 1px solid #ddd; padding: 5px 7px; vertical-align: middle; }
+
+  .contas { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 4px; }
+  .conta { border: 2px solid #c9d3ee; border-radius: 10px; padding: 8px 11px; break-inside: avoid; }
+  .conta .f { font-size: 13pt; font-weight: 800; margin: 2px 0 3px; }
+  .conta.z { border-color: #16a34a; background: #f0fdf4; } .conta.a { border-color: #7c3aed; background: #f5f3ff; }
+  .conta.n { border-color: #6b7280; background: #f6f7f9; } .conta.q { border-color: #ea7a0c; background: #fff7ed; }
+  .conta small { color: #444; font-size: 9.6pt; display: block; }
+
+  .box { border-radius: 10px; padding: 9px 12px; margin: 6px 0; break-inside: avoid; }
+  .box.azul { background: #eef2ff; border: 2px solid #c7d2fe; }
+  .box.verde { background: #ecfdf3; border: 2px solid #16a34a; }
+  .box.vermelho { background: #fef2f2; border: 2px solid #dc2626; }
+  .box.vermelho h3 { color: #dc2626; }
+  .box ul { margin: 3px 0; padding-left: 19px; } .box li { margin: 2px 0; }
+
+  .dois { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .z-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0 12px; font-size: 9.8pt; }
+  .z-grid div { border-bottom: 1px dotted #ccc; padding: 1px 0; display: flex; justify-content: space-between; }
+  .z-grid b { color: #16a34a; }
+  .voc td { padding: 3px 7px; }
+  .voc td:first-child { font-weight: 700; white-space: nowrap; }
+
+  /* notação nuclear: A em cima, Z embaixo, carga à direita */
+  .nuc { white-space: nowrap; font-weight: 700; font-size: 1.05em; }
+  .az { display: inline-block; vertical-align: -0.4em; text-align: right; font-size: .6em; line-height: 1.1; margin-right: 1px; }
+  .az span { display: block; }
+  .az .a { color: #7c3aed; } .az .z { color: #16a34a; }
+  .ch { font-size: .6em; vertical-align: .75em; color: #ea7a0c; margin-left: 1px; }
+
+  /* questões no formato da prova */
+  .q { margin: 10px 0 12px; break-inside: avoid; }
+  .q .enun { font-weight: 700; display: flex; gap: 8px; }
+  .q .enun .n { min-width: 20px; }
+  .op { margin: 3px 0 0 28px; }
+  .op div { margin: 2px 0; display: flex; gap: 8px; align-items: center; }
+  .op div::before { content: ""; width: 12px; height: 12px; border: 1.5px solid #333; border-radius: 2px; flex: none; }
+  .op div.certa::before { background: #16a34a; border-color: #16a34a; }
+  .op div.certa { font-weight: 700; color: #15803d; }
+  .resol { margin: 5px 0 0 28px; background: #ecfdf3; border-left: 4px solid #16a34a; padding: 5px 10px; border-radius: 4px; font-size: 10.2pt; }
+  .resol .pega { color: #dc2626; font-weight: 700; }
+  .linha-calc { margin: 6px 0 0 28px; border-bottom: 1px solid #999; height: 24px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px 16px; }
+  .cols3 .op, .cols3 .resol { margin-left: 22px; }
+  table.t.gab2 td { padding: 3px 7px; }
+
+  table.prova { border-collapse: collapse; width: 100%; font-size: 10pt; margin-top: 4px; }
+  table.prova th { border: 1px solid #333; padding: 5px; font-weight: 700; text-align: left; background: #f3f4f6; font-size: 9.6pt; }
+  table.prova td { border: 1px solid #333; padding: 4px 5px; height: 32px; text-align: center; vertical-align: middle; }
+  table.prova td.dado { color: #555; }
+  table.prova td.resp { color: #1f3a9e; font-weight: 800; background: #eef2ff; }
+  .calc-linha { font-size: 9.6pt; color: #333; margin: 2px 0; }
+  .calc-linha b { color: #1f3a9e; }
+  .gab td { height: auto; padding: 5px; }
+  .fim { text-align: center; color: #16a34a; font-weight: 800; font-size: 13pt; margin-top: 12px; }
+
+  /* ---- Quiz 2 ---- */
+  h3.sec { color: #1f3a9e; border-bottom: 2px solid #c7d2fe; padding-bottom: 2px; margin: 12px 0 2px; }
+  .linha-tempo { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin: 4px 0; }
+  .mod { border: 2px solid #c7d2fe; border-radius: 10px; padding: 6px 7px 7px; text-align: center; background: #fafbff; break-inside: avoid; }
+  .mod svg { display: block; margin: 0 auto; }
+  .mod h3 { margin: 2px 0 0; color: #1f3a9e; }
+  .mod .ano { font-weight: 800; color: #ea7a0c; font-size: 10pt; }
+  .mod .apel { font-style: italic; color: #555; font-size: 9.4pt; margin: 0 0 3px; line-height: 1.2; }
+  .mod p { font-size: 9.4pt; line-height: 1.32; text-align: left; }
+  .memo { background: #fff6d6; border-radius: 6px; padding: 5px 10px; margin: 7px 0; }
+  .frase { background: #f0f9ff; border-left: 5px solid #0284c7; border-radius: 4px; padding: 7px 12px; margin: 8px 0; font-size: 10.2pt; break-inside: avoid; }
+  .frase i { color: #0c4a6e; }
+  .lado2 { display: grid; grid-template-columns: 320px 1fr; gap: 12px; align-items: center; }
+  ul.lista, ol.lista { margin: 3px 0; padding-left: 19px; } .lista li { margin: 3px 0; }
+  .legenda { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 9.4pt; margin: 4px 0 0; }
+  .legenda span { display: inline-flex; align-items: center; gap: 4px; }
+  .legenda i { display: inline-block; width: 13px; height: 13px; border-radius: 3px; }
+  .mini { font-size: 9pt; color: #555; margin: 2px 0; }
+  .tres { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .tres .box p { font-size: 9.8pt; }
+  .lwrow { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin: 2px 0 6px; }
+  .lw { text-align: center; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2px 0 3px; }
+  .lw svg { display: block; margin: 0 auto; }
+  .lw small { font-size: 8.6pt; color: #555; }
+  .ions { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 4px 0; }
+  .ion { text-align: center; border: 1px solid #fed7aa; background: #fffbf5; border-radius: 8px; padding: 3px; }
+  .ion svg { display: block; margin: 0 auto; }
+  .ion small { font-size: 8.8pt; line-height: 1.25; display: block; }
+  .ligacao { display: flex; align-items: center; gap: 6px; }
+  .op-sinal { font-size: 18pt; font-weight: 800; color: #1f3a9e; }
+  .ex { display: inline-block; background: #eef2ff; border-radius: 4px; padding: 0 6px; font-weight: 700; color: #1f3a9e; font-size: 9.6pt; margin-left: 3px; }
+  table.mini-t { width: auto; margin: 4px 0; } table.mini-t td, table.mini-t th { padding: 3px 9px; text-align: center; }
+  td.salto { background: #fee2e2; color: #b91c1c; font-weight: 800; }
+  .cols .q { margin: 7px 0 8px; }
+  .cola { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cola .c { border: 2px solid #1f3a9e; border-radius: 10px; padding: 9px 12px; }
+  .cola h3 { color: #1f3a9e; font-size: 12pt; }
+  .cola p { font-size: 10.6pt; }
+  .lado2 { grid-template-columns: 300px 1fr; }
+  .lado2 svg { width: 300px; }
+  .lado2 .lista li { margin: 1px 0; font-size: 10pt; }
+  .cols .op { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; }
+  .cols .op div { margin: 1px 0; font-size: 10pt; }
+  .q { margin: 7px 0 8px; }
+  .linha-calc { height: 22px; }
+  table.t.gab2 { font-size: 9.5pt; }
+  table.t.gab2 td { padding: 2px 6px; line-height: 1.3; }
+  table.t.gab2 th { padding: 3px 6px; }
+  table.t td { padding: 4px 7px; }
+  .box p { margin: 3px 0; }
+  .ions .ion svg, .ligacao svg { overflow: visible; }
+  .frase { font-size: 9.8pt; line-height: 1.36; }
+  .box.vermelho li, .box.azul p { font-size: 10pt; }
+  .q { margin: 5px 0 6px; }
+  .linha-calc { height: 20px; }
+  h3.sec { margin: 9px 0 2px; }
+</style></head><body>
+
+<!-- ============ PÁGINA 1: MODELOS ATÔMICOS ============ -->
+<h1>Química – Quiz 2: modelos, tabela, Lewis e tendências</h1>
+<p class="sub">Prova amanhã, sexta 30/10. Os 5 conteúdos, do zero, com as frases prontas em inglês.</p>
+
+<div class="aviso"><b>Como usar (cerca de 1h30):</b>
+<ol>
+  <li>Seções 1 a 5: teoria, um conteúdo por vez (40 min). Leia os quadros vermelhos com atenção: é onde se perde ponto.</li>
+  <li>Seção 6: faça o treino de 30 questões <b>sem olhar a teoria</b> (30 min).</li>
+  <li>Seção 7: corrija. O que errou, volte na seção do conteúdo (15 min).</li>
+  <li>Amanhã antes da prova: releia só a última página, a revisão de 5 minutos.</li>
+</ol></div>
+
+<h2><span class="num">1</span> Atomic models: a ordem e o que cada um trouxe</h2>
+<div class="linha-tempo">
+  <div class="mod"><div class="ano">1803</div><svg viewBox="0 0 110 100" width="100"><defs><radialGradient id="gd" cx="35%" cy="35%"><stop offset="0" stop-color="#e5e7eb"/><stop offset="1" stop-color="#4b5563"/></radialGradient></defs><circle cx="55" cy="50" r="36" fill="url(#gd)"/></svg><h3>Dalton</h3><p class="apel">solid sphere<br>(billiard ball)</p>
+    <p>Átomo = esfera <b>sólida e indivisível</b>. Átomos do mesmo elemento são iguais.</p></div>
+  <div class="mod"><div class="ano">1897</div><svg viewBox="0 0 110 100" width="100"><circle cx="55" cy="50" r="38" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+<g fill="#2563eb"><circle cx="40" cy="32" r="5"/><circle cx="66" cy="30" r="5"/><circle cx="52" cy="50" r="5"/><circle cx="34" cy="58" r="5"/><circle cx="72" cy="56" r="5"/><circle cx="50" cy="72" r="5"/><circle cx="68" cy="74" r="5"/><circle cx="80" cy="42" r="5"/></g>
+<g fill="#fff" font-size="9" font-weight="700" text-anchor="middle"><text x="40" y="35">−</text><text x="66" y="33">−</text><text x="52" y="53">−</text><text x="34" y="61">−</text><text x="72" y="59">−</text><text x="50" y="75">−</text><text x="68" y="77">−</text><text x="80" y="45">−</text></g>
+<g fill="#dc2626" font-size="10" font-weight="700"><text x="28" y="44">+</text><text x="56" y="38">+</text><text x="44" y="64">+</text><text x="60" y="63">+</text><text x="76" y="66">+</text><text x="38" y="80">+</text><text x="24" y="52">+</text><text x="84" y="52">+</text></g></svg><h3>Thomson</h3><p class="apel">plum pudding</p>
+    <p><b>Cathode ray tube</b> → descobriu o <b>electron</b>. Esfera positiva com elétrons espalhados.</p></div>
+  <div class="mod"><div class="ano">1911</div><svg viewBox="0 0 110 100" width="100"><circle cx="55" cy="50" r="40" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="3 3"/>
+<circle cx="55" cy="50" r="5" fill="#dc2626"/><text x="55" y="53.5" font-size="8" fill="#fff" text-anchor="middle" font-weight="700">+</text>
+<g fill="#2563eb"><circle cx="30" cy="30" r="3.6"/><circle cx="82" cy="36" r="3.6"/><circle cx="26" cy="66" r="3.6"/><circle cx="78" cy="76" r="3.6"/><circle cx="55" cy="16" r="3.6"/><circle cx="60" cy="86" r="3.6"/></g></svg><h3>Rutherford</h3><p class="apel">nuclear model</p>
+    <p><b>Gold foil experiment</b> → descobriu o <b>nucleus</b>: pequeno, denso e positivo. O resto é vazio.</p></div>
+  <div class="mod"><div class="ano">1913</div><svg viewBox="0 0 110 100" width="100"><circle cx="55" cy="50" r="18" fill="none" stroke="#1f3a9e" stroke-width="1.4"/>
+<circle cx="55" cy="50" r="30" fill="none" stroke="#1f3a9e" stroke-width="1.4"/><circle cx="55" cy="50" r="42" fill="none" stroke="#1f3a9e" stroke-width="1.4"/>
+<circle cx="55" cy="50" r="6" fill="#dc2626"/>
+<g fill="#2563eb"><circle cx="73" cy="50" r="3.6"/><circle cx="37" cy="50" r="3.6"/><circle cx="55" cy="20" r="3.6"/><circle cx="76" cy="71" r="3.6"/><circle cx="34" cy="29" r="3.6"/><circle cx="17" cy="62" r="3.6"/></g>
+<text x="80" y="47" font-size="7" fill="#1f3a9e">n=1</text></svg><h3>Bohr</h3><p class="apel">planetary model</p>
+    <p>Elétrons em <b>energy levels</b> (orbits) fixos. Baseado no espectro do <b>hydrogen</b>.</p></div>
+  <div class="mod"><div class="ano">1926</div><svg viewBox="0 0 110 100" width="100"><defs><radialGradient id="gq"><stop offset="0" stop-color="#2563eb" stop-opacity=".85"/><stop offset=".55" stop-color="#60a5fa" stop-opacity=".45"/><stop offset="1" stop-color="#bfdbfe" stop-opacity="0"/></radialGradient></defs>
+<circle cx="55" cy="50" r="44" fill="url(#gq)"/><circle cx="55" cy="50" r="5" fill="#dc2626"/></svg><h3>Quantum</h3><p class="apel">electron cloud</p>
+    <p>Schrödinger. Elétrons em <b>orbitals</b>: regiões onde é <b>provável</b> achá-los.</p></div>
+</div>
+<p class="memo"><b>Para decorar a ordem:</b> <b>D</b>alton → <b>T</b>homson → <b>R</b>utherford → <b>B</b>ohr → <b>Q</b>uantum. E o nêutron veio por último: <b>Chadwick, 1932</b>.</p>
+
+<table class="t" style="margin-top:6px">
+  <tr><th>Cientista</th><th>Experimento</th><th>O que descobriu</th><th>Por que foi substituído</th></tr>
+  <tr><td><b>Dalton</b></td><td>— (teoria a partir de reações)</td><td>Toda matéria é feita de átomos</td><td>O átomo <b>não</b> é indivisível: tem elétrons dentro</td></tr>
+  <tr><td><b>Thomson</b></td><td>Cathode ray tube</td><td><b>Electron</b> (partícula negativa)</td><td>Não tinha núcleo</td></tr>
+  <tr><td><b>Rutherford</b></td><td>Gold foil (alpha particles)</td><td><b>Nucleus</b> positivo; átomo quase todo vazio</td><td>Não explicava onde ficam os elétrons</td></tr>
+  <tr><td><b>Bohr</b></td><td>Espectro de emissão do hidrogênio</td><td>Elétrons em <b>níveis de energia</b> fixos</td><td>Só funciona bem para o hidrogênio</td></tr>
+  <tr><td><b>Schrödinger</b></td><td>Matemática (mecânica quântica)</td><td><b>Orbitals</b> = probabilidade</td><td>É o modelo atual</td></tr>
+  <tr><td><b>Chadwick</b></td><td>—</td><td><b>Neutron</b> (1932)</td><td>Completa o núcleo</td></tr>
+</table>
+
+<!-- ============ PÁGINA 2: RUTHERFORD E BOHR ============ -->
+<div class="quebra"></div>
+<h2><span class="num">2</span> As duas experiências que mais caem</h2>
+<h3>Rutherford: gold foil experiment</h3>
+<svg viewBox="0 0 640 170" width="100%" role="img" aria-label="Experimento da folha de ouro">
+<rect x="8" y="62" width="70" height="46" rx="6" fill="#e5e7eb" stroke="#6b7280"/>
+<text x="43" y="82" font-size="11" text-anchor="middle" font-weight="700">alpha</text><text x="43" y="96" font-size="10" text-anchor="middle">source (+)</text>
+<line x1="78" y1="85" x2="232" y2="85" stroke="#ea7a0c" stroke-width="4"/>
+<polygon points="232,85 222,79 222,91" fill="#ea7a0c"/>
+<text x="150" y="76" font-size="10" text-anchor="middle" fill="#9a3412">alpha particles (+)</text>
+<rect x="240" y="20" width="9" height="130" fill="#facc15" stroke="#a16207"/>
+<text x="244" y="164" font-size="10.5" text-anchor="middle" font-weight="700" fill="#a16207">gold foil</text>
+<g stroke="#ea7a0c" stroke-width="2" fill="none">
+<line x1="249" y1="70" x2="370" y2="70"/><line x1="249" y1="80" x2="370" y2="80"/><line x1="249" y1="90" x2="370" y2="90"/><line x1="249" y1="100" x2="370" y2="100"/>
+<path d="M249,64 L350,26"/><path d="M249,106 L345,148"/>
+<path d="M240,84 C215,70 200,55 185,40" stroke="#dc2626" stroke-width="2.4"/>
+</g>
+<text x="378" y="82" font-size="10.5" fill="#15803d" font-weight="700">most:</text>
+<text x="378" y="95" font-size="10.5" fill="#15803d" font-weight="700">straight through</text>
+<text x="356" y="26" font-size="10.5" fill="#92400e" font-weight="700">a few: deflected</text>
+<text x="112" y="30" font-size="10.5" fill="#dc2626" font-weight="700">very few: bounced back</text>
+<circle cx="565" cy="85" r="68" fill="#fffbeb" stroke="#a16207" stroke-dasharray="4 3"/>
+<text x="565" y="166" font-size="10" text-anchor="middle" fill="#a16207">zoom: átomos de ouro</text>
+<circle cx="545" cy="70" r="5" fill="#dc2626"/><circle cx="590" cy="108" r="5" fill="#dc2626"/>
+<g stroke="#ea7a0c" stroke-width="1.6" fill="none">
+<line x1="500" y1="45" x2="630" y2="45"/><line x1="500" y1="90" x2="630" y2="90"/><line x1="500" y1="125" x2="625" y2="125"/>
+<path d="M500,70 L538,70 L503,58"/><path d="M500,104 L575,104 L620,80"/>
+</g></svg>
+<div class="dois">
+  <div class="box verde"><h3>A maioria passou reto</h3>
+    <p>→ o átomo é <b>mostly empty space</b> (quase todo vazio).</p></div>
+  <div class="box vermelho"><h3>Poucas voltaram (bounced back)</h3>
+    <p>→ existe um <b>nucleus</b> <b>small, dense and positive</b>. As partículas alfa são positivas e foram <b>repelidas</b> por ele.</p></div>
+</div>
+<div class="frase"><b>Frase pronta:</b> <i>Most alpha particles passed straight through the gold foil, so the atom is mostly empty space. A few bounced back, so the atom has a small, dense, positively charged nucleus.</i></div>
+
+<h3 style="margin-top:12px">Bohr: o elétron sobe e desce de nível (é o seu lab <i>Exciting Electrons</i>)</h3>
+<div class="lado2">
+  <div><svg viewBox="0 0 330 165" width="320" role="img" aria-label="Níveis de energia de Bohr">
+<line x1="40" y1="140" x2="200" y2="140" stroke="#1f3a9e" stroke-width="3"/><text x="206" y="144" font-size="10.5">n = 1 · ground state</text>
+<line x1="40" y1="88" x2="200" y2="88" stroke="#1f3a9e" stroke-width="3"/><text x="206" y="92" font-size="10.5">n = 2 · excited state</text>
+<line x1="40" y1="52" x2="200" y2="52" stroke="#1f3a9e" stroke-width="3"/><text x="206" y="56" font-size="10.5">n = 3</text>
+<line x1="40" y1="30" x2="200" y2="30" stroke="#1f3a9e" stroke-width="3"/><text x="206" y="34" font-size="10.5">n = 4</text>
+<line x1="70" y1="137" x2="70" y2="58" stroke="#16a34a" stroke-width="3"/><polygon points="70,52 64,63 76,63" fill="#16a34a"/>
+<text x="12" y="105" font-size="10" fill="#15803d" font-weight="700">absorbs</text><text x="14" y="117" font-size="10" fill="#15803d" font-weight="700">energy</text>
+<line x1="140" y1="55" x2="140" y2="82" stroke="#dc2626" stroke-width="3"/><polygon points="140,88 134,77 146,77" fill="#dc2626"/>
+<path d="M146,68 q5,-7 10,0 t10,0 t10,0 t10,0" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="150" y="80" font-size="10" fill="#b91c1c" font-weight="700">releases light</text>
+<circle cx="70" cy="140" r="5" fill="#2563eb"/><circle cx="140" cy="52" r="5" fill="#2563eb"/>
+</svg></div>
+  <div>
+    <ul class="lista">
+      <li>O elétron só pode ficar em <b>energy levels</b> fixos (n = 1, 2, 3…). Nível 1 = mais perto do núcleo, menos energia.</li>
+      <li><b>Ground state</b> = no nível mais baixo possível. <b>Excited state</b> = num nível mais alto.</li>
+      <li><b>Absorbs</b> energy → <b>jumps up</b>. <b>Falls back down</b> → <b>releases</b> a energia como <b>light</b>.</li>
+      <li>Como os saltos têm tamanhos fixos, saem só algumas cores: o <b>emission spectrum</b> é de <b>linhas</b>, não um arco-íris contínuo. Cada elemento tem as suas linhas (a "impressão digital").</li>
+      <li>Salto maior → mais energia → luz de <b>frequência maior</b> (mais para o violeta).</li>
+    </ul>
+  </div>
+</div>
+<div class="frase"><b>Frase pronta:</b> <i>When an electron absorbs energy, it jumps to a higher energy level (excited state). When it falls back to a lower level, it releases that energy as light of a specific color.</i></div>
+
+<div class="box vermelho"><h3>⚠ Pegadinhas dos modelos</h3><ul>
+  <li><b>Thomson</b> descobriu o <b>electron</b>. <b>Rutherford</b>, o <b>nucleus</b> (e o próton). <b>Chadwick</b>, o <b>neutron</b>. Não troque.</li>
+  <li>"Mostly empty space" vem das que <b>passaram reto</b>. "Nucleus" vem das que <b>voltaram</b>. A prova inverte isso.</li>
+  <li><b>Orbit</b> (Bohr) = caminho fixo, como um planeta. <b>Orbital</b> (Quantum) = nuvem de probabilidade. Palavras parecidas, ideias diferentes.</li>
+  <li>Elétron <b>absorve</b> energia para <b>subir</b> e <b>emite</b> luz ao <b>descer</b>. Nunca o contrário.</li>
+  <li>Dalton errou ao dizer que o átomo é indivisível. Não diga que ele "descobriu o átomo" (a ideia de <i>atomos</i> é do grego Demócrito).</li>
+</ul></div>
+
+<!-- ============ PÁGINA 3: TABELA PERIÓDICA ============ -->
+<div class="quebra"></div>
+<h2><span class="num">3</span> Periodic table</h2>
+<svg viewBox="0 0 674 262" width="100%" role="img" aria-label="Tabela periódica colorida por família"><text x="14" y="39.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">1</text><rect x="23" y="19" width="34" height="32" rx="3" fill="#93c5fd"/><text x="26" y="28" font-size="7" fill="#374151">1</text><text x="40.0" y="43" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">H</text><rect x="635" y="19" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="28" font-size="7" fill="#374151">2</text><text x="652.0" y="43" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">He</text><text x="14" y="73.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">2</text><rect x="23" y="53" width="34" height="32" rx="3" fill="#fca5a5"/><text x="26" y="62" font-size="7" fill="#374151">3</text><text x="40.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Li</text><rect x="59" y="53" width="34" height="32" rx="3" fill="#fdba74"/><text x="62" y="62" font-size="7" fill="#374151">4</text><text x="76.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Be</text><rect x="455" y="53" width="34" height="32" rx="3" fill="#99f6e4"/><text x="458" y="62" font-size="7" fill="#374151">5</text><text x="472.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">B</text><rect x="491" y="53" width="34" height="32" rx="3" fill="#93c5fd"/><text x="494" y="62" font-size="7" fill="#374151">6</text><text x="508.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">C</text><rect x="527" y="53" width="34" height="32" rx="3" fill="#93c5fd"/><text x="530" y="62" font-size="7" fill="#374151">7</text><text x="544.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">N</text><rect x="563" y="53" width="34" height="32" rx="3" fill="#93c5fd"/><text x="566" y="62" font-size="7" fill="#374151">8</text><text x="580.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">O</text><rect x="599" y="53" width="34" height="32" rx="3" fill="#c4b5fd"/><text x="602" y="62" font-size="7" fill="#374151">9</text><text x="616.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">F</text><rect x="635" y="53" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="62" font-size="7" fill="#374151">10</text><text x="652.0" y="77" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ne</text><text x="14" y="107.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">3</text><rect x="23" y="87" width="34" height="32" rx="3" fill="#fca5a5"/><text x="26" y="96" font-size="7" fill="#374151">11</text><text x="40.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Na</text><rect x="59" y="87" width="34" height="32" rx="3" fill="#fdba74"/><text x="62" y="96" font-size="7" fill="#374151">12</text><text x="76.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Mg</text><rect x="455" y="87" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="458" y="96" font-size="7" fill="#374151">13</text><text x="472.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Al</text><rect x="491" y="87" width="34" height="32" rx="3" fill="#99f6e4"/><text x="494" y="96" font-size="7" fill="#374151">14</text><text x="508.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Si</text><rect x="527" y="87" width="34" height="32" rx="3" fill="#93c5fd"/><text x="530" y="96" font-size="7" fill="#374151">15</text><text x="544.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">P</text><rect x="563" y="87" width="34" height="32" rx="3" fill="#93c5fd"/><text x="566" y="96" font-size="7" fill="#374151">16</text><text x="580.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">S</text><rect x="599" y="87" width="34" height="32" rx="3" fill="#c4b5fd"/><text x="602" y="96" font-size="7" fill="#374151">17</text><text x="616.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Cl</text><rect x="635" y="87" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="96" font-size="7" fill="#374151">18</text><text x="652.0" y="111" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ar</text><text x="14" y="141.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">4</text><rect x="23" y="121" width="34" height="32" rx="3" fill="#fca5a5"/><text x="26" y="130" font-size="7" fill="#374151">19</text><text x="40.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">K</text><rect x="59" y="121" width="34" height="32" rx="3" fill="#fdba74"/><text x="62" y="130" font-size="7" fill="#374151">20</text><text x="76.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ca</text><rect x="95" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="98" y="130" font-size="7" fill="#374151">21</text><text x="112.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Sc</text><rect x="131" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="134" y="130" font-size="7" fill="#374151">22</text><text x="148.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ti</text><rect x="167" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="170" y="130" font-size="7" fill="#374151">23</text><text x="184.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">V</text><rect x="203" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="206" y="130" font-size="7" fill="#374151">24</text><text x="220.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Cr</text><rect x="239" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="242" y="130" font-size="7" fill="#374151">25</text><text x="256.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Mn</text><rect x="275" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="278" y="130" font-size="7" fill="#374151">26</text><text x="292.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Fe</text><rect x="311" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="314" y="130" font-size="7" fill="#374151">27</text><text x="328.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Co</text><rect x="347" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="350" y="130" font-size="7" fill="#374151">28</text><text x="364.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ni</text><rect x="383" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="386" y="130" font-size="7" fill="#374151">29</text><text x="400.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Cu</text><rect x="419" y="121" width="34" height="32" rx="3" fill="#fde68a"/><text x="422" y="130" font-size="7" fill="#374151">30</text><text x="436.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Zn</text><rect x="455" y="121" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="458" y="130" font-size="7" fill="#374151">31</text><text x="472.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ga</text><rect x="491" y="121" width="34" height="32" rx="3" fill="#99f6e4"/><text x="494" y="130" font-size="7" fill="#374151">32</text><text x="508.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ge</text><rect x="527" y="121" width="34" height="32" rx="3" fill="#99f6e4"/><text x="530" y="130" font-size="7" fill="#374151">33</text><text x="544.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">As</text><rect x="563" y="121" width="34" height="32" rx="3" fill="#93c5fd"/><text x="566" y="130" font-size="7" fill="#374151">34</text><text x="580.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Se</text><rect x="599" y="121" width="34" height="32" rx="3" fill="#c4b5fd"/><text x="602" y="130" font-size="7" fill="#374151">35</text><text x="616.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Br</text><rect x="635" y="121" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="130" font-size="7" fill="#374151">36</text><text x="652.0" y="145" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Kr</text><text x="14" y="175.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">5</text><rect x="23" y="155" width="34" height="32" rx="3" fill="#fca5a5"/><text x="26" y="164" font-size="7" fill="#374151">37</text><text x="40.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Rb</text><rect x="59" y="155" width="34" height="32" rx="3" fill="#fdba74"/><text x="62" y="164" font-size="7" fill="#374151">38</text><text x="76.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Sr</text><rect x="95" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="98" y="164" font-size="7" fill="#374151">39</text><text x="112.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Y</text><rect x="131" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="134" y="164" font-size="7" fill="#374151">40</text><text x="148.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Zr</text><rect x="167" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="170" y="164" font-size="7" fill="#374151">41</text><text x="184.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Nb</text><rect x="203" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="206" y="164" font-size="7" fill="#374151">42</text><text x="220.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Mo</text><rect x="239" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="242" y="164" font-size="7" fill="#374151">43</text><text x="256.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Tc</text><rect x="275" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="278" y="164" font-size="7" fill="#374151">44</text><text x="292.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ru</text><rect x="311" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="314" y="164" font-size="7" fill="#374151">45</text><text x="328.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Rh</text><rect x="347" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="350" y="164" font-size="7" fill="#374151">46</text><text x="364.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Pd</text><rect x="383" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="386" y="164" font-size="7" fill="#374151">47</text><text x="400.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ag</text><rect x="419" y="155" width="34" height="32" rx="3" fill="#fde68a"/><text x="422" y="164" font-size="7" fill="#374151">48</text><text x="436.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Cd</text><rect x="455" y="155" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="458" y="164" font-size="7" fill="#374151">49</text><text x="472.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">In</text><rect x="491" y="155" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="494" y="164" font-size="7" fill="#374151">50</text><text x="508.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Sn</text><rect x="527" y="155" width="34" height="32" rx="3" fill="#99f6e4"/><text x="530" y="164" font-size="7" fill="#374151">51</text><text x="544.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Sb</text><rect x="563" y="155" width="34" height="32" rx="3" fill="#99f6e4"/><text x="566" y="164" font-size="7" fill="#374151">52</text><text x="580.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Te</text><rect x="599" y="155" width="34" height="32" rx="3" fill="#c4b5fd"/><text x="602" y="164" font-size="7" fill="#374151">53</text><text x="616.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">I</text><rect x="635" y="155" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="164" font-size="7" fill="#374151">54</text><text x="652.0" y="179" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Xe</text><text x="14" y="209.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">6</text><rect x="23" y="189" width="34" height="32" rx="3" fill="#fca5a5"/><text x="26" y="198" font-size="7" fill="#374151">55</text><text x="40.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Cs</text><rect x="59" y="189" width="34" height="32" rx="3" fill="#fdba74"/><text x="62" y="198" font-size="7" fill="#374151">56</text><text x="76.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ba</text><rect x="95" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="98" y="198" font-size="7" fill="#374151">57</text><text x="112.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">La*</text><rect x="131" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="134" y="198" font-size="7" fill="#374151">73</text><text x="148.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Hf</text><rect x="167" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="170" y="198" font-size="7" fill="#374151">74</text><text x="184.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ta</text><rect x="203" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="206" y="198" font-size="7" fill="#374151">75</text><text x="220.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">W</text><rect x="239" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="242" y="198" font-size="7" fill="#374151">76</text><text x="256.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Re</text><rect x="275" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="278" y="198" font-size="7" fill="#374151">77</text><text x="292.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Os</text><rect x="311" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="314" y="198" font-size="7" fill="#374151">78</text><text x="328.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ir</text><rect x="347" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="350" y="198" font-size="7" fill="#374151">79</text><text x="364.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Pt</text><rect x="383" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="386" y="198" font-size="7" fill="#374151">80</text><text x="400.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Au</text><rect x="419" y="189" width="34" height="32" rx="3" fill="#fde68a"/><text x="422" y="198" font-size="7" fill="#374151">81</text><text x="436.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Hg</text><rect x="455" y="189" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="458" y="198" font-size="7" fill="#374151">82</text><text x="472.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Tl</text><rect x="491" y="189" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="494" y="198" font-size="7" fill="#374151">83</text><text x="508.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Pb</text><rect x="527" y="189" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="530" y="198" font-size="7" fill="#374151">84</text><text x="544.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Bi</text><rect x="563" y="189" width="34" height="32" rx="3" fill="#99f6e4"/><text x="566" y="198" font-size="7" fill="#374151">85</text><text x="580.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Po</text><rect x="599" y="189" width="34" height="32" rx="3" fill="#99f6e4"/><text x="602" y="198" font-size="7" fill="#374151">86</text><text x="616.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">At</text><rect x="635" y="189" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="198" font-size="7" fill="#374151">87</text><text x="652.0" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Rn</text><text x="14" y="243.0" font-size="11" font-weight="700" fill="#1f3a9e" text-anchor="middle">7</text><rect x="23" y="223" width="34" height="32" rx="3" fill="#fca5a5"/><text x="26" y="232" font-size="7" fill="#374151">88</text><text x="40.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Fr</text><rect x="59" y="223" width="34" height="32" rx="3" fill="#fdba74"/><text x="62" y="232" font-size="7" fill="#374151">89</text><text x="76.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ra</text><rect x="95" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="98" y="232" font-size="7" fill="#374151">89</text><text x="112.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ac*</text><rect x="131" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="134" y="232" font-size="7" fill="#374151">105</text><text x="148.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Rf</text><rect x="167" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="170" y="232" font-size="7" fill="#374151">106</text><text x="184.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Db</text><rect x="203" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="206" y="232" font-size="7" fill="#374151">107</text><text x="220.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Sg</text><rect x="239" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="242" y="232" font-size="7" fill="#374151">108</text><text x="256.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Bh</text><rect x="275" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="278" y="232" font-size="7" fill="#374151">109</text><text x="292.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Hs</text><rect x="311" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="314" y="232" font-size="7" fill="#374151">110</text><text x="328.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Mt</text><rect x="347" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="350" y="232" font-size="7" fill="#374151">111</text><text x="364.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ds</text><rect x="383" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="386" y="232" font-size="7" fill="#374151">112</text><text x="400.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Rg</text><rect x="419" y="223" width="34" height="32" rx="3" fill="#fde68a"/><text x="422" y="232" font-size="7" fill="#374151">113</text><text x="436.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Cn</text><rect x="455" y="223" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="458" y="232" font-size="7" fill="#374151">114</text><text x="472.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Nh</text><rect x="491" y="223" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="494" y="232" font-size="7" fill="#374151">115</text><text x="508.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Fl</text><rect x="527" y="223" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="530" y="232" font-size="7" fill="#374151">116</text><text x="544.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Mc</text><rect x="563" y="223" width="34" height="32" rx="3" fill="#bbf7d0"/><text x="566" y="232" font-size="7" fill="#374151">117</text><text x="580.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Lv</text><rect x="599" y="223" width="34" height="32" rx="3" fill="#c4b5fd"/><text x="602" y="232" font-size="7" fill="#374151">118</text><text x="616.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Ts</text><rect x="635" y="223" width="34" height="32" rx="3" fill="#f9a8d4"/><text x="638" y="232" font-size="7" fill="#374151">119</text><text x="652.0" y="247" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111">Og</text><text x="40.0" y="14" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">1</text><text x="76.0" y="48" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">2</text><text x="112.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">3</text><text x="148.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">4</text><text x="184.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">5</text><text x="220.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">6</text><text x="256.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">7</text><text x="292.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">8</text><text x="328.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">9</text><text x="364.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">10</text><text x="400.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">11</text><text x="436.0" y="116" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">12</text><text x="472.0" y="48" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">13</text><text x="508.0" y="48" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">14</text><text x="544.0" y="48" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">15</text><text x="580.0" y="48" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">16</text><text x="616.0" y="48" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">17</text><text x="652.0" y="14" font-size="10" font-weight="700" fill="#1f3a9e" text-anchor="middle">18</text><path d="M454,52 L454,86 L490,86 L490,120 L490,120 L490,154 L526,154 L526,188 L562,188 L562,222" fill="none" stroke="#111" stroke-width="3.2" stroke-linejoin="round"/></svg>
+<div class="legenda">
+  <span><i style="background:#fca5a5"></i>Alkali metals (1)</span>
+  <span><i style="background:#fdba74"></i>Alkaline earth metals (2)</span>
+  <span><i style="background:#fde68a"></i>Transition metals (3–12)</span>
+  <span><i style="background:#bbf7d0"></i>Other metals</span>
+  <span><i style="background:#99f6e4"></i>Metalloids</span>
+  <span><i style="background:#93c5fd"></i>Nonmetals</span>
+  <span><i style="background:#c4b5fd"></i>Halogens (17)</span>
+  <span><i style="background:#f9a8d4"></i>Noble gases (18)</span>
+  <span><b style="font-size:13pt">▬</b> staircase line</span>
+</div>
+<p class="mini">* La e Ac abrem os lanthanides e actinides, as duas linhas que ficam soltas embaixo da tabela.</p>
+
+<div class="tres" style="margin-top:6px">
+  <div class="box azul"><h3>Group = coluna ↓ (18)</h3>
+    <p>Mesmo grupo = mesmos <b>valence electrons</b> → <b>propriedades parecidas</b>. Na e K reagem igual; Na e Mg, não.</p></div>
+  <div class="box azul"><h3>Period = linha → (7)</h3>
+    <p>Mesmo período = mesmo número de <b>energy levels</b> (camadas). Período 3 → 3 camadas.</p></div>
+  <div class="box azul"><h3>Como foi montada</h3>
+    <p><b>Mendeleev</b>: por <b>atomic mass</b>, com buracos para elementos não descobertos. Hoje: por <b>atomic number</b> (Moseley).</p></div>
+</div>
+
+<table class="t" style="margin-top:6px">
+  <tr><th>Família</th><th>Grupo</th><th>Valence e⁻</th><th>Íon</th><th>O que lembrar</th></tr>
+  <tr><td><b>Alkali metals</b></td><td>1</td><td>1</td><td>+1</td><td>Os metais <b>mais reativos</b>; reagem violentamente com água. (H fica no grupo 1, mas é nonmetal.)</td></tr>
+  <tr><td><b>Alkaline earth metals</b></td><td>2</td><td>2</td><td>+2</td><td>Reativos, menos que os do grupo 1. Ex.: Mg, Ca.</td></tr>
+  <tr><td><b>Transition metals</b></td><td>3–12</td><td>—</td><td>vários</td><td>O "miolo" da tabela: Fe, Cu, Ag, Au, Zn.</td></tr>
+  <tr><td><b>Halogens</b></td><td>17</td><td>7</td><td>−1</td><td>Os <b>nonmetals mais reativos</b>. F, Cl, Br, I.</td></tr>
+  <tr><td><b>Noble gases</b></td><td>18</td><td>8 (He: 2)</td><td>0</td><td>Camada cheia → <b>unreactive</b> (inert). Não formam íon.</td></tr>
+</table>
+
+<div class="tres" style="margin-top:8px">
+  <div class="box" style="background:#fff7ed;border:2px solid #fdba74"><h3>Metals (esquerda e centro)</h3>
+    <p>Shiny (luster), good <b>conductors</b> of heat and electricity, <b>malleable</b> e <b>ductile</b>. Sólidos (menos Hg). <b>Perdem</b> elétrons → cátion.</p></div>
+  <div class="box" style="background:#f0fdfa;border:2px solid #5eead4"><h3>Metalloids (na escada)</h3>
+    <p>Meio a meio. <b>Semiconductors</b> (Si nos chips). B, Si, Ge, As, Sb, Te.</p></div>
+  <div class="box" style="background:#eff6ff;border:2px solid #93c5fd"><h3>Nonmetals (direita)</h3>
+    <p>Dull, <b>brittle</b>, poor conductors (insulators). Muitos são gases. <b>Ganham</b> elétrons → ânion.</p></div>
+</div>
+
+<!-- ============ PÁGINA 4: LEWIS ============ -->
+<div class="quebra"></div>
+<h2><span class="num">4</span> Lewis dot structure</h2>
+<div class="box verde"><h3>A regra em 3 passos</h3><ol style="margin:3px 0;padding-left:20px">
+  <li>Os pontos são os <b>valence electrons</b> (os da última camada).</li>
+  <li>Quantos: é o <b>último dígito do grupo</b>. Grupo 1 → 1 · grupo 2 → 2 · grupo 13 → 3 · 14 → 4 · 15 → 5 · 16 → 6 · 17 → 7 · 18 → 8 (<b>He só 2</b>).</li>
+  <li>Escreva o símbolo e ponha <b>1 ponto em cada lado</b> (cima, direita, baixo, esquerda) <b>antes de formar par</b>. No máximo 2 por lado = 8.</li>
+</ol></div>
+
+<h3 style="margin-top:8px">Período 2</h3>
+<div class="lwrow"><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Li 1 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Li</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/></svg><small>grupo 1</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Be 2 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Be</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 2</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis B 3 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">B</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="32" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/></svg><small>grupo 13</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis C 4 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">C</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="32" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 14</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis N 5 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">N</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="32" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 15</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis O 6 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">O</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="55" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 16</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis F 7 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">F</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="55" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 17</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Ne 8 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Ne</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="61" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="19" cy="36.5" r="2.7" fill="#dc2626"/></svg><small>grupo 18</small></div></div>
+<h3>Período 3 (mesmo grupo = mesmos pontos)</h3>
+<div class="lwrow"><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Na 1 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Na</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/></svg><small>grupo 1</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Mg 2 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Mg</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 2</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Al 3 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Al</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="32" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/></svg><small>grupo 13</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Si 4 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Si</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="32" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 14</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis P 5 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">P</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="32" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 15</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis S 6 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">S</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="55" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="40" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 16</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Cl 7 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Cl</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="61" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="32" r="2.7" fill="#dc2626"/></svg><small>grupo 17</small></div><div class="lw"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Ar 8 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Ar</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="61" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="19" cy="36.5" r="2.7" fill="#dc2626"/></svg><small>grupo 18</small></div></div>
+
+<h3 style="margin-top:8px">Octet rule e os íons</h3>
+<p>Todo átomo quer ficar com <b>8</b> na última camada, igual a um gás nobre (H e He: 2). Para isso, quem tem <b>poucos</b> pontos <b>perde</b>, e quem tem <b>muitos</b> <b>ganha</b>.</p>
+<div class="ions">
+  <div class="ion"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Na 0 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Na</text><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">+</text></svg><small><b>Na⁺</b>: perdeu o único ponto → 0 pontos</small></div>
+  <div class="ion"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Mg 0 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Mg</text><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">2+</text></svg><small><b>Mg²⁺</b>: perdeu os 2 → 0 pontos</small></div>
+  <div class="ion"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis Cl 8 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Cl</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="61" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="19" cy="36.5" r="2.7" fill="#dc2626"/><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">−</text></svg><small><b>Cl⁻</b>: 7 + 1 = 8 pontos</small></div>
+  <div class="ion"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis O 8 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">O</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="55" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="25" cy="36.5" r="2.7" fill="#dc2626"/><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">2−</text></svg><small><b>O²⁻</b>: 6 + 2 = 8 pontos</small></div>
+  <div class="ion"><svg viewBox="0 0 92 66" width="85" role="img" aria-label="Lewis N 8 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">N</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="55" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="55" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="25" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="25" cy="36.5" r="2.7" fill="#dc2626"/><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">3−</text></svg><small><b>N³⁻</b>: 5 + 3 = 8 pontos</small></div>
+</div>
+<p>Íon sempre vai entre <b>[colchetes]</b> com a carga no canto. Cátion fica sem pontos; ânion fica com 8.</p>
+
+<table class="t" style="margin-top:6px">
+  <tr><th>Grupo</th><th>1</th><th>2</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th></tr>
+  <tr><td><b>Pontos</b></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+  <tr><td><b>Carga do íon</b></td><td>+1</td><td>+2</td><td>+3</td><td>(divide)</td><td>−3</td><td>−2</td><td>−1</td><td>0</td></tr>
+</table>
+
+<div class="box azul" style="margin-top:8px"><h3>Ligação iônica com pontos (se pedirem)</h3>
+  <div class="ligacao"><svg viewBox="0 0 92 66" width="69" role="img" aria-label="Lewis Na 1 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Na</text><circle cx="40" cy="15" r="2.7" fill="#dc2626"/></svg><span class="op-sinal">+</span><svg viewBox="0 0 92 66" width="69" role="img" aria-label="Lewis Cl 7 pontos"><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Cl</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="61" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="32" r="2.7" fill="#dc2626"/></svg><span class="op-sinal">→</span><svg viewBox="0 0 92 66" width="69" role="img" aria-label="Lewis Na 0 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Na</text><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">+</text></svg><svg viewBox="0 0 92 66" width="69" role="img" aria-label="Lewis Cl 8 pontos"><path d="M14,7 L9,7 L9,59 L14,59 M66,7 L71,7 L71,59 L66,59" fill="none" stroke="#333" stroke-width="1.8"/><text x="40" y="40" font-size="20" font-weight="800" text-anchor="middle" fill="#1f3a9e" font-family="Arial">Cl</text><circle cx="35.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="15" r="2.7" fill="#dc2626"/><circle cx="61" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="61" cy="36.5" r="2.7" fill="#dc2626"/><circle cx="35.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="44.5" cy="51" r="2.7" fill="#dc2626"/><circle cx="19" cy="27.5" r="2.7" fill="#dc2626"/><circle cx="19" cy="36.5" r="2.7" fill="#dc2626"/><text x="73" y="15" font-size="15" font-weight="800" fill="#ea7a0c" font-family="Arial">−</text></svg></div>
+  <p>O Na <b>transfere</b> 1 elétron para o Cl. Os dois ficam com octeto e se atraem: NaCl.</p></div>
+
+<div class="box vermelho"><h3>⚠ Pegadinhas de Lewis</h3><ul>
+  <li>Os pontos são só os <b>valence electrons</b>, não todos os elétrons. Cl tem 17 elétrons, mas <b>7</b> pontos.</li>
+  <li>Não junte em par antes de pôr 1 em cada lado: N é 1 par + 3 sozinhos, não 2 pares + 1.</li>
+  <li>He é do grupo 18, mas tem só <b>2</b> pontos.</li>
+  <li>Cátion <b>perde</b> os pontos (Na⁺ = 0). Não desenhe Na⁺ com 8.</li>
+</ul></div>
+
+<!-- ============ PÁGINA 5: RAIO E ENERGIA DE IONIZAÇÃO ============ -->
+<div class="quebra"></div>
+<h2><span class="num">5</span> Atomic radius e ionization energy: são opostos</h2>
+<div class="dois">
+  <div class="box" style="background:#fff7ed;border:2px solid #fdba74">
+    <h3 style="color:#c2410c">Atomic radius (tamanho do átomo)</h3>
+    <svg viewBox="0 0 250 116" width="78%" style="display:block;margin:0 auto" role="img" aria-label="Raio atômico">
+<rect x="52" y="30" width="186" height="80" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+<path d="M52,96 h28 v14 h-28 z" fill="#c2410c" opacity=".35"/>
+<text x="145" y="74" font-size="11" text-anchor="middle" fill="#64748b">periodic table</text>
+<line x1="220" y1="16" x2="70" y2="16" stroke="#c2410c" stroke-width="4"/>
+<polygon points="70,16 80,10 80,22" fill="#c2410c"/>
+<text x="145" y="10" font-size="10.5" text-anchor="middle" font-weight="700" fill="#c2410c">increases ← (to the left)</text>
+<line x1="38" y1="36" x2="38" y2="104" stroke="#c2410c" stroke-width="4"/>
+<polygon points="38,104 32,94 44,94" fill="#c2410c"/>
+<text x="22" y="70" font-size="10.5" font-weight="700" fill="#c2410c" transform="rotate(-90 22 70)" text-anchor="middle">increases</text>
+</svg>
+    <p><b>→ Across a period: decreases.</b> Mais prótons puxando, mesmo número de camadas → os elétrons chegam mais perto.</p>
+    <p><b>↓ Down a group: increases.</b> Uma camada a mais em cada período.</p>
+    <p>Maior: <b>embaixo à esquerda</b> (Fr, Cs). Menor: <b>em cima à direita</b> (He).</p>
+  </div>
+  <div class="box" style="background:#f5f3ff;border:2px solid #c4b5fd">
+    <h3 style="color:#6d28d9">Ionization energy (energia para tirar 1 elétron)</h3>
+    <svg viewBox="0 0 250 116" width="78%" style="display:block;margin:0 auto" role="img" aria-label="Energia de ionização">
+<rect x="52" y="30" width="186" height="80" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+<path d="M210,30 h28 v14 h-28 z" fill="#6d28d9" opacity=".35"/>
+<text x="145" y="74" font-size="11" text-anchor="middle" fill="#64748b">periodic table</text>
+<line x1="70" y1="16" x2="220" y2="16" stroke="#6d28d9" stroke-width="4"/>
+<polygon points="220,16 210,10 210,22" fill="#6d28d9"/>
+<text x="145" y="10" font-size="10.5" text-anchor="middle" font-weight="700" fill="#6d28d9">increases → (to the right)</text>
+<line x1="38" y1="104" x2="38" y2="36" stroke="#6d28d9" stroke-width="4"/>
+<polygon points="38,36 32,46 44,46" fill="#6d28d9"/>
+<text x="22" y="70" font-size="10.5" font-weight="700" fill="#6d28d9" transform="rotate(-90 22 70)" text-anchor="middle">increases</text>
+</svg>
+    <p><b>→ Across a period: increases.</b> Átomo menor e com mais prótons segura mais forte.</p>
+    <p><b>↓ Down a group: decreases.</b> Elétron mais longe e blindado → sai mais fácil.</p>
+    <p>Maior: <b>He</b> (em cima à direita). Menor: <b>Fr, Cs</b> (embaixo à esquerda).</p>
+  </div>
+</div>
+
+<div class="box verde"><p><b>O truque: átomo grande segura mal.</b> Raio grande → elétron longe → <b>ionization energy baixa</b>. Por isso as setas são opostas, e os metais (esquerda) perdem elétron fácil.</p></div>
+
+<div class="dois">
+  <div><h3>Como comparar dois átomos (raio)</h3><ol class="lista">
+    <li><b>Períodos diferentes?</b> Quem está mais embaixo é maior (tem mais camadas). <span class="ex">K &gt; Na</span></li>
+    <li><b>Mesmo período?</b> Quem está mais à esquerda é maior. <span class="ex">Na &gt; Cl</span></li>
+    <li>Ionization energy: é só a resposta <b>contrária</b>. <span class="ex">Cl &gt; Na</span></li>
+  </ol></div>
+  <div><h3>Íon × átomo</h3><ul class="lista">
+    <li><b>Cation is smaller</b> than its atom: perdeu elétrons (às vezes uma camada inteira). <span class="ex">Na⁺ &lt; Na</span></li>
+    <li><b>Anion is larger</b> than its atom: os elétrons a mais se repelem. <span class="ex">Cl⁻ &gt; Cl</span></li>
+  </ul></div>
+</div>
+
+<div class="frase"><b>Frases prontas (para "explain why"):</b><br>
+<i><b>Radius across a period:</b> The number of protons increases, so the nucleus pulls the electrons more strongly, but the number of energy levels stays the same. The electrons are pulled closer, so the radius decreases.</i><br>
+<i><b>Radius down a group:</b> Each element has one more energy level, so the outer electrons are farther from the nucleus. The radius increases.</i><br>
+<i><b>Ionization energy across a period:</b> The atoms are smaller and have more protons, so the outer electrons are held more tightly and need more energy to be removed.</i><br>
+<i><b>Ionization energy down a group:</b> The outer electron is farther from the nucleus and shielded by inner electrons, so it is easier to remove.</i></div>
+
+<div class="dois">
+  <div class="box azul"><h3>Se aparecer: 1ª, 2ª, 3ª ionization energy</h3>
+    <p>Cada elétron a mais custa mais caro. Quando acabam os de valência, a energia dá um <b>salto enorme</b> (começa a tirar de camada cheia).</p>
+    <table class="t mini-t"><tr><th>Mg (kJ/mol)</th><th>1ª</th><th>2ª</th><th>3ª</th></tr>
+    <tr><td></td><td>738</td><td>1451</td><td class="salto">7733</td></tr></table>
+    <p>Salto depois da 2ª → 2 valence electrons → <b>grupo 2</b>.</p></div>
+  <div class="box vermelho"><h3>⚠ Pegadinhas de tendência</h3><ul>
+    <li>Mais prótons no mesmo período deixa o átomo <b>menor</b>, não maior.</li>
+    <li>Gases nobres têm a <b>maior</b> ionization energy do período; alkali metals, a <b>menor</b>.</li>
+    <li>"Ionization energy" é para <b>tirar</b> elétron, não para ganhar.</li>
+    <li>Na comparação, olhe a <b>camada</b> primeiro: K (período 4) é maior que Cl (período 3), mesmo tendo mais prótons.</li>
+  </ul></div>
+</div>
+
+<!-- ============ PÁGINAS 6–7: TREINO ============ -->
+<div class="quebra"></div>
+<h2><span class="num">6</span> Treino (em inglês, como na prova). Sem olhar a teoria.</h2>
+<h3 class="sec">A · Atomic models</h3>
+<div class="cols">
+<div class="q"><div class="enun"><span class="n">1.</span><span>Which scientist discovered the electron?</span></div><div class="op"><div>Dalton</div><div>Thomson</div><div>Rutherford</div><div>Chadwick</div></div></div>
+<div class="q"><div class="enun"><span class="n">2.</span><span>Which experiment showed that the atom has a nucleus?</span></div><div class="op"><div>Cathode ray tube</div><div>Gold foil experiment</div><div>Hydrogen emission spectrum</div><div>Flame test</div></div></div>
+<div class="q"><div class="enun"><span class="n">3.</span><span>In the gold foil experiment, most alpha particles passed straight through. This showed that the atom…</span></div><div class="op"><div>has a positive nucleus</div><div>is mostly empty space</div><div>is a solid sphere</div><div>has electrons in orbits</div></div></div>
+<div class="q"><div class="enun"><span class="n">4.</span><span>Why did a few alpha particles bounce back?</span></div><div class="op"><div>They hit electrons</div><div>They were attracted by the nucleus</div><div>They were repelled by the small, dense, positive nucleus</div><div>The foil was too thick</div></div></div>
+<div class="q"><div class="enun"><span class="n">5.</span><span>Which model describes the atom as a positive sphere with electrons stuck in it?</span></div><div class="op"><div>Plum pudding</div><div>Nuclear</div><div>Planetary (Bohr)</div><div>Electron cloud</div></div></div>
+<div class="q"><div class="enun"><span class="n">6.</span><span>In the quantum mechanical model, electrons are found in…</span></div><div class="op"><div>fixed orbits</div><div>the nucleus</div><div>orbitals, regions of high probability</div><div>a positive sphere</div></div></div>
+</div>
+<div class="q"><div class="enun"><span class="n">7.</span><span>Put the models in order, from oldest to newest: <b>Bohr · Dalton · Quantum · Rutherford · Thomson</b></span></div><div class="linha-calc"></div></div>
+<div class="q"><div class="enun"><span class="n">8.</span><span>What happens to an electron when it absorbs energy? And when it falls back to its ground state?</span></div><div class="linha-calc"></div><div class="linha-calc"></div></div>
+
+<h3 class="sec">B · Periodic table</h3>
+<div class="cols">
+<div class="q"><div class="enun"><span class="n">9.</span><span>The modern periodic table is arranged by increasing…</span></div><div class="op"><div>atomic mass</div><div>atomic number</div><div>number of neutrons</div><div>mass number</div></div></div>
+<div class="q"><div class="enun"><span class="n">10.</span><span>Which pair has the most similar chemical properties?</span></div><div class="op"><div>Na and Mg</div><div>Na and K</div><div>Na and Cl</div><div>Na and Ne</div></div></div>
+<div class="q"><div class="enun"><span class="n">11.</span><span>Which element is in group 17, period 3?</span></div><div class="op"><div>Ar</div><div>S</div><div>Cl</div><div>F</div></div></div>
+<div class="q"><div class="enun"><span class="n">12.</span><span>Which is NOT a property of metals?</span></div><div class="op"><div>Shiny</div><div>Good conductor</div><div>Malleable</div><div>Brittle</div></div></div>
+</div>
+<div class="q"><div class="enun"><span class="n">13.</span><span>Classify each element as <b>metal</b>, <b>nonmetal</b> or <b>metalloid</b>, and name its family if it has one: &nbsp; <b>Ca · Si · Br · Fe · Ne · K</b></span></div><div class="linha-calc"></div><div class="linha-calc"></div></div>
+<div class="q"><div class="enun"><span class="n">14.</span><span>An element has 2 valence electrons and 4 energy levels. Which element is it?</span></div><div class="linha-calc"></div></div>
+
+<div class="quebra"></div>
+<h3 class="sec">C · Lewis dot structure</h3>
+<div class="q"><div class="enun"><span class="n">15.</span><span>Draw the Lewis dot structure for: &nbsp; <b>Ca &nbsp;&nbsp; P &nbsp;&nbsp; Br &nbsp;&nbsp; Ar &nbsp;&nbsp; Al &nbsp;&nbsp; Si</b></span></div><div class="linha-calc"></div><div class="linha-calc"></div></div>
+<div class="q"><div class="enun"><span class="n">16.</span><span>Draw the Lewis dot structure for the ions: &nbsp; <b>K⁺ &nbsp;&nbsp; S²⁻ &nbsp;&nbsp; F⁻</b></span></div><div class="linha-calc"></div><div class="linha-calc"></div></div>
+<div class="cols">
+<div class="q"><div class="enun"><span class="n">17.</span><span>How many dots are in the Lewis structure of nitrogen (N)?</span></div><div class="op"><div>3</div><div>5</div><div>7</div><div>14</div></div></div>
+<div class="q"><div class="enun"><span class="n">18.</span><span>Element X has 3 dots in its Lewis structure. X could be…</span></div><div class="op"><div>Mg</div><div>Al</div><div>N</div><div>Li</div></div></div>
+<div class="q"><div class="enun"><span class="n">19.</span><span>What charge does an atom from group 16 usually form?</span></div><div class="op"><div>+2</div><div>+6</div><div>−2</div><div>−6</div></div></div>
+<div class="q"><div class="enun"><span class="n">20.</span><span>Why do noble gases not form ions?</span></div><div class="op"><div>They have no electrons</div><div>They have a full outer shell (octet)</div><div>They are metals</div><div>They have no protons</div></div></div>
+</div>
+
+<h3 class="sec">D · Atomic radius</h3>
+<div class="q"><div class="enun"><span class="n">21.</span><span>Circle the atom with the <b>larger radius</b> in each pair: &nbsp; (a) Mg / Ba &nbsp;&nbsp; (b) K / Br &nbsp;&nbsp; (c) N / P &nbsp;&nbsp; (d) Na / Na⁺ &nbsp;&nbsp; (e) Cl / Cl⁻ &nbsp;&nbsp; (f) F / Li</span></div></div>
+<div class="q"><div class="enun"><span class="n">22.</span><span>Arrange in order of <b>increasing</b> atomic radius: &nbsp; <b>O, Li, F, C</b></span></div><div class="linha-calc"></div></div>
+<div class="q"><div class="enun"><span class="n">23.</span><span>Explain why atomic radius decreases across a period.</span></div><div class="linha-calc"></div><div class="linha-calc"></div></div>
+
+<h3 class="sec">E · Ionization energy</h3>
+<div class="q"><div class="enun"><span class="n">24.</span><span>Define ionization energy.</span></div><div class="linha-calc"></div></div>
+<div class="q"><div class="enun"><span class="n">25.</span><span>Circle the atom with the <b>higher ionization energy</b>: &nbsp; (a) Na / Cl &nbsp;&nbsp; (b) Be / Ca &nbsp;&nbsp; (c) Ne / Ar &nbsp;&nbsp; (d) K / Kr</span></div></div>
+<div class="cols">
+<div class="q"><div class="enun"><span class="n">26.</span><span>Which element has the highest first ionization energy?</span></div><div class="op"><div>Fr</div><div>Cs</div><div>F</div><div>He</div></div></div>
+<div class="q"><div class="enun"><span class="n">27.</span><span>Arrange in order of increasing ionization energy: K, Na, Li</span></div><div class="op"><div>Li < Na < K</div><div>K < Na < Li</div><div>Na < K < Li</div><div>K < Li < Na</div></div></div>
+<div class="q"><div class="enun"><span class="n">28.</span><span>As atomic radius increases, ionization energy…</span></div><div class="op"><div>increases</div><div>decreases</div><div>stays the same</div><div>doubles</div></div></div>
+</div>
+<div class="q"><div class="enun"><span class="n">29.</span><span>Element X has these ionization energies (kJ/mol): 1st = 578 · 2nd = 1817 · 3rd = 2745 · 4th = 11 577. In which group is X? Explain.</span></div><div class="linha-calc"></div></div>
+<div class="q"><div class="enun"><span class="n">30.</span><span>Explain why ionization energy decreases down a group.</span></div><div class="linha-calc"></div><div class="linha-calc"></div></div>
+
+<!-- ============ PÁGINA 8: GABARITO ============ -->
+<div class="quebra"></div>
+<h2><span class="num">7</span> Gabarito comentado</h2>
+<table class="t gab2">
+  <tr><th style="width:34px">#</th><th>Resposta</th><th>Por quê</th></tr>
+  <tr><td>1</td><td><b>Thomson</b></td><td>Cathode ray tube. Chadwick é o nêutron.</td></tr>
+  <tr><td>2</td><td><b>Gold foil experiment</b></td><td>Rutherford, 1911.</td></tr>
+  <tr><td>3</td><td><b>is mostly empty space</b></td><td>Passar reto = não bateu em nada.</td></tr>
+  <tr><td>4</td><td><b>repelled by the small, dense, positive nucleus</b></td><td>Alfa é positiva; positivo repele positivo.</td></tr>
+  <tr><td>5</td><td><b>Plum pudding</b></td><td>Thomson.</td></tr>
+  <tr><td>6</td><td><b>orbitals, regions of high probability</b></td><td>"Fixed orbits" é Bohr.</td></tr>
+  <tr><td>7</td><td><b>Dalton → Thomson → Rutherford → Bohr → Quantum</b></td><td>D-T-R-B-Q.</td></tr>
+  <tr><td>8</td><td>Absorbs energy → <b>jumps to a higher energy level</b> (excited state). Falls back → <b>releases energy as light</b>.</td><td>Bohr / Exciting Electrons.</td></tr>
+  <tr><td>9</td><td><b>atomic number</b></td><td>Mendeleev usava atomic mass.</td></tr>
+  <tr><td>10</td><td><b>Na and K</b></td><td>Mesmo grupo (1) = mesmos valence electrons.</td></tr>
+  <tr><td>11</td><td><b>Cl</b></td><td>Coluna 17, linha 3.</td></tr>
+  <tr><td>12</td><td><b>Brittle</b></td><td>Quebradiço é nonmetal.</td></tr>
+  <tr><td>13</td><td>Ca: metal, <b>alkaline earth</b> · Si: <b>metalloid</b> · Br: nonmetal, <b>halogen</b> · Fe: metal, <b>transition</b> · Ne: nonmetal, <b>noble gas</b> · K: metal, <b>alkali</b></td><td></td></tr>
+  <tr><td>14</td><td><b>Ca</b> (calcium)</td><td>2 valence → grupo 2; 4 camadas → período 4.</td></tr>
+  <tr><td>15</td><td>Ca <b>2</b> · P <b>5</b> · Br <b>7</b> · Ar <b>8</b> · Al <b>3</b> · Si <b>4</b> pontos</td><td>Último dígito do grupo; 1 por lado antes de parear.</td></tr>
+  <tr><td>16</td><td><b>[K]⁺</b> sem pontos · <b>[S]²⁻</b> com 8 · <b>[F]⁻</b> com 8</td><td>Cátion perde tudo; ânion completa 8. Colchetes!</td></tr>
+  <tr><td>17</td><td><b>5</b></td><td>Grupo 15. 14 é o mass number, não entra.</td></tr>
+  <tr><td>18</td><td><b>Al</b></td><td>Grupo 13 → 3 pontos.</td></tr>
+  <tr><td>19</td><td><b>−2</b></td><td>6 pontos + 2 = 8.</td></tr>
+  <tr><td>20</td><td><b>full outer shell (octet)</b></td><td>Já estão estáveis.</td></tr>
+  <tr><td>21</td><td>(a) <b>Ba</b> (b) <b>K</b> (c) <b>P</b> (d) <b>Na</b> (e) <b>Cl⁻</b> (f) <b>Li</b></td><td>Mais embaixo ou mais à esquerda; cátion menor, ânion maior.</td></tr>
+  <tr><td>22</td><td><b>F &lt; O &lt; C &lt; Li</b></td><td>Mesmo período: da direita para a esquerda cresce.</td></tr>
+  <tr><td>23</td><td colspan="2"><i>More protons → stronger pull on the electrons, same number of energy levels → electrons pulled closer → smaller radius.</i></td></tr>
+  <tr><td>24</td><td colspan="2"><i>The energy needed to remove an electron from an atom.</i></td></tr>
+  <tr><td>25</td><td>(a) <b>Cl</b> (b) <b>Be</b> (c) <b>Ne</b> (d) <b>Kr</b></td><td>Mais à direita ou mais em cima.</td></tr>
+  <tr><td>26</td><td><b>He</b></td><td>Em cima à direita. F é a pegadinha.</td></tr>
+  <tr><td>27</td><td><b>K &lt; Na &lt; Li</b></td><td>Subindo no grupo, cresce.</td></tr>
+  <tr><td>28</td><td><b>decreases</b></td><td>Elétron mais longe = mais fácil de tirar.</td></tr>
+  <tr><td>29</td><td><b>Group 13</b> (é o Al)</td><td>O salto é depois da 3ª → 3 valence electrons.</td></tr>
+  <tr><td>30</td><td colspan="2"><i>Down a group the outer electron is in a higher energy level, farther from the nucleus and shielded by inner electrons, so less energy is needed to remove it.</i></td></tr>
+</table>
+<p class="fim">Acertou 26 de 30 ou mais? Está pronta para a prova.</p>
+
+<!-- ============ PÁGINA 9: REVISÃO DE 5 MINUTOS ============ -->
+<div class="quebra"></div>
+<h2><span class="num">★</span> Revisão de 5 minutos (amanhã, antes da prova)</h2>
+<div class="cola">
+  <div class="c"><h3>Modelos</h3>
+    <p><b>Dalton</b> solid sphere, indivisible · <b>Thomson</b> cathode ray → electron, plum pudding · <b>Rutherford</b> gold foil → nucleus (reto = vazio; voltou = núcleo +) · <b>Bohr</b> energy levels, hydrogen spectrum · <b>Quantum</b> orbitals, electron cloud · <b>Chadwick</b> neutron.</p>
+    <p>Absorbs → sobe · cai → <b>releases light</b>.</p></div>
+  <div class="c"><h3>Tabela</h3>
+    <p>Ordem: <b>atomic number</b> (Mendeleev: atomic mass). <b>Group</b> = coluna = mesmos valence e⁻ = propriedades parecidas. <b>Period</b> = linha = nº de camadas.</p>
+    <p>1 alkali · 2 alkaline earth · 3–12 transition · 17 halogens · 18 noble gases. Metais à esquerda, nonmetals à direita, metalloids na escada.</p></div>
+  <div class="c"><h3>Lewis</h3>
+    <p>Pontos = valence = último dígito do grupo (He = 2). 1 por lado antes de parear. Cátion: [Na]⁺ sem pontos. Ânion: [Cl]⁻ com 8. Octet rule.</p></div>
+  <div class="c"><h3>Tendências</h3>
+    <p><b>Radius</b>: ← e ↓ aumenta. Maior embaixo à esquerda.<br><b>Ionization energy</b>: → e ↑ aumenta. Maior: He.<br>Opostos. Cátion menor, ânion maior. Compare a camada primeiro.</p></div>
+</div>
+<div class="frase" style="margin-top:10px"><b>As 2 palavras que explicam tudo:</b> <i>more <b>protons</b></i> (puxa mais → menor, segura mais) e <i>more <b>energy levels</b></i> (mais longe → maior, solta fácil).</div>
+
+</body></html>

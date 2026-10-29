@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"></head><body>
+<title>Treino Química Quiz 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: uma coluna estreita; a barra de progresso é uma "linha da tabela periódica" com uma célula por questão */
+:root {
+  --bg: #f3f5fa; --surface: #ffffff; --ink: #151b30; --muted: #5a6382; --line: #dde2ee;
+  --accent: #2443c4; --accent-ink: #ffffff; --accent-soft: #e6ebfb;
+  --good: #137a3a; --good-bg: #e4f5ea; --bad: #bf2a20; --bad-bg: #fcebea;
+  --tile-ink: #151b30;
+  --t-modelos: #fde68a; --t-tabela: #93c5fd; --t-lewis: #fca5a5; --t-raio: #fdba74; --t-ionizacao: #c4b5fd;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Atkinson Hyperlegible", -apple-system, "Segoe UI", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0d1222; --surface: #161d33; --ink: #e7ebf6; --muted: #9aa3bf; --line: #283255;
+  --accent: #8aa2ff; --accent-ink: #0d1222; --accent-soft: #1e2a52;
+  --good: #5ad88a; --good-bg: #11301f; --bad: #ff8a80; --bad-bg: #3a1716; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0d1222; --surface: #161d33; --ink: #e7ebf6; --muted: #9aa3bf; --line: #283255;
+  --accent: #8aa2ff; --accent-ink: #0d1222; --accent-soft: #1e2a52;
+  --good: #5ad88a; --good-bg: #11301f; --bad: #ff8a80; --bad-bg: #3a1716; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.5; }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 20px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: grid; gap: 12px; margin-bottom: 18px; }
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+h1 { font-family: var(--f-display); font-weight: 800; font-size: 1.75rem; line-height: 1.1; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.sub { color: var(--muted); font-size: .92rem; margin: 2px 0 0; }
+.placar { font-family: var(--f-mono); font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.placar b { color: var(--ink); font-size: 1.15rem; }
+
+.filtros { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chip { font: 700 .82rem var(--f-body); border: 2px solid var(--line); background: var(--surface); color: var(--muted);
+  border-radius: 6px; padding: 5px 10px 5px 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; opacity: .35; }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--ink); }
+.chip[aria-pressed="true"] i { opacity: 1; }
+.sep { width: 1px; height: 22px; background: var(--line); margin: 0 4px; }
+select { font: 700 .82rem var(--f-body); border: 2px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 6px; padding: 5px 8px; }
+
+.periodo { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 3px; }
+.periodo span { height: 12px; border-radius: 2px; background: var(--line); }
+.periodo span.ok { background: var(--good); }
+.periodo span.err { background: var(--bad); }
+.periodo span.agora { background: var(--accent); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 22px 20px; }
+.tag { font: 700 .72rem var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--tile-ink);
+  display: inline-block; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; }
+.num { font-family: var(--f-mono); color: var(--muted); font-size: .8rem; float: right; }
+.enun { font-size: 1.25rem; font-weight: 700; line-height: 1.38; margin: 0 0 16px; text-wrap: pretty; }
+.ops { display: grid; gap: 8px; }
+.op { font: 400 1.02rem var(--f-body); text-align: left; color: var(--ink); background: var(--surface);
+  border: 2px solid var(--line); border-radius: 8px; padding: 11px 14px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; }
+.op:hover:not(:disabled) { border-color: var(--accent); }
+.op:focus-visible, .chip:focus-visible, .btn:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.op .k { font: 700 .8rem var(--f-mono); color: var(--muted); border: 1.5px solid var(--line); border-radius: 4px; padding: 1px 6px; flex: none; margin-top: 2px; }
+.op.certa { border-color: var(--good); background: var(--good-bg); }
+.op.errada { border-color: var(--bad); background: var(--bad-bg); }
+.op:disabled { cursor: default; }
+
+/* opções em forma de célula da tabela periódica */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tile { position: relative; border: 2px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px;
+  padding: 26px 10px 14px; cursor: pointer; text-align: center; font-family: var(--f-body); }
+.tile:hover:not(:disabled) { border-color: var(--accent); }
+.tile .z { position: absolute; top: 8px; left: 10px; font: 500 .8rem var(--f-mono); color: var(--muted); }
+.tile .pg { position: absolute; top: 8px; right: 10px; font: 500 .72rem var(--f-mono); color: var(--muted); }
+.tile .s { font: 800 2.6rem/1 var(--f-display); display: block; }
+.tile .s sup { font-size: .45em; color: var(--muted); }
+.tile .nm { font-size: .9rem; color: var(--muted); }
+.tile.certa { border-color: var(--good); background: var(--good-bg); }
+.tile.errada { border-color: var(--bad); background: var(--bad-bg); }
+.elem-grande { display: flex; justify-content: center; margin: -4px 0 16px; }
+.elem-grande .tile { cursor: default; width: 150px; }
+
+.fb { margin-top: 16px; border-radius: 8px; padding: 12px 14px; display: grid; gap: 6px; }
+.fb.ok { background: var(--good-bg); } .fb.err { background: var(--bad-bg); }
+.fb h3 { margin: 0; font: 800 1rem var(--f-display); }
+.fb.ok h3 { color: var(--good); } .fb.err h3 { color: var(--bad); }
+.fb p { margin: 0; }
+.fb svg { display: block; }
+.fb text { fill: var(--ink); }
+.acoes { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.btn { font: 700 1rem var(--f-body); border-radius: 8px; padding: 10px 18px; cursor: pointer; border: 2px solid var(--accent); }
+.btn.pri { background: var(--accent); color: var(--accent-ink); }
+.btn.sec { background: transparent; color: var(--accent); }
+.dica { color: var(--muted); font-size: .82rem; margin-top: 10px; text-align: right; }
+
+.fim h2 { font: 800 1.5rem var(--f-display); margin: 0 0 4px; }
+.barras { display: grid; gap: 10px; margin: 18px 0; }
+.barra { display: grid; grid-template-columns: 130px 1fr 64px; gap: 10px; align-items: center; font-size: .95rem; }
+.barra .trilho { height: 14px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.barra .cheio { height: 100%; border-radius: 3px; }
+.barra .v { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--muted); }
+.erros { display: grid; gap: 8px; margin-top: 8px; }
+.erro { border-left: 4px solid var(--bad); background: var(--bg); padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: .95rem; }
+.erro b { display: block; }
+.erro .c { color: var(--good); font-weight: 700; }
+.hist { color: var(--muted); font-size: .85rem; margin-top: 16px; }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .card { padding: 18px 14px 16px; }
+  .enun { font-size: 1.12rem; }
+  .tile .s { font-size: 2.1rem; }
+  .barra { grid-template-columns: 96px 1fr 54px; }
+  .sep { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card { animation: entra .18s ease-out; }
+  @keyframes entra { from { transform: translateY(4px); opacity: .6; } to { transform: none; opacity: 1; } }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="top">
+      <div>
+        <h1>Treino do Quiz 2 de Química</h1>
+        <p class="sub">Prova sexta, 30/10 · perguntas em inglês, explicação em português</p>
+      </div>
+      <div class="placar" id="placar" aria-live="polite"></div>
+    </div>
+    <div class="filtros" id="filtros" role="group" aria-label="Conteúdos"></div>
+    <div class="periodo" id="periodo" aria-hidden="true"></div>
+  </header>
+  <main id="palco"></main>
+</div>
+
+<script>
+(function () {
+"use strict";
+
+// ------------------------------------------------------------------ conteúdos
+const TOPICOS = [
+  { id: "modelos",   nome: "Atomic models" },
+  { id: "tabela",    nome: "Periodic table" },
+  { id: "lewis",     nome: "Lewis dot" },
+  { id: "raio",      nome: "Atomic radius" },
+  { id: "ionizacao", nome: "Ionization energy" },
+];
+const corTopico = id => `var(--t-${id})`;
+
+// [símbolo, nome, Z, grupo, período, categoria]
+const EL = [
+  ["H","Hydrogen",1,1,1,"nonmetal"], ["He","Helium",2,18,1,"noble"],
+  ["Li","Lithium",3,1,2,"alkali"], ["Be","Beryllium",4,2,2,"alkaline"], ["B","Boron",5,13,2,"metalloid"], ["C","Carbon",6,14,2,"nonmetal"],
+  ["N","Nitrogen",7,15,2,"nonmetal"], ["O","Oxygen",8,16,2,"nonmetal"], ["F","Fluorine",9,17,2,"halogen"], ["Ne","Neon",10,18,2,"noble"],
+  ["Na","Sodium",11,1,3,"alkali"], ["Mg","Magnesium",12,2,3,"alkaline"], ["Al","Aluminum",13,13,3,"metal"], ["Si","Silicon",14,14,3,"metalloid"],
+  ["P","Phosphorus",15,15,3,"nonmetal"], ["S","Sulfur",16,16,3,"nonmetal"], ["Cl","Chlorine",17,17,3,"halogen"], ["Ar","Argon",18,18,3,"noble"],
+  ["K","Potassium",19,1,4,"alkali"], ["Ca","Calcium",20,2,4,"alkaline"], ["Fe","Iron",26,8,4,"transition"], ["Cu","Copper",29,11,4,"transition"],
+  ["Zn","Zinc",30,12,4,"transition"], ["Ga","Gallium",31,13,4,"metal"], ["Ge","Germanium",32,14,4,"metalloid"], ["As","Arsenic",33,15,4,"metalloid"],
+  ["Se","Selenium",34,16,4,"nonmetal"], ["Br","Bromine",35,17,4,"halogen"], ["Kr","Krypton",36,18,4,"noble"],
+  ["Rb","Rubidium",37,1,5,"alkali"], ["Sr","Strontium",38,2,5,"alkaline"], ["Ag","Silver",47,11,5,"transition"], ["Sn","Tin",50,14,5,"metal"],
+  ["Sb","Antimony",51,15,5,"metalloid"], ["Te","Tellurium",52,16,5,"metalloid"], ["I","Iodine",53,17,5,"halogen"], ["Xe","Xenon",54,18,5,"noble"],
+  ["Cs","Cesium",55,1,6,"alkali"], ["Ba","Barium",56,2,6,"alkaline"], ["Au","Gold",79,11,6,"transition"], ["Rn","Radon",86,18,6,"noble"],
+].map(([s, nome, z, g, p, cat]) => ({ s, nome, z, g, p, cat }));
+const porSimbolo = Object.fromEntries(EL.map(e => [e.s, e]));
+const FAMILIA = { alkali: "alkali metal", alkaline: "alkaline earth metal", transition: "transition metal", halogen: "halogen", noble: "noble gas" };
+const TIPO = { alkali: "metal", alkaline: "metal", transition: "metal", metal: "metal", metalloid: "metalloid", nonmetal: "nonmetal", halogen: "nonmetal", noble: "nonmetal" };
+const valencia = e => e.s === "He" ? 2 : (e.g <= 2 ? e.g : e.g - 10);
+const principal = e => e.g <= 2 || e.g >= 13;
+
+// ------------------------------------------------------------------ questões fixas
+// [tópico, pergunta, [certa, erradas...], explicação]
+const FIXAS = [
+  ["modelos","Who discovered the electron?",["Thomson","Rutherford","Dalton","Chadwick"],"Thomson, com o cathode ray tube (1897). Rutherford achou o núcleo e Chadwick, o nêutron."],
+  ["modelos","Which experiment showed that the atom has a nucleus?",["Gold foil experiment","Cathode ray tube","Hydrogen emission spectrum","Flame test"],"Rutherford, gold foil experiment (1911)."],
+  ["modelos","Most alpha particles went straight through the gold foil. What does this show?",["The atom is mostly empty space","The atom has a positive nucleus","Electrons are in energy levels","Atoms are indivisible"],"Passar reto = não bateu em nada → átomo quase todo vazio. O núcleo vem das poucas que voltaram."],
+  ["modelos","A few alpha particles bounced back. What does this show?",["The atom has a small, dense, positive nucleus","The atom is mostly empty space","Electrons are negative","The foil was too thick"],"Voltar = bateu em algo pequeno, denso e positivo: o núcleo."],
+  ["modelos","Why were some alpha particles repelled by the gold atoms?",["Alpha particles and the nucleus are both positive","Alpha particles hit the electrons","The nucleus is negative","The neutrons pushed them away"],"Alfa é positiva e o núcleo é positivo: cargas iguais se repelem."],
+  ["modelos","Which scientist proposed the \"plum pudding\" model?",["Thomson","Dalton","Bohr","Rutherford"],"Thomson: esfera positiva com elétrons espalhados, como passas no pudim."],
+  ["modelos","Dalton described the atom as…",["a solid, indivisible sphere","a positive sphere with electrons in it","a nucleus with electrons in orbits","an electron cloud"],"Dalton (1803): bolinha sólida e indivisível (billiard ball)."],
+  ["modelos","In Bohr's model, electrons…",["move in fixed energy levels around the nucleus","are spread inside a positive sphere","are inside the nucleus","are found in a cloud of probability"],"Bohr = energy levels (orbits) fixos. Nuvem de probabilidade é o modelo quântico."],
+  ["modelos","Bohr based his model on the emission spectrum of…",["hydrogen","gold","helium","oxygen"],"Hidrogênio. O modelo de Bohr só funciona bem para ele."],
+  ["modelos","In the quantum mechanical model, an orbital is…",["a region where an electron is likely to be found","a fixed circular path","the center of the atom","a positive particle"],"Orbital = região de probabilidade. Orbit (Bohr) = caminho fixo. Não confundir."],
+  ["modelos","Who discovered the neutron?",["Chadwick","Thomson","Bohr","Dalton"],"Chadwick, 1932. Foi a última partícula do átomo a ser descoberta."],
+  ["modelos","Which order is correct, from oldest to newest?",["Dalton → Thomson → Rutherford → Bohr → Quantum","Thomson → Dalton → Bohr → Rutherford → Quantum","Dalton → Rutherford → Thomson → Bohr → Quantum","Bohr → Dalton → Thomson → Rutherford → Quantum"],"D → T → R → B → Q."],
+  ["modelos","Which idea from Dalton's theory was later shown to be wrong?",["Atoms are indivisible","All matter is made of atoms","Atoms combine in whole-number ratios","Atoms of different elements form compounds"],"O átomo se divide: tem elétrons, prótons e nêutrons."],
+  ["modelos","What happens when an electron absorbs energy?",["It jumps to a higher energy level","It falls to a lower energy level","It leaves the nucleus","It releases light"],"Absorve → sobe (excited state). Luz só sai quando ele desce."],
+  ["modelos","When an electron falls back to a lower energy level, it…",["releases energy as light","absorbs energy","turns into a proton","stays in the excited state"],"Desce → libera a energia como luz de uma cor específica."],
+  ["modelos","An electron in the lowest possible energy level is in the…",["ground state","excited state","nucleus","ionized state"],"Ground state = nível mais baixo. Excited state = qualquer nível acima."],
+  ["modelos","Thomson's cathode ray experiment showed that atoms contain…",["negative particles","a positive nucleus","neutrons","mostly empty space"],"O raio catódico é feito de elétrons, partículas negativas."],
+  ["modelos","Why does each element have its own line spectrum?",["Each element has different energy levels, so its electrons release different energies","Each element has a different number of neutrons","Electrons move randomly","All atoms release the same colors"],"Os saltos de cada elemento têm tamanhos próprios → cores próprias: a impressão digital do elemento."],
+  ["modelos","What could Rutherford's model NOT explain?",["How the electrons are arranged around the nucleus","That the atom has a nucleus","That the atom is mostly empty space","That the nucleus is positive"],"Ele achou o núcleo, mas não disse onde ficam os elétrons. Bohr resolveu isso com os energy levels."],
+
+  ["tabela","The modern periodic table is arranged by increasing…",["atomic number","atomic mass","number of neutrons","density"],"Atomic number (Moseley). Atomic mass era o critério do Mendeleev."],
+  ["tabela","Mendeleev arranged his periodic table by…",["atomic mass","atomic number","number of electrons","date of discovery"],"Mendeleev (1869): atomic mass. Hoje é atomic number."],
+  ["tabela","Why did Mendeleev leave gaps in his table?",["For elements that had not been discovered yet","Because some elements are radioactive","To separate metals from nonmetals","Because of printing errors"],"Ele previu elementos ainda não descobertos e as propriedades deles."],
+  ["tabela","The columns of the periodic table are called…",["groups (families)","periods","series","rows"],"Coluna = group (família). Linha = period."],
+  ["tabela","The rows of the periodic table are called…",["periods","groups","families","columns"],"Linha = period. São 7."],
+  ["tabela","Elements in the same group have similar properties because they have the same number of…",["valence electrons","energy levels","neutrons","protons"],"Mesmo grupo = mesmos valence electrons = reagem parecido."],
+  ["tabela","Elements in the same period have the same number of…",["energy levels (shells)","valence electrons","protons","neutrons"],"Período = número de camadas. Período 3 → 3 camadas."],
+  ["tabela","The noble gases are in group…",["18","1","17","2"],"Grupo 18: He, Ne, Ar, Kr, Xe, Rn."],
+  ["tabela","The most reactive metals are the…",["alkali metals","noble gases","halogens","transition metals"],"Grupo 1. Reagem violentamente com água."],
+  ["tabela","The most reactive nonmetals are the…",["halogens","noble gases","alkali metals","metalloids"],"Grupo 17: F, Cl, Br, I."],
+  ["tabela","Which is a property of nonmetals?",["Brittle and poor conductors","Shiny","Malleable","Good conductors of electricity"],"Nonmetal: dull, brittle, insulator. O resto é de metal."],
+  ["tabela","Which is a property of metals?",["Good conductors of heat and electricity","Brittle","Dull","Poor conductors"],"Metal: shiny, conductor, malleable, ductile."],
+  ["tabela","Where are the metalloids found?",["Along the staircase line","On the far left","In group 18","In groups 3–12"],"Na escada entre metais e nonmetals: B, Si, Ge, As, Sb, Te."],
+  ["tabela","Why are noble gases unreactive?",["They have a full outer shell","They have no electrons","They are metals","They have no neutrons"],"Camada cheia (8, ou 2 no He): não precisam ganhar nem perder."],
+  ["tabela","Hydrogen is in group 1, but it is a…",["nonmetal","alkali metal","metalloid","noble gas"],"H fica no grupo 1, mas é nonmetal (gás)."],
+  ["tabela","An element has 3 energy levels and 7 valence electrons. Which element is it?",["Cl","F","Br","Al"],"3 camadas → período 3. 7 valence → grupo 17. Período 3, grupo 17 = Cl."],
+  ["tabela","An element has 2 valence electrons and 4 energy levels. Which element is it?",["Ca","Mg","Be","K"],"2 valence → grupo 2. 4 camadas → período 4 = Ca."],
+  ["tabela","Silicon is used in computer chips because it is a…",["semiconductor (metalloid)","noble gas","halogen","alkali metal"],"Metalloid conduz mais ou menos: semiconductor."],
+  ["tabela","Which pair has the most similar chemical properties?",["Na and K","Na and Mg","Na and Cl","Na and Ne"],"Mesmo grupo (1). Vizinhos de linha não contam."],
+
+  ["lewis","The dots in a Lewis dot structure represent…",["valence electrons","all the electrons","protons","neutrons"],"Só os da última camada."],
+  ["lewis","For a main-group element, the number of dots is…",["the last digit of the group number","the period number","the atomic number","the mass number"],"Grupo 1 → 1, grupo 13 → 3, grupo 17 → 7."],
+  ["lewis","How many dots does helium have?",["2","8","18","0"],"He está no grupo 18, mas só tem 2 elétrons."],
+  ["lewis","How should you start placing the dots?",["One dot on each side before pairing","Pair all the dots on top first","Put all the dots on the right","Put the dots in a circle"],"1 por lado (cima, direita, baixo, esquerda), depois começa a parear."],
+  ["lewis","How many dots does Na⁺ have?",["0","1","8","11"],"Na perdeu o único valence electron. Cátion fica sem pontos: [Na]⁺."],
+  ["lewis","How many dots does Cl⁻ have?",["8","7","0","18"],"7 + 1 ganho = 8, dentro de colchetes: [Cl]⁻."],
+  ["lewis","How many dots does O²⁻ have?",["8","6","2","10"],"6 + 2 ganhos = 8."],
+  ["lewis","How are ions written in Lewis structures?",["In brackets, with the charge","Inside a circle","Without the symbol","With the mass number"],"[Na]⁺ · [Cl]⁻ com o número de pontos certo."],
+  ["lewis","The octet rule says atoms tend to end up with how many valence electrons?",["8","2","18","6"],"8, igual a um gás nobre. H e He ficam com 2."],
+  ["lewis","What charge does a group 2 atom usually form?",["+2","−2","+6","0"],"Perde os 2 pontos → +2."],
+  ["lewis","What charge does a group 17 atom usually form?",["−1","+7","+1","−7"],"Tem 7, ganha 1 → −1."],
+  ["lewis","What charge does a group 15 atom usually form?",["−3","+5","+3","−5"],"Tem 5, ganha 3 → −3."],
+  ["lewis","What charge does a group 13 atom usually form?",["+3","−3","+13","−5"],"Tem 3, perde 3 → +3. Ex.: Al³⁺."],
+  ["lewis","In NaCl, what happens to the electrons?",["Na transfers 1 electron to Cl","Cl transfers 1 electron to Na","They share 8 electrons","Na gains 7 electrons"],"O metal perde, o nonmetal ganha. Os dois ficam com octeto."],
+  ["lewis","Element X has 6 dots. Which group is it in?",["16","6","2","14"],"6 = último dígito de 16."],
+  ["lewis","Which element has the same number of dots as oxygen?",["S","N","F","Ne"],"Mesmo grupo (16) = mesmo número de pontos (6)."],
+  ["lewis","Nitrogen has 5 dots. How are they arranged?",["One pair and three single dots","Two pairs and one single dot","Five single dots","One pair on each side"],"1 em cada lado (4), o quinto forma o primeiro par."],
+  ["lewis","Why do metals form positive ions?",["They lose their few valence electrons","They gain electrons","They gain protons","They lose neutrons"],"Com 1, 2 ou 3 pontos, é mais fácil perder do que ganhar 5, 6 ou 7."],
+
+  ["raio","Across a period (left → right), atomic radius…",["decreases","increases","stays the same","doubles"],"Mais prótons puxando, mesmo número de camadas → menor."],
+  ["raio","Down a group, atomic radius…",["increases","decreases","stays the same","first increases, then decreases"],"Uma camada a mais em cada período."],
+  ["raio","Why does atomic radius decrease across a period?",["More protons pull the electrons closer, with the same number of energy levels","More energy levels are added","Electrons are removed","Neutrons push the electrons out"],"A frase da prova: more protons, same energy levels, stronger pull."],
+  ["raio","Why does atomic radius increase down a group?",["Each element has one more energy level","More protons are added","The nucleus gets smaller","Electrons are lost"],"Mais camadas → elétrons mais longe do núcleo."],
+  ["raio","Where are the largest atoms?",["Bottom left","Top right","Top left","Bottom right"],"Embaixo (mais camadas) e à esquerda (menos prótons puxando): Fr, Cs."],
+  ["raio","Where are the smallest atoms?",["Top right","Bottom left","Top left","Bottom right"],"Em cima à direita: He."],
+  ["raio","A cation is ___ than its neutral atom.",["smaller","larger","the same size as","always twice as big as"],"Perdeu elétrons (às vezes uma camada inteira) → menor."],
+  ["raio","An anion is ___ than its neutral atom.",["larger","smaller","the same size as","half the size of"],"Elétrons a mais se repelem → maior."],
+  ["raio","Arrange in order of increasing atomic radius: O, Li, F, C",["F < O < C < Li","Li < C < O < F","O < F < C < Li","C < O < F < Li"],"Mesmo período: cresce da direita para a esquerda."],
+  ["raio","Which atom has the largest radius: Li, Na, K or Rb?",["Rb","Li","Na","K"],"Mesmo grupo: o de baixo é o maior."],
+  ["raio","K has 19 protons and Cl has 17. Which atom is larger?",["K, because it has more energy levels","Cl, because it has fewer protons","They are the same size","K, because it has more protons"],"Olhe a camada primeiro: K está no período 4, Cl no 3."],
+
+  ["ionizacao","Ionization energy is the energy needed to…",["remove an electron from an atom","add an electron to an atom","split the nucleus","move an electron to a higher level"],"Tirar 1 elétron. Subir de nível é excitação, não ionização."],
+  ["ionizacao","Across a period (left → right), ionization energy…",["increases","decreases","stays the same","drops to zero"],"Átomo menor, mais prótons → segura mais forte."],
+  ["ionizacao","Down a group, ionization energy…",["decreases","increases","stays the same","doubles"],"Elétron mais longe e blindado → sai mais fácil."],
+  ["ionizacao","Which element has the highest first ionization energy?",["He","F","Ne","Fr"],"Em cima à direita: He. F e Ne são as pegadinhas."],
+  ["ionizacao","Which of these has the lowest ionization energy?",["Cs","Li","F","He"],"Embaixo à esquerda."],
+  ["ionizacao","As atomic radius increases, ionization energy…",["decreases","increases","stays the same","doubles"],"Átomo grande segura mal: são tendências opostas."],
+  ["ionizacao","Why does ionization energy decrease down a group?",["The outer electron is farther from the nucleus and more shielded","There are more protons pulling","The atom gets smaller","The electrons get closer to the nucleus"],"Mais camadas → elétron longe e blindado."],
+  ["ionizacao","Why do metals lose electrons easily?",["They have low ionization energies","They have high ionization energies","They have full outer shells","They have no valence electrons"],"Energia de ionização baixa = elétron sai barato."],
+  ["ionizacao","Compared with the 1st ionization energy, the 2nd is always…",["greater","smaller","equal","zero"],"Tirar de um íon positivo custa mais."],
+  ["ionizacao","Mg: 1st = 738, 2nd = 1451, 3rd = 7733 kJ/mol. How many valence electrons does Mg have?",["2","3","1","12"],"O salto enorme vem depois da 2ª: 2 valence electrons (grupo 2)."],
+  ["ionizacao","X: 1st = 578, 2nd = 1817, 3rd = 2745, 4th = 11 577 kJ/mol. Which group is X in?",["13","3","4","14"],"Salto depois da 3ª → 3 valence electrons → grupo 13 (é o Al)."],
+  ["ionizacao","X: 1st = 496, 2nd = 4562 kJ/mol. Which group is X in?",["1","2","17","18"],"Salto logo depois da 1ª → 1 valence electron → grupo 1 (é o Na)."],
+  ["ionizacao","Which family has the highest ionization energy in each period?",["Noble gases","Alkali metals","Halogens","Transition metals"],"Fim de cada linha: camada cheia, não querem perder nada."],
+  ["ionizacao","Which family has the lowest ionization energy in each period?",["Alkali metals","Noble gases","Halogens","Alkaline earth metals"],"Começo de cada linha: só 1 valence electron, sai fácil."],
+].map(([topico, enun, ops, exp], i) => ({ id: "f" + i, topico, enun, certa: ops[0], ops, exp }));
+
+// ------------------------------------------------------------------ questões geradas
+const sorteia = a => a[Math.floor(Math.random() * a.length)];
+const embaralha = a => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
+const ordinal = n => n === 1 ? "1st" : n === 2 ? "2nd" : n === 3 ? "3rd" : n + "th";
+
+function parRaio() {
+  // só pares de resposta indiscutível: mesmo período (2 e 3, ou K/Ca no 4) ou mesmo grupo (1, 2, 15, 16, 17)
+  if (Math.random() < 0.5) {
+    const p = sorteia([2, 3, 4]);
+    let lista = EL.filter(e => e.p === p && principal(e) && e.g !== 18);
+    let a, b;
+    do { a = sorteia(lista); b = sorteia(lista); } while (a === b || (p === 4 && a.g > 2 && b.g > 2));
+    const maior = a.g < b.g ? a : b;
+    return { a, b, maior, menor: maior === a ? b : a, porque: `Mesmo período (${p}): quem está mais à esquerda é maior. ${maior.s} está no grupo ${maior.g}.` };
+  }
+  const g = sorteia([1, 2, 15, 16, 17]);
+  const lista = EL.filter(e => e.g === g && e.s !== "H");
+  let a, b;
+  do { a = sorteia(lista); b = sorteia(lista); } while (a === b);
+  const maior = a.p > b.p ? a : b;
+  return { a, b, maior, menor: maior === a ? b : a, porque: `Mesmo grupo (${g}): quem está mais embaixo tem mais camadas. ${maior.s} está no período ${maior.p}.` };
+}
+function parIonizacao() {
+  // sem as exceções (grupo 2 × 13 e 15 × 16 no mesmo período)
+  if (Math.random() < 0.5) {
+    const p = sorteia([2, 3, 4]);
+    const lista = EL.filter(e => e.p === p && principal(e));
+    const excecao = (x, y) => { const s = [x.g, y.g].sort((m, n) => m - n).join("-"); return s === "2-13" || s === "15-16"; };
+    let a, b;
+    do { a = sorteia(lista); b = sorteia(lista); } while (a === b || excecao(a, b));
+    const maior = a.g > b.g ? a : b;
+    return { a, b, maior, menor: maior === a ? b : a, porque: `Mesmo período (${p}): a ionization energy aumenta para a direita. ${maior.s} está no grupo ${maior.g}.` };
+  }
+  const g = sorteia([1, 2, 15, 16, 17, 18]);
+  const lista = EL.filter(e => e.g === g && e.s !== "H");
+  let a, b;
+  do { a = sorteia(lista); b = sorteia(lista); } while (a === b);
+  const maior = a.p < b.p ? a : b;
+  return { a, b, maior, menor: maior === a ? b : a, porque: `Mesmo grupo (${g}): a ionization energy aumenta para cima. ${maior.s} está no período ${maior.p}, com o elétron mais perto do núcleo.` };
+}
+const IONS = [
+  ["Na", "+", "menor"], ["K", "+", "menor"], ["Li", "+", "menor"], ["Mg", "2+", "menor"], ["Ca", "2+", "menor"], ["Al", "3+", "menor"],
+  ["Cl", "−", "maior"], ["F", "−", "maior"], ["Br", "−", "maior"], ["O", "2−", "maior"], ["S", "2−", "maior"], ["N", "3−", "maior"],
+];
+
+function gerar() {
+  const q = [];
+  for (let i = 0; i < 14; i++) {
+    const r = parRaio(), pedeMaior = Math.random() < 0.7;
+    q.push({ id: `r:${r.a.s}${r.b.s}${pedeMaior}`, topico: "raio", tipo: "tiles",
+      enun: pedeMaior ? "Which atom has the larger atomic radius?" : "Which atom has the smaller atomic radius?",
+      tiles: [r.a, r.b], certa: (pedeMaior ? r.maior : r.menor).s, exp: r.porque });
+  }
+  for (const [s, c, tam] of IONS) {
+    const e = porSimbolo[s], ion = { ...e, carga: c };
+    q.push({ id: `ri:${s}`, topico: "raio", tipo: "tiles", enun: "Which one is larger?",
+      tiles: Math.random() < 0.5 ? [e, ion] : [ion, e], certa: tam === "maior" ? s + c : s,
+      exp: tam === "maior" ? `${s}${c} é ânion: ganhou elétrons, que se repelem → maior que o átomo ${s}.` : `${s}${c} é cátion: perdeu elétrons → menor que o átomo ${s}.` });
+  }
+  for (let i = 0; i < 14; i++) {
+    const r = parIonizacao(), pedeMaior = Math.random() < 0.7;
+    q.push({ id: `i:${r.a.s}${r.b.s}${pedeMaior}`, topico: "ionizacao", tipo: "tiles",
+      enun: pedeMaior ? "Which atom has the higher ionization energy?" : "Which atom has the lower ionization energy?",
+      tiles: [r.a, r.b], certa: (pedeMaior ? r.maior : r.menor).s, exp: r.porque });
+  }
+  for (const e of embaralha(EL.filter(principal)).slice(0, 12)) {
+    const v = valencia(e), erradas = new Set();
+    if (e.z !== v && e.z <= 18) erradas.add(String(e.z));
+    if (e.p !== v) erradas.add(String(e.p));
+    while (erradas.size < 3) { const x = 1 + Math.floor(Math.random() * 8); if (x !== v) erradas.add(String(x)); }
+    q.push({ id: `l:${e.s}`, topico: "lewis", tipo: "elem", elem: e, lewis: [e.s, v],
+      enun: `How many dots are in the Lewis dot structure of ${e.nome.toLowerCase()}?`,
+      ops: [String(v), ...[...erradas].slice(0, 3)], certa: String(v),
+      exp: e.s === "He" ? "He é do grupo 18, mas só tem 2 elétrons: 2 pontos." : `${e.nome} está no grupo ${e.g} → ${v} valence electron${v > 1 ? "s" : ""} → ${v} ponto${v > 1 ? "s" : ""}.` });
+  }
+  for (const e of embaralha(EL.filter(x => principal(x) && x.s !== "H" && x.s !== "He")).slice(0, 8)) {
+    const viz = EL.filter(x => x !== e && principal(x) && (x.g === e.g || x.p === e.p));
+    const errs = embaralha(viz).slice(0, 3).map(x => x.s);
+    q.push({ id: `p:${e.s}`, topico: "tabela", enun: `Which element is in group ${e.g}, period ${e.p}?`,
+      ops: [e.s, ...errs], certa: e.s, exp: `Grupo ${e.g} = coluna ${e.g}; período ${e.p} = linha ${e.p} → ${e.s} (${e.nome}).` });
+  }
+  const comFamilia = EL.filter(x => FAMILIA[x.cat] && x.s !== "H");
+  for (const e of embaralha(comFamilia).slice(0, 7)) {
+    const certa = FAMILIA[e.cat];
+    q.push({ id: `fa:${e.s}`, topico: "tabela", tipo: "elem", elem: e, enun: `Which family does ${e.nome.toLowerCase()} belong to?`,
+      ops: [certa, ...embaralha(Object.values(FAMILIA).filter(f => f !== certa)).slice(0, 3)], certa,
+      exp: e.cat === "transition" ? `${e.s} está no grupo ${e.g}, no miolo da tabela (3–12): transition metal.` : `${e.s} está no grupo ${e.g}: ${certa}.` });
+  }
+  for (const e of embaralha(EL.filter(x => x.s !== "H")).slice(0, 7)) {
+    const certa = TIPO[e.cat];
+    q.push({ id: `ti:${e.s}`, topico: "tabela", tipo: "elem", elem: e, enun: `Is ${e.nome.toLowerCase()} a metal, a nonmetal or a metalloid?`,
+      ops: ["metal", "nonmetal", "metalloid"], fixa: true, certa,
+      exp: certa === "metalloid" ? `${e.s} fica na escada: metalloid.` : certa === "metal" ? `${e.s} fica à esquerda da escada: metal.` : `${e.s} fica à direita da escada: nonmetal.` });
+  }
+  return q;
+}
+
+// ------------------------------------------------------------------ desenho de Lewis
+function lewisSVG(sym, n, carga) {
+  const cx = 46, cy = 36, hx = sym.length === 1 ? 16 : 22, lados = [[0, -1], [1, 0], [0, 1], [-1, 0]], cont = [0, 0, 0, 0];
+  for (let i = 0; i < n; i++) cont[i % 4]++;
+  let dots = "";
+  lados.forEach(([dx, dy], k) => {
+    if (!cont[k]) return;
+    const bx = cx + dx * hx, by = cy + dy * 19, offs = cont[k] === 1 ? [0] : [-4.5, 4.5];
+    for (const o of offs) {
+      const [px, py] = dy !== 0 ? [bx + o, by] : [bx, by + o];
+      dots += `<circle cx="${px}" cy="${py}" r="3" fill="var(--bad)"/>`;
+    }
+  });
+  const col = carga ? `<path d="M18,8 L12,8 L12,64 L18,64 M74,8 L80,8 L80,64 L74,64" fill="none" stroke="currentColor" stroke-width="2"/>
+    <text x="83" y="17" font-size="15" font-weight="800" style="fill:var(--accent)">${carga}</text>` : "";
+  return `<svg viewBox="0 0 104 72" width="104" height="72" role="img" aria-label="Lewis de ${sym} com ${n} pontos">${col}
+    <text x="${cx}" y="${cy + 8}" font-size="22" font-weight="800" text-anchor="middle" font-family="Archivo, Arial, sans-serif">${sym}</text>${dots}</svg>`;
+}
+
+// ------------------------------------------------------------------ estado e armazenamento
+const CHAVE = "quiz2-quimica-hist";
+const lerHist = () => { try { return JSON.parse(localStorage.getItem(CHAVE)) || {}; } catch (e) { return {}; } };
+const gravarHist = h => { try { localStorage.setItem(CHAVE, JSON.stringify(h)); } catch (e) {} };
+
+const st = { sel: new Set(TOPICOS.map(t => t.id)), tam: 20, rodada: [], i: 0, resp: [], escolhas: [] };
+
+function montarRodada(lista) {
+  if (lista) { st.rodada = embaralha(lista); }
+  else {
+    const banco = [...FIXAS, ...gerar()].filter(q => st.sel.has(q.topico));
+    const porTop = {};
+    for (const q of embaralha(banco)) (porTop[q.topico] ||= []).push(q);
+    const tops = embaralha([...st.sel]), out = [];
+    let k = 0;
+    while (out.length < st.tam && tops.some(t => porTop[t] && porTop[t].length)) {
+      const t = tops[k++ % tops.length];
+      if (porTop[t] && porTop[t].length) out.push(porTop[t].pop());
+    }
+    st.rodada = out;
+  }
+  st.rodada.forEach(q => { q.mostra = q.fixa ? q.ops.slice() : (q.ops ? embaralha(q.ops) : null); });
+  st.i = 0; st.resp = []; st.escolhas = [];
+  render();
+}
+
+// ------------------------------------------------------------------ interface
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function renderFiltros() {
+  $("filtros").innerHTML = TOPICOS.map(t =>
+    `<button class="chip" type="button" id="chip-${t.id}" data-t="${t.id}" aria-pressed="${st.sel.has(t.id)}"><i style="background:${corTopico(t.id)}"></i>${t.nome}</button>`
+  ).join("") + `<span class="sep"></span><label class="sub" for="tam" style="margin:0">Questões</label>
+    <select id="tam">${[10, 20, 40].map(n => `<option value="${n}"${n === st.tam ? " selected" : ""}>${n}</option>`).join("")}</select>`;
+  $("filtros").querySelectorAll(".chip").forEach(b => b.onclick = () => {
+    const t = b.dataset.t;
+    if (st.sel.has(t)) { if (st.sel.size > 1) st.sel.delete(t); } else st.sel.add(t);
+    renderFiltros(); montarRodada();
+  });
+  $("tam").onchange = e => { st.tam = +e.target.value; montarRodada(); };
+}
+
+function renderPeriodo() {
+  const n = st.rodada.length;
+  $("periodo").style.setProperty("--n", n);
+  $("periodo").innerHTML = st.rodada.map((_, k) =>
+    `<span class="${k < st.resp.length ? (st.resp[k] ? "ok" : "err") : (k === st.i ? "agora" : "")}"></span>`).join("");
+  const ok = st.resp.filter(Boolean).length;
+  $("placar").innerHTML = `<b>${ok}</b> certas de ${st.resp.length} · questão ${Math.min(st.i + 1, n)}/${n}`;
+}
+
+function tileHTML(e, extra) {
+  const sym = e.carga ? `${e.s}<sup>${e.carga}</sup>` : e.s;
+  return `<span class="z">${e.z}</span><span class="pg">G${e.g} · P${e.p}</span><span class="s">${sym}</span><span class="nm">${e.carga ? (e.carga.includes("−") ? "anion" : "cation") : e.nome}</span>${extra || ""}`;
+}
+
+function render() {
+  renderPeriodo();
+  if (st.i >= st.rodada.length) return renderFim();
+  const q = st.rodada[st.i], top = TOPICOS.find(t => t.id === q.topico);
+  const respondida = st.resp.length > st.i, escolha = st.escolhas[st.i];
+  let corpo = "";
+  if (q.tipo === "tiles") {
+    corpo = `<div class="tiles">` + q.tiles.map((e, k) => {
+      const val = e.carga ? e.s + e.carga : e.s;
+      let cls = "";
+      if (respondida) cls = val === q.certa ? "certa" : (val === escolha ? "errada" : "");
+      return `<button class="tile ${cls}" type="button" id="op-${k}" data-v="${esc(val)}"${respondida ? " disabled" : ""}>${tileHTML(e)}</button>`;
+    }).join("") + `</div>`;
+  } else {
+    if (q.tipo === "elem") corpo += `<div class="elem-grande"><div class="tile">${tileHTML(q.elem)}</div></div>`;
+    corpo += `<div class="ops">` + q.mostra.map((o, k) => {
+      let cls = "";
+      if (respondida) cls = o === q.certa ? "certa" : (o === escolha ? "errada" : "");
+      return `<button class="op ${cls}" type="button" id="op-${k}" data-v="${esc(o)}"${respondida ? " disabled" : ""}><span class="k">${k + 1}</span><span>${esc(o)}</span></button>`;
+    }).join("") + `</div>`;
+  }
+  let fb = "";
+  if (respondida) {
+    const ok = st.resp[st.i];
+    const desenho = q.lewis ? lewisSVG(q.lewis[0], q.lewis[1]) : "";
+    fb = `<div class="fb ${ok ? "ok" : "err"}" role="status"><h3>${ok ? "Certo" : "Errado · a certa é " + esc(q.certa)}</h3>${desenho}<p>${esc(q.exp)}</p></div>
+      <div class="acoes"><button class="btn pri" type="button" id="prox">${st.i + 1 < st.rodada.length ? "Próxima →" : "Ver resultado"}</button></div>`;
+  }
+  $("palco").innerHTML = `<section class="card" aria-labelledby="enun">
+    <span class="num">${st.i + 1}/${st.rodada.length}</span>
+    <span class="tag" style="background:${corTopico(q.topico)}">${top.nome}</span>
+    <p class="enun" id="enun">${esc(q.enun)}</p>${corpo}${fb}</section>
+    <p class="dica">Teclado: 1–4 ou ← → para responder · Enter para a próxima</p>`;
+  $("palco").querySelectorAll("[data-v]").forEach(b => b.onclick = () => responder(b.dataset.v));
+  if (respondida) $("prox").onclick = proxima;
+}
+
+function responder(v) {
+  if (st.resp.length > st.i) return;
+  const q = st.rodada[st.i], ok = v === q.certa;
+  st.resp.push(ok); st.escolhas.push(v);
+  const h = lerHist(); h[q.topico] = h[q.topico] || { ok: 0, n: 0 }; h[q.topico].n++; if (ok) h[q.topico].ok++; gravarHist(h);
+  render();
+  const b = $("prox"); if (b) b.focus({ preventScroll: true });
+}
+function proxima() { st.i++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+
+function renderFim() {
+  const n = st.rodada.length, ok = st.resp.filter(Boolean).length;
+  const linhas = TOPICOS.filter(t => st.rodada.some(q => q.topico === t.id)).map(t => {
+    const idx = st.rodada.map((q, k) => q.topico === t.id ? k : -1).filter(k => k >= 0);
+    const a = idx.filter(k => st.resp[k]).length;
+    return `<div class="barra"><span>${t.nome}</span><span class="trilho"><span class="cheio" style="display:block;width:${(100 * a / idx.length).toFixed(0)}%;background:${corTopico(t.id)}"></span></span><span class="v">${a}/${idx.length}</span></div>`;
+  }).join("");
+  const erradas = st.rodada.filter((_, k) => !st.resp[k]);
+  const lista = erradas.map(q => {
+    const k = st.rodada.indexOf(q);
+    return `<div class="erro"><b>${esc(q.enun)}${q.tipo === "tiles" ? " (" + q.tiles.map(e => e.s + (e.carga || "")).join(" × ") + ")" : q.elem ? " (" + q.elem.s + ")" : ""}</b>
+      Você marcou ${esc(st.escolhas[k])} · <span class="c">certa: ${esc(q.certa)}</span><br><span>${esc(q.exp)}</span></div>`;
+  }).join("");
+  const h = lerHist(), fraco = TOPICOS.filter(t => h[t.id] && h[t.id].n >= 5).map(t => ({ t, p: h[t.id].ok / h[t.id].n })).sort((x, y) => x.p - y.p)[0];
+  const msg = ok / n >= 0.85 ? "Está pronta para a prova." : ok / n >= 0.6 ? "Quase lá. Refaça as que errou e rode mais uma." : "Volte na teoria do PDF dos conteúdos em vermelho e rode de novo.";
+  $("palco").innerHTML = `<section class="card fim">
+    <h2>${ok} de ${n} certas</h2><p class="sub">${msg}</p>
+    <div class="barras">${linhas}</div>
+    <div class="acoes" style="justify-content:flex-start">
+      ${erradas.length ? `<button class="btn pri" type="button" id="refazer">Refazer as ${erradas.length} que errei</button>` : ""}
+      <button class="btn ${erradas.length ? "sec" : "pri"}" type="button" id="nova">Nova rodada</button>
+    </div>
+    ${erradas.length ? `<h3 style="font-family:var(--f-display);margin:22px 0 4px">O que errou</h3><div class="erros">${lista}</div>` : ""}
+    ${fraco ? `<p class="hist">Neste aparelho, seu ponto mais fraco até agora: <b>${fraco.t.nome}</b> (${Math.round(fraco.p * 100)}% de acerto).</p>` : ""}
+  </section>`;
+  if (erradas.length) $("refazer").onclick = () => montarRodada(erradas);
+  $("nova").onclick = () => montarRodada();
+}
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "SELECT") return;
+  const q = st.rodada[st.i];
+  if (!q) return;
+  const respondida = st.resp.length > st.i;
+  if (respondida && (e.key === "Enter" || e.key === "ArrowRight") && document.activeElement?.id !== "prox") { e.preventDefault(); proxima(); return; }
+  if (respondida) return;
+  let k = -1;
+  if (/^[1-4]$/.test(e.key)) k = +e.key - 1;
+  if (q.tipo === "tiles" && e.key === "ArrowLeft") k = 0;
+  if (q.tipo === "tiles" && e.key === "ArrowRight") k = 1;
+  const b = k >= 0 && $("op-" + k);
+  if (b) { e.preventDefault(); responder(b.dataset.v); }
+});
+
+renderFiltros();
+montarRodada();
+})();
+</script>
+
+</body></html>
